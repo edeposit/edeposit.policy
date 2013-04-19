@@ -1,6 +1,10 @@
-Introduction
-============
+E-Deposit Policy
+================
 
 
+Policy package for a project **E-Deposit** for Plone 4.2
 
-This product may contain traces of nuts.
+links:
+
+- E-Deposit:: 
+  http://www.nkp.cz/o-knihovne/projekty-a-programy/vyzkum-a-vyvoj-naki/e-deposit/uvod
