@@ -28,9 +28,9 @@ setup(name='edeposit.policy',
           # -*- Extra requirements: -*-
           'Plone',
       ],
-      extra_require = {
+      extras_require = {
           'test': ['plone.app.testing',]
-      }
+      },
       entry_points="""
       # -*- Entry points: -*-
 
