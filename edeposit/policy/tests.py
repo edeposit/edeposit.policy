@@ -1,55 +1,51 @@
-import unittest
+import unittest2 as unittest
+from Products.CMFCore.utils import getToolByName
 
-#from zope.testing import doctestunit
-#from zope.component import testing
-from Testing import ZopeTestCase as ztc
+from edeposit.policy.testing import EDEPOSIT_POLICY_INTEGRATION_TESTING
 
-from Products.Five import fiveconfigure
-from Products.PloneTestCase import PloneTestCase as ptc
-from Products.PloneTestCase.layer import PloneSite
-ptc.setupPloneSite()
+class TestSetup(unittest.TestCase):
+    
+    layer = EDEPOSIT_POLICY_INTEGRATION_TESTING
+    
+    WORKFLOW_NAME = 'edeposit_manual_acquisition_workflow'
 
-import edeposit.policy
+    def test_portal_title(self):
+        portal = self.layer['portal']
+        self.assertEqual("E-Deposit Site", portal.getProperty('title'))
+    
+    def test_portal_description(self):
+        portal = self.layer['portal']
+        self.assertEqual("Welcome to E-Deposit", portal.getProperty('description'))
+    
+    def test_role_added(self):
+        portal = self.layer['portal']
+        self.assertTrue("Publishers" in portal.validRoles())
 
+    def test_workflow_installed(self):
+        portal = self.layer['portal']
+        workflow = getToolByName(portal, 'portal_workflow')
+        self.assertTrue(self.WORKFLOW_NAME in workflow)
 
-class TestCase(ptc.PloneTestCase):
+    def test_workflows_mapped(self):
+        portal = self.layer['portal']
+        workflow = getToolByName(portal, 'portal_workflow')
+        # self.assertEqual((self.WORKFLOW_NAME,), workflow.getDefaultChain())
 
-    class layer(PloneSite):
+    def test_view_permisison_for_publisher(self):
+        portal = self.layer['portal']
+        self.assertTrue('View' in [r['name']
+                                   for r in portal.permissionsOfRole('Reviewer')
+                                   if r['selected']])
+        self.assertTrue('View' in [r['name']
+                                   for r in portal.permissionsOfRole('Publisher')
+                                   if r['selected']])
 
-        @classmethod
-        def setUp(cls):
-            fiveconfigure.debug_mode = True
-            ztc.installPackage(edeposit.policy)
-            fiveconfigure.debug_mode = False
+    def test_publishers_group_added(self):
+        portal = self.layer['portal']
+        acl_users = portal['acl_users']
+        self.assertEqual(1, len(acl_users.searchGroups(name='Publishers')))
 
-        @classmethod
-        def tearDown(cls):
-            pass
-
-
-def test_suite():
-    return unittest.TestSuite([
-
-        # Unit tests
-        #doctestunit.DocFileSuite(
-        #    'README.txt', package='edeposit.policy',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
-
-        #doctestunit.DocTestSuite(
-        #    module='edeposit.policy.mymodule',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
-
-
-        # Integration tests that use PloneTestCase
-        #ztc.ZopeDocFileSuite(
-        #    'README.txt', package='edeposit.policy',
-        #    test_class=TestCase),
-
-        #ztc.FunctionalDocFileSuite(
-        #    'browser.txt', package='edeposit.policy',
-        #    test_class=TestCase),
-
-        ])
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
+    def test_PloneFormGen_installed(self):
+        portal = self.layer['portal']
+        portal_types = getToolByName(portal, 'portal_types')
+        self.assertTrue("FormFolder" in portal_types)

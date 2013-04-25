@@ -1,5 +1,8 @@
 setuptools
 Plone
+Products.PloneFormGen
+plone.app.dexterity
+edeposit.content
 
 [test]
 plone.app.testing
