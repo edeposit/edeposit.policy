@@ -44,3 +44,6 @@ Omezení systému
 - systém ukládá do **LTP** jen ty **PDF** soubory, co mají textovou vrstvu
 - každý uložený formát té samé e-publikace má své vlastní **ISBN** kód
 - všechny uložené formáty té samé e-publikace mají ten samý **ISSN** kód
+- web rozhraní systému je poskytnuto za pomoci **Plone**
+- middleware k implementaci využívá **RabbitMQ**, tj. je implementován odděleně od web rozhraní
+- middleware je napsaný v jazyce **Python**
