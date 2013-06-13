@@ -9,7 +9,7 @@
 Welcome to E-Deposit's documentation!
 =====================================
 
-Contents:
+Obsah:
 
 .. toctree::
    :maxdepth: 2
@@ -31,8 +31,8 @@ graphviz
 
 .. include:: dictionary.rst
 
-Indices and tables
-==================
+Odkazy
+======
 
 * :ref:`genindex`
 * :ref:`modindex`
