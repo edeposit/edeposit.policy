@@ -35,10 +35,16 @@ Požadavky které jsou kladeny na funkci systému.
 - systém umožňuje zadávat základní bibliografický popis ručně
 - systém nabízí bibliografický popis načtený ze systému **Aleph**
 - systém umožňuje autentifikaci za pomoci *Google*, *Facebook*, *Twitter*, *MSN*
+- systém si pamatuje všechny verze vloženého souboru
+- opravené soubory k jedné e-publikaci mají svůj **ISBN** a odkazují se na jednu e-publikaci
+- systém zobrazuje historii všech zadaných **ISBN**, 
+  i těch, co prošly jinou cestou, než pres e-deposit
+- systém zobrazuje přehled o tom, co se s e-publikací děje
 
 Omezení systému
 ...............
 
+- systém soubory a údaje zabezbečuje asymetrickou šifrou na základě **X509** standardu
 - systém přijímá e-publikace pouze ve formátě **PDF**, **ePub**, **TXT**, **DjVu**, **mobi**
 - systém nepřijímá publikace s ochranou proti kopírování, např **DRM**
 - systém ukládá do **LTP** jen ty **PDF** soubory, co mají textovou vrstvu
