@@ -9,7 +9,7 @@
 E-Deposit - SW dokumentace
 ==========================
 
-.. sectionauthor:: Jan Stavěl <stavel.jan at mail.com>
+.. sectionauthor:: Jan Stavěl <stavel.jan at gmail.com>
 
 .. contents::
    :local:
