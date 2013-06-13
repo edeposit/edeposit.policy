@@ -45,40 +45,49 @@
             
   <div class="section" id="pozadavky-na-system-a-jeho-omezeni">
 <h1>Požadavky na systém a jeho omezení<a class="headerlink" href="#pozadavky-na-system-a-jeho-omezeni" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="pozadavky-na-funci-systemu">
-<h2>Požadavky na funci systému<a class="headerlink" href="#pozadavky-na-funci-systemu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pozadavky-na-funkci-systemu">
+<h2>Požadavky na funkci systému<a class="headerlink" href="#pozadavky-na-funkci-systemu" title="Permalink to this headline">¶</a></h2>
 <p>Požadavky které jsou kladeny na funkci systému.</p>
 <ul class="simple">
-<li>systém umí registrovat <strong>ISBN</strong></li>
-<li>systém umožňuje vkládat <strong>PDF</strong></li>
-<li>epublikace jsou zabezpečeny podle běžných standardů a postupů</li>
-<li>epublikace může obsahovat více souborů</li>
-<li>epublikace mohou být zpřístupněny za pomoci <strong>OAI-PMH</strong>, <strong>OPDS</strong>,
+<li>systém umožňuje podávat žádosti o registraci <strong>ISBN</strong></li>
+<li>systém umožňuje vkládat e-publikace</li>
+<li>systém umožňuje doplňovat bibliografický popis e-publikace</li>
+<li>e-publikace jsou zabezpečeny podle běžných standardů a postupů</li>
+<li>e-publikace může obsahovat více souborů</li>
+<li>každý soubor jedné e-publikace má vlastní <strong>ISBN</strong> a společný <strong>ISSN</strong></li>
+<li>e-publikace mohou být zpřístupněny za pomoci <strong>OAI-PMH</strong>, <strong>OPDS</strong>,
 <strong>eReading.cz</strong>, <strong>Flexibooks</strong>, <strong>ebary</strong>, <strong>BookJet</strong>, <strong>eBookEater</strong>,
 <strong>Publero</strong>, <strong>JDK</strong></li>
-<li>epublikace může být vložena za pomoci <strong>Webarchiv</strong> ci <strong>ingest</strong> modul</li>
+<li>e-publikace může být vložena za pomoci <strong>Webarchiv</strong> ci <strong>ingest</strong> modul</li>
 <li>systém při vkládání souboru vytváří <em>PDF</em> náhled</li>
-<li>systém informuje <strong>Aleph</strong>, že jsou epublikace připraveny na doplnění bibliografických dat</li>
+<li>systém informuje <strong>Aleph</strong>, že jsou e-publikace připraveny na doplnění bibliografických dat</li>
 <li>systém načítá bibliografická data ze systému <strong>Aleph</strong></li>
-<li>systém ukládá epublikace do systému <strong>LTP</strong> k trvalé archivaci</li>
-<li>systém přijímá i anonymní epublikace</li>
-<li>systém před uložením epublikace do <strong>LTP</strong> provádí validaci</li>
+<li>systém ukládá e-publikace do systému <strong>LTP</strong> k trvalé archivaci</li>
+<li>systém přijímá i anonymní e-publikace</li>
+<li>systém před uložením e-publikace do <strong>LTP</strong> provádí validaci</li>
 <li>systém poskytuje registraci pro nakladatele, jednoduchou, nebo s více rolemi</li>
 <li>systém kontroluje <strong>ISBN</strong></li>
 <li>systém aplikuje podmínky užití</li>
-<li>systém přijímá i epublikace s binárními přílohami</li>
+<li>systém přijímá i e-publikace s binárními přílohami</li>
 <li>systém autorizuje uživatele vůči firemní <strong>ActiveDirectory</strong>, nebo vůčí <strong>LDAP</strong></li>
 <li>systém zjišťuje přítomnost virů ve vložených souborech</li>
-<li>systém umí načítat epublikace z <strong>ftp</strong>, nebo z emailové schránky</li>
-<li>systém nabízí možnost generovat <strong>Mobi</strong></li>
+<li>systém umí načítat e-publikace přes vlastní <strong>ftp</strong> server, nebo z emailové schránky</li>
+<li>systém umí e-publikace stáhnout z externího <strong>ftp</strong> serveru</li>
+<li>systém nabízí možnost generovat <strong>mobi</strong></li>
 <li>systém zobrazuje <strong>PDF</strong> náhled</li>
+<li>systém umožňuje zadávat základní bibliografický popis ručně</li>
+<li>systém nabízí bibliografický popis načtený ze systému <strong>Aleph</strong></li>
+<li>systém umožňuje autentifikaci za pomoci <em>Google</em>, <em>Facebook</em>, <em>Twitter</em>, <em>MSN</em></li>
 </ul>
 </div>
 <div class="section" id="omezeni-systemu">
 <h2>Omezení systému<a class="headerlink" href="#omezeni-systemu" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li>systém přijímá e-publikace pouze ve formátě <strong>PDF</strong>, <strong>ePub</strong>, <strong>TXT</strong>, <strong>DjVu</strong>, <strong>mobi</strong></li>
 <li>systém nepřijímá publikace s ochranou proti kopírování, např <strong>DRM</strong></li>
 <li>systém ukládá do <strong>LTP</strong> jen ty <strong>PDF</strong> soubory, co mají textovou vrstvu</li>
+<li>každý uložený formát té samé e-publikace má své vlastní <strong>ISBN</strong> kód</li>
+<li>všechny uložené formáty té samé e-publikace mají ten samý <strong>ISSN</strong> kód</li>
 </ul>
 </div>
 </div>
@@ -92,7 +101,7 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Požadavky na systém a jeho omezení</a><ul>
-<li><a class="reference internal" href="#pozadavky-na-funci-systemu">Požadavky na funci systému</a></li>
+<li><a class="reference internal" href="#pozadavky-na-funkci-systemu">Požadavky na funkci systému</a></li>
 <li><a class="reference internal" href="#omezeni-systemu">Omezení systému</a></li>
 </ul>
 </li>

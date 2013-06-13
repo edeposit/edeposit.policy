@@ -6,19 +6,16 @@
 .. (project-task run "*shell*" "make html")
 .. (project-task run-show "*shell*" "google-chrome file:///opt/e-deposit/src/edeposit.policy/docs/_build/html/index.html")
 
-Welcome to E-Deposit's documentation!
-=====================================
+E-Deposit - SW dokumentace
+==========================
 
-Obsah:
+.. contents::
+   :local:
 
 .. toctree::
    :maxdepth: 2
 
-
-graphviz
-
-.. graphviz::
-   
+..
    digraph foo {
       "bar" -> "baz";
    }
