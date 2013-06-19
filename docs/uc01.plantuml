@@ -1,0 +1,3 @@
+@startuml
+:Nakladatel/vydavatel publikace: --> (Zadat žmádost o registraci uživatele)
+@enduml

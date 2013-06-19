@@ -11,24 +11,19 @@ E-Deposit - SW dokumentace
 
 .. sectionauthor:: Jan Stavěl <stavel.jan at gmail.com>
 
+Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
+
 .. contents::
    :local:
 
 .. toctree::
    :maxdepth: 2
 
-..
-   digraph foo {
-      "bar" -> "baz";
-   }
-
-.. 
-   Alice -> Bob: Hi!
-   Alice <- Bob: How are you?
-
 .. include:: requirements.rst
 
 .. include:: dictionary.rst
+ 
+.. include:: usecases.rst
 
 Odkazy
 ======
