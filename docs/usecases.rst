@@ -178,3 +178,14 @@ Registrace ISBN
 ................
 
 .. image:: uc02.png
+
+
+Vkládání e-publikací
+....................
+
+
+Vkládání e-casopisů
+....................
+
+
+
