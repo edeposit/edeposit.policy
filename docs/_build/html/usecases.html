@@ -45,12 +45,191 @@
             
   <div class="section" id="pripady-uziti">
 <h1>Případy užití<a class="headerlink" href="#pripady-uziti" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="uc01-zadost-o-registraci-uzivatele">
-<h2>UC01 Žádost o registraci uživatele<a class="headerlink" href="#uc01-zadost-o-registraci-uzivatele" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="registrace-uzivatele">
+<h2>Registrace uživatele<a class="headerlink" href="#registrace-uzivatele" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/uc01.png" src="_images/uc01.png" />
+<div class="section" id="uc01-registrace-pristupu-do-portalu">
+<h3>UC01 Registrace přístupu do portálu<a class="headerlink" href="#uc01-registrace-pristupu-do-portalu" title="Permalink to this headline">¶</a></h3>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel publikace</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
+<li>Nakladatel/vydavatel zobrazí web stránku <a class="reference external" href="http://www.e-deposit.cz">http://www.e-deposit.cz</a></li>
+<li>Systém zobrazí úvodní stránku<ul>
+<li>představení</li>
+<li>dokumentace</li>
+<li>registrace</li>
+</ul>
+</li>
+<li>Nakladatel/vydatavel klikne na linku &#8220;Zaregistrovat&#8221;</li>
+<li>Nakladatel/vydavatel zadá přihlašovací údaje</li>
+<li>Systém zobrazí uvítací stránku</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
 </div>
-<div class="section" id="uc02-zadost-o-prideleni-isbn">
-<h2>UC02 Žádost o přidělení ISBN<a class="headerlink" href="#uc02-zadost-o-prideleni-isbn" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="uc02-vyplneni-smlouvy">
+<h3>UC02 Vyplnění smlouvy<a class="headerlink" href="#uc02-vyplneni-smlouvy" title="Permalink to this headline">¶</a></h3>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel publikace</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel provedl registraci přístupu do portálu.</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic">
+<li><p class="first">Nakladatel/vydavatel zobrazí web stránku <a class="reference external" href="http://www.e-deposit.cz">http://www.e-deposit.cz</a></p>
+</li>
+<li><p class="first">Systém zobrazí úvodní stránku</p>
+<ul class="simple">
+<li>představení</li>
+<li>dokumentace</li>
+<li>registrace</li>
+<li>přihlášení</li>
+</ul>
+</li>
+<li><p class="first">Nakladatel/vydatavel klikne na linku &#8220;Přihlásit se&#8221;</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel zadá přihlašovací údaje</p>
+</li>
+<li><p class="first">Systém zobrazí uvítací stránku s volbami:</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8220;zadat číslo smlouvy&#8221;</li>
+<li>&#8220;podepsat smlouvu&#8221;</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">nakladatel/vydavatel klikne na &#8220;podepsat smlouvu&#8221;</p>
+<ol class="arabic simple">
+<li>systém zobrazí formulář na vyplnění údajů</li>
+<li>nakladatel/vydavatel vyplní údaje o sobě:<ul>
+<li>to jsou údaje, co budou na smlouvě</li>
+</ul>
+</li>
+<li>nakladatel/vydavatel odešle formulář</li>
+<li>systém vytvoří smlouvu k podpisu<ul>
+<li>použije údaje, co nakladatel/vydavatel vložil</li>
+</ul>
+</li>
+<li>Nakladatatel/vydavatel si smlouvu stáhne a podepíše ji</li>
+<li>Nakladatatel/vydavatel smlouvu odnese do NKP</li>
+</ol>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+<ul class="simple">
+<li>systém obsahuje smlouvu čekající k podpisu</li>
+</ul>
+</div>
+<div class="section" id="uc03-vlozeni-zadosti-o-registraci-nakladatele-vydavatele">
+<h3>UC03 Vložení žádosti o registraci nakladatele/vydavatele<a class="headerlink" href="#uc03-vlozeni-zadosti-o-registraci-nakladatele-vydavatele" title="Permalink to this headline">¶</a></h3>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel publikace</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel je přihlášený do portálu</li>
+<li>Nakladatel/vydavatel podepsal smlouvu s NKP o zpřístupnění e-publikací.</li>
+<li>Pracovník akvizice smlouvu potvrdil</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
+<li>Systém zobrazí uvítací stránku<ul>
+<li>číslo smlouvy, pokud je již zadané</li>
+<li>přehled vložených žádostí o registraci</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="6">
+<li>Pokud nemá uživatel zadané číslo smlouvy<ol class="arabic">
+<li>systém zobrazí dialog s volbami<ul>
+<li>&#8220;zadat číslo smlouvy&#8221;</li>
+<li>&#8220;podepsat smlouvu&#8221;</li>
+</ul>
+</li>
+<li>KDYŽ nakladatel/vydavatel klikne na &#8220;zadat číslo smlouvy&#8221;<ol class="arabic">
+<li>systém zobrazí dialog na zadání čísla smlouvy</li>
+</ol>
+</li>
+<li>KDYŽ nakladatel/vydavatel klikne na &#8220;podepsat smlouvu&#8221;<ol class="arabic">
+<li>systém zobrazí<ul>
+<li>postup, jak podepsat smlouvu</li>
+<li>linku s prázdnou smlouvou</li>
+</ul>
+</li>
+<li>Nakladatatel/vydavatel si smlouvu stáhne a vyplní ji</li>
+<li>Nakladatatel/vydavatel smlouvu odnese do NKP</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Systém zobrazí dialog pro zadání čísla smlouvy</li>
+<li>Nakladatel/vydavatel zadá číslo smlouvy</li>
+<li>Systém zobrazí přehled odeslaných žádost o registraci</li>
+<li>Nakladatel/vydavatel klikne na linku &#8220;Nová žádost o registraci uživatele&#8221;</li>
+<li>Systém zobrazí formulář a vyzve k vyplnění</li>
+<li>Nakladatel/vydavatel publikace vyplní:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>přihlašovací jméno, pod kterým chce vystupovat</li>
+<li>role, jaké mají být uživateli přiřazeny</li>
+<li>email, na který mají přijít přihlašovací údaje</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="13">
+<li>Nakladatel/vydatavel publikace klikne na tlačítko &#8220;Odeslat žádost&#8221;</li>
+<li>Systém zobrazí informaci o přijetí žádosti a o tom, že pošle email s výsledky</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>zobrazí také linku s uloženou žádostí</li>
+<li>zobrazí tlačítko &#8220;Hotovo&#8221; a &#8220;Další žádost o registraci&#8221;</li>
+</ul>
+</div></blockquote>
+<p><em>následné podmínky</em>:</p>
+<ul class="simple">
+<li>systém obsahuje min. jednu žádost o registraci uživatele</li>
+</ul>
+<p>UC02 Úprava žádosti o registraci uživatele</p>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel publikace</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel vložil do systému žádost o registraci uživatele.</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
+<li>Nakladatel/vydavatel publikace klikne na linku &#8220;Moje žádosti o registraci uživatele&#8221;</li>
+<li>Systém zobrazí formulář a vyzve k vyplnění</li>
+<li>Nakladatel/vydavatel publikace vyplní:<ul>
+<li>číslo smlouvy</li>
+<li>přihlašovací jméno, pod kterým chce vystupovat</li>
+<li>email, na který mají přijít přihlašovací údaje</li>
+</ul>
+</li>
+<li>Nakladatel/vydatavel publikace klikne na tlačítko &#8220;Odeslat žádost&#8221;</li>
+<li>Systém zobrazí informaci o přijetí žádosti a o tom, že pošle email s výsledky<ul>
+<li>zobrazí také linku s uloženou žádostí</li>
+</ul>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+<ul class="simple">
+<li>systém obsahuje žádost o registraci uživatele</li>
+</ul>
+</div>
+</div>
+<div class="section" id="registrace-isbn">
+<h2>Registrace ISBN<a class="headerlink" href="#registrace-isbn" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/uc02.png" src="_images/uc02.png" />
 </div>
 </div>
@@ -64,8 +243,13 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Případy užití</a><ul>
-<li><a class="reference internal" href="#uc01-zadost-o-registraci-uzivatele">UC01 Žádost o registraci uživatele</a></li>
-<li><a class="reference internal" href="#uc02-zadost-o-prideleni-isbn">UC02 Žádost o přidělení ISBN</a></li>
+<li><a class="reference internal" href="#registrace-uzivatele">Registrace uživatele</a><ul>
+<li><a class="reference internal" href="#uc01-registrace-pristupu-do-portalu">UC01 Registrace přístupu do portálu</a></li>
+<li><a class="reference internal" href="#uc02-vyplneni-smlouvy">UC02 Vyplnění smlouvy</a></li>
+<li><a class="reference internal" href="#uc03-vlozeni-zadosti-o-registraci-nakladatele-vydavatele">UC03 Vložení žádosti o registraci nakladatele/vydavatele</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#registrace-isbn">Registrace ISBN</a></li>
 </ul>
 </li>
 </ul>

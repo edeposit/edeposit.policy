@@ -1,3 +1,22 @@
 @startuml
-:Nakladatel/vydavatel publikace: --> (Zadat žmádost o registraci uživatele)
+left to right direction
+title Registrace uživatele
+skinparam packageStyle rect
+actor :Nakladatel/vydavatel:
+actor :Pracovník akvizice:
+actor :Správce systému:
+
+rectangle  {
+	  :Nakladatel/vydavatel: --> (UC01 Registrace přístupu do portálu)
+	  :Nakladatel/vydavatel: --> (UC02 Vyplnění smlouvy)
+	  :Nakladatel/vydavatel: --> (UC03 Vložení žádosti o registraci nakladatele)
+	  :Nakladatel/vydavatel: --> (UC03 Úprava žádosti o registraci nakladatele)
+	  :Pracovník akvizice: -left-> (UC05 Vložení smlouvy s nakladatelem/vydavatelem)
+	  :Pracovník akvizice: -left-> (UC06 Úprava smlouvy s nakladatelem/vydavatelem)
+	  :Pracovník akvizice: -left-> (UC07 Potvrzení smlouvy s nakladatelem/vydavatelem)
+	  :Pracovník akvizice: -left-> (UC08 Zamítnutí smlouvy s nakladatelem/vydavatelem )
+	  :Pracovník akvizice: -left-> (UC09 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem)
+	  :Správce systému: -left-> (UC10 Vytvoření účtu pro nakladatele/vydavatele)
+	  :Správce systému: -left-> (UC11 Zakázání účtu pro nakladatele/vydavatele)
+}
 @enduml

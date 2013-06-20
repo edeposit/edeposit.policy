@@ -1,4 +1,6 @@
 @startuml
+left to right direction
+title Registrace ISBN
 :Nakladatel/vydavatel publikace: --> (Zadat žádost o registraci ISBN)
 :Nakladatel/vydavatel publikace: --> (Prohledávat registrovaná ISBN)		      
 @enduml
