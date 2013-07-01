@@ -6,31 +6,8 @@ Registrace uživatele
 
 .. image:: uc01.png
 
-
 UC01 Registrace přístupu do portálu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*účastníci*:
-
-- Nakladatel/vydavatel publikace
-
-*vstupní podmínky*:
-
-*tok událostí*:
-
-1. Nakladatel/vydavatel zobrazí web stránku http://www.e-deposit.cz
-2. Systém zobrazí úvodní stránku
-
-   - představení
-   - dokumentace
-   - registrace  
-
-3. Nakladatel/vydatavel klikne na linku "Zaregistrovat"
-4. Nakladatel/vydavatel zadá přihlašovací údaje
-5. Systém zobrazí uvítací stránku
-
-*následné podmínky*:
-
 
 UC02 Vyplnění smlouvy
 ~~~~~~~~~~~~~~~~~~~~~
@@ -84,13 +61,9 @@ UC03 Vložení žádosti o registraci nakladatele/vydavatele
 
 *účastníci*:
 
-- Nakladatel/vydavatel publikace
+- Pracovník akvizice
 
 *vstupní podmínky*:
-
-- Nakladatel/vydavatel je přihlášený do portálu
-- Nakladatel/vydavatel podepsal smlouvu s NKP o zpřístupnění e-publikací.
-- Pracovník akvizice smlouvu potvrdil
 
 *tok událostí*:
 
@@ -144,8 +117,8 @@ UC03 Vložení žádosti o registraci nakladatele/vydavatele
 - systém obsahuje min. jednu žádost o registraci uživatele
 
 
-UC02 Úprava žádosti o registraci uživatele
-
+UC03 Registrace přístupu do portálu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 
@@ -153,26 +126,22 @@ UC02 Úprava žádosti o registraci uživatele
 
 *vstupní podmínky*:
 
-- Nakladatel/vydavatel vložil do systému žádost o registraci uživatele.
-
 *tok událostí*:
 
-1. Nakladatel/vydavatel publikace klikne na linku "Moje žádosti o registraci uživatele"
-2. Systém zobrazí formulář a vyzve k vyplnění
-3. Nakladatel/vydavatel publikace vyplní:
+1. Nakladatel/vydavatel zobrazí web stránku http://www.e-deposit.cz
+2. Systém zobrazí úvodní stránku
 
-   - číslo smlouvy
-   - přihlašovací jméno, pod kterým chce vystupovat
-   - email, na který mají přijít přihlašovací údaje
+   - představení
+   - dokumentace
+   - registrace  
 
-4. Nakladatel/vydatavel publikace klikne na tlačítko "Odeslat žádost"
-5. Systém zobrazí informaci o přijetí žádosti a o tom, že pošle email s výsledky
-
-   - zobrazí také linku s uloženou žádostí
+3. Nakladatel/vydatavel klikne na linku "Zaregistrovat"
+4. Nakladatel/vydavatel zadá přihlašovací údaje
+5. Systém zobrazí uvítací stránku
 
 *následné podmínky*:
 
-- systém obsahuje žádost o registraci uživatele
+
 
 Registrace ISBN
 ................
