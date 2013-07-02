@@ -6,8 +6,8 @@
 .. (project-task run "*shell*" "make html")
 .. (project-task run-show "*shell*" "google-chrome file:///opt/e-deposit/src/edeposit.policy/docs/_build/html/index.html")
 
-SW dokumentace
-===============
+E-Deposit - SW dokumentace
+==========================
 
 .. sectionauthor:: Jan Stavěl <stavel.jan at gmail.com>
 
