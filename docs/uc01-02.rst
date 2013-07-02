@@ -1,0 +1,36 @@
+UC01-02 Registrace nakladatele/vydavatele
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*účastníci*:
+
+- Pracovník akvizice
+
+*vstupní podmínky*:
+
+- pracovník akvizice má k dispozici vyplněnou smlouvu pro nakladatele
+- pracovník akvizice je přihlášený do systému
+
+*tok událostí*:
+
+1. Systém zobrazí úvodní stránku
+
+   - přehled e-publikací k akvizici
+   - linku na vytváření účtů pro nakladatele
+   - přehled nakladatelů/vydavatelů
+      
+2. Pracovník akvizice klikne na linku "Nový účet pro nakladatele"
+3. Systém poskytne formulář pro zadání údajů o nakladateli
+
+   - přihlašovací jméno
+   - název nakladatele
+   - adresa nakladatele
+   - url nakladatele
+   - email kontaktní osoby
+
+   - upload kopie podepsané smlouvy
+
+4. Pracovník akvizice odešle údaje do systému
+5. Systém zobrazí potvrení o uložení a zobrazí přidělené heslo
+          
+*následné podmínky*:
+

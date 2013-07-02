@@ -1,0 +1,53 @@
+UC03-01 Vložení souborů
+~~~~~~~~~~~~~~~~~~~~~~~
+
+*účastníci*:
+
+- Nakladatel/vydavatel
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel se přihlásil do systému
+
+*tok událostí*:
+
+1. Systém zobrazí úvodní stránku
+   
+   - přehled vložených knih, předloh, časopisů
+   - přehled vložených knih, předloh, časopisů, co čekají na akci nakladatele/vydavatele
+   - vyhledávací políčko u každého přehledu
+   - linka "Nová kniha, předloha, časopis"
+   - linka s názvem akce u každé knihy, předlohy, časopisu 
+   - linka "upravit si heslo, údaje o uživateli"
+   
+   název akce se bude lišit podle toho, v jakém je kniha,předloha,časopis stavu
+
+2. Nakladatel/vydavatel klikne na "Nová kniha, předloha, časopis"
+3. Systém zobrazí přehled podporovaných formátů
+4. Systém zobrazí formulář:
+   
+   - pro vložení hlavních souborů
+   - pro vložení binárních příloh
+
+   u každého hlavního souboru budou vstupy pro:
+
+   - popis souboru
+   - ISBN
+   - URL
+
+   u již vložených souborů systém nabídne možnost soubor smazat.
+
+5. Nakladatel/vydavatel odešle formulář
+6. Systém provede kontroly souborů
+7. IF kontroly proběhnou v pořádku
+  
+  7.1. Systém zobrazí linku "Vyplnění metadat"
+
+8. IF kontroly neproběhnou v pořádku
+
+  8.1. Systém zobrazí hlášku s chybou
+  8.2. Systém opakuje krok 4.
+
+*následné podmínky*:
+
+V systému jsou uloženy soubory k nové e-publikaci.

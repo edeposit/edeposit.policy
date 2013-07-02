@@ -1,0 +1,30 @@
+UC02-02 Prohledávání registrovaných ISBN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*účastníci*:
+
+- Nakladatel/vydavatel
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel otevřel úvodní stránku
+
+*tok událostí*:
+
+1. Systém zobrazí úvodní stránku
+
+   - informace o e-deposit
+   - linku se smlouvou pro nakladatele ke stažení
+   - linku pro přihlášení
+      
+2. Nakladatel/vydavatel klikne na "Registrace ISBN"
+3. Systém poskytne přehled registrovaných ISBN
+
+   - zobrazí linku "Nová registrace"
+   - políčko pro vyhledávání ISBN
+
+4. Nakladatel/vydavatel zadá do políčka část ISBN
+5. Systém omezí přehled registrovaných ISBN podle zadané části ISBN
+   
+*následné podmínky*:
+

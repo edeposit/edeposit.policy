@@ -1,0 +1,37 @@
+UC01-04 Detail účtu nakladatele/vydavatele
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*účastníci*:
+
+- Pracovník akvizice
+
+*vstupní podmínky*:
+
+- pracovník akvizice je přihlášený do systému
+
+*tok událostí*:
+
+1. Systém zobrazí úvodní stránku:
+
+   - přehled e-publikací k akvizici
+   - linku na vytváření účtů pro nakladatele
+   - přehled nakladatelů/vydavatelů
+   - vyhledávání nakladatelů/vydavatelů
+      
+2. Pracovník do vyhledávacího políčka zadá název nakladatele
+3. Systém zobrazí přehled nakladatelů, kteří odpovídají zadání
+4. Pracovník klikne na linku vybraného nakladatele/vydavatele
+5. Systém zobrazí detail nakladatele/vydavatele
+
+   - přihlašovací jméno
+   - název nakladatele
+   - adresa nakladatele
+   - url nakladatele
+   - email kontaktní osoby
+
+   - download kopie podepsané smlouvy
+
+   - linku na pozastaveni platnosti
+
+*následné podmínky*:
+

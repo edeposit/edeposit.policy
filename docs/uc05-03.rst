@@ -1,0 +1,33 @@
+UC05-08 Předání dat do Systému zpřístupnění
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note:: p. Uhlíř určuje, kdo spravuje Kramerius v NKP
+    
+    Pavel Kocourek a Martin Lhoták znají podrobnosti o formátu OAI-PMH, OPDS
+
+*účastníci*:
+
+- Systém
+- Kramerius
+
+*vstupní podmínky*:
+
+- Systém načetl podrobné údaje z Aleph
+
+*tok událostí*:
+
+1. Systém připraví xml ve formátu:
+
+   - OAI-PMH
+   nebo
+   - OPDS
+
+   TODO 
+
+2. Systém odešle xml data do:
+
+  - systému Kramerius přes TODO
+  nebo
+  - systém TODO - zvolit systém
+
+*následné podmínky*:

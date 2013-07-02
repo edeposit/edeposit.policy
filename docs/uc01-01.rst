@@ -1,0 +1,24 @@
+UC01-01 Stažení smlouvy
+~~~~~~~~~~~~~~~~~~~~~~~
+
+*účastníci*:
+
+- Nakladatel/vydavatel
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel otevřel úvodní stránku
+
+*tok událostí*:
+
+1. Systém zobrazí úvodní stránku
+   - informace o e-deposit
+   - linku se smlouvou pro nakladatele ke stažení
+   - linku pro přihlášení
+      
+2. Nakladatel/vydavatel klikne na "Smlouva pro nakladatele"
+3. Systém poskytne smlouvu k uložení
+
+*následné podmínky*:
+
+Nakladatel/vydavatel může vyplnit smlouvu pro nakladatele.

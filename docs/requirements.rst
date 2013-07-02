@@ -40,8 +40,10 @@ Požadavky které jsou kladeny na funkci systému.
 - systém zobrazuje historii všech zadaných **ISBN**, 
   i těch, co prošly jinou cestou, než pres e-deposit
 - systém zobrazuje přehled o tom, co se s e-publikací děje
-- systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu, 
+- systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu,
   nebo jen ochranu na binární úrovni
+- systém získává informace o aplikaci dlouhodobé ochrany (tj. e-publikace byla přeformátována na novější formát)
+- systém umí omezit přístup nakladatele/vydavatele na readonly přístup (jen status vložených knih)
 
 Omezení systému
 ...............

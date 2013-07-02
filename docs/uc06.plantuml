@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+title Zadávání opravy elektronické knihy
+skinparam packageStyle rect
+
+actor :Nakladatel/vydavatel:
+
+rectangle  {
+	   :Nakladatel/vydavatel: --> (Přehled vložených souborů knih a jejich metadat)	
+	   :Nakladatel/vydavatel: --> (Vložení souborů)
+	   :Nakladatel/vydavatel: --> (Nahrazení souborů)
+	   :Nakladatel/vydavatel: --> (Vyplnění metadat)
+	   :Nakladatel/vydavatel: --> (Sloučení metadat)
+	   :Nakladatel/vydavatel: --> (Odeslání opravy elektronické knihy)
+}
+@enduml

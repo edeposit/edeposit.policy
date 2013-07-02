@@ -8,10 +8,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>E-Deposit - SW dokumentace &mdash; E-Deposit 1.0 documentation</title>
+    <title>E-Deposit - SW dokumentace</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -25,24 +26,24 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="E-Deposit 1.0 documentation" href="#" /> 
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="top" title="" href="#" /> 
   </head>
   <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li><a href="#">E-Deposit 1.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+      <div class="header"><h1 class="heading"><a href="#">
+          <span></span></a></h1>
+        <h2 class="heading"><span>E-Deposit - SW dokumentace</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        <a class="uplink" href="#">Contents</a>
+        </p>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
+      </div>
+      <div class="content">
+        
+        
   <div class="section" id="e-deposit-sw-dokumentace">
 <h1>E-Deposit - SW dokumentace<a class="headerlink" href="#e-deposit-sw-dokumentace" title="Permalink to this headline">¶</a></h1>
 <p><em>Section author: Jan Stavěl &lt;stavel.jan at gmail.com&gt;</em></p>
@@ -56,13 +57,26 @@
 </li>
 <li><a class="reference internal" href="#slovnicek-pojmu" id="id4">Slovníček pojmů</a></li>
 <li><a class="reference internal" href="#pripady-uziti" id="id5">Případy užití</a><ul>
-<li><a class="reference internal" href="#registrace-uzivatele" id="id6">Registrace uživatele</a><ul>
-<li><a class="reference internal" href="#uc01-registrace-pristupu-do-portalu" id="id7">UC01 Registrace přístupu do portálu</a></li>
-<li><a class="reference internal" href="#uc02-vyplneni-smlouvy" id="id8">UC02 Vyplnění smlouvy</a></li>
-<li><a class="reference internal" href="#uc03-vlozeni-zadosti-o-registraci-nakladatele-vydavatele" id="id9">UC03 Vložení žádosti o registraci nakladatele/vydavatele</a></li>
+<li><a class="reference internal" href="#uc01-registrace-uzivatele" id="id6">UC01 Registrace uživatele</a><ul>
+<li><a class="reference internal" href="#uc01-01-stazeni-smlouvy" id="id7">UC01-01 Stažení smlouvy</a></li>
+<li><a class="reference internal" href="#uc01-02-registrace-nakladatele-vydavatele" id="id8">UC01-02 Registrace nakladatele/vydavatele</a></li>
+<li><a class="reference internal" href="#uc01-03-pozastaveni-platnosti-smlouvy-s-nakladatelem-vydavatelem" id="id9">UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem</a></li>
+<li><a class="reference internal" href="#uc01-04-detail-uctu-nakladatele-vydavatele" id="id10">UC01-04 Detail účtu nakladatele/vydavatele</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#registrace-isbn" id="id10">Registrace ISBN</a></li>
+<li><a class="reference internal" href="#uc02-registrace-isbn" id="id11">UC02 Registrace ISBN</a><ul>
+<li><a class="reference internal" href="#uc02-01-zadani-zadosti-o-registraci-isbn" id="id12">UC02-01 Zadání žádosti o registraci ISBN</a></li>
+<li><a class="reference internal" href="#uc02-02-prohledavani-registrovanych-isbn" id="id13">UC02-02 Prohledávání registrovaných ISBN</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#uc03-zadavani-elektronicke-knihy" id="id14">UC03 - Zadávání elektronické knihy</a><ul>
+<li><a class="reference internal" href="#uc03-01-vlozeni-souboru" id="id15">UC03-01 Vložení souborů</a></li>
+<li><a class="reference internal" href="#uc03-02-nahrazeni-souboru" id="id16">UC03-02 Nahrazení souborů</a></li>
+<li><a class="reference internal" href="#uc03-03-vyplneni-metadat" id="id17">UC03-03 Vyplnění metadat</a></li>
+<li><a class="reference internal" href="#uc03-04-slouceni-metadat" id="id18">UC03-04 Sloučení metadat</a></li>
+<li><a class="reference internal" href="#uc03-04-odeslani-elektronicke-knihy" id="id19">UC03-04 Odeslání elektronické knihy</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -113,6 +127,8 @@ i těch, co prošly jinou cestou, než pres e-deposit</li>
 <li>systém zobrazuje přehled o tom, co se s e-publikací děje</li>
 <li>systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu,
 nebo jen ochranu na binární úrovni</li>
+<li>systém získává informace o aplikaci dlouhodobé ochrany (tj. e-publikace byla přeformátována na novější formát)</li>
+<li>systém umí omezit přístup nakladatele/vydavatele na readonly přístup (jen status vložených knih)</li>
 </ul>
 </div>
 <div class="section" id="omezeni-systemu">
@@ -144,192 +160,519 @@ nebo jen ochranu na binární úrovni</li>
 </div>
 <div class="section" id="pripady-uziti">
 <h2><a class="toc-backref" href="#id5">Případy užití</a><a class="headerlink" href="#pripady-uziti" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="registrace-uzivatele">
-<h3><a class="toc-backref" href="#id6">Registrace uživatele</a><a class="headerlink" href="#registrace-uzivatele" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="uc01-registrace-uzivatele">
+<h3><a class="toc-backref" href="#id6">UC01 Registrace uživatele</a><a class="headerlink" href="#uc01-registrace-uzivatele" title="Permalink to this headline">¶</a></h3>
 <img alt="_images/uc01.png" src="_images/uc01.png" />
-<div class="section" id="uc01-registrace-pristupu-do-portalu">
-<h4><a class="toc-backref" href="#id7">UC01 Registrace přístupu do portálu</a><a class="headerlink" href="#uc01-registrace-pristupu-do-portalu" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="uc01-01-stazeni-smlouvy">
+<h4><a class="toc-backref" href="#id7">UC01-01 Stažení smlouvy</a><a class="headerlink" href="#uc01-01-stazeni-smlouvy" title="Permalink to this headline">¶</a></h4>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel publikace</li>
+<li>Nakladatel/vydavatel</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel otevřel úvodní stránku</li>
+</ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic simple">
-<li>Nakladatel/vydavatel zobrazí web stránku <a class="reference external" href="http://www.e-deposit.cz">http://www.e-deposit.cz</a></li>
+<li>Systém zobrazí úvodní stránku
+- informace o e-deposit
+- linku se smlouvou pro nakladatele ke stažení
+- linku pro přihlášení</li>
+<li>Nakladatel/vydavatel klikne na &#8220;Smlouva pro nakladatele&#8221;</li>
+<li>Systém poskytne smlouvu k uložení</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+<p>Nakladatel/vydavatel může vyplnit smlouvu pro nakladatele.</p>
+</div>
+<div class="section" id="uc01-02-registrace-nakladatele-vydavatele">
+<h4><a class="toc-backref" href="#id8">UC01-02 Registrace nakladatele/vydavatele</a><a class="headerlink" href="#uc01-02-registrace-nakladatele-vydavatele" title="Permalink to this headline">¶</a></h4>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Pracovník akvizice</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>pracovník akvizice má k dispozici vyplněnou smlouvu pro nakladatele</li>
+<li>pracovník akvizice je přihlášený do systému</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
 <li>Systém zobrazí úvodní stránku<ul>
-<li>představení</li>
-<li>dokumentace</li>
-<li>registrace</li>
+<li>přehled e-publikací k akvizici</li>
+<li>linku na vytváření účtů pro nakladatele</li>
+<li>přehled nakladatelů/vydavatelů</li>
 </ul>
 </li>
-<li>Nakladatel/vydatavel klikne na linku &#8220;Zaregistrovat&#8221;</li>
-<li>Nakladatel/vydavatel zadá přihlašovací údaje</li>
-<li>Systém zobrazí uvítací stránku</li>
+<li>Pracovník akvizice klikne na linku &#8220;Nový účet pro nakladatele&#8221;</li>
+<li>Systém poskytne formulář pro zadání údajů o nakladateli<ul>
+<li>přihlašovací jméno</li>
+<li>název nakladatele</li>
+<li>adresa nakladatele</li>
+<li>url nakladatele</li>
+<li>email kontaktní osoby</li>
+<li>upload kopie podepsané smlouvy</li>
+</ul>
+</li>
+<li>Pracovník akvizice odešle údaje do systému</li>
+<li>Systém zobrazí potvrení o uložení a zobrazí přidělené heslo</li>
 </ol>
 <p><em>následné podmínky</em>:</p>
 </div>
-<div class="section" id="uc02-vyplneni-smlouvy">
-<h4><a class="toc-backref" href="#id8">UC02 Vyplnění smlouvy</a><a class="headerlink" href="#uc02-vyplneni-smlouvy" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="uc01-03-pozastaveni-platnosti-smlouvy-s-nakladatelem-vydavatelem">
+<h4><a class="toc-backref" href="#id9">UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem</a><a class="headerlink" href="#uc01-03-pozastaveni-platnosti-smlouvy-s-nakladatelem-vydavatelem" title="Permalink to this headline">¶</a></h4>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel publikace</li>
+<li>Pracovník akvizice</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel provedl registraci přístupu do portálu.</li>
+<li>pracovník akvizice je přihlášený do systému</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
+<li>Systém zobrazí úvodní stránku:<ul>
+<li>přehled e-publikací k akvizici</li>
+<li>linku na vytváření účtů pro nakladatele</li>
+<li>přehled nakladatelů/vydavatelů</li>
+<li>vyhledávání nakladatelů/vydavatelů</li>
+</ul>
+</li>
+<li>Pracovník do vyhledávacího políčka zadá název nakladatele</li>
+<li>Systém zobrazí přehled nakladatelů, kteří odpovídají zadání</li>
+<li>Pracovník klikne na linku vybraného nakladatele/vydavatele</li>
+<li>Systém zobrazí detail nakladatele/vydavatele<ul>
+<li>přihlašovací jméno</li>
+<li>název nakladatele</li>
+<li>adresa nakladatele</li>
+<li>url nakladatele</li>
+<li>email kontaktní osoby</li>
+<li>download kopie podepsané smlouvy</li>
+<li>linku na pozastaveni platnosti</li>
+</ul>
+</li>
+</ol>
+<ol class="arabic simple" start="4">
+<li>Pracovník akvizice klikne na linku &#8220;Pozastavení platnosti smlouvy&#8221;</li>
+<li>Systém zobrazí potvrzení o pozastavení platnosti smlouvy a zobrazí detail nakladatele/vydavatele<ul>
+<li>zobrazí linku na obnovení platnosti smlouvy</li>
+</ul>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+<p>Nakladatel/vydavatel má k dispozici jen přístup ke svým údajům ke čtení a nemůže si stahovat soubory.</p>
+</div>
+<div class="section" id="uc01-04-detail-uctu-nakladatele-vydavatele">
+<h4><a class="toc-backref" href="#id10">UC01-04 Detail účtu nakladatele/vydavatele</a><a class="headerlink" href="#uc01-04-detail-uctu-nakladatele-vydavatele" title="Permalink to this headline">¶</a></h4>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Pracovník akvizice</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>pracovník akvizice je přihlášený do systému</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
+<li>Systém zobrazí úvodní stránku:<ul>
+<li>přehled e-publikací k akvizici</li>
+<li>linku na vytváření účtů pro nakladatele</li>
+<li>přehled nakladatelů/vydavatelů</li>
+<li>vyhledávání nakladatelů/vydavatelů</li>
+</ul>
+</li>
+<li>Pracovník do vyhledávacího políčka zadá název nakladatele</li>
+<li>Systém zobrazí přehled nakladatelů, kteří odpovídají zadání</li>
+<li>Pracovník klikne na linku vybraného nakladatele/vydavatele</li>
+<li>Systém zobrazí detail nakladatele/vydavatele<ul>
+<li>přihlašovací jméno</li>
+<li>název nakladatele</li>
+<li>adresa nakladatele</li>
+<li>url nakladatele</li>
+<li>email kontaktní osoby</li>
+<li>download kopie podepsané smlouvy</li>
+<li>linku na pozastaveni platnosti</li>
+</ul>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+</div>
+</div>
+<div class="section" id="uc02-registrace-isbn">
+<h3><a class="toc-backref" href="#id11">UC02 Registrace ISBN</a><a class="headerlink" href="#uc02-registrace-isbn" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/uc02.png" src="_images/uc02.png" />
+<div class="section" id="uc02-01-zadani-zadosti-o-registraci-isbn">
+<h4><a class="toc-backref" href="#id12">UC02-01 Zadání žádosti o registraci ISBN</a><a class="headerlink" href="#uc02-01-zadani-zadosti-o-registraci-isbn" title="Permalink to this headline">¶</a></h4>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel otevřel úvodní stránku</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
+<li>Systém zobrazí úvodní stránku<ul>
+<li>informace o e-deposit</li>
+<li>linku se smlouvou pro nakladatele ke stažení</li>
+<li>linku pro přihlášení</li>
+</ul>
+</li>
+<li>Nakladatel/vydavatel klikne na &#8220;Registrace ISBN&#8221;</li>
+<li>Systém poskytne přehled registrovaných ISBN<ul>
+<li>zobrazí linku &#8220;Nová registrace&#8221;</li>
+</ul>
+</li>
+<li>Nakladatel/vydavatel klikne na linku &#8220;Nová registrace&#8221;</li>
+<li>Systém zobrazí formulář:<ul>
+<li>TODO</li>
+</ul>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+<p>V systému je nová žádost o registraci ISBN.</p>
+</div>
+<div class="section" id="uc02-02-prohledavani-registrovanych-isbn">
+<h4><a class="toc-backref" href="#id13">UC02-02 Prohledávání registrovaných ISBN</a><a class="headerlink" href="#uc02-02-prohledavani-registrovanych-isbn" title="Permalink to this headline">¶</a></h4>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel otevřel úvodní stránku</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic simple">
+<li>Systém zobrazí úvodní stránku<ul>
+<li>informace o e-deposit</li>
+<li>linku se smlouvou pro nakladatele ke stažení</li>
+<li>linku pro přihlášení</li>
+</ul>
+</li>
+<li>Nakladatel/vydavatel klikne na &#8220;Registrace ISBN&#8221;</li>
+<li>Systém poskytne přehled registrovaných ISBN<ul>
+<li>zobrazí linku &#8220;Nová registrace&#8221;</li>
+<li>políčko pro vyhledávání ISBN</li>
+</ul>
+</li>
+<li>Nakladatel/vydavatel zadá do políčka část ISBN</li>
+<li>Systém omezí přehled registrovaných ISBN podle zadané části ISBN</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+</div>
+</div>
+<div class="section" id="uc03-zadavani-elektronicke-knihy">
+<h3><a class="toc-backref" href="#id14">UC03 - Zadávání elektronické knihy</a><a class="headerlink" href="#uc03-zadavani-elektronicke-knihy" title="Permalink to this headline">¶</a></h3>
+<img alt="_images/uc03.png" src="_images/uc03.png" />
+<div class="section" id="uc03-01-vlozeni-souboru">
+<h4><a class="toc-backref" href="#id15">UC03-01 Vložení souborů</a><a class="headerlink" href="#uc03-01-vlozeni-souboru" title="Permalink to this headline">¶</a></h4>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel se přihlásil do systému</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic">
-<li><p class="first">Nakladatel/vydavatel zobrazí web stránku <a class="reference external" href="http://www.e-deposit.cz">http://www.e-deposit.cz</a></p>
-</li>
 <li><p class="first">Systém zobrazí úvodní stránku</p>
 <ul class="simple">
-<li>představení</li>
-<li>dokumentace</li>
-<li>registrace</li>
-<li>přihlášení</li>
+<li>přehled vložených knih, předloh, časopisů</li>
+<li>přehled vložených knih, předloh, časopisů, co čekají na akci nakladatele/vydavatele</li>
+<li>vyhledávací políčko u každého přehledu</li>
+<li>linka &#8220;Nová kniha, předloha, časopis&#8221;</li>
+<li>linka s názvem akce u každé knihy, předlohy, časopisu</li>
+<li>linka &#8220;upravit si heslo, údaje o uživateli&#8221;</li>
 </ul>
+<p>název akce se bude lišit podle toho, v jakém je kniha,předloha,časopis stavu</p>
 </li>
-<li><p class="first">Nakladatel/vydatavel klikne na linku &#8220;Přihlásit se&#8221;</p>
+<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Nová kniha, předloha, časopis&#8221;</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel zadá přihlašovací údaje</p>
+<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
 </li>
-<li><p class="first">Systém zobrazí uvítací stránku s volbami:</p>
-<blockquote>
-<div><ul class="simple">
-<li>&#8220;zadat číslo smlouvy&#8221;</li>
-<li>&#8220;podepsat smlouvu&#8221;</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">nakladatel/vydavatel klikne na &#8220;podepsat smlouvu&#8221;</p>
-<ol class="arabic simple">
-<li>systém zobrazí formulář na vyplnění údajů</li>
-<li>nakladatel/vydavatel vyplní údaje o sobě:<ul>
-<li>to jsou údaje, co budou na smlouvě</li>
-</ul>
-</li>
-<li>nakladatel/vydavatel odešle formulář</li>
-<li>systém vytvoří smlouvu k podpisu<ul>
-<li>použije údaje, co nakladatel/vydavatel vložil</li>
-</ul>
-</li>
-<li>Nakladatatel/vydavatel si smlouvu stáhne a podepíše ji</li>
-<li>Nakladatatel/vydavatel smlouvu odnese do NKP</li>
-</ol>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
+<li><p class="first">Systém zobrazí formulář:</p>
 <ul class="simple">
-<li>systém obsahuje smlouvu čekající k podpisu</li>
+<li>pro vložení hlavních souborů</li>
+<li>pro vložení binárních příloh</li>
 </ul>
+<p>u každého hlavního souboru budou vstupy pro:</p>
+<ul class="simple">
+<li>popis souboru</li>
+<li>ISBN</li>
+<li>URL</li>
+</ul>
+<p>u již vložených souborů systém nabídne možnost soubor smazat.</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</li>
+<li><p class="first">Systém provede kontroly souborů</p>
+</li>
+<li><p class="first">IF kontroly proběhnou v pořádku</p>
+</li>
+</ol>
+<blockquote>
+<div>7.1. Systém zobrazí linku &#8220;Vyplnění metadat&#8221;</div></blockquote>
+<ol class="arabic simple" start="8">
+<li>IF kontroly neproběhnou v pořádku</li>
+</ol>
+<blockquote>
+<div>8.1. Systém zobrazí hlášku s chybou
+8.2. Systém opakuje krok 4.</div></blockquote>
+<p><em>následné podmínky</em>:</p>
+<p>V systému jsou uloženy soubory k nové e-publikaci.</p>
 </div>
-<div class="section" id="uc03-vlozeni-zadosti-o-registraci-nakladatele-vydavatele">
-<h4><a class="toc-backref" href="#id9">UC03 Vložení žádosti o registraci nakladatele/vydavatele</a><a class="headerlink" href="#uc03-vlozeni-zadosti-o-registraci-nakladatele-vydavatele" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="uc03-02-nahrazeni-souboru">
+<h4><a class="toc-backref" href="#id16">UC03-02 Nahrazení souborů</a><a class="headerlink" href="#uc03-02-nahrazeni-souboru" title="Permalink to this headline">¶</a></h4>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel publikace</li>
+<li>Nakladatel/vydavatel</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel je přihlášený do portálu</li>
-<li>Nakladatel/vydavatel podepsal smlouvu s NKP o zpřístupnění e-publikací.</li>
-<li>Pracovník akvizice smlouvu potvrdil</li>
+<li>Nakladatel/vydavatel se přihlásil do systému</li>
 </ul>
 <p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Systém zobrazí uvítací stránku<ul>
-<li>číslo smlouvy, pokud je již zadané</li>
-<li>přehled vložených žádostí o registraci</li>
-</ul>
+<ol class="arabic">
+<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
 </li>
-</ol>
-<ol class="arabic simple" start="6">
-<li>Pokud nemá uživatel zadané číslo smlouvy<ol class="arabic">
-<li>systém zobrazí dialog s volbami<ul>
-<li>&#8220;zadat číslo smlouvy&#8221;</li>
-<li>&#8220;podepsat smlouvu&#8221;</li>
-</ul>
+<li><p class="first">Nakladatel/vydavatel zadá do vyhledávácího políčka část ISBN, nebo URL, nebo popisu souboru</p>
 </li>
-<li>KDYŽ nakladatel/vydavatel klikne na &#8220;zadat číslo smlouvy&#8221;<ol class="arabic">
-<li>systém zobrazí dialog na zadání čísla smlouvy</li>
-</ol>
-</li>
-<li>KDYŽ nakladatel/vydavatel klikne na &#8220;podepsat smlouvu&#8221;<ol class="arabic">
-<li>systém zobrazí<ul>
-<li>postup, jak podepsat smlouvu</li>
-<li>linku s prázdnou smlouvou</li>
-</ul>
-</li>
-<li>Nakladatatel/vydavatel si smlouvu stáhne a vyplní ji</li>
-<li>Nakladatatel/vydavatel smlouvu odnese do NKP</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Systém zobrazí dialog pro zadání čísla smlouvy</li>
-<li>Nakladatel/vydavatel zadá číslo smlouvy</li>
-<li>Systém zobrazí přehled odeslaných žádost o registraci</li>
-<li>Nakladatel/vydavatel klikne na linku &#8220;Nová žádost o registraci uživatele&#8221;</li>
-<li>Systém zobrazí formulář a vyzve k vyplnění</li>
-<li>Nakladatel/vydavatel publikace vyplní:</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>přihlašovací jméno, pod kterým chce vystupovat</li>
-<li>role, jaké mají být uživateli přiřazeny</li>
-<li>email, na který mají přijít přihlašovací údaje</li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple" start="13">
-<li>Nakladatel/vydatavel publikace klikne na tlačítko &#8220;Odeslat žádost&#8221;</li>
-<li>Systém zobrazí informaci o přijetí žádosti a o tom, že pošle email s výsledky</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>zobrazí také linku s uloženou žádostí</li>
-<li>zobrazí tlačítko &#8220;Hotovo&#8221; a &#8220;Další žádost o registraci&#8221;</li>
-</ul>
-</div></blockquote>
-<p><em>následné podmínky</em>:</p>
+<li><p class="first">Systém zobrazí přehled vložených knih, předloh a časopisů, který odpovídá zadanému omezení</p>
 <ul class="simple">
-<li>systém obsahuje min. jednu žádost o registraci uživatele</li>
+<li>u každého záznamu je linka &#8220;opravit&#8221;</li>
 </ul>
-<p>UC02 Úprava žádosti o registraci uživatele</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;opravit&#8221;</p>
+</li>
+<li><p class="first">Systém zobrazí formulář:</p>
+<ul class="simple">
+<li>pro vložení hlavních souborů</li>
+<li>pro vložení binárních příloh</li>
+</ul>
+<p>u každého hlavního souboru budou vstupy pro:</p>
+<ul class="simple">
+<li>popis souboru</li>
+<li>ISBN</li>
+<li>URL</li>
+</ul>
+<p>u již vložených souborů systém nabídne možnost soubor smazat.</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</li>
+<li><p class="first">Systém provede kontroly souborů</p>
+</li>
+<li><p class="first">dále jako UC03-01/7, UC03-01/8</p>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
+<p>V systému jsou uloženy soubory k nové e-publikaci.</p>
+</div>
+<div class="section" id="uc03-03-vyplneni-metadat">
+<h4><a class="toc-backref" href="#id17">UC03-03 Vyplnění metadat</a><a class="headerlink" href="#uc03-03-vyplneni-metadat" title="Permalink to this headline">¶</a></h4>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel publikace</li>
+<li>Nakladatel/vydavatel</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel vložil do systému žádost o registraci uživatele.</li>
+<li>Nakladatel/vydavatel se přihlásil do systému</li>
 </ul>
 <p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Nakladatel/vydavatel publikace klikne na linku &#8220;Moje žádosti o registraci uživatele&#8221;</li>
-<li>Systém zobrazí formulář a vyzve k vyplnění</li>
-<li>Nakladatel/vydavatel publikace vyplní:<ul>
-<li>číslo smlouvy</li>
-<li>přihlašovací jméno, pod kterým chce vystupovat</li>
-<li>email, na který mají přijít přihlašovací údaje</li>
+<ol class="arabic">
+<li><p class="first">Systém zobrazí úvodní stránku</p>
+<ul class="simple">
+<li>přehled vložených knih, předloh, časopisů</li>
+<li>nabídne vložení knihy, předlohy, časopisu</li>
+<li>nabídne opravu knihy, předlohy, časopisu</li>
+<li>nabídne možnost upravit si heslo, údaje o uživateli</li>
 </ul>
 </li>
-<li>Nakladatel/vydatavel publikace klikne na tlačítko &#8220;Odeslat žádost&#8221;</li>
-<li>Systém zobrazí informaci o přijetí žádosti a o tom, že pošle email s výsledky<ul>
-<li>zobrazí také linku s uloženou žádostí</li>
+<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Nová elektronická kniha&#8221;</p>
+</li>
+<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
+</li>
+<li><p class="first">Systém zobrazí formulář:</p>
+<ul class="simple">
+<li>pro vložení hlavních souborů</li>
+<li>pro vložení binárních příloh</li>
 </ul>
+<p>u každého hlavního souboru budou vstupy pro:</p>
+<ul class="simple">
+<li>ISBN</li>
+<li>URL</li>
+</ul>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</li>
+<li><p class="first">Systém provede kontroly souborů</p>
+</li>
+<li><p class="first">Systém zobrazí formulář na zadání popisných metadat:</p>
+<ul class="simple">
+<li>název</li>
+<li>podnázev</li>
+<li>formát</li>
+<li>cena</li>
+<li>část</li>
+<li>název části</li>
+<li>autor</li>
+<li>další autoři</li>
+<li>edice</li>
+<li>číslo svazku</li>
+<li>místo</li>
+<li>vydání</li>
+<li>nakladatel</li>
+<li>měsíc a rok vydání</li>
+<li>vydáno v koedici</li>
+<li>pořadí vydání</li>
+</ul>
+<p>Systém předvyplní zobrazený formulář načtené ze souborů.</p>
+<ul class="simple">
+<li>volně přístupná e-publikace</li>
+<li>TODO údaje o licencovaných e-publikacích</li>
+</ul>
+</li>
+<li><p class="first">Nakladatel/vydavatel vyplní/opraví údaje</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
 </li>
 </ol>
 <p><em>následné podmínky</em>:</p>
+</div>
+<div class="section" id="uc03-04-slouceni-metadat">
+<h4><a class="toc-backref" href="#id18">UC03-04 Sloučení metadat</a><a class="headerlink" href="#uc03-04-slouceni-metadat" title="Permalink to this headline">¶</a></h4>
+<p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>systém obsahuje žádost o registraci uživatele</li>
+<li>Nakladatel/vydavatel</li>
 </ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel se přihlásil do systému</li>
+<li>Nakladatel/vydavatel provedl UC03-01</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic">
+<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Nová elektronická kniha&#8221;</p>
+</li>
+<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
+</li>
+<li><p class="first">Systém zobrazí formulář:</p>
+<ul class="simple">
+<li>pro vložení hlavních souborů</li>
+<li>pro vložení binárních příloh</li>
+</ul>
+<p>u každého hlavního souboru budou vstupy pro:</p>
+<ul class="simple">
+<li>ISBN</li>
+<li>URL</li>
+</ul>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</li>
+<li><p class="first">Systém provede kontroly souborů</p>
+</li>
+<li><p class="first">Systém zobrazí formulář na zadání popisných metadat:</p>
+<ul class="simple">
+<li>název</li>
+<li>podnázev</li>
+<li>formát</li>
+<li>cena</li>
+<li>část</li>
+<li>název části</li>
+<li>autor</li>
+<li>další autoři</li>
+<li>edice</li>
+<li>číslo svazku</li>
+<li>místo</li>
+<li>vydání</li>
+<li>nakladatel</li>
+<li>měsíc a rok vydání</li>
+<li>vydáno v koedici</li>
+<li>pořadí vydání</li>
+</ul>
+<p>Systém předvyplní zobrazený formulář načtené ze souborů.</p>
+<ul class="simple">
+<li>volně přístupná e-publikace</li>
+<li>TODO údaje o licencovaných e-publikacích</li>
+</ul>
+</li>
+<li><p class="first">Nakladatel/vydavatel vyplní/opraví údaje</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
 </div>
+<div class="section" id="uc03-04-odeslani-elektronicke-knihy">
+<h4><a class="toc-backref" href="#id19">UC03-04 Odeslání elektronické knihy</a><a class="headerlink" href="#uc03-04-odeslani-elektronicke-knihy" title="Permalink to this headline">¶</a></h4>
+<p><em>účastníci</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel</li>
+</ul>
+<p><em>vstupní podmínky</em>:</p>
+<ul class="simple">
+<li>Nakladatel/vydavatel se přihlásil do systému</li>
+<li>Nakladatel/vydavatel provedl UC03-01</li>
+</ul>
+<p><em>tok událostí</em>:</p>
+<ol class="arabic">
+<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Nová elektronická kniha&#8221;</p>
+</li>
+<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
+</li>
+<li><p class="first">Systém zobrazí formulář:</p>
+<ul class="simple">
+<li>pro vložení hlavních souborů</li>
+<li>pro vložení binárních příloh</li>
+</ul>
+<p>u každého hlavního souboru budou vstupy pro:</p>
+<ul class="simple">
+<li>ISBN</li>
+<li>URL</li>
+</ul>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</li>
+<li><p class="first">Systém provede kontroly souborů</p>
+</li>
+<li><p class="first">Systém zobrazí formulář na zadání popisných metadat:</p>
+<ul class="simple">
+<li>název</li>
+<li>podnázev</li>
+<li>formát</li>
+<li>cena</li>
+<li>část</li>
+<li>název části</li>
+<li>autor</li>
+<li>další autoři</li>
+<li>edice</li>
+<li>číslo svazku</li>
+<li>místo</li>
+<li>vydání</li>
+<li>nakladatel</li>
+<li>měsíc a rok vydání</li>
+<li>vydáno v koedici</li>
+<li>pořadí vydání</li>
+</ul>
+<p>Systém předvyplní zobrazený formulář načtené ze souborů.</p>
+<ul class="simple">
+<li>volně přístupná e-publikace</li>
+<li>TODO údaje o licencovaných e-publikacích</li>
+</ul>
+</li>
+<li><p class="first">Nakladatel/vydavatel vyplní/opraví údaje</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</li>
+</ol>
+<p><em>následné podmínky</em>:</p>
 </div>
-<div class="section" id="registrace-isbn">
-<h3><a class="toc-backref" href="#id10">Registrace ISBN</a><a class="headerlink" href="#registrace-isbn" title="Permalink to this headline">¶</a></h3>
-<img alt="_images/uc02.png" src="_images/uc02.png" />
 </div>
 </div>
 </div>
@@ -343,66 +686,15 @@ nebo jen ochranu na binární úrovni</li>
 </div>
 
 
-          </div>
-        </div>
       </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">E-Deposit - SW dokumentace</a><ul>
-<li><a class="reference internal" href="#pozadavky-na-system-a-jeho-omezeni">Požadavky na systém a jeho omezení</a><ul>
-<li><a class="reference internal" href="#pozadavky-na-funkci-systemu">Požadavky na funkci systému</a></li>
-<li><a class="reference internal" href="#omezeni-systemu">Omezení systému</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#slovnicek-pojmu">Slovníček pojmů</a></li>
-<li><a class="reference internal" href="#pripady-uziti">Případy užití</a><ul>
-<li><a class="reference internal" href="#registrace-uzivatele">Registrace uživatele</a><ul>
-<li><a class="reference internal" href="#uc01-registrace-pristupu-do-portalu">UC01 Registrace přístupu do portálu</a></li>
-<li><a class="reference internal" href="#uc02-vyplneni-smlouvy">UC02 Vyplnění smlouvy</a></li>
-<li><a class="reference internal" href="#uc03-vlozeni-zadosti-o-registraci-nakladatele-vydavatele">UC03 Vložení žádosti o registraci nakladatele/vydavatele</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#registrace-isbn">Registrace ISBN</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#odkazy">Odkazy</a></li>
-</ul>
+      <div class="bottomnav">
+      
+        <p>
+        <a class="uplink" href="#">Contents</a>
+        </p>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li><a href="#">E-Deposit 1.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
+
     <div class="footer">
         &copy; Copyright 2013, Jan Stavěl.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.

@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+title Přijetí elektronické knihy
+skinparam packageStyle rect
+
+actor :Nakladatel/vydavatel:
+actor :Pracovník akvizice:
+actor :Systém:
+
+rectangle  {
+	   :Systém: -left-> (UC03-01 Validace souborů)
+	   :Systém: -left-> (UC03-02 Transformace souborů)
+	   :Systém: -left-> (UC03-04 Vytvoření pdf náhledu)
+
+	   :Pracovník akvizice: -left-> (UC03-04 Úprava metadat)
+	   :Pracovník akvizice: -left-> (UC03-05 Přijetí knihy) 
+	   :Pracovník akvizice: -left-> (UC03-06 Odmítnutí knihy) : pracovník akvizice má možnost okomentovat důvody
+
+	   :Systém: -left-> (UC03-07 Předání údajů do Aleph) : schema marc12
+}
+@enduml

@@ -1,0 +1,40 @@
+UC03-02 Nahrazení souborů
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*účastníci*:
+
+- Nakladatel/vydavatel
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel se přihlásil do systému
+
+*tok událostí*:
+
+1. Systém zobrazí úvodní stránku - viz UC03-01/1
+2. Nakladatel/vydavatel zadá do vyhledávácího políčka část ISBN, nebo URL, nebo popisu souboru
+3. Systém zobrazí přehled vložených knih, předloh a časopisů, který odpovídá zadanému omezení
+
+   - u každého záznamu je linka "opravit"
+
+4. Nakladatel/vydavatel klikne na linku "opravit"
+5. Systém zobrazí formulář:
+   
+   - pro vložení hlavních souborů
+   - pro vložení binárních příloh
+
+   u každého hlavního souboru budou vstupy pro:
+
+   - popis souboru
+   - ISBN
+   - URL
+
+   u již vložených souborů systém nabídne možnost soubor smazat.
+
+6. Nakladatel/vydavatel odešle formulář
+7. Systém provede kontroly souborů
+8. dále jako UC03-01/7, UC03-01/8
+
+*následné podmínky*:
+
+V systému jsou uloženy soubory k nové e-publikaci.

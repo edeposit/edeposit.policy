@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+title Zpracování elektronické knihy
+skinparam packageStyle rect
+
+actor :Nakladatel/vydavatel:
+actor :Systém:
+actor :Pracovník bibliografického popisu:
+
+rectangle  {
+	   :Systém: -left-> (UC05-01 Načtení podrobných údajů z Aleph) : podrobný bibliografický popis
+	   :Systém: -left-> (UC05-02 Předání dat do LTP)
+	   :Systém: -left-> (UC05-03 Předání dat do Systému zpřístupnění)
+	   :Pracovník bibliografického popisu: -left-> (UC05-04 Prohlížení přijatých knih)
+	   :Nakladatel/vydavatel: --> (UC05-05 Prohlížení průběhu zpracování)
+}
+:Pracovník bibliografického popisu: -left-> (Aleph: Dokončení vkládání bibliografického popisu)
+@enduml
+

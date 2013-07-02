@@ -1,0 +1,32 @@
+UC02-01 Zadání žádosti o registraci ISBN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*účastníci*:
+
+- Nakladatel/vydavatel
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel otevřel úvodní stránku
+
+*tok událostí*:
+
+1. Systém zobrazí úvodní stránku
+
+   - informace o e-deposit
+   - linku se smlouvou pro nakladatele ke stažení
+   - linku pro přihlášení
+      
+2. Nakladatel/vydavatel klikne na "Registrace ISBN"
+3. Systém poskytne přehled registrovaných ISBN
+
+   - zobrazí linku "Nová registrace"
+
+4. Nakladatel/vydavatel klikne na linku "Nová registrace"
+5. Systém zobrazí formulář:
+
+   - TODO
+   
+*následné podmínky*:
+
+V systému je nová žádost o registraci ISBN.

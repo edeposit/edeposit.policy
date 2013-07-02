@@ -1,6 +1,12 @@
 @startuml
 left to right direction
 title Registrace ISBN
-:Nakladatel/vydavatel publikace: --> (Zadat žádost o registraci ISBN)
-:Nakladatel/vydavatel publikace: --> (Prohledávat registrovaná ISBN)		      
+skinparam packageStyle rect
+actor :Nakladatel/vydavatel:
+actor :Pracovník agentury ISBN:
+
+rectangle  {
+	   :Nakladatel/vydavatel: --> (UC02-01 Zadání žádosti o registraci ISBN)
+	   :Nakladatel/vydavatel: --> (UC02-02 Prohledávání registrovaných ISBN)
+}
 @enduml

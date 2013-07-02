@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+title Přijetí opravy elektronické knihy
+skinparam packageStyle rect
+
+actor :Nakladatel/vydavatel:
+actor :Pracovník akvizice:
+actor :Systém:
+
+rectangle  {
+	   :Systém: -left-> (UC07-01 Validace souborů)
+	   :Systém: -left-> (UC07-02 Transformace souborů)
+	   :Systém: -left-> (UC07-03 Vytvoření pdf náhledu)
+
+	   :Pracovník akvizice: -left-> (UC07-04 Úprava metadat)
+	   :Pracovník akvizice: -left-> (UC07-05 Přijetí opravy knihy) 
+	   :Pracovník akvizice: -left-> (UC07-06 Odmítnutí opravy knihy) : pracovník akvizice má možnost okomentovat důvody
+
+	   :Systém: -left-> (UC07-07 Předání údajů do Aleph) : schema marc12
+}
+@enduml
