@@ -1,4 +1,4 @@
-UC03-04 Odeslání elektronické knihy
+UC03-05 Odeslání elektronické knihy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
@@ -8,50 +8,16 @@ UC03-04 Odeslání elektronické knihy
 *vstupní podmínky*:
 
 - Nakladatel/vydavatel se přihlásil do systému
-- Nakladatel/vydavatel provedl UC03-01
+- Nakladatel/vydavatel provedl UC03-04
 
 *tok událostí*:
 
 1. Systém zobrazí úvodní stránku - viz UC03-01/1
-2. Nakladatel/vydavatel klikne na "Nová elektronická kniha"
-3. Systém zobrazí přehled podporovaných formátů
-4. Systém zobrazí formulář:
-   
-   - pro vložení hlavních souborů
-   - pro vložení binárních příloh
 
-   u každého hlavního souboru budou vstupy pro:
-
-   - ISBN
-   - URL
-
-5. Nakladatel/vydavatel odešle formulář
-6. Systém provede kontroly souborů
-7. Systém zobrazí formulář na zadání popisných metadat:
-
-   - název
-   - podnázev
-   - formát
-   - cena
-   - část
-   - název části
-   - autor
-   - další autoři
-   - edice
-   - číslo svazku
-   - místo
-   - vydání
-   - nakladatel
-   - měsíc a rok vydání
-   - vydáno v koedici
-   - pořadí vydání
-   
-   Systém předvyplní zobrazený formulář načtené ze souborů.
-
-   - volně přístupná e-publikace
-   - TODO údaje o licencovaných e-publikacích
-
-8. Nakladatel/vydavatel vyplní/opraví údaje
-9. Nakladatel/vydavatel odešle formulář
+   U knih, co mají vyplněná metadata se objeví linka "K akvizici"
+2. Nakladatel/vydavatel klikne na "K akvizici"
+3. Systém převede knihu do stavu "Akvizice"
 
 *následné podmínky*:
+
+Pracovník akvizice má k dispozici knihu ke kontrole.

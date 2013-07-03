@@ -17,6 +17,7 @@ UC01-02 Registrace nakladatele/vydavatele
    - přehled e-publikací k akvizici
    - linku na vytváření účtů pro nakladatele
    - přehled nakladatelů/vydavatelů
+   - vyhledávání nakladatelů/vydavatelů
       
 2. Pracovník akvizice klikne na linku "Nový účet pro nakladatele"
 3. Systém poskytne formulář pro zadání údajů o nakladateli
@@ -34,3 +35,4 @@ UC01-02 Registrace nakladatele/vydavatele
           
 *následné podmínky*:
 
+Nakladatel/vydavatel se bude moci přihlásit do systému.

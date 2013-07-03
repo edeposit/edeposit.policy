@@ -1,32 +1,27 @@
-UC02-01 Zadání žádosti o registraci ISBN
+UC02-01 Načtení nově registrovaných ISBN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 
-- Nakladatel/vydavatel
+- Systém
+- Aleph
 
 *vstupní podmínky*:
 
-- Nakladatel/vydavatel otevřel úvodní stránku
+- Nově registrované ISBN jsou v Alephu, v bázi 49.
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku
-
-   - informace o e-deposit
-   - linku se smlouvou pro nakladatele ke stažení
-   - linku pro přihlášení
-      
-2. Nakladatel/vydavatel klikne na "Registrace ISBN"
-3. Systém poskytne přehled registrovaných ISBN
-
-   - zobrazí linku "Nová registrace"
-
-4. Nakladatel/vydavatel klikne na linku "Nová registrace"
-5. Systém zobrazí formulář:
-
-   - TODO
+1. Systém se zeptá Aleph na nově registrované ISBN pro konkrétního nakladatele/vydavatele
+2. Aleph vrátí soubory ve formát Marc
+3. Systém ze souborů načte:
    
+   - ISBN
+   - popis
+   - interní ID pro Aleph
+
+4. Systém si soubory uloží
+
 *následné podmínky*:
 
-V systému je nová žádost o registraci ISBN.
+V systému má každý dodavatel aktuální přehled nově zadaných ISBN.

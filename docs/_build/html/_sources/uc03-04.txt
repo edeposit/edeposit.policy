@@ -1,5 +1,5 @@
-UC03-04 Sloučení metadat
-~~~~~~~~~~~~~~~~~~~~~~~~
+UC03-04 Vyplnění a sloučení metadat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 
@@ -8,26 +8,17 @@ UC03-04 Sloučení metadat
 *vstupní podmínky*:
 
 - Nakladatel/vydavatel se přihlásil do systému
-- Nakladatel/vydavatel provedl UC03-01
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku - viz UC03-01/1
-2. Nakladatel/vydavatel klikne na "Nová elektronická kniha"
-3. Systém zobrazí přehled podporovaných formátů
-4. Systém zobrazí formulář:
-   
-   - pro vložení hlavních souborů
-   - pro vložení binárních příloh
+1. Systém zobrazí úvodní stránku viz UC01-01
 
-   u každého hlavního souboru budou vstupy pro:
+   u každého záznamu knihy, předlohy, časopisu bude linka "Upravit"
 
-   - ISBN
-   - URL
+2. Nakladatel/vydavatel klikne na linku "Upravit"
+3. Systém zobrazí formulář na zadání popisných metadat:
 
-5. Nakladatel/vydavatel odešle formulář
-6. Systém provede kontroly souborů
-7. Systém zobrazí formulář na zadání popisných metadat:
+   bude to tabulka. V jednom sloupci budou pole k ručnímu zadání hodnot:
 
    - název
    - podnázev
@@ -46,12 +37,19 @@ UC03-04 Sloučení metadat
    - vydáno v koedici
    - pořadí vydání
    
-   Systém předvyplní zobrazený formulář načtené ze souborů.
+   V dalším sloupci budou načtené údaje ze souboru
+
+   V dalším sloupc budou načtené údaje z Aleph
 
    - volně přístupná e-publikace
    - TODO údaje o licencovaných e-publikacích
 
-8. Nakladatel/vydavatel vyplní/opraví údaje
-9. Nakladatel/vydavatel odešle formulář
+4. Nakladatel/vydavatel vyplní/opraví údaje ve sloupci pro ruční zadání
+
+   NEBO
+   
+   ve vedlejších sloupcích zaškrtne údaje, které chce přijmout a použít
+
+5. Nakladatel/vydavatel odešle formulář
 
 *následné podmínky*:

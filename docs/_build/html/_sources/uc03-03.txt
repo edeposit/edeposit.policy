@@ -1,9 +1,10 @@
-UC03-03 Vyplnění metadat
-~~~~~~~~~~~~~~~~~~~~~~~~
+UC03-03 Spárování souborů s ISBN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 
 - Nakladatel/vydavatel
+- Systém
 
 *vstupní podmínky*:
 
@@ -11,52 +12,26 @@ UC03-03 Vyplnění metadat
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku
+1. Systém zobrazí úvodní stránku - viz UC03-01/1
+2. Nakladatel/vydavatel vyhledá vybrané ISBN
+3. Nakladatel/vydavatel vyhledá vybraný soubor
+4. a. Nakladatel/vydavatel přetáhne myší vybrané ISBN k vybranénu souboru
+
+   NEBO b. Nakladatel/vydavatel přetáhne myší vybraný soubor k vybranému ISBN
+
+   NEBO c. 1. Nakladatel/vydavatel klikne na vybraný soubor
+
+        c) 2. Systém zobrazí:
+     
+            - ISBN
+	    - URL
+	    - popis souboru
    
-   - přehled vložených knih, předloh, časopisů
-   - nabídne vložení knihy, předlohy, časopisu
-   - nabídne opravu knihy, předlohy, časopisu 
-   - nabídne možnost upravit si heslo, údaje o uživateli
-   
-2. Nakladatel/vydavatel klikne na "Nová elektronická kniha"
-3. Systém zobrazí přehled podporovaných formátů
-4. Systém zobrazí formulář:
-   
-   - pro vložení hlavních souborů
-   - pro vložení binárních příloh
+        c) 3. Nakladatel/vydavatel vyplní ISBN  
 
-   u každého hlavního souboru budou vstupy pro:
+   	c) 4. Nakladatel/vydavatel    
 
-   - ISBN
-   - URL
-
-5. Nakladatel/vydavatel odešle formulář
-6. Systém provede kontroly souborů
-7. Systém zobrazí formulář na zadání popisných metadat:
-
-   - název
-   - podnázev
-   - formát
-   - cena
-   - část
-   - název části
-   - autor
-   - další autoři
-   - edice
-   - číslo svazku
-   - místo
-   - vydání
-   - nakladatel
-   - měsíc a rok vydání
-   - vydáno v koedici
-   - pořadí vydání
-   
-   Systém předvyplní zobrazený formulář načtené ze souborů.
-
-   - volně přístupná e-publikace
-   - TODO údaje o licencovaných e-publikacích
-
-8. Nakladatel/vydavatel vyplní/opraví údaje
-9. Nakladatel/vydavatel odešle formulář
+5. Systém přesune spárovaný soubor do stavu k vyplnění metadat
 
 *následné podmínky*:
+

@@ -7,7 +7,7 @@ UC02-02 Prohledávání registrovaných ISBN
 
 *vstupní podmínky*:
 
-- Nakladatel/vydavatel otevřel úvodní stránku
+- Nakladatel/vydavatel se přihlásil do systému
 
 *tok událostí*:
 

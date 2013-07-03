@@ -41,38 +41,38 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
-html:
+html: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-dirhtml:
+dirhtml: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
-singlehtml:
+singlehtml: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
-pickle:
+pickle: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
 	@echo
 	@echo "Build finished; now you can process the pickle files."
 
-json:
+json: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
-htmlhelp:
+htmlhelp: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
 	      ".hhp project file in $(BUILDDIR)/htmlhelp."
 
-qthelp:
+qthelp: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
@@ -81,7 +81,7 @@ qthelp:
 	@echo "To view the help file:"
 	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/E-Deposit.qhc"
 
-devhelp:
+devhelp: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
@@ -90,19 +90,19 @@ devhelp:
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/E-Deposit"
 	@echo "# devhelp"
 
-epub:
+epub: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
-latex:
+latex: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-latexpdf:
+latexpdf: uc01.png uc02.png uc03.png
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
@@ -151,3 +151,28 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+
+uc01.png: uc01.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc02.png: uc02.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc03.png: uc03.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc04.png: uc04.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc05.png: uc05.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc06.png: uc06.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc07.png: uc07.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc08.png: uc08.plantuml
+	java -jar ~/lib/plantuml.jar $?

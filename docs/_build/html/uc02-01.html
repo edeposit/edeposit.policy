@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UC02-01 Zadání žádosti o registraci ISBN</title>
+    <title>UC02-01 Načtení nově registrovaných ISBN</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -45,37 +45,31 @@
       <div class="content">
         
         
-  <div class="section" id="uc02-01-zadani-zadosti-o-registraci-isbn">
-<h1>UC02-01 Zadání žádosti o registraci ISBN<a class="headerlink" href="#uc02-01-zadani-zadosti-o-registraci-isbn" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="uc02-01-nacteni-nove-registrovanych-isbn">
+<h1>UC02-01 Načtení nově registrovaných ISBN<a class="headerlink" href="#uc02-01-nacteni-nove-registrovanych-isbn" title="Permalink to this headline">¶</a></h1>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel</li>
+<li>Systém</li>
+<li>Aleph</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel otevřel úvodní stránku</li>
+<li>Nově registrované ISBN jsou v Alephu, v bázi 49.</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic simple">
-<li>Systém zobrazí úvodní stránku<ul>
-<li>informace o e-deposit</li>
-<li>linku se smlouvou pro nakladatele ke stažení</li>
-<li>linku pro přihlášení</li>
+<li>Systém se zeptá Aleph na nově registrované ISBN pro konkrétního nakladatele/vydavatele</li>
+<li>Aleph vrátí soubory ve formát Marc</li>
+<li>Systém ze souborů načte:<ul>
+<li>ISBN</li>
+<li>popis</li>
+<li>interní ID pro Aleph</li>
 </ul>
 </li>
-<li>Nakladatel/vydavatel klikne na &#8220;Registrace ISBN&#8221;</li>
-<li>Systém poskytne přehled registrovaných ISBN<ul>
-<li>zobrazí linku &#8220;Nová registrace&#8221;</li>
-</ul>
-</li>
-<li>Nakladatel/vydavatel klikne na linku &#8220;Nová registrace&#8221;</li>
-<li>Systém zobrazí formulář:<ul>
-<li>TODO</li>
-</ul>
-</li>
+<li>Systém si soubory uloží</li>
 </ol>
 <p><em>následné podmínky</em>:</p>
-<p>V systému je nová žádost o registraci ISBN.</p>
+<p>V systému má každý dodavatel aktuální přehled nově zadaných ISBN.</p>
 </div>
 
 

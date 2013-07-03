@@ -15,14 +15,15 @@ UC03-01 Vložení souborů
    
    - přehled vložených knih, předloh, časopisů
    - přehled vložených knih, předloh, časopisů, co čekají na akci nakladatele/vydavatele
+   - přehled vložených souborů
    - vyhledávací políčko u každého přehledu
-   - linka "Nová kniha, předloha, časopis"
+   - linka "Vložit soubor"
    - linka s názvem akce u každé knihy, předlohy, časopisu 
    - linka "upravit si heslo, údaje o uživateli"
    
    název akce se bude lišit podle toho, v jakém je kniha,předloha,časopis stavu
 
-2. Nakladatel/vydavatel klikne na "Nová kniha, předloha, časopis"
+2. Nakladatel/vydavatel klikne na "Vložit soubor"
 3. Systém zobrazí přehled podporovaných formátů
 4. Systém zobrazí formulář:
    
@@ -37,11 +38,13 @@ UC03-01 Vložení souborů
 
    u již vložených souborů systém nabídne možnost soubor smazat.
 
+   systém napovídá ISBN, co jsou v přehledu vložených knih, předloh a časopisů
+
 5. Nakladatel/vydavatel odešle formulář
 6. Systém provede kontroly souborů
 7. IF kontroly proběhnou v pořádku
   
-  7.1. Systém zobrazí linku "Vyplnění metadat"
+  7.1. Systém u souboru zobrazí linku "Vyplnění metadat"
 
 8. IF kontroly neproběhnou v pořádku
 

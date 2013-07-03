@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UC03-03 Vyplnění metadat</title>
+    <title>UC03-03 Spárování souborů s ISBN</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -45,11 +45,12 @@
       <div class="content">
         
         
-  <div class="section" id="uc03-03-vyplneni-metadat">
-<h1>UC03-03 Vyplnění metadat<a class="headerlink" href="#uc03-03-vyplneni-metadat" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="uc03-03-sparovani-souboru-s-isbn">
+<h1>UC03-03 Spárování souborů s ISBN<a class="headerlink" href="#uc03-03-sparovani-souboru-s-isbn" title="Permalink to this headline">¶</a></h1>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
 <li>Nakladatel/vydavatel</li>
+<li>Systém</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
@@ -57,61 +58,46 @@
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku</p>
-<ul class="simple">
-<li>přehled vložených knih, předloh, časopisů</li>
-<li>nabídne vložení knihy, předlohy, časopisu</li>
-<li>nabídne opravu knihy, předlohy, časopisu</li>
-<li>nabídne možnost upravit si heslo, údaje o uživateli</li>
-</ul>
+<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Nová elektronická kniha&#8221;</p>
+<li><p class="first">Nakladatel/vydavatel vyhledá vybrané ISBN</p>
 </li>
-<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
+<li><p class="first">Nakladatel/vydavatel vyhledá vybraný soubor</p>
 </li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>pro vložení hlavních souborů</li>
-<li>pro vložení binárních příloh</li>
-</ul>
-<p>u každého hlavního souboru budou vstupy pro:</p>
-<ul class="simple">
+<li><ol class="first loweralpha simple">
+<li>Nakladatel/vydavatel přetáhne myší vybrané ISBN k vybranénu souboru</li>
+</ol>
+<p>NEBO b. Nakladatel/vydavatel přetáhne myší vybraný soubor k vybranému ISBN</p>
+<p>NEBO c. 1. Nakladatel/vydavatel klikne na vybraný soubor</p>
+<blockquote>
+<div><ol class="loweralpha" start="3">
+<li><ol class="first arabic simple" start="2">
+<li>Systém zobrazí:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
 <li>ISBN</li>
 <li>URL</li>
+<li>popis souboru</li>
 </ul>
+</div></blockquote>
 </li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+</ol>
+<ol class="loweralpha simple" start="3">
+<li><ol class="first arabic" start="3">
+<li>Nakladatel/vydavatel vyplní ISBN</li>
+</ol>
 </li>
-<li><p class="first">Systém provede kontroly souborů</p>
+</ol>
+<ol class="loweralpha simple" start="3">
+<li><ol class="first arabic" start="4">
+<li>Nakladatel/vydavatel</li>
+</ol>
 </li>
-<li><p class="first">Systém zobrazí formulář na zadání popisných metadat:</p>
-<ul class="simple">
-<li>název</li>
-<li>podnázev</li>
-<li>formát</li>
-<li>cena</li>
-<li>část</li>
-<li>název části</li>
-<li>autor</li>
-<li>další autoři</li>
-<li>edice</li>
-<li>číslo svazku</li>
-<li>místo</li>
-<li>vydání</li>
-<li>nakladatel</li>
-<li>měsíc a rok vydání</li>
-<li>vydáno v koedici</li>
-<li>pořadí vydání</li>
-</ul>
-<p>Systém předvyplní zobrazený formulář načtené ze souborů.</p>
-<ul class="simple">
-<li>volně přístupná e-publikace</li>
-<li>TODO údaje o licencovaných e-publikacích</li>
-</ul>
+</ol>
+</div></blockquote>
 </li>
-<li><p class="first">Nakladatel/vydavatel vyplní/opraví údaje</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+<li><p class="first">Systém přesune spárovaný soubor do stavu k vyplnění metadat</p>
 </li>
 </ol>
 <p><em>následné podmínky</em>:</p>

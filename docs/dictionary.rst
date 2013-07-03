@@ -7,7 +7,7 @@ e-publikace::
 
 e-casopis::
 
-  publikace, co již existuje a nemusí se opakovaně vkládat do systému
+  publikace, co se vydává opakovaně
 
 
 pdf náhled::

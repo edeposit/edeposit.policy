@@ -2,11 +2,18 @@
 left to right direction
 title Registrace ISBN
 skinparam packageStyle rect
+
+actor :Systém:
 actor :Nakladatel/vydavatel:
 actor :Pracovník agentury ISBN:
 
 rectangle  {
-	   :Nakladatel/vydavatel: --> (UC02-01 Zadání žádosti o registraci ISBN)
+
+	   :Systém: -left-> (UC02-01 Načtení nově registrovaných ISBN)
 	   :Nakladatel/vydavatel: --> (UC02-02 Prohledávání registrovaných ISBN)
 }
+
+:Pracovník agentury ISBN: ---> (Agentura ISBN: kontrola žádostí registace ISBN)
+:Nakladatel/vydavatel: ---> (www.nkp.cz: Zadání žádosti o registraci ISBN)	
+
 @enduml

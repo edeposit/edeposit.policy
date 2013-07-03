@@ -8,8 +8,8 @@ actor :Nakladatel/vydavatel:
 rectangle  {
 	   :Nakladatel/vydavatel: --> (UC03-01 Vložení souborů)
 	   :Nakladatel/vydavatel: --> (UC03-02 Nahrazení souborů)
-	   :Nakladatel/vydavatel: --> (UC03-03 Vyplnění metadat)
-	   :Nakladatel/vydavatel: --> (UC03-04 Sloučení metadat)
+	   :Nakladatel/vydavatel: --> (UC03-03 Spárování souborů s ISBN)
+	   :Nakladatel/vydavatel: --> (UC03-04 Vyplnění a sloučení metadat)
 	   :Nakladatel/vydavatel: --> (UC03-05 Odeslání elektronické knihy)
 }
 @enduml

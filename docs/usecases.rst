@@ -9,7 +9,6 @@ UC01 Registrace uživatele
 .. include:: uc01-01.rst
 .. include:: uc01-02.rst
 .. include:: uc01-03.rst
-.. include:: uc01-04.rst
 
 UC02 Registrace ISBN
 ....................
@@ -29,6 +28,7 @@ UC03 - Zadávání elektronické knihy
 .. include:: uc03-03.rst
 .. include:: uc03-04.rst
 .. include:: uc03-05.rst
+.. include:: uc03-06.rst
 
 .. U04 - Přijetí elektronické knihy
 .. .................................

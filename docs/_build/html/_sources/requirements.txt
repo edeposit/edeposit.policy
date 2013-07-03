@@ -10,13 +10,13 @@ Požadavky které jsou kladeny na funkci systému.
 - systém umožňuje vkládat e-publikace
 - systém umožňuje doplňovat bibliografický popis e-publikace
 - e-publikace jsou zabezpečeny podle běžných standardů a postupů
-- e-publikace může obsahovat více souborů
+- e-publikace může obsahovat více souborů v různých formátech
 - každý soubor jedné e-publikace má vlastní **ISBN** a společný **ISSN**
 - e-publikace mohou být zpřístupněny za pomoci **OAI-PMH**, **OPDS**, 
   **eReading.cz**, **Flexibooks**, **ebary**, **BookJet**, **eBookEater**,
   **Publero**, **JDK**
 - e-publikace může být vložena za pomoci **Webarchiv** ci **ingest** modul
-- systém při vkládání souboru vytváří *PDF* náhled 
+- systém při vkládání souboru vytváří **PDF** náhled 
 - systém informuje **Aleph**, že jsou e-publikace připraveny na doplnění bibliografických dat
 - systém načítá bibliografická data ze systému **Aleph**
 - systém ukládá e-publikace do systému **LTP** k trvalé archivaci
@@ -34,6 +34,8 @@ Požadavky které jsou kladeny na funkci systému.
 - systém zobrazuje **PDF** náhled
 - systém umožňuje zadávat základní bibliografický popis ručně
 - systém nabízí bibliografický popis načtený ze systému **Aleph**
+- systém umožňuje sloučení ručně zadaných bibliografických dat a dat z **Aleph**
+- systém automaticky načítá údaje o publikacích, které byly zaregistrovány **ISBN agenturou**
 - systém umožňuje autentifikaci za pomoci *Google*, *Facebook*, *Twitter*, *MSN*
 - systém si pamatuje všechny verze vloženého souboru
 - opravené soubory k jedné e-publikaci mají svůj **ISBN** a odkazují se na jednu e-publikaci
