@@ -28,7 +28,8 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/theme_extras.js"></script>
-    <link rel="top" title="" href="#" /> 
+    <link rel="top" title="" href="#" />
+    <link rel="next" title="Požadavky na systém a jeho omezení" href="requirements.html" /> 
   </head>
   <body>
       <div class="header"><img class="leftlogo" src="_static/nkp_logo.png" alt="Logo"/><h1 class="heading"><a href="#">
@@ -39,6 +40,8 @@
       
         <p>
         <a class="uplink" href="#">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="requirements.html">Požadavky na systém a jeho omezení</a>&#160;&#160;»
         </p>
 
       </div>
@@ -49,166 +52,78 @@
 <h1>E-Deposit - SW dokumentace<a class="headerlink" href="#e-deposit-sw-dokumentace" title="Permalink to this headline">¶</a></h1>
 <p><em>Section author: Jan Stavěl &lt;stavel.jan at gmail.com&gt;</em></p>
 <p>Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.</p>
-<div class="contents local topic" id="contents">
-<ul class="simple">
-<li><a class="reference internal" href="#pozadavky-na-system-a-jeho-omezeni" id="id1">Požadavky na systém a jeho omezení</a><ul>
-<li><a class="reference internal" href="#pozadavky-na-funkci-systemu" id="id2">Požadavky na funkci systému</a></li>
-<li><a class="reference internal" href="#omezeni-systemu" id="id3">Omezení systému</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#slovnicek-pojmu" id="id4">Slovníček pojmů</a></li>
-<li><a class="reference internal" href="#pripady-uziti" id="id5">Případy užití</a><ul>
-<li><a class="reference internal" href="#uc01-registrace-nakladatele" id="id6">UC01 Registrace nakladatele</a><ul>
-<li><a class="reference internal" href="#uc01-01-stazeni-smlouvy-k-vyplneni" id="id7">UC01-01 Stažení smlouvy k vyplnění</a></li>
-<li><a class="reference internal" href="#uc01-02-registrace-nakladatele-vydavatele" id="id8">UC01-02 Registrace nakladatele/vydavatele</a></li>
-<li><a class="reference internal" href="#uc01-03-pozastaveni-platnosti-smlouvy-s-nakladatelem-vydavatelem" id="id9">UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem</a></li>
-<li><a class="reference internal" href="#uc01-04-detail-uctu-nakladatele-vydavatele" id="id10">UC01-04 Detail účtu nakladatele/vydavatele</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#uc02-ohlaseni-publikace" id="id11">UC02 Ohlášení publikace</a><ul>
-<li><a class="reference internal" href="#uc02-01-ohlaseni-jednoduche" id="id12">UC02-01 Ohlášení jednoduché</a></li>
-<li><a class="reference internal" href="#uc02-02-ohlaseni-se-soubory" id="id13">UC02-02 Ohlášení se soubory</a></li>
-<li><a class="reference internal" href="#uc02-03-ohlaseni-s-tiskovou-predlohou" id="id14">UC02-03 Ohlášení s tiskovou předlohou</a></li>
-<li><a class="reference internal" href="#uc02-04-odeslani-ohlasky" id="id15">UC02-04 Odeslání ohlášky</a></li>
-<li><a class="reference internal" href="#uc02-05-odeslani-ohlasky-s-registraci-isbn" id="id16">UC02-05 Odeslání ohlášky s registrací ISBN</a></li>
-<li><a class="reference internal" href="#uc02-06-kontroly-souboru" id="id17">UC02-06 Kontroly souboru</a></li>
-<li><a class="reference internal" href="#uc02-07-nacteni-metadat-ze-souboru" id="id18">UC02-07 Načtení metadat ze  souborů</a></li>
-<li><a class="reference internal" href="#uc02-08-transformace-souboru" id="id19">UC02-08 Transformace souboru</a></li>
-<li><a class="reference internal" href="#uc02-09-vytvoreni-nahledu-na-soubor" id="id20">UC02-09 Vytvoření náhledu na soubor</a></li>
-<li><a class="reference internal" href="#uc02-10-oprava-souboru" id="id21">UC02-10 Oprava souboru</a></li>
-<li><a class="reference internal" href="#uc02-11-stazeni-souboru" id="id22">UC02-11 Stážení souboru</a></li>
-<li><a class="reference internal" href="#uc02-12-kontrola-duplicity-isbn" id="id23">UC02-12 Kontrola duplicity ISBN</a></li>
-<li><a class="reference internal" href="#uc02-13-prideleni-isbn" id="id24">UC02-13 Přidělení ISBN</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#uc03-akvizice-publikace" id="id25">UC03 - Akvizice publikace</a><ul>
-<li><a class="reference internal" href="#uc03-01-predani-metadat-k-importu-do-aleph" id="id26">UC03-01 Předání metadat k importu do Aleph</a></li>
-<li><a class="reference internal" href="#uc03-01-vlozeni-souboru" id="id27">UC03-01 Vložení souborů</a></li>
-<li><a class="reference internal" href="#uc03-02-kontrola-isbn" id="id28">UC03-02 Kontrola ISBN</a></li>
-<li><a class="reference internal" href="#uc03-03-kontrola-metadat" id="id29">UC03-03 Kontrola metadat</a></li>
-<li><a class="reference internal" href="#uc03-04-prijeti-e-publikace" id="id30">UC03-04 Přijetí e-publikace</a></li>
-<li><a class="reference internal" href="#uc03-04-vyplneni-a-slouceni-metadat" id="id31">UC03-04 Vyplnění a sloučení metadat</a></li>
-<li><a class="reference internal" href="#uc03-05-kontrola-isbn-v-souboru" id="id32">UC03-05 Kontrola ISBN v souboru</a></li>
-<li><a class="reference internal" href="#uc03-05-odeslani-elektronicke-knihy" id="id33">UC03-05 Odeslání elektronické knihy</a></li>
-<li><a class="reference internal" href="#uc03-06-oprava-souboru" id="id34">UC03-06 Oprava souboru</a></li>
-<li><a class="reference internal" href="#uc03-07-stahnuti-souboru" id="id35">UC03-07 Stáhnutí souboru</a></li>
-<li><a class="reference internal" href="#uc03-08-odebrani-pristup-k-e-publikaci" id="id36">UC03-08 Odebrání přístup k e-publikaci</a></li>
-<li><a class="reference internal" href="#uc03-09-odmitnuti-e-publikace" id="id37">UC03-09 Odmítnutí e-publikace</a></li>
-<li><a class="reference internal" href="#uc03-10-odstraneni-duplicity" id="id38">UC03-10 Odstranění duplicity</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#uc04-katalogizace-e-publikace" id="id39">UC04 - Katalogizace e-publikace</a><ul>
-<li><a class="reference internal" href="#uc04-01-zadani-bibliografickych-metadat" id="id40">UC04-01 Zadání bibliografických metadat</a></li>
-<li><a class="reference internal" href="#uc04-02-export-do-systemu-kramerius" id="id41">UC04-02 Export do systému Kramerius</a></li>
-<li><a class="reference internal" href="#uc04-03-oprava-souboru" id="id42">UC04-03 Oprava souboru</a></li>
-<li><a class="reference internal" href="#uc04-04-stahnuti-souboru" id="id43">UC04-04 Stáhnutí souboru</a></li>
-<li><a class="reference internal" href="#uc04-05-odebrani-pristup-k-e-publikaci" id="id44">UC04-05 Odebrání přístup k e-publikaci</a></li>
-<li><a class="reference internal" href="#uc04-06-odmitnuti-e-publikace" id="id45">UC04-06 Odmítnutí e-publikace</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#uc05-zpristupneni-e-publikace" id="id46">UC05 - Zpřístupnění e-publikace</a></li>
-<li><a class="reference internal" href="#uc06-dlouhodoba-ochrana-publikace" id="id47">UC06 - Dlouhodobá ochrana publikace</a></li>
-<li><a class="reference internal" href="#uc07-ohlasovani-pokracujiciho-zdroje" id="id48">UC07 - Ohlašování pokračujícího zdroje</a><ul>
-<li><a class="reference internal" href="#uc07-01-ohlaseni-noveho-dilu" id="id49">UC07-01 Ohlášení nového dílu</a></li>
-<li><a class="reference internal" href="#uc07-02-ohlaseni-noveho-dilu-pres-ftp" id="id50">UC07-02 Ohlášení noveho dilu přes <strong>ftp</strong></a></li>
-<li><a class="reference internal" href="#uc07-03-ohlaseni-noveho-dilu-pres-email" id="id51">UC07-03 Ohlášení nového dílu přes <strong>email</strong></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#uc08-akvizice-pokracujiciho-zdroje" id="id52">UC08 - Akvizice pokračujícího zdroje</a></li>
-<li><a class="reference internal" href="#uc09-katalogizace-pokracujiciho-zdroje" id="id53">UC09 - Katalogizace pokračujícího zdroje</a></li>
-<li><a class="reference internal" href="#uc10-zpristupnovani-pokracujiciho-zdroje" id="id54">UC10 - Zpřístupňování pokračujícího zdroje</a></li>
-<li><a class="reference internal" href="#uc11-dlouhodoba-ochrana-pokracujiciho-zdroje" id="id55">UC11 - Dlouhodobá ochrana pokračujícího zdroje</a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="toctree-wrapper compound">
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Požadavky na systém a jeho omezení</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html#pozadavky-na-funkci-systemu">Požadavky na funkci systému</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirements.html#omezeni-systemu">Omezení systému</a></li>
 </ul>
-</div>
-<div class="section" id="pozadavky-na-system-a-jeho-omezeni">
-<h2><a class="toc-backref" href="#id1">Požadavky na systém a jeho omezení</a><a class="headerlink" href="#pozadavky-na-system-a-jeho-omezeni" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="pozadavky-na-funkci-systemu">
-<h3><a class="toc-backref" href="#id2">Požadavky na funkci systému</a><a class="headerlink" href="#pozadavky-na-funkci-systemu" title="Permalink to this headline">¶</a></h3>
-<p>Požadavky které jsou kladeny na funkci systému.</p>
-<ul class="simple">
-<li>systém umožňuje ukládat elektronické předlohy tištěných publikací</li>
-<li>tisková předloha má stejné <strong>ISBN</strong> jako tištěná publikace</li>
-<li>systém umožňuje vkládat e-publikace</li>
-<li>systém umožňuje doplňovat bibliografický popis e-publikace</li>
-<li>systém umožňuje vyměnit soubor i po přijetí akvizicí</li>
-<li>systém umožňuje nakladateli/vydavateli přidávat další soubory i k zamčeném záznamu</li>
-<li>e-publikace jsou zabezpečeny podle běžných standardů a postupů</li>
-<li>bibliografický záznam může obsahovat více souborů v různých formátech</li>
-<li>každý soubor jednoho má žádný, nebo jeden, nebo více <strong>ISBN</strong> a může mít i jeden <strong>ISSN</strong></li>
-<li>e-publikace mohou být zpřístupněny za pomoci <strong>OAI-PMH</strong>, <strong>OPDS</strong>,
-<strong>eReading.cz</strong>, <strong>Flexibooks</strong>, <strong>ebary</strong>, <strong>BookJet</strong>, <strong>eBookEater</strong>,
-<strong>Publero</strong>, <strong>JDK</strong></li>
-<li>e-publikace může být vložena za pomoci <strong>Webarchiv</strong> ci <strong>ingest</strong> modulu</li>
-<li>systém při vkládání souboru vytváří <strong>PDF</strong> náhled</li>
-<li>systém informuje <strong>Aleph</strong>, že jsou e-publikace připraveny na doplnění bibliografických dat</li>
-<li>systém načítá bibliografická data ze systému <strong>Aleph</strong></li>
-<li>systém ukládá e-publikace do systému <strong>LTP</strong> k trvalé archivaci</li>
-<li>systém před uložením e-publikace do <strong>LTP</strong> provádí validaci</li>
-<li>systém poskytuje registraci pro nakladatele, jednoduchou, nebo s více rolemi</li>
-<li>systém aplikuje podmínky užití</li>
-<li>systém přijímá i e-publikace s binárními přílohami</li>
-<li>systém zjišťuje přítomnost virů ve vložených souborech</li>
-<li>systém umí načítat e-publikace přes vlastní <strong>ftp</strong> server, nebo z emailové schránky</li>
-<li>systém umí e-publikace stáhnout z externího <strong>ftp</strong> serveru</li>
-<li>systém nabízí možnost generovat <strong>mobi</strong></li>
-<li>systém zobrazuje <strong>PDF</strong> náhled</li>
-<li>systém umožňuje zadávat základní bibliografický popis ručně</li>
-<li>systém nabízí bibliografický popis načtený ze systému <strong>Aleph</strong></li>
-<li>systém umožňuje sloučení ručně zadaných bibliografických dat a dat z <strong>Aleph</strong></li>
-<li>systém automaticky načítá údaje o publikacích, které byly zaregistrovány <strong>ISBN agenturou</strong></li>
-<li>systém umožňuje autentifikaci za pomoci <em>Google</em>, <em>Facebook</em>, <em>Twitter</em>, <em>MSN</em></li>
-<li>systém umožňuje povolit jen přihlášení za pomoci hesla, jména</li>
-<li>systém si pamatuje všechny verze vloženého souboru</li>
-<li>systém zobrazuje historii všech zadaných <strong>ISBN</strong> i těch, co prošly jinou cestou, než pres e-deposit</li>
-<li>systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi</li>
-<li>systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu
-nebo jen ochranu na binární úrovni</li>
-<li>systém získává informace o aplikaci dlouhodobé ochrany (tj. e-publikace byla přeformátována na novější formát)</li>
-<li>systém umí omezit přístup nakladatele/vydavatele na readonly přístup</li>
-<li>systém umí zakázat nakladateli/vydavateli přístup k jednotlivým e-publikacím</li>
-<li>akvizice má možnost opravovat údaje v systému i po přijetí akvizicí</li>
-<li>systém umožňuje pdf náhled na soubory aniž by kopie opustila systém</li>
-<li>systém umožňuje označit e-publikaci jako zakázanou (např. při zjištění, že byla autorem okopírována)</li>
-<li>systém odesílá do Alephu i jednoznačnou linku na náhled e-publikace</li>
-<li>v systému Aleph vzniká proklik na náhled e-publikace v e-deposit</li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dictionary.html">Slovníček pojmů</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases.html">Případy užití</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc01-registrace-nakladatele">UC01 Registrace nakladatele</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc01-01-stazeni-smlouvy-k-vyplneni">UC01-01 Stažení smlouvy k vyplnění</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc01-02-registrace-nakladatele-vydavatele">UC01-02 Registrace nakladatele/vydavatele</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc01-03-pozastaveni-platnosti-smlouvy-s-nakladatelem-vydavatelem">UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc01-04-detail-uctu-nakladatele-vydavatele">UC01-04 Detail účtu nakladatele/vydavatele</a></li>
 </ul>
-</div>
-<div class="section" id="omezeni-systemu">
-<h3><a class="toc-backref" href="#id3">Omezení systému</a><a class="headerlink" href="#omezeni-systemu" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>pokud e-publikace prošla akvizicí, nakladatel/vydavatel má možnost jen přidávat opravy - jako další soubory.
-Už nemůže editovat záznamy, soubory.</li>
-<li>systém autorizuje uživatele vůči firemní <strong>ActiveDirectory</strong>, nebo vůčí <strong>LDAP</strong></li>
-<li>systém neumožňuje nikomu kromě nakladatele/vydavatele stáhnout si vložené soubory ani náhledy</li>
-<li>systém převádí všechny formáty do <strong>PDF</strong>, kvuli akvizici a katalogizaci</li>
-<li>systém poskytuje snadný způsob listování e-publikací, tj. náhledy po jednotlivých stránkách (hlavně pro katalogizaci, která musí celou e-publikaci prolistovat)</li>
-<li>systém soubory a údaje zabezbečuje asymetrickou šifrou na základě <strong>X509</strong> standardu</li>
-<li>systém přijímá e-publikace pouze ve formátě <strong>PDF</strong>, <strong>ePub</strong>, <strong>TXT</strong>, <strong>DjVu</strong>, <strong>mobi</strong></li>
-<li>systém nepřijímá publikace s ochranou proti kopírování, např <strong>DRM</strong></li>
-<li>systém ukládá do <strong>LTP</strong> jen ty <strong>PDF</strong> soubory, co mají textovou vrstvu</li>
-<li>web rozhraní systému je poskytnuto za pomoci <strong>Plone</strong></li>
-<li>middleware k implementaci využívá <strong>RabbitMQ</strong>, tj. je implementován odděleně od web rozhraní</li>
-<li>middleware je napsaný v jazyce <strong>Python</strong></li>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc02-ohlaseni-publikace">UC02 Ohlášení publikace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-01-ohlaseni-jednoduche">UC02-01 Ohlášení jednoduché</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-03-ohlaseni-s-tiskovou-predlohou">UC02-03 Ohlášení s tiskovou předlohou</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-04-odeslani-ohlasky">UC02-04 Odeslání ohlášky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-05-odeslani-ohlasky-s-registraci-isbn">UC02-05 Odeslání ohlášky s registrací ISBN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-06-kontroly-souboru">UC02-06 Kontroly souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-07-nacteni-metadat-ze-souboru">UC02-07 Načtení metadat ze  souborů</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-08-transformace-souboru">UC02-08 Transformace souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-09-vytvoreni-nahledu-na-soubor">UC02-09 Vytvoření náhledu na soubor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-10-oprava-souboru">UC02-10 Oprava souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-11-stazeni-souboru">UC02-11 Stážení souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-12-kontrola-duplicity-isbn">UC02-12 Kontrola duplicity ISBN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc02-13-prideleni-isbn">UC02-13 Přidělení ISBN</a></li>
 </ul>
-</div>
-</div>
-<div class="section" id="slovnicek-pojmu">
-<h2><a class="toc-backref" href="#id4">Slovníček pojmů</a><a class="headerlink" href="#slovnicek-pojmu" title="Permalink to this headline">¶</a></h2>
-<p>e-publikace:</p>
-<div class="highlight-python"><pre>publikace vydaná v elektronické formě online, buď jako monografie, nebo pokračující zdroj</pre>
-</div>
-<p>pdf náhled:</p>
-<div class="highlight-python"><pre>automaticky vygenerované pdf. Slouží jako zběžný náhled na e-publikaci</pre>
-</div>
-<p>binární příloha:</p>
-<div class="highlight-python"><pre>příloha e-publikace, např. exe soubor, audio soubor. E-Deposit poskytuje binární ochranu binární přílohy.
-Binární příloha nemá ISBN.</pre>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc03-akvizice-publikace">UC03 - Akvizice publikace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-01-predani-metadat-k-importu-do-aleph">UC03-01 Předání metadat k importu do Aleph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-01-vlozeni-souboru">UC03-01 Vložení souborů</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-02-kontrola-isbn">UC03-02 Kontrola ISBN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-03-kontrola-metadat">UC03-03 Kontrola metadat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-04-prijeti-e-publikace">UC03-04 Přijetí e-publikace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-04-vyplneni-a-slouceni-metadat">UC03-04 Vyplnění a sloučení metadat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-05-kontrola-isbn-v-souboru">UC03-05 Kontrola ISBN v souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-05-odeslani-elektronicke-knihy">UC03-05 Odeslání elektronické knihy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-06-oprava-souboru">UC03-06 Oprava souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-07-stahnuti-souboru">UC03-07 Stáhnutí souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-08-odebrani-pristup-k-e-publikaci">UC03-08 Odebrání přístup k e-publikaci</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-09-odmitnuti-e-publikace">UC03-09 Odmítnutí e-publikace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc03-10-odstraneni-duplicity">UC03-10 Odstranění duplicity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc04-katalogizace-e-publikace">UC04 - Katalogizace e-publikace</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc04-01-zadani-bibliografickych-metadat">UC04-01 Zadání bibliografických metadat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc04-02-export-do-systemu-kramerius">UC04-02 Export do systému Kramerius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc04-03-oprava-souboru">UC04-03 Oprava souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc04-04-stahnuti-souboru">UC04-04 Stáhnutí souboru</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc04-05-odebrani-pristup-k-e-publikaci">UC04-05 Odebrání přístup k e-publikaci</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc04-06-odmitnuti-e-publikace">UC04-06 Odmítnutí e-publikace</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc05-zpristupneni-e-publikace">UC05 - Zpřístupnění e-publikace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc06-dlouhodoba-ochrana-publikace">UC06 - Dlouhodobá ochrana publikace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc07-ohlasovani-pokracujiciho-zdroje">UC07 - Ohlašování pokračujícího zdroje</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc07-01-ohlaseni-noveho-dilu">UC07-01 Ohlášení nového dílu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc07-02-ohlaseni-noveho-dilu-pres-ftp">UC07-02 Ohlášení noveho dilu přes <strong>ftp</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="usecases.html#uc07-03-ohlaseni-noveho-dilu-pres-email">UC07-03 Ohlášení nového dílu přes <strong>email</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc08-akvizice-pokracujiciho-zdroje">UC08 - Akvizice pokračujícího zdroje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc09-katalogizace-pokracujiciho-zdroje">UC09 - Katalogizace pokračujícího zdroje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc10-zpristupnovani-pokracujiciho-zdroje">UC10 - Zpřístupňování pokračujícího zdroje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases.html#uc11-dlouhodoba-ochrana-pokracujiciho-zdroje">UC11 - Dlouhodobá ochrana pokračujícího zdroje</a></li>
+</ul>
+</li>
+</ul>
 </div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -224,862 +139,6 @@ var disqus_shortname = 'edeposit'; // required: replace example with your forum 
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div>
-<div class="section" id="pripady-uziti">
-<h2><a class="toc-backref" href="#id5">Případy užití</a><a class="headerlink" href="#pripady-uziti" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Registrace ISBN se bude dit pres jeden formular, i pro tistene knihy.
-Pak nakladatel pouziva jen jeden ISBN formular.
-Panu Zahorikovi se budou ukladat registrace stejne jako z puvodniho registracniho formulare.
-Nakladatel by pak mel usnadnenou praci, protoze pak by mel jen jedno misto na registraci ISBN.
-Panu Jerabkovi a p. Zahorikovi bude chodit do Alephu zprava.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>zalozeni periodika</p>
-<p class="last">Narodni technicka knihovna ma vlastni agenturu ISSN. Maji vlastni agenturu. Neni dohodnuta zadna sw komunikace s touto agenturou.
-V Alephu se objevi zaznam az kdyz prijde papirovy vytisk. Ten pracovnik vezme a vlozi do Alephu zaznam. i s ISSN.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>pokracujici zdroj</p>
-<p class="last">u zaznamu, co ma issn, bude k dispozici tlacitko &#8220;pridat&#8221;. Tj. pridava se dalsi vytisk. Ten nema nove isbn a patri pod jeden hlavni zaznam.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">UC05 - Doplneni bibliografickeho popisu
-- bibliografie potrebuje prohlizet po jednotlivych strankach
-- v zaznamu v Alephu bude proklik na nahled do e-deposit, podobne jako je proklik do krameria</p>
-</div>
-<div class="section" id="uc01-registrace-nakladatele">
-<h3><a class="toc-backref" href="#id6">UC01 Registrace nakladatele</a><a class="headerlink" href="#uc01-registrace-nakladatele" title="Permalink to this headline">¶</a></h3>
-<img alt="_images/uc01.png" src="_images/uc01.png" />
-<div class="section" id="uc01-01-stazeni-smlouvy-k-vyplneni">
-<h4><a class="toc-backref" href="#id7">UC01-01 Stažení smlouvy k vyplnění</a><a class="headerlink" href="#uc01-01-stazeni-smlouvy-k-vyplneni" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel otevřel úvodní stránku</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Systém zobrazí úvodní stránku<ul>
-<li>informace o e-deposit</li>
-<li>linku se smlouvou pro nakladatele ke stažení</li>
-<li>linku pro přihlášení</li>
-<li>linku pro ohlášení</li>
-</ul>
-</li>
-<li>Nakladatel/vydavatel klikne na &#8220;Smlouva pro nakladatele&#8221;</li>
-<li>Systém poskytne smlouvu k uložení</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel může vyplnit smlouvu pro nakladatele.</p>
-</div>
-<div class="section" id="uc01-02-registrace-nakladatele-vydavatele">
-<h4><a class="toc-backref" href="#id8">UC01-02 Registrace nakladatele/vydavatele</a><a class="headerlink" href="#uc01-02-registrace-nakladatele-vydavatele" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Pracovník akvizice</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>pracovník akvizice má k dispozici vyplněnou smlouvu pro nakladatele</li>
-<li>pracovník akvizice je přihlášený do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Systém zobrazí úvodní stránku<ul>
-<li>přehled e-publikací k akvizici</li>
-<li>linku na vytváření účtů pro nakladatele</li>
-<li>přehled nakladatelů/vydavatelů</li>
-<li>vyhledávání nakladatelů/vydavatelů</li>
-</ul>
-</li>
-<li>Pracovník akvizice klikne na linku &#8220;Nový účet pro nakladatele&#8221;</li>
-<li>Systém poskytne formulář pro zadání údajů o nakladateli<ul>
-<li>přihlašovací jméno</li>
-<li>název nakladatele</li>
-<li>adresa nakladatele</li>
-<li>url nakladatele</li>
-<li>email kontaktní osoby</li>
-<li>telefon kontaktní osoby</li>
-<li>načtení kopie podepsané smlouvy</li>
-</ul>
-</li>
-<li>Pracovník akvizice načte kopii podepsané smlouvy a vyplní formulář</li>
-<li>Pracovník akvizice odešle údaje do systému</li>
-<li>Systém zobrazí potvrzení o uložení a zobrazí přidělené heslo.
-Také zobrazí linku s vygenerovaným dodatkem ke smlouvě.</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel se bude moci přihlásit do systému.</p>
-<p>Přístupové údaje budou uvedeny na dodatku smlouvy.</p>
-</div>
-<div class="section" id="uc01-03-pozastaveni-platnosti-smlouvy-s-nakladatelem-vydavatelem">
-<h4><a class="toc-backref" href="#id9">UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem</a><a class="headerlink" href="#uc01-03-pozastaveni-platnosti-smlouvy-s-nakladatelem-vydavatelem" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Pracovník akvizice</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>pracovník akvizice je přihlášený do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Systém zobrazí úvodní stránku jako v UC01-02/1.</li>
-<li>Pracovník do vyhledávacího políčka zadá název nakladatele</li>
-<li>Systém zobrazí přehled nakladatelů, kteří odpovídají zadání</li>
-<li>Pracovník klikne na linku vybraného nakladatele/vydavatele</li>
-<li>Systém zobrazí detail nakladatele/vydavatele<ul>
-<li>přihlašovací jméno</li>
-<li>název nakladatele</li>
-<li>adresa nakladatele</li>
-<li>url nakladatele</li>
-<li>email kontaktní osoby</li>
-<li>download kopie podepsané smlouvy</li>
-<li>download dodatku ke smlouvě</li>
-<li>linku na pozastaveni platnosti</li>
-</ul>
-</li>
-</ol>
-<ol class="arabic simple" start="4">
-<li>Pracovník akvizice klikne na linku &#8220;Pozastavení platnosti smlouvy&#8221;</li>
-<li>Systém zobrazí potvrzení o pozastavení platnosti smlouvy a zobrazí detail nakladatele/vydavatele<ul>
-<li>zobrazí linku na obnovení platnosti smlouvy</li>
-</ul>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel má k dispozici jen přístup ke svým údajům ke čtení a nemůže si stahovat soubory.</p>
-</div>
-<div class="section" id="uc01-04-detail-uctu-nakladatele-vydavatele">
-<h4><a class="toc-backref" href="#id10">UC01-04 Detail účtu nakladatele/vydavatele</a><a class="headerlink" href="#uc01-04-detail-uctu-nakladatele-vydavatele" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Pracovník akvizice</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>pracovník akvizice je přihlášený do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Systém zobrazí úvodní stránku jako v UC01-02/1.</li>
-<li>Pracovník do vyhledávacího políčka zadá název nakladatele</li>
-<li>Systém zobrazí přehled nakladatelů, kteří odpovídají zadání</li>
-<li>Pracovník klikne na linku vybraného nakladatele/vydavatele</li>
-<li>Systém zobrazí detail nakladatele/vydavatele<ul>
-<li>přihlašovací jméno</li>
-<li>název nakladatele</li>
-<li>adresa nakladatele</li>
-<li>url nakladatele</li>
-<li>email kontaktní osoby</li>
-<li>download kopie podepsané smlouvy</li>
-<li>linku na pozastaveni platnosti</li>
-</ul>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-</div>
-</div>
-<div class="section" id="uc02-ohlaseni-publikace">
-<h3><a class="toc-backref" href="#id11">UC02 Ohlášení publikace</a><a class="headerlink" href="#uc02-ohlaseni-publikace" title="Permalink to this headline">¶</a></h3>
-<img alt="_images/uc02.png" src="_images/uc02.png" />
-<div class="section" id="uc02-01-ohlaseni-jednoduche">
-<h4><a class="toc-backref" href="#id12">UC02-01 Ohlášení jednoduché</a><a class="headerlink" href="#uc02-01-ohlaseni-jednoduche" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel otevřel úvodní stránku</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí stránku jako v UC01-01</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Jednoduché ohlášení&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>ISBN *</li>
-<li>Vazba/forma</li>
-<li>Cena</li>
-<li>Název *</li>
-<li>Podnázev</li>
-<li>Část (svazek, díl)</li>
-<li>Název části</li>
-<li>Autor (příjmení, křestní jméno)</li>
-<li>Další autoři (příjmení, křestní jméno)</li>
-<li>Edice</li>
-<li>Číslo svazku</li>
-<li>URL (e-publikace) *</li>
-<li>Formát (e-publikace) *</li>
-<li>Místo vydání *</li>
-<li>Nakladatel *</li>
-<li>Měsíc a rok vydání *</li>
-<li>Vydáno v koedici s</li>
-<li>Pořadí vydání *</li>
-<li>Zpracovatel záznamu *</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Systém u ISBN zobrazí tlačítko +</p>
-</div>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyplní formulář</p>
-</li>
-<li><p class="first">KDYŽ nakladatel/vydavatel klikne na tlačítko &#8220;+&#8221;</p>
-<p>5.1. Systém zobrazí další políčko ISBN
-5.2. Nakladatel/vydavatel vyplní další ISBN</p>
-</li>
-</ol>
-<ol class="arabic simple" start="5">
-<li>Nakladatel/vydavatel klikne na tlačítko &#8220;Odeslat k akvizici&#8221;</li>
-<li>Systém si data uloží</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Pracovník agentury ISBN má k dispozici novou ohlášku ke kontrole ISBN</p>
-</div>
-<div class="section" id="uc02-02-ohlaseni-se-soubory">
-<h4><a class="toc-backref" href="#id13">UC02-02 Ohlášení se soubory</a><a class="headerlink" href="#uc02-02-ohlaseni-se-soubory" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku</p>
-<ul class="simple">
-<li>informace o e-deposit</li>
-<li>linku se smlouvou pro nakladatele ke stažení</li>
-<li>linku pro odhlášení</li>
-<li>linku pro ohlášení publikace</li>
-<li>přehled ohlášených publikací</li>
-<li>políčko k vyhledávání ohlášených publikací</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Ohlášení publikace&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>ISBN *</li>
-<li>URL (e-publikace) *</li>
-<li>Formát (e-publikace) *</li>
-<li>linka na upload souboru (e-publikace)</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>u každého ISBN bude tlačítko + pro přidání dalšího ISBN k souboru</p>
-<p>u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát</p>
-<p class="last">u tohoto formuláře systém zobrazí tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
-</div>
-<p>Systém dále zobrazí formulář na upload tiskové předlohy:</p>
-<ul class="simple">
-<li>URL</li>
-<li>Formát</li>
-<li>linka a upload souboru</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">u tohoto formuláře systém zobrazí tlačítko + pro přidání další dvojice URL,Formát</p>
-</div>
-<p>Systém dále zobrazí formulář na zadávání metadat:</p>
-<ul class="simple">
-<li>Vazba/forma</li>
-<li>Cena</li>
-<li>Název *</li>
-<li>Podnázev</li>
-<li>Část (svazek, díl)</li>
-<li>Název části</li>
-<li>Autor (příjmení, křestní jméno)</li>
-<li>Další autoři (příjmení, křestní jméno)</li>
-<li>Edice</li>
-<li>Číslo svazku</li>
-<li>Místo vydání *</li>
-<li>Nakladatel *</li>
-<li>Měsíc a rok vydání *</li>
-<li>Vydáno v koedici s</li>
-<li>Pořadí vydání *</li>
-<li>Zpracovatel záznamu *</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Systém zobrazí tlačítko &#8220;Uložit&#8221;</p>
-</div>
-</li>
-<li><p class="first">KDYŽ nakladatel/vydavatel klikne na tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
-<p>4.1. Systém uloží soubor</p>
-<p>4.2. Systém načte metadata ze souboru - UC02-05</p>
-<p>4.3. Systém zobrazí formulář jako v předešlém kroku</p>
-<p>4.4. Systém předvyplní formulář údaji, které načetl ze souboru</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyplní formulář pro zadávání metadat</p>
-</li>
-<li><p class="first">KDYŽ nakladatel klikne na tlačítko +</p>
-<p>5.1. Systém přidá další formulář:</p>
-<blockquote>
-<div><ul class="simple">
-<li>ISBN</li>
-<li>URL (e-publikace)</li>
-<li>Formát (e-publikace)</li>
-<li>linka na upload souboru (e-publikace)</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>u každého ISBN bude tlačítko + pro přidání dalšího ISBN k souboru</p>
-<p>u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát</p>
-<p class="last">u tohoto formuláře systém zobrazí tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
-</div>
-</div></blockquote>
-<p>5.2. Nakladatel/vydavatel vyplní další ISBN ohlašované publikace a zadá soubor</p>
-<p>5.3. Nakladatel/vydavatel pokračuje jako krokem 4</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na tlačítko &#8220;Uložit&#8221;</p>
-</li>
-<li><p class="first">Systém si data a soubory uloží</p>
-</li>
-<li><p class="first">Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISBN</p>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.</p>
-</div>
-<div class="section" id="uc02-03-ohlaseni-s-tiskovou-predlohou">
-<h4><a class="toc-backref" href="#id14">UC02-03 Ohlášení s tiskovou předlohou</a><a class="headerlink" href="#uc02-03-ohlaseni-s-tiskovou-predlohou" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Tok událostí je stejný jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a>.</li>
-<li>NAVÍC Nakladatel/vydavatel vyplní formulář na upload tiskové předlohy</li>
-<li>Systém si data uloží</li>
-<li>Systém provede kontroly souborů</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.</p>
-</div>
-<div class="section" id="uc02-04-odeslani-ohlasky">
-<h4><a class="toc-backref" href="#id15">UC02-04 Odeslání ohlášky</a><a class="headerlink" href="#uc02-04-odeslani-ohlasky" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Nakladatel/vydavatel uložit novou ohlášku podle <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a>.</li>
-<li>Systém zobrazí detail ohlášky a tlačítka &#8220;K akvizici&#8221;, &#8220;K akvizici a přidělit ISBN&#8221;</li>
-<li>Nakladatel/vydavatel klikne na tlačítko &#8220;K akvizici&#8221;</li>
-<li>Systém ohlášku uloží</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel může ohlášku najít v seznamu ohlášek v akvizici.</p>
-<p>Pracovník ISBN agentury má k dispozici novou e-publikaci ke kontrole ISBN - UC03-02</p>
-</div>
-<div class="section" id="uc02-05-odeslani-ohlasky-s-registraci-isbn">
-<h4><a class="toc-backref" href="#id16">UC02-05 Odeslání ohlášky s registrací ISBN</a><a class="headerlink" href="#uc02-05-odeslani-ohlasky-s-registraci-isbn" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Tok událostí je stejný jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a>,
-nebo
-<a class="reference internal" href="#uc02-03-ohlaseni-s-tiskovou-predlohou">UC02-03 Ohlášení s tiskovou předlohou</a>, <a class="reference internal" href="#uc02-04-odeslani-ohlasky">UC02-04 Odeslání ohlášky</a></p>
-<p>S rozdílem, že nakladatel/vydavatel nevyplnil u některé položky ISBN.</p>
-<p>A neklikl na tlačítko &#8220;K akvizici&#8221;</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikl na tlačítko &#8220;K akvizici a přidělit ISBN&#8221;</p>
-</li>
-<li><p class="first">Systém si data uloží</p>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel může uloženou ohlášku najít v seznamu ohlášek v akvizici.</p>
-<p>Nakladatel/vydavatel již nemůže upravovat údaje, co vložil. Jen přidávat dodatečné opravy souborů.</p>
-<p>Pracovník ISBN agentury má k dispozici e-publikaci k přidělení ISBN - UC02-13</p>
-</div>
-<div class="section" id="uc02-06-kontroly-souboru">
-<h4><a class="toc-backref" href="#id17">UC02-06 Kontroly souboru</a><a class="headerlink" href="#uc02-06-kontroly-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc02-07-nacteni-metadat-ze-souboru">
-<h4><a class="toc-backref" href="#id18">UC02-07 Načtení metadat ze  souborů</a><a class="headerlink" href="#uc02-07-nacteni-metadat-ze-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc02-08-transformace-souboru">
-<h4><a class="toc-backref" href="#id19">UC02-08 Transformace souboru</a><a class="headerlink" href="#uc02-08-transformace-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc02-09-vytvoreni-nahledu-na-soubor">
-<h4><a class="toc-backref" href="#id20">UC02-09 Vytvoření náhledu na soubor</a><a class="headerlink" href="#uc02-09-vytvoreni-nahledu-na-soubor" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc02-10-oprava-souboru">
-<h4><a class="toc-backref" href="#id21">UC02-10 Oprava souboru</a><a class="headerlink" href="#uc02-10-oprava-souboru" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-<li>Nakladatel/vydavatel uložil e-publikaci do systému <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a> / 1.</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel zadá do vyhledávacího políčka:</p>
-<ul class="simple">
-<li>část ISBN</li>
-</ul>
-<p>nebo</p>
-<ul class="simple">
-<li>část Názvu</li>
-</ul>
-<p>nebo</p>
-<ul class="simple">
-<li>část Jména autora</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel klikne na linku &#8220;Vyhledat&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí úvodní stránku jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a> / 1.</p>
-<p>přehled ohlášených publikací je omezen podle zadaného filtru</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na vybranou ohlášenou publikaci</p>
-</li>
-<li><p class="first">Systém zobrazí detail ohlášené publikace</p>
-<ul class="simple">
-<li>Vazba/forma</li>
-<li>Cena</li>
-<li>Název</li>
-<li>Podnázev</li>
-<li>Část (svazek, díl)</li>
-<li>Název části</li>
-<li>Autor (příjmení, křestní jméno)</li>
-<li>Další autoři (příjmení, křestní jméno)</li>
-<li>Edice</li>
-<li>Číslo svazku</li>
-<li>Místo vydání</li>
-<li>Nakladatel</li>
-<li>Měsíc a rok vydání</li>
-<li>Vydáno v koedici s</li>
-<li>Pořadí vydání</li>
-<li>Zpracovatel záznamu</li>
-</ul>
-<p>systém dále zobrazí přehled vložených e-publikací</p>
-<p>pro každou e-publikaci:</p>
-<ul class="simple">
-<li>ISBN</li>
-<li>URL</li>
-<li>Formát</li>
-<li>linka na opravu</li>
-<li>linka na získání souboru</li>
-</ul>
-<p>systém dále zobrazí přehled tiskových předloh</p>
-<p>pro každou tiskovou předlohu:</p>
-<ul class="simple">
-<li>URL</li>
-<li>Formát</li>
-<li>linka na opravu</li>
-<li>linka na získání souboru</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Oprava souboru&#8221;</p>
-</li>
-<li><p class="first">Systém přikleslí formulář na zadání opravy souboru:</p>
-<ul class="simple">
-<li>ISBN</li>
-<li>URL</li>
-<li>Formát</li>
-<li>linka na upload souboru</li>
-</ul>
-<p>Systém zobrazí linku &#8220;Uložit&#8221;</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel pokračuje krokem 7. dokud má další soubory k opravě</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Uložit&#8221;</p>
-</li>
-<li><p class="first">Systém uloží opravy souborů</p>
-</li>
-<li><p class="first">Systém provede kontroly souborů</p>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Pracovník ISBN agentury má k dispozici další e-publikaci ke kontrole ISBN - UC03-02</p>
-</div>
-<div class="section" id="uc02-11-stazeni-souboru">
-<h4><a class="toc-backref" href="#id22">UC02-11 Stážení souboru</a><a class="headerlink" href="#uc02-11-stazeni-souboru" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-<li>Nakladatel/vydavatel uložil e-publikaci do systému <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Nakladatel/vydavatel vyhledá detail ohlášené publikace jako v UC02-08</li>
-<li>Nakladatel/vydavatel u vybranéhou souboru klikne na linku k získání souboru</li>
-<li>Systém nabídne soubor ke stažení</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Nakladatel/vydavatel má ve svém počítači stažený soubor.</p>
-</div>
-<div class="section" id="uc02-12-kontrola-duplicity-isbn">
-<h4><a class="toc-backref" href="#id23">UC02-12 Kontrola duplicity ISBN</a><a class="headerlink" href="#uc02-12-kontrola-duplicity-isbn" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc02-13-prideleni-isbn">
-<h4><a class="toc-backref" href="#id24">UC02-13 Přidělení ISBN</a><a class="headerlink" href="#uc02-13-prideleni-isbn" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="uc03-akvizice-publikace">
-<h3><a class="toc-backref" href="#id25">UC03 - Akvizice publikace</a><a class="headerlink" href="#uc03-akvizice-publikace" title="Permalink to this headline">¶</a></h3>
-<img alt="_images/uc03.png" src="_images/uc03.png" />
-<div class="section" id="uc03-01-predani-metadat-k-importu-do-aleph">
-<h4><a class="toc-backref" href="#id26">UC03-01 Předání metadat k importu do Aleph</a><a class="headerlink" href="#uc03-01-predani-metadat-k-importu-do-aleph" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc03-01-vlozeni-souboru">
-<h4><a class="toc-backref" href="#id27">UC03-01 Vložení souborů</a><a class="headerlink" href="#uc03-01-vlozeni-souboru" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku</p>
-<ul class="simple">
-<li>přehled vložených knih, předloh, časopisů</li>
-<li>přehled vložených knih, předloh, časopisů, co čekají na akci nakladatele/vydavatele</li>
-<li>přehled vložených souborů</li>
-<li>vyhledávací políčko u každého přehledu</li>
-<li>linka &#8220;Vložit soubor&#8221;</li>
-<li>linka s názvem akce u každé knihy, předlohy, časopisu</li>
-<li>linka &#8220;upravit si heslo, údaje o uživateli&#8221;</li>
-</ul>
-<p>název akce se bude lišit podle toho, v jakém je kniha,předloha,časopis stavu</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Vložit soubor&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
-</li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>pro vložení hlavních souborů</li>
-<li>pro vložení binárních příloh</li>
-</ul>
-<p>u každého hlavního souboru budou vstupy pro:</p>
-<ul class="simple">
-<li>popis souboru</li>
-<li>ISBN</li>
-<li>URL</li>
-</ul>
-<p>u již vložených souborů systém nabídne možnost soubor smazat.</p>
-<p>systém napovídá ISBN, co jsou v přehledu vložených knih, předloh a časopisů</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
-</li>
-<li><p class="first">Systém provede kontroly souborů</p>
-</li>
-<li><p class="first">IF kontroly proběhnou v pořádku</p>
-</li>
-</ol>
-<blockquote>
-<div>7.1. Systém u souboru zobrazí linku &#8220;Vyplnění metadat&#8221;</div></blockquote>
-<ol class="arabic simple" start="8">
-<li>IF kontroly neproběhnou v pořádku</li>
-</ol>
-<blockquote>
-<div>8.1. Systém zobrazí hlášku s chybou
-8.2. Systém opakuje krok 4.</div></blockquote>
-<p><em>následné podmínky</em>:</p>
-<p>V systému jsou uloženy soubory k nové e-publikaci.</p>
-</div>
-<div class="section" id="uc03-02-kontrola-isbn">
-<h4><a class="toc-backref" href="#id28">UC03-02 Kontrola ISBN</a><a class="headerlink" href="#uc03-02-kontrola-isbn" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel zadá do vyhledávácího políčka část ISBN, nebo URL, nebo popisu souboru</p>
-</li>
-<li><p class="first">Systém zobrazí přehled vložených knih, předloh a časopisů, který odpovídá zadanému omezení</p>
-<ul class="simple">
-<li>u každého záznamu je linka &#8220;opravit&#8221;</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;opravit&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>pro vložení hlavních souborů</li>
-<li>pro vložení binárních příloh</li>
-</ul>
-<p>u každého hlavního souboru budou vstupy pro:</p>
-<ul class="simple">
-<li>popis souboru</li>
-<li>ISBN</li>
-<li>URL</li>
-</ul>
-<p>u již vložených souborů systém nabídne možnost soubor smazat.</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
-</li>
-<li><p class="first">Systém provede kontroly souborů</p>
-</li>
-<li><p class="first">dále jako UC03-01/7, UC03-01/8</p>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>V systému jsou uloženy soubory k nové e-publikaci.</p>
-</div>
-<div class="section" id="uc03-03-kontrola-metadat">
-<h4><a class="toc-backref" href="#id29">UC03-03 Kontrola metadat</a><a class="headerlink" href="#uc03-03-kontrola-metadat" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-<li>Systém</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyhledá vybrané ISBN</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyhledá vybraný soubor</p>
-</li>
-<li><ol class="first loweralpha simple">
-<li>Nakladatel/vydavatel přetáhne myší vybrané ISBN k vybranénu souboru</li>
-</ol>
-<p>NEBO b. Nakladatel/vydavatel přetáhne myší vybraný soubor k vybranému ISBN</p>
-<p>NEBO c. 1. Nakladatel/vydavatel klikne na vybraný soubor</p>
-<blockquote>
-<div><ol class="loweralpha" start="3">
-<li><ol class="first arabic simple" start="2">
-<li>Systém zobrazí:</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>ISBN</li>
-<li>URL</li>
-<li>popis souboru</li>
-</ul>
-</div></blockquote>
-</li>
-</ol>
-<ol class="loweralpha simple" start="3">
-<li><ol class="first arabic" start="3">
-<li>Nakladatel/vydavatel vyplní ISBN</li>
-</ol>
-</li>
-</ol>
-<ol class="loweralpha simple" start="3">
-<li><ol class="first arabic" start="4">
-<li>Nakladatel/vydavatel</li>
-</ol>
-</li>
-</ol>
-</div></blockquote>
-</li>
-<li><p class="first">Systém přesune spárovaný soubor do stavu k vyplnění metadat</p>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-</div>
-<div class="section" id="uc03-04-prijeti-e-publikace">
-<h4><a class="toc-backref" href="#id30">UC03-04 Přijetí e-publikace</a><a class="headerlink" href="#uc03-04-prijeti-e-publikace" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc03-04-vyplneni-a-slouceni-metadat">
-<h4><a class="toc-backref" href="#id31">UC03-04 Vyplnění a sloučení metadat</a><a class="headerlink" href="#uc03-04-vyplneni-a-slouceni-metadat" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku viz UC01-01</p>
-<p>u každého záznamu knihy, předlohy, časopisu bude linka &#8220;Upravit&#8221;</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Upravit&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí formulář na zadání popisných metadat:</p>
-<p>bude to tabulka. V jednom sloupci budou pole k ručnímu zadání hodnot:</p>
-<ul class="simple">
-<li>název</li>
-<li>podnázev</li>
-<li>část</li>
-<li>název části</li>
-<li>autor</li>
-<li>další autoři</li>
-<li>edice</li>
-<li>číslo svazku</li>
-<li>místo vydání</li>
-<li>nakladatel</li>
-<li>měsíc a rok vydání</li>
-<li>vydáno v koedici</li>
-<li>pořadí vydání</li>
-<li>vazba/forma</li>
-<li>cena</li>
-</ul>
-<p>V dalším sloupci budou načtené údaje ze souboru</p>
-<p>V dalším sloupc budou načtené údaje z Aleph</p>
-<ul class="simple">
-<li>volně přístupná e-publikace</li>
-<li>TODO údaje o licencovaných e-publikacích</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyplní/opraví údaje ve sloupci pro ruční zadání</p>
-<p>NEBO</p>
-<p>ve vedlejších sloupcích zaškrtne údaje, které chce přijmout a použít</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-</div>
-<div class="section" id="uc03-05-kontrola-isbn-v-souboru">
-<h4><a class="toc-backref" href="#id32">UC03-05 Kontrola ISBN v souboru</a><a class="headerlink" href="#uc03-05-kontrola-isbn-v-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc03-05-odeslani-elektronicke-knihy">
-<h4><a class="toc-backref" href="#id33">UC03-05 Odeslání elektronické knihy</a><a class="headerlink" href="#uc03-05-odeslani-elektronicke-knihy" title="Permalink to this headline">¶</a></h4>
-<p><em>účastníci</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel</li>
-</ul>
-<p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-<li>Nakladatel/vydavatel provedl UC03-04</li>
-</ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
-<p>U knih, co mají vyplněná metadata se objeví linka &#8220;K akvizici&#8221;</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na &#8220;K akvizici&#8221;</p>
-</li>
-<li><p class="first">Systém převede knihu do stavu &#8220;Akvizice&#8221;</p>
-</li>
-</ol>
-<p><em>následné podmínky</em>:</p>
-<p>Pracovník akvizice má k dispozici knihu ke kontrole.</p>
-</div>
-<div class="section" id="uc03-06-oprava-souboru">
-<h4><a class="toc-backref" href="#id34">UC03-06 Oprava souboru</a><a class="headerlink" href="#uc03-06-oprava-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc03-07-stahnuti-souboru">
-<h4><a class="toc-backref" href="#id35">UC03-07 Stáhnutí souboru</a><a class="headerlink" href="#uc03-07-stahnuti-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc03-08-odebrani-pristup-k-e-publikaci">
-<h4><a class="toc-backref" href="#id36">UC03-08 Odebrání přístup k e-publikaci</a><a class="headerlink" href="#uc03-08-odebrani-pristup-k-e-publikaci" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc03-09-odmitnuti-e-publikace">
-<h4><a class="toc-backref" href="#id37">UC03-09 Odmítnutí e-publikace</a><a class="headerlink" href="#uc03-09-odmitnuti-e-publikace" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc03-10-odstraneni-duplicity">
-<h4><a class="toc-backref" href="#id38">UC03-10 Odstranění duplicity</a><a class="headerlink" href="#uc03-10-odstraneni-duplicity" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="uc04-katalogizace-e-publikace">
-<h3><a class="toc-backref" href="#id39">UC04 - Katalogizace e-publikace</a><a class="headerlink" href="#uc04-katalogizace-e-publikace" title="Permalink to this headline">¶</a></h3>
-<img alt="_images/uc04.png" src="_images/uc04.png" />
-<div class="section" id="uc04-01-zadani-bibliografickych-metadat">
-<h4><a class="toc-backref" href="#id40">UC04-01 Zadání bibliografických metadat</a><a class="headerlink" href="#uc04-01-zadani-bibliografickych-metadat" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc04-02-export-do-systemu-kramerius">
-<h4><a class="toc-backref" href="#id41">UC04-02 Export do systému Kramerius</a><a class="headerlink" href="#uc04-02-export-do-systemu-kramerius" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc04-03-oprava-souboru">
-<h4><a class="toc-backref" href="#id42">UC04-03 Oprava souboru</a><a class="headerlink" href="#uc04-03-oprava-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc04-04-stahnuti-souboru">
-<h4><a class="toc-backref" href="#id43">UC04-04 Stáhnutí souboru</a><a class="headerlink" href="#uc04-04-stahnuti-souboru" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc04-05-odebrani-pristup-k-e-publikaci">
-<h4><a class="toc-backref" href="#id44">UC04-05 Odebrání přístup k e-publikaci</a><a class="headerlink" href="#uc04-05-odebrani-pristup-k-e-publikaci" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc04-06-odmitnuti-e-publikace">
-<h4><a class="toc-backref" href="#id45">UC04-06 Odmítnutí e-publikace</a><a class="headerlink" href="#uc04-06-odmitnuti-e-publikace" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="uc05-zpristupneni-e-publikace">
-<h3><a class="toc-backref" href="#id46">UC05 - Zpřístupnění e-publikace</a><a class="headerlink" href="#uc05-zpristupneni-e-publikace" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc06-dlouhodoba-ochrana-publikace">
-<h3><a class="toc-backref" href="#id47">UC06 - Dlouhodobá ochrana publikace</a><a class="headerlink" href="#uc06-dlouhodoba-ochrana-publikace" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc07-ohlasovani-pokracujiciho-zdroje">
-<h3><a class="toc-backref" href="#id48">UC07 - Ohlašování pokračujícího zdroje</a><a class="headerlink" href="#uc07-ohlasovani-pokracujiciho-zdroje" title="Permalink to this headline">¶</a></h3>
-<img alt="_images/uc07.png" src="_images/uc07.png" />
-<div class="section" id="uc07-01-ohlaseni-noveho-dilu">
-<h4><a class="toc-backref" href="#id49">UC07-01 Ohlášení nového dílu</a><a class="headerlink" href="#uc07-01-ohlaseni-noveho-dilu" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc07-02-ohlaseni-noveho-dilu-pres-ftp">
-<h4><a class="toc-backref" href="#id50">UC07-02 Ohlášení noveho dilu přes <strong>ftp</strong></a><a class="headerlink" href="#uc07-02-ohlaseni-noveho-dilu-pres-ftp" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="uc07-03-ohlaseni-noveho-dilu-pres-email">
-<h4><a class="toc-backref" href="#id51">UC07-03 Ohlášení nového dílu přes <strong>email</strong></a><a class="headerlink" href="#uc07-03-ohlaseni-noveho-dilu-pres-email" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="uc08-akvizice-pokracujiciho-zdroje">
-<h3><a class="toc-backref" href="#id52">UC08 - Akvizice pokračujícího zdroje</a><a class="headerlink" href="#uc08-akvizice-pokracujiciho-zdroje" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc09-katalogizace-pokracujiciho-zdroje">
-<h3><a class="toc-backref" href="#id53">UC09 - Katalogizace pokračujícího zdroje</a><a class="headerlink" href="#uc09-katalogizace-pokracujiciho-zdroje" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc10-zpristupnovani-pokracujiciho-zdroje">
-<h3><a class="toc-backref" href="#id54">UC10 - Zpřístupňování pokračujícího zdroje</a><a class="headerlink" href="#uc10-zpristupnovani-pokracujiciho-zdroje" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc11-dlouhodoba-ochrana-pokracujiciho-zdroje">
-<h3><a class="toc-backref" href="#id55">UC11 - Dlouhodobá ochrana pokračujícího zdroje</a><a class="headerlink" href="#uc11-dlouhodoba-ochrana-pokracujiciho-zdroje" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-</div>
 <div class="section" id="odkazy">
 <h1>Odkazy<a class="headerlink" href="#odkazy" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
@@ -1095,6 +154,8 @@ nebo
       
         <p>
         <a class="uplink" href="#">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="requirements.html">Požadavky na systém a jeho omezení</a>&#160;&#160;»
         </p>
 
       </div>

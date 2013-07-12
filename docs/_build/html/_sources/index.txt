@@ -12,15 +12,12 @@ E-Deposit - SW dokumentace
 
 Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
 
-.. contents::
-   :local:
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-.. include:: requirements.rst
-
-.. include:: dictionary.rst
+   requirements
+   dictionary
+   usecases
 
 .. raw:: html
 
@@ -40,8 +37,6 @@ Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
 
- 
-.. include:: usecases.rst
 
 Odkazy
 =================
