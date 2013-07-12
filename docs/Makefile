@@ -97,6 +97,11 @@ epub: $(PNGS)
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
+pdf: $(PNGS)
+	$(SPHINXBUILD) -bpdf $(ALLSPHINXOPTS) . $(BUILDDIR)/pdf
+	@echo
+	@echo "Build finished; the PDF files are in $(BUILDDIR)/pdf."
+
 latex: $(PNGS)
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
