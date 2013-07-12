@@ -1,5 +1,3 @@
-UC02-02 Prohledávání registrovaných ISBN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 
@@ -15,16 +13,92 @@ UC02-02 Prohledávání registrovaných ISBN
 
    - informace o e-deposit
    - linku se smlouvou pro nakladatele ke stažení
-   - linku pro přihlášení
-      
-2. Nakladatel/vydavatel klikne na "Registrace ISBN"
-3. Systém poskytne přehled registrovaných ISBN
+   - linku pro odhlášení
+   - linku pro ohlášení publikace
+   - přehled ohlášených publikací
+   - políčko k vyhledávání ohlášených publikací
 
-   - zobrazí linku "Nová registrace"
-   - políčko pro vyhledávání ISBN
+2. Nakladatel/vydavatel klikne na "Ohlášení publikace"
+3. Systém zobrazí formulář:
 
-4. Nakladatel/vydavatel zadá do políčka část ISBN
-5. Systém omezí přehled registrovaných ISBN podle zadané části ISBN
+   - ISBN *
+   - URL (e-publikace) *
+   - Formát (e-publikace) *
+   - linka na upload souboru (e-publikace)
+
+   .. note ::
+
+     u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát
+   
+     u tohoto formuláře systém zobrazí tlačítko "Načíst metadata ze souboru"
+
+   Systém dále zobrazí formulář na upload tiskové předlohy:
+
+   - URL
+   - Formát
+   - linka a upload souboru
+
+   .. note::
+
+      u tohoto formuláře systém zobrazí tlačítko + pro přidání další dvojice URL,Formát
+
+   Systém dále zobrazí formulář na zadávání metadat:
+
+   - Vazba/forma 
+   - Cena 
+   - Název *
+   - Podnázev 
+   - Část (svazek, díl)
+   - Název části
+   - Autor (příjmení, křestní jméno)
+   - Další autoři (příjmení, křestní jméno)
+   - Edice
+   - Číslo svazku
+   - Místo vydání *
+   - Nakladatel *
+   - Měsíc a rok vydání *
+   - Vydáno v koedici s
+   - Pořadí vydání *
+   - Zpracovatel záznamu *
+
+   .. note::
+
+      Systém zobrazí tlačítko "Uložit"
+
+4. KDYŽ nakladatel/vydavatel klikne na tlačítko "Načíst metadata ze souboru"
+
+   4.1. Systém uloží soubor
+
+   4.2. Systém načte metadata ze souboru - UC02-05
+
+   4.3. Systém zobrazí formulář jako v předešlém kroku
+   
+   4.4. Systém předvyplní formulář údaji, které načetl ze souboru
+
+5. Nakladatel/vydavatel vyplní formulář pro zadávání metadat
+6. KDYŽ nakladatel klikne na tlačítko +
+
+   5.1. Systém přidá další formulář:
+       
+        - ISBN
+	- URL (e-publikace)
+	- Formát (e-publikace)
+	- linka na upload souboru (e-publikace)
+
+	.. note::
+
+	   u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát
+   
+	   u tohoto formuláře systém zobrazí tlačítko "Načíst metadata ze souboru"
+
+   5.2. Nakladatel/vydavatel vyplní další ISBN ohlašované publikace a zadá soubor
+
+   5.3. Nakladatel/vydavatel pokračuje jako krokem 4
+
+7. Nakladatel/vydavatel klikne na tlačítko "Uložit"
+8. Systém si data a soubory uloží
+9. Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISBN
    
 *následné podmínky*:
 
+Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.

@@ -1,15 +1,27 @@
 @startuml
 left to right direction
-title Zadávání elektronické knihy
+title Akvizice publikace
 skinparam packageStyle rect
 
-actor :Nakladatel/vydavatel:
+actor :Nakladatel/vydavatel: as nakl
+actor :Pracovník agentury ISBN: as isbn
+actor :Pracovník akvizice: as akv
+actor :Systém: as sys
+actor :Správce systému Aleph: as aleph
+
+:isbn: -left-> (Aleph: Kontrola ISBN)
+:akv: -left-> (Aleph: Kontrola metadat)
 
 rectangle  {
-	   :Nakladatel/vydavatel: --> (UC03-01 Vložení souborů)
-	   :Nakladatel/vydavatel: --> (UC03-02 Nahrazení souborů)
-	   :Nakladatel/vydavatel: --> (UC03-03 Spárování souborů s ISBN)
-	   :Nakladatel/vydavatel: --> (UC03-04 Vyplnění a sloučení metadat)
-	   :Nakladatel/vydavatel: --> (UC03-05 Odeslání elektronické knihy)
+	   :sys: -left-> (UC03-01 Předání metadat k importu do Aleph)
+	   :isbn: -left-> (UC03-02 Kontrola ISBN)
+	   :akv: -left-> (UC03-03 Kontrola metadat)
+	   :akv: -left-> (UC03-04 Přijetí e-publikace)
+	   :isbn: -left-> (UC03-05 Kontrola ISBN v souboru)
+	   :nakl: --> (UC03-06 Oprava souboru)
+	   :nakl: --> (UC03-07 Stáhnutí souboru)
+	   :akv: --> (UC03-08 Odebrání přístupu k e-publikaci)
+	   :akv: --> (UC03-09 Odmítnutí e-publikace)
+	   :akv: --> (UC03-10 Odstranění duplicity)
 }
 @enduml

@@ -1,6 +1,6 @@
 @startuml
 left to right direction
-title Zpracování elektronické knihy
+title Zpřístupnění e-publikace
 skinparam packageStyle rect
 
 actor :Nakladatel/vydavatel:

@@ -1,19 +1,20 @@
 @startuml
 left to right direction
-title Registrace uživatele
+title Registrace nakladatele/vydavatele
 skinparam packageStyle rect
 
-actor :Nakladatel/vydavatel:
-actor :Pracovník akvizice:
-actor :Správce systému:
+actor :Nakladatel/vydavatel: as nakl
+actor :Pracovník akvizice: as akv
+actor :Správce systému: as sys
 
 rectangle  {
-	  :Nakladatel/vydavatel: --> (UC01-01 Stažení smlouvy k vyplnění)
-	  :Pracovník akvizice: -left-> (UC01-02 Registrace nakladatele/vydavatele)
-	  :Pracovník akvizice: -left-> (UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem)
+	  :nakl: --> (UC01-01 Stažení smlouvy k vyplnění)
+	  :akv: -left-> (UC01-02 Registrace nakladatele/vydavatele)
+	  :akv: -left-> (UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem)
+	  :nakl: --> (UC01-04 Detail účtu nakladatele/vydavatele)
 }
 
-:Nakladatel/vydavatel: ---> (ručně: Vyplnění smlouvy)
-:Nakladatel/vydavatel: ---> (úsek akvizice: Návštěva Národní knihovny)
+:nakl: ---> (ručně: Vyplnění smlouvy)
+:nakl: ---> (úsek akvizice: Návštěva Národní knihovny)
 @enduml
 

@@ -1,0 +1,31 @@
+.. Odeslání ohlášení s registrací ISBN
+
+*účastníci*:
+
+- Nakladatel/vydavatel
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel se přihlásil do systému
+
+*tok událostí*:
+
+1. Tok událostí je stejný jako v `UC02-02 Ohlášení se soubory`_,
+   nebo 
+   `UC02-03 Ohlášení s tiskovou předlohou`_, `UC02-04 Odeslání ohlášky`_
+  
+   S rozdílem, že nakladatel/vydavatel nevyplnil u některé položky ISBN.
+
+   A neklikl na tlačítko "K akvizici"
+
+2. Nakladatel/vydavatel klikl na tlačítko "K akvizici a přidělit ISBN"
+3. Systém si data uloží
+   
+*následné podmínky*:
+
+Nakladatel/vydavatel může uloženou ohlášku najít v seznamu ohlášek v akvizici.
+
+Nakladatel/vydavatel již nemůže upravovat údaje, co vložil. Jen přidávat dodatečné opravy souborů.
+
+Pracovník ISBN agentury má k dispozici e-publikaci k přidělení ISBN - UC02-13
+

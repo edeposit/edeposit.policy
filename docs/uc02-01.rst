@@ -1,27 +1,43 @@
-UC02-01 Načtení nově registrovaných ISBN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Ohlaseni jednoduche
 
 *účastníci*:
 
-- Systém
-- Aleph
+- Nakladatel/vydavatel
 
 *vstupní podmínky*:
 
-- Nově registrované ISBN jsou v Alephu, v bázi 49.
+- Nakladatel/vydavatel otevřel úvodní stránku
 
 *tok událostí*:
 
-1. Systém se zeptá Aleph na nově registrované ISBN pro konkrétního nakladatele/vydavatele
-2. Aleph vrátí soubory ve formát Marc
-3. Systém ze souborů načte:
+1. Systém zobrazí stránku jako v UC01-01
+2. Nakladatel/vydavatel klikne na linku "Jednoduché ohlášení"
+3. Systém zobrazí formulář:
    
-   - ISBN
-   - popis
-   - interní ID pro Aleph
+   - ISBN *
+   - Vazba/forma 
+   - Cena 
+   - Název *
+   - Podnázev 
+   - Část (svazek, díl)
+   - Název části
+   - Autor (příjmení, křestní jméno)
+   - Další autoři (příjmení, křestní jméno)
+   - Edice
+   - Číslo svazku
+   - URL (e-publikace) *
+   - Formát (e-publikace) *
+   - Místo vydání *
+   - Nakladatel *
+   - Měsíc a rok vydání *
+   - Vydáno v koedici s
+   - Pořadí vydání *
+   - Zpracovatel záznamu *
 
-4. Systém si soubory uloží
+4. Nakladatel/vydavatel vyplní formulář
+5. Nakladatel/vydavatel klikne na tlačítko "Odeslat k akvizici"
+6. Systém si data uloží
 
 *následné podmínky*:
 
-V systému má každý dodavatel aktuální přehled nově zadaných ISBN.
+Pracovník agentury ISBN má k dispozici novou ohlášku ke kontrole ISBN

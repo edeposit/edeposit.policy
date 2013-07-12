@@ -22,20 +22,19 @@ UC03-04 Vyplnění a sloučení metadat
 
    - název
    - podnázev
-   - formát
-   - cena
    - část
    - název části
    - autor
    - další autoři
    - edice
    - číslo svazku
-   - místo
-   - vydání
+   - místo vydání
    - nakladatel
    - měsíc a rok vydání
    - vydáno v koedici
    - pořadí vydání
+   - vazba/forma
+   - cena
    
    V dalším sloupci budou načtené údaje ze souboru
 

@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UC02-01 Načtení nově registrovaných ISBN</title>
+    <title>&lt;no title&gt;</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -45,32 +45,46 @@
       <div class="content">
         
         
-  <div class="section" id="uc02-01-nacteni-nove-registrovanych-isbn">
-<h1>UC02-01 Načtení nově registrovaných ISBN<a class="headerlink" href="#uc02-01-nacteni-nove-registrovanych-isbn" title="Permalink to this headline">¶</a></h1>
-<p><em>účastníci</em>:</p>
+  <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Systém</li>
-<li>Aleph</li>
+<li>Nakladatel/vydavatel</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nově registrované ISBN jsou v Alephu, v bázi 49.</li>
+<li>Nakladatel/vydavatel otevřel úvodní stránku</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic simple">
-<li>Systém se zeptá Aleph na nově registrované ISBN pro konkrétního nakladatele/vydavatele</li>
-<li>Aleph vrátí soubory ve formát Marc</li>
-<li>Systém ze souborů načte:<ul>
-<li>ISBN</li>
-<li>popis</li>
-<li>interní ID pro Aleph</li>
+<li>Systém zobrazí stránku jako v UC01-01</li>
+<li>Nakladatel/vydavatel klikne na linku &#8220;Jednoduché ohlášení&#8221;</li>
+<li>Systém zobrazí formulář:<ul>
+<li>ISBN *</li>
+<li>Vazba/forma</li>
+<li>Cena</li>
+<li>Název *</li>
+<li>Podnázev</li>
+<li>Část (svazek, díl)</li>
+<li>Název části</li>
+<li>Autor (příjmení, křestní jméno)</li>
+<li>Další autoři (příjmení, křestní jméno)</li>
+<li>Edice</li>
+<li>Číslo svazku</li>
+<li>URL (e-publikace) *</li>
+<li>Formát (e-publikace) *</li>
+<li>Místo vydání *</li>
+<li>Nakladatel *</li>
+<li>Měsíc a rok vydání *</li>
+<li>Vydáno v koedici s</li>
+<li>Pořadí vydání *</li>
+<li>Zpracovatel záznamu *</li>
 </ul>
 </li>
-<li>Systém si soubory uloží</li>
+<li>Nakladatel/vydavatel vyplní formulář</li>
+<li>Nakladatel/vydavatel klikne na tlačítko &#8220;Odeslat k akvizici&#8221;</li>
+<li>Systém si data uloží</li>
 </ol>
 <p><em>následné podmínky</em>:</p>
-<p>V systému má každý dodavatel aktuální přehled nově zadaných ISBN.</p>
-</div>
+<p>Pracovník agentury ISBN má k dispozici novou ohlášku ke kontrole ISBN</p>
 
 
       </div>

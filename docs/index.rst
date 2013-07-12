@@ -7,7 +7,7 @@
 .. (project-task run-show "*shell*" "google-chrome file:///opt/e-deposit/src/edeposit.policy/docs/_build/html/index.html")
 
 E-Deposit - SW dokumentace
-==========================
+===========================================================================
 
 .. sectionauthor:: Jan Stavěl <stavel.jan at gmail.com>
 
@@ -26,7 +26,7 @@ Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
 .. include:: usecases.rst
 
 Odkazy
-======
+=================
 
 * :ref:`genindex`
 * :ref:`modindex`

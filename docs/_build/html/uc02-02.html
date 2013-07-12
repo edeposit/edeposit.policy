@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UC02-02 Prohledávání registrovaných ISBN</title>
+    <title>&lt;no title&gt;</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -45,9 +45,7 @@
       <div class="content">
         
         
-  <div class="section" id="uc02-02-prohledavani-registrovanych-isbn">
-<h1>UC02-02 Prohledávání registrovaných ISBN<a class="headerlink" href="#uc02-02-prohledavani-registrovanych-isbn" title="Permalink to this headline">¶</a></h1>
-<p><em>účastníci</em>:</p>
+  <p><em>účastníci</em>:</p>
 <ul class="simple">
 <li>Nakladatel/vydavatel</li>
 </ul>
@@ -56,24 +54,100 @@
 <li>Nakladatel/vydavatel se přihlásil do systému</li>
 </ul>
 <p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Systém zobrazí úvodní stránku<ul>
+<ol class="arabic">
+<li><p class="first">Systém zobrazí úvodní stránku</p>
+<ul class="simple">
 <li>informace o e-deposit</li>
 <li>linku se smlouvou pro nakladatele ke stažení</li>
-<li>linku pro přihlášení</li>
+<li>linku pro odhlášení</li>
+<li>linku pro ohlášení publikace</li>
+<li>přehled ohlášených publikací</li>
+<li>políčko k vyhledávání ohlášených publikací</li>
 </ul>
 </li>
-<li>Nakladatel/vydavatel klikne na &#8220;Registrace ISBN&#8221;</li>
-<li>Systém poskytne přehled registrovaných ISBN<ul>
-<li>zobrazí linku &#8220;Nová registrace&#8221;</li>
-<li>políčko pro vyhledávání ISBN</li>
-</ul>
+<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Ohlášení publikace&#8221;</p>
 </li>
-<li>Nakladatel/vydavatel zadá do políčka část ISBN</li>
-<li>Systém omezí přehled registrovaných ISBN podle zadané části ISBN</li>
+<li><p class="first">Systém zobrazí formulář:</p>
+<ul class="simple">
+<li>ISBN *</li>
+<li>URL (e-publikace) *</li>
+<li>Formát (e-publikace) *</li>
+<li>linka na upload souboru (e-publikace)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát</p>
+<p class="last">u tohoto formuláře systém zobrazí tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
+</div>
+<p>Systém dále zobrazí formulář na upload tiskové předlohy:</p>
+<ul class="simple">
+<li>URL</li>
+<li>Formát</li>
+<li>linka a upload souboru</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">u tohoto formuláře systém zobrazí tlačítko + pro přidání další dvojice URL,Formát</p>
+</div>
+<p>Systém dále zobrazí formulář na zadávání metadat:</p>
+<ul class="simple">
+<li>Vazba/forma</li>
+<li>Cena</li>
+<li>Název *</li>
+<li>Podnázev</li>
+<li>Část (svazek, díl)</li>
+<li>Název části</li>
+<li>Autor (příjmení, křestní jméno)</li>
+<li>Další autoři (příjmení, křestní jméno)</li>
+<li>Edice</li>
+<li>Číslo svazku</li>
+<li>Místo vydání *</li>
+<li>Nakladatel *</li>
+<li>Měsíc a rok vydání *</li>
+<li>Vydáno v koedici s</li>
+<li>Pořadí vydání *</li>
+<li>Zpracovatel záznamu *</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Systém zobrazí tlačítko &#8220;Uložit&#8221;</p>
+</div>
+</li>
+<li><p class="first">KDYŽ nakladatel/vydavatel klikne na tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
+<p>4.1. Systém uloží soubor</p>
+<p>4.2. Systém načte metadata ze souboru - UC02-05</p>
+<p>4.3. Systém zobrazí formulář jako v předešlém kroku</p>
+<p>4.4. Systém předvyplní formulář údaji, které načetl ze souboru</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel vyplní formulář pro zadávání metadat</p>
+</li>
+<li><p class="first">KDYŽ nakladatel klikne na tlačítko +</p>
+<p>5.1. Systém přidá další formulář:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ISBN</li>
+<li>URL (e-publikace)</li>
+<li>Formát (e-publikace)</li>
+<li>linka na upload souboru (e-publikace)</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát</p>
+<p class="last">u tohoto formuláře systém zobrazí tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
+</div>
+</div></blockquote>
+<p>5.2. Nakladatel/vydavatel vyplní další ISBN ohlašované publikace a zadá soubor</p>
+<p>5.3. Nakladatel/vydavatel pokračuje jako krokem 4</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel klikne na tlačítko &#8220;Uložit&#8221;</p>
+</li>
+<li><p class="first">Systém si data a soubory uloží</p>
+</li>
+<li><p class="first">Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISBN</p>
+</li>
 </ol>
 <p><em>následné podmínky</em>:</p>
-</div>
+<p>Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.</p>
 
 
       </div>

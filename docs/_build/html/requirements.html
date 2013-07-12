@@ -51,27 +51,27 @@
 <h2>Požadavky na funkci systému<a class="headerlink" href="#pozadavky-na-funkci-systemu" title="Permalink to this headline">¶</a></h2>
 <p>Požadavky které jsou kladeny na funkci systému.</p>
 <ul class="simple">
-<li>systém umožňuje podávat žádosti o registraci <strong>ISBN</strong></li>
+<li>systém umožňuje ukládat elektronické předlohy tištěných publikací</li>
+<li>tisková předloha má stejné <strong>ISBN</strong> jako tištěná publikace</li>
 <li>systém umožňuje vkládat e-publikace</li>
 <li>systém umožňuje doplňovat bibliografický popis e-publikace</li>
+<li>systém umožňuje vyměnit soubor i po přijetí akvizicí</li>
+<li>systém umožňuje nakladateli/vydavateli přidávat další soubory i k zamčeném záznamu</li>
 <li>e-publikace jsou zabezpečeny podle běžných standardů a postupů</li>
-<li>e-publikace může obsahovat více souborů v různých formátech</li>
-<li>každý soubor jedné e-publikace má vlastní <strong>ISBN</strong> a společný <strong>ISSN</strong></li>
+<li>bibliografický záznam může obsahovat více souborů v různých formátech</li>
+<li>každý soubor jednoho má žádný, nebo jeden, nebo více <strong>ISBN</strong> a může mít i jeden <strong>ISSN</strong></li>
 <li>e-publikace mohou být zpřístupněny za pomoci <strong>OAI-PMH</strong>, <strong>OPDS</strong>,
 <strong>eReading.cz</strong>, <strong>Flexibooks</strong>, <strong>ebary</strong>, <strong>BookJet</strong>, <strong>eBookEater</strong>,
 <strong>Publero</strong>, <strong>JDK</strong></li>
-<li>e-publikace může být vložena za pomoci <strong>Webarchiv</strong> ci <strong>ingest</strong> modul</li>
+<li>e-publikace může být vložena za pomoci <strong>Webarchiv</strong> ci <strong>ingest</strong> modulu</li>
 <li>systém při vkládání souboru vytváří <strong>PDF</strong> náhled</li>
 <li>systém informuje <strong>Aleph</strong>, že jsou e-publikace připraveny na doplnění bibliografických dat</li>
 <li>systém načítá bibliografická data ze systému <strong>Aleph</strong></li>
 <li>systém ukládá e-publikace do systému <strong>LTP</strong> k trvalé archivaci</li>
-<li>systém přijímá i anonymní e-publikace</li>
 <li>systém před uložením e-publikace do <strong>LTP</strong> provádí validaci</li>
 <li>systém poskytuje registraci pro nakladatele, jednoduchou, nebo s více rolemi</li>
-<li>systém kontroluje <strong>ISBN</strong></li>
 <li>systém aplikuje podmínky užití</li>
 <li>systém přijímá i e-publikace s binárními přílohami</li>
-<li>systém autorizuje uživatele vůči firemní <strong>ActiveDirectory</strong>, nebo vůčí <strong>LDAP</strong></li>
 <li>systém zjišťuje přítomnost virů ve vložených souborech</li>
 <li>systém umí načítat e-publikace přes vlastní <strong>ftp</strong> server, nebo z emailové schránky</li>
 <li>systém umí e-publikace stáhnout z externího <strong>ftp</strong> serveru</li>
@@ -82,26 +82,35 @@
 <li>systém umožňuje sloučení ručně zadaných bibliografických dat a dat z <strong>Aleph</strong></li>
 <li>systém automaticky načítá údaje o publikacích, které byly zaregistrovány <strong>ISBN agenturou</strong></li>
 <li>systém umožňuje autentifikaci za pomoci <em>Google</em>, <em>Facebook</em>, <em>Twitter</em>, <em>MSN</em></li>
+<li>systém umožňuje povolit jen přihlášení za pomoci hesla, jména</li>
 <li>systém si pamatuje všechny verze vloženého souboru</li>
-<li>opravené soubory k jedné e-publikaci mají svůj <strong>ISBN</strong> a odkazují se na jednu e-publikaci</li>
-<li>systém zobrazuje historii všech zadaných <strong>ISBN</strong>,
-i těch, co prošly jinou cestou, než pres e-deposit</li>
-<li>systém zobrazuje přehled o tom, co se s e-publikací děje</li>
-<li>systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu,
+<li>systém zobrazuje historii všech zadaných <strong>ISBN</strong> i těch, co prošly jinou cestou, než pres e-deposit</li>
+<li>systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi</li>
+<li>systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu
 nebo jen ochranu na binární úrovni</li>
 <li>systém získává informace o aplikaci dlouhodobé ochrany (tj. e-publikace byla přeformátována na novější formát)</li>
-<li>systém umí omezit přístup nakladatele/vydavatele na readonly přístup (jen status vložených knih)</li>
+<li>systém umí omezit přístup nakladatele/vydavatele na readonly přístup</li>
+<li>systém umí zakázat nakladateli/vydavateli přístup k jednotlivým e-publikacím</li>
+<li>akvizice má možnost opravovat údaje v systému i po přijetí akvizicí</li>
+<li>systém umožňuje pdf náhled na soubory aniž by kopie opustila systém</li>
+<li>systém umožňuje označit e-publikaci jako zakázanou (např. při zjištění, že byla autorem okopírována)</li>
+<li>systém odesílá do Alephu i jednoznačnou linku na náhled e-publikace</li>
+<li>v systému Aleph vzniká proklik na náhled e-publikace v e-deposit</li>
 </ul>
 </div>
 <div class="section" id="omezeni-systemu">
 <h2>Omezení systému<a class="headerlink" href="#omezeni-systemu" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li>pokud e-publikace prošla akvizicí, nakladatel/vydavatel má možnost jen přidávat opravy - jako další soubory.
+Už nemůže editovat záznamy, soubory.</li>
+<li>systém autorizuje uživatele vůči firemní <strong>ActiveDirectory</strong>, nebo vůčí <strong>LDAP</strong></li>
+<li>systém neumožňuje nikomu kromě nakladatele/vydavatele stáhnout si vložené soubory ani náhledy</li>
+<li>systém převádí všechny formáty do <strong>PDF</strong>, kvuli akvizici a katalogizaci</li>
+<li>systém poskytuje snadný způsob listování e-publikací, tj. náhledy po jednotlivých stránkách (hlavně pro katalogizaci, která musí celou e-publikaci prolistovat)</li>
 <li>systém soubory a údaje zabezbečuje asymetrickou šifrou na základě <strong>X509</strong> standardu</li>
 <li>systém přijímá e-publikace pouze ve formátě <strong>PDF</strong>, <strong>ePub</strong>, <strong>TXT</strong>, <strong>DjVu</strong>, <strong>mobi</strong></li>
 <li>systém nepřijímá publikace s ochranou proti kopírování, např <strong>DRM</strong></li>
 <li>systém ukládá do <strong>LTP</strong> jen ty <strong>PDF</strong> soubory, co mají textovou vrstvu</li>
-<li>každý uložený formát té samé e-publikace má své vlastní <strong>ISBN</strong> kód</li>
-<li>všechny uložené formáty té samé e-publikace mají ten samý <strong>ISSN</strong> kód</li>
 <li>web rozhraní systému je poskytnuto za pomoci <strong>Plone</strong></li>
 <li>middleware k implementaci využívá <strong>RabbitMQ</strong>, tj. je implementován odděleně od web rozhraní</li>
 <li>middleware je napsaný v jazyce <strong>Python</strong></li>

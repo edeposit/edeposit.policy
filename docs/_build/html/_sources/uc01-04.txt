@@ -1,5 +1,4 @@
-UC01-04 Detail účtu nakladatele/vydavatele
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Detail účtu nakladatele/vydavatele
 
 *účastníci*:
 
@@ -11,13 +10,7 @@ UC01-04 Detail účtu nakladatele/vydavatele
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku:
-
-   - přehled e-publikací k akvizici
-   - linku na vytváření účtů pro nakladatele
-   - přehled nakladatelů/vydavatelů
-   - vyhledávání nakladatelů/vydavatelů
-      
+1. Systém zobrazí úvodní stránku jako v UC01-02/1.
 2. Pracovník do vyhledávacího políčka zadá název nakladatele
 3. Systém zobrazí přehled nakladatelů, kteří odpovídají zadání
 4. Pracovník klikne na linku vybraného nakladatele/vydavatele

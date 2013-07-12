@@ -1,0 +1,21 @@
+.. Ohlášení s tiskovou předlohou
+
+*účastníci*:
+
+- Nakladatel/vydavatel
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel se přihlásil do systému
+
+*tok událostí*:
+
+1. Tok událostí je stejný jako v UC02-02.
+2. NAVÍC Nakladatel/vydavatel vyplní formulář na upload tiskové předlohy
+3. Systém si data uloží
+4. Systém provede kontroly souborů
+   
+*následné podmínky*:
+
+Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
+
