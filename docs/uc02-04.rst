@@ -10,7 +10,7 @@
 
 *tok událostí*:
 
-1. Nakladatel/vydavatel uložit novou ohlášku podle UC02-02.
+1. Nakladatel/vydavatel uložit novou ohlášku podle `UC02-02 Ohlášení se soubory`_.
 2. Systém zobrazí detail ohlášky a tlačítka "K akvizici", "K akvizici a přidělit ISBN"
 3. Nakladatel/vydavatel klikne na tlačítko "K akvizici"
 4. Systém ohlášku uloží

@@ -8,11 +8,11 @@
 
 - Nakladatel/vydavatel se přihlásil do systému
 
-- Nakladatel/vydavatel uložil e-publikaci do systému UC02-02
+- Nakladatel/vydavatel uložil e-publikaci do systému `UC02-02 Ohlášení se soubory`_
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku jako v UC02-02/1.
+1. Systém zobrazí úvodní stránku jako v `UC02-02 Ohlášení se soubory`_ / 1.
 2. Nakladatel/vydavatel zadá do vyhledávacího políčka:
 
    - část ISBN
@@ -26,7 +26,7 @@
    - část Jména autora
    
 3. Nakladatel klikne na linku "Vyhledat"
-4. Systém zobrazí úvodní stránku jako v UC02-02/1.
+4. Systém zobrazí úvodní stránku jako v `UC02-02 Ohlášení se soubory`_ / 1.
    
    přehled ohlášených publikací je omezen podle zadaného filtru
 

@@ -1,5 +1,4 @@
-UC03-03 Spárování souborů s ISBN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. UC03-03 Spárování souborů s ISBN
 
 *účastníci*:
 

@@ -10,7 +10,7 @@
 
 *tok událostí*:
 
-1. Tok událostí je stejný jako v UC02-02.
+1. Tok událostí je stejný jako v `UC02-02 Ohlášení se soubory`_.
 2. NAVÍC Nakladatel/vydavatel vyplní formulář na upload tiskové předlohy
 3. Systém si data uloží
 4. Systém provede kontroly souborů

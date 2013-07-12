@@ -8,7 +8,7 @@
 
 - Nakladatel/vydavatel se přihlásil do systému
 
-- Nakladatel/vydavatel uložil e-publikaci do systému UC02-02
+- Nakladatel/vydavatel uložil e-publikaci do systému `UC02-02 Ohlášení se soubory`_
 
 *tok událostí*:
 

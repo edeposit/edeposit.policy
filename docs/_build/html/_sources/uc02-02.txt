@@ -27,6 +27,8 @@
    - linka na upload souboru (e-publikace)
 
    .. note ::
+     
+     u každého ISBN bude tlačítko + pro přidání dalšího ISBN k souboru
 
      u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát
    
@@ -86,6 +88,8 @@
 	- linka na upload souboru (e-publikace)
 
 	.. note::
+
+	   u každého ISBN bude tlačítko + pro přidání dalšího ISBN k souboru
 
 	   u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát
    

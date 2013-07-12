@@ -222,10 +222,13 @@ Také zobrazí linku s vygenerovaným dodatkem ke smlouvě.</li>
 <li>Nakladatel/vydavatel otevřel úvodní stránku</li>
 </ul>
 <p><em>tok událostí</em>:</p>
-<ol class="arabic simple">
-<li>Systém zobrazí stránku jako v UC01-01</li>
-<li>Nakladatel/vydavatel klikne na linku &#8220;Jednoduché ohlášení&#8221;</li>
-<li>Systém zobrazí formulář:<ul>
+<ol class="arabic">
+<li><p class="first">Systém zobrazí stránku jako v UC01-01</p>
+</li>
+<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Jednoduché ohlášení&#8221;</p>
+</li>
+<li><p class="first">Systém zobrazí formulář:</p>
+<ul class="simple">
 <li>ISBN *</li>
 <li>Vazba/forma</li>
 <li>Cena</li>
@@ -246,8 +249,19 @@ Také zobrazí linku s vygenerovaným dodatkem ke smlouvě.</li>
 <li>Pořadí vydání *</li>
 <li>Zpracovatel záznamu *</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Systém u ISBN zobrazí tlačítko +</p>
+</div>
 </li>
-<li>Nakladatel/vydavatel vyplní formulář</li>
+<li><p class="first">Nakladatel/vydavatel vyplní formulář</p>
+</li>
+<li><p class="first">KDYŽ nakladatel/vydavatel klikne na tlačítko &#8220;+&#8221;</p>
+<p>5.1. Systém zobrazí další políčko ISBN
+5.2. Nakladatel/vydavatel vyplní další ISBN</p>
+</li>
+</ol>
+<ol class="arabic simple" start="5">
 <li>Nakladatel/vydavatel klikne na tlačítko &#8220;Odeslat k akvizici&#8221;</li>
 <li>Systém si data uloží</li>
 </ol>
@@ -287,6 +301,7 @@ Také zobrazí linku s vygenerovaným dodatkem ke smlouvě.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
+<p>u každého ISBN bude tlačítko + pro přidání dalšího ISBN k souboru</p>
 <p>u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát</p>
 <p class="last">u tohoto formuláře systém zobrazí tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
 </div>
@@ -343,6 +358,7 @@ Také zobrazí linku s vygenerovaným dodatkem ke smlouvě.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
+<p>u každého ISBN bude tlačítko + pro přidání dalšího ISBN k souboru</p>
 <p>u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát</p>
 <p class="last">u tohoto formuláře systém zobrazí tlačítko &#8220;Načíst metadata ze souboru&#8221;</p>
 </div>
@@ -372,7 +388,7 @@ Také zobrazí linku s vygenerovaným dodatkem ke smlouvě.</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic simple">
-<li>Tok událostí je stejný jako v UC02-02.</li>
+<li>Tok událostí je stejný jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a>.</li>
 <li>NAVÍC Nakladatel/vydavatel vyplní formulář na upload tiskové předlohy</li>
 <li>Systém si data uloží</li>
 <li>Systém provede kontroly souborů</li>
@@ -392,7 +408,7 @@ Také zobrazí linku s vygenerovaným dodatkem ke smlouvě.</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic simple">
-<li>Nakladatel/vydavatel uložit novou ohlášku podle UC02-02.</li>
+<li>Nakladatel/vydavatel uložit novou ohlášku podle <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a>.</li>
 <li>Systém zobrazí detail ohlášky a tlačítka &#8220;K akvizici&#8221;, &#8220;K akvizici a přidělit ISBN&#8221;</li>
 <li>Nakladatel/vydavatel klikne na tlačítko &#8220;K akvizici&#8221;</li>
 <li>Systém ohlášku uloží</li>
@@ -450,11 +466,11 @@ nebo
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
 <li>Nakladatel/vydavatel se přihlásil do systému</li>
-<li>Nakladatel/vydavatel uložil e-publikaci do systému UC02-02</li>
+<li>Nakladatel/vydavatel uložil e-publikaci do systému <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku jako v UC02-02/1.</p>
+<li><p class="first">Systém zobrazí úvodní stránku jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a> / 1.</p>
 </li>
 <li><p class="first">Nakladatel/vydavatel zadá do vyhledávacího políčka:</p>
 <ul class="simple">
@@ -471,7 +487,7 @@ nebo
 </li>
 <li><p class="first">Nakladatel klikne na linku &#8220;Vyhledat&#8221;</p>
 </li>
-<li><p class="first">Systém zobrazí úvodní stránku jako v UC02-02/1.</p>
+<li><p class="first">Systém zobrazí úvodní stránku jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a> / 1.</p>
 <p>přehled ohlášených publikací je omezen podle zadaného filtru</p>
 </li>
 <li><p class="first">Nakladatel/vydavatel klikne na vybranou ohlášenou publikaci</p>
@@ -545,7 +561,7 @@ nebo
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
 <li>Nakladatel/vydavatel se přihlásil do systému</li>
-<li>Nakladatel/vydavatel uložil e-publikaci do systému UC02-02</li>
+<li>Nakladatel/vydavatel uložil e-publikaci do systému <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic simple">
@@ -631,9 +647,6 @@ nebo
 </div>
 <div class="section" id="uc03-02-kontrola-isbn">
 <h3>UC03-02 Kontrola ISBN<a class="headerlink" href="#uc03-02-kontrola-isbn" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc03-02-nahrazeni-souboru">
-<h3>UC03-02 Nahrazení souborů<a class="headerlink" href="#uc03-02-nahrazeni-souboru" title="Permalink to this headline">¶</a></h3>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
 <li>Nakladatel/vydavatel</li>
@@ -680,9 +693,6 @@ nebo
 </div>
 <div class="section" id="uc03-03-kontrola-metadat">
 <h3>UC03-03 Kontrola metadat<a class="headerlink" href="#uc03-03-kontrola-metadat" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc03-03-sparovani-souboru-s-isbn">
-<h3>UC03-03 Spárování souborů s ISBN<a class="headerlink" href="#uc03-03-sparovani-souboru-s-isbn" title="Permalink to this headline">¶</a></h3>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
 <li>Nakladatel/vydavatel</li>

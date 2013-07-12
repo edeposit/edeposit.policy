@@ -1,5 +1,4 @@
-UC03-02 Nahrazení souborů
-~~~~~~~~~~~~~~~~~~~~~~~~~
+.. kontrola ISBN
 
 *účastníci*:
 

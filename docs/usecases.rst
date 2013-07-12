@@ -113,7 +113,6 @@ UC03 - Akvizice publikace
 
 .. image:: uc03.png
 
-
 UC03-01 Předání metadat k importu do Aleph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. include:: uc03-01.rst

@@ -34,7 +34,16 @@
    - Pořadí vydání *
    - Zpracovatel záznamu *
 
+   .. note:: 
+
+      Systém u ISBN zobrazí tlačítko +
+      
 4. Nakladatel/vydavatel vyplní formulář
+5. KDYŽ nakladatel/vydavatel klikne na tlačítko "+"
+   
+   5.1. Systém zobrazí další políčko ISBN
+   5.2. Nakladatel/vydavatel vyplní další ISBN
+
 5. Nakladatel/vydavatel klikne na tlačítko "Odeslat k akvizici"
 6. Systém si data uloží
 
