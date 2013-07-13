@@ -484,89 +484,14 @@ nebo
 <li>Nakladatel/vydavatel se přihlásil do systému</li>
 <li>Nakladatel/vydavatel uložil e-publikaci do systému <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
 </ul>
-<p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a> / 1.</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel zadá do vyhledávacího políčka:</p>
-<ul class="simple">
-<li>část ISBN</li>
-</ul>
-<p>nebo</p>
-<ul class="simple">
-<li>část Názvu</li>
-</ul>
-<p>nebo</p>
-<ul class="simple">
-<li>část Jména autora</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel klikne na linku &#8220;Vyhledat&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí úvodní stránku jako v <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a> / 1.</p>
-<p>přehled ohlášených publikací je omezen podle zadaného filtru</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na vybranou ohlášenou publikaci</p>
-</li>
-<li><p class="first">Systém zobrazí detail ohlášené publikace</p>
-<ul class="simple">
-<li>Vazba/forma</li>
-<li>Cena</li>
-<li>Název</li>
-<li>Podnázev</li>
-<li>Část (svazek, díl)</li>
-<li>Název části</li>
-<li>Autor (příjmení, křestní jméno)</li>
-<li>Další autoři (příjmení, křestní jméno)</li>
-<li>Edice</li>
-<li>Číslo svazku</li>
-<li>Místo vydání</li>
-<li>Nakladatel</li>
-<li>Měsíc a rok vydání</li>
-<li>Vydáno v koedici s</li>
-<li>Pořadí vydání</li>
-<li>Zpracovatel záznamu</li>
-</ul>
-<p>systém dále zobrazí přehled vložených e-publikací</p>
-<p>pro každou e-publikaci:</p>
-<ul class="simple">
-<li>ISBN</li>
-<li>URL</li>
-<li>Formát</li>
-<li>linka na opravu</li>
-<li>linka na získání souboru</li>
-</ul>
-<p>systém dále zobrazí přehled tiskových předloh</p>
-<p>pro každou tiskovou předlohu:</p>
-<ul class="simple">
-<li>URL</li>
-<li>Formát</li>
-<li>linka na opravu</li>
-<li>linka na získání souboru</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Oprava souboru&#8221;</p>
-</li>
-<li><p class="first">Systém přikleslí formulář na zadání opravy souboru:</p>
-<ul class="simple">
-<li>ISBN</li>
-<li>URL</li>
-<li>Formát</li>
-<li>linka na upload souboru</li>
-</ul>
-<p>Systém zobrazí linku &#8220;Uložit&#8221;</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel pokračuje krokem 7. dokud má další soubory k opravě</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Uložit&#8221;</p>
-</li>
-<li><p class="first">Systém uloží opravy souborů</p>
-</li>
-<li><p class="first">Systém provede kontroly souborů</p>
-</li>
-</ol>
+<p><em>tok událostí</em>:
+1. tok událostí je stejný jako <a class="reference internal" href="#uc02-10-oprava-souboru">UC02-10 Oprava souboru</a></p>
 <p><em>následné podmínky</em>:</p>
-<p>Pracovník ISBN agentury má k dispozici další e-publikaci ke kontrole ISBN - UC03-02</p>
+<p>E-publikace se dostane na začátek schvalování akvizicí.</p>
+<ul class="simple">
+<li>pracovník akvizice má e-publikaci ke schválení</li>
+<li>pracovník ISBN agentury má e-publikaci ke kontrole ISBN v souboru</li>
+</ul>
 </div>
 <div class="section" id="uc02-11-stazeni-souboru">
 <h3>UC02-11 Stážení souboru<a class="headerlink" href="#uc02-11-stazeni-souboru" title="Permalink to this headline">¶</a></h3>
@@ -600,248 +525,135 @@ nebo
 <img alt="_images/uc03.png" src="_images/uc03.png" />
 <div class="section" id="uc03-01-predani-metadat-k-importu-do-aleph">
 <h3>UC03-01 Předání metadat k importu do Aleph<a class="headerlink" href="#uc03-01-predani-metadat-k-importu-do-aleph" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc03-01-vlozeni-souboru">
-<h3>UC03-01 Vložení souborů<a class="headerlink" href="#uc03-01-vlozeni-souboru" title="Permalink to this headline">¶</a></h3>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel</li>
+<li>Systém</li>
+<li>systém Aleph</li>
+<li>administrátor systému Aleph</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
+<ul>
+<li><p class="first">Nakladatel/vydavatel ohlásil publikaci
+<a class="reference internal" href="#uc02-01-ohlaseni-jednoduche">UC02-01 Ohlášení jednoduché</a> , nebo
+<a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a>, nebo
+<a class="reference internal" href="#uc02-03-ohlaseni-s-tiskovou-predlohou">UC02-03 Ohlášení s tiskovou předlohou</a></p>
+<p>a potvrdil ohlášku</p>
+<p><a class="reference internal" href="#uc02-04-odeslani-ohlasky">UC02-04 Odeslání ohlášky</a></p>
+</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku</p>
-<ul class="simple">
-<li>přehled vložených knih, předloh, časopisů</li>
-<li>přehled vložených knih, předloh, časopisů, co čekají na akci nakladatele/vydavatele</li>
-<li>přehled vložených souborů</li>
-<li>vyhledávací políčko u každého přehledu</li>
-<li>linka &#8220;Vložit soubor&#8221;</li>
-<li>linka s názvem akce u každé knihy, předlohy, časopisu</li>
-<li>linka &#8220;upravit si heslo, údaje o uživateli&#8221;</li>
-</ul>
-<p>název akce se bude lišit podle toho, v jakém je kniha,předloha,časopis stavu</p>
+<li><p class="first">Systém vytvoří exportní data ve formátu MARC21</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Vložit soubor&#8221;</p>
+<li><p class="first">Systém je uloží do exportního adresáře</p>
 </li>
-<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
+<li><p class="first">Systém Aleph exportní data načte</p>
 </li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>pro vložení hlavních souborů</li>
-<li>pro vložení binárních příloh</li>
-</ul>
-<p>u každého hlavního souboru budou vstupy pro:</p>
-<ul class="simple">
-<li>popis souboru</li>
-<li>ISBN</li>
-<li>URL</li>
-</ul>
-<p>u již vložených souborů systém nabídne možnost soubor smazat.</p>
-<p>systém napovídá ISBN, co jsou v přehledu vložených knih, předloh a časopisů</p>
+<li><p class="first">administrátor systému Aleph údaje zkontroluje</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
-</li>
-<li><p class="first">Systém provede kontroly souborů</p>
-</li>
-<li><p class="first">IF kontroly proběhnou v pořádku</p>
+<li><p class="first">POKUD jsou údaje v pořádku</p>
+<p>5.1. administrátor systému Aleph údaje vloží do systému Aleph</p>
 </li>
 </ol>
-<blockquote>
-<div>7.1. Systém u souboru zobrazí linku &#8220;Vyplnění metadat&#8221;</div></blockquote>
-<ol class="arabic simple" start="8">
-<li>IF kontroly neproběhnou v pořádku</li>
-</ol>
-<blockquote>
-<div>8.1. Systém zobrazí hlášku s chybou
-8.2. Systém opakuje krok 4.</div></blockquote>
 <p><em>následné podmínky</em>:</p>
-<p>V systému jsou uloženy soubory k nové e-publikaci.</p>
+<p>V systému Aleph jsou data o nové ohlášce publikace.</p>
 </div>
 <div class="section" id="uc03-02-kontrola-isbn">
 <h3>UC03-02 Kontrola ISBN<a class="headerlink" href="#uc03-02-kontrola-isbn" title="Permalink to this headline">¶</a></h3>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel</li>
+<li>Pracovník ISBN agentury</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
+<li>Nakladatel/vydavatel ohlásil publikaci <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
+<li>pracovník ISBN agentury je přihlášen do systému Aleph</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
+<li><p class="first">Pracovník ISBN agentury klikne v Alephu na proklik &#8220;e-deposit&#8221;</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel zadá do vyhledávácího políčka část ISBN, nebo URL, nebo popisu souboru</p>
+<li><p class="first">Systém zobrazí náhled na vybranou e-publikaci</p>
 </li>
-<li><p class="first">Systém zobrazí přehled vložených knih, předloh a časopisů, který odpovídá zadanému omezení</p>
-<ul class="simple">
-<li>u každého záznamu je linka &#8220;opravit&#8221;</li>
-</ul>
+<li><p class="first">Pracovník zkontroluje, jestli jsou v náhledu zobrazeny stejné ISBN, jako jsou v uložena v systému Aleph</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;opravit&#8221;</p>
+<li><p class="first">Pracovník ISBN agentury uvede v systému Aleph, zda údaje odpovídají</p>
 </li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>pro vložení hlavních souborů</li>
-<li>pro vložení binárních příloh</li>
-</ul>
-<p>u každého hlavního souboru budou vstupy pro:</p>
-<ul class="simple">
-<li>popis souboru</li>
-<li>ISBN</li>
-<li>URL</li>
-</ul>
-<p>u již vložených souborů systém nabídne možnost soubor smazat.</p>
+<li><p class="first">Systém automaticky načte z Aleph změny</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
+<li><p class="first">POKUD je potvrzena shoda ISBN</p>
+<p>6.1. Systém potvrdí správnost ISBN</p>
 </li>
-<li><p class="first">Systém provede kontroly souborů</p>
-</li>
-<li><p class="first">dále jako UC03-01/7, UC03-01/8</p>
+<li><p class="first">POKUD není potvrzena shoda</p>
+<p>7.1. Systém vrátí ohlášku nakladateli k opravě</p>
 </li>
 </ol>
 <p><em>následné podmínky</em>:</p>
-<p>V systému jsou uloženy soubory k nové e-publikaci.</p>
+<p>V systému je informace o stavu kontroly ISBN</p>
 </div>
 <div class="section" id="uc03-03-kontrola-metadat">
 <h3>UC03-03 Kontrola metadat<a class="headerlink" href="#uc03-03-kontrola-metadat" title="Permalink to this headline">¶</a></h3>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
 <li>Nakladatel/vydavatel</li>
+<li>Pracovník akvizice</li>
 <li>Systém</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
+<li>Pracovník akvizice se příhlásil do systému Aleph</li>
 </ul>
 <p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyhledá vybrané ISBN</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyhledá vybraný soubor</p>
-</li>
-<li><ol class="first loweralpha simple">
-<li>Nakladatel/vydavatel přetáhne myší vybrané ISBN k vybranénu souboru</li>
-</ol>
-<p>NEBO b. Nakladatel/vydavatel přetáhne myší vybraný soubor k vybranému ISBN</p>
-<p>NEBO c. 1. Nakladatel/vydavatel klikne na vybraný soubor</p>
-<blockquote>
-<div><ol class="loweralpha" start="3">
-<li><ol class="first arabic simple" start="2">
-<li>Systém zobrazí:</li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li>ISBN</li>
-<li>URL</li>
-<li>popis souboru</li>
-</ul>
-</div></blockquote>
-</li>
-</ol>
-<ol class="loweralpha simple" start="3">
-<li><ol class="first arabic" start="3">
-<li>Nakladatel/vydavatel vyplní ISBN</li>
-</ol>
-</li>
-</ol>
-<ol class="loweralpha simple" start="3">
-<li><ol class="first arabic" start="4">
-<li>Nakladatel/vydavatel</li>
-</ol>
-</li>
-</ol>
-</div></blockquote>
-</li>
-<li><p class="first">Systém přesune spárovaný soubor do stavu k vyplnění metadat</p>
-</li>
+<ol class="arabic simple">
+<li>Pracovník akvizice najde záznam o e-publikaci v Alephu</li>
+<li>Pracovník akvizice klikne na proklik &#8220;e-deposit&#8221;</li>
+<li>Systém zobrazí náhled na e-publikaci</li>
+<li>Pracovník akvizice zkontroluje metadata v Alephu a doplní další metadata</li>
+<li>Pracovník akvizice uloží data v Alephu</li>
+<li>Systém si automaticky načte změny v údajích e-publikace</li>
 </ol>
 <p><em>následné podmínky</em>:</p>
+<p>e-publikace je připravena k přijetí akvizicí.</p>
 </div>
 <div class="section" id="uc03-04-prijeti-e-publikace">
 <h3>UC03-04 Přijetí e-publikace<a class="headerlink" href="#uc03-04-prijeti-e-publikace" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc03-04-vyplneni-a-slouceni-metadat">
-<h3>UC03-04 Vyplnění a sloučení metadat<a class="headerlink" href="#uc03-04-vyplneni-a-slouceni-metadat" title="Permalink to this headline">¶</a></h3>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel</li>
+<li>Systém</li>
+<li>Pracovník akvizice</li>
+<li>Aleph</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
+<li>Pracovník akvizice se přihlásil do systému Aleph</li>
 </ul>
 <p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku viz UC01-01</p>
-<p>u každého záznamu knihy, předlohy, časopisu bude linka &#8220;Upravit&#8221;</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na linku &#8220;Upravit&#8221;</p>
-</li>
-<li><p class="first">Systém zobrazí formulář na zadání popisných metadat:</p>
-<p>bude to tabulka. V jednom sloupci budou pole k ručnímu zadání hodnot:</p>
-<ul class="simple">
-<li>název</li>
-<li>podnázev</li>
-<li>část</li>
-<li>název části</li>
-<li>autor</li>
-<li>další autoři</li>
-<li>edice</li>
-<li>číslo svazku</li>
-<li>místo vydání</li>
-<li>nakladatel</li>
-<li>měsíc a rok vydání</li>
-<li>vydáno v koedici</li>
-<li>pořadí vydání</li>
-<li>vazba/forma</li>
-<li>cena</li>
-</ul>
-<p>V dalším sloupci budou načtené údaje ze souboru</p>
-<p>V dalším sloupc budou načtené údaje z Aleph</p>
-<ul class="simple">
-<li>volně přístupná e-publikace</li>
-<li>TODO údaje o licencovaných e-publikacích</li>
-</ul>
-</li>
-<li><p class="first">Nakladatel/vydavatel vyplní/opraví údaje ve sloupci pro ruční zadání</p>
-<p>NEBO</p>
-<p>ve vedlejších sloupcích zaškrtne údaje, které chce přijmout a použít</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
-</li>
+<ol class="arabic simple">
+<li>Pracovník akvizice zkontroluje metadata jako v <a class="reference internal" href="#uc03-03-kontrola-metadat">UC03-03 Kontrola metadat</a></li>
+<li>Pracovník akvizice označí v Alephu e-publikaci jako schválenou</li>
+<li>Systém automaticky načte změny z Alephu</li>
+<li>Systém připraví e-publikaci ke kontrole ISBN v souborech</li>
 </ol>
 <p><em>následné podmínky</em>:</p>
+<p>E-publikace je připravena ke kontrole ISBN v souborech <a class="reference internal" href="#uc03-05-kontrola-isbn-v-souboru">UC03-05 Kontrola ISBN v souboru</a></p>
 </div>
 <div class="section" id="uc03-05-kontrola-isbn-v-souboru">
 <h3>UC03-05 Kontrola ISBN v souboru<a class="headerlink" href="#uc03-05-kontrola-isbn-v-souboru" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="uc03-05-odeslani-elektronicke-knihy">
-<h3>UC03-05 Odeslání elektronické knihy<a class="headerlink" href="#uc03-05-odeslani-elektronicke-knihy" title="Permalink to this headline">¶</a></h3>
 <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel</li>
+<li>pracovník ISBN agentury</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
-<li>Nakladatel/vydavatel provedl UC03-04</li>
+<li>Nakladatel/vydavatel provedl <a class="reference internal" href="#uc02-02-ohlaseni-se-soubory">UC02-02 Ohlášení se soubory</a></li>
+<li>pracovník ISBN agentury se přihlásil do systému Aleph</li>
 </ul>
 <p><em>tok událostí</em>:</p>
-<ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku - viz UC03-01/1</p>
-<p>U knih, co mají vyplněná metadata se objeví linka &#8220;K akvizici&#8221;</p>
-</li>
-<li><p class="first">Nakladatel/vydavatel klikne na &#8220;K akvizici&#8221;</p>
-</li>
-<li><p class="first">Systém převede knihu do stavu &#8220;Akvizice&#8221;</p>
-</li>
+<ol class="arabic simple">
+<li>Pracovník ISBN agentury v Alephu klikl na proklik &#8220;e-deposit&#8221;</li>
+<li>Systém zobrazí náhled elektronické publikace</li>
+<li>Pracovník ISBN agentury v Alephu potvrdí, že náhled obsahuje zadané ISBN</li>
+<li>Systém automaticky stáhne změny v e-publikaci ze systému Aleph</li>
 </ol>
 <p><em>následné podmínky</em>:</p>
 <p>Pracovník akvizice má k dispozici knihu ke kontrole.</p>

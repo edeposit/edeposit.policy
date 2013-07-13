@@ -2,38 +2,28 @@
 
 *účastníci*:
 
-- Nakladatel/vydavatel
+- Pracovník ISBN agentury
 
 *vstupní podmínky*:
 
-- Nakladatel/vydavatel se přihlásil do systému
+- Nakladatel/vydavatel ohlásil publikaci `UC02-02 Ohlášení se soubory`_
+- pracovník ISBN agentury je přihlášen do systému Aleph
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku - viz UC03-01/1
-2. Nakladatel/vydavatel zadá do vyhledávácího políčka část ISBN, nebo URL, nebo popisu souboru
-3. Systém zobrazí přehled vložených knih, předloh a časopisů, který odpovídá zadanému omezení
-
-   - u každého záznamu je linka "opravit"
-
-4. Nakladatel/vydavatel klikne na linku "opravit"
-5. Systém zobrazí formulář:
+1. Pracovník ISBN agentury klikne v Alephu na proklik "e-deposit"
+2. Systém zobrazí náhled na vybranou e-publikaci
+3. Pracovník zkontroluje, jestli jsou v náhledu zobrazeny stejné ISBN, jako jsou v uložena v systému Aleph
+4. Pracovník ISBN agentury uvede v systému Aleph, zda údaje odpovídají
+5. Systém automaticky načte z Aleph změny
+6. POKUD je potvrzena shoda ISBN
    
-   - pro vložení hlavních souborů
-   - pro vložení binárních příloh
+   6.1. Systém potvrdí správnost ISBN
 
-   u každého hlavního souboru budou vstupy pro:
-
-   - popis souboru
-   - ISBN
-   - URL
-
-   u již vložených souborů systém nabídne možnost soubor smazat.
-
-6. Nakladatel/vydavatel odešle formulář
-7. Systém provede kontroly souborů
-8. dále jako UC03-01/7, UC03-01/8
+7. POKUD není potvrzena shoda
+   
+   7.1. Systém vrátí ohlášku nakladateli k opravě
 
 *následné podmínky*:
 
-V systému jsou uloženy soubory k nové e-publikaci.
+V systému je informace o stavu kontroly ISBN

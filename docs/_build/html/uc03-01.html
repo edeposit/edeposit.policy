@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UC03-01 Vložení souborů</title>
+    <title>&lt;no title&gt;</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -45,66 +45,38 @@
       <div class="content">
         
         
-  <div class="section" id="uc03-01-vlozeni-souboru">
-<h1>UC03-01 Vložení souborů<a class="headerlink" href="#uc03-01-vlozeni-souboru" title="Permalink to this headline">¶</a></h1>
-<p><em>účastníci</em>:</p>
+  <p><em>účastníci</em>:</p>
 <ul class="simple">
-<li>Nakladatel/vydavatel</li>
+<li>Systém</li>
+<li>systém Aleph</li>
+<li>administrátor systému Aleph</li>
 </ul>
 <p><em>vstupní podmínky</em>:</p>
-<ul class="simple">
-<li>Nakladatel/vydavatel se přihlásil do systému</li>
+<ul>
+<li><p class="first">Nakladatel/vydavatel ohlásil publikaci
+<a href="#id1"><span class="problematic" id="id2">`UC02-01 Ohlášení jednoduché`_</span></a> , nebo
+<a href="#id3"><span class="problematic" id="id4">`UC02-02 Ohlášení se soubory`_</span></a>, nebo
+<a href="#id5"><span class="problematic" id="id6">`UC02-03 Ohlášení s tiskovou předlohou`_</span></a></p>
+<p>a potvrdil ohlášku</p>
+<p><a href="#id7"><span class="problematic" id="id8">`UC02-04 Odeslání ohlášky`_</span></a></p>
+</li>
 </ul>
 <p><em>tok událostí</em>:</p>
 <ol class="arabic">
-<li><p class="first">Systém zobrazí úvodní stránku</p>
-<ul class="simple">
-<li>přehled vložených knih, předloh, časopisů</li>
-<li>přehled vložených knih, předloh, časopisů, co čekají na akci nakladatele/vydavatele</li>
-<li>přehled vložených souborů</li>
-<li>vyhledávací políčko u každého přehledu</li>
-<li>linka &#8220;Vložit soubor&#8221;</li>
-<li>linka s názvem akce u každé knihy, předlohy, časopisu</li>
-<li>linka &#8220;upravit si heslo, údaje o uživateli&#8221;</li>
-</ul>
-<p>název akce se bude lišit podle toho, v jakém je kniha,předloha,časopis stavu</p>
+<li><p class="first">Systém vytvoří exportní data ve formátu MARC21</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel klikne na &#8220;Vložit soubor&#8221;</p>
+<li><p class="first">Systém je uloží do exportního adresáře</p>
 </li>
-<li><p class="first">Systém zobrazí přehled podporovaných formátů</p>
+<li><p class="first">Systém Aleph exportní data načte</p>
 </li>
-<li><p class="first">Systém zobrazí formulář:</p>
-<ul class="simple">
-<li>pro vložení hlavních souborů</li>
-<li>pro vložení binárních příloh</li>
-</ul>
-<p>u každého hlavního souboru budou vstupy pro:</p>
-<ul class="simple">
-<li>popis souboru</li>
-<li>ISBN</li>
-<li>URL</li>
-</ul>
-<p>u již vložených souborů systém nabídne možnost soubor smazat.</p>
-<p>systém napovídá ISBN, co jsou v přehledu vložených knih, předloh a časopisů</p>
+<li><p class="first">administrátor systému Aleph údaje zkontroluje</p>
 </li>
-<li><p class="first">Nakladatel/vydavatel odešle formulář</p>
-</li>
-<li><p class="first">Systém provede kontroly souborů</p>
-</li>
-<li><p class="first">IF kontroly proběhnou v pořádku</p>
+<li><p class="first">POKUD jsou údaje v pořádku</p>
+<p>5.1. administrátor systému Aleph údaje vloží do systému Aleph</p>
 </li>
 </ol>
-<blockquote>
-<div>7.1. Systém u souboru zobrazí linku &#8220;Vyplnění metadat&#8221;</div></blockquote>
-<ol class="arabic simple" start="8">
-<li>IF kontroly neproběhnou v pořádku</li>
-</ol>
-<blockquote>
-<div>8.1. Systém zobrazí hlášku s chybou
-8.2. Systém opakuje krok 4.</div></blockquote>
 <p><em>následné podmínky</em>:</p>
-<p>V systému jsou uloženy soubory k nové e-publikaci.</p>
-</div>
+<p>V systému Aleph jsou data o nové ohlášce publikace.</p>
 
 
       </div>

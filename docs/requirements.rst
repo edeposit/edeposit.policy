@@ -9,6 +9,7 @@ Požadavky které jsou kladeny na funkci systému.
 - systém umožňuje ukládat elektronické předlohy tištěných publikací
 - tisková předloha má stejné **ISBN** jako tištěná publikace
 - systém umožňuje vkládat e-publikace
+- systém umožňuje ohlašovat i tištěné publikace
 - systém umožňuje doplňovat bibliografický popis e-publikace
 - systém umožňuje vyměnit soubor i po přijetí akvizicí
 - systém umožňuje nakladateli/vydavateli přidávat další soubory i k zamčeném záznamu
@@ -18,7 +19,7 @@ Požadavky které jsou kladeny na funkci systému.
 - e-publikace mohou být zpřístupněny za pomoci **OAI-PMH**, **OPDS**, 
   **eReading.cz**, **Flexibooks**, **ebary**, **BookJet**, **eBookEater**,
   **Publero**, **JDK**
-- e-publikace může být vložena za pomoci **Webarchiv** ci **ingest** modulu
+- e-publikace může být vložena za pomoci **Webarchiv** či **ingest** modulu
 - systém při vkládání souboru vytváří **PDF** náhled 
 - systém informuje **Aleph**, že jsou e-publikace připraveny na doplnění bibliografických dat
 - systém načítá bibliografická data ze systému **Aleph**

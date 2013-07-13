@@ -1,36 +1,24 @@
-.. UC03-03 Spárování souborů s ISBN
+.. UC03-03 Kontrola metadat
 
 *účastníci*:
 
 - Nakladatel/vydavatel
+- Pracovník akvizice
 - Systém
 
 *vstupní podmínky*:
 
-- Nakladatel/vydavatel se přihlásil do systému
+- Pracovník akvizice se příhlásil do systému Aleph
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku - viz UC03-01/1
-2. Nakladatel/vydavatel vyhledá vybrané ISBN
-3. Nakladatel/vydavatel vyhledá vybraný soubor
-4. a. Nakladatel/vydavatel přetáhne myší vybrané ISBN k vybranénu souboru
-
-   NEBO b. Nakladatel/vydavatel přetáhne myší vybraný soubor k vybranému ISBN
-
-   NEBO c. 1. Nakladatel/vydavatel klikne na vybraný soubor
-
-        c) 2. Systém zobrazí:
-     
-            - ISBN
-	    - URL
-	    - popis souboru
-   
-        c) 3. Nakladatel/vydavatel vyplní ISBN  
-
-   	c) 4. Nakladatel/vydavatel    
-
-5. Systém přesune spárovaný soubor do stavu k vyplnění metadat
+1. Pracovník akvizice najde záznam o e-publikaci v Alephu
+2. Pracovník akvizice klikne na proklik "e-deposit"
+3. Systém zobrazí náhled na e-publikaci
+4. Pracovník akvizice zkontroluje metadata v Alephu a doplní další metadata
+5. Pracovník akvizice uloží data v Alephu
+6. Systém si automaticky načte změny v údajích e-publikace
 
 *následné podmínky*:
 
+e-publikace je připravena k přijetí akvizicí.

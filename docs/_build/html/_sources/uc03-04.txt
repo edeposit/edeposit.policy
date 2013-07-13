@@ -1,54 +1,22 @@
-UC03-04 Vyplnění a sloučení metadat
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. UC03-04 Přijetí e-publikace
 
 *účastníci*:
 
-- Nakladatel/vydavatel
+- Systém
+- Pracovník akvizice
+- Aleph
 
 *vstupní podmínky*:
 
-- Nakladatel/vydavatel se přihlásil do systému
+- Pracovník akvizice se přihlásil do systému Aleph
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku viz UC01-01
-
-   u každého záznamu knihy, předlohy, časopisu bude linka "Upravit"
-
-2. Nakladatel/vydavatel klikne na linku "Upravit"
-3. Systém zobrazí formulář na zadání popisných metadat:
-
-   bude to tabulka. V jednom sloupci budou pole k ručnímu zadání hodnot:
-
-   - název
-   - podnázev
-   - část
-   - název části
-   - autor
-   - další autoři
-   - edice
-   - číslo svazku
-   - místo vydání
-   - nakladatel
-   - měsíc a rok vydání
-   - vydáno v koedici
-   - pořadí vydání
-   - vazba/forma
-   - cena
-   
-   V dalším sloupci budou načtené údaje ze souboru
-
-   V dalším sloupc budou načtené údaje z Aleph
-
-   - volně přístupná e-publikace
-   - TODO údaje o licencovaných e-publikacích
-
-4. Nakladatel/vydavatel vyplní/opraví údaje ve sloupci pro ruční zadání
-
-   NEBO
-   
-   ve vedlejších sloupcích zaškrtne údaje, které chce přijmout a použít
-
-5. Nakladatel/vydavatel odešle formulář
+1. Pracovník akvizice zkontroluje metadata jako v `UC03-03 Kontrola metadat`_
+2. Pracovník akvizice označí v Alephu e-publikaci jako schválenou
+3. Systém automaticky načte změny z Alephu
+4. Systém připraví e-publikaci ke kontrole ISBN v souborech
 
 *následné podmínky*:
+
+E-publikace je připravena ke kontrole ISBN v souborech `UC03-05 Kontrola ISBN v souboru`_

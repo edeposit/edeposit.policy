@@ -1,22 +1,21 @@
-UC03-05 Odeslání elektronické knihy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. UC03-05 Kontrola ISBN v souboru
 
 *účastníci*:
 
-- Nakladatel/vydavatel
+- pracovník ISBN agentury
 
 *vstupní podmínky*:
 
-- Nakladatel/vydavatel se přihlásil do systému
-- Nakladatel/vydavatel provedl UC03-04
+- Nakladatel/vydavatel provedl `UC02-02 Ohlášení se soubory`_
+
+- pracovník ISBN agentury se přihlásil do systému Aleph
 
 *tok událostí*:
 
-1. Systém zobrazí úvodní stránku - viz UC03-01/1
-
-   U knih, co mají vyplněná metadata se objeví linka "K akvizici"
-2. Nakladatel/vydavatel klikne na "K akvizici"
-3. Systém převede knihu do stavu "Akvizice"
+1. Pracovník ISBN agentury v Alephu klikl na proklik "e-deposit"
+2. Systém zobrazí náhled elektronické publikace
+3. Pracovník ISBN agentury v Alephu potvrdí, že náhled obsahuje zadané ISBN 
+4. Systém automaticky stáhne změny v e-publikaci ze systému Aleph
 
 *následné podmínky*:
 
