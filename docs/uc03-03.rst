@@ -1,4 +1,5 @@
-.. UC03-03 Kontrola metadat
+UC03-03 Kontrola metadat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 

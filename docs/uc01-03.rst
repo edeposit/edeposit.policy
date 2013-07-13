@@ -1,4 +1,7 @@
 .. Pozastavení platnosti smlouvy s nakladatelem/vydavatelem
+UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 *účastníci*:
 

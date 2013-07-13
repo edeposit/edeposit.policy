@@ -1,5 +1,9 @@
 .. Detail účtu nakladatele/vydavatele
 
+UC01-04 Detail účtu nakladatele/vydavatele
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 *účastníci*:
 
 - Pracovník akvizice

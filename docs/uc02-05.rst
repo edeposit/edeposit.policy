@@ -1,4 +1,6 @@
 .. Odeslání ohlášení s registrací ISBN
+UC02-05 Odeslání ohlášky s registrací ISBN
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 

@@ -1,4 +1,6 @@
 .. Odeslání ohlášky
+UC02-04 Odeslání ohlášky
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *účastníci*:
 
