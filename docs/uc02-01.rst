@@ -1,4 +1,3 @@
-.. Ohlaseni jednoduche
 UC02-01 Ohlášení jednoduché
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

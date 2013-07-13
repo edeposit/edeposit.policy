@@ -27,7 +27,6 @@ Případy užití
    Nakladatel by pak mel usnadnenou praci, protoze pak by mel jen jedno misto na registraci ISBN.
    Panu Jerabkovi a p. Zahorikovi bude chodit do Alephu zprava.
       
- 
 .. note::
 
    zalozeni periodika
@@ -40,16 +39,8 @@ Případy užití
    pokracujici zdroj
    
    u zaznamu, co ma issn, bude k dispozici tlacitko "pridat". Tj. pridava se dalsi vytisk. Ten nema nove isbn a patri pod jeden hlavni zaznam.
-  
-.. note::
-
-   UC05 - Doplneni bibliografickeho popisu
-   - bibliografie potrebuje prohlizet po jednotlivych strankach
-   - v zaznamu v Alephu bude proklik na nahled do e-deposit, podobne jako je proklik do krameria
-
 
 .. toctree::
-   
    :maxdepth: 1
 
    uc01
