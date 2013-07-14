@@ -1,3 +1,5 @@
+.. _uc03-01:
+
 UC03-01 Předání metadat k importu do Aleph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -10,13 +12,13 @@ UC03-01 Předání metadat k importu do Aleph
 *vstupní podmínky*:
 
 - Nakladatel/vydavatel ohlásil publikaci
-  `UC02-01 Ohlášení jednoduché`_ , nebo
-  `UC02-02 Ohlášení se soubory`_, nebo
-  `UC02-03 Ohlášení s tiskovou předlohou`_
+  :ref:`uc02-01` , nebo
+  :ref:`uc02-02`, nebo
+  :ref:`uc02-03`
   
   a potvrdil ohlášku
   
-  `UC02-04 Odeslání ohlášky`_
+  :ref:`uc02-04`
 
 *tok událostí*:
 
@@ -32,3 +34,21 @@ UC03-01 Předání metadat k importu do Aleph
 
 V systému Aleph jsou data o nové ohlášce publikace.
 
+
+.. raw:: html
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'edeposit'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
