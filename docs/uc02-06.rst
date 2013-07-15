@@ -3,6 +3,31 @@
 UC02-06 Kontroly souboru
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+*účastníci*:
+
+- Systém
+
+*vstupní podmínky*:
+
+- Nakladatel/vydavatel provedl :ref:`uc02-02` nebo :ref:`uc02-03`
+
+*tok událostí*:
+
+1. Systém provede kontrolu na přítomnost viru
+2. POKUD systém objeví v souboru virus
+
+   2.1. systém označí soubor jako "odmítnutý"
+   2.2. systém k souboru přiloží komentář, z jakého důvodu je soubor odmítnutý
+
+3. JINAK
+
+   3.1. systém označí soubor jako "přijatý"
+   3.2. systém k souboru přiloží komentář, že proběhla antivirová kontrola
+
+*následné podmínky*:
+
+V systém je k dispozici soubor k dalšímu zpracování.
+
 .. raw:: html
 
 	<div id="disqus_thread"></div>

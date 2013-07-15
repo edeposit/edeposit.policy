@@ -23,6 +23,9 @@ UC02-02 Ohlášení se soubory
    - políčko k vyhledávání ohlášených publikací
 
 2. Nakladatel/vydavatel klikne na "Ohlášení publikace"
+
+.. _uc02-02-3:
+
 3. Systém zobrazí formulář:
 
    - ISBN *
