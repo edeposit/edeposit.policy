@@ -3,34 +3,34 @@
 UC02-05 Odeslání ohlášky s registrací ISBN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Nakladatel/vydavatel
+   - Nakladatel/vydavatel
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Nakladatel/vydavatel se přihlásil do systému
+   - Nakladatel/vydavatel se přihlásil do systému
 
-*tok událostí*:
+.. admonition:: tok událostí
 
-1. Tok událostí je stejný jako v :ref:`uc02-02`,
-   nebo 
-   :ref:`uc02-03`, :ref:`uc02-04`
+   1. Tok událostí je stejný jako v :ref:`uc02-02`,
+      nebo 
+      :ref:`uc02-03`, :ref:`uc02-04`
   
-   S rozdílem, že nakladatel/vydavatel nevyplnil u některé položky ISBN.
+      S rozdílem, že nakladatel/vydavatel nevyplnil u některé položky ISBN.
 
-   A neklikl na tlačítko "K akvizici"
+      A neklikl na tlačítko "K akvizici"
 
-2. Nakladatel/vydavatel klikl na tlačítko "K akvizici a přidělit ISBN"
-3. Systém si data uloží
+   2. Nakladatel/vydavatel klikl na tlačítko "K akvizici a přidělit ISBN"
+   3. Systém si data uloží
    
-*následné podmínky*:
+.. admonition:: následné podmínky
 
-Nakladatel/vydavatel může uloženou ohlášku najít v seznamu ohlášek v akvizici.
+   Nakladatel/vydavatel může uloženou ohlášku najít v seznamu ohlášek v akvizici.
 
-Nakladatel/vydavatel již nemůže upravovat údaje, co vložil. Jen přidávat dodatečné opravy souborů.
+   Nakladatel/vydavatel již nemůže upravovat údaje, co vložil. Jen přidávat dodatečné opravy souborů.
 
-Pracovník ISBN agentury má k dispozici e-publikaci k přidělení ISBN - :ref:`uc02-13`
+   Pracovník ISBN agentury má k dispozici e-publikaci k přidělení ISBN - :ref:`uc02-13`
 
 .. raw:: html
 

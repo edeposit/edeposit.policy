@@ -3,57 +3,56 @@
 UC02-01 Ohlášení jednoduché
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Nakladatel/vydavatel
+   - Nakladatel/vydavatel
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Nakladatel/vydavatel otevřel úvodní stránku
+   - Nakladatel/vydavatel otevřel úvodní stránku
 
-*tok událostí*:
+.. admonition:: tok událostí
 
-1. Systém zobrazí stránku jako v :ref:`uc01-01`
-2. Nakladatel/vydavatel klikne na linku "Jednoduché ohlášení"
-3. Systém zobrazí formulář:
+   1. Systém zobrazí stránku jako v :ref:`uc01-01`
+   2. Nakladatel/vydavatel klikne na linku "Jednoduché ohlášení"
+   3. Systém zobrazí formulář:
    
-   - ISBN *
-   - Vazba/forma 
-   - Cena 
-   - Název *
-   - Podnázev 
-   - Část (svazek, díl)
-   - Název části
-   - Autor (příjmení, křestní jméno)
-   - Další autoři (příjmení, křestní jméno)
-   - Edice
-   - Číslo svazku
-   - URL (e-publikace) *
-   - Formát (e-publikace) *
-   - Místo vydání *
-   - Nakladatel *
-   - Měsíc a rok vydání *
-   - Vydáno v koedici s
-   - Pořadí vydání *
-   - Zpracovatel záznamu *
+      - ISBN *
+      - Vazba/forma 
+      - Cena 
+      - Název *
+      - Podnázev 
+      - Část (svazek, díl)
+      - Název části
+      - Autor (příjmení, křestní jméno)
+      - Další autoři (příjmení, křestní jméno)
+      - Edice
+      - Číslo svazku
+      - URL (e-publikace) *
+      - Formát (e-publikace) *
+      - Místo vydání *
+      - Nakladatel *
+      - Měsíc a rok vydání *
+      - Vydáno v koedici s
+      - Pořadí vydání *
+      - Zpracovatel záznamu *
 
-   .. note:: 
+	.. note:: 
 
-      Systém u ISBN zobrazí tlačítko +
+	   Systém u ISBN zobrazí tlačítko +
       
-4. Nakladatel/vydavatel vyplní formulář
-5. KDYŽ nakladatel/vydavatel klikne na tlačítko "+"
+   4. Nakladatel/vydavatel vyplní formulář
+   5. KDYŽ nakladatel/vydavatel klikne na tlačítko "+"
    
-   5.1. Systém zobrazí další políčko ISBN
-   5.2. Nakladatel/vydavatel vyplní další ISBN
+      5.1. Systém zobrazí další políčko ISBN
+      5.2. Nakladatel/vydavatel vyplní další ISBN
 
-5. Nakladatel/vydavatel klikne na tlačítko "Odeslat k akvizici"
-6. Systém si data uloží
+   5. Nakladatel/vydavatel klikne na tlačítko "Odeslat k akvizici"
+   6. Systém si data uloží
 
-*následné podmínky*:
+.. admonition:: následné podmínky
 
-Pracovník agentury ISBN má k dispozici novou ohlášku ke kontrole ISBN
-
+   Pracovník agentury ISBN má k dispozici novou ohlášku ke kontrole ISBN
 
 .. raw:: html
 

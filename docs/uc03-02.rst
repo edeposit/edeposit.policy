@@ -3,33 +3,33 @@
 UC03-02 Kontrola ISBN
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Pracovník ISBN agentury
+   - Pracovník ISBN agentury
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Nakladatel/vydavatel ohlásil publikaci :ref:`uc02-02`
-- pracovník ISBN agentury je přihlášen do systému Aleph
+   - Nakladatel/vydavatel ohlásil publikaci :ref:`uc02-02`
+   - pracovník ISBN agentury je přihlášen do systému Aleph
 
-*tok událostí*:
+.. admonition:: tok událostí
 
-1. Pracovník ISBN agentury klikne v Alephu na proklik "e-deposit"
-2. Systém zobrazí náhled na vybranou e-publikaci
-3. Pracovník zkontroluje, jestli jsou v náhledu zobrazeny stejné ISBN, jako jsou v uložena v systému Aleph
-4. Pracovník ISBN agentury uvede v systému Aleph, zda údaje odpovídají
-5. Systém automaticky načte z Aleph změny
-6. POKUD je potvrzena shoda ISBN
+   1. Pracovník ISBN agentury klikne v Alephu na proklik "e-deposit"
+   2. Systém zobrazí náhled na vybranou e-publikaci
+   3. Pracovník zkontroluje, jestli jsou v náhledu zobrazeny stejné ISBN, jako jsou v uložena v systému Aleph
+   4. Pracovník ISBN agentury uvede v systému Aleph, zda údaje odpovídají
+   5. Systém automaticky načte z Aleph změny
+   6. POKUD je potvrzena shoda ISBN
    
-   6.1. Systém potvrdí správnost ISBN
+      6.1. Systém potvrdí správnost ISBN
 
-7. POKUD není potvrzena shoda
+   7. POKUD není potvrzena shoda
    
-   7.1. Systém vrátí ohlášku nakladateli k opravě
+      7.1. Systém vrátí ohlášku nakladateli k opravě
 
-*následné podmínky*:
+.. admonition:: následné podmínky
 
-V systému je informace o stavu kontroly ISBN
+   V systému je informace o stavu kontroly ISBN
 
 .. raw:: html
 

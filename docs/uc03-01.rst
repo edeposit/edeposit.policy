@@ -3,36 +3,34 @@
 UC03-01 Předání metadat k importu do Aleph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Systém
-- systém Aleph
-- administrátor systému Aleph
+   - Systém
+   - systém Aleph
+   - administrátor systému Aleph
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Nakladatel/vydavatel ohlásil publikaci
-  :ref:`uc02-01` , nebo
-  :ref:`uc02-02`, nebo
-  :ref:`uc02-03`
+   - Nakladatel/vydavatel ohlásil publikaci
+     :ref:`uc02-01` , nebo
+     :ref:`uc02-02`, nebo
+     :ref:`uc02-03`
   
-  a potvrdil ohlášku
-  
-  :ref:`uc02-04`
+     a potvrdil ohlášku  :ref:`uc02-04`
 
-*tok událostí*:
+.. admonition:: tok událostí
 
-1. Systém vytvoří exportní data ve formátu MARC21
-2. Systém je uloží do exportního adresáře
-3. Systém Aleph exportní data načte
-4. administrátor systému Aleph údaje zkontroluje
-5. POKUD jsou údaje v pořádku
+   1. Systém vytvoří exportní data ve formátu MARC21
+   2. Systém je uloží do exportního adresáře
+   3. Systém Aleph exportní data načte
+   4. administrátor systému Aleph údaje zkontroluje
+   5. POKUD jsou údaje v pořádku
 
-   5.1. administrátor systému Aleph údaje vloží do systému Aleph
+      5.1. administrátor systému Aleph údaje vloží do systému Aleph
 
-*následné podmínky*:
+.. admonition:: následné podmínky
 
-V systému Aleph jsou data o nové ohlášce publikace.
+   V systému Aleph jsou data o nové ohlášce publikace.
 
 
 .. raw:: html

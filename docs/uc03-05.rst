@@ -3,26 +3,25 @@
 UC03-05 Kontrola ISBN v souboru
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*účastníci*:
+.. admonition:: účastníci
 
-- pracovník ISBN agentury
+   - pracovník ISBN agentury
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Nakladatel/vydavatel provedl :ref:`uc02-02`
+   - Nakladatel/vydavatel provedl :ref:`uc02-02`
+   - pracovník ISBN agentury se přihlásil do systému Aleph
 
-- pracovník ISBN agentury se přihlásil do systému Aleph
+.. admonition:: tok událostí
 
-*tok událostí*:
+   1. Pracovník ISBN agentury v Alephu klikl na proklik "e-deposit"
+   2. Systém zobrazí náhled elektronické publikace
+   3. Pracovník ISBN agentury v Alephu potvrdí, že náhled obsahuje zadané ISBN 
+   4. Systém automaticky stáhne změny v e-publikaci ze systému Aleph
 
-1. Pracovník ISBN agentury v Alephu klikl na proklik "e-deposit"
-2. Systém zobrazí náhled elektronické publikace
-3. Pracovník ISBN agentury v Alephu potvrdí, že náhled obsahuje zadané ISBN 
-4. Systém automaticky stáhne změny v e-publikaci ze systému Aleph
+.. admonition:: následné podmínky
 
-*následné podmínky*:
-
-Pracovník akvizice má k dispozici knihu ke kontrole.
+   Pracovník akvizice má k dispozici knihu ke kontrole.
 
 .. raw:: html
 

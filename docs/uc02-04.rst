@@ -3,26 +3,26 @@
 UC02-04 Odeslání ohlášky
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Nakladatel/vydavatel
+   - Nakladatel/vydavatel
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Nakladatel/vydavatel se přihlásil do systému
+   - Nakladatel/vydavatel se přihlásil do systému
+  
+.. admonition:: tok událostí
 
-*tok událostí*:
-
-1. Nakladatel/vydavatel uložit novou ohlášku podle :ref:`uc02-02`.
-2. Systém zobrazí detail ohlášky a tlačítka "K akvizici", "K akvizici a přidělit ISBN"
-3. Nakladatel/vydavatel klikne na tlačítko "K akvizici"
-4. Systém ohlášku uloží
+   1. Nakladatel/vydavatel uložit novou ohlášku podle :ref:`uc02-02`.
+   2. Systém zobrazí detail ohlášky a tlačítka "K akvizici", "K akvizici a přidělit ISBN"
+   3. Nakladatel/vydavatel klikne na tlačítko "K akvizici"
+   4. Systém ohlášku uloží
    
-*následné podmínky*:
+.. admonition:: následné podmínky
 
-Nakladatel/vydavatel může ohlášku najít v seznamu ohlášek v akvizici.
+   Nakladatel/vydavatel může ohlášku najít v seznamu ohlášek v akvizici.
 
-Pracovník ISBN agentury má k dispozici novou e-publikaci ke kontrole ISBN - :ref:`uc03-02`
+   Pracovník ISBN agentury má k dispozici novou e-publikaci ke kontrole ISBN - :ref:`uc03-02`
 
 .. raw:: html
 

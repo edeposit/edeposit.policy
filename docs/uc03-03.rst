@@ -3,28 +3,28 @@
 UC03-03 Kontrola metadat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Nakladatel/vydavatel
-- Pracovník akvizice
-- Systém
+   - Nakladatel/vydavatel
+   - Pracovník akvizice
+   - Systém
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Pracovník akvizice se příhlásil do systému Aleph
+   - Pracovník akvizice se příhlásil do systému Aleph
 
-*tok událostí*:
+.. admonition:: tok událostí
 
-1. Pracovník akvizice najde záznam o e-publikaci v Alephu
-2. Pracovník akvizice klikne na proklik "e-deposit"
-3. Systém zobrazí náhled na e-publikaci
-4. Pracovník akvizice zkontroluje metadata v Alephu a doplní další metadata
-5. Pracovník akvizice uloží data v Alephu
-6. Systém si automaticky načte změny v údajích e-publikace
+   1. Pracovník akvizice najde záznam o e-publikaci v Alephu
+   2. Pracovník akvizice klikne na proklik "e-deposit"
+   3. Systém zobrazí náhled na e-publikaci
+   4. Pracovník akvizice zkontroluje metadata v Alephu a doplní další metadata
+   5. Pracovník akvizice uloží data v Alephu
+   6. Systém si automaticky načte změny v údajích e-publikace
 
-*následné podmínky*:
+.. admonition:: následné podmínky
 
-e-publikace je připravena k přijetí akvizicí.
+   e-publikace je připravena k přijetí akvizicí.
 
 .. raw:: html
 

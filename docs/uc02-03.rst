@@ -4,24 +4,24 @@ UC02-03 Ohlášení s tiskovou předlohou
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Nakladatel/vydavatel
+   - Nakladatel/vydavatel
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Nakladatel/vydavatel se přihlásil do systému
+   - Nakladatel/vydavatel se přihlásil do systému
 
-*tok událostí*:
+.. admonition:: tok událostí
 
-1. Tok událostí je stejný jako v :ref:`uc02-02`.
-2. NAVÍC Nakladatel/vydavatel vyplní formulář na upload tiskové předlohy
-3. Systém si data uloží
-4. Systém provede kontroly souborů
+   1. Tok událostí je stejný jako v :ref:`uc02-02`.
+   2. NAVÍC Nakladatel/vydavatel vyplní formulář na upload tiskové předlohy
+   3. Systém si data uloží
+   4. Systém provede kontroly souborů
    
-*následné podmínky*:
+.. admonition:: následné podmínky
 
-Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
+   Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
 
 .. raw:: html
 

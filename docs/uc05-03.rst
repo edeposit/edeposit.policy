@@ -7,36 +7,16 @@ UC05-08 Předání dat do Systému zpřístupnění
     
     Pavel Kocourek a Martin Lhoták znají podrobnosti o formátu OAI-PMH, OPDS
 
-*účastníci*:
+.. admonition:: účastníci
 
-- Systém
-- Kramerius
+   - Systém
+   - Kramerius
 
-*vstupní podmínky*:
+.. admonition:: vstupní podmínky
 
-- Systém načetl podrobné údaje z Aleph
+   - Systém načetl podrobné údaje z Aleph
 
-*tok událostí*:
 
-1. Systém připraví xml ve formátu:
-
-   - OAI-PMH
-
-   nebo
-
-   - OPDS
-
-   TODO 
-
-2. Systém odešle xml data do:
-
-  - systému Kramerius přes TODO
-
-  nebo
-
-  - systém TODO - zvolit systém
-
-*následné podmínky*:
 
 .. raw:: html
 
