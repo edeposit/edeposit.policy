@@ -3,6 +3,8 @@
 UC04-01 Zadání bibliografických metadat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. admonition:: účastníci
+
 .. raw:: html
 
 	<div id="disqus_thread"></div>

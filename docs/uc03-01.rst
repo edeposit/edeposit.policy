@@ -12,7 +12,7 @@ UC03-01 Předání metadat k importu do Aleph
 .. admonition:: vstupní podmínky
 
    - Nakladatel/vydavatel ohlásil publikaci
-     :ref:`uc02-01` , nebo
+     :ref:`uc02-01`, nebo
      :ref:`uc02-02`, nebo
      :ref:`uc02-03`
   

@@ -12,33 +12,29 @@ Požadavky které jsou kladeny na funkci systému.
 - systém umožňuje ohlašovat i tištěné publikace
 - systém umožňuje doplňovat bibliografický popis e-publikace
 - systém umožňuje vyměnit soubor i po přijetí akvizicí
-- systém umožňuje nakladateli/vydavateli přidávat další soubory i k zamčeném záznamu
-- e-publikace jsou zabezpečeny podle běžných standardů a postupů
-- bibliografický záznam může obsahovat více souborů v různých formátech
+- systém umožňuje nakladateli/vydavateli přidávat další soubory i po přijetí e-publikace akvizicí
+- e-publikace může obsahovat více souborů v různých formátech
 - každý soubor jednoho má žádný, nebo jeden, nebo více **ISBN** a může mít i jeden **ISSN**
 - e-publikace mohou být zpřístupněny za pomoci **OAI-PMH**, **OPDS**, 
   **eReading.cz**, **Flexibooks**, **ebary**, **BookJet**, **eBookEater**,
-  **Publero**, **JDK**
+  **Publero**, **JDK** a další
 - e-publikace může být vložena za pomoci **Webarchiv** či **ingest** modulu
 - systém při vkládání souboru vytváří **PDF** náhled 
 - systém informuje **Aleph**, že jsou e-publikace připraveny na doplnění bibliografických dat
 - systém načítá bibliografická data ze systému **Aleph**
 - systém ukládá e-publikace do systému **LTP** k trvalé archivaci
-- systém před uložením e-publikace do **LTP** provádí validaci
+- systém před uložením e-publikace do **LTP** provádí validaci natolik důkladnou, aby předešla odmítnutí na vstupu do **LTP**
 - systém poskytuje registraci pro nakladatele, jednoduchou, nebo s více rolemi
 - systém aplikuje podmínky užití
 - systém přijímá i e-publikace s binárními přílohami
 - systém zjišťuje přítomnost virů ve vložených souborech
 - systém umí načítat e-publikace přes vlastní **ftp** server, nebo z emailové schránky
-- systém umí e-publikace stáhnout z externího **ftp** serveru
-- systém nabízí možnost generovat **mobi**
 - systém zobrazuje **PDF** náhled
 - systém umožňuje zadávat základní bibliografický popis ručně
 - systém nabízí bibliografický popis načtený ze systému **Aleph**
 - systém umožňuje sloučení ručně zadaných bibliografických dat a dat z **Aleph**
 - systém automaticky načítá údaje o publikacích, které byly zaregistrovány **ISBN agenturou**
-- systém umožňuje autentifikaci za pomoci *Google*, *Facebook*, *Twitter*, *MSN*
-- systém umožňuje povolit jen přihlášení za pomoci hesla, jména
+- systém umožňuje povolit jen přihlášení za pomoci hesla, přihlašovacího jména
 - systém si pamatuje všechny verze vloženého souboru
 - systém zobrazuje historii všech zadaných **ISBN** i těch, co prošly jinou cestou, než pres e-deposit
 - systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi
