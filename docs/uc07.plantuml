@@ -4,12 +4,11 @@ title Ohlašování pokračujícího zdroje
 skinparam packageStyle rect
 
 actor :Nakladatel/vydavatel: as nakl
-actor :Pracovník akvizice: as akv
 actor :Systém: as sys
 
 rectangle  {
-	   :nakl: (UC07-01 Ohlášení nového dílu)
-	   :nakl: (UC07-02 Ohlášení nového dílu přes **ftp**)
-	   :nakl: (UC07-03 Ohlášení nového dílu přes **email**)
+	   :nakl: --> (UC07-01 Ohlášení nového dílu)
+	   :nakl: --> (UC07-02 Ohlášení nového dílu přes ftp)
+	   :nakl: --> (UC07-03 Ohlášení nového dílu přes email)
 }
 @enduml

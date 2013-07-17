@@ -12,7 +12,6 @@ UC04 - Katalogizace e-publikace
    uc04-03
    uc04-04
    uc04-05
-   uc04-06
 
 .. raw:: html
 

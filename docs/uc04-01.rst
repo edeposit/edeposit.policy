@@ -1,9 +1,30 @@
 .. _uc04-01:
 
-UC04-01 Zadání bibliografických metadat
+UC04-01 Zadání bibliografického popisu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: účastníci
+
+   - Systém
+   - systém Aleph
+
+.. admonition:: vstupní podmínky
+		
+   E-publikace prošla schválením ISBN a akvizicí :ref:`uc03-04`
+
+.. admonition:: tok událostí
+
+   1. Pracovník katalogizace najde záznam o e-publikaci v Alephu
+   2. Pracovník katalogizace klikne v Alephu na proklik "e-deposit"
+   3. Systém zobrazí náhled na e-publikaci
+   4. Pracovník katalogizace prohlédne náhled a doplní bibliografický popis v Alephu
+   5. Pracovník katalogizace uloží data v Alephu
+   6. Pracovník katalogizace potvrdí, že katalogizace v Alephu je dokončená
+   7. Systém si automaticky načte změny v údajích e-publikace
+		
+.. admonition:: následné podmínky
+
+   E-publikace je připravena na export do LTP a do systému Kramerius.
 
 .. raw:: html
 

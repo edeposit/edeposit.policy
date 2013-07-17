@@ -3,6 +3,46 @@
 UC03-06 Oprava souboru
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. admonition:: účastníci
+
+   - Nakladatel/vydavatel
+   - Systém
+
+.. admonition:: vstupní podmínky
+
+   - Nakladatel/vydavatel se přihlásil do systému
+
+   - Nakladatel/vydavatel uložil e-publikaci do systému :ref:`uc02-02`
+     
+   - Pracovník akvizice e-publikaci přijal :ref:`uc03-04`
+     
+
+.. admonition:: tok událostí
+
+   1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
+   2. Nakladatel/vydavatel do vyhledávacího políčka zadá jedno z toho:
+      
+      - část ISBN
+      - část Názvu
+      - část Jména autora
+	
+   3. Systém omezí přehled ohlášených publikací podle zadaného filtru
+   4. Nakladatel/vydavatel klikne na linku vybrané publikace 
+   5. Systém zobrazí detail ohlášené publikace :ref:`uc02-14`
+   6. Nakladatel/vydavatel vyplní formulář pro vložení opravy
+   7. Nakladatel/vydavatel klikne na tlačítko "Opravit"
+   8. Systém uloží opravený soubor
+   9. Systém odešle do systému Aleph informaci o novém souboru
+   10. Systém odešle e-publikaci ke kontrole ISBN v souborech a k akvizici
+
+.. admonition:: následné podmínky
+
+   E-publikace se dostane na začátek schvalování akvizicí.
+
+   - pracovník akvizice má e-publikaci ke schválení
+
+   - pracovník ISBN agentury má e-publikaci ke kontrole ISBN v souboru
+
 .. raw:: html
 
 	<div id="disqus_thread"></div>

@@ -1,7 +1,7 @@
 .. _uc04-04:
 
-UC04-04 Stáhnutí souboru
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UC04-04 Odebrání přístupu k e-publikaci
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. raw:: html
 

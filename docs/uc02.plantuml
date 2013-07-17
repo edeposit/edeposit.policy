@@ -25,6 +25,7 @@ rectangle  {
 	   :nakl: --> (UC02-11 Stažení souboru)
 	   :sys: -left-> (UC02-12 Kontrola duplicit ISBN)
 	   :isbn: -left-> (UC02-13 Přidělení ISBN)
+	   :nakl: --> (UC02-14 Detail ohlášené publikace)
 }
 
 @enduml

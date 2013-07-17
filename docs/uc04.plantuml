@@ -10,11 +10,11 @@ actor :Pracovník katalogizace: as kat
 actor :Systém: as sys
 
 rectangle  {
-	   :kat: -left-> (UC04-01 Zadání bibliografických metadat)
-	   :sys: -left-> (UC04-02 Export do systému Kramerius)
-	   :nakl: --> (UC04-03 Oprava souboru)
-	   :nakl: --> (UC04-04 Stáhnutí souboru)
-	   :kat: -left-> (UC04-05 Odebrání přístupu k e-publikaci)
-	   :kat: -left-> (UC04-06 Odmítnutí e-publikace)
+	   :kat: -left-> (UC04-01 Zadání bibliografického popisu)
+	   :nakl: --> (UC04-02 Oprava souboru)
+	   :nakl: --> (UC04-03 Stáhnutí souboru)
+	   :kat: -left-> (UC04-04 Odebrání přístupu k e-publikaci)
+	   :kat: -left-> (UC04-05 Odmítnutí e-publikace)
 }
+:kat: -left-> (Aleph: Zadání bibliografického popisu)
 @enduml

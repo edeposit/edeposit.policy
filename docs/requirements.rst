@@ -24,6 +24,7 @@ Požadavky které jsou kladeny na funkci systému.
 - systém načítá bibliografická data ze systému **Aleph**
 - systém ukládá e-publikace do systému **LTP** k trvalé archivaci
 - systém před uložením e-publikace do **LTP** provádí validaci natolik důkladnou, aby předešla odmítnutí na vstupu do **LTP**
+- do **LTP** se odesilaji data po katalogizaci
 - systém poskytuje registraci pro nakladatele, jednoduchou, nebo s více rolemi
 - systém aplikuje podmínky užití
 - systém přijímá i e-publikace s binárními přílohami

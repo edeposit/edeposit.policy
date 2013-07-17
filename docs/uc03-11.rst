@@ -1,7 +1,19 @@
-.. _uc04-06:
+.. _uc03-11:
 
-UC04-06 Odmítnutí e-publikace
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UC03-11 Oprava metadat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: účastníci
+
+   - Pracovník akvizice
+     
+.. admonition:: vstupní podmínky
+
+   - Nakladatel/vydavatel podal ohlášení a poslal je k akvizici :ref:`uc02-02`, :ref:`uc02-04`
+
+.. admonition:: tok událostí
+
+   1. 
 
 .. raw:: html
 

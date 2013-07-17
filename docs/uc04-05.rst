@@ -1,6 +1,6 @@
 .. _uc04-05:
 
-UC04-05 Odebrání přístup k e-publikaci
+UC04-05 Odmítnutí e-publikace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. raw:: html

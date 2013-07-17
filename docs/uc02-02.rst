@@ -13,6 +13,8 @@ UC02-02 Ohlášení se soubory
 
 .. admonition:: tok událostí
 
+   .. _uc02-02-01:
+   
    1. Systém zobrazí úvodní stránku
 
       - informace o e-deposit
