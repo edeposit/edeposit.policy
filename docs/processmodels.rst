@@ -1,24 +1,13 @@
-.. E-Deposit documentation master file, created by
-   sphinx-quickstart on Thu Jun 13 05:36:01 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _processmodels:
 
-.. (project-task run "*shell*" "make html")
-.. (project-task run-show "*shell*" "google-chrome file:///opt/e-deposit/src/edeposit.policy/docs/_build/html/index.html")
-
-E-Deposit - SW dokumentace
-===========================================================================
-.. sectionauthor:: Jan Stavěl <stavel.jan at gmail.com>
-
-Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
-
+Modely procesů
+--------------------------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
-   requirements
-   dictionary
-   usecases
-   processmodels
+   pm01
+   pm02
+   pm03
 
 .. raw:: html
 
@@ -37,12 +26,4 @@ Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
-
-
-Odkazy
-=================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
