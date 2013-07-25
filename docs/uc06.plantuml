@@ -1,9 +1,9 @@
 @startuml
 left to right direction
-title Zadávání opravy elektronické knihy
+title Dlouhodobá ochrana e-publikace
 skinparam packageStyle rect
 
-actor :Nakladatel/vydavatel:
+actor :Systém: as sys
 
 rectangle  {
 }

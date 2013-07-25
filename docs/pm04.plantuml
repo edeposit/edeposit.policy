@@ -12,6 +12,7 @@ title Katalogizace e-publikace
 "UC04-03 Stáhnutí souboru" ---> === CAT_E ===
 "UC04-04 Odebrání přístupu k e-publikaci" ---> === CAT_E ===
 "UC04-05 Odmítnutí e-publikace" ---> === CAT_E ===
+=== CAT_E === --> (*)
 note right
      E-publikace je pripravena zpřístupnění (pokud nebyla odmítnuta)
 end note
