@@ -10,6 +10,9 @@ UC07 - Ohlašování pokračujícího zdroje
    uc07-01
    uc07-02
    uc07-03
+   uc07-04
+   uc07-05
+   uc07-06
 
 .. raw:: html
 

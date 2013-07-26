@@ -23,7 +23,10 @@ UC02-02 Ohlášení se soubory
       - linku pro ohlášení publikace
       - přehled ohlášených publikací
       - políčko k vyhledávání ohlášených publikací
-
+      - linku pro ohlášení pokračujícího zdroje
+      - přehled ohlášených pokračujících zdrojů
+      - políčko k vyhledávání ohlášených pokračujících zdrojů
+	
    2. Nakladatel/vydavatel klikne na "Ohlášení publikace"
 
    .. _uc02-02-3:
@@ -76,11 +79,21 @@ UC02-02 Ohlášení se soubory
 
 	     Systém zobrazí tlačítko "Uložit"
 
+      Systém dále zobrazí formulář na výběr zpřístupnění:
+
+	zpřístupnit k nahlížení do knihoven:
+   
+	   .. note::
+	      
+	      Zde bude seznam knihoven, ve kterých je možno zpřístupnit e-publikaci.
+	      
+	      Seznam knihoven s Krameriem je:  https://code.google.com/p/kramerius/wiki/Knihovny
+
    4. KDYŽ nakladatel/vydavatel klikne na tlačítko "Načíst metadata ze souboru"
 
       4.1. Systém uloží soubor
 
-      4.2. Systém načte metadata ze souboru - :ref:`uc02-05`
+      4.2. Systém načte metadata ze souboru - :ref:`uc02-07`
 
       4.3. Systém zobrazí formulář jako v předešlém kroku
    
@@ -108,9 +121,17 @@ UC02-02 Ohlášení se soubory
 
       6.3. Nakladatel/vydavatel pokračuje jako krokem 4
 
-   7. Nakladatel/vydavatel klikne na tlačítko "Uložit"
-   8. Systém si data a soubory uloží
-   9. Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISBN
+   7. Nakladatel/vydavatel určí, ve kterých knihovnách se může nahlížet na e-publikaci:
+
+      7.1. BUĎ vybere jednotlivé knihovny
+     
+      7.2. NEBO klikne "do všech knihoven"
+      
+      7.3. NEBO klikne "jen Národní knihovna"
+      
+   8. Nakladatel/vydavatel klikne na tlačítko "Uložit"
+   9. Systém si data a soubory uloží
+   10. Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISBN
    
 .. admonition:: následné podmínky
 

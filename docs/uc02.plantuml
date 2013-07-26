@@ -18,7 +18,7 @@ rectangle  {
 	   :nakl: --> (UC02-04 Odeslání ohlášky)
 	   :nakl: --> (UC02-05 Odeslání ohlášky s registrací ISBN)
 	   :sys: -left-> (UC02-06 Kontroly souboru)
-	   :sys: -left-> (UC02-07 Načtení metadat ze souborů)
+	   :sys: -left-> (UC02-07 Načtení metadat ze souboru)
 	   :sys: -left-> (UC02-08 Transformace souboru)
 	   :sys: -left-> (UC02-09 Vytvoření náhledu na soubor)
 	   :nakl: --> (UC02-10 Oprava souboru)

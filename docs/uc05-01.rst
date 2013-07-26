@@ -25,13 +25,20 @@ UC05-01 Export do systému Kramerius
    3. Systém pomocí **scp** uloží balíček na **NAS** server
    4. Systém zavolá **REST** službu, která spustí import do systému **Kramerius**
    5. Systém Kramerius načte e-publikaci
+   6. Takto systém postupuje pro každou knihovnu, ve které má být e-publikace zpřístupněna
 
 .. admonition:: následné podmínky
 
    E-publikace je zpřístupněna v systému Kramerius.
 
-.. raw:: html
+.. note::
 
+   Každá knihovna má svůj vlastní systém Kramerius.
+
+   E-publikace se ukládá do každé knihovny zvlášť.
+
+.. raw:: html
+ 
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

@@ -1,19 +1,7 @@
-.. _processmodels:
+PM07 Ohláčení pokračujícího zdroje
+.......................................................
 
-Modely procesů
---------------------------------------
-.. toctree::
-   :maxdepth: 1
-
-   pm01
-   pm02
-   pm03
-   pm04
-   pm05
-   pm06
-   pm07
-
-.. image:: processmodels.png
+.. image:: pm07.png
 
 .. raw:: html
 
@@ -32,4 +20,5 @@ Modely procesů
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
+
 
