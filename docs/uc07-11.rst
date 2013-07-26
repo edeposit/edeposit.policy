@@ -1,7 +1,7 @@
-.. _uc07-03:
+.. _uc07-11:
 
-UC07-03 Ohlášení dalšího dílu přes **ftp**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UC07-11 Detail pokračujícího zdroje
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: účastníci
 
@@ -10,38 +10,34 @@ UC07-03 Ohlášení dalšího dílu přes **ftp**
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel má uzavřenou smlouvu s Národní knihovnou
-   - Nakladatel/vydavatel ohlásil nový pokračující zdroj :ref:`uc07-01`
- 
+   - Nakladatel/vydavatel se přihlásil do systému
+
 .. admonition:: tok událostí
 
-   .. _uc07-03-01:
-   
-   1. Nakladatel/vydavatel se přihlásí na uvedený ftp server.
+   1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
+   2. Nakladatel/vydavatel do vyhledávacího políčka zadá jedno z toho:
+      
+      - část ISSN
+      - část Názvu
+      - část Jména autora
+	
+   3. Systém omezí přehled ohlášených publikací podle zadaného filtru
+   4. Nakladatel/vydavatel klikne na linku vybrané publikace 
+   5. Systém zobrazí detail ohlášeného pokračujícího zdroje
 
-      .. note::
-	 
-	 adresa ftp serveru je uvedena v dodatku smlouvy z Národní knihovnou
-
-   2. Nakladatel/vydavatel přepne do adresáře
+      - metadata pokračujícího zdroje
+      - přehled ohlášených dílů
+      - přehled dílů k akvizici
+      - linku na ohlášení dalšího dílu
       
       .. note:: 
+	 
+	 u jednotlivých souborů je linka "Opravit"
 
-	 jméno adresáře je přímo hodnota ISSN
-   
-   3. Nakladatel/vydavatel se dále zanoří do adresáře ``ohlaseni-dalsiho-dilu``
-   4. V tomto adresáři nakladatel/vydavatel uloží soubor.
-   5. Systém tento adresář sleduje
-   6. Systém načte soubor
-      
-      6.1. POKUD načtení projde v pořádku, systém soubor smaže
-      
-      6.2. POKUD načtení skončí s chybou, systém soubor ponechá a přiloží pod stejným jménem log soubor
-   
-      
 .. admonition:: následné podmínky
 
-   Nový díl je připravek k akvizici.
+   Nakladatel/vydavatel může pracovat s vybraným pokračujícím zdrojem.
+   
 
 
 .. raw:: html
@@ -61,4 +57,3 @@ UC07-03 Ohlášení dalšího dílu přes **ftp**
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
-

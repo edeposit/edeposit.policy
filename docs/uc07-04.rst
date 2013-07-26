@@ -1,7 +1,68 @@
 .. _uc07-04:
 
 UC07-04 Ohlášení dalšího dílu přes **email**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: účastníci
+
+   - Nakladatel/vydavatel
+   - Systém
+
+.. admonition:: vstupní podmínky
+
+   - Nakladatel/vydavatel má uzavřenou smlouvu s Národní knihovnou
+   - Nakladatel/vydavatel ohlásil nový pokračující zdroj :ref:`uc07-01`
+ 
+.. admonition:: tok událostí
+
+   .. _uc07-04-01:
+   
+   1. Nakladatel/vydavatel odešle email na zadanou emailovou adresu
+
+      .. note:: 
+
+	 emailová adresa je uvedena v dodatku smlouvy a Národní knihovnou.
+	 
+      Email:
+
+      - v hlavičce ``from`` je uvedena kontaktní emailová adresa nakladatele/vydavatele
+      - subject obsahuje cokoliv
+      - jako příloha je soubor k ohlášení
+      - v těle emailu jsou uvedena metadata k souboru:
+
+	.. note::
+	   
+	   ISSN:
+	   Vazba/forma:
+	   Cena:
+	   Název:
+	   Podnázev:
+	   Část (svazek, díl):
+	   Název části:
+	   Autor (příjmení, křestní jméno):
+	   Další autoři (příjmení, křestní jméno):
+	   Edice:
+	   Číslo svazku:
+	   Místo vydání:
+	   Nakladatel:
+	   Měsíc a rok vydání:
+	   Vydáno v koedici s:
+	   Pořadí vydání:
+	   Zpracovatel záznamu:
+
+	
+   2. Nakladatel/vydavatel odešle email
+   3. Systém sleduje emailovou schránku pro ohlašovaní
+   4. Systém načte soubor z email spolu s metadaty
+      
+      6.1. POKUD načtení projde v pořádku, systém email smaže
+      
+      6.2. POKUD načtení skončí s chybou, systém email smaže a odešle email na adresu odesílatele společně s výpisem chyb
+      
+.. admonition:: následné podmínky
+
+   Nový díl je připravek k akvizici.
+
 
 .. raw:: html
 
@@ -20,3 +81,4 @@ UC07-04 Ohlášení dalšího dílu přes **email**
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
+

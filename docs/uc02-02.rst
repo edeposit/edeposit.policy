@@ -26,6 +26,7 @@ UC02-02 Ohlášení se soubory
       - linku pro ohlášení pokračujícího zdroje
       - přehled ohlášených pokračujících zdrojů
       - políčko k vyhledávání ohlášených pokračujících zdrojů
+      - linku pro ohlášení nového dílu pokračujícího zdroje
 	
    2. Nakladatel/vydavatel klikne na "Ohlášení publikace"
 

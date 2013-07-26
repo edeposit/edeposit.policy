@@ -1,28 +1,36 @@
-.. _uc07-05:
+.. _uc07-10:
 
-UC07-05 Odeslání ohlášky
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UC07-10 Stažení souboru
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: účastníci
 
    - Nakladatel/vydavatel
+   - Systém
 
 .. admonition:: vstupní podmínky
 
    - Nakladatel/vydavatel se přihlásil do systému
-  
+
+   - Nakladatel/vydavatel ohlásil další díl :ref:`uc07-02`
+
 .. admonition:: tok událostí
 
-   1. Nakladatel/vydavatel uloží novou ohlášku podle :ref:`uc07-02`.
-   2. Systém zobrazí detail ohlášky a tlačítka "K akvizici"
-   3. Nakladatel/vydavatel klikne na tlačítko "K akvizici"
-   4. Systém ohlášku uloží
-   
+   1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
+   2. Nakladatel/vydavatel do vyhledávacího políčka zadá jedno z toho:
+      
+      - část ISSN
+      - část Názvu
+      - část Jména autora
+	
+   3. Systém omezí přehled ohlášených publikací podle zadaného filtru
+   4. Nakladatel/vydavatel klikne na linku vybrané publikace 
+   5. Systém zobrazí detail ohlášené publikace :ref:`uc07-11`
+   6. Nakladatel/vydavatel si stáhne soubor do počítače
+
 .. admonition:: následné podmínky
 
-   Nakladatel/vydavatel může ohlášku najít v seznamu ohlášek v akvizici.
-
-   Pracovník akvizice má k dispozici novou e-publikaci ke kontrole metadat
+   Nakladatel/vydavatel má v počítači soubor e-publikace
 
 .. raw:: html
 

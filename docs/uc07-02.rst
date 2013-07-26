@@ -11,19 +11,21 @@ UC07-02 Ohlášení nového dílu
 
    - Nakladatel/vydavatel se přihlásil do systému
 
+   - Nakladatel/vydavatel ohlásil nový pokračující zdroj :ref:`uc07-01`
+
 .. admonition:: tok událostí
 
    .. _uc07-02-01:
-   
-   1. Systém zobrazí úvodní stránku jako v :ref:`uc02-02-01`
-   2. Nakladatel/vydavatel klikne na "Ohlášení pokračujícího zdroje"
+
+   1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
+   2. Nakladatel/vydavatel klikne na "Ohlášení nového dílu"
 
    .. _uc07-02-3:
 
    3. Systém zobrazí formulář:
 
-      - URL (e-publikace) *
-      - Formát (e-publikace) *
+      - URL 
+      - Formát
       - linka na upload souboru (e-publikace)
 
       .. note ::
@@ -32,35 +34,13 @@ UC07-02 Ohlášení nového dílu
    
 	u tohoto formuláře systém zobrazí tlačítko "Načíst metadata ze souboru"
 
-      Systém dále zobrazí formulář na upload tiskové předlohy:
-
-	- URL
-	- Formát
-	- linka a upload souboru
-
-	  .. note::
-
-	     u tohoto formuláře systém zobrazí tlačítko + pro přidání další dvojice URL,Formát
-
       Systém dále zobrazí formulář na zadávání metadat:
 
 	- ISSN *
 	- Vazba/forma 
 	- Cena 
-	- Název *
-	- Podnázev 
 	- Část (svazek, díl)
 	- Název části
-	- Autor (příjmení, křestní jméno)
-	- Další autoři (příjmení, křestní jméno)
-	- Edice
-	- Číslo svazku
-	- Místo vydání *
-	- Nakladatel *
-	- Měsíc a rok vydání *
-	- Vydáno v koedici s
-	- Pořadí vydání *
-	- Zpracovatel záznamu *
 
 	  .. note::
 
@@ -87,43 +67,24 @@ UC07-02 Ohlášení nového dílu
       4.4. Systém předvyplní formulář údaji, které načetl ze souboru
 
    5. Nakladatel/vydavatel vyplní formulář pro zadávání metadat
-   6. KDYŽ nakladatel klikne na tlačítko +
+   6. Nakladatel/vydavatel určí, ve kterých knihovnách se může nahlížet na e-publikaci:
 
-      6.1. Systém přidá další formulář:
-       
-        - ISBN
-	- URL (e-publikace)
-	- Formát (e-publikace)
-	- linka na upload souboru (e-publikace)
-
-	  .. note::
-
-	     u každého ISBN bude tlačítko + pro přidání dalšího ISBN k souboru
-
-	     u tohoto formuláře systém zobrazí tlačítko + pro přidání další trojice ISBN,URL,Formát
-   
-	     u tohoto formuláře systém zobrazí tlačítko "Načíst metadata ze souboru"
-
-      6.2. Nakladatel/vydavatel vyplní další ISBN ohlašované publikace a zadá soubor
-
-      6.3. Nakladatel/vydavatel pokračuje jako krokem 4
-
-   7. Nakladatel/vydavatel určí, ve kterých knihovnách se může nahlížet na e-publikaci:
-
-      7.1. BUĎ vybere jednotlivé knihovny
+      6.1. BUĎ vybere jednotlivé knihovny
      
-      7.2. NEBO klikne "do všech knihoven"
+      6.2. NEBO klikne "do všech knihoven"
       
-      7.3. NEBO klikne "jen Národní knihovna"
-      
-   8. Nakladatel/vydavatel klikne na tlačítko "Uložit"
-   9. Systém si data a soubory uloží
-   10. Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISBN
+      6.3. NEBO klikne "jen Národní knihovna"
+
+      6.4. NEBO klikne "jako předešlé díly"
+   
+   7. Nakladatel/vydavatel klikne na tlačítko "Odeslat"
+   8. Systém si data a soubory uloží
+   9. Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu
+   10. Systém připojí ohlášený díl k pokračujícímu zdroji - podle společného ISSN
    
 .. admonition:: následné podmínky
 
-   Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
-
+   Nový díl je připravek k akvizici.
 
 .. raw:: html
 
