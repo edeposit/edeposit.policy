@@ -1,0 +1,32 @@
+@startuml
+skinparam componentStyle uml2
+title Architektura systému
+
+
+package "E-Deposit" {
+() "HTTP" as HTTP
+() "SCP" as SCP
+() "AMQP" as AMQP
+
+[RabbitMQ] ..> AMQP : use
+[RabbitMQ] ..> SCP : use
+[RabbitMQ] ..> REST : use
+[Plone] ..> AMQP : use
+[Plone] <---> [RabbitMQ] : sends message
+[Plone] <---> [RabbitMQ] : receives message
+[Plone] ..> HTTP : use
+}
+
+package "NDK" {
+[RabbitMQ] --> [Aleph] : asks for metadata
+[RabbitMQ] --> [Aleph] : sends new metadata
+[RabbitMQ] --> [LTP] : sends new epublication
+[Aleph]
+[LTP]
+}
+
+[RabbitMQ] --> [Kramerius] : sends new epublication
+[Kramerius] ..> REST : use
+[Kramerius] ..> SCP : use
+
+@enduml

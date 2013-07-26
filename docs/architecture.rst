@@ -1,13 +1,12 @@
-.. _datamodels:
+.. _architecture:
 
-Modely datových entit
+Architektura systému
 -------------------------------------
 
 .. toctree::
    :maxdepth: 1
 
-   dm01
-   dm02
+.. image:: architecture.png
 
 .. raw:: html
 

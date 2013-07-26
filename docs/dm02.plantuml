@@ -1,7 +1,6 @@
 @startuml
-skinparam componentStyle uml2
 left to right direction
-title Datový model E-publikace
+title Datový model pokračujícího zdroje
 
 class Library {
       String title
@@ -9,8 +8,8 @@ class Library {
       String urlOfKramerius
 }
 
-class ISBN {
-      String ISBN
+class ISSN {
+      String ISSN
       boolean isValid()
 }
 
@@ -31,7 +30,7 @@ class PrintingFile {
       String filePath
 }
 
-class EPublication {
+class EPeriodical {
       String bookBinding
       Decimal price
       String title
@@ -48,11 +47,26 @@ class EPublication {
       String personWhoProcessedThis
 }
 
-Library "0..*" -- "0..*" EPublication: canAccess >
-EPublication *-- "0..*" File
-EPublication *-- "0..*" PrintingFile
-EPublication "0..*" *-- "0..*" Author
-File "0..*" *-- "1..*" ISBN
+class EPeriodicalPart {
+      String bookBinding
+      Decimal price
+      String title
+      String subtitle
+      String part
+      String partTitle
+      String volumeNumber
+      String placeOfPublishing
+      String publisher
+      Date   dateOfPublishing
+      String publishedWithCoedition
+      String publishedAtOrder
+      String personWhoProcessedThis
+}
 
+Library "0..*" -- "0..*" EPeriodicalPart: canAccess >
+EPeriodicalPart *-- "0..*" File
+EPeriodicalPart *-- "0..*" PrintingFile
+EPeriodical "0..*" *-- "0..*" Author
+EPeriodical "1..*" *-- EPeriodicalPart
 
 @enduml

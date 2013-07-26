@@ -20,6 +20,7 @@ Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
    usecases
    processmodels
    datamodels
+   architecture
 
 .. raw:: html
 
