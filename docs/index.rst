@@ -19,6 +19,7 @@ Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
    dictionary
    usecases
    processmodels
+   datamodels
 
 .. raw:: html
 

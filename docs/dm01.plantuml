@@ -1,0 +1,49 @@
+@startuml
+left to right direction
+title Datový model E-publikace
+
+class Library {
+      String title
+      String url
+      String urlOfKramerius
+}
+
+class ISBN {
+      String ISBN
+      boolean isValid()
+}
+
+class File {
+      String url
+      String format
+}
+
+class Author {
+      String firstName
+      String lastName
+}
+
+class Ebook {
+      String bookBinding
+      Decimal price
+      String title
+      String subtitle
+      String part
+      String partTitle
+      String edition
+      String volumeNumber
+      String placeOfPublishing
+      String publisher
+      Date   dateOfPublishing
+      String publishedWithCoeditionOf
+      String publishedAtOrder
+      String personWhoProcessedThis
+}
+
+Library "0..*" -- "0..*" Ebook: canAccess >
+Ebook *-- "0..*" File
+Ebook "0..*" *-- "0..*" Author
+File "0..*" *-- "1..*" ISBN
+
+
+@enduml

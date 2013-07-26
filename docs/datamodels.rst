@@ -1,7 +1,12 @@
-.. _uc04-04:
+.. _datamodels:
 
-UC04-04 Odebrání přístupu k e-publikaci
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Modely datových entit
+-------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   dm01
 
 .. raw:: html
 
@@ -20,3 +25,4 @@ UC04-04 Odebrání přístupu k e-publikaci
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
+
