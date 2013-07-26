@@ -23,7 +23,7 @@ class Author {
       String lastName
 }
 
-class Ebook {
+class EPublication {
       String bookBinding
       Decimal price
       String title
@@ -40,9 +40,9 @@ class Ebook {
       String personWhoProcessedThis
 }
 
-Library "0..*" -- "0..*" Ebook: canAccess >
-Ebook *-- "0..*" File
-Ebook "0..*" *-- "0..*" Author
+Library "0..*" -- "0..*" EPublication: canAccess >
+EPublication *-- "0..*" File
+EPublication "0..*" *-- "0..*" Author
 File "0..*" *-- "1..*" ISBN
 
 
