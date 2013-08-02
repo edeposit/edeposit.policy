@@ -52,11 +52,15 @@ class EPublicationFolder {
       
 }
 
+class LibraryFolder {
+}
+
 Library "0..*" -- "0..*" EPublication: canAccess >
 EPublication *-- "0..*" File
 EPublication *-- "0..*" PrintingFile
 EPublication "0..*" *-- "0..*" Author
 File "0..*" *-- "1..*" ISBN
 EPublicationFolder *-- "0..*" EPublication
+LibraryFolder *-- "0..*" Library
 
 @enduml
