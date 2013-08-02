@@ -9,11 +9,11 @@ title Ohlášení e-publikace
     === WORK_WITH_EPUBLICATION_S === --> "UC02-02 Ohlášení se soubory"
     === WORK_WITH_EPUBLICATION_S === --> "UC02-03 Ohlášení s tiskovou předlohou"
     === WORK_WITH_EPUBLICATION_S === ---> "UC02-10 Oprava souboru"
-    --> (*)
+    ---> (*)
     === WORK_WITH_EPUBLICATION_S === ---> "UC02-11 Stažení souboru"
-    --> (*)
+    ---> (*)
     === WORK_WITH_EPUBLICATION_S === ---> "UC02-14 Detail ohlášené publikace"
-    --> (*)
+    ---> (*)
     
     "UC02-01 Ohlášení jednoduché" --> === SUBMIT_EPUBLICATION ===
     "UC02-02 Ohlášení se soubory" --> === SUBMIT_EPUBLICATION ===
