@@ -10,7 +10,6 @@ Požadavky které jsou kladeny na funkci systému.
 #. systém umožňuje vkládat e-publikace licencované i Open Access e-publikace
 #. systém umožňuje ohlašovat i tištěné publikace
 #. uložené soubory v systému kontroluje pracovník akvizice
-#. systém opatřuje e-publikaci při uložení sociálním DRM Národní knihovny
 #. systém umožňuje doplňovat základní metadata e-publikace nakladatelem
 #. systém umožňuje vyměnit soubor i po přijetí akvizicí
 #. systém umožňuje nakladateli/vydavateli přidávat další soubory i po přijetí e-publikace akvizicí
@@ -47,7 +46,7 @@ Požadavky které jsou kladeny na funkci systému.
 #. systém umožňuje označit e-publikaci jako zakázanou (např. při zjištění, že byla autorem okopírována)
 #. systém odesílá do Alephu i jednoznačnou linku na náhled e-publikace
 #. v systému Aleph vzniká proklik na náhled e-publikace v e-deposit
-
+#. systém nabízí základní informační servis (počty přírůstků, zpřístupnění, ...) podle původců a typů dokumentů, ...
 
 Omezení systému
 ............................
@@ -57,9 +56,9 @@ Omezení systému
 #. systém autorizuje uživatele vůči firemní **ActiveDirectory**, nebo vůčí **LDAP**
 #. systém převádí všechny formáty do **PDF**, kvuli akvizici a katalogizaci
 #. systém poskytuje snadný způsob listování e-publikací, tj. náhledy po jednotlivých stránkách (hlavně pro katalogizaci, která musí celou e-publikaci prolistovat)
-#. systém soubory a údaje zabezbečuje asymetrickou šifrou na základě **X509** standardu
 #. systém přijímá e-publikace v libovolném (binárním) formátu, dlouhodobou ochranu zaručuje pouze u formátů **ePub2** a **PDF/A**
-#. systém nepřijímá publikace s ochranou proti kopírování, např **DRM**. Publikaci přijme i s **DRM** pokud je v něm označení "Národní knihovna"
+#. systém nepřijímá publikace s ochranou proti kopírování, např **DRM**. 
+   Publikaci přijme i s **DRM** pokud je v něm označení "Národní knihovna"
 #. web rozhraní systému je poskytnuto za pomoci **Plone**
 #. middleware k implementaci využívá **RabbitMQ**, tj. je implementován odděleně od web rozhraní
 #. middleware je napsaný v jazyce **Python**
