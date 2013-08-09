@@ -17,7 +17,19 @@ UC02-11 Stažení souboru
 
    1. Nakladatel/vydavatel vyhledá detail ohlášené publikace jako v :ref:`uc02-08`
    2. Nakladatel/vydavatel u vybranéhou souboru klikne na linku k získání souboru
-   3. Systém nabídne soubor ke stažení
+   3. Systém se obrátí na LTP se žádostí ke stažení souboru
+   4. Systém oznámí, že byla odeslána žádost ke stažení
+   5. Systém soubor uloží v sekci "Ke stažení"
+   6. POKUD se soubor v sekci "Ke stažení" objeví rychle:
+
+      6.1. Systém přesměruje stránku do sekce "Ke stažení"
+      
+   7. POKUD se soubor neobjeví v sekci "Ke stažení" rychle:
+
+      7.1. Nakladatatel chvíli počká
+      7.2. Nakladatel/vydavatel klikne na linku "Ke stažení"
+      
+   9. Systém nabídne soubor ke stažení
    
 .. admonition:: následné podmínky
 

@@ -32,6 +32,7 @@ package "NDK" {
 [RabbitMQ] --> [Aleph] : ptá se na metadata
 [RabbitMQ] --> [Aleph] : posílá nové metadata
 [RabbitMQ] --> [LTP] : posílá nové epublikace
+[RabbitMQ] --> [LTP] : stahuje soubory epublikace
 [Aleph]
 [LTP]
 }

@@ -6,15 +6,37 @@ Požadavky na funkci systému
 
 Požadavky které jsou kladeny na funkci systému.
 
+1. Z pohledu nakladatele/vydavatele
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #. systém umožňuje ukládat elektronické předlohy tištěných publikací
 #. systém umožňuje vkládat e-publikace licencované i Open Access e-publikace
 #. systém umožňuje ohlašovat i tištěné publikace
-#. uložené soubory v systému kontroluje pracovník akvizice
 #. systém umožňuje doplňovat základní metadata e-publikace nakladatelem
 #. systém umožňuje vyměnit soubor i po přijetí akvizicí
 #. systém umožňuje nakladateli/vydavateli přidávat další soubory i po přijetí e-publikace akvizicí
 #. e-publikace může obsahovat více souborů v různých formátech
-#. každý soubor jednoho má žádný, nebo jeden, nebo více **ISBN** a může mít i jeden **ISSN**
+#. systém poskytuje registraci pro nakladatele
+#. systém poskytuje nakladateli zjednodušenou registraci jen na základě web registrace
+#. systém umožňuje nakladateli definovat podmínky užití a řídí se jimi = komu a jakým způsobem mohou být e-publikace zpřístupněny
+#. systém přijímá i e-publikace s binárními přílohami
+#. systém zobrazuje historii všech zadaných **ISBN** i těch, co prošly jinou cestou, než pres e-deposit
+#. systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi
+#. systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu
+   nebo jen ochranu na binární úrovni
+
+2. Z pohledu akvizice
+~~~~~~~~~~~~~~~~~~~~~~
+
+#. uložené soubory v systému kontroluje pracovník akvizice
+#. systém zobrazuje **PDF** náhled
+#. systém umožňuje zadávat základní bibliografický popis ručně
+#. systém nabízí bibliografický popis načtený ze systému **Aleph**
+
+3. Z pohledu systému
+~~~~~~~~~~~~~~~~~~~~~~
+
+#. každý soubor jedné e-publikace má žádný, nebo jeden, nebo více **ISBN** a může mít i jeden **ISSN**
 #. tisková předloha má stejné **ISBN** jako tištěná publikace
 #. e-publikace mohou být zpřístupněny za pomoci **OAI-PMH**, **OPDS**, 
    **eReading.cz**, **Flexibooks**, **ebary**, **BookJet**, **eBookEater**,
@@ -25,21 +47,11 @@ Požadavky které jsou kladeny na funkci systému.
 #. systém ukládá e-publikace do systému **LTP** k trvalé archivaci
 #. systém před uložením e-publikace do **LTP** provádí validaci natolik důkladnou, aby předešla odmítnutí na vstupu do **LTP**
 #. do **LTP** se odesilaji data po katalogizaci
-#. systém poskytuje registraci pro nakladatele
-#. systém umožňuje producentovi definovat podmínky užití a řídí se jimi = komu a jakým způsobem mohou být e-publikace zpřístupněny
-#. systém přijímá i e-publikace s binárními přílohami
 #. systém zjišťuje přítomnost virů ve vložených souborech
 #. systém umí načítat e-publikace přes vlastní **ftp** server, nebo z emailové schránky
-#. systém zobrazuje **PDF** náhled
-#. systém umožňuje zadávat základní bibliografický popis ručně
-#. systém nabízí bibliografický popis načtený ze systému **Aleph**
 #. systém automaticky načítá údaje o publikacích, které byly zaregistrovány **ISBN agenturou**
 #. systém umožňuje povolit jen přihlášení za pomoci hesla, přihlašovacího jména
 #. systém si pamatuje všechny verze vloženého souboru
-#. systém zobrazuje historii všech zadaných **ISBN** i těch, co prošly jinou cestou, než pres e-deposit
-#. systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi
-#. systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu
-   nebo jen ochranu na binární úrovni
 #. systém umí omezit přístup nakladatele/vydavatele na readonly přístup (např. při porušení smlouvy)
 #. systém umí zakázat nakladateli/vydavateli přístup k jednotlivým e-publikacím (např. při porušení autorských práv)
 #. systém umožňuje pdf náhled na soubory aniž by kopie opustila systém

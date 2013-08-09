@@ -1,28 +1,26 @@
-.. E-Deposit documentation master file, created by
-   sphinx-quickstart on Thu Jun 13 05:36:01 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _uc12-03:
 
-.. (project-task run "*shell*" "make html")
-.. (project-task run-show "*shell*" "google-chrome file:///opt/e-deposit/src/edeposit.policy/docs/_build/html/index.html")
+UC12-03 Reporty pro katalogizaci
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-E-Deposit - SW dokumentace
-===========================================================================
-.. sectionauthor:: Jan Stavěl <stavel.jan at gmail.com>
+.. admonition:: účastníci
 
-Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
+   - Nakladatel/vydavatel
+   - Systém
 
-.. toctree::
-   :maxdepth: 2
+.. admonition:: vstupní podmínky
 
-   requirements
-   dictionary
-   usecases
-   processmodels
-   datamodels
-   architecture
-   security
-   openned
+   - Nakladatel/vydavatel se přihlásil do systému
+
+.. admonition:: tok událostí
+
+   1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
+   2. Nakladatel/vydavatel klikne na "Reporty"
+
+.. admonition:: následné podmínky
+
+   Nakladatel/vydavatel má přehled o tom, kolik epublikací ohlásil.
+   
 
 .. raw:: html
 
@@ -41,12 +39,3 @@ Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
-
-
-Odkazy
-=================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

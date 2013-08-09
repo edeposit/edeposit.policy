@@ -38,6 +38,7 @@ Případy užití
    uc09
    uc10
    uc11
+   uc12
 
 .. raw:: html
 

@@ -10,6 +10,7 @@ actor :Systém: as sys
 
 :isbn: -> (NKP: Přidělení rozsahu ISBN)
 :sys: -> (Aleph: Kontrola duplicit ISBN)
+:sys: -> (LTP: Získání souboru)
 
 rectangle  {
 	   :nakl: --> (UC02-01 Ohlášení jednoduché)

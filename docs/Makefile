@@ -14,7 +14,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-PNGS = uc01.png uc02.png uc03.png uc04.png uc05.png uc06.png uc07.png uc08.png pm01.png pm02.png pm03.png pm04.png pm05.png pm06.png processmodels.png pm07.png dm01.png dm02.png architecture.png
+PNGS = uc01.png uc02.png uc03.png uc04.png uc05.png uc06.png uc07.png uc08.png pm01.png pm02.png pm03.png pm04.png pm05.png pm06.png processmodels.png pm07.png dm01.png dm02.png architecture.png uc12.png
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext
 
@@ -215,4 +215,7 @@ dm02.png: dm02.plantuml
 	java -jar ~/lib/plantuml.jar $?
 
 architecture.png: architecture.plantuml
+	java -jar ~/lib/plantuml.jar $?
+
+uc12.png: uc12.plantuml
 	java -jar ~/lib/plantuml.jar $?
