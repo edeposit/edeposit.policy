@@ -1,4 +1,4 @@
-PM07 Ohláčení pokračujícího zdroje
+PM07 - Ohláčení pokračujícího zdroje
 .......................................................
 
 .. image:: pm07.png

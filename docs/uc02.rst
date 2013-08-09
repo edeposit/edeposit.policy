@@ -1,6 +1,6 @@
 .. _uc02:
 
-UC02 Ohlášení publikace
+UC02 - Ohlášení publikace
 ...........................................
 
 .. image:: uc02.png

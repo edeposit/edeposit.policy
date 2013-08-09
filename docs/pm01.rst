@@ -1,4 +1,4 @@
-PM01 Registrace nakladatele
+PM01 - Registrace nakladatele
 ...................................................
 
 .. image:: pm01.png

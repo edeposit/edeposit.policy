@@ -39,6 +39,7 @@ Případy užití
    uc10
    uc11
    uc12
+   uc13
 
 .. raw:: html
 

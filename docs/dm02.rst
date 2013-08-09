@@ -1,6 +1,6 @@
 .. _dm02:
 
-Datový model pokračujícího zdroje
+DM02 - pokračující zdroj
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: dm02.png

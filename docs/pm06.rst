@@ -1,4 +1,4 @@
-PM06 Dlouhodobá ochrana e-publikace
+PM06 - Dlouhodobá ochrana e-publikace
 .......................................................
 
 .. image:: pm06.png

@@ -1,4 +1,4 @@
-PM02 Ohlášení e-publikace
+PM02 - Ohlášení e-publikace
 ...................................................
 
 .. image:: pm02.png

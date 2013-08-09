@@ -1,4 +1,4 @@
-PM05 Zpřístupnění e-publikace
+PM05 - Zpřístupnění e-publikace
 .......................................................
 
 .. image:: pm05.png

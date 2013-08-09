@@ -1,4 +1,4 @@
-PM04 Katalogizace e-publikace
+PM04 - Katalogizace e-publikace
 .......................................................
 
 .. image:: pm04.png

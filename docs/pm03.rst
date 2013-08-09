@@ -1,4 +1,4 @@
-PM03 Akvizice e-publikace
+PM03 - Akvizice e-publikace
 ...................................................
 
 .. image:: pm03.png

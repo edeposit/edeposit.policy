@@ -14,10 +14,10 @@ class ISBN {
       boolean isValid()
 }
 
-class File {
+class OriginalFile {
       String url
       String format
-      String filePath
+      File file
 }
 
 class Author {
@@ -28,7 +28,7 @@ class Author {
 class PrintingFile {
       String url
       String format
-      String filePath
+      File file
 }
 
 class EPublication {
@@ -46,6 +46,8 @@ class EPublication {
       String publishedWithCoedition
       String publishedAtOrder
       String personWhoProcessedThis
+      Relation librariesThatCanAccessAtLibraryTerminal
+      Relation librariesThatCanAccessAtPublic
 }
 
 class EPublicationFolder {
@@ -55,8 +57,9 @@ class EPublicationFolder {
 class LibraryFolder {
 }
 
-Library "0..*" -- "0..*" EPublication: canAccess >
-EPublication *-- "0..*" File
+Library "0..*" -- "0..*" EPublication: canAccessAtLibraryTerminal >
+Library "0..*" -- "0..*" EPublication: canAccessAtPublic >
+EPublication *-- "0..*" OriginalFile
 EPublication *-- "0..*" PrintingFile
 EPublication "0..*" *-- "0..*" Author
 File "0..*" *-- "1..*" ISBN
