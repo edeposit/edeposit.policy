@@ -11,6 +11,10 @@ Software 1: Sklízení metadat a publikací z webu a z eshopu
 Software 2: Akvizice e-publikací
 .............................................................
 
+.. todo::
+
+   prvni ukol
+
 :validovani ISSN:
 
    stačí pokládat ISSN za validní, jestli se objeví v souboru?
@@ -51,3 +55,4 @@ Nezařazené
 
 - začít shánět design webu
 - ikony, vzhled, barvy
+- co prinese prihlaseni jednoduche?

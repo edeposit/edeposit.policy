@@ -14,6 +14,10 @@ class ISBN {
       boolean isValid()
 }
 
+class PreviewFile {
+      File file
+}
+
 class OriginalFile {
       String url
       String format
@@ -48,6 +52,7 @@ class EPublication {
       String personWhoProcessedThis
       Relation librariesThatCanAccessAtLibraryTerminal
       Relation librariesThatCanAccessAtPublic
+      String alephDocNumber
 }
 
 class EPublicationFolder {
@@ -62,7 +67,10 @@ Library "0..*" -- "0..*" EPublication: canAccessAtPublic >
 EPublication *-- "0..*" OriginalFile
 EPublication *-- "0..*" PrintingFile
 EPublication "0..*" *-- "0..*" Author
-File "0..*" *-- "1..*" ISBN
+EPublication "0..*" *-- "0..*" PreviewFile: main preview files
+OriginalFile "0..*" *-- "1..*" ISBN
+OriginalFile "0..*" *-- "1..*" PreviewFile
+PrintingFile "0..*" *-- "1..*" PreviewFile
 EPublicationFolder *-- "0..*" EPublication
 LibraryFolder *-- "0..*" Library
 

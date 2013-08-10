@@ -34,6 +34,16 @@ UC07-02 Ohlášení nového dílu
    
 	u tohoto formuláře systém zobrazí tlačítko "Načíst metadata ze souboru"
 
+      Systém dále zobrazí formulář na upload tiskové předlohy:
+
+	- URL
+	- Formát
+	- linka a upload souboru
+
+	  .. note::
+
+	     u tohoto formuláře systém zobrazí tlačítko + pro přidání další dvojice URL,Formát
+
       Systém dále zobrazí formulář na zadávání metadat:
 
 	- ISSN *
