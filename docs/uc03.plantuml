@@ -24,6 +24,7 @@ rectangle  {
 	   :akv: --> (UC03-09 Odmítnutí e-publikace)
 	   :akv: --> (UC03-10 Odstranění duplicity)
 	   :akv: --> (UC03-11 Oprava metadat)
+	   :nakl: --> (UC02-15 Dodatečná oprava metadat)
 }
 :akv: -left-> (Aleph: doplnění popisných metadat)
 :isbn: -left-> (Aleph: kontrola ISBN)

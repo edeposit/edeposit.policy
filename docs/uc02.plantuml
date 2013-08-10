@@ -27,6 +27,7 @@ rectangle  {
 	   :sys: -left-> (UC02-12 Kontrola duplicit ISBN)
 	   :isbn: -left-> (UC02-13 Přidělení ISBN)
 	   :nakl: --> (UC02-14 Detail ohlášené publikace)
+	   :nakl: --> (UC02-15 Dodatečná oprava metadat)
 }
 
 @enduml

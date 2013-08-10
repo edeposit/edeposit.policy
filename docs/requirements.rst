@@ -11,25 +11,25 @@ Požadavky které jsou kladeny na funkci systému.
 
 #. systém umožňuje ukládat elektronické předlohy tištěných publikací :ref:`uc02-03`
 #. systém umožňuje vkládat e-publikace licencované i Open Access e-publikace
-#. systém umožňuje ohlašovat i tištěné publikace
+#. systém umožňuje ohlašovat i tištěné publikace :ref:`uc02-01`
 #. systém umožňuje doplňovat základní metadata e-publikace nakladatelem
 #. systém umožňuje vyměnit soubor i po přijetí akvizicí :ref:`uc02-10`
-#. producent má možnost opravit metadata i po přijetí akvizicí, viz. TODO reference na UC
-#. systém umožňuje nakladateli/vydavateli přidávat další soubory i po přijetí e-publikace akvizicí
+#. producent má možnost opravit metadata i po přijetí akvizicí :ref:`uc02-15`
+#. systém umožňuje nakladateli/vydavateli přidávat další soubory i po přijetí e-publikace akvizicí  :ref:`uc02-10`
 #. e-publikace může obsahovat více souborů v různých formátech
-#. systém poskytuje registraci pro nakladatele
+#. systém poskytuje registraci pro nakladatele :ref:`uc01-02`
 #. systém poskytuje nakladateli zjednodušenou registraci jen na základě web registrace
 #. systém umožňuje nakladateli definovat podmínky užití a řídí se jimi = komu a jakým způsobem mohou být e-publikace zpřístupněny
 #. systém přijímá i e-publikace s binárními přílohami
 #. systém zobrazuje historii všech zadaných **ISBN** i těch, co prošly jinou cestou, než pres e-deposit
-#. systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi
+#. systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi :ref:`uc12-01`
 #. systém informuje, jestli u vloženého souboru garantuje dlouhodobou ochranu
    nebo jen ochranu na binární úrovni
 
 2. Z pohledu akvizice
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. uložené soubory v systému kontroluje pracovník akvizice
+#. uložené soubory v systému kontroluje pracovník akvizice  :ref:`pm03`
 #. systém zobrazuje **PDF** náhled
 #. systém umožňuje zadávat základní bibliografický popis ručně
 #. systém nabízí bibliografický popis načtený ze systému **Aleph**
@@ -56,8 +56,8 @@ Požadavky které jsou kladeny na funkci systému.
 #. systém umožňuje pdf náhled na soubory aniž by kopie opustila systém
 #. systém umožňuje označit e-publikaci jako zakázanou (např. při zjištění, že byla autorem okopírována)
 #. systém odesílá do Alephu i jednoznačnou linku na náhled e-publikace
-#. v systému Aleph vzniká proklik na náhled e-publikace v e-deposit
-#. systém nabízí základní informační servis (počty přírůstků, zpřístupnění, ...) podle původců a typů dokumentů, ...
+#. v systému Aleph vzniká proklik na náhled e-publikace v e-deposit :ref:`uc03-03`
+#. systém nabízí základní informační servis (počty přírůstků, zpřístupnění, ...) podle původců a typů dokumentů, ... :ref:`uc12`
 #. systém provádí průběžnou zálohu vstupujících dokumentů
 #. systém generuje různé náhledy, pro různé druhy zobrazení
 
