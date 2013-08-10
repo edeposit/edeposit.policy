@@ -5,25 +5,25 @@ UC07-03 Ohlášení dalšího dílu přes **ftp**
 
 .. admonition:: účastníci
 
-   - Nakladatel/vydavatel
+   - Producent
    - Systém
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel má uzavřenou smlouvu s Národní knihovnou
-   - Nakladatel/vydavatel ohlásil nový pokračující zdroj :ref:`uc07-01`
+   - Producent má uzavřenou smlouvu s Národní knihovnou
+   - Producent ohlásil nový pokračující zdroj :ref:`uc07-01`
  
 .. admonition:: tok událostí
 
    .. _uc07-03-01:
    
-   1. Nakladatel/vydavatel se přihlásí na uvedený ftp server.
+   1. Producent se přihlásí na uvedený ftp server.
 
       .. note::
 	 
 	 adresa ftp serveru je uvedena v dodatku smlouvy z Národní knihovnou
 
-   2. Nakladatel/vydavatel přepne do adresáře
+   2. Producent přepne do adresáře
       
       .. note:: 
 
@@ -38,13 +38,13 @@ UC07-03 Ohlášení dalšího dílu přes **ftp**
 	     - tiskova-predloha
 	     - original
 
-   3. Nakladatel/vydavatel se dále zanoří do adresáře ``ohlaseni-dalsiho-dilu``
-   4. V tomto adresáři nakladatel otevře jeden ze dvou adresářů:
+   3. Producent se dále zanoří do adresáře ``ohlaseni-dalsiho-dilu``
+   4. V tomto adresáři producent otevře jeden ze dvou adresářů:
 
       - tiskova-predloha
       - original
 
-   5. Ve vybraném adresáři nakladatel/vydavatel uloží soubor.
+   5. Ve vybraném adresáři producent uloží soubor.
    6. Systém tento adresář sleduje
    7. Systém načte soubor
       

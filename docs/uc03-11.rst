@@ -9,7 +9,7 @@ UC03-11 Oprava metadat
      
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel podal ohlášení a poslal je k akvizici :ref:`uc02-02`, :ref:`uc02-04`
+   - Producent podal ohlášení a poslal je k akvizici :ref:`uc02-02`, :ref:`uc02-04`
 
 .. admonition:: tok událostí
 

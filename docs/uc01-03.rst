@@ -1,6 +1,6 @@
 .. _uc01-03:
 
-UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem
+UC01-03 Pozastavení platnosti smlouvy s producentem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -15,15 +15,15 @@ UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem
 *tok událostí*:
 
 1. Systém zobrazí úvodní stránku jako v :ref:`uc01-02`/1.
-2. Pracovník do vyhledávacího políčka zadá název nakladatele
-3. Systém zobrazí přehled nakladatelů, kteří odpovídají zadání
-4. Pracovník klikne na linku vybraného nakladatele/vydavatele
-5. Systém zobrazí detail nakladatele/vydavatele
+2. Pracovník do vyhledávacího políčka zadá název producenta
+3. Systém zobrazí přehled producentů, kteří odpovídají zadání
+4. Pracovník klikne na linku vybraného producenta
+5. Systém zobrazí detail producenta
 
    - přihlašovací jméno
-   - název nakladatele
-   - adresa nakladatele
-   - url nakladatele
+   - název producenta
+   - adresa producenta
+   - url producenta
    - email kontaktní osoby
 
    - download kopie podepsané smlouvy
@@ -32,13 +32,13 @@ UC01-03 Pozastavení platnosti smlouvy s nakladatelem/vydavatelem
    - linku na pozastaveni platnosti
 
 4. Pracovník akvizice klikne na linku "Pozastavení platnosti smlouvy"
-5. Systém zobrazí potvrzení o pozastavení platnosti smlouvy a zobrazí detail nakladatele/vydavatele
+5. Systém zobrazí potvrzení o pozastavení platnosti smlouvy a zobrazí detail producenta
 
    - zobrazí linku na obnovení platnosti smlouvy
           
 *následné podmínky*:
 
-Nakladatel/vydavatel má k dispozici jen přístup ke svým údajům ke čtení a nemůže si stahovat soubory.
+Producent má k dispozici jen přístup ke svým údajům ke čtení a nemůže si stahovat soubory.
 
 .. raw:: html
 

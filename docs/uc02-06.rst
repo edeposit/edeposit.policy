@@ -9,7 +9,7 @@ UC02-06 Kontroly souboru
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel provedl :ref:`uc02-02` nebo :ref:`uc02-03`
+   - Producent provedl :ref:`uc02-02` nebo :ref:`uc02-03`
 
 .. admonition:: tok událostí
 

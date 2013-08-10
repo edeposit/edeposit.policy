@@ -1,4 +1,4 @@
-PM01 - Registrace nakladatele
+PM01 - Registrace producenta
 ...................................................
 
 .. image:: pm01.png

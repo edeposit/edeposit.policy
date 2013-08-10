@@ -6,20 +6,20 @@ Požadavky na funkci systému
 
 Požadavky které jsou kladeny na funkci systému.
 
-1. Z pohledu nakladatele/vydavatele
+1. Z pohledu producenta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. systém umožňuje ukládat elektronické předlohy tištěných publikací :ref:`uc02-03`
 #. systém umožňuje vkládat e-publikace licencované i Open Access e-publikace
 #. systém umožňuje ohlašovat i tištěné publikace :ref:`uc02-01`
-#. systém umožňuje doplňovat základní metadata e-publikace nakladatelem
+#. systém umožňuje doplňovat základní metadata e-publikace producentem
 #. systém umožňuje vyměnit soubor i po přijetí akvizicí :ref:`uc02-10`
 #. producent má možnost opravit metadata i po přijetí akvizicí :ref:`uc02-15`
-#. systém umožňuje nakladateli/vydavateli přidávat další soubory i po přijetí e-publikace akvizicí  :ref:`uc02-10`
+#. systém umožňuje producentovi přidávat další soubory i po přijetí e-publikace akvizicí  :ref:`uc02-10`
 #. e-publikace může obsahovat více souborů v různých formátech
-#. systém poskytuje registraci pro nakladatele :ref:`uc01-02`
-#. systém poskytuje nakladateli zjednodušenou registraci jen na základě web registrace
-#. systém umožňuje nakladateli definovat podmínky užití a řídí se jimi = komu a jakým způsobem mohou být e-publikace zpřístupněny
+#. systém poskytuje registraci producenta :ref:`uc01-02`
+#. systém poskytuje producentovi zjednodušenou registraci jen na základě web registrace
+#. systém umožňuje producentovi definovat podmínky užití a řídí se jimi = komu a jakým způsobem mohou být e-publikace zpřístupněny
 #. systém přijímá i e-publikace s binárními přílohami
 #. systém zobrazuje historii všech zadaných **ISBN** i těch, co prošly jinou cestou, než pres e-deposit
 #. systém zobrazuje přehled o tom, co se s e-publikací děje, tj. sleduje změny v Alephu, Krameriovi :ref:`uc12-01`
@@ -51,8 +51,8 @@ Požadavky které jsou kladeny na funkci systému.
 #. systém automaticky načítá údaje o publikacích, které byly zaregistrovány **ISBN agenturou**
 #. systém umožňuje povolit jen přihlášení za pomoci hesla, přihlašovacího jména
 #. systém si pamatuje všechny verze vloženého souboru
-#. systém umí omezit přístup nakladatele/vydavatele na readonly přístup (např. při porušení smlouvy)
-#. systém umí zakázat nakladateli/vydavateli přístup k jednotlivým e-publikacím (např. při porušení autorských práv)
+#. systém umí omezit přístup producenta na readonly přístup (např. při porušení smlouvy)
+#. systém umí zakázat producenta přístup k jednotlivým e-publikacím (např. při porušení autorských práv)
 #. systém umožňuje pdf náhled na soubory aniž by kopie opustila systém
 #. systém umožňuje označit e-publikaci jako zakázanou (např. při zjištění, že byla autorem okopírována)
 #. systém odesílá do Alephu i jednoznačnou linku na náhled e-publikace
@@ -65,7 +65,7 @@ Omezení systému
 ............................
 
 #. systém zpřístupňuje pouze kopie
-#. pokud e-publikace prošla akvizicí, nakladatel/vydavatel má možnost jen přidávat opravy - jako další soubory. 
+#. pokud e-publikace prošla akvizicí, producent má možnost jen přidávat opravy - jako další soubory. 
    Už nemůže editovat záznamy, soubory.
 #. systém autorizuje uživatele vůči firemní **ActiveDirectory**, nebo vůčí **LDAP**
 #. systém vytváří náhled v **PDF** ze všech formátů, kvuli akvizici a katalogizaci

@@ -5,24 +5,24 @@ UC07-11 Detail pokračujícího zdroje
 
 .. admonition:: účastníci
 
-   - Nakladatel/vydavatel
+   - Producent
    - Systém
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel se přihlásil do systému
+   - Producent se přihlásil do systému
 
 .. admonition:: tok událostí
 
    1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
-   2. Nakladatel/vydavatel do vyhledávacího políčka zadá jedno z toho:
+   2. Producent do vyhledávacího políčka zadá jedno z toho:
       
       - část ISSN
       - část Názvu
       - část Jména autora
 	
    3. Systém omezí přehled ohlášených publikací podle zadaného filtru
-   4. Nakladatel/vydavatel klikne na linku vybrané publikace 
+   4. Producent klikne na linku vybrané publikace 
    5. Systém zobrazí detail ohlášeného pokračujícího zdroje
 
       - metadata pokračujícího zdroje
@@ -36,7 +36,7 @@ UC07-11 Detail pokračujícího zdroje
 
 .. admonition:: následné podmínky
 
-   Nakladatel/vydavatel může pracovat s vybraným pokračujícím zdrojem.
+   Producent může pracovat s vybraným pokračujícím zdrojem.
    
 
 

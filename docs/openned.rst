@@ -23,7 +23,7 @@ Software 2: Akvizice e-publikací
 
 :způsob reportu:
 
-   požadavky na reporty ze strany nakladatele
+   požadavky na reporty ze strany producenta
    
    požadavky na reporty ze strany knihovny
 

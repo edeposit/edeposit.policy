@@ -9,7 +9,7 @@ UC03-02 Kontrola ISBN
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel ohlásil publikaci :ref:`uc02-02`
+   - Producent ohlásil publikaci :ref:`uc02-02`
    - pracovník ISBN agentury je přihlášen do systému Aleph
 
 .. admonition:: tok událostí
@@ -25,7 +25,7 @@ UC03-02 Kontrola ISBN
 
    7. POKUD není potvrzena shoda
    
-      7.1. Systém vrátí ohlášku nakladateli k opravě
+      7.1. Systém vrátí ohlášku producentovi k opravě
 
 .. admonition:: následné podmínky
 

@@ -1,6 +1,6 @@
 .. _uc01-04:
 
-UC01-04 Detail účtu nakladatele/vydavatele
+UC01-04 Detail účtu producenta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -15,15 +15,15 @@ UC01-04 Detail účtu nakladatele/vydavatele
 *tok událostí*:
 
 1. Systém zobrazí úvodní stránku jako v :ref:`uc01-02`/1.
-2. Pracovník do vyhledávacího políčka zadá název nakladatele
-3. Systém zobrazí přehled nakladatelů, kteří odpovídají zadání
-4. Pracovník klikne na linku vybraného nakladatele/vydavatele
-5. Systém zobrazí detail nakladatele/vydavatele
+2. Pracovník do vyhledávacího políčka zadá název producenta
+3. Systém zobrazí přehled producentů, kteří odpovídají zadání
+4. Pracovník klikne na linku vybraného producenta
+5. Systém zobrazí detail producenta
 
    - přihlašovací jméno
-   - název nakladatele
-   - adresa nakladatele
-   - url nakladatele
+   - název producenta
+   - adresa producenta
+   - url producenta
    - email kontaktní osoby
 
    - download kopie podepsané smlouvy

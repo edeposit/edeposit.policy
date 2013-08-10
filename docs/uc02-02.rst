@@ -5,11 +5,11 @@ UC02-02 Ohlášení se soubory
 
 .. admonition:: účastníci
 
-   - Nakladatel/vydavatel
+   - Producent
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel se přihlásil do systému
+   - Producent se přihlásil do systému
 
 .. admonition:: tok událostí
 
@@ -18,7 +18,7 @@ UC02-02 Ohlášení se soubory
    1. Systém zobrazí úvodní stránku
 
       - informace o e-deposit
-      - linku se smlouvou pro nakladatele ke stažení
+      - linku se smlouvou pro producenta ke stažení
       - linku pro odhlášení
       - linku pro ohlášení publikace
       - přehled ohlášených publikací
@@ -30,7 +30,7 @@ UC02-02 Ohlášení se soubory
       - přehled souborů ke stažení
       - linku pro reporty
 
-   2. Nakladatel/vydavatel klikne na "Ohlášení publikace"
+   2. Producent klikne na "Ohlášení publikace"
 
    .. _uc02-02-3:
 
@@ -92,7 +92,7 @@ UC02-02 Ohlášení se soubory
 	      
 	      Seznam knihoven s Krameriem je:  https://code.google.com/p/kramerius/wiki/Knihovny
 
-   4. KDYŽ nakladatel/vydavatel klikne na tlačítko "Načíst metadata ze souboru"
+   4. KDYŽ producent klikne na tlačítko "Načíst metadata ze souboru"
 
       4.1. Systém uloží soubor
 
@@ -102,8 +102,8 @@ UC02-02 Ohlášení se soubory
    
       4.4. Systém předvyplní formulář údaji, které načetl ze souboru
 
-   5. Nakladatel/vydavatel vyplní formulář pro zadávání metadat
-   6. KDYŽ nakladatel klikne na tlačítko +
+   5. producent vyplní formulář pro zadávání metadat
+   6. KDYŽ producent klikne na tlačítko +
 
       6.1. Systém přidá další formulář:
        
@@ -120,11 +120,11 @@ UC02-02 Ohlášení se soubory
    
 	     u tohoto formuláře systém zobrazí tlačítko "Načíst metadata ze souboru"
 
-      6.2. Nakladatel/vydavatel vyplní další ISBN ohlašované publikace a zadá soubor
+      6.2. producent vyplní další ISBN ohlašované publikace a zadá soubor
 
-      6.3. Nakladatel/vydavatel pokračuje jako krokem 4
+      6.3. producent pokračuje jako krokem 4
 
-   7. Nakladatel/vydavatel určí, ve kterých knihovnách se může nahlížet na e-publikaci:
+   7. producent určí, ve kterých knihovnách se může nahlížet na e-publikaci:
 
       7.1. BUĎ vybere jednotlivé knihovny
      
@@ -132,13 +132,13 @@ UC02-02 Ohlášení se soubory
       
       7.3. NEBO klikne "jen Národní knihovna"
       
-   8. Nakladatel/vydavatel klikne na tlačítko "Uložit"
+   8. producent klikne na tlačítko "Uložit"
    9. Systém si data a soubory uloží
    10. Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISBN
    
 .. admonition:: následné podmínky
 
-   Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
+   producent může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
 
 .. raw:: html
 

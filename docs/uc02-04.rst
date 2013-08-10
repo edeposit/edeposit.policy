@@ -5,22 +5,22 @@ UC02-04 Odeslání ohlášky
 
 .. admonition:: účastníci
 
-   - Nakladatel/vydavatel
+   - Producent
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel se přihlásil do systému
+   - Producent se přihlásil do systému
   
 .. admonition:: tok událostí
 
-   1. Nakladatel/vydavatel uložit novou ohlášku podle :ref:`uc02-02`.
+   1. Producent uložit novou ohlášku podle :ref:`uc02-02`.
    2. Systém zobrazí detail ohlášky a tlačítka "K akvizici", "K akvizici a přidělit ISBN"
-   3. Nakladatel/vydavatel klikne na tlačítko "K akvizici"
+   3. Producent klikne na tlačítko "K akvizici"
    4. Systém ohlášku uloží
    
 .. admonition:: následné podmínky
 
-   Nakladatel/vydavatel může ohlášku najít v seznamu ohlášek v akvizici.
+   Producent může ohlášku najít v seznamu ohlášek v akvizici.
 
    Pracovník ISBN agentury má k dispozici novou e-publikaci ke kontrole ISBN - :ref:`uc03-02`
 

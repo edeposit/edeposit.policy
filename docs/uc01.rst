@@ -1,4 +1,4 @@
-UC01 - Registrace nakladatele
+UC01 - Registrace producenta
 ...................................................
 
 .. image:: uc01.png

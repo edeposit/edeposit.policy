@@ -9,7 +9,7 @@ UC03-05 Kontrola ISBN v souboru
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel provedl :ref:`uc02-02`
+   - Producent provedl :ref:`uc02-02`
    - pracovník ISBN agentury se přihlásil do systému Aleph
 
 .. admonition:: tok událostí

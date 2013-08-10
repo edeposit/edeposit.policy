@@ -5,18 +5,18 @@ UC07-01 Ohlášení nového pokračujícího zdroje
 
 .. admonition:: účastníci
 
-   - Nakladatel/vydavatel
+   - Producent
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel se přihlásil do systému
+   - Producent se přihlásil do systému
 
 .. admonition:: tok událostí
 
    .. _uc07-01-01:
    
    1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
-   2. Nakladatel/vydavatel klikne na "Ohlášení pokračujícího zdroje"
+   2. Producent klikne na "Ohlášení pokračujícího zdroje"
 
    .. _uc01-01-3:
 
@@ -76,7 +76,7 @@ UC07-01 Ohlášení nového pokračujícího zdroje
 	      
 	      Seznam knihoven s Krameriem je:  https://code.google.com/p/kramerius/wiki/Knihovny
 
-   4. KDYŽ nakladatel/vydavatel klikne na tlačítko "Načíst metadata ze souboru"
+   4. KDYŽ producent klikne na tlačítko "Načíst metadata ze souboru"
 
       4.1. Systém uloží soubor
 
@@ -86,8 +86,8 @@ UC07-01 Ohlášení nového pokračujícího zdroje
    
       4.4. Systém předvyplní formulář údaji, které načetl ze souboru
 
-   5. Nakladatel/vydavatel vyplní formulář pro zadávání metadat
-   6. KDYŽ nakladatel klikne na tlačítko +
+   5. Producent vyplní formulář pro zadávání metadat
+   6. KDYŽ producent klikne na tlačítko +
 
       6.1. Systém přidá další formulář:
        
@@ -101,11 +101,11 @@ UC07-01 Ohlášení nového pokračujícího zdroje
    
 	     u tohoto formuláře systém zobrazí tlačítko "Načíst metadata ze souboru"
 
-      6.2. Nakladatel/vydavatel zadá další soubor
+      6.2. Producent zadá další soubor
 
-      6.3. Nakladatel/vydavatel pokračuje jako krokem 4
+      6.3. Producent pokračuje jako krokem 4
 
-   7. Nakladatel/vydavatel určí, ve kterých knihovnách se může nahlížet na e-publikaci:
+   7. Producent určí, ve kterých knihovnách se může nahlížet na e-publikaci:
 
       7.1. BUĎ vybere jednotlivé knihovny
      
@@ -113,13 +113,13 @@ UC07-01 Ohlášení nového pokračujícího zdroje
       
       7.3. NEBO klikne "jen Národní knihovna"
       
-   8. Nakladatel/vydavatel klikne na tlačítko "Uložit"
+   8. Producent klikne na tlačítko "Uložit"
    9. Systém si data a soubory uloží
    10. Systém provede kontroly souborů, transformaci souborů, vytvoření náhledu, kontrolu duplicit ISSN
    
 .. admonition:: následné podmínky
 
-   Nakladatel/vydavatel může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
+   Producent může uloženou ohlášku najít v seznamu rozpracovaných ohlášek.
 
 
 .. raw:: html

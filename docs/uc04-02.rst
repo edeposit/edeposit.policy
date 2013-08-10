@@ -11,22 +11,22 @@ UC04-02 Oprava souboru
 		
    E-publikace prošla schválením ISBN a akvizicí :ref:`uc03-04` a proběhla katalogizace :ref:`uc04-01`
 
-   Nakladatel/vydavatel se přihlásil do systému.
+   Producent se přihlásil do systému.
 
 .. admonition:: tok událostí
 
    1. Systém zobrazí :ref:`úvodní stránku <uc02-02-01>`
-   2. Nakladatel/vydavatel do vyhledávacího políčka zadá jedno z toho:
+   2. Producent do vyhledávacího políčka zadá jedno z toho:
       
       - část ISBN
       - část Názvu
       - část Jména autora
 	
    3. Systém omezí přehled ohlášených publikací podle zadaného filtru
-   4. Nakladatel/vydavatel klikne na linku vybrané publikace 
+   4. Producent klikne na linku vybrané publikace 
    5. Systém zobrazí detail ohlášené publikace :ref:`uc02-14`
-   6. Nakladatel/vydavatel vyplní formulář pro vložení opravy
-   7. Nakladatel/vydavatel klikne na tlačítko "Opravit"
+   6. Producent vyplní formulář pro vložení opravy
+   7. Producent klikne na tlačítko "Opravit"
    8. Systém uloží opravený soubor
    9. Systém odešle do systému Aleph informaci o novém souboru
    10. Systém odešle e-publikaci ke kontrole ISBN v souborech a k akvizici

@@ -5,19 +5,19 @@ UC07-04 Ohlášení dalšího dílu přes **email**
 
 .. admonition:: účastníci
 
-   - Nakladatel/vydavatel
+   - Producent
    - Systém
 
 .. admonition:: vstupní podmínky
 
-   - Nakladatel/vydavatel má uzavřenou smlouvu s Národní knihovnou
-   - Nakladatel/vydavatel ohlásil nový pokračující zdroj :ref:`uc07-01`
+   - Producent má uzavřenou smlouvu s Národní knihovnou
+   - Producent ohlásil nový pokračující zdroj :ref:`uc07-01`
  
 .. admonition:: tok událostí
 
    .. _uc07-04-01:
    
-   1. Nakladatel/vydavatel odešle email na zadanou emailovou adresu
+   1. Producent odešle email na zadanou emailovou adresu
 
       .. note:: 
 
@@ -25,7 +25,7 @@ UC07-04 Ohlášení dalšího dílu přes **email**
 	 
       Email:
 
-      - v hlavičce ``from`` je uvedena kontaktní emailová adresa nakladatele/vydavatele
+      - v hlavičce ``from`` je uvedena kontaktní emailová adresa producenta
       - subject obsahuje cokoliv
       - jako příloha je soubor k ohlášení
       - v těle emailu jsou uvedena metadata k souboru:
@@ -51,7 +51,7 @@ UC07-04 Ohlášení dalšího dílu přes **email**
 	   Zpracovatel záznamu:
 
 	
-   2. Nakladatel/vydavatel odešle email
+   2. Producent odešle email
    3. Systém sleduje emailovou schránku pro ohlašovaní
    4. Systém načte soubor z email spolu s metadaty
       

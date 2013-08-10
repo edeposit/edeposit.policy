@@ -1,6 +1,6 @@
 .. _uc01-02:
 
-UC01-02 Registrace nakladatele/vydavatele
+UC01-02 Registrace producenta
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -10,7 +10,7 @@ UC01-02 Registrace nakladatele/vydavatele
 
 *vstupní podmínky*:
 
-- pracovník akvizice má k dispozici vyplněnou smlouvu pro nakladatele
+- pracovník akvizice má k dispozici vyplněnou smlouvu pro producenta
 - pracovník akvizice je přihlášený do systému
 
 *tok událostí*:
@@ -18,17 +18,17 @@ UC01-02 Registrace nakladatele/vydavatele
 1. Systém zobrazí úvodní stránku
 
    - přehled e-publikací k akvizici
-   - linku na vytváření účtů pro nakladatele
-   - přehled nakladatelů/vydavatelů
-   - vyhledávání nakladatelů/vydavatelů
+   - linku na vytváření účtů pro producenty
+   - přehled producentů
+   - vyhledávání producentů
       
-2. Pracovník akvizice klikne na linku "Nový účet pro nakladatele"
-3. Systém poskytne formulář pro zadání údajů o nakladateli
+2. Pracovník akvizice klikne na linku "Nový účet pro producenta"
+3. Systém poskytne formulář pro zadání údajů o producentovi
 
    - přihlašovací jméno
-   - název nakladatele
-   - adresa nakladatele
-   - url nakladatele
+   - název producenta
+   - adresa producenta
+   - url producenta
    - email kontaktní osoby
    - telefon kontaktní osoby
    - načtení kopie podepsané smlouvy
@@ -40,7 +40,7 @@ UC01-02 Registrace nakladatele/vydavatele
 
 *následné podmínky*:
 
-Nakladatel/vydavatel se bude moci přihlásit do systému.
+Producent se bude moci přihlásit do systému.
 
 Přístupové údaje budou uvedeny na dodatku smlouvy.
 

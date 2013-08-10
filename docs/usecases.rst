@@ -6,9 +6,9 @@ Případy užití
 .. note::
    
    Registrace ISBN se bude dit pres jeden formular, i pro tistene knihy.
-   Pak nakladatel pouziva jen jeden ISBN formular.
+   Pak producent pouziva jen jeden ISBN formular.
    Panu Zahorikovi se budou ukladat registrace stejne jako z puvodniho registracniho formulare.
-   Nakladatel by pak mel usnadnenou praci, protoze pak by mel jen jedno misto na registraci ISBN.
+   Producent by pak mel usnadnenou praci, protoze pak by mel jen jedno misto na registraci ISBN.
    Panu Jerabkovi a p. Zahorikovi bude chodit do Alephu zprava.
       
 .. note::

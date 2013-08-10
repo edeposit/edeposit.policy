@@ -5,7 +5,7 @@ UC03-03 Kontrola metadat
 
 .. admonition:: účastníci
 
-   - Nakladatel/vydavatel
+   - Producent
    - Pracovník akvizice
    - Systém
 
