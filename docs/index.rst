@@ -12,6 +12,8 @@ E-Deposit - SW dokumentace
 
 Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
 
+`Dokumentace ke stažení v jiných formátech <https://readthedocs.org/projects/e-deposit/downloads/>`_
+
 .. toctree::
    :maxdepth: 2
 
