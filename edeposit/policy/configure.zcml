@@ -7,7 +7,7 @@
 
   <!-- Include dependencies' configuration -->
   <includeDependencies package="." />
-  
+
   <!-- Register installation profile -->
   <genericsetup:registerProfile
       name="default"
@@ -18,11 +18,11 @@
       />
   <!-- -*- extra stuff goes here -*- -->
   <genericsetup:importStep
-      name="optilux-various"
+      name="edeposit-various"
       title="Additional E-Deposit site policy setup"
       description="E-Deposit site policy configuration"
       handler="edeposit.policy.setuphandlers.importVarious">
     <depends name="rolemap"/>
   </genericsetup:importStep>
-  
+
 </configure>
