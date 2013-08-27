@@ -30,6 +30,7 @@ setup(name='edeposit.policy',
           'Products.PloneFormGen',
           'plone.app.dexterity',
           'edeposit.content',
+          'edeposit.user',
       ],
       extras_require = {
           'test': ['plone.app.testing',]

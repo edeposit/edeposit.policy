@@ -3,6 +3,7 @@ Plone
 Products.PloneFormGen
 plone.app.dexterity
 edeposit.content
+edeposit.user
 
 [test]
 plone.app.testing

@@ -27,6 +27,8 @@ Software 2: Akvizice e-publikací
    
    požadavky na reporty ze strany knihovny
 
+   - v reportech staci mit prehled o poctu uzavrenych smluv.
+     Vsechny ostatni reporty jsou udelane v Alephu.
 
 :sprava pristupu:
 
