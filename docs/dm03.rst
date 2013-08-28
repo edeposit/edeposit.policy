@@ -1,14 +1,9 @@
-.. _datamodels:
+.. _dm003:
 
-Modely datových entit
--------------------------------------
+DM03 - informace o producentovi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. toctree::
-   :maxdepth: 1
-
-   dm01
-   dm02
-   dm03
+.. image:: dm03.png
 
 .. raw:: html
 
@@ -27,4 +22,3 @@ Modely datových entit
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     
-

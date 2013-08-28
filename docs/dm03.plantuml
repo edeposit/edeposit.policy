@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+title Datový model Informace o producentovi
+
+class AgreementFile {
+      String filePath
+}
+
+class Producent {
+      String firstName
+      String lastName
+      String street
+      String city
+      String country
+      String phone
+      Boolean accept
+}
+
+Producent "0..*" *-- "0..*" AgreementFile
+
+@enduml
