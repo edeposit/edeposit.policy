@@ -25,7 +25,8 @@ class ProducentFolder {
 }
 
 Producent "0..*" *-- "0..*" AgreementFile
-User "0..1" *-- "0..1" Producent
+Producent "0..*" *-- "0..*" User
+User "0..1" -- "0..1" Producent
 ProducentFolder "0..*" *-- "0..*" Producent
 
 @enduml
