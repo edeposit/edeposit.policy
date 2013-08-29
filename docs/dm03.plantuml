@@ -11,7 +11,7 @@ class User {
       String lastName
       String phone
       Boolean accept
-      Lines producents
+      String producent
 }
 
 class Producent {
@@ -25,7 +25,7 @@ class ProducentFolder {
 }
 
 Producent "0..*" *-- "0..*" AgreementFile
-User "0..*" *-- "0..*" Producent
+User "0..1" *-- "0..1" Producent
 ProducentFolder "0..*" *-- "0..*" Producent
 
 @enduml
