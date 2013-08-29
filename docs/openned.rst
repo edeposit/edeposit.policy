@@ -58,3 +58,19 @@ Nezařazené
 - začít shánět design webu
 - ikony, vzhled, barvy
 - co prinese prihlaseni jednoduche?
+
+Instalace
+..................
+
+.. ::
+
+   *instalace documentviewer*
+
+   root@jan-XPS-L421X:~# gem install docsplit
+   root@jan-XPS-L421X:~# aptitude install imagemagick
+   root@jan-XPS-L421X:~# aptitude install graphicsmagick
+   root@jan-XPS-L421X:~# aptitude install poppler-utils poppler-data
+   root@jan-XPS-L421X:~# aptitude install ghostscript
+   root@jan-XPS-L421X:~# aptitude install tesseract-ocr
+   root@jan-XPS-L421X:~# aptitude install pdftk
+   root@jan-XPS-L421X:~# aptitude install libreoffice

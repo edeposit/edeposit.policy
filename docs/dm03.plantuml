@@ -3,19 +3,29 @@ left to right direction
 title Datový model Informace o producentovi
 
 class AgreementFile {
-      String filePath
+      String agreement
+}
+
+class User {
+      String firstName
+      String lastName
+      String phone
+      Boolean accept
+      Lines producents
 }
 
 class Producent {
-      String firstName
-      String lastName
       String street
       String city
       String country
-      String phone
-      Boolean accept
+      String contact
+}
+
+class ProducentFolder {
 }
 
 Producent "0..*" *-- "0..*" AgreementFile
+User "0..*" *-- "0..*" Producent
+ProducentFolder "0..*" *-- "0..*" Producent
 
 @enduml
