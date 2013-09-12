@@ -70,6 +70,7 @@ EPublication *-- "0..*" PrintingFile
 EPublication "0..*" *-- "0..*" Author
 EPublication "0..*" *-- "0..*" PreviewFile: main preview files
 OriginalFile "0..*" *-- "1..*" ISBN
+PrintingFile "0..*" *-- "0..*" ISBN
 OriginalFile "0..*" *-- "1..*" PreviewFile
 PrintingFile "0..*" *-- "1..*" PreviewFile
 EPublicationFolder *-- "0..*" EPublication
