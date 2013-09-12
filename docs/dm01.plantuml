@@ -15,6 +15,7 @@ class ISBN {
 }
 
 class PreviewFile {
+      String format
       File file
 }
 
