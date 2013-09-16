@@ -38,6 +38,10 @@ declarationWithError -[#blue]-> declarationWithError : antivir/OK
 acquisition ---> catalogization : << akvizice >> \n Ke katalogizaci
 
 catalogization ---> accessing : << katalogizace >> \n Ke katalogizaci
+catalogization ---> declaration : << producent >> \n Opravit soubor
+acquisition ---> declaration : << producent >> \n Opravit soubor
+
+accessing ---> declaration : << producent >> \n Opravit soubor
 accessing ---> [*]
 @enduml
 
