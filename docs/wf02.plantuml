@@ -44,8 +44,8 @@ catalogization ---> accessing : << katalogizace >> \n Ke katalogizaci
 catalogization ---> fileChange : << producent >> \n Opravit soubor
 acquisition ---> fileChange : << producent >> \n Opravit soubor
 
-fileChange ---> thumbnailGenerating : << producent >> \n Ke kontrole
-fileChange ---> thumbnailGenerating : << producent >> \n Ke kontrole a přiřazení ISBN
+fileChange --> thumbnailGenerating : << producent >> \n Ke kontrole
+fileChange --> thumbnailGenerating : << producent >> \n Ke kontrole a přiřazení ISBN
 fileChange -[#blue]-> fileChange : antivir/Chyba
 fileChange -[#blue]-> fileChange : antivir/OK
 
