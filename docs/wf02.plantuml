@@ -19,14 +19,17 @@ state "Akvizice" as acquisition #ECE8DF
 state "Katalogizace" as catalogization #ECE8DF
 state "Zpřístupnění" as accessing #ECE8DF
 state "K opravě" as declarationWithError #SandyBrown
+state "Změna souboru" as fileChange #SandyBrown
 state "Generování náhledu" as thumbnailGenerating #SteelBlue
 
 [*] ---> declaration
+
 declaration ---> thumbnailGenerating : << producent >> \n Ke kontrole
 declaration ---> thumbnailGenerating : << producent >> \n Ke kontrole a přiřazení ISBN
-thumbnailGenerating --> acquisition
 declaration -[#blue]-> declaration : antivir/Chyba
 declaration -[#blue]-> declaration : antivir/OK
+
+thumbnailGenerating --> acquisition
 acquisition ---> declarationWithError : << isbn agentura >> \n Vrátit k opravě
 acquisition ---> declarationWithError : << akvizice >> \n Vrátit k opravě
 acquisition ---> acquisition : << isbn agentura >> \n Potvrdit ISBN
@@ -38,10 +41,15 @@ declarationWithError -[#blue]-> declarationWithError : antivir/OK
 acquisition ---> catalogization : << akvizice >> \n Ke katalogizaci
 
 catalogization ---> accessing : << katalogizace >> \n Ke katalogizaci
-catalogization ---> declaration : << producent >> \n Opravit soubor
-acquisition ---> declaration : << producent >> \n Opravit soubor
+catalogization ---> fileChange : << producent >> \n Opravit soubor
+acquisition ---> fileChange : << producent >> \n Opravit soubor
 
-accessing ---> declaration : << producent >> \n Opravit soubor
+fileChange ---> thumbnailGenerating : << producent >> \n Ke kontrole
+fileChange ---> thumbnailGenerating : << producent >> \n Ke kontrole a přiřazení ISBN
+fileChange -[#blue]-> fileChange : antivir/Chyba
+fileChange -[#blue]-> fileChange : antivir/OK
+
+accessing ---> fileChange : << producent >> \n Opravit soubor
 accessing ---> [*]
 @enduml
 
