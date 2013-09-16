@@ -34,7 +34,7 @@ acquisition ---> declarationWithError : << isbn agentura >> \n Vrátit k opravě
 acquisition ---> declarationWithError : << akvizice >> \n Vrátit k opravě
 acquisition ---> acquisition : << isbn agentura >> \n Potvrdit ISBN
 acquisition ---> acquisition : << akvizice >> \n Potvrdit
-declarationWithError ---> acquisition : << producent >> \n Ke kontrole
+declarationWithError ---> thumbnailGenerating : << producent >> \n Ke kontrole
 declarationWithError -[#blue]-> declarationWithError : antivir/Chyba
 declarationWithError -[#blue]-> declarationWithError : antivir/OK
 
