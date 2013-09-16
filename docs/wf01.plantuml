@@ -47,6 +47,7 @@ blocked ---> rejected : << akvizice >>\nodmítnout
 blocked ---> approved : << akvizice >>\nschválit
 blocked ---> waitingForCorrection : << akvizice >> \n ke kontrole
 
+approved --> blocked : << akvizice >> \n pozastavit
 rejected -->[*]
 approved -->[*]
 
