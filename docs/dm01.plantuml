@@ -54,6 +54,7 @@ class EPublication {
       Relation librariesThatCanAccessAtLibraryTerminal
       Relation librariesThatCanAccessAtPublic
       String alephDocNumber
+      Boolean generateISBN
 }
 
 class EPublicationFolder {

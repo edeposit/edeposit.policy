@@ -1,5 +1,5 @@
 @startuml
-title <b>Pracovní cyklus e-Publikace</b>
+title <b>Pracovní cyklus ePublikace</b>
 skinparam DefaultFontSize 16pt
 
 skinparam state {
@@ -11,6 +11,35 @@ skinparam state {
   FontName Impact
   ArrowColor Green
 }
+
+state "Ohlášení" as declaration #SandyBrown
+declaration : možnost ohlášení ePublikace
+
+state "Akvizice" as acquisition #ECE8DF
+state "Katalogizace" as catalogization #ECE8DF
+state "Zpřístupnění" as accessing #ECE8DF
+state "K opravě" as declarationWithError #SandyBrown
+state "Generování náhledu" as thumbnailGenerating #SteelBlue
+
+[*] ---> declaration
+declaration ---> thumbnailGenerating : << producent >> \n Ke kontrole
+declaration ---> thumbnailGenerating : << producent >> \n Ke kontrole a přiřazení ISBN
+thumbnailGenerating --> acquisition
+declaration -[#blue]-> declaration : antivir/Chyba
+declaration -[#blue]-> declaration : antivir/OK
+acquisition ---> declarationWithError : << isbn agentura >> \n Vrátit k opravě
+acquisition ---> declarationWithError : << akvizice >> \n Vrátit k opravě
+acquisition ---> acquisition : << isbn agentura >> \n Potvrdit ISBN
+acquisition ---> acquisition : << akvizice >> \n Potvrdit
+declarationWithError ---> acquisition : << producent >> \n Ke kontrole
+declarationWithError -[#blue]-> declarationWithError : antivir/Chyba
+declarationWithError -[#blue]-> declarationWithError : antivir/OK
+
+acquisition ---> catalogization : << akvizice >> \n Ke katalogizaci
+
+catalogization ---> accessing : << katalogizace >> \n Ke katalogizaci
+accessing ---> [*]
+@enduml
 
 state "ISBN registrace" as isbnRegistration #SandyBrown
 isbnRegistration : možnost registrace ISBN
@@ -37,9 +66,9 @@ state "Zadání bibliografických dat" as addBibliographics #SandyBrown
 
 state "Akvizice" as acquisition #SandyBrown
 
-state "Kontrola ISBN" as isbnValidation #SandyBrown
+state "Kontrola ISBN" as isbnValidation #ECE8DF
 
-state "Katalogizace" as toCatalog #SandyBrown
+state "Katalogizace" as toCatalog #ECE8DF
 
 state "Zpřístupnění" as publishing #Yellow
 
