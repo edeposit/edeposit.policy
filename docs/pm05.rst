@@ -3,9 +3,7 @@ PM05 - Zpřístupnění e-publikace
 
 .. image:: pm05.png
 
-.. toctree::
-
-   uc05-01
+-   :ref:`uc05-01`
 
 .. raw:: html
 

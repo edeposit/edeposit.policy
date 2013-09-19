@@ -3,23 +3,21 @@ PM02 - Ohlášení e-publikace
 
 .. image:: pm02.png
 
-.. toctree::
-   
-   uc02-01
-   uc02-02
-   uc02-03
-   uc02-04
-   uc02-05
-   uc02-06
-   uc02-07
-   uc02-08
-   uc02-09
-   uc02-10
-   uc02-11
-   uc02-12
-   uc02-13
-   uc02-14
-   uc02-15
+-   :ref:`uc02-01`
+-   :ref:`uc02-02`
+-   :ref:`uc02-03`
+-   :ref:`uc02-04`
+-   :ref:`uc02-05`
+-   :ref:`uc02-06`
+-   :ref:`uc02-07`
+-   :ref:`uc02-08`
+-   :ref:`uc02-09`
+-   :ref:`uc02-10`
+-   :ref:`uc02-11`
+-   :ref:`uc02-12`
+-   :ref:`uc02-13`
+-   :ref:`uc02-14`
+-   :ref:`uc02-15`
 
 .. raw:: html
 

@@ -3,12 +3,12 @@ PM01 - Registrace producenta
 
 .. image:: pm01.png
 
-.. toctree::
 
-   uc01-01
-   uc01-02
-   uc01-03
-   uc01-04
+
+-   :ref:`uc01-01`
+-   :ref:`uc01-02`
+-   :ref:`uc01-03`
+-   :ref:`uc01-04`
 
 .. raw:: html
 
