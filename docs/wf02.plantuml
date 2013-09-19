@@ -25,6 +25,7 @@ state "Antivirus" as antivirus #SteelBlue
 state "Export do Krameria" as exportToKramerius #SteelBlue
 state "Export do LPT" as exportToLTP #SteelBlue
 state "Kontrola pro LTP" as validationForLTP #SteelBlue
+state "Stažený z oběhu" as withdrawn #ECE8DF
 
 [*] ---> declaration
 
@@ -46,12 +47,15 @@ acquisition ---> acquisition : << isbn agentura >> \n Potvrdit ISBN
 acquisition ---> acquisition : << akvizice >> \n Potvrdit
 acquisition ---> declarationWithError : << producent >> \n Opravit
 acquisition ---> catalogization : << akvizice >> \n Ke katalogizaci
+acquisition ---> withdrawn : << akvizice >> \n Stáhnout z oběhu
 
 declarationWithError ---> antivirus : << producent >> \n Ke kontrole
 declarationWithError ---> antivirus : << producent >> \n Ke kontrole a přiřazení ISBN
+declarationWithError ---> withdrawn : << akvizice >> \n Stáhnout z oběhu
 
 catalogization --> exportToKramerius : << system >> \n Ke katalogizaci
 catalogization --> declarationWithError : << producent >> \n Opravit
+catalogization ---> withdrawn : << knihovník >> \n Stáhnout z oběhu
 
 exportToKramerius --> validationForLTP : << system >> \n Export do Krameria OK
 exportToKramerius --> exportToKramerius : << system >> \n Export do Krameria Error
@@ -63,5 +67,9 @@ exportToLTP ---> accessing : << system >> \n Export do LTP OK
 exportToLTP ---> exportToLTP : << system >> \n Export do LTP Error
 
 accessing ---> declarationWithError : << producent >> \n Opravit
+accessing ---> withdrawn : << knihovník >> \n Stáhnout z oběhu
+
 accessing ---> [*]
+withdrawn ---> [*]
+
 @enduml
