@@ -3,12 +3,13 @@
 Role a oprávnění v systému
 ---------------------------------------------------------------------------
 
-.. toctree::
-   :maxdepth: 1
-
-
-- producent without arragement
-- producent with arragement
-- aquisitor
-- system
-- librarian
+   =============================       ======================================
+   description of a role               role in Plone
+   =============================       ======================================
+   producent without agreement         E-Deposit: Producent without Agreement 
+   producent with agreement            E-Deposit: Producent with Agreement
+   aquisitor                           E-Deposit: Aquisitor
+   isbn agency administrator           E-Deposit: ISBN Agency Administrator
+   system administrator                Site Administrator
+   librarian                           E-Deposit: Librarian
+   =============================       ======================================   

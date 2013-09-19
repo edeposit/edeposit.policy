@@ -3,6 +3,15 @@ PM04 - Katalogizace e-publikace
 
 .. image:: pm04.png
 
+.. toctree::
+
+   uc04-01
+   uc04-02
+   uc04-03
+   uc04-04
+   uc04-05
+
+
 .. raw:: html
 
 	<div id="disqus_thread"></div>

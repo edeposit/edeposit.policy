@@ -3,6 +3,10 @@ PM05 - Zpřístupnění e-publikace
 
 .. image:: pm05.png
 
+.. toctree::
+
+   uc05-01
+
 .. raw:: html
 
 	<div id="disqus_thread"></div>

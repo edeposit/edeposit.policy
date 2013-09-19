@@ -18,126 +18,50 @@ declaration : možnost ohlášení ePublikace
 state "Akvizice" as acquisition #ECE8DF
 state "Katalogizace" as catalogization #ECE8DF
 state "Zpřístupnění" as accessing #ECE8DF
-state "K opravě" as declarationWithError #SandyBrown
-state "Změna souboru" as fileChange #SandyBrown
+state "Oprava" as declarationWithError #SandyBrown
 state "Generování náhledu" as thumbnailGenerating #SteelBlue
+state "Export do Alephu" as exportToAleph #SteelBlue
+state "Antivirus" as antivirus #SteelBlue
+state "Export do Krameria" as exportToKramerius #SteelBlue
+state "Export do LPT" as exportToLTP #SteelBlue
+state "Kontrola pro LTP" as validationForLTP #SteelBlue
 
 [*] ---> declaration
 
-declaration ---> thumbnailGenerating : << producent >> \n Ke kontrole
-declaration ---> thumbnailGenerating : << producent >> \n Ke kontrole a přiřazení ISBN
-declaration -[#blue]-> declaration : antivir/Chyba
-declaration -[#blue]-> declaration : antivir/OK
+declaration --> antivirus : << producent >> \n Ke kontrole
+declaration --> antivirus : << producent >> \n Ke kontrole a přiřazení ISBN
 
-thumbnailGenerating --> acquisition
+antivirus --> thumbnailGenerating : << system >> \n Antivirus OK
+antivirus --> declarationWithError : << system >> \n Antirirus Error
+
+thumbnailGenerating ---> exportToAleph : << system >> \n Thumbnail OK
+thumbnailGenerating ---> thumbnailGenerating : << system >> \n Thumbnail Error
+
+exportToAleph ---> acquisition : << system >> \n Export to Aleph OK
+exportToAleph --> declarationWithError : << system >> \n Export to Aleph Error
+
 acquisition ---> declarationWithError : << isbn agentura >> \n Vrátit k opravě
 acquisition ---> declarationWithError : << akvizice >> \n Vrátit k opravě
 acquisition ---> acquisition : << isbn agentura >> \n Potvrdit ISBN
 acquisition ---> acquisition : << akvizice >> \n Potvrdit
-declarationWithError ---> thumbnailGenerating : << producent >> \n Ke kontrole
-declarationWithError -[#blue]-> declarationWithError : antivir/Chyba
-declarationWithError -[#blue]-> declarationWithError : antivir/OK
-
+acquisition ---> declarationWithError : << producent >> \n Opravit
 acquisition ---> catalogization : << akvizice >> \n Ke katalogizaci
 
-catalogization ---> accessing : << katalogizace >> \n Ke katalogizaci
-catalogization ---> fileChange : << producent >> \n Opravit soubor
-acquisition ---> fileChange : << producent >> \n Opravit soubor
+declarationWithError ---> antivirus : << producent >> \n Ke kontrole
+declarationWithError ---> antivirus : << producent >> \n Ke kontrole a přiřazení ISBN
 
-fileChange --> thumbnailGenerating : << producent >> \n Ke kontrole
-fileChange --> thumbnailGenerating : << producent >> \n Ke kontrole a přiřazení ISBN
-fileChange -[#blue]-> fileChange : antivir/Chyba
-fileChange -[#blue]-> fileChange : antivir/OK
+catalogization --> exportToKramerius : << system >> \n Ke katalogizaci
+catalogization --> declarationWithError : << producent >> \n Opravit
 
-accessing ---> fileChange : << producent >> \n Opravit soubor
+exportToKramerius --> validationForLTP : << system >> \n Export do Krameria OK
+exportToKramerius --> exportToKramerius : << system >> \n Export do Krameria Error
+
+validationForLTP --> exportToLTP : << system >> \n Validace pro LTP OK
+validationForLTP --> validationForLTP : << system >> \n Validace pro LTP Error
+
+exportToLTP ---> accessing : << system >> \n Export do LTP OK
+exportToLTP ---> exportToLTP : << system >> \n Export do LTP Error
+
+accessing ---> declarationWithError : << producent >> \n Opravit
 accessing ---> [*]
-@enduml
-
-state "ISBN registrace" as isbnRegistration #SandyBrown
-isbnRegistration : možnost registrace ISBN
-
-state "Načtení souboru z externích zdrojů" as loadFileExternal #SteelBlue
-loadFileExternal : automaticky se načtou soubory\nz mailboxu, ftp, WebArchivu
-
-state "Načtení souboru" as loadFile #SteelBlue
-loadFile : možnost načíst přes web\n, nebo spojit s načteným souborem z externího zdroje
-
-state "Identifikace formátu" as identifyFileFormat #SteelBlue
-
-state "Zadání ISBN" as isbn #SandyBrown
-isbn: ISBN není povinné,\nale pokud se vloží, je potřeba, aby bylo správně
-
-state "Práce s popisnými metadaty" as editMetadata #SandyBrown
-editMetadata : zobrazení metadat načtených ze souboru
-editMetadata : zobrazení metadat načtených z Aleph
-editMetadata : možnost doplnit metadata ručně
-
-state "Nastavení podmínek užití" as usingPermissions #SandyBrown
-
-state "Zadání bibliografických dat" as addBibliographics #SandyBrown
-
-state "Akvizice" as acquisition #SandyBrown
-
-state "Kontrola ISBN" as isbnValidation #ECE8DF
-
-state "Katalogizace" as toCatalog #ECE8DF
-
-state "Zpřístupnění" as publishing #Yellow
-
-state "Hotovo" as published #LimeGreen
-
-[*] --> loadFileExternal : automaticky načtená kniha
-[*] --> isbnRegistration : jedná se o nové ISBN
-[*] --> loadFile : jedná se o knihu s ISBN, nebo bez něj
-
-isbnRegistration --> loadFile : registrace ISBN/OK
-isbnRegistration --> isbn : zadání ISBN
-isbnRegistration -[#blue]-> isbnRegistration : kontrola zadaných dat
-
-loadFile -[#blue]-> loadFile : antivir/Chyba
-loadFile --> loadFile : načtení dalšího souboru
-loadFile --> identifyFileFormat : antivir/OK
-
-loadFileExternal -[#blue]-> loadFileExternal : antivir/Chyba
-loadFileExternal --> identifyFileFormat : antivir/OK
-
-identifyFileFormat -[#blue]-> identifyFileFormat : kontrola formátu/Chyba
-identifyFileFormat --> isbn : kontrola formátu/OK
-identifyFileFormat --> isbnRegistration : k registraci ISBN
-
-isbn -[#blue]-> isbn : generování pomocné PDF kopie
-isbn -[#blue]-> isbn : kontrola ISBN/Chyba
-isbn -[#blue]-> isbn : načtení metadat ze souboru
-isbn --> editMetadata : kontrola ISBN/OK
-isbn -[#red]-> loadFile : oprava souboru
-
-editMetadata -[#red]-> loadFile : oprava souboru
-editMetadata -[#blue]-> editMetadata : načtení metadat z Aleph
-editMetadata -[#blue]-> editMetadata : kontrola metadat
-editMetadata --> usingPermissions : zpřístupnit\nkontrola metadat OK
-
-editMetadata --> usingPermissions : zpřístupnit omezeně\nkontrola metadat OK
-editMetadata --> usingPermissions : zpřístupnit jako Open Access\nkontrola metadat OK
-
-usingPermissions -[#red]-> editMetadata : zpátky k úpravě metadat
-usingPermissions -[#red]-> loadFile : oprava souboru
-usingPermissions --> addBibliographics : k akvizici
-usingPermissions -[#blue]-> usingPermissions : informace Alephu, že se objevila nová kniha k vyplneni metadat
-
-addBibliographics -[#blue]-> addBibliographics : export do Aleph
-addBibliographics -[#red]-> loadFile : oprava souboru
-addBibliographics --> acquisition : kontrola vůči LTP/OK\nexport do Aleph/OK\nkontrola vůči Kramerius/OK
-addBibliographics -[#blue]-> addBibliographics : kontrola vůči LTP
-addBibliographics -[#blue]-> addBibliographics : kontrola vůči Kramerius
-
-acquisition --> isbnValidation
-isbnValidation -[#red]-> isbn : kontrola ISBN/Chyba
-isbnValidation --> toCatalog
-toCatalog --> publishing
-
-publishing -[#blue]-> publishing : export do LTP
-publishing -[#blue]-> publishing : export do Kramerius
-publishing --> published : <font color=green>all exports are OK</font>
-published --> [*]
-published -[#red]-> loadFile : oprava souboru / nacteni souboru z LTP
 @enduml

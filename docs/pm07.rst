@@ -1,7 +1,22 @@
-PM07 - Ohláčení pokračujícího zdroje
+PM07 - Ohlášení pokračujícího zdroje
 .......................................................
 
 .. image:: pm07.png
+
+.. toctree::
+   
+   uc07-01
+   uc07-02
+   uc07-03
+   uc07-04
+   uc07-05
+   uc07-06
+   uc07-07
+   uc07-08
+   uc07-09
+   uc07-10
+   uc07-11
+
 
 .. raw:: html
 
