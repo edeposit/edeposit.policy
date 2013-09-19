@@ -10,7 +10,7 @@ Description: E-Deposit Policy
         ================
         
         
-        Policy package for a project **E-Deposit** for Plone 4.3
+        Policy package for a project **E-Deposit** for Plone 4.2
         
         links:
         
@@ -20,7 +20,7 @@ Description: E-Deposit Policy
         Changelog
         =========
         
-        1.0.0 (2013-10-13)
+        1.0dev (unreleased)
         -------------------
         
         - Initial release

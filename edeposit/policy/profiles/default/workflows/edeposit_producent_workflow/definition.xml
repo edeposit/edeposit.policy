@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<dc-workflow workflow_id="edeposit_producent_workflow" title="E-Deposit Producent Workflow" description="E-Deposit producent workflow - acquisitor can reject/confirm producents." state_variable="review_state" initial_state="registration" manager_bypass="False">
+ <permission>Access contents information</permission>
+ <permission>Change portal events</permission>
+ <permission>Modify portal content</permission>
+ <permission>View</permission>
+ <permission>Review portal content</permission>
+ <state state_id="approved" title="Approved">
+  <description>Producent is approved. He can register new ePublications</description>
+  <exit-transition transition_id="block"/>
+  <exit-transition transition_id="reject"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="blocked" title="Blocked">
+  <description>Producent is blocked. He cannot register new ePublications temporally.</description>
+  <exit-transition transition_id="approve"/>
+  <exit-transition transition_id="back"/>
+  <exit-transition transition_id="reject"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="registration" title="Registration">
+  <description>Producent fills informations about itself.</description>
+  <exit-transition transition_id="submit"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="rejected" title="Rejected">
+  <description>Producent is rejected. It is permanent state.</description>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="waitingForApproving" title="Waiting for Approving">
+  <description>Waiting till Acquisitor approves producent's informations.</description>
+  <exit-transition transition_id="approve"/>
+  <exit-transition transition_id="back"/>
+  <exit-transition transition_id="block"/>
+  <exit-transition transition_id="reject"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="waitingForCorrection" title="Waiting for Correction">
+  <description>Waiting till Producent corrects informations about itself.</description>
+  <exit-transition transition_id="submit"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <transition transition_id="approve" title="Acquisitor approves a producent content" new_state="approved" trigger="USER" before_script="" after_script="">
+  <description>Publishing the item makes it visible to other users.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=approve" category="workflow" icon="">Approve</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="back" title="Acquisitor send content back for correcting" new_state="waitingForCorrection" trigger="USER" before_script="" after_script="">
+  <description>Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=back" category="workflow" icon="">Send back</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="block" title="Acquisitor blocks a producent content temporarily" new_state="blocked" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=block" category="workflow" icon="">Block temporarily</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="reject" title="Acquisitor reject a producent content permanently" new_state="rejected" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=reject" category="workflow" icon="">Reject permanently</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="submit" title="A producent submits content for approving" new_state="waitingForApproving" trigger="USER" before_script="" after_script="">
+  <description>Puts your item in a review queue, so it can be approved by Acquitor.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit for approving</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <worklist worklist_id="correction_queue" title="">
+  <description>Waiting for correction</description>
+  <action url="%(portal_url)s/search?review_state=waitingForCorrection" category="global" icon="">Waiting for correction</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+  <match name="review_state" values="waitingForCorrection"/>
+ </worklist>
+ <worklist worklist_id="reviewer_queue" title="">
+  <description>Reviewer tasks</description>
+  <action url="%(portal_url)s/search?review_state=waitingForApproving" category="global" icon="">Pending (%(count)d)</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+  <match name="review_state" values="waitingForApproving"/>
+ </worklist>
+ <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+  <description>Previous transition</description>
+  <default>
+   
+   <expression>transition/getId|nothing</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+  <description>The ID of the user who performed the previous transition</description>
+  <default>
+   
+   <expression>user/getId</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
+  <description>Comment about the last transition</description>
+  <default>
+   
+   <expression>python:state_change.kwargs.get('comment', '')</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+  <description>Provides access to workflow history</description>
+  <default>
+   
+   <expression>state_change/getHistory</expression>
+  </default>
+  <guard>
+   <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </variable>
+ <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
+  <description>When the previous transition was performed</description>
+  <default>
+   
+   <expression>state_change/getDateTime</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+</dc-workflow>
