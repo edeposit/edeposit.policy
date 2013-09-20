@@ -29,11 +29,11 @@ state "Stažený z oběhu" as withdrawn #ECE8DF
 
 [*] ---> declaration
 
-declaration --> antivirus : << producent >> \n Ke kontrole
-declaration --> antivirus : << producent >> \n Ke kontrole a přiřazení ISBN
+declaration --> antivirus : << producent >> \n K akvizici
+declaration --> antivirus : << producent >> \n K akvizici a přiřazení ISBN
 
 antivirus --> thumbnailGenerating : << system >> \n Antivirus OK
-antivirus --> declarationWithError : << system >> \n Antirirus Error
+antivirus --> declarationWithError : << system >> \n Antivirus Error
 
 thumbnailGenerating ---> exportToAleph : << system >> \n Thumbnail OK
 thumbnailGenerating ---> thumbnailGenerating : << system >> \n Thumbnail Error
@@ -44,9 +44,9 @@ exportToAleph --> declarationWithError : << system >> \n Export to Aleph Error
 acquisition ---> declarationWithError : << isbn agentura >> \n Vrátit k opravě
 acquisition ---> declarationWithError : << akvizice >> \n Vrátit k opravě
 acquisition ---> acquisition : << isbn agentura >> \n Potvrdit ISBN
-acquisition ---> acquisition : << akvizice >> \n Potvrdit
+acquisition ---> acquisition : << akvizice >> \n Potvrdit akvizici
+acquisition ---> catalogization : << isbn agentura >> \n << akvizice >> (akvizice i ISBN je OK) \n Potvrdit
 acquisition ---> declarationWithError : << producent >> \n Opravit
-acquisition ---> catalogization : << akvizice >> \n Ke katalogizaci
 acquisition ---> withdrawn : << akvizice >> \n Stáhnout z oběhu
 
 declarationWithError ---> antivirus : << producent >> \n Ke kontrole

@@ -20,6 +20,7 @@ Toto je pracovní verze. Tj. dokumentace není úplná a jsou v ní chyby.
    requirements
    dictionary
    usecases
+   sequences
    processmodels
    datamodels
    roles
