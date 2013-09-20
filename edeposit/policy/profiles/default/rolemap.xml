@@ -8,6 +8,8 @@
     <role name="E-Deposit: ISBN Agency Administrator"/>
     <role name="E-Deposit: Producent with Agreement"/>
     <role name="E-Deposit: Producent without Agreement"/>
+    <role name="E-Deposit: Librarian"/>
+    <role name="E-Deposit: System"/>
     <role name="Editor"/>
     <role name="Manager"/>
     <role name="Member"/>

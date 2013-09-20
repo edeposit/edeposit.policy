@@ -1,0 +1,493 @@
+<?xml version="1.0"?>
+<dc-workflow workflow_id="edeposit_epublication_workflow" title="E-Deposit E-Publication Workflow" description="" state_variable="review_state" initial_state="declaration" manager_bypass="False">
+ <permission>Access contents information</permission>
+ <permission>Change portal events</permission>
+ <permission>Modify portal content</permission>
+ <permission>View</permission>
+ <permission>Review portal content</permission>
+ <state state_id="accessing" title="Accessing">
+  <exit-transition transition_id="backToCorrection"/>
+  <exit-transition transition_id="toWithdraw"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="acquisition" title="Acquisition">
+  <exit-transition transition_id="approveAndToCatalogization"/>
+  <exit-transition transition_id="backToCorrection"/>
+  <exit-transition transition_id="isbnIsValid"/>
+  <exit-transition transition_id="metadataIsValid"/>
+  <exit-transition transition_id="toWithdraw"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="antivirus" title="Antivirus Checking">
+  <exit-transition transition_id="antivirusError"/>
+  <exit-transition transition_id="antivirusOK"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="catalogization" title="Catalogization">
+  <exit-transition transition_id="backToCorrection"/>
+  <exit-transition transition_id="catalogizationPassed"/>
+  <exit-transition transition_id="toWithdraw"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="declaration" title="Declaration">
+  <exit-transition transition_id="toAcquisition"/>
+  <exit-transition transition_id="toAcquisitionAndISBNGenerating"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="declarationWithError" title="Declaration with Error">
+  <exit-transition transition_id="toAcquisition"/>
+  <exit-transition transition_id="toAcquisitionAndISBNGenerating"/>
+  <exit-transition transition_id="toWithdraw"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Aquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="exportToAleph" title="Export to Aleph">
+  <exit-transition transition_id="exportToAlephError"/>
+  <exit-transition transition_id="exportToAlephOK"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="exportToKramerius" title="Export to Kramerius">
+  <exit-transition transition_id="exportToKrameriusError"/>
+  <exit-transition transition_id="exportToKrameriusOK"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="exportToLTP" title="Export to LTP">
+  <exit-transition transition_id="exportToLTPError"/>
+  <exit-transition transition_id="exportToLTPOK"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="thumbnailGenerating" title="Thumbnail Generating">
+  <exit-transition transition_id="thumbnailError"/>
+  <exit-transition transition_id="thumbnailOK"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="validationForLTP" title="Validation for LTP">
+  <exit-transition transition_id="validationForLTPError"/>
+  <exit-transition transition_id="validationForLTPOK"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="withdrawn" title="Withdrawn">
+ </state>
+ <transition transition_id="antivirusError" title="Antivirus Passed with Error" new_state="declarationWithError" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=antivirusError" category="workflow" icon="">Antivirus Passed with Error</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="antivirusOK" title="Antivirus OK" new_state="thumbnailGenerating" trigger="USER" before_script="" after_script="">
+  <description>Antivirus checking passed successfully.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOK" category="workflow" icon="">Antivirus Passed OK</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="approveAndToCatalogization" title="Approve and to Catalogization" new_state="catalogization" trigger="USER" before_script="" after_script="">
+  <description>ISBN is OK and Acquision is OK. So it can go to catalogization.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=approveToCatalogization" category="workflow" icon="">Approve and to Catalogization</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+   <guard-role>E-Deposit: Acquisitor, E-Deposit: ISBN Agency Administrator</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="backToCorrection" title="Back to Correction" new_state="declarationWithError" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=backToCorrection" category="workflow" icon="">Back to Correction</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="catalogizationPassed" title="Catalogization Passed" new_state="exportToKramerius" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=catalogizationPassed" category="workflow" icon="">Catalogization Passed</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+   <guard-role>E-Deposit: Librarian, E-Deposit: System</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="exportToAlephError" title="Export to Aleph Passed with Error" new_state="declarationWithError" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephError" category="workflow" icon="">Export to Aleph Passed with Error</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="exportToAlephOK" title="Export to Aleph Passed with OK" new_state="acquisition" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephOK" category="workflow" icon="">Export to Aleph Passed with OK</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="exportToKrameriusError" title="Export to Kramerius Passed with Error" new_state="" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=exportToKrameriusError" category="workflow" icon="">Export to Kramerius Passed with Error</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="exportToKrameriusOK" title="Export to Kramerius Passed with OK" new_state="validationForLTP" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=exportToKrameriusOK" category="workflow" icon="">Export to Kramerius Passed with OK</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="exportToLTPError" title="Export to LTP Passed with Error" new_state="" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=exportToLTPError" category="workflow" icon="">Export to LPT Passed with Error</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="exportToLTPOK" title="Export to LTP Passed with OK" new_state="accessing" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=exportToLTPOK" category="workflow" icon="">Export to LPT Passed with OK</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="isbnIsValid" title="ISBN is Valid" new_state="" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=isbnIsValid" category="workflow" icon="">ISBN is Valid</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+   <guard-role>E-Deposit: ISBN Agency Administrator</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="metadataIsValid" title="Metada is Valid" new_state="" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=metadataIsValid" category="workflow" icon="">Metadata is Valid</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+   <guard-role>E-Deposit: Acquisitor</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="thumbnailError" title="Thumbnail Generating Passed with Error" new_state="" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailError" category="workflow" icon="">Thumbnail Generating Passed with Error</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="thumbnailOK" title="Thumbnail Generating Passed with OK" new_state="exportToAleph" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" category="workflow" icon="">Thumbnail Generating Passed with OK</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="toAcquisition" title="To Acquisition" new_state="antivirus" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=toAcquisition" category="workflow" icon="">To Acquisition</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="toAcquisitionAndISBNGenerating" title="To Acquisition and ISBN Generating" new_state="antivirus" trigger="USER" before_script="" after_script="">
+  <description>ISBN will be assigned by ISBN Agency</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=toAcquisitionAndISBNGenerating" category="workflow" icon="">To Acquisition and ISBN Generating</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="toWithdraw" title="To Withdraw" new_state="withdrawn" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="">To Withdraw</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+   <guard-role>E-Deposit: Acquisitor, E-Deposit: ISBN Agency Administrator, E-Deposit: Librarian</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="validationForLTPError" title="Validation for LTP Passed with Error" new_state="" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=validationForLTPError" category="workflow" icon="">Validation for LTP Passed with Error</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="validationForLTPOK" title="Validation for LTP Passed with OK" new_state="exportToLTP" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=validationForLTPOK" category="workflow" icon="">Validation for LTP Passed with OK</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+  <description>Previous transition</description>
+  <default>
+   
+   <expression>transition/getId|nothing</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+  <description>The ID of the user who performed the previous transition</description>
+  <default>
+   
+   <expression>user/getId</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
+  <description>Comment about the last transition</description>
+  <default>
+   
+   <expression>python:state_change.kwargs.get('comment', '')</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+  <description>Provides access to workflow history</description>
+  <default>
+   
+   <expression>state_change/getHistory</expression>
+  </default>
+  <guard>
+   <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </variable>
+ <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
+  <description>When the previous transition was performed</description>
+  <default>
+   
+   <expression>state_change/getDateTime</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+</dc-workflow>

@@ -3,8 +3,8 @@
  <permission>Access contents information</permission>
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
- <permission>View</permission>
  <permission>Review portal content</permission>
+ <permission>View</permission>
  <state state_id="approved" title="Approved">
   <description>Producent is approved. He can register new ePublications</description>
   <exit-transition transition_id="block"/>
