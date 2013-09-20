@@ -29,8 +29,8 @@ state "Stažený z oběhu" as withdrawn #ECE8DF
 
 [*] ---> declaration
 
-declaration --> antivirus : << producent >> \n K akvizici
-declaration --> antivirus : << producent >> \n K akvizici a přiřazení ISBN
+declaration --> antivirus : << producent >> \n << akvizice >> \n K akvizici
+declaration --> antivirus : << producent >> \n << akvizice >> \n K akvizici a přiřazení ISBN
 
 antivirus --> thumbnailGenerating : << system >> \n Antivirus OK
 antivirus --> declarationWithError : << system >> \n Antivirus Error
@@ -43,18 +43,18 @@ exportToAleph --> declarationWithError : << system >> \n Export to Aleph Error
 
 acquisition ---> declarationWithError : << isbn agentura >> \n Vrátit k opravě
 acquisition ---> declarationWithError : << akvizice >> \n Vrátit k opravě
-acquisition ---> acquisition : << isbn agentura >> \n Potvrdit ISBN
-acquisition ---> acquisition : << akvizice >> \n Potvrdit akvizici
-acquisition ---> catalogization : << isbn agentura >> \n << akvizice >> (akvizice i ISBN je OK) \n Potvrdit
-acquisition ---> declarationWithError : << producent >> \n Opravit
+acquisition ---> acquisition : << isbn agentura >> \n ISBN je správně
+acquisition ---> acquisition : << akvizice >> \n Metadata jsou správně
+acquisition ---> catalogization : << isbn agentura >> \n << akvizice >> (akvizice i ISBN je OK) \n Potvrdit a ke katalogizaci
+acquisition ---> declarationWithError : << producent >> \n Vrátit k opravě
 acquisition ---> withdrawn : << akvizice >> \n Stáhnout z oběhu
 
-declarationWithError ---> antivirus : << producent >> \n Ke kontrole
-declarationWithError ---> antivirus : << producent >> \n Ke kontrole a přiřazení ISBN
+declarationWithError ---> antivirus : << producent >> \n Ke akvizici
+declarationWithError ---> antivirus : << producent >> \n Ke akvizici a přiřazení ISBN
 declarationWithError ---> withdrawn : << akvizice >> \n Stáhnout z oběhu
 
-catalogization --> exportToKramerius : << system >> \n Ke katalogizaci
-catalogization --> declarationWithError : << producent >> \n Opravit
+catalogization --> exportToKramerius : << knihovník >> \n  Katalogizace proběhla
+catalogization --> declarationWithError : << producent >> \n Vrátit k opravě
 catalogization ---> withdrawn : << knihovník >> \n Stáhnout z oběhu
 
 exportToKramerius --> validationForLTP : << system >> \n Export do Krameria OK
@@ -66,7 +66,7 @@ validationForLTP --> validationForLTP : << system >> \n Validace pro LTP Error
 exportToLTP ---> accessing : << system >> \n Export do LTP OK
 exportToLTP ---> exportToLTP : << system >> \n Export do LTP Error
 
-accessing ---> declarationWithError : << producent >> \n Opravit
+accessing ---> declarationWithError : << producent >> \n Vrátit k opravě
 accessing ---> withdrawn : << knihovník >> \n Stáhnout z oběhu
 
 accessing ---> [*]
