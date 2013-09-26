@@ -16,6 +16,7 @@ state "Ohlášení" as declaration #SandyBrown
 declaration : možnost ohlášení ePublikace
 
 state "Akvizice" as acquisition #ECE8DF
+state "Příprava akvizice" as acquisitionInit #ECE8DF
 state "Katalogizace" as catalogization #ECE8DF
 state "Zpřístupnění" as accessing #ECE8DF
 state "Oprava" as declarationWithError #SandyBrown
@@ -38,9 +39,10 @@ antivirus --> declarationWithError : << system >> \n Antivirus Error
 thumbnailGenerating ---> exportToAleph : << system >> \n Thumbnail OK
 thumbnailGenerating ---> thumbnailGenerating : << system >> \n Thumbnail Error
 
-exportToAleph ---> acquisition : << system >> \n Export to Aleph OK
+exportToAleph ---> acquisitionInit : << system >> \n Export to Aleph OK
 exportToAleph --> declarationWithError : << system >> \n Export to Aleph Error
 
+acquisitionInit ---> acquisition : << správce akvizice >> \n Potvrdit přidělení
 acquisition ---> declarationWithError : << isbn agentura >> \n Vrátit k opravě
 acquisition ---> declarationWithError : << akvizice >> \n Vrátit k opravě
 acquisition ---> acquisition : << isbn agentura >> \n ISBN je správně

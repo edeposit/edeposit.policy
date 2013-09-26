@@ -428,7 +428,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="">To Withdraw</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
-   <guard-role>E-Deposit: Acquisitor, E-Deposit: ISBN Agency Administrator, E-Deposit: Librarian</guard-role>
+   <guard-role>E-Deposit: Acquisitor, E-Deposit: ISBN Agency Administrator, E-Deposit: Librarian, Site administrator</guard-role>
   </guard>
  </transition>
  <transition transition_id="validationForLTPError" title="Validation for LTP Passed with Error" new_state="" trigger="USER" before_script="" after_script="">
