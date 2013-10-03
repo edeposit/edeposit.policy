@@ -8,6 +8,7 @@ PM03 - Akvizice e-publikace
 
 -   :ref:`uc03-01`
 -   :ref:`uc03-02`
+-   :ref:`uc03-03-00`
 -   :ref:`uc03-03`
 -   :ref:`uc03-04`
 -   :ref:`uc03-05`

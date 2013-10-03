@@ -1,37 +1,36 @@
-.. _uc03-01:
+.. _uc04-00:
 
-UC03-01 Předání metadat k importu do Aleph
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UC04-00 Příprava katalogizace
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: účastníci
 
-   - Systém
-   - systém Aleph
-   - administrátor systému Aleph
+   - Administrátor katalogizace
 
 .. admonition:: vstupní podmínky
+		
+   E-publikace prošla schválením ISBN a akvizicí :ref:`uc03-04`
 
-   - Producent ohlásil publikaci
-     :ref:`uc02-01`, nebo
-     :ref:`uc02-02`, nebo
-     :ref:`uc02-03`
-  
-     a potvrdil ohlášku  :ref:`uc02-04`
+   Administrátor katalogizace se přihlásil do systému
 
 .. admonition:: tok událostí
 
-   1. Systém vytvoří exportní data ve formátu MARC21XML
-   2. Systém je uloží do exportního adresáře
-   3. Systém Aleph exportní data načte
-   4. administrátor systému Aleph údaje zkontroluje
-   5. POKUD jsou údaje v pořádku
+   1. Systém zobrazí úvodní stránku jako v :ref:`uc03-03-00`
+   2. Administrátor katalogizace klikne na ePublikaci
+   3. Systém zobrazí informace o ePublikaci
+      - také zobrazí políčko "Přiřazená osoba katalogizace"
 
-      5.1. administrátor systému Aleph údaje vloží do systému Aleph
+   3. Administrátor katalogizace klikne na políčko "Přiřazená osoba katalogizace"
+   4. Systém nabídne pracovníky katalogizace
+   5. Administrátor katalogizace vybere osobu
+   6. Administrátor katalogizace klikne na linku "Příprava katalogizace: Poslat ke katalogizaci"
+   7. Systém odešle ePublikaci ke katalogizaci
 
 .. admonition:: následné podmínky
 
-   V systému Aleph jsou data o nové ohlášce publikace.
+   ePublikace se zobrazí ve frontě přiřazeného pracovníka katalogizace.
 
+   ePublikace zmizí z fronty administrátora katalogizace.
 
 .. raw:: html
 

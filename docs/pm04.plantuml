@@ -1,7 +1,8 @@
 @startuml
 title Katalogizace e-publikace
 
-(*) --> === CAT ===
+(*) --> "UC04-00 Příprava katalogizace"
+"UC04-00 Příprava katalogizace" --> === CAT ===
 === CAT === --> "UC04-01 Zadání bibliografického popisu"
 === CAT === --> "UC04-02 Oprava souboru"
 === CAT === --> "UC04-03 Stáhnutí souboru"

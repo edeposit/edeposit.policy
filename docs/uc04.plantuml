@@ -7,9 +7,11 @@ skinparam packageStyle rect
 actor :Nakladatel/vydavatel: as nakl
 actor :Pracovník akvizice: as akv
 actor :Pracovník katalogizace: as kat
+actor :Administrátor katalogizace: as admKat
 actor :Systém: as sys
 
 rectangle  {
+	   :admKat: -left-> (UC04-00 Příprava katalogizace)
 	   :kat: -left-> (UC04-01 Zadání bibliografického popisu)
 	   :nakl: --> (UC04-02 Oprava souboru)
 	   :nakl: --> (UC04-03 Stáhnutí souboru)

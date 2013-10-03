@@ -1,37 +1,37 @@
-.. _uc03-01:
+.. _uc03-03-00:
 
-UC03-01 Předání metadat k importu do Aleph
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UC03-03-00 Příprava akvizice
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: účastníci
 
-   - Systém
-   - systém Aleph
-   - administrátor systému Aleph
+   - Administrátor akvizice
 
 .. admonition:: vstupní podmínky
 
-   - Producent ohlásil publikaci
-     :ref:`uc02-01`, nebo
-     :ref:`uc02-02`, nebo
-     :ref:`uc02-03`
-  
-     a potvrdil ohlášku  :ref:`uc02-04`
+   - Administrátor akvizice se příhlásil do systému
 
 .. admonition:: tok událostí
 
-   1. Systém vytvoří exportní data ve formátu MARC21XML
-   2. Systém je uloží do exportního adresáře
-   3. Systém Aleph exportní data načte
-   4. administrátor systému Aleph údaje zkontroluje
-   5. POKUD jsou údaje v pořádku
+   1. Systém zobrazí přehled ePublikací, které čekají na práci přihlášeného uživatele
 
-      5.1. administrátor systému Aleph údaje vloží do systému Aleph
+      - u každé linky je proklik ke spuštění Alephu s dotyčnou ePublikací
+
+   2. Administrátor akvizice klikne na ePublikaci
+   3. Systém zobrazí informace o ePublikaci
+      - také zobrazí políčko "Přiřazená osoba akvizice"
+
+   3. Administrátor akvizice klikne na políčko "Přiřazená osoba akvizice"
+   4. Systém nabídne pracovníky akvizice
+   5. Administrátor akvizice vybere osobu
+   6. Administrátor akvizice klikne na linku "Příprava akvizice: Poslat k akvizici"
+   7. Systém odešle ePublikaci k akvizici
 
 .. admonition:: následné podmínky
 
-   V systému Aleph jsou data o nové ohlášce publikace.
+   ePublikace se zobrazí ve frontě přiřazeného pracovníka akvizice.
 
+   ePublikace zmizí z fronty administrátora akvizice.
 
 .. raw:: html
 

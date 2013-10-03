@@ -56,6 +56,7 @@ Požadavky které jsou kladeny na funkci systému.
 #. systém umožňuje pdf náhled na soubory aniž by kopie opustila systém
 #. systém umožňuje označit e-publikaci jako zakázanou (např. při zjištění, že byla autorem okopírována)
 #. systém odesílá do Alephu i jednoznačnou linku na náhled e-publikace
+#. systém nabízí u každé ePublikace proklik do Alephu pro jednoduché spuštění Alephu s dotyčnou ePublikací
 #. v systému Aleph vzniká proklik na náhled e-publikace v e-deposit :ref:`uc03-03`
 #. systém nabízí základní informační servis (počty přírůstků, zpřístupnění, ...) podle původců a typů dokumentů, ... :ref:`uc12`
 #. systém provádí průběžnou zálohu vstupujících dokumentů

@@ -7,6 +7,7 @@ UC04 - Katalogizace e-publikace
 
 .. toctree::
 
+   uc04-00
    uc04-01
    uc04-02
    uc04-03

@@ -3,6 +3,7 @@ PM04 - Katalogizace e-publikace
 
 .. image:: pm04.png
 
+-   :ref:`uc04-00`
 -   :ref:`uc04-01`
 -   :ref:`uc04-02`
 -   :ref:`uc04-03`
