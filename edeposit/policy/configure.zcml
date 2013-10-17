@@ -7,6 +7,7 @@
 
   <!-- Include dependencies' configuration -->
   <includeDependencies package="." />
+  <i18n:registerTranslations directory="locales" />
 
   <!-- Register installation profile -->
   <genericsetup:registerProfile

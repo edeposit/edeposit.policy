@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-10-17 09:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "A workflow for ePublication"
+msgstr "Pracovní postup pro ePublikaci"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Accessing"
+msgstr "Zpřístupnění"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "An ePublication is provided to given libraries to access them."
+msgstr "ePublikace je poskytnuta vybraným knihovnám ke zpřístupnění."
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Antivirus Passed OK"
+msgstr "Antivirová kontrola proběhla v pořádku."
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Antivirus Passed with Error"
+msgstr "Antivirová kontrola skončila s chybou."
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Approve"
+msgstr "Schválit"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Approve and to Catalogization"
+msgstr "Schválit a ke katalogizaci"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Back to Correction"
+msgstr "Zpátky k opravě"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Catalogization"
+msgstr "Katalogizace"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Catalogization Passed"
+msgstr "Katalogizace proběhla úspěšně"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Comment about the last transition"
+msgstr "Komentář k poslední akci"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Declaration"
+msgstr "Zadávání"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Declaration with Error"
+msgstr "Zadávání s chybami"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "E-Deposit ePublication Workflow"
+msgstr "Pracovní postup pro ePublikaci"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to Aleph"
+msgstr "Export do systému Aleph"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to Aleph Passed with Error"
+msgstr "Export do systému Aleph skončil s chybou"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to Aleph Passed with OK"
+msgstr "Export do systému Aleph proběhl úspěšně"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to Kramerius"
+msgstr "Export do systému Kramerius"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to Kramerius Passed with Error"
+msgstr "Export do systému Kramerius skončil s chybou"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to Kramerius Passed with OK"
+msgstr "Export do systému Kramerius proběhl úspěšně"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to LPT Passed with Error"
+msgstr "Export do systému LTP skončil s chybami"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to LPT Passed with OK"
+msgstr "Export do systému LTP proběhl v pořádku"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to LTP"
+msgstr "Export do systému LTP"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to LTP Passed with Error"
+msgstr "Export do systému LTP skončil s chybou"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export to LTP Passed with OK"
+msgstr "Export do systému LTP proběhl úspěšně"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "ISBN is OK and Acquision is OK. So it can go to catalogization."
+msgstr "ISBN je v pořádku a Akvizice také. Takže dokument může jít do Katalogizace"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "ISBN is Valid"
+msgstr "ISBN je v pořádku"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Metada is Valid"
+msgstr "Metadata jsou v pořádku"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Metadata is Valid"
+msgstr "Metadata jsou v pořádku"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Previous transition"
+msgstr "Předešlá akce"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Provides access to workflow history"
+msgstr "Poskytuje přístup k historii akcí"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "The ID of the user who performed the previous transition"
+msgstr "ID uživatel, kdo provedl předešlou akci"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Thumbnail Generating"
+msgstr "Generování náhledu"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Thumbnail Generating Passed with Error"
+msgstr "Generování náhledu skončilo s chybou"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Thumbnail Generating Passed with OK"
+msgstr "Generování náhledu proběhlo v pořádku"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "To Acquisition"
+msgstr "K akvizici"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "To Withdraw"
+msgstr "Stáhnout"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Validation for LTP"
+msgstr "Validace pro systém LTP"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Validation for LTP Passed with Error"
+msgstr "Validace pro systém LTP skončila s chybou"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Validation for LTP Passed with OK"
+msgstr "Validace pro systém LTP proběhla v pořádku"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "When the previous transition was performed"
+msgstr "Kdy proběhla předešlá akce"
+
+#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Withdrawn"
+msgstr "Staženo"
+
