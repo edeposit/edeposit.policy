@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-10-17 09:41+0000\n"
+"POT-Creation-Date: 2013-10-18 12:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,171 +17,284 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "A producent submits content for approving"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "A workflow for ePublication"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Accessing"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Acquisitor approves a producent content"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Acquisitor blocks a producent content temporarily"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Acquisitor reject a producent content permanently"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "An ePublication is provided to given libraries to access them."
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Antivirus Passed OK"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Antivirus Passed with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve and to Catalogization"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Approved"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Back to Correction"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Block temporarily"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Blocked"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization Passed"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Comment about the last transition"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Declaration"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Declaration with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "E-Deposit Producent Workflow"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "E-Deposit ePublication Workflow"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "E-Deposit producent workflow - acquisitor can reject/confirm producents."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph Passed with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph Passed with OK"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius Passed with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius Passed with OK"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LPT Passed with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LPT Passed with OK"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LTP"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LTP Passed with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LTP Passed with OK"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "ISBN is OK and Acquision is OK. So it can go to catalogization."
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "ISBN is Valid"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metada is Valid"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metadata is Valid"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Pending (%(count)d)"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Previous transition"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Producent fills informations about itself."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Producent is approved. He can register new ePublications"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Producent is blocked. He cannot register new ePublications temporally."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Producent is rejected. It is permanent state."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Provides access to workflow history"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Publishing the item makes it visible to other users."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be approved by Acquitor."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Queue waiting for correction"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Registration"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Reject permanently"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Rejected"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Reviewer tasks"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Submit for approving"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "The ID of the user who performed the previous transition"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating Passed with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating Passed with OK"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Acquisition"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Withdraw"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP Passed with Error"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP Passed with OK"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Waiting for Approving"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Waiting for Correction"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Waiting for correction"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Waiting till Acquisitor approves producent's informations."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Waiting till Producent corrects informations about itself."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "When the previous transition was performed"
 msgstr ""
 
-#: ../profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Withdrawn"
 msgstr ""
 

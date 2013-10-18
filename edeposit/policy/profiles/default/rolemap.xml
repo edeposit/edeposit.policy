@@ -26,16 +26,6 @@
     <role name="Site Administrator"/>
   </roles>
   <permissions>
-    <permission name="E-Deposit: Add ePublication" acquire="True">
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Publisher"/>
-    </permission>
-    <permission name="E-Deposit: Add ePublication Folder" acquire="True">
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Publisher"/>
-    </permission>
     <permission name="View" acquire="True">
       <role name="Contributor"/>
       <role name="E-Deposit: Acquisitor"/>

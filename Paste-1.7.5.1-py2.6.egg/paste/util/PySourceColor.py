@@ -1,4 +1,4 @@
-# -*- coding: Latin-1 -*-
+# -*- coding: utf-8 -*-
 """
 PySourceColor: color Python source code
 """
@@ -182,7 +182,7 @@ __version__ = "2.1a"
 __date__ = '25 April 2005'
 __author__ = "M.E.Farmer Jr."
 __credits__ = '''This was originally based on a python recipe
-submitted by Jürgen Hermann to ASPN. Now based on the voices in my head.
+submitted by JÃ¼rgen Hermann to ASPN. Now based on the voices in my head.
 M.E.Farmer 2004, 2005
 Python license
 '''
@@ -844,7 +844,7 @@ def LlamasRLumpy():
    """
    u"""
 =============================
-A Møøse once bit my sister...
+A MÅ™Å™se once bit my sister...
 =============================
    """
    ## Relax, this won't hurt a bit, just a simple, painless procedure,
@@ -852,12 +852,12 @@ A Møøse once bit my sister...
    m = {'three':'1','won':'2','too':'3'}
    o = r'fishy\fishy\fishy/fish\oh/where/is\my/little\..'
    python = uR""" 
- No realli! She was Karving her initials øn the møøse with the sharpened end  
- of an interspace tøøthbrush given her by Svenge - her brother-in-law -an Oslo
- dentist and star of many Norwegian møvies: "The Høt Hands of an Oslo         
- Dentist", "Fillings of Passion", "The Huge Mølars of Horst Nordfink"..."""
+ No realli! She was Karving her initials Å™n the mÅ™Å™se with the sharpened end  
+ of an interspace tÅ™Å™thbrush given her by Svenge - her brother-in-law -an Oslo
+ dentist and star of many Norwegian mÅ™vies: "The HÅ™t Hands of an Oslo         
+ Dentist", "Fillings of Passion", "The Huge MÅ™lars of Horst Nordfink"..."""
    RU"""142 MEXICAN WHOOPING LLAMAS"""#<-Can you fit 142 llamas in a red box?
-   n = u' HERMSGERVØRDENBRØTBØRDA ' + """ YUTTE """
+   n = u' HERMSGERVÅ˜RDENBRÅ˜TBÅ˜RDA ' + """ YUTTE """
    t = """SAMALLNIATNUOMNAIRODAUCE"""+"DENIARTYLLAICEPS04"
    ## We apologise for the fault in the
    ## comments. Those responsible have been
