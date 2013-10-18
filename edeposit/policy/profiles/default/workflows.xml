@@ -5,6 +5,7 @@
   <object name="comment_review_workflow" meta_type="Workflow"/>
   <object name="edeposit_epublication_workflow" meta_type="Workflow"/>
   <object name="edeposit_producent_workflow" meta_type="Workflow"/>
+  <object name="edeposit_producentfolder_workflow" meta_type="Workflow"/>
   <object name="folder_workflow" meta_type="Workflow"/>
   <object name="intranet_folder_workflow" meta_type="Workflow"/>
   <object name="intranet_workflow" meta_type="Workflow"/>
@@ -59,6 +60,9 @@
     <type type_id="Plone Site"/>
     <type type_id="edeposit.user.producent">
       <bound-workflow workflow_id="edeposit_producent_workflow"/>
+    </type>
+    <type type_id="edeposit.user.producentfolder">
+      <bound-workflow workflow_id="edeposit_producentfolder_workflow"/>
     </type>
     <type type_id="edeposit.content.epublication">
       <bound-workflow workflow_id="edeposit_epublication_workflow"/>
