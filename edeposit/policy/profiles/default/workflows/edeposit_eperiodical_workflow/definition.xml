@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+             i18n:domain="plone"
+             workflow_id="edeposit_epublication_workflow" 
+             title="E-Deposit ePeriodical Workflow" 
+             description="A workflow for ePeriodical" 
+             state_variable="review_state" 
+             initial_state="declaration" 
+             manager_bypass="False"
+             i18n:attributes="title; description"
+             >
+  <permission>Access contents information</permission>
+  <permission>Change portal events</permission>
+  <permission>Modify portal content</permission>
+  <permission>View</permission>
+  <permission>Review portal content</permission>
+  <state state_id="catalogization" title="Catalogization" i18n:attributes="title">
+    <exit-transition transition_id="backToCorrection"/>
+    <exit-transition transition_id="catalogizationPassed"/>
+    <exit-transition transition_id="toWithdraw"/>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: Librarian</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: Assigned Librarian</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: Assigned Librarian</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: Assigned Librarian</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: Assigned Librarian</permission-role>
+      <permission-role>E-Deposit: Librarian</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="declaration" title="Declaration" i18n:attributes="title">
+    <exit-transition transition_id="toAcquisition"/>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="declarationWithError" title="Declaration with Error"
+         i18n:attributes="title">
+    <exit-transition transition_id="toAcquisition"/>
+    <exit-transition transition_id="toWithdraw"/>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="exportToAleph" title="Export to Aleph" i18n:attributes="title">
+    <exit-transition transition_id="exportToAlephError"/>
+    <exit-transition transition_id="exportToAlephOK"/>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="exportToKramerius" title="Export to Kramerius" i18n:attributes="title">
+    <exit-transition transition_id="exportToKrameriusError"/>
+    <exit-transition transition_id="exportToKrameriusOK"/>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+ <state state_id="withdrawn" title="Withdrawn" i18n:attributes="title">
+ </state>
+ <transition transition_id="approveAndToCatalogization" 
+             title="Approve and to Catalogization" 
+             new_state="catalogization" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title"
+             >
+  <description i18n:translate="">ISSN is OK and Acquision is OK. So it can go to catalogization.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=approveToCatalogization" 
+          category="workflow" 
+          icon=""
+          i18n:translate=""
+          >Approve</action>
+  <guard>
+    <guard-role>E-Deposit: Assigned Acquisitor, E-Deposit: ISBN Agency Administrator</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="backToCorrection" 
+             title="Back to Correction" 
+             new_state="declarationWithError" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title"
+             >
+   <action url="%(content_url)s/content_status_modify?workflow_action=backToCorrection" 
+           category="workflow" 
+           icon=""
+           i18n:translate=""
+           >Back to Correction</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="catalogizationPassed" 
+             title="Catalogization Passed" 
+             new_state="exportToKramerius" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title"
+             >
+   <action url="%(content_url)s/content_status_modify?workflow_action=catalogizationPassed" 
+           category="workflow" 
+           icon=""
+           i18n:translate=""
+           >Catalogization Passed</action>
+   <guard>
+     <guard-role>E-Deposit: Assigned Librarian, E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+ <transition transition_id="exportToAlephError" 
+             title="Export to Aleph Passed with Error" 
+             new_state="declarationWithError" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title"
+             >
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephError" 
+           category="workflow" 
+           icon=""
+           i18n:translate=""
+           >Export to Aleph Passed with Error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="exportToAlephOK" 
+             title="Export to Aleph Passed with OK" 
+             new_state="acquisition" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title"
+             >
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephOK" 
+           category="workflow" 
+           icon=""
+           i18n:translate=""
+           >Export to Aleph Passed with OK</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="issnIsValid" 
+             title="ISSN is Valid" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title"
+             >
+  <action url="%(content_url)s/content_status_modify?workflow_action=issnIsValid" 
+          category="workflow" 
+          icon=""
+          i18n:translate=""
+          >ISSN is Valid</action>
+  <guard>
+   <guard-role>E-Deposit: ISBN Agency Administrator</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="metadataIsValid" 
+             title="Metada is Valid" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title"
+             >
+   <action url="%(content_url)s/content_status_modify?workflow_action=metadataIsValid" 
+           category="workflow" 
+           icon=""
+           i18n:translate=""
+           >Metadata is Valid</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>E-Deposit: Assigned Acquisitor</guard-role>
+   </guard>
+ </transition>
+
+ <transition transition_id="toAcquisition" title="To Acquisition" new_state="antivirus" trigger="USER" before_script="" after_script="" i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=toAcquisition" category="workflow" icon="" i18n:translate="">To Acquisition</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="toWithdraw" title="To Withdraw" new_state="withdrawn" trigger="USER" before_script="" after_script="" i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="" i18n:translate="">To Withdraw</action>
+   <guard>
+     <guard-role>E-Deposit: Assigned Acquisitor, E-Deposit: ISBN Agency Administrator, E-Deposit: Assigned Librarian, Site administrator</guard-role>
+   </guard>
+ </transition>
+ <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">Previous transition</description>
+   <default>
+     <expression>transition/getId|nothing</expression>
+   </default>
+   <guard>
+   </guard>
+ </variable>
+ <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">The ID of the user who performed the previous transition</description>
+   <default>
+     <expression>user/getId</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">Comment about the last transition</description>
+   <default>
+     <expression>python:state_change.kwargs.get('comment', '')</expression>
+   </default>
+   <guard>
+   </guard>
+ </variable>
+ <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+   <description i18n:translate="">Provides access to workflow history</description>
+   <default>
+     <expression>state_change/getHistory</expression>
+  </default>
+  <guard>
+   <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </variable>
+ <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">When the previous transition was performed</description>
+  <default>
+    <expression>state_change/getDateTime</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+</dc-workflow>

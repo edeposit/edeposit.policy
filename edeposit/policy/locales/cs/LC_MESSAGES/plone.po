@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-10-18 12:37+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2013-10-21 13:01+0000\n"
+"PO-Revision-Date: 2013-10-21 15:01+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,9 +14,17 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "- Essentially a workflow with no transitions, but has a Published state, so portlets and applications that expect that state will continue to work."
+msgstr "- základní pracovní cyklus bez akcí. Má jeden stav - Publikováno."
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "A producent submits content for approving"
 msgstr "Producent potvrzuje, že skončil se zadáváním."
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "A workflow for ePeriodical"
+msgstr "Pracovný cyklus pro pokračující zdroje"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "A workflow for ePublication"
@@ -50,10 +58,12 @@ msgstr "Antivirová kontrola proběhla v pořádku."
 msgid "Antivirus Passed with Error"
 msgstr "Antivirová kontrola skončila s chybou."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve"
 msgstr "Schválit"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve and to Catalogization"
 msgstr "Schválit a ke katalogizaci"
@@ -62,6 +72,7 @@ msgstr "Schválit a ke katalogizaci"
 msgid "Approved"
 msgstr "Schváleno."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Back to Correction"
 msgstr "Zpátky k opravě"
@@ -74,30 +85,43 @@ msgstr "Dočasně zablokovat"
 msgid "Blocked"
 msgstr "Blokováno"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization"
 msgstr "Katalogizace"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization Passed"
 msgstr "Katalogizace proběhla úspěšně"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Comment about the last transition"
 msgstr "Komentář k poslední akci"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Declaration"
 msgstr "Zadávání"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Declaration with Error"
 msgstr "Zadávání s chybami"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "E-Deposit - Single State Workflow for Producent Folder"
+msgstr "E-Deposit - Pracovní cyklus s jedním stavem pro složku producentů"
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "E-Deposit Producent Workflow"
 msgstr "E-Deposit - Pracovní postup pro producenta"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "E-Deposit ePeriodical Workflow"
+msgstr "E-Deposit - pracovní cyklus pro pokračující zdroje"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "E-Deposit ePublication Workflow"
@@ -107,18 +131,22 @@ msgstr "Pracovní postup pro ePublikaci"
 msgid "E-Deposit producent workflow - acquisitor can reject/confirm producents."
 msgstr "E-Deposit - Pracovní postup pro producenta. Akvizitor schvaluje producenta. Může ho i odmítnout, pozastavit, nebo zablokovat."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph"
 msgstr "Export do systému Aleph"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph Passed with Error"
 msgstr "Export do systému Aleph skončil s chybou"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph Passed with OK"
 msgstr "Export do systému Aleph proběhl úspěšně"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius"
 msgstr "Export do systému Kramerius"
@@ -159,10 +187,20 @@ msgstr "ISBN je v pořádku a Akvizice také. Takže dokument může jít do Kat
 msgid "ISBN is Valid"
 msgstr "ISBN je v pořádku"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "ISSN is OK and Acquision is OK. So it can go to catalogization."
+msgstr "ISSN je v pořádku a akvizice taky. Takže můžeme jít ke katalogizaci"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "ISSN is Valid"
+msgstr "ISSN je v pořádku"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metada is Valid"
 msgstr "Metadata jsou v pořádku"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metadata is Valid"
 msgstr "Metadata jsou v pořádku"
@@ -171,6 +209,7 @@ msgstr "Metadata jsou v pořádku"
 msgid "Pending (%(count)d)"
 msgstr "Čeká (%(count)d)"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Previous transition"
@@ -192,10 +231,15 @@ msgstr "Producent je dočasně zablokován. Nemůže ohlašovat nové ePublikace
 msgid "Producent is rejected. It is permanent state."
 msgstr "Producent je odmítkut. A to natrvalo."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Provides access to workflow history"
 msgstr "Poskytuje přístup k historii akcí"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Published"
+msgstr "Publikováno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Publishing the item makes it visible to other users."
@@ -229,6 +273,7 @@ msgstr "Položky ke schválení"
 msgid "Submit for approving"
 msgstr "Odeslat ke schválení"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "The ID of the user who performed the previous transition"
@@ -246,10 +291,12 @@ msgstr "Generování náhledu skončilo s chybou"
 msgid "Thumbnail Generating Passed with OK"
 msgstr "Generování náhledu proběhlo v pořádku"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Acquisition"
 msgstr "K akvizici"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Withdraw"
 msgstr "Stáhnout"
@@ -265,6 +312,10 @@ msgstr "Validace pro systém LTP skončila s chybou"
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP Passed with OK"
 msgstr "Validace pro systém LTP proběhla v pořádku"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Visible to everyone, editable by the owner."
+msgstr "Kdokoliv vidí, editovat může vlastník."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Waiting for Approving"
@@ -286,11 +337,13 @@ msgstr "Čeká dokud akvizitor neschválí informace o producentovi."
 msgid "Waiting till Producent corrects informations about itself."
 msgstr "Čeká dokud producent neopraví svoje údaje."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "When the previous transition was performed"
 msgstr "Kdy proběhla předešlá akce"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Withdrawn"
 msgstr "Staženo"
