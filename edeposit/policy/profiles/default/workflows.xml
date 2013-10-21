@@ -73,7 +73,16 @@
     <type type_id="edeposit.content.epublicationfolder">
       <bound-workflow workflow_id="one_state_workflow"/>
     </type>
+    <type type_id="edeposit.content.eperiodicalfolder">
+      <bound-workflow workflow_id="one_state_workflow"/>
+    </type>
+    <type type_id="edeposit.content.bookfolder">
+      <bound-workflow workflow_id="one_state_workflow"/>
+    </type>
     <type type_id="edeposit.content.isbn">
+      <bound-workflow workflow_id="one_state_workflow"/>
+    </type>
+    <type type_id="edeposit.content.issn">
       <bound-workflow workflow_id="one_state_workflow"/>
     </type>
     <type type_id="edeposit.content.printingfile">
