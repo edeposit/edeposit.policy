@@ -6,8 +6,8 @@
     <role name="Contributor"/>
     <role name="E-Deposit: Acquisitor"/>
     <role name="E-Deposit: ISBN Agency Administrator"/>
-    <role name="E-Deposit: Producent with Agreement"/>
-    <role name="E-Deposit: Producent without Agreement"/>
+    <role name="E-Deposit: Producent"/>
+    <role name="E-Deposit: Producent Administrator"/>
     <role name="E-Deposit: Librarian"/>
     <role name="E-Deposit: System"/>
     <role name="E-Deposit: Librarian"/>
@@ -16,6 +16,7 @@
     <role name="E-Deposit: Assigned Producent"/>
     <role name="E-Deposit: Assigned Librarian"/>
     <role name="E-Deposit: Assigned Acquisitor"/>
+    <role name="E-Deposit: Assigned Producent Administrator"/>
     <role name="Editor"/>
     <role name="Manager"/>
     <role name="Member"/>
@@ -26,14 +27,32 @@
     <role name="Site Administrator"/>
   </roles>
   <permissions>
+    <permission name="plone.portlet.collection: Add collection portlet"
+                acquire="True">
+      <role name="Contributor"/>
+      <role name="E-Deposit: Acquisitor"/>
+      <role name="E-Deposit: ISBN Agency Administrator"/>
+      <role name="E-Deposit: Producent"/>
+      <role name="E-Deposit: Acquisition Administrator"/>
+      <role name="E-Deposit: Librarian Administrator"/>
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: Assigned Producent Administrator"/>
+      <role name="Editor"/>
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Publisher"/>
+      <role name="Reader"/>
+      <role name="Site Administrator"/>
+    </permission>
     <permission name="View" acquire="True">
       <role name="Contributor"/>
       <role name="E-Deposit: Acquisitor"/>
       <role name="E-Deposit: ISBN Agency Administrator"/>
-      <role name="E-Deposit: Producent with Agreement"/>
-      <role name="E-Deposit: Producent without Agreement"/>
+      <role name="E-Deposit: Producent"/>
       <role name="E-Deposit: Acquisition Administrator"/>
       <role name="E-Deposit: Librarian Administrator"/>
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: Assigned Producent Administrator"/>
       <role name="Editor"/>
       <role name="Manager"/>
       <role name="Owner"/>
@@ -45,8 +64,9 @@
       <role name="Site Administrator"/>
       <role name="E-Deposit: Acquisitor"/>
       <role name="E-Deposit: ISBN Agency Administrator"/>
-      <role name="E-Deposit: Producent with Agreement"/>
-      <role name="E-Deposit: Producent without Agreement"/>
+      <role name="E-Deposit: Producent"/>
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: Assigned Producent Administrator"/>
       <role name="E-Deposit: Acquisition Administrator"/>
       <role name="E-Deposit: Librarian Administrator"/>
     </permission>

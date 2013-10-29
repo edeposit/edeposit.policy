@@ -31,6 +31,7 @@ setup(name='edeposit.policy',
           'plone.app.dexterity',
           'edeposit.content',
           'edeposit.user',
+          'plone.api'
       ],
       extras_require = {
           'test': ['plone.app.testing',]

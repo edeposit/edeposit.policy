@@ -68,35 +68,17 @@
     <type type_id="edeposit.content.epublication">
       <bound-workflow workflow_id="edeposit_epublication_workflow"/>
     </type>
-    <type type_id="edeposit.content.author">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
-    <type type_id="edeposit.content.epublicationfolder">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
-    <type type_id="edeposit.content.eperiodicalfolder">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
     <type type_id="edeposit.content.eperiodical">
       <bound-workflow workflow_id="edeposit_eperiodical_workflow"/>
     </type>
-    <type type_id="edeposit.content.bookfolder">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
-    <type type_id="edeposit.content.isbn">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
-    <type type_id="edeposit.content.issn">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
-    <type type_id="edeposit.content.printingfile">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
-    <type type_id="edeposit.content.previewfile">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
-    <type type_id="edeposit.content.originalfile">
-      <bound-workflow workflow_id="one_state_workflow"/>
-    </type>
+    <type type_id="edeposit.content.author"/>
+    <type type_id="edeposit.content.epublicationfolder"/>
+    <type type_id="edeposit.content.eperiodicalfolder"/>
+    <type type_id="edeposit.content.bookfolder"/>
+    <type type_id="edeposit.content.isbn"/>
+    <type type_id="edeposit.content.issn"/>
+    <type type_id="edeposit.content.printingfile"/>
+    <type type_id="edeposit.content.previewfile"/>
+    <type type_id="edeposit.content.originalfile"/>
   </bindings>
 </object>
