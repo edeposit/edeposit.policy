@@ -42,7 +42,6 @@ class TestProducent(unittest.TestCase):
                         'all important roles are set for epublications folder')
         rolesForAddEpublication = [ii['name'] for ii in producent.rolesOfPermission('E-Deposit: Add ePublication') if ii['selected']]
         self.assertTrue(api.content.get_state(obj=producent) == 'registration', "producent is in registration state")
-        print permissions
         wft = api.portal.get_tool('portal_workflow')
         wf = frozenset(['edeposit_producent_workflow',])
         self.assertTrue(wf == frozenset(wft.getChainForPortalType('edeposit.user.producent')),'producent has proper workflow')
