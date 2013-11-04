@@ -27,6 +27,7 @@ setup(name='edeposit.policy',
           'setuptools',
           # -*- Extra requirements: -*-
           'Plone',
+          'plone.namedfile',
           'Products.PloneFormGen',
           'plone.app.dexterity',
           'edeposit.content',
