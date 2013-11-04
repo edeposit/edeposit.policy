@@ -45,24 +45,6 @@
       <role name="Reader"/>
       <role name="Site Administrator"/>
     </permission>
-    <!-- <permission name="plone.app.collection: Add Collection" -->
-    <!--             acquire="True"> -->
-    <!--   <role name="Contributor"/> -->
-    <!--   <role name="E-Deposit: Acquisitor"/> -->
-    <!--   <role name="E-Deposit: ISBN Agency Administrator"/> -->
-    <!--   <role name="E-Deposit: Producent"/> -->
-    <!--   <role name="E-Deposit: Acquisition Administrator"/> -->
-    <!--   <role name="E-Deposit: Librarian Administrator"/> -->
-    <!--   <role name="E-Deposit: Producent Administrator"/> -->
-    <!--   <role name="E-Deposit: Assigned Producent Administrator"/> -->
-    <!--   <role name="E-Deposit: Assigned Producent"/> -->
-    <!--   <role name="Editor"/> -->
-    <!--   <role name="Manager"/> -->
-    <!--   <role name="Owner"/> -->
-    <!--   <role name="Publisher"/> -->
-    <!--   <role name="Reader"/> -->
-    <!--   <role name="Site Administrator"/> -->
-    <!-- </permission> -->
     <permission name="E-Deposit: Add ePublication"
                 acquire="True">
       <role name="E-Deposit: ISBN Agency Administrator"/>

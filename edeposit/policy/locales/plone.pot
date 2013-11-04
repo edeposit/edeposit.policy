@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-10-21 13:01+0000\n"
+"POT-Creation-Date: 2013-11-04 09:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,16 +25,16 @@ msgstr ""
 msgid "A producent submits content for approving"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
-msgid "A workflow for ePeriodical"
-msgstr ""
-
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "A workflow for ePublication"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Accessing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Acquisition"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
@@ -50,7 +50,23 @@ msgid "Acquisitor reject a producent content permanently"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "An Acquisition administrator is preparing an ePublication for acquisition."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "An ePublication is provided to given libraries to access them."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "An ePublication is reviewed by Acquisitor."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Antivirus Checking"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Antivirus OK"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -61,12 +77,10 @@ msgstr ""
 msgid "Antivirus Passed with Error"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve and to Catalogization"
 msgstr ""
@@ -75,7 +89,6 @@ msgstr ""
 msgid "Approved"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Back to Correction"
 msgstr ""
@@ -88,28 +101,28 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization Passed"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Catalogization Preparing"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Comment about the last transition"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Declaration"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Declaration with Error"
 msgstr ""
@@ -122,10 +135,6 @@ msgstr ""
 msgid "E-Deposit Producent Workflow"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
-msgid "E-Deposit ePeriodical Workflow"
-msgstr ""
-
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "E-Deposit ePublication Workflow"
 msgstr ""
@@ -134,22 +143,18 @@ msgstr ""
 msgid "E-Deposit producent workflow - acquisitor can reject/confirm producents."
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph Passed with Error"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph Passed with OK"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius"
 msgstr ""
@@ -190,20 +195,10 @@ msgstr ""
 msgid "ISBN is Valid"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
-msgid "ISSN is OK and Acquision is OK. So it can go to catalogization."
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
-msgid "ISSN is Valid"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metada is Valid"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metadata is Valid"
 msgstr ""
@@ -212,9 +207,13 @@ msgstr ""
 msgid "Pending (%(count)d)"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Prepare for Acquisition"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Previous transition"
 msgstr ""
 
@@ -234,9 +233,9 @@ msgstr ""
 msgid "Producent is rejected. It is permanent state."
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Provides access to workflow history"
 msgstr ""
 
@@ -272,13 +271,21 @@ msgstr ""
 msgid "Reviewer tasks"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Submit acquisition preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Submit catalogization preparing"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Submit for approving"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "The ID of the user who performed the previous transition"
 msgstr ""
 
@@ -294,12 +301,10 @@ msgstr ""
 msgid "Thumbnail Generating Passed with OK"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Acquisition"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Withdraw"
 msgstr ""
@@ -340,13 +345,12 @@ msgstr ""
 msgid "Waiting till Producent corrects informations about itself."
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "When the previous transition was performed"
 msgstr ""
 
-#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Withdrawn"
 msgstr ""
