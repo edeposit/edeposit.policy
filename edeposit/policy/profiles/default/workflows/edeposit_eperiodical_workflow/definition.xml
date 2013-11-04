@@ -5,6 +5,10 @@
  <permission>Modify portal content</permission>
  <permission>Review portal content</permission>
  <permission>View</permission>
+ <permission>plone.app.collection: Add Collection</permission>
+ <permission>E-Deposit: Add ePublication</permission>
+ <permission>E-Deposit: Add ePeriodical</permission>
+ <permission>E-Deposit: Add Book</permission>
  <state state_id="catalogization" title="Catalogization">
   <exit-transition transition_id="backToCorrection"/>
   <exit-transition transition_id="catalogizationPassed"/>

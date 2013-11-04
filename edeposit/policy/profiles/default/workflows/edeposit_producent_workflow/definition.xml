@@ -239,6 +239,32 @@
       <permission-role>E-Deposit: Assigned Producent</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
+    <permission-map name="Add portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="plone.app.collection: Add Collection" acquired="True">
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>E-Deposit: Assigned Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add ePublication" acquired="True">
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>E-Deposit: Assigned Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add ePeriodical" acquired="True">
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>E-Deposit: Assigned Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add Book" acquired="True">
+      <permission-role>E-Deposit: Assigned Producent</permission-role>
+      <permission-role>E-Deposit: Assigned Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
   </state>
   <state state_id="waitingForCorrection" title="Waiting for Correction" i18n:attributes="title">
     <description i18n:translate="">Waiting till Producent corrects informations about itself.</description>
