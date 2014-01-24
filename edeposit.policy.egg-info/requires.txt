@@ -5,6 +5,8 @@ Products.PloneFormGen
 plone.app.dexterity
 edeposit.content
 edeposit.user
+edeposit.search
+edeposit.theme
 plone.api
 
 [test]
