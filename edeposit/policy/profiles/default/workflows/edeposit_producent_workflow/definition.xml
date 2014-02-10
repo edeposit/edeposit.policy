@@ -118,6 +118,7 @@
       <permission-role>E-Deposit: Assigned Producent</permission-role>
       <permission-role>E-Deposit: Assigned Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
     </permission-map>
     <permission-map name="E-Deposit: Add ePublication" acquired="True">
       <permission-role>E-Deposit: Assigned Producent</permission-role>
@@ -140,6 +141,7 @@
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Assigned Producent</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
     </permission-map>
     <permission-map name="Change portal events" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -153,6 +155,7 @@
       <permission-role>Anonymous</permission-role>
       <permission-role>E-Deposit: Assigned Producent</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
     </permission-map>
     <permission-map name="Add portal content" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -160,6 +163,7 @@
       <permission-role>Anonymous</permission-role>
       <permission-role>E-Deposit: Assigned Producent</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
     </permission-map>
     <permission-map name="Request Review" acquired="True">
       <permission-role>Owner</permission-role>
@@ -181,6 +185,7 @@
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Assigned Producent</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
     </permission-map>
   </state>
   <state state_id="rejected" title="Rejected" i18n:attributes="title">

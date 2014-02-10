@@ -5,7 +5,7 @@
              title="E-Deposit - Single State Workflow for Producent Folder"
              description="- Essentially a workflow with no transitions, but has a Published state, so portlets and applications that expect that state will continue to work."
              state_variable="review_state"
-             initial_state="published"
+             initial_state="private"
              i18n:attributes="title; description">
 
  <permission>Access contents information</permission>
@@ -14,38 +14,40 @@
  <permission>Add portal content</permission>
  <permission>View</permission>
 
- <state state_id="published" title="Published" i18n:attributes="title">
-  <description i18n:translate="">
+ <state state_id="private" title="Private" i18n:attributes="title">
+  <description i18n:translate="Title">
     Visible to everyone, editable by the owner.
   </description>
-  <permission-map name="Access contents information"
-                  acquired="False">
-   <permission-role>Anonymous</permission-role>
+  <permission-map name="Access contents information" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="Change portal events"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
+  <permission-map name="Change portal events" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
+  <permission-map name="Modify portal content"  acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="Add portal content"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Anonymous</permission-role>
-   <permission-role>Site Administrator</permission-role>
+  <permission-map name="Add portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>Anonymous</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
-   <permission-role>Anonymous</permission-role>
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
 

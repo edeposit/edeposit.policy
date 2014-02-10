@@ -25,7 +25,7 @@ groups = (
   },
     { 'group_id': 'Producent Administrators',
       'title': 'E-Deposit: Producent Administrators',
-      'description': '',
+      'description': 'Producent administrators can assign new administrators and editors for given producent',
       'roles': []
   },
     { 'group_id': 'Producent Contributors',

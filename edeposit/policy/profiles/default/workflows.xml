@@ -62,9 +62,9 @@
     <type type_id="edeposit.user.producent">
       <bound-workflow workflow_id="edeposit_producent_workflow"/>
     </type>
-    <!-- <type type_id="edeposit.user.producentfolder"> -->
-    <!--   <bound-workflow workflow_id="edeposit_producentfolder_workflow"/> -->
-    <!-- </type> -->
+    <type type_id="edeposit.user.producentfolder">
+      <bound-workflow workflow_id="edeposit_producentfolder_workflow"/>
+    </type>
     <type type_id="edeposit.content.epublication">
       <bound-workflow workflow_id="edeposit_epublication_workflow"/>
     </type>

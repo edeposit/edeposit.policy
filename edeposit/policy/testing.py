@@ -16,9 +16,9 @@ class EDepositPolicy(PloneSandboxLayer):
         import edeposit.policy
         import edeposit.user
         import edeposit.content
-        xmlconfig.file('configure.zcml', edeposit.policy, context=configurationContext)
         xmlconfig.file('configure.zcml', edeposit.content, context=configurationContext) 
         xmlconfig.file('configure.zcml', edeposit.user, context=configurationContext)
+        xmlconfig.file('configure.zcml', edeposit.policy, context=configurationContext)
 
 
         # # Install products that use an old-style initialize() function
@@ -38,9 +38,10 @@ class EDepositPolicy(PloneSandboxLayer):
         pass
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'edeposit.policy:default')
         applyProfile(portal, 'edeposit.content:default')
         applyProfile(portal, 'edeposit.user:default')
+        applyProfile(portal, 'edeposit.policy:default')
+
 
 EDEPOSIT_POLICY_FIXTURE = EDepositPolicy()
 EDEPOSIT_POLICY_ROBOT_TESTING = FunctionalTesting(
