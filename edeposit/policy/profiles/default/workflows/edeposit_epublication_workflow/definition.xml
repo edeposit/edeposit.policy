@@ -23,23 +23,39 @@
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
    <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
    <permission-role>E-Deposit: System</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -47,7 +63,9 @@
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
    <permission-role>E-Deposit: System</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
