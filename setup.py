@@ -32,6 +32,8 @@ setup(name='edeposit.policy',
           'plone.app.dexterity',
           'edeposit.content',
           'edeposit.user',
+          'edeposit.search',
+          'edeposit.theme',
           'plone.api'
       ],
       extras_require = {
