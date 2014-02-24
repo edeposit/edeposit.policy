@@ -6,12 +6,12 @@ groups = (
     { 'group_id': 'Acquisitors',
       'title': 'E-Deposit: Acquisitors',
       'description': '',
-      'roles':[]
+      'roles': []
   },
     { 'group_id': 'Acquisition Administrators',
       'title': 'E-Deposit: Acquisitor Administrators',
       'description': 'Users that can assign work for acquisitors',
-      'roles':[]
+      'roles': []
   },
     { 'group_id': 'Librarians',
       'title': 'E-Deposit: Librarians',
@@ -37,6 +37,13 @@ groups = (
       'title': 'E-Deposit: Producent Editors',
       'description': '',
       'roles': []
+  },
+    { 'group_id': 'Testers',
+      'title': 'E-Deposit: Testers',
+      'description': '',
+      'roles': ['E-Deposit: Producent Administrator',
+                'E-Deposit: Producent Editor',
+                'E-Deposit: Producent Contributor']
   },
 )
 
