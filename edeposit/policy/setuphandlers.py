@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from edeposit.policy import MessageFactory as _
 from Products.CMFCore.utils import getToolByName
+from plone import api
 
 groups = (   
     { 'group_id': 'Acquisitors',
@@ -57,7 +58,6 @@ def setupGroups(portal):
             gtool.editGroup(group['group_id'], title = group['title'], description=group['description'])
 
 def createAgreementFile(portal):
-    #import sys,pdb; pdb.Pdb(stdout=sys.__stdout__).set_trace()
     setup_tool = portal.portal_setup
     profiles = setup_tool.listProfileInfo()
     [ (pp['title'],pp['id']) for pp in  profiles]
@@ -67,13 +67,27 @@ def createAgreementFile(portal):
         portal.invokeFactory('edeposit.user.agreementfile',  linkName,  title=u"Smlouva s Národní knihovnou")
     pass
 
+def createUsers(portal):
+    if api.user.get(username="system"):
+        return
+    properties = dict(
+        fullname='E-Deposit system user',
+        location='Prague',
+    )
+    api.user.create(username="system",
+                    email="edeposit@email.cz",
+                    password="shoj98Phai9",
+                )
+    api.group.add_user(groupname='Administrators', username='system')
+    pass
+
 def importVarious(context):
     """Miscellanous steps import handle
     """
     if context.readDataFile('edeposit.policy.marker.txt') is None:
-        # Not your add-on
         return
 
     portal = context.getSite()
     setupGroups(portal)
+    createUsers(portal)
     #createAgreementFile(portal)
