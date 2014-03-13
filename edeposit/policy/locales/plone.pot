@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-01-16 07:14+0000\n"
+"POT-Creation-Date: 2014-03-13 15:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Acquisitor reject a producent content permanently"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All isbns are validated. A system performs it."
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -188,6 +192,14 @@ msgid "Export to LTP Passed with OK"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "ISBN Checking"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "ISBN Correcting"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "ISBN is OK and Acquision is OK. So it can go to catalogization."
 msgstr ""
 
@@ -203,6 +215,14 @@ msgstr ""
 msgid "Metadata is Valid"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Notify ISBN was sent for validation"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Notify ISBN was sent to validation"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Pending (%(count)d)"
 msgstr ""
@@ -215,6 +235,10 @@ msgstr ""
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Previous transition"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Private"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
@@ -237,10 +261,6 @@ msgstr ""
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Provides access to workflow history"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
-msgid "Published"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
@@ -290,6 +310,10 @@ msgid "The ID of the user who performed the previous transition"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "There are some wrong ISBN. It is necessary to correct is."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating"
 msgstr ""
 
@@ -299,6 +323,11 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating Passed with OK"
+msgstr ""
+
+#. Default: "Visible to everyone, editable by the owner."
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Title"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -319,10 +348,6 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP Passed with OK"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
-msgid "Visible to everyone, editable by the owner."
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml

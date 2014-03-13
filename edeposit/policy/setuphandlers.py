@@ -79,6 +79,7 @@ def createUsers(portal):
                     password="shoj98Phai9",
                 )
     api.group.add_user(groupname='Administrators', username='system')
+    api.group.add_user(groupname='Site Administrators', username='system')
     pass
 
 def importVarious(context):
