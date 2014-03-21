@@ -14,13 +14,13 @@ def submitISBNChecks(wfStateInfo):
         for isbn in isbns:
             createContentInContainer(systemMessages, 'edeposit.content.isbncheckrequest',
                                      title = "Kontrola ISBN: " + isbn,
-                                     uuid = str(uuid.uuid1()),
+                                     uuid = str(uuid.uuid4()),
                                      isbn = isbn
                                  )
             
             createContentInContainer(systemMessages,  'edeposit.content.isbncountrequest',
                                      title = u"Zjištění duplicity ISBN: " + isbn,
-                                     uuid = str(uuid.uuid1()),
+                                     uuid = str(uuid.uuid4()),
                                      isbn = isbn
                                  )
         pass
