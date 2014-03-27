@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-13 15:42+0000\n"
-"PO-Revision-Date: 2014-03-13 16:38+0100\n"
+"POT-Creation-Date: 2014-03-27 16:42+0000\n"
+"PO-Revision-Date: 2014-03-27 17:40+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,6 +47,22 @@ msgid "Acquisitor reject a producent content permanently"
 msgstr "Akvizitor odmítne producenta natrvalo."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All Files are virus free"
+msgstr "Žádný soubor neobsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All ISBNs are Valid"
+msgstr "Všechna ISBN jsou v pořádku"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All Thumbnails Generating Passed"
+msgstr "Máme všechny náhledy vygenerovány"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All files are virus free"
+msgstr "Žádný soubor neobsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All isbns are validated. A system performs it."
 msgstr "Aplikace provede kontrolu všech ISBN."
 
@@ -68,15 +84,7 @@ msgstr "Antivirová kontrola"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Antivirus OK"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Antivirus Passed OK"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Antivirus Passed with Error"
-msgstr ""
+msgstr "Antivirus prošel v pořádku"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve"
@@ -94,6 +102,10 @@ msgstr "Schváleno."
 msgid "Back to Correction"
 msgstr "Zpátky k opravě"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Back to ISBN Correction"
+msgstr "Zpátky k opravě ISBN"
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Block temporarily"
 msgstr "Dočasně zablokovat"
@@ -108,7 +120,7 @@ msgstr "Katalogizace"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization Passed"
-msgstr ""
+msgstr "Katalogizace proběhla úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Catalogization Preparing"
@@ -201,10 +213,6 @@ msgid "ISBN is OK and Acquision is OK. So it can go to catalogization."
 msgstr "ISBN jsou v pořádku, akvizice proběhla dobře, můžeme jít do katalogizace."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "ISBN is Valid"
-msgstr "ISBN je v pořádku"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metada is Valid"
 msgstr ""
 
@@ -213,13 +221,20 @@ msgid "Metadata is Valid"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Notify ISBN was sent for validation"
-msgstr "ISBN jde ke kontrole"
+msgid "Notify System Action"
+msgstr ""
 
-# ISBN jde ke kontrole
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Notify ISBN was sent to validation"
-msgstr "ISBN jde ke kontrole"
+msgid "Notify a system action"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Antivirus Has not Passed"
+msgstr "Antivirová kontrola jednoho souboru neprošla"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Thumbnail Generating Passed"
+msgstr "Generování jednoho náhledu proběhlo úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Pending (%(count)d)"
@@ -290,6 +305,22 @@ msgid "Reviewer tasks"
 msgstr "Položky ke schválení"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some File Antivirus Passed"
+msgstr "Antivirová kontrola jednoho souboru prošla"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some File Thumbnail Generating Has not Passed"
+msgstr "Generování jednoho náhledu skončilo s chybou"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some file contains of a virus"
+msgstr "Některý soubor obsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some files has virus"
+msgstr "Některý soubor obsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit acquisition preparing"
 msgstr "Poslat k akvizici"
 
@@ -317,11 +348,7 @@ msgstr "Generování náhledů"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating Passed with Error"
-msgstr "Generování náhledů skončilo s chybou."
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Thumbnail Generating Passed with OK"
-msgstr "Generování náhledu proběhlo úspěšně."
+msgstr "Generování některých náhledů skončilo s chybou"
 
 #. Default: "Visible to everyone, editable by the owner."
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml

@@ -87,6 +87,9 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
+
+ <!-- ISBN Checking -->
+
  <state state_id="ISBNChecking" title="ISBN Checking" i18n:attributes="title">
   <description i18n:translate="">All isbns are validated. A system performs it.</description>
   <exit-transition transition_id="backToISBNCorrection"/>
@@ -129,6 +132,14 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
+
+ <script script_id="submitAntivirusChecks" type="External Method"
+         filename="" 
+         module="edeposit.policy.epublication_wf_scripts"
+         function="submitAntivirusChecks"/> 
+
+ <!-- ISBN Correcting   -->
+
  <state state_id="ISBNCorrecting" title="ISBN Correcting" i18n:attributes="title">
   <description i18n:translate="">There are some wrong ISBN. It is necessary to correct is.</description>
   <exit-transition transition_id="toAcquisition"/>
@@ -174,6 +185,7 @@
   </permission-map>
  </state>
 
+ <!-- anvivirus -->
  <state state_id="antivirus" title="Antivirus Checking" i18n:attributes="title">
   <exit-transition transition_id="antivirusError"/>
   <exit-transition transition_id="antivirusOK"/>
@@ -217,6 +229,178 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
+
+ <transition transition_id="antivirusError" 
+             title="One File Antivirus Has not Passed" 
+             new_state=""
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusError" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">One File Antivirus Has not Passed</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+
+ <transition transition_id="antivirusOK" 
+             title="Antivirus OK" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description>Some File Antivirus Passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOK" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Some File Antivirus Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="allFilesAreVirusFree" 
+             title="All files are virus free" 
+             new_state="thumbnailGenerating" 
+             trigger="USER" 
+             before_script=""
+             after_script="" 
+             i18n:attributes="title">
+   <description>Antivirus checking of all files passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=allFilesAreVirusFree" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">All Files are virus free</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="someFileHasVirus" 
+             title="Some files has virus" 
+             new_state="declarationWithError" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+  <description>Some file contains of a virus</description>
+  <action
+      url="%(content_url)s/content_status_modify?workflow_action=someFileHasVirus"
+      category="workflow" icon="" i18n:translate="">Some file contains of a virus</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+
+ <!-- thumbnail generating -->
+
+ <state state_id="thumbnailGenerating" title="Thumbnail Generating" i18n:attributes="title">
+  <exit-transition transition_id="thumbnailError"/>
+  <exit-transition transition_id="thumbnailOK"/>
+  <exit-transition transition_id="allThumbnailsOK"/>
+  <exit-transition transition_id="someThumbnailError"/>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Contributor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="plone.app.collection: Add Collection" acquired="False">
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="False">
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Contributor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+
+ <transition transition_id="thumbnailError" 
+             title="Thumbnail Generating Passed with Error" 
+             new_state="" trigger="USER" before_script="" 
+             after_script="" i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailError" 
+           category="workflow" icon="" i18n:translate="">Thumbnail Generating Passed with Error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="thumbnailOK" 
+             title="One File Thumbnail Generating Passed" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""  
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" 
+           category="workflow" 
+           icon=""
+           i18n:translate="">One File Thumbnail Generating Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="allThumbnailsOK"
+             title="All Thumbnails Generating Passed" 
+             new_state="exportToAleph"
+             trigger="USER" 
+             before_script=""
+             after_script="submitExportToAleph"  
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=allThumbnailsOK" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">All Thumbnails Generating Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="someThumbnailError"
+             title="Some File Thumbnail Generating Has not Passed" 
+             new_state=""
+             trigger="USER" 
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=someThumbnailError" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Some File Thumbnail Generating Has not Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <!--  -->
 
  <state state_id="acquisition" title="Acquisition" i18n:attributes="title">
   <description i18n:translate="">An ePublication is reviewed by Acquisitor.</description>
@@ -438,34 +622,6 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <state state_id="thumbnailGenerating" title="Thumbnail Generating" i18n:attributes="title">
-  <exit-transition transition_id="thumbnailError"/>
-  <exit-transition transition_id="thumbnailOK"/>
-  <permission-map name="Access contents information" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
- </state>
  <state state_id="validationForLTP" title="Validation for LTP" i18n:attributes="title">
   <exit-transition transition_id="validationForLTPError"/>
   <exit-transition transition_id="validationForLTPOK"/>
@@ -540,67 +696,6 @@
    </guard>
  </transition>
 
- <transition transition_id="antivirusError" 
-             title="Antivirus Passed with Error" 
-             new_state="declarationWithError"
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusError" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">Antivirus Passed with Error</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
- </transition>
-
- <transition transition_id="antivirusOK" 
-             title="Antivirus OK" 
-             new_state="" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <description>Antivirus checking passed successfully.</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOK" category="workflow" icon="" i18n:translate="">Antivirus Passed OK</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
- 
- <transition transition_id="allFilesAreVirusFree" 
-             title="All files are virus free" 
-             new_state="thumbnailGenerating" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <description>Antivirus checking for all files passed successfully.</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=allFilesAreVirusFree" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">All Files are virus free.</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
-
- <transition transition_id="someFileHasVirus" 
-             title="Some files has virus" 
-             new_state="" trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-  <description>Some file contains of a virus..</description>
-  <action
-      url="%(content_url)s/content_status_modify?workflow_action=antivirusOK"
-      category="workflow" icon="" i18n:translate="">Some file contains of virus</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
- </transition>
 
  <transition transition_id="approveAndToCatalogization" title="Approve and to Catalogization" new_state="catalogizationPreparing" trigger="USER" before_script="" after_script="" i18n:attributes="title">
   <description i18n:translate="">ISBN is OK and Acquision is OK. So it can go to catalogization.</description>
@@ -704,18 +799,6 @@
    <guard-role>E-Deposit: Catalogization Administrator</guard-role>
   </guard>
  </transition>
- <transition transition_id="thumbnailError" title="Thumbnail Generating Passed with Error" new_state="" trigger="USER" before_script="" after_script="" i18n:attributes="title">
-  <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailError" category="workflow" icon="" i18n:translate="">Thumbnail Generating Passed with Error</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="thumbnailOK" title="Thumbnail Generating Passed with OK" new_state="exportToAleph" trigger="USER" before_script="" after_script=""  i18n:attributes="title">
-  <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" category="workflow" icon="" i18n:translate="">Thumbnail Generating Passed with OK</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
- </transition>
  <transition transition_id="validationForLTPError" title="Validation for LTP Passed with Error" new_state="" trigger="USER" before_script="" after_script="" i18n:attributes="title">
   <action url="%(content_url)s/content_status_modify?workflow_action=validationForLTPError" category="workflow" icon="" i18n:translate="">Validation for LTP Passed with Error</action>
   <guard>
@@ -778,8 +861,4 @@
          filename="" 
          module="edeposit.policy.epublication_wf_scripts"
          function="checkISBNsStatus"/> 
- <script script_id="submitAntivirusChecks" type="External Method"
-         filename="" 
-         module="edeposit.policy.epublication_wf_scripts"
-         function="submitAntivirusChecks"/> 
 </dc-workflow>

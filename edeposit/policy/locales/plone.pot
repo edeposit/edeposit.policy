@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-13 15:42+0000\n"
+"POT-Creation-Date: 2014-03-27 16:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,6 +50,22 @@ msgid "Acquisitor reject a producent content permanently"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All Files are virus free"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All ISBNs are Valid"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All Thumbnails Generating Passed"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All files are virus free"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All isbns are validated. A system performs it."
 msgstr ""
 
@@ -74,14 +90,6 @@ msgid "Antivirus OK"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Antivirus Passed OK"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Antivirus Passed with Error"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve"
 msgstr ""
 
@@ -95,6 +103,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Back to Correction"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Back to ISBN Correction"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
@@ -204,10 +216,6 @@ msgid "ISBN is OK and Acquision is OK. So it can go to catalogization."
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "ISBN is Valid"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metada is Valid"
 msgstr ""
 
@@ -216,11 +224,19 @@ msgid "Metadata is Valid"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Notify ISBN was sent for validation"
+msgid "Notify System Action"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Notify ISBN was sent to validation"
+msgid "Notify a system action"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Antivirus Has not Passed"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Thumbnail Generating Passed"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
@@ -292,6 +308,22 @@ msgid "Reviewer tasks"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some File Antivirus Passed"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some File Thumbnail Generating Has not Passed"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some file contains of a virus"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some files has virus"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit acquisition preparing"
 msgstr ""
 
@@ -319,10 +351,6 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating Passed with Error"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Thumbnail Generating Passed with OK"
 msgstr ""
 
 #. Default: "Visible to everyone, editable by the owner."
