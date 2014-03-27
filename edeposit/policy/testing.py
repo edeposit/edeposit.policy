@@ -4,7 +4,6 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.testing import z2
 from plone.app.testing import IntegrationTesting, FunctionalTesting
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
-from collective.zamqp.testing import RABBIT_FIXTURE
 
 from zope.interface import Interface
 from zope.component import getSiteManager
