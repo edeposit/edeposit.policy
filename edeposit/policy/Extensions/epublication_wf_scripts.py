@@ -125,8 +125,8 @@ def submitExportToAleph(wfStateInfo):
     with api.env.adopt_user(username="system"):
         for originalFile in originalFiles:
             createContentInContainer(systemMessages, 'edeposit.content.alephexportrequest',
-                                     title = "Export do Alephu: " + str(originalFile),
-                                     originalFile = originalFile
+                                     title = "Export do Alephu: " + originalFile.id,
+                                     originalFileID = originalFile.id
                                  )
             pass
         pass
