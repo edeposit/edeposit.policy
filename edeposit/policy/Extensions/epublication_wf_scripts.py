@@ -114,3 +114,19 @@ def submitAntivirusChecks(wfStateInfo):
             #                      )
             pass
         pass
+
+def submitExportToAleph(wfStateInfo):
+    logger.info("submit export to Aleph")
+    print "submit export to Aleph"
+    epublication = wfStateInfo.object
+    systemMessages = epublication['system-messages']
+    originalFiles = epublication['original-files']
+
+    with api.env.adopt_user(username="system"):
+        for originalFile in originalFiles:
+            createContentInContainer(systemMessages, 'edeposit.content.alephexportrequest',
+                                     title = "Export do Alephu: " + str(originalFile),
+                                     originalFile = originalFile
+                                 )
+            pass
+        pass
