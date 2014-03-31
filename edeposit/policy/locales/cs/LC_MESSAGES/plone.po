@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-27 16:42+0000\n"
-"PO-Revision-Date: 2014-03-27 17:40+0100\n"
+"POT-Creation-Date: 2014-03-31 11:37+0000\n"
+"PO-Revision-Date: 2014-03-31 13:37+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,6 +57,10 @@ msgstr "Všechna ISBN jsou v pořádku"
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All Thumbnails Generating Passed"
 msgstr "Máme všechny náhledy vygenerovány"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All exports to Aleph finished with success"
+msgstr "Všechny exporty do Alephu proběhly úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All files are virus free"
@@ -157,16 +161,20 @@ msgid "E-Deposit producent workflow - acquisitor can reject/confirm producents."
 msgstr "E-Deposit - Pracovní postup pro producenta. Akvizitor schvaluje producenta. Může ho i odmítnout, pozastavit, nebo zablokovat."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export of one record to Aleph finished with error"
+msgstr "Export jednoho záznamu do Alephu skončil s chybou"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export of one record to Aleph finished with success"
+msgstr "Export jednoho záznamu do Alephu proběhl úspěšně"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export of one record to Aleph submitted"
+msgstr "Poslal jsem jeden záznam k exportu do Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph"
 msgstr "Export do Alephu"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Export to Aleph Passed with Error"
-msgstr ""
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Export to Aleph Passed with OK"
-msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius"
@@ -235,6 +243,14 @@ msgstr "Antivirová kontrola jednoho souboru neprošla"
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "One File Thumbnail Generating Passed"
 msgstr "Generování jednoho náhledu proběhlo úspěšně"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Thumbnail Generating with success"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One thumbnail generating with error"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Pending (%(count)d)"
@@ -311,6 +327,10 @@ msgstr "Antivirová kontrola jednoho souboru prošla"
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Some File Thumbnail Generating Has not Passed"
 msgstr "Generování jednoho náhledu skončilo s chybou"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some exports to Aleph finished with error"
+msgstr "Některé exporty do Alephu skončily s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Some file contains of a virus"
