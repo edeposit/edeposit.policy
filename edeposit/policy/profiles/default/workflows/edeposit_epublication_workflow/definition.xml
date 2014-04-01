@@ -860,14 +860,21 @@
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="allISBNsAreValid" title="All ISBNs are Valid" new_state="antivirus" trigger="USER" before_script="" after_script="" i18n:attributes="title">
-  <action
-      url="%(content_url)s/content_status_modify?workflow_action=allISBNsAreValid"
-      category="workflow" icon="" i18n:translate="">All ISBNs are Valid</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
+ <transition transition_id="allISBNsAreValid" 
+             title="All ISBNs are Valid" 
+             new_state="antivirus" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=allISBNsAreValid"
+       category="workflow" icon="" i18n:translate="">All ISBNs are Valid</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
  </transition>
+ 
  <transition transition_id="metadataIsValid" title="Metada is Valid" new_state="" trigger="USER" before_script="" after_script="" i18n:attributes="title">
   <action url="%(content_url)s/content_status_modify?workflow_action=metadataIsValid" category="workflow" icon="" i18n:translate="">Metadata is Valid</action>
   <guard>
