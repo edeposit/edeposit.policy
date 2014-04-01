@@ -85,11 +85,13 @@ def checkISBNsStatus(wfStateInfo):
             # vsechny ISBN jsou zkontrolovane
             print "all isbns are valid"
             wft.doActionFor(epublication, 'allISBNsAreValid')
+            print "all files are virus free"
+            wft.doActionFor(epublication,'allFilesAreVirusFree')
+            print "all files has thumbnail"
+            wft.doActionFor(epublication,'allThumbnailsOK')
             pass
 
         # existuje nejake s chybou?
-        #withError = filter(lambda item: item[0]
-        
         pass
     pass
 
@@ -102,7 +104,7 @@ def submitAntivirusChecks(wfStateInfo):
     originalFiles = epublication['original-files']
 
     with api.env.adopt_user(username="system"):
-        for originalFile in originalFiles:
+        for originalFile in originalFiles.results():
             # createContentInContainer(systemMessages, 'edeposit.content.isbnvalidationrequest',
             #                          title = "Kontrola ISBN: " + isbn,
             #                          isbn = isbn
@@ -123,10 +125,11 @@ def submitExportToAleph(wfStateInfo):
     originalFiles = epublication['original-files']
 
     with api.env.adopt_user(username="system"):
-        for originalFile in originalFiles:
+        for originalFile in originalFiles.results():
             createContentInContainer(systemMessages, 'edeposit.content.alephexportrequest',
                                      title = "Export do Alephu: " + originalFile.id,
-                                     originalFileID = originalFile.id
+                                     originalFileID = originalFile.id,
+                                     isbn = originalFile.isbn,
                                  )
             pass
         pass
