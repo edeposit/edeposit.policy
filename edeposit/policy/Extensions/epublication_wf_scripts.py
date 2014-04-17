@@ -44,9 +44,8 @@ def checkISBNsStatus(wfStateInfo):
                    [epublication.isbn_souboru_publikaci] + \
                    [ii.isbn for ii in originalFiles.results()])
 
-
-    def isbnISOK(result,item):
-        k,v = item
+    def statusesForISBN(result,item):
+        isbn,messages = item
 
         def findProperMessage(result, item):
             msg = item[1]
@@ -56,32 +55,32 @@ def checkISBNsStatus(wfStateInfo):
                 result['num_of_records'].add(msg.num_of_records)
             return result
 
-        properMessages = reduce( findProperMessage, v, {'is_valid':set(), 'num_of_records': set()} )
-        # alespon jeden is_valid
-        # vsechny is_valid musi byt OK
-
-        # alespon jeden num_of_records
-        # vsechny musi byt 0
-        result[k] = properMessages
+        statuses = reduce( findProperMessage, messages, {'is_valid':set(), 'num_of_records': set()} )
+        result[isbn] = statuses
         return result
-
+        
+    statusesByISBN = reduce( statusesForISBN,
+                          itertools.groupby(systemMessages.items(), key=lambda item: item[1].isbn),
+                          dict() )
+    
     with api.env.adopt_user(username="system"):
         # for each isbn must exists request and response in system
         # messages
-        itemsByISBN = reduce( isbnISOK,
-                              itertools.groupby(systemMessages.items(), key=lambda item: item[1].isbn),
-                              dict() )
-
         # isbns = ['978-0-306-40615-7',]
         # itemsByISBN = {'978-0-306-40615-7': {'num_of_records': set([0]), 'is_valid': set([True])}}
         # statuses = itemsByISBN['978-0-306-40615-7']
         
-        def isbnISOK(isbn):
+        def isbnStatus(itemsByISBN,isbn):
             statuses = itemsByISBN.get(isbn,{'num_of_records':set(),'is_valid':set()})
-            return statuses['is_valid'] == set([True]) and statuses['num_of_records'] == set([0])
+            return { 'is_valid': statuses['is_valid'],
+                     'num_of_records': statuses['num_of_records'] }
 
-        isbnStatuses = [ (isbn,isbnISOK(isbn)) for isbn in isbns]
-        if set([ii[1] for ii in isbnStatuses]) == set([True]):
+        def statusISOK(status):
+            return (status['is_valid'] == set([True]) and status['num_of_records'] == set([0]))
+        
+        isbnsWithError = filter(lambda isbn: not statusISOK(isbnStatus(statusesByISBN,isbn)), isbns)
+        #if set([ii[1] for ii in isbnStatuses]) == set([True]):
+        if not isbnsWithError:
             # vsechny ISBN jsou zkontrolovane
             print "all isbns are valid"
             wft.doActionFor(epublication, 'allISBNsAreValid')
@@ -90,8 +89,14 @@ def checkISBNsStatus(wfStateInfo):
             print "all files has thumbnail"
             wft.doActionFor(epublication,'allThumbnailsOK')
             pass
-
-        # existuje nejake s chybou?
+        else:
+            for (isbn,status) in map( lambda isbn: (isbn, isbnStatus(statusesByISBN,isbn)), isbnsWithError):
+                if (status['num_of_records'] != set([]) and status['num_of_records'] != set([0])):
+                    # duplicitni isbn
+                    print "isbn je duplicitni: " + isbn
+                if status['is_valid'] != set([]) and status['is_valid'] != set([True]):
+                    # nevalidni zaznam
+                    print "isbn neni validni: " + isbn
         pass
     pass
 
@@ -130,6 +135,62 @@ def submitExportToAleph(wfStateInfo):
                                      title = "Export do Alephu: " + originalFile.id,
                                      originalFileID = originalFile.id,
                                      isbn = originalFile.isbn,
+                                 )
+            pass
+        pass
+
+
+def checkExportStatuses(wfStateInfo):
+    logger.info("checkExportStatuses")
+    print "check export statuses"
+    epublication = wfStateInfo.object
+    systemMessages = epublication['system-messages']
+    originalFiles = epublication['original-files']
+    wft = api.portal.get_tool('portal_workflow')
+    catalog = api.portal.get_tool('portal_catalog')
+    folder_path = '/'.join(systemMessages.getPhysicalPath())
+    exportResults = map(lambda brain: brain.getObject(), 
+                        catalog(path={'query': folder_path, 'depth': 1},
+                                portal_type = 'edeposit.content.alephexportresult')
+                    )
+    isbns = set(filter(lambda item: item, map(lambda ii: ii.isbn, originalFiles.results())))
+    isbnsInExportResults = set(map(lambda result: result.isbn, exportResults))
+    with api.env.adopt_user(username="system"):
+        # for each isbn must exists request and response in system
+        # messages
+        # isbns = ['978-0-306-40615-7',]
+        # itemsByISBN = {'978-0-306-40615-7': {'num_of_records': set([0]), 'is_valid': set([True])}}
+        # statuses = itemsByISBN['978-0-306-40615-7']
+        if isbns == isbnsInExportResults:
+            # vsechna ISBN jsou vyexportovana
+            print "all isbns are exported"
+            wft.doActionFor(epublication, 'allExportsToAlephOK')
+            pass
+        else:
+            for (isbn,status) in map( lambda isbn: (isbn, isbnStatus(statusesByISBN,isbn)), isbnsWithError):
+                if (status['num_of_records'] != set([]) and status['num_of_records'] != set([0])):
+                    # duplicitni isbn
+                    print "isbn je duplicitni: " + isbn
+                if status['is_valid'] != set([]) and status['is_valid'] != set([True]):
+                    # nevalidni zaznam
+                    print "isbn neni validni: " + isbn
+        pass
+    pass
+
+
+def submitSysNumbersSearch(wfStateInfo):
+    logger.info("submitSysNumberSearch")
+    print "submit sysnumber search"
+    epublication = wfStateInfo.object
+    systemMessages = epublication['system-messages']
+    originalFiles = epublication['original-files']
+    isbns = [ii.isbn for ii in originalFiles.results() if ii.isbn]
+
+    with api.env.adopt_user(username="system"):
+        for isbn in isbns:
+            createContentInContainer(systemMessages, 'edeposit.content.alephsearchsysnumberrequest',
+                                     title = "Zjištění sysNumber pro: " + isbn,
+                                     isbn = isbn
                                  )
             pass
         pass

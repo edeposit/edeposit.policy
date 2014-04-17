@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-31 11:37+0000\n"
-"PO-Revision-Date: 2014-03-31 13:37+0200\n"
+"POT-Creation-Date: 2014-04-03 12:34+0000\n"
+"PO-Revision-Date: 2014-04-03 14:34+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,10 @@ msgid "All ISBNs are Valid"
 msgstr "Všechna ISBN jsou v pořádku"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All SysNumbers got"
+msgstr "Máme všechna systémová čísla"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All Thumbnails Generating Passed"
 msgstr "Máme všechny náhledy vygenerovány"
 
@@ -100,7 +104,7 @@ msgstr "Schválit a poslat do katalogizace"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Approved"
-msgstr "Schváleno."
+msgstr "Schváleno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Back to Correction"
@@ -178,7 +182,7 @@ msgstr "Export do Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius"
-msgstr ""
+msgstr "Export do Krameria"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius Passed with Error"
@@ -230,7 +234,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Notify System Action"
-msgstr ""
+msgstr "Systémové oznámení"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Notify a system action"
@@ -321,6 +325,10 @@ msgid "Reviewer tasks"
 msgstr "Položky ke schválení"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Search SysNumber at Aleph"
+msgstr "Hledání SysNumber v Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Some File Antivirus Passed"
 msgstr "Antivirová kontrola jednoho souboru prošla"
 
@@ -395,6 +403,10 @@ msgstr "Kontroly pro LTP skončily s chybami."
 msgid "Validation for LTP Passed with OK"
 msgstr "Kontrola pro LTP proběhla úspěšně."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Waiting for Aleph"
+msgstr "Čekání na Aleph"
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Waiting for Approving"
 msgstr "Čeká na schválení"
@@ -414,6 +426,10 @@ msgstr "Čeká dokud akvizitor neschválí informace o producentovi."
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Waiting till Producent corrects informations about itself."
 msgstr "Čeká dokud producent neopraví svoje údaje."
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Wating till Aleph gets back SysNumber of an exported record"
+msgstr "Čekání na Aleph dokud nedodá SysNumber pro každý exporovaný záznam"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
