@@ -47,6 +47,3 @@ def withProducent(f):
             kwargs['producent'].manage_setLocalRoles(TEST_USER_ID, ('E-Deposit: Assigned Producent',))
         f(self, **kwargs)
     return wrapper
-        
-        
-    

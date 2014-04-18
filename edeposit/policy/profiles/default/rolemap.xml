@@ -1,83 +1,59 @@
 <?xml version="1.0"?>
 <rolemap>
   <roles>
-    <role name="Anonymous"/>
-    <role name="Authenticated"/>
-    <role name="Contributor"/>
-    <role name="E-Deposit: Acquisitor"/>
     <role name="E-Deposit: ISBN Agency Administrator"/>
-    <role name="E-Deposit: Producent"/>
     <role name="E-Deposit: Producent Administrator"/>
-    <role name="E-Deposit: Librarian"/>
-    <role name="E-Deposit: System"/>
-    <role name="E-Deposit: Librarian"/>
     <role name="E-Deposit: Acquisition Administrator"/>
     <role name="E-Deposit: Librarian Administrator"/>
-    <role name="E-Deposit: Assigned Producent"/>
-    <role name="E-Deposit: Assigned Librarian"/>
-    <role name="E-Deposit: Assigned Acquisitor"/>
-    <role name="E-Deposit: Assigned Producent Administrator"/>
-    <role name="Editor"/>
-    <role name="Manager"/>
-    <role name="Member"/>
-    <role name="Owner"/>
-    <role name="Publisher"/>
-    <role name="Reader"/>
-    <role name="Reviewer"/>
-    <role name="Site Administrator"/>
   </roles>
   <permissions>
     <permission name="plone.portlet.collection: Add collection portlet"
                 acquire="True">
-      <role name="Contributor"/>
-      <role name="E-Deposit: Acquisitor"/>
-      <role name="E-Deposit: ISBN Agency Administrator"/>
-      <role name="E-Deposit: Producent"/>
-      <role name="E-Deposit: Acquisition Administrator"/>
-      <role name="E-Deposit: Librarian Administrator"/>
       <role name="E-Deposit: Producent Administrator"/>
-      <role name="E-Deposit: Assigned Producent Administrator"/>
-      <role name="E-Deposit: Assigned Producent"/>
-      <role name="Editor"/>
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Publisher"/>
-      <role name="Reader"/>
-      <role name="Site Administrator"/>
+      <role name="E-Deposit: Producent Editor"/>
+      <role name="E-Deposit: Producent Contributor"/>
     </permission>
     <permission name="E-Deposit: Add ePublication"
                 acquire="True">
-      <role name="E-Deposit: ISBN Agency Administrator"/>
-      <role name="E-Deposit: Assigned Producent Administrator"/>
-      <role name="E-Deposit: Assigned Producent"/>
-      <role name="Manager"/>
-      <role name="Site Administrator"/>
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: Producent Editor"/>
+      <role name="E-Deposit: Producent Contributor"/>
+    </permission>
+    <permission name="Sharing page: Delegate roles" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+    </permission>
+    <permission name="Sharing page: Delegate Editor role" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+    </permission>
+    <permission name="Sharing page: Delegate Contributor role" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+    </permission>
+    <permission name="Sharing page: Delegate Reviewer role" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+    </permission>
+    <permission name="Change local roles" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
     </permission>
     <permission name="View" acquire="True">
-      <role name="Contributor"/>
-      <role name="E-Deposit: Acquisitor"/>
-      <role name="E-Deposit: ISBN Agency Administrator"/>
-      <role name="E-Deposit: Producent"/>
-      <role name="E-Deposit: Acquisition Administrator"/>
-      <role name="E-Deposit: Librarian Administrator"/>
       <role name="E-Deposit: Producent Administrator"/>
-      <role name="E-Deposit: Assigned Producent Administrator"/>
-      <role name="Editor"/>
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Publisher"/>
-      <role name="Reader"/>
-      <role name="Site Administrator"/>
+      <role name="E-Deposit: Producent Editor"/>
+      <role name="E-Deposit: Producent Contributor"/>
     </permission>
     <permission name="View History" acquire="True">
-      <role name="Site Administrator"/>
-      <role name="E-Deposit: Acquisitor"/>
-      <role name="E-Deposit: ISBN Agency Administrator"/>
-      <role name="E-Deposit: Producent"/>
       <role name="E-Deposit: Producent Administrator"/>
-      <role name="E-Deposit: Assigned Producent Administrator"/>
-      <role name="E-Deposit: Acquisition Administrator"/>
-      <role name="E-Deposit: Librarian Administrator"/>
+      <role name="E-Deposit: Producent Editor"/>
+      <role name="E-Deposit: Producent Contributor"/>
+
+    </permission>
+    <permission name="Add portal content" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: Producent Editor"/>
+      <role name="E-Deposit: Producent Contributor"/>
+    </permission>
+    <permission name="Modify portal content" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: Producent Editor"/>
+      <role name="E-Deposit: Producent Contributor"/>
     </permission>
   </permissions>
 </rolemap>

@@ -4,5 +4,6 @@
   <dependencies>
     <dependency>profile-Products.PloneFormGen:default</dependency>
     <dependency>profile-edeposit.content:default</dependency>
+    <dependency>profile-edeposit.user:default</dependency>
   </dependencies>
 </metadata>
