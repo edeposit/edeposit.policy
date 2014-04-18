@@ -118,6 +118,18 @@ class EDepositPolicy(PloneSandboxLayer):
         applyProfile(portal, 'edeposit.policy:default')
 
 
+class EDepositWithDiazoPolicy(EDepositPolicy):
+    def setUpZone(self, app, configurationContext):
+        super(EDepositWithDiazoPolicy,self).setUpZone(app, configurationContext)
+        import edeposit.theme
+        xmlconfig.file('configure.zcml', edeposit.theme, context=configurationContext) 
+        pass
+        
+
+    # def setUpPloneSite(self, portal):
+    #     super(EDepositWithDiazoPolicy,self).setUpPloneSite(portal)
+    #     applyProfile(portal, 'edeposit.theme:default')
+
 EDEPOSIT_POLICY_FIXTURE = EDepositPolicy()
 EDEPOSIT_POLICY_ROBOT_TESTING = FunctionalTesting(
     bases=(EDEPOSIT_POLICY_FIXTURE,
@@ -125,5 +137,13 @@ EDEPOSIT_POLICY_ROBOT_TESTING = FunctionalTesting(
            z2.ZSERVER_FIXTURE),
     name="E-Deposit Policy:Robot")
 
+EDEPOSIT_WITH_DIAZO_POLICY_FIXTURE = EDepositWithDiazoPolicy()
+EDEPOSIT_WITH_DIAZO_POLICY_ROBOT_TESTING = FunctionalTesting(
+    bases=(EDEPOSIT_WITH_DIAZO_POLICY_FIXTURE,
+           AUTOLOGIN_LIBRARY_FIXTURE,
+           z2.ZSERVER_FIXTURE),
+    name="E-Deposit With Diazo Policy:Robot")
+
 EDEPOSIT_POLICY_INTEGRATION_TESTING = IntegrationTesting( bases=(EDEPOSIT_POLICY_FIXTURE,), 
                                                           name="EDeposit:Integration")
+
