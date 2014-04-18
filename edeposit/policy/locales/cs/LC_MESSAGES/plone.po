@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-03 12:34+0000\n"
-"PO-Revision-Date: 2014-04-03 14:34+0200\n"
+"POT-Creation-Date: 2014-04-18 07:00+0000\n"
+"PO-Revision-Date: 2014-04-18 09:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -250,11 +250,11 @@ msgstr "Generování jednoho náhledu proběhlo úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "One File Thumbnail Generating with success"
-msgstr ""
+msgstr "Generování jednoho náhledu proběhlo úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "One thumbnail generating with error"
-msgstr ""
+msgstr "Generování jednoho náhledu skončilo s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Pending (%(count)d)"
@@ -334,7 +334,7 @@ msgstr "Antivirová kontrola jednoho souboru prošla"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Some File Thumbnail Generating Has not Passed"
-msgstr "Generování jednoho náhledu skončilo s chybou"
+msgstr "Generování některých náhledů skončilo s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Some exports to Aleph finished with error"

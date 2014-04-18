@@ -154,26 +154,14 @@ def checkExportStatuses(wfStateInfo):
                                 portal_type = 'edeposit.content.alephexportresult')
                     )
     isbns = set(filter(lambda item: item, map(lambda ii: ii.isbn, originalFiles.results())))
-    isbnsInExportResults = set(map(lambda result: result.isbn, exportResults))
+    isbnsInExportResults = set(filter(lambda item: item, map(lambda result: result.isbn, exportResults)))
     with api.env.adopt_user(username="system"):
-        # for each isbn must exists request and response in system
-        # messages
-        # isbns = ['978-0-306-40615-7',]
-        # itemsByISBN = {'978-0-306-40615-7': {'num_of_records': set([0]), 'is_valid': set([True])}}
-        # statuses = itemsByISBN['978-0-306-40615-7']
+        # for each isbn must exists request and response in system messages
         if isbns == isbnsInExportResults:
             # vsechna ISBN jsou vyexportovana
             print "all isbns are exported"
             wft.doActionFor(epublication, 'allExportsToAlephOK')
             pass
-        else:
-            for (isbn,status) in map( lambda isbn: (isbn, isbnStatus(statusesByISBN,isbn)), isbnsWithError):
-                if (status['num_of_records'] != set([]) and status['num_of_records'] != set([0])):
-                    # duplicitni isbn
-                    print "isbn je duplicitni: " + isbn
-                if status['is_valid'] != set([]) and status['is_valid'] != set([True]):
-                    # nevalidni zaznam
-                    print "isbn neni validni: " + isbn
         pass
     pass
 
