@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-11-04 09:33+0000\n"
-"PO-Revision-Date: 2013-11-04 10:33+0100\n"
+"POT-Creation-Date: 2014-04-18 07:00+0000\n"
+"PO-Revision-Date: 2014-04-18 09:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "Producent potvrzuje, že skončil se zadáváním."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "A workflow for ePublication"
-msgstr "Pracovní postup pro ePublikaci"
+msgstr "Pracovní proces ePublikace"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Accessing"
@@ -47,16 +47,44 @@ msgid "Acquisitor reject a producent content permanently"
 msgstr "Akvizitor odmítne producenta natrvalo."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All Files are virus free"
+msgstr "Žádný soubor neobsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All ISBNs are Valid"
+msgstr "Všechna ISBN jsou v pořádku"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All SysNumbers got"
+msgstr "Máme všechna systémová čísla"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All Thumbnails Generating Passed"
+msgstr "Máme všechny náhledy vygenerovány"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All exports to Aleph finished with success"
+msgstr "Všechny exporty do Alephu proběhly úspěšně"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All files are virus free"
+msgstr "Žádný soubor neobsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All isbns are validated. A system performs it."
+msgstr "Aplikace provede kontrolu všech ISBN."
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "An Acquisition administrator is preparing an ePublication for acquisition."
-msgstr "Administrátor akvizice připravuje ePublikaci pro akvizici."
+msgstr "Správce akvizice přiřadí ePublikace vybraným akvizitorům."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "An ePublication is provided to given libraries to access them."
-msgstr "ePublikace je poskytnuta vybraným knihovnám ke zpřístupnění."
+msgstr "Vybrané knihovny budou moci zpřístupňovat vybrané ePublikace."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "An ePublication is reviewed by Acquisitor."
-msgstr "Akvizitor kontroluje ePublikaci."
+msgstr "Akvizitor zkontroluje ePublikaci."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Antivirus Checking"
@@ -64,15 +92,7 @@ msgstr "Antivirová kontrola"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Antivirus OK"
-msgstr "Antivirus v pohodě"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Antivirus Passed OK"
-msgstr "Antivirová kontrola proběhla v pořádku."
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Antivirus Passed with Error"
-msgstr "Antivirová kontrola skončila s chybou."
+msgstr "Antivirus prošel v pořádku"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve"
@@ -80,15 +100,19 @@ msgstr "Schválit"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve and to Catalogization"
-msgstr "Schválit a ke katalogizaci"
+msgstr "Schválit a poslat do katalogizace"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Approved"
-msgstr "Schváleno."
+msgstr "Schváleno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Back to Correction"
 msgstr "Zpátky k opravě"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Back to ISBN Correction"
+msgstr "Zpátky k opravě ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Block temporarily"
@@ -122,7 +146,7 @@ msgstr "Zadávání"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Declaration with Error"
-msgstr "Zadávání s chybami"
+msgstr "Chyby v zadávání"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "E-Deposit - Single State Workflow for Producent Folder"
@@ -134,71 +158,103 @@ msgstr "E-Deposit - Pracovní postup pro producenta"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "E-Deposit ePublication Workflow"
-msgstr "Pracovní postup pro ePublikaci"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "E-Deposit producent workflow - acquisitor can reject/confirm producents."
 msgstr "E-Deposit - Pracovní postup pro producenta. Akvizitor schvaluje producenta. Může ho i odmítnout, pozastavit, nebo zablokovat."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export of one record to Aleph finished with error"
+msgstr "Export jednoho záznamu do Alephu skončil s chybou"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export of one record to Aleph finished with success"
+msgstr "Export jednoho záznamu do Alephu proběhl úspěšně"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Export of one record to Aleph submitted"
+msgstr "Poslal jsem jeden záznam k exportu do Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Aleph"
-msgstr "Export do systému Aleph"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Export to Aleph Passed with Error"
-msgstr "Export do systému Aleph skončil s chybou"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Export to Aleph Passed with OK"
-msgstr "Export do systému Aleph proběhl úspěšně"
+msgstr "Export do Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius"
-msgstr "Export do systému Kramerius"
+msgstr "Export do Krameria"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius Passed with Error"
-msgstr "Export do systému Kramerius skončil s chybou"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to Kramerius Passed with OK"
-msgstr "Export do systému Kramerius proběhl úspěšně"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LPT Passed with Error"
-msgstr "Export do systému LTP skončil s chybami"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LPT Passed with OK"
-msgstr "Export do systému LTP proběhl v pořádku"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LTP"
-msgstr "Export do systému LTP"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LTP Passed with Error"
-msgstr "Export do systému LTP skončil s chybou"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Export to LTP Passed with OK"
-msgstr "Export do systému LTP proběhl úspěšně"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "ISBN Checking"
+msgstr "Kontrola ISBN"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "ISBN Correcting"
+msgstr "Oprava ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "ISBN is OK and Acquision is OK. So it can go to catalogization."
-msgstr "ISBN je v pořádku a Akvizice také. Takže dokument může jít do Katalogizace"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "ISBN is Valid"
-msgstr "ISBN je v pořádku"
+msgstr "ISBN jsou v pořádku, akvizice proběhla dobře, můžeme jít do katalogizace."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metada is Valid"
-msgstr "Metadata jsou v pořádku"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metadata is Valid"
-msgstr "Metadata jsou v pořádku"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Notify System Action"
+msgstr "Systémové oznámení"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Notify a system action"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Antivirus Has not Passed"
+msgstr "Antivirová kontrola jednoho souboru neprošla"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Thumbnail Generating Passed"
+msgstr "Generování jednoho náhledu proběhlo úspěšně"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One File Thumbnail Generating with success"
+msgstr "Generování jednoho náhledu proběhlo úspěšně"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "One thumbnail generating with error"
+msgstr "Generování jednoho náhledu skončilo s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Pending (%(count)d)"
@@ -206,13 +262,17 @@ msgstr "Čeká (%(count)d)"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Prepare for Acquisition"
-msgstr "Příprava pro akvizici"
+msgstr "Příprava akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Previous transition"
 msgstr "Předešlá akce"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Private"
+msgstr "Privátní"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Producent fills informations about itself."
@@ -235,10 +295,6 @@ msgstr "Producent je odmítkut. A to natrvalo."
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Provides access to workflow history"
 msgstr "Poskytuje přístup k historii akcí"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
-msgid "Published"
-msgstr "Publikováno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Publishing the item makes it visible to other users."
@@ -269,12 +325,36 @@ msgid "Reviewer tasks"
 msgstr "Položky ke schválení"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Search SysNumber at Aleph"
+msgstr "Hledání SysNumber v Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some File Antivirus Passed"
+msgstr "Antivirová kontrola jednoho souboru prošla"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some File Thumbnail Generating Has not Passed"
+msgstr "Generování některých náhledů skončilo s chybou"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some exports to Aleph finished with error"
+msgstr "Některé exporty do Alephu skončily s chybou"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some file contains of a virus"
+msgstr "Některý soubor obsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some files has virus"
+msgstr "Některý soubor obsahuje virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit acquisition preparing"
-msgstr ""
+msgstr "Poslat k akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit catalogization preparing"
-msgstr "Odeslat katalogizaci"
+msgstr "Poslat ke katalogizaci"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Submit for approving"
@@ -287,16 +367,21 @@ msgid "The ID of the user who performed the previous transition"
 msgstr "ID uživatel, kdo provedl předešlou akci"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "There are some wrong ISBN. It is necessary to correct is."
+msgstr "Některá ISBN jsou špatně. Je potřeba je opravit."
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating"
-msgstr "Generování náhledu"
+msgstr "Generování náhledů"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Thumbnail Generating Passed with Error"
-msgstr "Generování náhledu skončilo s chybou"
+msgstr "Generování některých náhledů skončilo s chybou"
 
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Thumbnail Generating Passed with OK"
-msgstr "Generování náhledu proběhlo v pořádku"
+#. Default: "Visible to everyone, editable by the owner."
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Title"
+msgstr "Titul"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Acquisition"
@@ -304,23 +389,23 @@ msgstr "K akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "To Withdraw"
-msgstr "Stáhnout"
+msgstr "Zamítnout"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP"
-msgstr "Validace pro systém LTP"
+msgstr "Kontroly pro LTP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP Passed with Error"
-msgstr "Validace pro systém LTP skončila s chybou"
+msgstr "Kontroly pro LTP skončily s chybami."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Validation for LTP Passed with OK"
-msgstr "Validace pro systém LTP proběhla v pořádku"
+msgstr "Kontrola pro LTP proběhla úspěšně."
 
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
-msgid "Visible to everyone, editable by the owner."
-msgstr "Kdokoliv vidí, editovat může vlastník."
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Waiting for Aleph"
+msgstr "Čekání na Aleph"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Waiting for Approving"
@@ -343,6 +428,10 @@ msgid "Waiting till Producent corrects informations about itself."
 msgstr "Čeká dokud producent neopraví svoje údaje."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Wating till Aleph gets back SysNumber of an exported record"
+msgstr "Čekání na Aleph dokud nedodá SysNumber pro každý exporovaný záznam"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "When the previous transition was performed"
@@ -350,5 +439,5 @@ msgstr "Kdy proběhla předešlá akce"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Withdrawn"
-msgstr "Staženo"
+msgstr "Zamítnuto"
 
