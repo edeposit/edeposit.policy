@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-18 07:00+0000\n"
+"POT-Creation-Date: 2014-05-06 09:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "- Essentially a workflow with no transitions, but has a Published state, so portlets and applications that expect that state will continue to work."
 msgstr ""
@@ -58,7 +59,7 @@ msgid "All ISBNs are Valid"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "All SysNumbers got"
+msgid "All SysNumbers got from Aleph"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -75,6 +76,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All isbns are validated. A system performs it."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All sysNumbers are got from Aleph"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -138,8 +143,8 @@ msgid "Catalogization Preparing"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Comment about the last transition"
 msgstr ""
 
@@ -268,8 +273,8 @@ msgid "Prepare for Acquisition"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Previous transition"
 msgstr ""
 
@@ -294,9 +299,13 @@ msgid "Producent is rejected. It is permanent state."
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Provides access to workflow history"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+msgid "Published"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
@@ -328,7 +337,15 @@ msgid "Reviewer tasks"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Search SysNumber at Aleph"
+msgid "Search SysNumber in Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Search a sysNumber in Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+msgid "Single state workflow for ePublication Folder"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -352,6 +369,10 @@ msgid "Some files has virus"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Submit Acquisition Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit acquisition preparing"
 msgstr ""
 
@@ -364,8 +385,8 @@ msgid "Submit for approving"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "The ID of the user who performed the previous transition"
 msgstr ""
 
@@ -406,6 +427,10 @@ msgstr ""
 msgid "Validation for LTP Passed with OK"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+msgid "Visible to administrator, editor, editable by the administrator"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Waiting for Aleph"
 msgstr ""
@@ -435,8 +460,8 @@ msgid "Wating till Aleph gets back SysNumber of an exported record"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "When the previous transition was performed"
 msgstr ""
 

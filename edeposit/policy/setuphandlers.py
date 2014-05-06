@@ -2,12 +2,26 @@
 from edeposit.policy import MessageFactory as _
 from Products.CMFCore.utils import getToolByName
 from plone import api
+from zope.interface import implements
+from zope.component import adapts, queryUtility
 
-groups = (   
+from zope.container.interfaces import INameChooser
+
+from Products.PluggableAuthService.interfaces.authservice import IPropertiedUser
+
+from plone.portlets.interfaces import IPortletManager
+from plone.portlets.constants import USER_CATEGORY, GROUP_CATEGORY
+
+from plone.app.portlets.interfaces import IDefaultDashboard
+from plone.app.portlets import portlets
+
+from plone.app.portlets.storage import UserPortletAssignmentMapping, GroupDashboardPortletAssignmentMapping
+
+groups = (
     { 'group_id': 'Acquisitors',
       'title': 'E-Deposit: Acquisitors',
       'description': '',
-      'roles': []
+      'roles': ['E-Deposit: Acquisitor',]
   },
     { 'group_id': 'Acquisition Administrators',
       'title': 'E-Deposit: Acquisitor Administrators',
@@ -22,7 +36,7 @@ groups = (
     { 'group_id': 'Library Administrators',
       'title': 'E-Deposit: Librarian Administrators',
       'description': '',
-      'roles': []
+      'roles': ['E-Deposit: Librarian Administrator',]
   },
     { 'group_id': 'Producent Administrators',
       'title': 'E-Deposit: Producent Administrators',
@@ -36,6 +50,11 @@ groups = (
   },
     { 'group_id': 'Producent Editors',
       'title': 'E-Deposit: Producent Editors',
+      'description': '',
+      'roles': []
+  },
+    { 'group_id': 'RIV Reviewers',
+      'title': 'E-Deposit: RIV Reviewers',
       'description': '',
       'roles': []
   },
@@ -82,6 +101,20 @@ def createUsers(portal):
     api.group.add_user(groupname='Site Administrators', username='system')
     pass
 
+def updateGroupDashboards(portal):
+    groupid = 'Acquisitors'
+    name = 'plone.dashboard1'
+    column = queryUtility(IPortletManager,name)
+    category = column.get('group',None)
+    manager = category.get(groupid,None)
+    #import sys,pdb; pdb.Pdb(stdout=sys.__stdout__).set_trace()
+    if manager is None:
+        manager =  GroupDashboardPortletAssignmentMapping(manager=name,  category=GROUP_CATEGORY, name=groupid)
+        chooser = INameChooser(manager)
+        # for assignment in assignments:
+        #     manager[chooser.chooseName(None, assignment)] = assignment
+    pass
+    
 def importVarious(context):
     """Miscellanous steps import handle
     """
@@ -91,4 +124,5 @@ def importVarious(context):
     portal = context.getSite()
     setupGroups(portal)
     createUsers(portal)
+    #updateGroupDashboards(portal)
     #createAgreementFile(portal)
