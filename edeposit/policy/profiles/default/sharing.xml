@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
 <sharing>
  <role title="Producent Administrator" id="E-Deposit: Producent Administrator"/>
+ <role title="Producent Editor" id="E-Deposit: Producent Editor"/>
+ <role title="Acquisition Administrator" id="E-Deposit: Acquisition Administrator"/>
+ <role title="Acquisitor" id="E-Deposit: Acquisitor"/>
+ <role title="Librarian Administrator" id="E-Deposit: Librarian Administrator"/>
+ <role title="Librarian" id="E-Deposit: Librarian"/>
 </sharing>

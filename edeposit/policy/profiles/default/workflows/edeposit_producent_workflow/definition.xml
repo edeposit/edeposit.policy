@@ -12,6 +12,7 @@
     >
   <permission>Access contents information</permission>
   <permission>Change portal events</permission>
+  <permission>Add portal content</permission>
   <permission>Modify portal content</permission>
   <permission>Review portal content</permission>
   <permission>View</permission>
@@ -19,198 +20,78 @@
   <permission>E-Deposit: Add ePublication</permission>
   <permission>E-Deposit: Add ePeriodical</permission>
   <permission>E-Deposit: Add Book</permission>
-  <state state_id="approved" title="Approved" i18n:attributes="title">
-    <description i18n:translate="">Producent is approved. He can register new ePublications</description>
-    <exit-transition transition_id="block"/>
-    <exit-transition transition_id="reject"/>
-    <permission-map name="Access contents information" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Change portal events" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Modify portal content" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Request Review" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Review portal content" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="View" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Add portal content" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="plone.app.collection: Add Collection" acquired="True">
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="E-Deposit: Add ePublication" acquired="True">
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="E-Deposit: Add ePeriodical" acquired="True">
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="E-Deposit: Add Book" acquired="True">
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-  </state>
-  <state state_id="blocked" title="Blocked" i18n:attributes="title">
-    <description i18n:translate="">Producent is blocked. He cannot register new ePublications temporally.</description>
-    <exit-transition transition_id="approve"/>
-    <exit-transition transition_id="back"/>
-    <exit-transition transition_id="reject"/>
-    <permission-map name="Access contents information" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Change portal events" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Modify portal content" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Review portal content" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="View" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-  </state>
-  <state state_id="registration" title="Registration" i18n:attributes="title">
-    <description i18n:translate="">Producent fills informations about itself.</description>
-    <exit-transition transition_id="submit"/>
-    <permission-map name="plone.app.collection: Add Collection" acquired="True">
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-      <permission-role>Anonymous</permission-role>
-    </permission-map>
-    <permission-map name="E-Deposit: Add ePublication" acquired="True">
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="E-Deposit: Add ePeriodical" acquired="True">
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="E-Deposit: Add Book" acquired="True">
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Access contents information" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-      <permission-role>Anonymous</permission-role>
-    </permission-map>
-    <permission-map name="Change portal events" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Modify portal content" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>Anonymous</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-      <permission-role>Anonymous</permission-role>
-    </permission-map>
-    <permission-map name="Add portal content" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>Anonymous</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-      <permission-role>Anonymous</permission-role>
-    </permission-map>
-    <permission-map name="Request Review" acquired="True">
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Review portal content" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-      <permission-role>Anonymous</permission-role>
-    </permission-map>
-    <permission-map name="View" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-      <permission-role>Anonymous</permission-role>
-    </permission-map>
-  </state>
-  <state state_id="rejected" title="Rejected" i18n:attributes="title">
-    <description i18n:translate="">Producent is rejected. It is permanent state.</description>
-    <permission-map name="Access contents information" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Change portal events" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Modify portal content" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="Review portal content" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-    <permission-map name="View" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
-      <permission-role>Owner</permission-role>
-      <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>Site Administrator</permission-role>
-    </permission-map>
-  </state>
+  <permission>Copy or Move</permission>
+
   <state state_id="waitingForApproving" title="Waiting for Approving" i18n:attributes="title">
     <description i18n:translate="">Waiting till Acquisitor approves producent's informations.</description>
     <exit-transition transition_id="approve"/>
     <exit-transition transition_id="back"/>
     <exit-transition transition_id="block"/>
     <exit-transition transition_id="reject"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="plone.app.collection: Add Collection" acquired="False">
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add ePublication" acquired="False">
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add ePeriodical" acquired="False">
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add Book" acquired="False">
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="approved" title="Approved" i18n:attributes="title">
+    <description i18n:translate="">Producent is approved. He can register new ePublications</description>
+    <exit-transition transition_id="block"/>
+    <exit-transition transition_id="reject"/>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
     <permission-map name="Access contents information" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Owner</permission-role>
@@ -222,14 +103,21 @@
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map name="Modify portal content" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Request Review" acquired="True">
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Owner</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map name="Review portal content" acquired="True">
-      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
@@ -257,9 +145,158 @@
       <permission-role>Site Administrator</permission-role>
     </permission-map>
   </state>
+
+  <state state_id="blocked" title="Blocked" i18n:attributes="title">
+    <description i18n:translate="">Producent is blocked. He cannot register new ePublications temporally.</description>
+    <exit-transition transition_id="approve"/>
+    <exit-transition transition_id="back"/>
+    <exit-transition transition_id="reject"/>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="registration" title="Registration" i18n:attributes="title">
+    <description i18n:translate="">Producent fills informations about itself.</description>
+    <exit-transition transition_id="submit"/>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="plone.app.collection: Add Collection" acquired="True">
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add ePublication" acquired="True">
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add ePeriodical" acquired="True">
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="E-Deposit: Add Book" acquired="True">
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Anonymous</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Anonymous</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="Request Review" acquired="True">
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="rejected" title="Rejected" i18n:attributes="title">
+    <description i18n:translate="">Producent is rejected. It is permanent state.</description>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
   <state state_id="waitingForCorrection" title="Waiting for Correction" i18n:attributes="title">
     <description i18n:translate="">Waiting till Producent corrects informations about itself.</description>
     <exit-transition transition_id="submit"/>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
     <permission-map name="Access contents information" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Owner</permission-role>
@@ -291,7 +328,7 @@
       <permission-role>Site Administrator</permission-role>
     </permission-map>
   </state>
-  <transition transition_id="approve" 
+  <transition transition_id="approve"
               title="Acquisitor approves a producent content" 
               new_state="approved" 
               trigger="USER"
