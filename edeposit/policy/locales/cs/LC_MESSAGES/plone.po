@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-18 07:00+0000\n"
-"PO-Revision-Date: 2014-04-18 09:00+0200\n"
+"POT-Creation-Date: 2014-05-06 09:35+0000\n"
+"PO-Revision-Date: 2014-05-06 11:35+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "- Essentially a workflow with no transitions, but has a Published state, so portlets and applications that expect that state will continue to work."
 msgstr "- základní pracovní cyklus bez akcí. Má jeden stav - Publikováno."
@@ -55,8 +56,8 @@ msgid "All ISBNs are Valid"
 msgstr "Všechna ISBN jsou v pořádku"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "All SysNumbers got"
-msgstr "Máme všechna systémová čísla"
+msgid "All SysNumbers got from Aleph"
+msgstr "Máme všechny sysNumbers z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All Thumbnails Generating Passed"
@@ -73,6 +74,10 @@ msgstr "Žádný soubor neobsahuje virus"
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "All isbns are validated. A system performs it."
 msgstr "Aplikace provede kontrolu všech ISBN."
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "All sysNumbers are got from Aleph"
+msgstr "Máme všechny sysNumbers z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "An Acquisition administrator is preparing an ePublication for acquisition."
@@ -135,8 +140,8 @@ msgid "Catalogization Preparing"
 msgstr "Příprava katalogizace"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Comment about the last transition"
 msgstr "Komentář k poslední akci"
 
@@ -265,8 +270,8 @@ msgid "Prepare for Acquisition"
 msgstr "Příprava akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Previous transition"
 msgstr "Předešlá akce"
 
@@ -291,10 +296,14 @@ msgid "Producent is rejected. It is permanent state."
 msgstr "Producent je odmítkut. A to natrvalo."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Provides access to workflow history"
 msgstr "Poskytuje přístup k historii akcí"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+msgid "Published"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Publishing the item makes it visible to other users."
@@ -325,8 +334,16 @@ msgid "Reviewer tasks"
 msgstr "Položky ke schválení"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-msgid "Search SysNumber at Aleph"
-msgstr "Hledání SysNumber v Alephu"
+msgid "Search SysNumber in Aleph"
+msgstr "Dohledat sysNumber v Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Search a sysNumber in Aleph"
+msgstr "Dohledat sysNumber v Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+msgid "Single state workflow for ePublication Folder"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Some File Antivirus Passed"
@@ -349,6 +366,10 @@ msgid "Some files has virus"
 msgstr "Některý soubor obsahuje virus"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Submit Acquisition Preparing"
+msgstr "Dokončit přípravu akvizice"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit acquisition preparing"
 msgstr "Poslat k akvizici"
 
@@ -361,8 +382,8 @@ msgid "Submit for approving"
 msgstr "Odeslat ke schválení"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "The ID of the user who performed the previous transition"
 msgstr "ID uživatel, kdo provedl předešlou akci"
 
@@ -403,6 +424,10 @@ msgstr "Kontroly pro LTP skončily s chybami."
 msgid "Validation for LTP Passed with OK"
 msgstr "Kontrola pro LTP proběhla úspěšně."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+msgid "Visible to administrator, editor, editable by the administrator"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Waiting for Aleph"
 msgstr "Čekání na Aleph"
@@ -432,8 +457,8 @@ msgid "Wating till Aleph gets back SysNumber of an exported record"
 msgstr "Čekání na Aleph dokud nedodá SysNumber pro každý exporovaný záznam"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "When the previous transition was performed"
 msgstr "Kdy proběhla předešlá akce"
 

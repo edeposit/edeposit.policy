@@ -4,7 +4,9 @@
     i18n:domain="plone"
     i18n:attributes="title; description"
     workflow_id="edeposit_epublication_workflow" title="E-Deposit ePublication Workflow" 
-    description="A workflow for ePublication" state_variable="review_state" initial_state="declaration" 
+    description="A workflow for ePublication"
+    state_variable="review_state" 
+    initial_state="declaration" 
     manager_bypass="False"
     >
  <permission>Access contents information</permission>
@@ -22,34 +24,54 @@
 
  <state state_id="declaration" title="Declaration" i18n:attributes="title">
   <exit-transition transition_id="toAcquisition"/>
-  <permission-map name="Access contents information" acquired="True">
+  <permission-map name="Access contents information" acquired="False">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="Change portal events" acquired="True">
+  <permission-map name="Change portal events" acquired="False">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
+  <permission-map name="Modify portal content" acquired="False">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="Review portal content" acquired="True">
+  <permission-map name="Add portal content" acquired="False">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="View" acquired="True">
+  <permission-map name="E-Deposit: Add ePublication" acquired="False">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
@@ -62,7 +84,7 @@
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="plone.app.collection: Add Collection" acquired="True">
@@ -71,25 +93,25 @@
   <permission-map name="Change portal events" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
@@ -118,11 +140,11 @@
   <exit-transition transition_id="allISBNsAreValid"/>
   <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="plone.app.collection: Add Collection" acquired="False">
@@ -149,7 +171,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -202,7 +223,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
@@ -211,7 +231,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="True">
@@ -220,7 +239,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="True">
@@ -229,7 +247,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -248,7 +265,6 @@
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="plone.app.collection: Add Collection" acquired="False">
@@ -275,7 +291,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -359,7 +374,6 @@
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="plone.app.collection: Add Collection" acquired="False">
@@ -386,7 +400,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -471,7 +484,6 @@
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="plone.app.collection: Add Collection" acquired="False">
@@ -498,7 +510,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -582,63 +593,66 @@
 
  <state state_id="waitingForAleph" title="Waiting for Aleph" i18n:attributes="title">
    <description i18n:translate="">Wating till Aleph gets back SysNumber of an exported record</description>
+
    <exit-transition transition_id="allSysNumbersOK"/>
-   <exit-transition transition_id="findSysNumber"/>
+   <exit-transition transition_id="searchSysNumber"/>
+
    <permission-map name="Access contents information" acquired="False">
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="plone.app.collection: Add Collection" acquired="False">
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="False">
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
+     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
  </state>
  
  <transition transition_id="allSysNumbersOK" 
-             title="All SysNumbers got" 
+             title="All SysNumbers got from Aleph" 
              new_state="acquisitionPreparing" 
              trigger="USER" 
-             before_script="" 
+             before_script=""
              after_script=""  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=allSysNumbersOK" category="workflow" icon="" i18n:translate="">All sysNumbers are got from Aleph</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
    
  </transition>
  <transition transition_id="searchSysNumber"
-             title="Search SysNumber at Aleph" 
+             title="Search SysNumber in Aleph" 
              new_state="" 
              trigger="USER" 
              before_script="" 
              after_script="submitSysNumbersSearch"  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=searchSysNumber" category="workflow" icon="" i18n:translate="">Search a sysNumber in Aleph</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
@@ -655,13 +669,14 @@
    <description i18n:translate="">An Acquisition administrator is preparing an ePublication for acquisition.</description>
    <exit-transition transition_id="submitAcquisitionPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
+
    <permission-map name="Access contents information" acquired="False">
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
-   <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
   </permission-map>
   <permission-map name="plone.app.collection: Add Collection" acquired="False">
    <permission-role>Site Administrator</permission-role>
@@ -679,6 +694,7 @@
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -687,7 +703,6 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>E-Deposit: Producent Contributor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -699,6 +714,8 @@
              trigger="USER" 
              before_script="" 
              after_script=""  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitAcquisitionPreparing" category="workflow" icon="" i18n:translate="">Submit Acquisition Preparing</action>
+
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
@@ -707,12 +724,64 @@
  <!-- Acquisition  -->
 
  <state state_id="acquisition" title="Acquisition" i18n:attributes="title">
-  <description i18n:translate="">An ePublication is reviewed by Acquisitor.</description>
-  <exit-transition transition_id="approveAndToCatalogization"/>
-  <exit-transition transition_id="backToCorrection"/>
-  <exit-transition transition_id="metadataIsValid"/>
-  <exit-transition transition_id="toWithdraw"/>
+   <description i18n:translate="">An ePublication is reviewed by Acquisitor.</description>
+
+   <exit-transition transition_id="approveAndToCatalogization"/>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="metadataIsValid"/>
+   <exit-transition transition_id="toWithdraw"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+  </permission-map>
  </state>
+ 
+ <worklist worklist_id="waiting_for_acquisition" title="ePublications waiting for acquisition" 
+           i18n:attributes="title">
+   <description i18n:translate="">Waiting for acquisition</description>
+   <action url="%(portal_url)s/search?review_state=acquisition" 
+           category="global" icon="" i18n:translate="">Waiting for acquisition</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+   <match name="review_state" values="acquisition"/>
+ </worklist>
+
 
  <!-- accessing -->
  
@@ -725,7 +794,6 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>E-Deposit: Producent Contributor</permission-role>
      <permission-role>Site Administrator</permission-role>
    </permission-map>
    <permission-map name="Change portal events" acquired="True">
@@ -737,7 +805,6 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>E-Deposit: Producent Contributor</permission-role>
      <permission-role>Site Administrator</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="True">
@@ -746,7 +813,6 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>E-Deposit: Producent Contributor</permission-role>
      <permission-role>Site Administrator</permission-role>
    </permission-map>
    <permission-map name="Review portal content" acquired="True">
@@ -755,7 +821,6 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>E-Deposit: Producent Contributor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
    </permission-map>
@@ -765,7 +830,6 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>E-Deposit: Producent Contributor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
    </permission-map>
@@ -778,7 +842,8 @@
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
@@ -1009,6 +1074,7 @@
     <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
+
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
    <description i18n:translate="">Previous transition</description>
   <default>
