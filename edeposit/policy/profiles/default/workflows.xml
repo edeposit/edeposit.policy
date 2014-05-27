@@ -4,6 +4,7 @@
       name="title">Contains workflow definitions for your portal</property>
   <object name="comment_review_workflow" meta_type="Workflow"/>
   <object name="edeposit_epublication_workflow" meta_type="Workflow"/>
+  <object name="edeposit_originalfile_workflow" meta_type="Workflow"/>
   <object name="edeposit_epublicationfolder_workflow" meta_type="Workflow"/>
   <object name="edeposit_producent_workflow" meta_type="Workflow"/>
   <object name="edeposit_producentfolder_workflow" meta_type="Workflow"/>
@@ -82,6 +83,8 @@
     <type type_id="edeposit.content.issn"/>
     <type type_id="edeposit.content.printingfile"/>
     <type type_id="edeposit.content.previewfile"/>
-    <type type_id="edeposit.content.originalfile"/>
+    <type type_id="edeposit.content.originalfile">
+      <bound-workflow workflow_id="edeposit_originalfile_workflow"/>
+    </type>
   </bindings>
 </object>
