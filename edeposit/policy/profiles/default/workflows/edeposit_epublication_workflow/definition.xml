@@ -474,7 +474,7 @@
 
  <state state_id="exportToAleph" title="Export to Aleph" i18n:attributes="title">
    <exit-transition transition_id="exportToAlephSubmitted"/>
-   <exit-transition transition_id="exportToAlephError"/>
+   <exit-transition transition_id="alephException"/>
    <exit-transition transition_id="exportToAlephOK"/>
    <exit-transition transition_id="allExportsToAlephOK"/>
    <exit-transition transition_id="someExportsToAlephError"/>
@@ -528,14 +528,14 @@
    </guard>
  </transition>
 
- <transition transition_id="exportToAlephError" 
-             title="Export of one record to Aleph finished with error" 
+ <transition transition_id="alephException" 
+             title="Aleph service sent an error"
              new_state="" 
              trigger="USER" 
-             before_script="" 
-             after_script="" 
+             before_script=""
+             after_script=""
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephError" category="workflow" icon="" i18n:translate="">Export of one record to Aleph finished with error</action>
+   <action url="%(content_url)s/content_status_modify?workflow_action=alephException" category="workflow" icon="" i18n:translate="">Export of one record to Aleph finished with error</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>

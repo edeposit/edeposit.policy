@@ -36,11 +36,11 @@ class EDepositPolicy(PloneSandboxLayer):
         xmlconfig.file('configure.zcml', edeposit.user, context=configurationContext)
         xmlconfig.file('configure.zcml', edeposit.policy, context=configurationContext)
 
-        # # Install products that use an old-style initialize() function
-        # z2.installProduct(app, 'Products.PythonField')
-        # z2.installProduct(app, 'Products.TALESField')
-        # z2.installProduct(app, 'Products.TemplateFields')
-        # z2.installProduct(app, 'Products.PloneFormGen')
+        import collective.pfg.dexterity
+        self.loadZCML(package=collective.pfg.dexterity)
+        z2.installProduct(app, "Products.PloneFormGen")
+        z2.installProduct(app, "Products.DataGridField")
+        z2.installProduct(app, "collective.pfg.dexterity")
 
         # Define dummy request handler to replace ZPublisher
 
@@ -116,7 +116,17 @@ class EDepositPolicy(PloneSandboxLayer):
         applyProfile(portal, 'edeposit.content:default')
         applyProfile(portal, 'edeposit.user:default')
         applyProfile(portal, 'edeposit.policy:default')
+        self.applyProfile(portal, "Products.PloneFormGen:default")
+        self.applyProfile(portal, "Products.DataGridField:default")
+        self.applyProfile(portal, "collective.pfg.dexterity:default")
 
+    def testSetUp(self):
+        # XXX: How should we invalidate Dexterity fti.lookupSchema() cache?
+        import plone.dexterity.schema
+        for name in dir(plone.dexterity.schema.generated):
+            if name.startswith("plone"):
+                delattr(plone.dexterity.schema.generated, name)
+        plone.dexterity.schema.SCHEMA_CACHE.clear()
 
 class EDepositWithDiazoPolicy(EDepositPolicy):
     def setUpZone(self, app, configurationContext):
