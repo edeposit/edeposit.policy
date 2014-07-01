@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+<dc-workflow
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone"
+    i18n:attributes="title; description"
+    workflow_id="edeposit_originalfile_contributing_request_workflow" 
+    title="E-Deposit - OriginalFile Contribugint Request Workflow" 
+    description="" 
+    state_variable="review_state" 
+    initial_state="published" 
+    manager_bypass="False">
+
+ <permission>Access contents information</permission>
+ <permission>Add portal content</permission>
+ <permission>Modify portal content</permission>
+ <permission>Review portal content</permission>
+ <permission>View</permission>
+
+ <state state_id="published" i18n:attributes="title" title="Published">
+  <exit-transition transition_id="searchRecordsInAleph"/>
+  <permission-map name="Access contents information" acquired="False">
+    <permission-role>Owner</permission-role>
+    <permission-role>Manager</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+ </state>
+
+ <state state_id="choosingAnAlephRecord" i18n:attributes="title"
+        title="choosing an Aleph record">
+  <exit-transition transition_id="loadAnEPublication"/>
+  <permission-map name="Access contents information" acquired="False">
+    <permission-role>Owner</permission-role>
+    <permission-role>Manager</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+ </state>
+
+ <state state_id="contributed" i18n:attributes="title" title="">
+  <permission-map name="Access contents information" acquired="False">
+    <permission-role>Owner</permission-role>
+    <permission-role>Manager</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+ </state>
+
+ <state state_id="contributingOfAnOriginalFile" i18n:attributes="title"
+        title="contributing of an original file">
+  <exit-transition transition_id="anOriginalFileWasContributed"/>
+  <exit-transition transition_id="loadAnEPublication"/>
+  <permission-map name="Access contents information" acquired="False">
+    <permission-role>Owner</permission-role>
+    <permission-role>Manager</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+ </state>
+
+ <state state_id="loadingEPublicationFromAleph" 
+        i18n:attributes="title" 
+        title="loading ePublication from Aleph">
+  <exit-transition transition_id="contributeAnOriginalFile"/>
+  <exit-transition transition_id="loadAnEPublicationAgain"/>
+  <exit-transition transition_id="ePublicationWasLoadedFromAleph"/>
+
+  <permission-map name="Access contents information" acquired="False">
+    <permission-role>Owner</permission-role>
+    <permission-role>Manager</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="waitingForAlephResponse" i18n:attributes="title" title="waiting for Aleph response">
+  <exit-transition transition_id="gotAlephRecords"/>
+  <permission-map name="Access contents information" acquired="False">
+    <permission-role>Owner</permission-role>
+    <permission-role>Manager</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+    <permission-role>Manager</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+  </permission-map>
+ </state>
+ <transition transition_id="anOriginalFileWasContributed" i18n:attributes="title"
+             title="an original file was contributed" 
+             new_state="contributed"
+             trigger="USER" 
+             before_script="" 
+             after_script="">
+   <action url="%(content_url)s/content_status_modify?workflow_action=anOriginalFileWasContributed"
+           category="workflow"
+           icon="" 
+           i18n:translate="">An original file was contributed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="contributeAnOriginalFile" i18n:attributes="title"
+             title="contribute an original file" 
+             new_state="contributingOfAnOriginalFile" 
+             trigger="USER" 
+             before_script="" 
+             after_script="">
+   <action url="%(content_url)s/content_status_modify?workflow_action=contributeAnOriginalFile"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Contribute an original file</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="gotAlephRecords" i18n:attributes="title"
+             title="got an Aleph records" 
+             new_state="choosingAnAlephRecord" 
+             trigger="USER" 
+             before_script="" 
+             after_script="tryToChooseARecord">
+   <action url="%(content_url)s/content_status_modify?workflow_action=gotAlephRecords"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Got an Aleph records</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="loadAnEPublication" i18n:attributes="title"
+             title="load an ePublication from Aleph" 
+             new_state="loadingEPublicationFromAleph"
+             trigger="USER" 
+             before_script="" 
+             after_script="loadAnEPublication">
+   <action url="%(content_url)s/content_status_modify?workflow_action=loadAnEPublication"
+           category="workflow"
+           icon="" 
+           i18n:translate="">load an ePublication from Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="ePublicationWasLoadedFromAleph" i18n:attributes="title"
+             title="An ePublication was loaded from Aleph" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="">
+   <action url="%(content_url)s/content_status_modify?workflow_action=ePublicationWasLoadedFromAleph"
+           category="workflow"
+           icon="" 
+           i18n:translate="">An ePublication was loaded from Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+ <transition transition_id="loadAnEPublicationAgain" i18n:attributes="title"
+             title="Load an ePublication from Aleph again" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="loadAnEPublication">
+   <action url="%(content_url)s/content_status_modify?workflow_action=loadAnEPublicationAgain"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Load an ePublication from Aleph again</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="searchRecordsInAleph" i18n:attributes="title"
+             title="search records in Aleph" 
+             new_state="waitingForAlephResponse" 
+             trigger="USER" 
+             before_script="" 
+             after_script="submitSearchRequest">   
+   <action url="%(content_url)s/content_status_modify?workflow_action=searchRecordsInAleph"
+           category="workflow"
+           icon="" 
+           i18n:translate="">search records in Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="submitSearchRequest" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_contributing_request_wf_scripts"
+         function="submitSearchRequest"/> 
+
+ <script script_id="tryToChooseARecord" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_contributing_request_wf_scripts"
+         function="tryToChooseARecord"/> 
+
+ <script script_id="loadAnEPublication" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_contributing_request_wf_scripts"
+         function="loadAnEPublication"/> 
+
+ <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+   <description>Previous transition</description>
+   <default>
+     <expression>transition/getId|nothing</expression>
+   </default>
+   <guard>
+   </guard>
+ </variable>
+ <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+   <description>The ID of the user who performed the previous transition</description>
+   <default>
+     <expression>user/getId</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
+   <description>Comment about the last transition</description>
+   <default>
+     <expression>python:state_change.kwargs.get('comment', '')</expression>
+   </default>
+   <guard>
+   </guard>
+ </variable>
+ <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+   <description>Provides access to workflow history</description>
+   <default>
+     <expression>state_change/getHistory</expression>
+   </default>
+   <guard>
+     <guard-permission>Request review</guard-permission>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </variable>
+ <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
+   <description>When the previous transition was performed</description>
+   <default>
+     <expression>state_change/getDateTime</expression>
+   </default>
+   <guard>
+   </guard>
+ </variable>
+</dc-workflow>

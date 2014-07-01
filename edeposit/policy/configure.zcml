@@ -28,4 +28,6 @@
     <depends name="rolemap"/>
   </genericsetup:importStep>
 
+  <grok:grok package="." />
+
 </configure>

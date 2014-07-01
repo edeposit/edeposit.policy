@@ -24,6 +24,8 @@
 
  <state state_id="declaration" title="Declaration" i18n:attributes="title">
   <exit-transition transition_id="toAcquisition"/>
+  <exit-transition transition_id="loadedFromAleph"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
@@ -81,6 +83,7 @@
  <state state_id="declarationWithError" title="Declaration with Error" i18n:attributes="title">
   <exit-transition transition_id="toAcquisition"/>
   <exit-transition transition_id="toWithdraw"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
@@ -131,6 +134,25 @@
      <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
+
+ <transition transition_id="loadedFromAleph"
+             title="Loaded from Aleph"
+             new_state="accessing"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=loadedFromAleph"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Loaded from Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+
+
 
  <!-- ISBN Checking -->
 
@@ -214,6 +236,7 @@
  <state state_id="ISBNCorrecting" title="ISBN Correcting" i18n:attributes="title">
   <description i18n:translate="">There are some wrong ISBN. It is necessary to correct is.</description>
   <exit-transition transition_id="toAcquisition"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -259,7 +282,7 @@
   <exit-transition transition_id="antivirusOK"/>
   <exit-transition transition_id="allFilesAreVirusFree"/>
   <exit-transition transition_id="someFileHasVirus"/>
-  
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
@@ -369,6 +392,7 @@
   <exit-transition transition_id="thumbnailOK"/>
   <exit-transition transition_id="allThumbnailsOK"/>
   <exit-transition transition_id="someThumbnailError"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
@@ -478,6 +502,7 @@
    <exit-transition transition_id="exportToAlephOK"/>
    <exit-transition transition_id="allExportsToAlephOK"/>
    <exit-transition transition_id="someExportsToAlephError"/>
+   <exit-transition transition_id="notifySystemAction"/>
 
    <permission-map name="Access contents information" acquired="False">
    <permission-role>E-Deposit: Librarian</permission-role>
@@ -596,6 +621,7 @@
 
    <exit-transition transition_id="allSysNumbersOK"/>
    <exit-transition transition_id="searchSysNumber"/>
+   <exit-transition transition_id="notifySystemAction"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Librarian</permission-role>
@@ -669,7 +695,7 @@
    <description i18n:translate="">An Acquisition administrator is preparing an ePublication for acquisition.</description>
    <exit-transition transition_id="submitAcquisitionPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
-
+   <exit-transition transition_id="notifySystemAction"/>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Librarian</permission-role>
      <permission-role>Owner</permission-role>
@@ -730,7 +756,7 @@
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="metadataIsValid"/>
    <exit-transition transition_id="toWithdraw"/>
-
+   <exit-transition transition_id="notifySystemAction"/>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Librarian</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -789,6 +815,7 @@
    <description i18n:translate="">An ePublication is provided to given libraries to access them.</description>
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="notifySystemAction"/>
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: Librarian</permission-role>
      <permission-role>Owner</permission-role>
@@ -839,6 +866,7 @@
   <exit-transition transition_id="backToCorrection"/>
   <exit-transition transition_id="catalogizationPassed"/>
   <exit-transition transition_id="toWithdraw"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
@@ -871,10 +899,12 @@
  <state state_id="catalogizationPreparing" title="Catalogization Preparing" i18n:attributes="title">
   <exit-transition transition_id="submitCatalogizationPreparing"/>
   <exit-transition transition_id="toWithdraw"/>
+  <exit-transition transition_id="notifySystemAction"/>
  </state>
  <state state_id="exportToKramerius" title="Export to Kramerius" i18n:attributes="title">
   <exit-transition transition_id="exportToKrameriusError"/>
   <exit-transition transition_id="exportToKrameriusOK"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
@@ -905,6 +935,7 @@
  <state state_id="exportToLTP" title="Export to LTP" i18n:attributes="title">
   <exit-transition transition_id="exportToLTPError"/>
   <exit-transition transition_id="exportToLTPOK"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Owner</permission-role>
@@ -934,6 +965,7 @@
  <state state_id="validationForLTP" title="Validation for LTP" i18n:attributes="title">
   <exit-transition transition_id="validationForLTPError"/>
   <exit-transition transition_id="validationForLTPOK"/>
+  <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Owner</permission-role>
