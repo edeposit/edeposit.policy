@@ -65,6 +65,11 @@ groups = (
                 'E-Deposit: Producent Editor',
                 'E-Deposit: Producent Contributor']
   },
+    { 'group_id': 'System Users',
+      'title': 'E-Deposit: System Users',
+      'description': '',
+      'roles': ['E-Deposit: System',]
+  },
 )
 
 def setupGroups(portal):
@@ -87,18 +92,18 @@ def createAgreementFile(portal):
     pass
 
 def createUsers(portal):
-    if api.user.get(username="system"):
-        return
-    properties = dict(
-        fullname='E-Deposit system user',
-        location='Prague',
-    )
-    api.user.create(username="system",
-                    email="edeposit@email.cz",
-                    password="shoj98Phai9",
-                )
+    if not api.user.get(username="system"):
+        properties = dict(
+            fullname='E-Deposit system user',
+            location='Prague',
+        )
+        api.user.create(username="system",
+                        email="edeposit@email.cz",
+                        password="shoj98Phai9",
+                    )
     api.group.add_user(groupname='Administrators', username='system')
     api.group.add_user(groupname='Site Administrators', username='system')
+    api.group.add_user(groupname='System Users', username='system')
     pass
 
 def updateGroupDashboards(portal):
