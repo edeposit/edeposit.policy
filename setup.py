@@ -33,7 +33,8 @@ setup(name='edeposit.policy',
           'edeposit.content',
           'edeposit.user',
           'edeposit.theme',
-          'plone.api'
+          'plone.api',
+          'plone.jsonapi.core',
       ],
       extras_require = {
           'test': ['plone.app.testing',]
