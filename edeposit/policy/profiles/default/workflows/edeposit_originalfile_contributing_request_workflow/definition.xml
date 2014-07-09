@@ -328,7 +328,7 @@
  </transition>
  <transition transition_id="ePublicationWasLoadedFromAleph" i18n:attributes="title"
              title="An ePublication was loaded from Aleph" 
-             new_state="" 
+             new_state="contributingOfAnOriginalFile" 
              trigger="USER" 
              before_script="" 
              after_script="">

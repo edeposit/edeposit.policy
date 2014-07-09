@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-06-20 09:14+0000\n"
-"PO-Revision-Date: 2014-06-20 11:13+0200\n"
+"POT-Creation-Date: 2014-07-07 11:25+0000\n"
+"PO-Revision-Date: 2014-07-07 13:25+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -105,6 +105,10 @@ msgstr "Vybrané knihovny budou moci zpřístupňovat vybrané ePublikace."
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "An ePublication is reviewed by Acquisitor."
 msgstr "Akvizitor zkontroluje ePublikaci."
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
+msgid "An ePublication was loaded from Aleph"
+msgstr "Načetl jsem ePublikaci z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
 msgid "An original file was contributed"
@@ -298,6 +302,14 @@ msgstr "ISBN jsou v pořádku, akvizice proběhla dobře, můžeme jít do katal
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is valid. A system performs it."
 msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
+msgid "Load an ePublication from Aleph again"
+msgstr "Opět načíst ePublikaci z Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Loaded from Aleph"
+msgstr "Načetl jsem ePublikaci z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Metada is Valid"
@@ -567,10 +579,6 @@ msgstr "Kdy proběhla předešlá akce"
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Withdrawn"
 msgstr "Zamítnuto"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
-msgid "a record is choosen"
-msgstr "vybrali jsme záznam"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
 msgid "an original file was contributed"

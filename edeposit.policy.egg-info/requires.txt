@@ -7,7 +7,6 @@ edeposit.content
 edeposit.user
 edeposit.theme
 plone.api
-plone.jsonapi.core
 
 [test]
 plone.app.testing

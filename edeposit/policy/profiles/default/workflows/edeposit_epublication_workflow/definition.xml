@@ -153,7 +153,6 @@
  </transition>
 
 
-
  <!-- ISBN Checking -->
 
  <state state_id="ISBNChecking" title="ISBN Checking" i18n:attributes="title">
