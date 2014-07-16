@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-07-07 11:25+0000\n"
-"PO-Revision-Date: 2014-07-07 13:25+0200\n"
+"POT-Creation-Date: 2014-07-16 12:19+0000\n"
+"PO-Revision-Date: 2014-07-16 14:19+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -290,6 +290,10 @@ msgstr "Kontrola ISBN"
 msgid "ISBN Correcting"
 msgstr "Oprava ISBN"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "ISBN Generating"
+msgstr "Přidělení ISBN"
+
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Validation"
 msgstr "Kontrola správnosti ISBN"
@@ -452,6 +456,10 @@ msgid "Some File Thumbnail Generating Has not Passed"
 msgstr "Generování některých náhledů skončilo s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "Some ISBN need to be generated"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Some exports to Aleph finished with error"
 msgstr "Některé exporty do Alephu skončily s chybou"
@@ -511,6 +519,10 @@ msgstr "Titul"
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "To Acquisition"
 msgstr "K akvizici"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
+msgid "To Generate ISBN"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml

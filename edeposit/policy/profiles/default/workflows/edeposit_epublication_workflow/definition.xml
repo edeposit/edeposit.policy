@@ -23,6 +23,7 @@
  <!-- declaration -->
 
  <state state_id="declaration" title="Declaration" i18n:attributes="title">
+  <exit-transition transition_id="toGenerateISBN"/>
   <exit-transition transition_id="toAcquisition"/>
   <exit-transition transition_id="loadedFromAleph"/>
   <exit-transition transition_id="notifySystemAction"/>
@@ -81,6 +82,7 @@
  <!-- declaration with error -->
 
  <state state_id="declarationWithError" title="Declaration with Error" i18n:attributes="title">
+  <exit-transition transition_id="toGenerateISBN"/>
   <exit-transition transition_id="toAcquisition"/>
   <exit-transition transition_id="toWithdraw"/>
   <exit-transition transition_id="notifySystemAction"/>
@@ -135,6 +137,22 @@
    </guard>
  </transition>
 
+ <transition transition_id="toGenerateISBN"
+             title="To Generate ISBN"
+             new_state="ISBNGenerating"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=toGenerateISBN"
+           category="workflow"
+           icon="" 
+           i18n:translate="">To Generate ISBN</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
  <transition transition_id="loadedFromAleph"
              title="Loaded from Aleph"
              new_state="accessing"
@@ -151,6 +169,54 @@
      <guard-role>E-Deposit: System</guard-role>
    </guard>
  </transition>
+
+ <!-- ISBN Generating -->
+
+ <state state_id="ISBNGenerating" title="ISBN Generating" i18n:attributes="title">
+  <description i18n:translate="">Some ISBN need to be generated</description>
+  <exit-transition transition_id="backToISBNCorrection"/>
+  <exit-transition transition_id="allISBNsAreValid"/>
+  <exit-transition transition_id="notifySystemAction"/>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="plone.app.collection: Add Collection" acquired="False">
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="False">
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
 
 
  <!-- ISBN Checking -->
@@ -235,6 +301,7 @@
  <state state_id="ISBNCorrecting" title="ISBN Correcting" i18n:attributes="title">
   <description i18n:translate="">There are some wrong ISBN. It is necessary to correct is.</description>
   <exit-transition transition_id="toAcquisition"/>
+  <exit-transition transition_id="toGenerateISBN"/>
   <exit-transition transition_id="notifySystemAction"/>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>Site Administrator</permission-role>

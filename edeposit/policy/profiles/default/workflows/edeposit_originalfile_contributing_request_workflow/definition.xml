@@ -358,7 +358,7 @@
  <transition transition_id="searchRecordsInAleph" i18n:attributes="title"
              title="search records in Aleph" 
              new_state="waitingForAlephResponse" 
-             trigger="USER" 
+             trigger="AUTOMATIC" 
              before_script="" 
              after_script="submitSearchRequest">   
    <action url="%(content_url)s/content_status_modify?workflow_action=searchRecordsInAleph"
