@@ -8,6 +8,8 @@ from functools import reduce
 from Acquisition import aq_inner, aq_parent
 from five import grok
 from zope.component import queryUtility, getUtility
+from z3c.relationfield import RelationValue
+from zope.app.intid.interfaces import IIntIds
 
 from edeposit.amqp.aleph import (
     ISBNQuery, 
@@ -93,8 +95,10 @@ class SysNumberSearchRequestProducent(Producer):
 def loadAnEPublication(wfStateInfo):
     logger.info("load an ePublication")
     context = wfStateInfo.object
-    request = SearchRequest(DocumentQuery(doc_id=context.choosen_aleph_sys_number, 
-                                          library=context.choosen_aleph_library))
+    aleph_record = context.choosen_aleph_record.to_object
+    doc_id = aleph_record.aleph_sys_number
+    library = aleph_record.aleph_library
+    request = SearchRequest(DocumentQuery(doc_id=doc_id, library=library))
     producer = getUtility(IProducer, name="amqp.sysnumber-search-request")
     producer.publish(serialize(request),
                      content_type = 'application/json',
@@ -102,7 +106,7 @@ def loadAnEPublication(wfStateInfo):
                      {'UUID': json.dumps({ \
                                            'type': 'edeposit.originalfile-load-epublication-request',
                                            'value': { 'context_UID': str(context.UID()), 
-                                                      'UID': 'search-sysnumber:' + str(context.choosen_aleph_sys_number) + "/" + str(context.choosen_aleph_library)
+                                                      'UID': 'search-sysnumber:' + str(doc_id) + "/" + str(library)
                                                   }
                                        })
                   }
@@ -119,8 +123,8 @@ def tryToChooseARecord(wfStateInfo):
     if len(items) == 1:
         """ choose this record as primary """
         print "choosing this record as primary one"
-        context.choosen_aleph_sys_number = items[0].aleph_sys_number
-        context.choosen_aleph_library = items[0].aleph_library
+        intids = getUtility(IIntIds)
+        context.choosen_aleph_record = RelationValue(intids.getId(items[0]))
         wft = api.portal.get_tool('portal_workflow')
         wft.doActionFor(context, 'loadAnEPublication')
     pass
