@@ -6,7 +6,6 @@ from logging import getLogger
 import itertools
 from functools import reduce
 
-
 logger = getLogger('edeposit.originalfile.wf_scripts')
 
 def submitISBNValidation(wfStateInfo):

@@ -32,9 +32,11 @@ class EDepositPolicy(PloneSandboxLayer):
         import edeposit.policy
         import edeposit.user
         import edeposit.content
+        import plone.app.versioningbehavior
         xmlconfig.file('configure.zcml', edeposit.content, context=configurationContext) 
         xmlconfig.file('configure.zcml', edeposit.user, context=configurationContext)
         xmlconfig.file('configure.zcml', edeposit.policy, context=configurationContext)
+        xmlconfig.file('configure.zcml', plone.app.versioningbehavior, context=configurationContext)
 
         # import collective.pfg.dexterity
         # self.loadZCML(package=collective.pfg.dexterity)

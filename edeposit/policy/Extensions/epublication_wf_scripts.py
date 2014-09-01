@@ -5,6 +5,44 @@ import uuid
 from logging import getLogger
 import itertools
 from functools import reduce
+from zope.component import queryUtility, getUtility
+from z3c.relationfield import RelationValue
+from zope.app.intid.interfaces import IIntIds
+
+from edeposit.amqp.aleph import (
+    ISBNQuery, 
+    GenericQuery, 
+    CountRequest, 
+    SearchRequest, 
+    DocumentQuery,
+    ISBNValidationRequest,
+    ExportRequest
+)
+from edeposit.amqp.serializers import (
+    serialize,
+    deserialize
+)
+from edeposit.amqp.aleph.datastructures.epublication import (
+    EPublication,
+    Author
+)
+
+from edeposit.amqp.aleph.datastructures.results import (
+    ISBNValidationResult,
+    CountResult,
+    SearchResult,
+    ExportResult,
+)
+from collective.zamqp.interfaces import (
+    IProducer, 
+    IBrokerConnection,
+    IConsumer,
+    IMessageArrivedEvent
+)
+from collective.zamqp.producer import Producer
+from collective.zamqp.consumer import Consumer
+from collective.zamqp.connection import BlockingChannel
+import json
 
 
 logger = getLogger('edeposit.polici.wf_scripts')
@@ -165,20 +203,41 @@ def checkExportStatuses(wfStateInfo):
         pass
     pass
 
-
-def submitSysNumbersSearch(wfStateInfo):
-    logger.info("submitSysNumberSearch")
-    print "submit sysnumber search"
+def submitAlephRecordsLoad(wfStateInfo):
+    logger.info("submitAlephRecordsLoad")
+    print "submit aleph records load"
+    wft = api.portal.get_tool('portal_workflow')
     epublication = wfStateInfo.object
     systemMessages = epublication['system-messages']
     originalFiles = epublication['original-files']
-    isbns = [ii.isbn for ii in originalFiles.results() if ii.isbn]
+    isbns = frozenset([ii.isbn for ii in originalFiles.results() if ii.isbn])
 
+    logger.info("submitSearchRequest")
+    producer = getUtility(IProducer, name="amqp.isbn-search-request")
     with api.env.adopt_user(username="system"):
         for isbn in isbns:
-            createContentInContainer(systemMessages, 'edeposit.content.alephsearchsysnumberrequest',
-                                     title = "Zjištění sysNumber pro: " + isbn,
-                                     isbn = isbn
-                                 )
+            isbnq = ISBNQuery(isbn)
+            request = SearchRequest(isbnq)
+            producer.publish(serialize(request),
+                             content_type = 'application/json',
+                             headers = \
+                             {'UUID': json.dumps({ \
+                                                   'type': 'edeposit.epublication-load-aleph-records',
+                                                   'value': { 'context_UID': str(epublication.UID()), 
+                                                              'UID': 'search sysnumber for::' + isbn,
+                                                          }
+                                               })
+                          }
+            )
+            wft.doActionFor(epublication, 'notifySystemAction', comment="Načtení záznamů z Alephu pro: " + isbn,)
             pass
         pass
+
+def updateAlephRelatedData(wfStateInfo):
+    wft = api.portal.get_tool('portal_workflow')
+    epublication = wfStateInfo.object
+    systemMessages = epublication['system-messages']
+    originalFiles = epublication['original-files']
+    for of in originalFiles:
+        of.updateAlephRelatedData()
+        #wft.doActionFor(of,'updateAlephRelatedData')

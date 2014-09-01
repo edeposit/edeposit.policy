@@ -279,6 +279,27 @@
    </guard>
  </transition>
 
+ <transition transition_id="alephRecordLoaded"
+             title="Aleph Record Loaded"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="updateAlephRelatedData"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=alephRecordLoaded"
+           category="workflow"
+           icon=""
+           i18n:translate="">Aleph Record Loaded</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="updateAlephRelatedData" type="External Method"
+         filename="" 
+         module="edeposit.policy.epublication_wf_scripts"
+         function="updateAlephRelatedData"/> 
+
  <script script_id="submitAntivirusChecks" type="External Method"
          filename="" 
          module="edeposit.policy.epublication_wf_scripts"
@@ -660,7 +681,7 @@
    </guard>
  </transition>
 
- <transition transition_id="someExportsToAlephError" 
+ <transition transition_id="someExportsToAlephError"
              title="Some exports to Aleph finished with error" 
              new_state="declarationWithError"
              trigger="USER" 
@@ -685,9 +706,10 @@
  <state state_id="waitingForAleph" title="Waiting for Aleph" i18n:attributes="title">
    <description i18n:translate="">Wating till Aleph gets back SysNumber of an exported record</description>
 
-   <exit-transition transition_id="allSysNumbersOK"/>
-   <exit-transition transition_id="searchSysNumber"/>
+   <exit-transition transition_id="allOriginalFilesHaveRelatedAlephRecord"/>
+   <exit-transition transition_id="loadAlephRecords"/>
    <exit-transition transition_id="notifySystemAction"/>
+   <exit-transition transition_id="alephRecordLoaded"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Librarian</permission-role>
@@ -726,34 +748,39 @@
    </permission-map>
  </state>
  
- <transition transition_id="allSysNumbersOK" 
-             title="All SysNumbers got from Aleph" 
-             new_state="acquisitionPreparing" 
-             trigger="USER" 
+ <transition transition_id="allOriginalFilesHaveRelatedAlephRecord" 
+             title="All original files have related aleph record" 
+             new_state="acquisitionPreparing"
+             trigger="AUTOMATIC"
              before_script=""
              after_script=""  i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=allSysNumbersOK" category="workflow" icon="" i18n:translate="">All sysNumbers are got from Aleph</action>
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=allOriginalFilesHaveRelatedAlephRecord"
+       category="workflow" icon="" i18n:translate="">All original files have related aleph record</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
+     <guard-expression>here/allOriginalFilesHaveRelatedAlephRecord</guard-expression>
    </guard>
-   
  </transition>
- <transition transition_id="searchSysNumber"
-             title="Search SysNumber in Aleph" 
+
+ <transition transition_id="loadAlephRecords"
+             title="Load Aleph Records from Aleph" 
              new_state="" 
              trigger="USER" 
              before_script="" 
-             after_script="submitSysNumbersSearch"  i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=searchSysNumber" category="workflow" icon="" i18n:translate="">Search a sysNumber in Aleph</action>
+             after_script="submitAlephRecordsLoad"  i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=loadAlephRecords"
+       category="workflow" icon="" i18n:translate="">Load Aleph Records from Aleph</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
  
- <script script_id="submitSysNumbersSearch" type="External Method"
+ <script script_id="submitAlephRecordsLoad" type="External Method"
          filename="" 
          module="edeposit.policy.epublication_wf_scripts"
-         function="submitSysNumbersSearch"/> 
+         function="submitAlephRecordsLoad"/> 
 
  <!-- acquisition preparing -->
 
@@ -803,7 +830,7 @@
  <transition transition_id="submitAcquisitionPreparing" 
              title="Submit acquisition preparing" 
              new_state="acquisition" 
-             trigger="USER" 
+             trigger="AUTOMATIC" 
              before_script="" 
              after_script=""  i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=submitAcquisitionPreparing" category="workflow" icon="" i18n:translate="">Submit Acquisition Preparing</action>
