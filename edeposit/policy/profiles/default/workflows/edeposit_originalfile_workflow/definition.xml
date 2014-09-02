@@ -101,9 +101,9 @@
  <transition transition_id="toAcquisition"
              title="To Acquisition"
              new_state="antivirus"
-             trigger="USER"
+             trigger="AUTOMATIC"
              before_script=""
-             after_script=""
+             after_script="updateRelatedItems"
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=toAcquisition"
            category="workflow"
@@ -149,6 +149,11 @@
   </permission-map>
  </state>
  
+ <script script_id="updateRelatedItems" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="updateRelatedItems"/> 
+
  <script script_id="submitAntivirusChecks" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"

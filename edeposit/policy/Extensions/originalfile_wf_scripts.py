@@ -5,9 +5,21 @@ import uuid
 from logging import getLogger
 import itertools
 from functools import reduce
+from zope.app.intid.interfaces import IIntIds
+from z3c.relationfield import RelationValue
+from Acquisition import aq_inner, aq_parent
+from zope.component import queryUtility, getUtility
 
 logger = getLogger('edeposit.originalfile.wf_scripts')
 
+def updateRelatedItems(wfStateInfo):
+    logger.info("updateRelatedItems")
+    print "update related items for original file"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    intids = getUtility(IIntIds)
+    originalfile.relatedItems = [RelationValue(intids.getId(epublication))]
+    
 def submitISBNValidation(wfStateInfo):
     logger.info("submitISBNValidation")
     print "submit isbn validation"
