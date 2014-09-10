@@ -371,11 +371,6 @@
    </permission-map>
  </state>
  
- <script script_id="updateRelatedItems" type="External Method"
-         filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
-         function="updateRelatedItems"/> 
-
  <script script_id="submitAntivirusCheck" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
@@ -789,6 +784,50 @@
   </permission-map>
  </state>
 
+ <state state_id="catalogizationPreparing" 
+        title="Prepare for Catalogization" 
+        i18n:attributes="title">
+   <description i18n:translate="">An Catalogization administrator is preparing an ePublication for catalogization.</description>
+   <exit-transition transition_id="submitCatalogizationPreparing"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Catalogization Administrator</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+
  <transition transition_id="submitDeclaration" 
              title="Declaration is finished" 
              new_state="ISBNValidation" 
@@ -809,7 +848,7 @@
  <transition transition_id="submitAcquisitionPreparing" 
              title="Submit acquisition preparing" 
              new_state="acquisition" 
-             trigger="USER" 
+             trigger="AUTOMATIC" 
              before_script="" 
              after_script=""  i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=submitAcquisitionPreparing" category="workflow" icon="" i18n:translate="">Submit Acquisition Preparing</action>
@@ -824,9 +863,9 @@
  <state state_id="acquisition" title="Acquisition" i18n:attributes="title">
    <description i18n:translate="">An ePublication is reviewed by Acquisitor.</description>
 
-   <exit-transition transition_id="approveAndToCatalogization"/>
+   <exit-transition transition_id="toISBNGenerating"/>
+   <exit-transition transition_id="toCatalogizationPreparing"/>
    <exit-transition transition_id="backToCorrection"/>
-   <exit-transition transition_id="metadataIsValid"/>
    <exit-transition transition_id="toWithdraw"/>
 
    <permission-map name="Access contents information" acquired="False">
@@ -973,22 +1012,38 @@
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="" i18n:translate="">To Withdraw</action>
    <guard>
-     <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator</guard-role>
+     <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role>
    </guard>
  </transition>
 
 
- <transition transition_id="approveAndToCatalogization" 
-             title="Approve and to Catalogization"
+ <transition transition_id="toCatalogizationPreparing" 
+             title="Approve metadata by Acquisition"
              new_state="catalogizationPreparing" 
              trigger="USER" 
              before_script="" 
              after_script="" 
              i18n:attributes="title">
   <description i18n:translate="">ISBN is OK and Acquision is OK. So it can go to catalogization.</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=approveToCatalogization" category="workflow" icon="" i18n:translate="">Approve</action>
+  <action url="%(content_url)s/content_status_modify?workflow_action=toCatalogizationPreparing" category="workflow" icon="" i18n:translate="">Approve</action>
   <guard>
-   <guard-role>E-Deposit: Acquisitor</guard-role>
+   <guard-permission>Review portal content</guard-permission>
+   <quard-expression>python: here.isbn</quard-expression>
+  </guard>
+ </transition>
+
+ <transition transition_id="toISBNGenerating" 
+             title="Approve metadata by Acquisition"
+             new_state="ISBNGeneration" 
+             trigger="AUTOMATIC" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+  <description i18n:translate="">ISBN is OK and Acquision is OK. So it can go to catalogization.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=toISBNGenerating" category="workflow" icon="" i18n:translate="">Approve</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+   <guard-expression>python: not here.isbn</guard-expression>
   </guard>
  </transition>
 
