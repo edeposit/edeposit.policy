@@ -69,7 +69,7 @@ class EDepositPolicy(PloneSandboxLayer):
         for producer in sm.getAllUtilitiesRegisteredFor(IProducer):
             if not producer.connection_id in connections:
                 connection = BrokerConnection(producer.connection_id,
-                                              virtual_host="aleph",
+                                              virtual_host=producer.connection_id,
                 )
                 sm.registerUtility(connection, provided=IBrokerConnection,
                                    name=connection.connection_id)
@@ -78,7 +78,7 @@ class EDepositPolicy(PloneSandboxLayer):
         for consumer in sm.getAllUtilitiesRegisteredFor(IConsumer):
             if not consumer.connection_id in connections:
                 connection = BrokerConnection(consumer.connection_id,
-                                              virtual_host="aleph"
+                                              virtual_host=consumer.consumer_id
                 )
                 sm.registerUtility(connection, provided=IBrokerConnection,
                                    name=connection.connection_id)

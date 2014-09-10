@@ -48,18 +48,18 @@ import json
 
 logger = getLogger('edeposit.originalfile_contributing_request.wf_scripts')
 
-class ISBNSearchRequestProducent(Producer):
-    grok.name('amqp.isbn-search-request')
+# class ISBNSearchRequestProducent(Producer):
+#     grok.name('amqp.isbn-search-request')
 
-    connection_id = "aleph"
-    exchange = "search"
-    serializer = "text/plain"
-    exchange_type = "topic"
-    exchange_durable = True
-    auto_delete = False
-    durable = True
-    routing_key = "request"
-    pass
+#     connection_id = "aleph"
+#     exchange = "search"
+#     serializer = "text/plain"
+#     exchange_type = "topic"
+#     exchange_durable = True
+#     auto_delete = False
+#     durable = True
+#     routing_key = "request"
+#     pass
 
 def submitSearchRequest(wfStateInfo):
     logger.info("submitSearchRequest")
@@ -78,19 +78,6 @@ def submitSearchRequest(wfStateInfo):
                                        })
                   }
                  )
-
-class SysNumberSearchRequestProducent(Producer):
-    grok.name('amqp.sysnumber-search-request')
-
-    connection_id = "aleph"
-    exchange = "search"
-    serializer = "text/plain"
-    exchange_type = "topic"
-    exchange_durable = True
-    auto_delete = False
-    durable = True
-    routing_key = "request"
-    pass
 
 def loadAnEPublication(wfStateInfo):
     logger.info("load an ePublication")

@@ -8,9 +8,71 @@ from functools import reduce
 from zope.app.intid.interfaces import IIntIds
 from z3c.relationfield import RelationValue
 from Acquisition import aq_inner, aq_parent
-from zope.component import queryUtility, getUtility
+from zope.component import queryUtility, getUtility, getAdapter
+import base64
+
+from edeposit.content.amqp import IAMQPSender, IAMQPHandler
+
+import json
+from five import grok
 
 logger = getLogger('edeposit.originalfile.wf_scripts')
+
+# (occur-1 "def " nil (list (current-buffer)) "*Occur: originalfile_wf_scripts.py/def*")
+# (occur-1 "class " nil (list (current-buffer)) "*Occur: originalfile_wf_scripts.py/class*")
+
+def submitAntivirusCheck(wfStateInfo):
+    logger.info("submitAntivirusChecks")
+    with api.env.adopt_user(username="system"):
+        originalfile = wfStateInfo.object
+        epublication = aq_parent(aq_inner(originalfile))
+        getAdapter(originalfile,IAMQPSender,name="antivirus-check").send()
+        wft = api.portal.get_tool('portal_workflow')
+        wft.doActionFor(epublication, 
+                        'notifySystemAction', 
+                        comment=u"Antivirová kontrola pro: " + originalfile.file.filename)
+        pass
+
+def submitISBNValidation(wfStateInfo):
+    print "submitISBNValidation"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile,IAMQPSender,name="isbn-validate").send()
+        comment=u"Automatická kontrola ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
+        wft = api.portal.get_tool('portal_workflow')
+        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+
+def submitISBNDuplicityCheck(wfStateInfo):
+    print "submitISBN Duplicity Check"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="isbn-duplicity-check").send()
+        comment=u"Automatická kontrola duplicity ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
+        wft = api.portal.get_tool('portal_workflow')
+        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+
+def submitExportToAleph(wfStateInfo):
+    print "submit export to Aleph"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="export-to-aleph").send()
+        comment=u"Export do Alephu ISBN:%s" % (originalfile.isbn, )
+        wft = api.portal.get_tool('portal_workflow')
+        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+
+def submitSysNumbersSearch(wfStateInfo):
+    logger.info("submitSysNumberSearch")
+    print "submit sysnumber search"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="sysnumber-aleph-search").send()
+        comment=u"Dohledat sysNumber v Alephu ISBN:%s" % (originalfile.isbn, )
+        wft = api.portal.get_tool('portal_workflow')
+        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def updateRelatedItems(wfStateInfo):
     logger.info("updateRelatedItems")
@@ -19,30 +81,6 @@ def updateRelatedItems(wfStateInfo):
     epublication = aq_parent(aq_inner(originalfile))
     intids = getUtility(IIntIds)
     originalfile.relatedItems = [RelationValue(intids.getId(epublication))]
-    
-def submitISBNValidation(wfStateInfo):
-    logger.info("submitISBNValidation")
-    print "submit isbn validation"
-    originalfile = wfStateInfo.object
-    systemMessages = epublication['system-messages']
-    originalFiles = epublication['original-files']
-    isbns = filter(lambda item: item,
-                   [epublication.isbn_souboru_publikaci] + \
-                   [ii.isbn for ii in originalFiles.results()])
-
-    with api.env.adopt_user(username="system"):
-        for isbn in isbns:
-            createContentInContainer(systemMessages, 'edeposit.content.isbnvalidationrequest',
-                                     title = "Kontrola ISBN: " + isbn,
-                                     isbn = isbn
-                                 )
-            
-            createContentInContainer(systemMessages,  'edeposit.content.isbncountrequest',
-                                     title = u"Zjištění duplicity ISBN: " + isbn,
-                                     isbn = isbn
-                                 )
-            pass
-        pass
 
 def checkISBNsStatus(wfStateInfo):
     logger.info("checkISBNsStatus")
@@ -51,9 +89,6 @@ def checkISBNsStatus(wfStateInfo):
     systemMessages = epublication['system-messages']
     originalFiles = epublication['original-files']
     wft = api.portal.get_tool('portal_workflow')
-    isbns = filter(lambda item: item,
-                   [epublication.isbn_souboru_publikaci] + \
-                   [ii.isbn for ii in originalFiles.results()])
 
     def statusesForISBN(result,item):
         isbn,messages = item
@@ -111,46 +146,6 @@ def checkISBNsStatus(wfStateInfo):
         pass
     pass
 
-
-def submitAntivirusChecks(wfStateInfo):
-    logger.info("submitAntivirusChecks")
-    print "submit antivirus checks"
-    epublication = wfStateInfo.object
-    systemMessages = epublication['system-messages']
-    originalFiles = epublication['original-files']
-
-    with api.env.adopt_user(username="system"):
-        for originalFile in originalFiles.results():
-            # createContentInContainer(systemMessages, 'edeposit.content.isbnvalidationrequest',
-            #                          title = "Kontrola ISBN: " + isbn,
-            #                          isbn = isbn
-            #                      )
-            
-            # createContentInContainer(systemMessages,  'edeposit.content.isbncountrequest',
-            #                          title = u"Zjištění duplicity ISBN: " + isbn,
-            #                          isbn = isbn
-            #                      )
-            pass
-        pass
-
-def submitExportToAleph(wfStateInfo):
-    logger.info("submit export to Aleph")
-    print "submit export to Aleph"
-    epublication = wfStateInfo.object
-    systemMessages = epublication['system-messages']
-    originalFiles = epublication['original-files']
-
-    with api.env.adopt_user(username="system"):
-        for originalFile in originalFiles.results():
-            createContentInContainer(systemMessages, 'edeposit.content.alephexportrequest',
-                                     title = "Export do Alephu: " + originalFile.id,
-                                     originalFileID = originalFile.id,
-                                     isbn = originalFile.isbn,
-                                 )
-            pass
-        pass
-
-
 def checkExportStatuses(wfStateInfo):
     logger.info("checkExportStatuses")
     print "check export statuses"
@@ -177,19 +172,3 @@ def checkExportStatuses(wfStateInfo):
     pass
 
 
-def submitSysNumbersSearch(wfStateInfo):
-    logger.info("submitSysNumberSearch")
-    print "submit sysnumber search"
-    epublication = wfStateInfo.object
-    systemMessages = epublication['system-messages']
-    originalFiles = epublication['original-files']
-    isbns = [ii.isbn for ii in originalFiles.results() if ii.isbn]
-
-    with api.env.adopt_user(username="system"):
-        for isbn in isbns:
-            createContentInContainer(systemMessages, 'edeposit.content.alephsearchsysnumberrequest',
-                                     title = "Zjištění sysNumber pro: " + isbn,
-                                     isbn = isbn
-                                 )
-            pass
-        pass
