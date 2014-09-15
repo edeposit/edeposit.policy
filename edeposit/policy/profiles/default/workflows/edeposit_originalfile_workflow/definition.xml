@@ -831,7 +831,7 @@
  <transition transition_id="submitDeclaration" 
              title="Declaration is finished" 
              new_state="ISBNValidation" 
-             trigger="AUTOMATIC" 
+             trigger="USER" 
              before_script="" 
              after_script="submitISBNValidation"  
              i18n:attributes="title">
