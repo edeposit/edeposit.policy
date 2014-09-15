@@ -26,12 +26,12 @@ groups = (
     { 'group_id': 'Acquisition Administrators',
       'title': 'E-Deposit: Acquisitor Administrators',
       'description': 'Users that can assign work for acquisitors',
-      'roles': []
+      'roles': ['E-Deposit: Acquisitor Administrator',]
   },
     { 'group_id': 'Librarians',
       'title': 'E-Deposit: Librarians',
       'description': '',
-      'roles': []
+      'roles': ['E-Deposit: Librarian',]
   },
     { 'group_id': 'Library Administrators',
       'title': 'E-Deposit: Librarian Administrators',
@@ -79,7 +79,12 @@ def setupGroups(portal):
     for group in groups:
         if not group['group_id'] in group_ids:
             gtool.addGroup(group['group_id'], roles=group['roles'])
-            gtool.editGroup(group['group_id'], title = group['title'], description=group['description'])
+            pass
+        gtool.editGroup(group['group_id'], 
+                        title = group['title'], 
+                        description=group['description'],
+                        roles=group['roles']
+                    )
 
 def createAgreementFile(portal):
     setup_tool = portal.portal_setup
@@ -112,7 +117,6 @@ def updateGroupDashboards(portal):
     column = queryUtility(IPortletManager,name)
     category = column.get('group',None)
     manager = category.get(groupid,None)
-    #import sys,pdb; pdb.Pdb(stdout=sys.__stdout__).set_trace()
     if manager is None:
         manager =  GroupDashboardPortletAssignmentMapping(manager=name,  category=GROUP_CATEGORY, name=groupid)
         chooser = INameChooser(manager)
