@@ -19,6 +19,14 @@
       <role name="E-Deposit: Acquisitor"/>
       <role name="E-Deposit: System"/>
     </permission>
+    <permission name="E-Deposit: Edit Producent Editors" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: System"/>
+    </permission>
+    <permission name="E-Deposit: Edit Producent Administrators" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: System"/>
+    </permission>
     <permission name="E-Deposit: Add ePublication" acquire="True">
       <role name="E-Deposit: Producent Administrator"/>
       <role name="E-Deposit: Producent Editor"/>

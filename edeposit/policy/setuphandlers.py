@@ -129,5 +129,11 @@ def importVarious(context):
     portal = context.getSite()
     setupGroups(portal)
     createUsers(portal)
+    linkName='catalogization-work-plans'
+    if linkName not in portal.objectIds():
+        portal.invokeFactory('edeposit.content.catalogizationworkplansfolder',  
+                             linkName,  
+                             title=u"Plány práce pro katalogizaci")
+
     #updateGroupDashboards(portal)
     #createAgreementFile(portal)

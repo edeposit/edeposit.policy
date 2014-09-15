@@ -101,20 +101,25 @@
     <permission-map name="Change portal events" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="Modify portal content" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="Request Review" acquired="True">
-      <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+      <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="Review portal content" acquired="True">
       <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
       <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="View" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
