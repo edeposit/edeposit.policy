@@ -74,6 +74,17 @@ def submitSysNumbersSearch(wfStateInfo):
         wft = api.portal.get_tool('portal_workflow')
         wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
+def submitThumbnailGenerating(wfStateInfo):
+    logger.info("submitThumbnailGenerating")
+    print "submit thumbnail generating"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="generate-thumbnail").send()
+        comment=u"Generovat náhled pro soubor:%s" % (originalfile.file.filename, )
+        wft = api.portal.get_tool('portal_workflow')
+        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+    
 def updateRelatedItems(wfStateInfo):
     logger.info("updateRelatedItems")
     print "update related items for original file"

@@ -55,6 +55,7 @@
     <permission name="View" acquire="True">
       <role name="E-Deposit: Producent Administrator"/>
       <role name="E-Deposit: Acquisitor"/>
+      <role name="E-Deposit: Librarian Administrator"/>
       <role name="E-Deposit: System"/>
     </permission>
     <permission name="View History" acquire="True">

@@ -21,7 +21,11 @@
  <state state_id="declaration" 
         title="Declaration"
         i18n:attributes="title">
-   <exit-transition transition_id="submitDeclaration"/>
+   
+   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
+   <exit-transition transition_id="submitDeclarationToAntivirus"/>
+   <exit-transition transition_id="submitDeclarationToISBNGenerating"/>
+
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -123,6 +127,7 @@
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="antivirusOKThumbnail"/>
    <exit-transition transition_id="antivirusOKAleph"/>
+   <exit-transition transition_id="antivirusOKISBNGeneration"/>
    <exit-transition transition_id="antivirusError"/>
 
    <permission-map name="Access contents information" acquired="False">
@@ -179,9 +184,9 @@
  <transition transition_id="antivirusOKThumbnail" 
              title="Antivirus OK" 
              new_state="thumbnailGenerating" 
-             trigger="USER" 
+             trigger="USER"
              before_script="" 
-             after_script="submitThumbnailGenerating" 
+             after_script="submitThumbnailGenerating"
              i18n:attributes="title">
    <description>File Antivirus Passed</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKThumbnail" 
@@ -194,21 +199,57 @@
    </guard>
  </transition>
 
+ <transition transition_id="submitISBNGeneration" 
+             title="ISBN is generated"
+             new_state="exportToAleph" 
+             trigger="USER" 
+             before_script="" 
+             after_script="submitExportToAleph"
+             i18n:attributes="title">
+   <description>ISBN is generated</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitISBNGeneration" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">ISBN is generated</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <quard-expression>python: here.isbn</quard-expression>
+   </guard>
+ </transition>
+
  <transition transition_id="antivirusOKAleph" 
              title="Antivirus OK"
              new_state="exportToAleph" 
              trigger="USER" 
              before_script="" 
-             after_script="submitExportToAleph" 
+             after_script="submitExportToAleph"
              i18n:attributes="title">
    <description>File Antivirus Passed</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKThumbnailAleph" 
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKAleph" 
            category="workflow" 
            icon="" 
            i18n:translate="">File Antivirus Passed</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: not here.needsThumbnailGeneration()</quard-expression>
+     <quard-expression>python: not here.needsThumbnailGeneration() and here.isbn</quard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="antivirusOKISBNGeneration" 
+             title="Antivirus OK"
+             new_state="ISBNGeneration" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""
+             i18n:attributes="title">
+   <description>File Antivirus Passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKISBNGeneration" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">File Antivirus Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <quard-expression>python: not here.isbn and not here.needsThumbnailGeneration()</quard-expression>
    </guard>
  </transition>
  
@@ -465,30 +506,30 @@
  </state>
  
  <transition transition_id="thumbnailError" 
-             title="Thumbnail Generating Passed with Error" 
+             title="Thumbnail Generating finished with Error" 
              new_state="" 
              trigger="USER" 
              before_script="" 
              after_script="" 
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailError" 
-           category="workflow" icon="" i18n:translate="">One thumbnail generating with error</action>
+           category="workflow" icon="" i18n:translate="">Thumbnail generating with error</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
  
  <transition transition_id="thumbnailOK" 
-             title="One File Thumbnail Generating Passed" 
-             new_state="" 
+             title="Thumbnail Generating Passed" 
+             new_state="exportToAleph"
              trigger="USER" 
              before_script="" 
-             after_script=""  
+             after_script="submitExportToAleph"  
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" 
            category="workflow" 
            icon=""
-           i18n:translate="">One File Thumbnail Generating with success</action>
+           i18n:translate="">Thumbnail Generating with success</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
@@ -499,6 +540,12 @@
          filename=""
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitExportToAleph"/>
+
+<script script_id="submitThumbnailGenerating"
+         type="External Method"
+         filename=""
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitThumbnailGenerating"/>
 
  <!--  Export to Aleph -->
 
@@ -828,7 +875,7 @@
   </permission-map>
  </state>
 
- <transition transition_id="submitDeclaration" 
+ <transition transition_id="submitDeclarationToISBNValidation" 
              title="Declaration is finished" 
              new_state="ISBNValidation" 
              trigger="USER" 
@@ -836,12 +883,49 @@
              after_script="submitISBNValidation"  
              i18n:attributes="title">
    <action
-       url="%(content_url)s/content_status_modify?workflow_action=submitDeclaration" 
+       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToISBNValidation" 
        category="workflow" 
        icon="" 
        i18n:translate="">Submit Acquisition Preparing</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
+     <quard-expression>python: here.isbn</quard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitDeclarationToAntivirus" 
+             title="Declaration is finished"
+             new_state="antivirus" 
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAntivirusCheck"  
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToAntivirus" 
+       category="workflow" 
+       icon=""
+       i18n:translate="">Submit Acquisition Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <quard-expression>python: (not here.isbn) and here.file</quard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitDeclarationToISBNGenerating" 
+             title="Declaration is finished"
+             new_state="ISBNGeneration" 
+             trigger="USER" 
+             before_script="" 
+             after_script=""  
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToISBNGenerating" 
+       category="workflow" 
+       icon=""
+       i18n:translate="">Submit Acquisition Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <quard-expression>python: (not here.isbn) and (not here.file)</quard-expression>
    </guard>
  </transition>
  
@@ -863,7 +947,6 @@
  <state state_id="acquisition" title="Acquisition" i18n:attributes="title">
    <description i18n:translate="">An ePublication is reviewed by Acquisitor.</description>
 
-   <exit-transition transition_id="toISBNGenerating"/>
    <exit-transition transition_id="toCatalogizationPreparing"/>
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="toWithdraw"/>
@@ -918,6 +1001,18 @@
    <match name="review_state" values="acquisition"/>
  </worklist>
 
+ <worklist worklist_id="originalfiles_waiting_for_isbn_generation" 
+           title="Original files waiting for ISBN Generation" 
+           i18n:attributes="title">
+   <description i18n:translate="">Original files waiting for ISBN generation</description>
+   <action url="%(portal_url)s/search?review_state=ISBNGeneration" 
+           category="global" icon="" i18n:translate="">Waiting for ISBN Generation</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+   <match name="review_state" values="ISBNGeneration"/>
+ </worklist>
+ 
  <state state_id="exportToLTP" title="Export to LTP" i18n:attributes="title">
   <exit-transition transition_id="exportToLTPError"/>
   <exit-transition transition_id="exportToLTPOK"/>
@@ -1016,7 +1111,6 @@
    </guard>
  </transition>
 
-
  <transition transition_id="toCatalogizationPreparing" 
              title="Approve metadata by Acquisition"
              new_state="catalogizationPreparing" 
@@ -1029,21 +1123,6 @@
   <guard>
    <guard-permission>Review portal content</guard-permission>
    <quard-expression>python: here.isbn</quard-expression>
-  </guard>
- </transition>
-
- <transition transition_id="toISBNGenerating" 
-             title="Approve metadata by Acquisition"
-             new_state="ISBNGeneration" 
-             trigger="AUTOMATIC" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-  <description i18n:translate="">ISBN is OK and Acquision is OK. So it can go to catalogization.</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=toISBNGenerating" category="workflow" icon="" i18n:translate="">Approve</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-   <guard-expression>python: not here.isbn</guard-expression>
   </guard>
  </transition>
 
