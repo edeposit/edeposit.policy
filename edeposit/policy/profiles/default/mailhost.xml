@@ -7,4 +7,6 @@
 	smtp_queue="False" 
 	smtp_queue_directory="/tmp"
 	smtp_uid=""
+        email_from_name="E-Deposit"
+        email_from_address="edeposit@nkp.cz"
 	/>
