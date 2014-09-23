@@ -85,7 +85,7 @@
 
    <exit-transition transition_id="sendEmailToISBNAgency"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
-   <exit-transition transition_id="sendEmailToCatalogization"/>
+   <exit-transition transition_id="sendEmailToCataloguing"/>
    <exit-transition transition_id="recreateCollections"/>
    <exit-transition transition_id="publish"/>
 
@@ -242,28 +242,28 @@
          module="edeposit.policy.producentfolder_wf_scripts"
          function="sendEmailToISBNAgency"/> 
  
- <transition transition_id="sendEmailToCatalogization"
-             title="Send email to Catalogization"
+ <transition transition_id="sendEmailToCataloguing"
+             title="Send email to Cataloguing"
              new_state=""
              trigger="USER"
              before_script=""
-             after_script="sendEmailToCatalogization"
+             after_script="sendEmailToCataloguing"
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToCatalogization"
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToCataloguing"
            category="workflow"
            icon="" 
-           i18n:translate="">Send Email to Catalogization</action>
+           i18n:translate="">Send Email to Cataloguing</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
 
  
- <script script_id="sendEmailToCatalogization" 
+ <script script_id="sendEmailToCataloguing" 
          type="External Method"   
          filename=""
          module="edeposit.policy.producentfolder_wf_scripts"
-         function="sendEmailToCatalogization"/> 
+         function="sendEmailToCataloguing"/> 
  
  
  <variable variable_id="action"         
