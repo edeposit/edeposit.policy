@@ -12,6 +12,7 @@
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
+ <permission>Review portal content</permission>
  <permission>View</permission>
 
  <state state_id="published" title="Published" i18n:attributes="title">
