@@ -28,15 +28,20 @@ groups = (
       'description': 'Users that can assign work for acquisitors',
       'roles': ['E-Deposit: Acquisitor Administrator',]
   },
-    { 'group_id': 'Librarians',
-      'title': 'E-Deposit: Librarians',
+    { 'group_id': 'Cataloguing Administrators',
+      'title': 'E-Deposit: Cataloguing Administrators',
       'description': '',
-      'roles': ['E-Deposit: Librarian',]
+      'roles': ['E-Deposit: Cataloguing Administrator',]
   },
-    { 'group_id': 'Library Administrators',
-      'title': 'E-Deposit: Librarian Administrators',
+    { 'group_id': 'Cataloguers',
+      'title': 'E-Deposit: Cataloguers',
       'description': '',
-      'roles': ['E-Deposit: Librarian Administrator',]
+      'roles': []
+  },
+    { 'group_id': 'ISBN Agency Members',
+      'title': 'E-Deposit: ISBN Agency Members',
+      'description': '',
+      'roles': ['E-Deposit: ISBN Agency Member',]
   },
     { 'group_id': 'Producent Administrators',
       'title': 'E-Deposit: Producent Administrators',

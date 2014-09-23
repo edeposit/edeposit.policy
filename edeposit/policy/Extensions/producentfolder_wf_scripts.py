@@ -60,7 +60,7 @@ def recreateCollections(wfStateInfo):
         dict( name = "originalfiles-for-isbn-agency",
               title= u"Dokumenty čekající na přidělení ISBN",
               query= queryForStates('ISBNGeneration'),
-              roles = ['E-Deposit: Producent Administrator','E-Deposit: Acquisitor','E-Deposit: ISBN Agency'],
+              roles = ['E-Deposit: ISBN Agency Member'],
           ),
     ]
 
@@ -74,6 +74,5 @@ def recreateCollections(wfStateInfo):
                 title=collection['title'],
                 query=collection['query']
             )
-            #api.group.grant_roles(groupname="Producents", roles=['Reader'], obj=content)
-            #api.group.grant_roles(groupname="Producents", roles=['Reader'], obj=content)
+            api.group.grant_roles(roles=collection.roles, obj=content)
     pass

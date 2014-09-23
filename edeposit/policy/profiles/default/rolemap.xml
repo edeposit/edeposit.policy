@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rolemap>
   <roles>
-    <role name="E-Deposit: ISBN Agency Reviewer"/>
+    <role name="E-Deposit: ISBN Agency Member"/>
     <role name="E-Deposit: Producent Administrator"/>
     <role name="E-Deposit: Producent Editor"/>
     <role name="E-Deposit: Acquisition Administrator"/>
