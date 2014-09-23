@@ -56,6 +56,14 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    </permission-map>
+   <permission-map name="Review portal content"  acquired="False">
+     <permission-role>Manager</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+   </permission-map>
    <permission-map name="View" acquired="False">
      <permission-role>Manager</permission-role>
      <permission-role>Owner</permission-role>
@@ -94,6 +102,14 @@
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    </permission-map>
    <permission-map name="Modify portal content"  acquired="False">
+     <permission-role>Manager</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content"  acquired="False">
      <permission-role>Manager</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Editor</permission-role>
