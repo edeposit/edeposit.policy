@@ -37,9 +37,9 @@ sendEmailToAcquisition = sendEmailFactory("worklist-for-acquisition",
                                           ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
                                           "Dokumenty cekajici na Akvizici")
 
-sendEmailToCatalogization = sendEmailFactory("worklist-for-catalogization",
-                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
-                                             "Dokumenty cekajici na jmennou katalogizaci")
+sendEmailToCataloguing = sendEmailFactory("worklist-for-cataloguing",
+                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                          "Dokumenty cekajici na jmennou katalogizaci")
 
 
 def recreateCollections(wfStateInfo):
