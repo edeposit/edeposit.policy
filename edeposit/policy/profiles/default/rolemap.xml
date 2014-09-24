@@ -55,11 +55,13 @@
       <role name="E-Deposit: Acquisitor"/>
       <role name="E-Deposit: Acquisition Administrator"/>
       <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: ISBN Agency Member"/>
       <role name="E-Deposit: System"/>
     </permission>
     <permission name="View History" acquire="True">
       <role name="E-Deposit: Producent Administrator"/>
       <role name="E-Deposit: Acquisitor"/>
+      <role name="E-Deposit: ISBN Agency Member"/>
       <role name="E-Deposit: System"/>
     </permission>
     <permission name="Add portal content" acquire="True">
