@@ -12,6 +12,7 @@ from zope.component import queryUtility, getUtility, getAdapter
 import base64
 
 from edeposit.content.amqp import IAMQPSender, IAMQPHandler
+from collective.documentviewer.async import queueJob
 
 import json
 from five import grok
@@ -20,6 +21,14 @@ logger = getLogger('edeposit.originalfile.wf_scripts')
 
 # (occur-1 "def " nil (list (current-buffer)) "*Occur: originalfile_wf_scripts.py/def*")
 # (occur-1 "class " nil (list (current-buffer)) "*Occur: originalfile_wf_scripts.py/class*")
+
+def submitDocumentViewer(wfStateInfo):
+    #import sys,pdb; pdb.Pdb(stdout=sys.__stdout__).set_trace()
+    originalfile = wfStateInfo.object
+    # if originalfile.getLayout() != 'documentviewer':
+    #     originalfile.setLayout('documentviewer')
+    #     queueJob(originalfile)
+    # pass
 
 def submitAntivirusCheck(wfStateInfo):
     logger.info("submitAntivirusChecks")

@@ -74,5 +74,6 @@ def recreateCollections(wfStateInfo):
                 title=collection['title'],
                 query=collection['query']
             )
-            api.group.grant_roles(roles=collection.roles, obj=content)
+            api.group.grant_roles(groupname="ISBN Agency Members",
+                                  roles=collection['roles'], obj=content)
     pass
