@@ -73,5 +73,10 @@
       <role name="E-Deposit: Acquisitor"/>
       <role name="E-Deposit: System"/>
     </permission>
+    <permission name="Modify view template" acquire="True">
+      <role name="Manager"/>
+      <role name="E-Deposit: Acquisitor"/>
+      <role name="E-Deposit: System"/>
+    </permission>
   </permissions>
 </rolemap>
