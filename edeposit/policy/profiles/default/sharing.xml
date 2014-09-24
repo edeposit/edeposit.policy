@@ -4,6 +4,7 @@
  <role title="Producent Editor" id="E-Deposit: Producent Editor"/>
  <role title="Acquisition Administrator" id="E-Deposit: Acquisition Administrator"/>
  <role title="Acquisitor" id="E-Deposit: Acquisitor"/>
+ <role title="ISBN Agency Member" id="E-Deposit: ISBN Agency Member"/>
  <role title="Cataloguing Administrator" id="E-Deposit: Cataloguing Administrator"/>
  <role title="Cataloguer" id="E-Deposit: Cataloguer"/>
 </sharing>
