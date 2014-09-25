@@ -446,6 +446,7 @@
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="False">
    <permission-role>Site Administrator</permission-role>
@@ -453,9 +454,11 @@
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -465,6 +468,7 @@
     <permission-role>E-Deposit: Producent Editor</permission-role>
     <permission-role>Owner</permission-role>
     <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
   </permission-map>
  </state>
 
