@@ -21,6 +21,8 @@
    <exit-transition transition_id="sendEmailToAcquisition"/>
    <exit-transition transition_id="sendEmailToCatalogization"/>
    <exit-transition transition_id="recreateCollections"/>
+   <exit-transition transition_id="sendEmailWithOriginalFilesWaitingForAleph"/>
+   <exit-transition transition_id="loadSysNumbersFromAleph"/>
    <exit-transition transition_id="toPrivate"/>
 
    <description i18n:translate="Title">
@@ -232,6 +234,51 @@
          filename="" 
          module="edeposit.policy.producentfolder_wf_scripts"
          function="sendEmailToISBNAgency"/> 
+
+ <transition transition_id="sendEmailWithOriginalFilesWaitingForAleph"
+             title="Send email to acquisitors with original files waiting for Aleph"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailWaitingForlAleph"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailWaitingForAleph"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Acquisition with original files waiting for Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="sendEmailWaitingForAleph" 
+         type="External Method"
+         filename="" 
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailWithOriginalFilesWaitingForAleph"/> 
+
+
+ <transition transition_id="loadSysNumbersFromAleph"
+             title="Submit load Aleph Records from Aleph"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="loadSysNumbersFromAleph"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=loadSysNumbersFromAleph"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Submit load aleph records from Aleph to get SysNumbers</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="loadSysNumbersFromAleph" 
+         type="External Method"
+         filename="" 
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="loadSysNumbersFromAleph"/> 
 
 
  <transition transition_id="sendEmailToAcquisition"

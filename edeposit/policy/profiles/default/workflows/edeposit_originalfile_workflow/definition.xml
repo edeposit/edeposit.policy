@@ -68,41 +68,43 @@
  
  <state state_id="declarationWithError" title="Declaration with Error" 
         i18n:attributes="title">
-  <exit-transition transition_id="toAcquisition"/>
-  <exit-transition transition_id="toWithdraw"/>
-  <permission-map name="Access contents information" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="plone.app.collection: Add Collection" acquired="True">
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
+   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
+   <exit-transition transition_id="submitDeclarationToAntivirus"/>
+   <exit-transition transition_id="submitDeclarationToISBNGenerating"/>
+   <exit-transition transition_id="toWithdraw"/>
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="True">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
  </state>
 
  <transition transition_id="toAcquisition"
@@ -132,7 +134,8 @@
    <exit-transition transition_id="antivirusError"/>
 
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -196,7 +199,7 @@
            i18n:translate="">File Antivirus Passed</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: here.needsThumbnailGeneration()</quard-expression>
+     <guard-expression>python: here.needsThumbnailGeneration()</guard-expression>
    </guard>
  </transition>
 
@@ -214,7 +217,7 @@
            i18n:translate="">ISBN is generated</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: here.isbn</quard-expression>
+     <guard-expression>python: here.isbn</guard-expression>
    </guard>
  </transition>
 
@@ -232,7 +235,7 @@
            i18n:translate="">File Antivirus Passed</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: not here.needsThumbnailGeneration() and here.isbn</quard-expression>
+     <guard-expression>python: not here.needsThumbnailGeneration() and here.isbn</guard-expression>
    </guard>
  </transition>
 
@@ -250,7 +253,7 @@
            i18n:translate="">File Antivirus Passed</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: not here.isbn and not here.needsThumbnailGeneration()</quard-expression>
+     <guard-expression>python: not here.isbn and not here.needsThumbnailGeneration()</guard-expression>
    </guard>
  </transition>
  
@@ -349,7 +352,8 @@
    <exit-transition transition_id="ISBNIsNotValid"/>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -386,7 +390,8 @@
    <exit-transition transition_id="ISBNIsDuplicit"/>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -481,7 +486,9 @@
    <exit-transition transition_id="thumbnailError"/>
    <exit-transition transition_id="thumbnailOK"/>
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -508,6 +515,7 @@
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Owner</permission-role>
@@ -566,40 +574,42 @@
    <exit-transition transition_id="exportToAlephOK"/>
 
    <permission-map name="Access contents information" acquired="False">
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="plone.app.collection: Add Collection" acquired="False">
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="False">
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
  </state>
-
+ 
  <transition transition_id="exportToAlephSubmitted"
              title="Export of one record to Aleph submitted" 
              new_state="" 
@@ -648,9 +658,10 @@
    <exit-transition transition_id="searchSysNumber"/>
    <exit-transition transition_id="toAcquisitionPreparing"/>
    <exit-transition transition_id="chooseProperAlephRecord"/>
+   <exit-transition transition_id="noAlephRecordLoaded"/>
 
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -674,16 +685,34 @@
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
    </permission-map>
  </state>
+
+ <transition transition_id="noAlephRecordLoaded"
+             title="No record was loaded from Aleph" 
+             new_state="" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=alephRecordsLoaded"
+           category="workflow" 
+           icon="" i18n:translate="">No record was loaded from Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+   
+ </transition>
  
  <transition transition_id="alephRecordsLoaded"
              title="Records were loaded from Aleph" 
@@ -713,7 +742,7 @@
            icon="" i18n:translate="">We got records from Aleph</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: here.related_aleph_record</quard-expression>
+     <guard-expression>python: here.related_aleph_record</guard-expression>
    </guard>
    
  </transition>
@@ -730,7 +759,7 @@
            icon="" i18n:translate="">Choose Proper Aleph Record Choosing</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>here/related_aleph_record</quard-expression>
+     <guard-expression>here/related_aleph_record</guard-expression>
    </guard>
  </transition>
 
@@ -761,7 +790,7 @@
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -806,7 +835,7 @@
    <exit-transition transition_id="toWithdraw"/>
 
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -833,7 +862,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -897,10 +926,10 @@
        url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToISBNValidation" 
        category="workflow" 
        icon="" 
-       i18n:translate="">Submit Acquisition Preparing</action>
+       i18n:translate="">K akvizici</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: here.isbn</quard-expression>
+     <guard-expression>python: here.isbn</guard-expression>
    </guard>
  </transition>
 
@@ -915,10 +944,10 @@
        url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToAntivirus" 
        category="workflow" 
        icon=""
-       i18n:translate="">Submit Acquisition Preparing</action>
+       i18n:translate="">K akvizici</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: (not here.isbn) and here.file</quard-expression>
+     <guard-expression>python: (not here.isbn) and here.file</guard-expression>
    </guard>
  </transition>
 
@@ -933,10 +962,10 @@
        url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToISBNGenerating" 
        category="workflow" 
        icon=""
-       i18n:translate="">Submit Acquisition Preparing</action>
+       i18n:translate="">K akvizici</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <quard-expression>python: (not here.isbn) and (not here.file)</quard-expression>
+     <guard-expression>python: (not here.isbn) and (not here.file)</guard-expression>
    </guard>
  </transition>
  
@@ -963,7 +992,6 @@
    <exit-transition transition_id="toWithdraw"/>
 
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Librarian</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1133,7 +1161,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=toCatalogizationPreparing" category="workflow" icon="" i18n:translate="">Approve</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
-   <quard-expression>python: here.isbn</quard-expression>
+   <guard-expression>python: here.isbn</guard-expression>
   </guard>
  </transition>
 

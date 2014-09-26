@@ -69,6 +69,9 @@
    <permission-role>Owner</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
   </permission-map>

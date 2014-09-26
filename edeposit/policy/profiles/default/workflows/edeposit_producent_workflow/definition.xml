@@ -30,6 +30,7 @@
     <exit-transition transition_id="reject"/>
     <permission-map name="Access contents information" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -52,6 +53,8 @@
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>E-Deposit: Producent Editor</permission-role>

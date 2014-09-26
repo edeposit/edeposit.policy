@@ -33,6 +33,10 @@ sendEmailToISBNAgency = sendEmailFactory("worklist-for-isbn-agency",
                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
                                          "Dokumenty cekajici na prideleni ISBN")
 
+sendEmailWaitingForAlephToAcquisition = sendEmailFactory("worklist-waiting-for-aleph",
+                                                         ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                                         "Dokumenty cekajici na Aleph")
+
 sendEmailToAcquisition = sendEmailFactory("worklist-for-acquisition",
                                           ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
                                           "Dokumenty cekajici na Akvizici")
@@ -58,9 +62,14 @@ def recreateCollections(wfStateInfo):
 
     collections = [ 
         dict( name = "originalfiles-for-isbn-agency",
-              title= u"Dokumenty čekající na přidělení ISBN",
+              title= u"Originály čekající na přidělení ISBN",
               query= queryForStates('ISBNGeneration'),
               roles = ['E-Deposit: ISBN Agency Member'],
+          ),
+        dict( name = "originalfiles-waiting-for-aleph",
+              title= u"Originály čekající na Aleph",
+              query= queryForStates('WaitingForAleph'),
+              roles = ['E-Deposit: Acquisition Administrator'],
           ),
     ]
 
@@ -76,4 +85,17 @@ def recreateCollections(wfStateInfo):
             )
             api.group.grant_roles(groupname="ISBN Agency Members",
                                   roles=collection['roles'], obj=content)
+    pass
+
+
+def sendEmailWithOriginalFilesWaitingForAleph(wfStateInfo):
+    pass
+
+def loadSysNumbersFromAleph(wfStateInfo):
+    producentsFolder = wfStateInfo.object
+    collection = producentsFolder['originalfiles-waiting-for-aleph']
+    originalFiles = map(lambda item: item.getObject(), collection.results(batch=False))
+    wft = api.portal.get_tool('portal_workflow')
+    for of in originalFiles:
+        wft.doActionFor(of,'searchSysNumber')
     pass
