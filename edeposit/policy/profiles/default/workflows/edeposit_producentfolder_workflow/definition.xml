@@ -240,9 +240,9 @@
              new_state=""
              trigger="USER"
              before_script=""
-             after_script="sendEmailWaitingForlAleph"
+             after_script="sendEmailWithOriginalFilesWaitingForAleph"
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailWaitingForAleph"
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailWithOriginalFilesWaitingForAleph"
            category="workflow"
            icon="" 
            i18n:translate="">Send Email to Acquisition with original files waiting for Aleph</action>

@@ -33,9 +33,9 @@ sendEmailToISBNAgency = sendEmailFactory("worklist-for-isbn-agency",
                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
                                          "Dokumenty cekajici na prideleni ISBN")
 
-sendEmailWaitingForAlephToAcquisition = sendEmailFactory("worklist-waiting-for-aleph",
-                                                         ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
-                                                         "Dokumenty cekajici na Aleph")
+sendEmailWithOriginalFilesWaitingForAleph = sendEmailFactory("worklist-waiting-for-aleph",
+                                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                                             "Dokumenty cekajici na Aleph")
 
 sendEmailToAcquisition = sendEmailFactory("worklist-for-acquisition",
                                           ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
@@ -68,8 +68,13 @@ def recreateCollections(wfStateInfo):
           ),
         dict( name = "originalfiles-waiting-for-aleph",
               title= u"Originály čekající na Aleph",
-              query= queryForStates('WaitingForAleph'),
+              query= queryForStates('waitingForAleph'),
               roles = ['E-Deposit: Acquisition Administrator'],
+          ),
+        dict( name = "originalfiles-waiting-acquisition",
+              title= u"Originály čekající na Akvizici",
+              query= queryForStates('acquisition'),
+              roles = ['E-Deposit: Acquisitor'],
           ),
     ]
 
@@ -88,8 +93,6 @@ def recreateCollections(wfStateInfo):
     pass
 
 
-def sendEmailWithOriginalFilesWaitingForAleph(wfStateInfo):
-    pass
 
 def loadSysNumbersFromAleph(wfStateInfo):
     producentsFolder = wfStateInfo.object

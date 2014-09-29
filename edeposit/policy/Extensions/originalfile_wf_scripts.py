@@ -83,6 +83,18 @@ def submitSysNumbersSearch(wfStateInfo):
         wft = api.portal.get_tool('portal_workflow')
         wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
+def renewAlephRecords(wfStateInfo):
+    logger.info("renewAlephRecords")
+    print "renew Aleph Records"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="renew-aleph-records").send()
+        comment=u"Synchronizace s Alephem, isbn:%s" % (originalfile.isbn, )
+        wft = api.portal.get_tool('portal_workflow')
+        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+
+
 def submitThumbnailGenerating(wfStateInfo):
     logger.info("submitThumbnailGenerating")
     print "submit thumbnail generating"
