@@ -71,7 +71,7 @@ def recreateCollections(wfStateInfo):
               query= queryForStates('waitingForAleph'),
               roles = ['E-Deposit: Acquisition Administrator'],
           ),
-        dict( name = "originalfiles-waiting-acquisition",
+        dict( name = "originalfiles-waiting-for-acquisition",
               title= u"Originály čekající na Akvizici",
               query= queryForStates('acquisition'),
               roles = ['E-Deposit: Acquisitor'],
