@@ -23,7 +23,6 @@ logger = getLogger('edeposit.originalfile.wf_scripts')
 # (occur-1 "class " nil (list (current-buffer)) "*Occur: originalfile_wf_scripts.py/class*")
 
 def submitDocumentViewer(wfStateInfo):
-    #import sys,pdb; pdb.Pdb(stdout=sys.__stdout__).set_trace()
     originalfile = wfStateInfo.object
     # if originalfile.getLayout() != 'documentviewer':
     #     originalfile.setLayout('documentviewer')
