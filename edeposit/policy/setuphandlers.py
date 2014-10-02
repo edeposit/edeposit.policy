@@ -28,13 +28,33 @@ groups = (
       'description': 'Users that can assign work for acquisitors',
       'roles': ['E-Deposit: Acquisitor Administrator',]
   },
-    { 'group_id': 'Cataloguing Administrators',
-      'title': 'E-Deposit: Cataloguing Administrators',
+    { 'group_id': 'Descriptive Cataloguing Administrators',
+      'title': 'E-Deposit: Descriptive Cataloguing Administrators',
       'description': '',
-      'roles': ['E-Deposit: Cataloguing Administrator',]
+      'roles': ['E-Deposit: Descriptive Cataloguing Administrator',]
   },
-    { 'group_id': 'Cataloguers',
-      'title': 'E-Deposit: Cataloguers',
+    { 'group_id': 'Descriptive Cataloguing Reviewers',
+      'title': 'E-Deposit: Descriptive Cataloguing Reviewers',
+      'description': '',
+      'roles': ['E-Deposit: Descriptive Cataloguing Reviewers',]
+  },
+    { 'group_id': 'Descriptive Cataloguers',
+      'title': 'E-Deposit: Descriptive Cataloguers',
+      'description': '',
+      'roles': []
+  },
+    { 'group_id': 'Subject Cataloguing Administrators',
+      'title': 'E-Deposit: Subject Cataloguing Administrators',
+      'description': '',
+      'roles': ['E-Deposit: Subject Cataloguing Administrator',]
+  },
+    { 'group_id': 'Subject Cataloguing Reviewers',
+      'title': 'E-Deposit: Subject Cataloguing Reviewers',
+      'description': '',
+      'roles': ['E-Deposit: Subject Cataloguing Reviewers',]
+  },
+    { 'group_id': 'Subject Cataloguers',
+      'title': 'E-Deposit: Subject Cataloguers',
       'description': '',
       'roles': []
   },
@@ -138,11 +158,5 @@ def importVarious(context):
     portal = context.getSite()
     setupGroups(portal)
     createUsers(portal)
-    linkName='catalogization-work-plans'
-    if linkName not in portal.objectIds():
-        portal.invokeFactory('edeposit.content.catalogizationworkplansfolder',  
-                             linkName,  
-                             title=u"Plány práce pro katalogizaci")
-
     #updateGroupDashboards(portal)
     #createAgreementFile(portal)

@@ -5,6 +5,10 @@
  <role title="Acquisition Administrator" id="E-Deposit: Acquisition Administrator"/>
  <role title="Acquisitor" id="E-Deposit: Acquisitor"/>
  <role title="ISBN Agency Member" id="E-Deposit: ISBN Agency Member"/>
- <role title="Cataloguing Administrator" id="E-Deposit: Cataloguing Administrator"/>
- <role title="Cataloguer" id="E-Deposit: Cataloguer"/>
+ <role title="Descriptive Cataloguing Administrator" id="E-Deposit: Cataloguing Administrator"/>
+ <role title="Descriptive Cataloguer" id="E-Deposit: Descriptive Cataloguer"/>
+ <role title="Descriptive Cataloguing Reviewer"  id="E-Deposit: Descriptive Cataloguing Reviewer"/>
+ <role title="Subject Cataloguing Administrator" id="E-Deposit: Subject Cataloguing Administrator"/>
+ <role title="Subject Cataloguer" id="E-Deposit: Subject Cataloguer"/>
+ <role title="Subject Cataloguing Reviewer" id="E-Deposit: Subject Cataloguing Reviewer"/>
 </sharing>

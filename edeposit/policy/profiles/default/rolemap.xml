@@ -6,8 +6,12 @@
     <role name="E-Deposit: Producent Editor"/>
     <role name="E-Deposit: Acquisition Administrator"/>
     <role name="E-Deposit: Acquisitor"/>
-    <role name="E-Deposit: Cataloguing Administrator"/>
-    <role name="E-Deposit: Cataloguer"/>
+    <role name="E-Deposit: Descriptive Cataloguing Administrator"/>
+    <role name="E-Deposit: Descriptive Cataloguer"/>
+    <role name="E-Deposit: Descriptive Cataloguing Reviewer"/>
+    <role name="E-Deposit: Subject Cataloguing Administrator"/>
+    <role name="E-Deposit: Subject Cataloguer"/>
+    <role name="E-Deposit: Subject Cataloguing Reviewer"/>
     <role name="E-Deposit: RIV Reviewer"/>
     <role name="E-Deposit: System"/>
   </roles>
