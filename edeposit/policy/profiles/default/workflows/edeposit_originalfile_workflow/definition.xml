@@ -957,7 +957,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Descriptive Cataloguing administrator is preparing an ePublication for descriptive cataloguing.</description>
    <exit-transition transition_id="renewAlephRecords"/>
-   <exit-transition transition_id="submitDescriptiveCataloguingPreparation"/>
+   <exit-transition transition_id="submitDescriptiveCataloguingPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -1189,7 +1189,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguing administrator is preparing an ePublication for subject cataloguing.</description>
    <exit-transition transition_id="renewAlephRecords"/>
-   <exit-transition transition_id="submitSubjectCataloguingPreparation"/>
+   <exit-transition transition_id="submitSubjectCataloguingPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -1654,7 +1654,7 @@
              after_script="" 
              i18n:attributes="title">
    <description i18n:translate="">We are doing descriptive cataloguing.</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=submitDescriptiveCataloguing"
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitDescriptiveCataloguingPreparing"
            category="workflow" 
            icon="" 
            i18n:translate="">Submit Descriptive Cataloguing Preparing</action>
