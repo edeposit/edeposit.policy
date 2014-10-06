@@ -42,7 +42,7 @@ sendEmailToAcquisition = sendEmailFactory("worklist-for-acquisition",
                                           "Dokumenty cekajici na Akvizici")
 
 sendEmailToCataloguing = sendEmailFactory("worklist-for-cataloguing",
-                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                          ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
                                           "Dokumenty cekajici na jmennou katalogizaci")
 
 
@@ -135,7 +135,21 @@ def recreateCollections(wfStateInfo):
                                 type='Collection',
                                 title=title, 
                                 query = query + queryForUser)
-            pass
+
+    members = api.user.get_users(groupname="Descriptive Cataloguing Reviewers")
+    for username in map(lambda member: member.id, members):
+        collectionName = 'originalfiles-waiting-for-user-' + username
+        if collectionName not in context.keys():
+            title = u"Originály čekající na: " + username
+            query = queryForStates('descriptiveCataloguingReview')
+            queryForUser = [{ 'i': 'getAssignedDescriptiveCataloguingReviewer',                     
+                              'o': 'plone.app.querystring.operation.string.is',
+                              'v': username }]
+            api.content.create( id=collectionName, 
+                                container=context, 
+                                type='Collection',
+                                title=title, 
+                                query = query + queryForUser)
 
 
 
