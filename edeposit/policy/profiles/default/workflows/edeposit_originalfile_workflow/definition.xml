@@ -1011,6 +1011,7 @@
    <description i18n:translate="">A Descriptive Cataloguer is processing an ePublication for descriptive cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
     <exit-transition transition_id="submitDescriptiveCataloguing"/>
+    <exit-transition transition_id="submitDescriptiveCataloguingPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
