@@ -1060,6 +1060,63 @@
     </permission-map>
  </state>
 
+ <state state_id="descriptiveCataloguingReviewPreparing" 
+        title="Descriptive Cataloguing Review Preparing" 
+        i18n:attributes="title">
+   <description i18n:translate="">A Descriptive Cataloguing Administrator prepares work for reviewers.</description>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="submitDescriptiveCataloguingReviewPreparing"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
  <state state_id="descriptiveCataloguingReview" 
         title="Descriptive Cataloguing Review" 
         i18n:attributes="title">
@@ -1283,6 +1340,63 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+ </state>
+
+ <state state_id="subjectCataloguingReviewPreparing" 
+        title="Subject Cataloguing Review Preparing" 
+        i18n:attributes="title">
+   <description i18n:translate="">A Subject Cataloguing Administrator prepares work for reviewers.</description>
+    <exit-transition transition_id="renewAlephRecords"/>
+    <exit-transition transition_id="submitSubjectCataloguingReviewPreparing"/>
+    <exit-transition transition_id="toWithdraw"/>
+   
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="plone.app.collection: Add Collection" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>Site Administrator</permission-role>
@@ -1665,7 +1779,7 @@
 
  <transition transition_id="submitDescriptiveCataloguing" 
              title="Submit descriptive cataloguing"
-             new_state="descriptiveCataloguingReview"
+             new_state="descriptiveCataloguingReviewPreparing"
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -1680,9 +1794,26 @@
    </guard>
  </transition>
 
+ <transition transition_id="submitDescriptiveCataloguingReviewPreparing" 
+             title="Submit descriptive cataloguing review preparing"
+             new_state="descriptiveCataloguingReview"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing review of descriptive cataloguing.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitDescriptiveCataloguingReviewPreparing"
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit Descriptive Cataloguing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
  <transition transition_id="submitDescriptiveCataloguingReview" 
              title="Submit descriptive cataloguing Review"
-             new_state="subjectCataloguingPreparing" 
+             new_state="subjectCataloguingPreparing"
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -1716,7 +1847,7 @@
 
  <transition transition_id="submitSubjectCataloguing" 
              title="Submit subject cataloguing"
-             new_state="subjectCataloguingReview" 
+             new_state="subjectCataloguingReviewPreparing" 
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -1726,6 +1857,23 @@
            category="workflow"
            icon=""
            i18n:translate="">Submit Subject Cataloguing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitSubjectCataloguingReviewPreparing"
+             title="Submit review of subject cataloguing"
+             new_state="subjectCataloguingReview" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing export to Kramerius.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitSubjectCataloguingReviewPreparing"
+           category="workflow"
+           icon=""
+           i18n:translate="">Submit Subject Cataloguing Review Preparing</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
