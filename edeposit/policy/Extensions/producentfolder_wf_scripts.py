@@ -121,36 +121,45 @@ def recreateCollections(wfStateInfo):
             api.group.grant_roles(groupname="ISBN Agency Members",
                                   roles=collection['roles'], obj=content)
             
-    members = api.user.get_users(groupname="Descriptive Cataloguers")
-    for username in map(lambda member: member.id, members):
-        collectionName = 'originalfiles-waiting-for-user-' + username
-        if collectionName not in context.keys():
-            title = u"Originály čekající na: " + username
-            query = queryForStates('descriptiveCataloguing')
-            queryForUser = [{ 'i': 'getAssignedDescriptiveCataloguer',                     
-                              'o': 'plone.app.querystring.operation.string.is',
-                              'v': username }]
-            api.content.create( id=collectionName, 
-                                container=context, 
-                                type='Collection',
-                                title=title, 
-                                query = query + queryForUser)
+    def createGroupUsersCollections(context, groupname, indexName, state):
+        members = api.user.get_users(groupname=groupname)
+        for username in map(lambda member: member.id, members):
+            collectionName = 'originalfiles-waiting-for-user-' + username
+            if collectionName not in context.keys():
+                title = u"Originály čekající na: " + username
+                query = queryForStates(state)
+                queryForUser = [{ 'i': indexName,                     
+                                  'o': 'plone.app.querystring.operation.string.is',
+                                  'v': username }]
+                api.content.create( id=collectionName, 
+                                    container=context, 
+                                    type='Collection',
+                                    title=title, 
+                                    query = query + queryForUser)
+    
+    createGroupUsersCollections(context=context, 
+                                groupname="Descriptive Cataloguers",
+                                indexName="getAssignedDescriptiveCataloguer",
+                                state="descriptiveCataloguing"
+                            )
 
-    members = api.user.get_users(groupname="Descriptive Cataloguing Reviewers")
-    for username in map(lambda member: member.id, members):
-        collectionName = 'originalfiles-waiting-for-user-' + username
-        if collectionName not in context.keys():
-            title = u"Originály čekající na: " + username
-            query = queryForStates('descriptiveCataloguingReview')
-            queryForUser = [{ 'i': 'getAssignedDescriptiveCataloguingReviewer',                     
-                              'o': 'plone.app.querystring.operation.string.is',
-                              'v': username }]
-            api.content.create( id=collectionName, 
-                                container=context, 
-                                type='Collection',
-                                title=title, 
-                                query = query + queryForUser)
+    createGroupUsersCollections(context=context, 
+                                groupname="Descriptive Cataloguing Reviewers",
+                                indexName="getAssignedDescriptiveCataloguingReviewer",
+                                state="descriptiveCataloguingReview"
+                            )
 
+    createGroupUsersCollections(context=context, 
+                                groupname="Subject Cataloguers",
+                                indexName="getAssignedSubjectCataloguer",
+                                state="descriptiveCataloguing"
+                            )
+
+    createGroupUsersCollections(context=context, 
+                                groupname="Subject Cataloguing Reviewers",
+                                indexName="getAssignedSubjectCataloguingReviewer",
+                                state="descriptiveCataloguingReview"
+                            )
 
 
 def loadSysNumbersFromAleph(wfStateInfo):
