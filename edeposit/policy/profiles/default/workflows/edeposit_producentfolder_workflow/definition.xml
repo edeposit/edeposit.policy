@@ -19,7 +19,14 @@
 
    <exit-transition transition_id="sendEmailToISBNAgency"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
-   <exit-transition transition_id="sendEmailToCatalogization"/>
+   <exit-transition transition_id="sendEmailToDescriptiveCataloguingPreparing"/>
+   <exit-transition transition_id="sendEmailToDescriptiveCataloguingReviewPreparing"/>
+   <exit-transition transition_id="sendEmailToSubjectCataloguingPreparing"/>
+   <exit-transition transition_id="sendEmailToSubjectCataloguingReviewPreparing"/>
+   <exit-transition transition_id="sendEmailToGroupDescriptiveCataloguers"/>
+   <exit-transition transition_id="sendEmailToGroupDescriptiveCataloguingReviewers"/>
+   <exit-transition transition_id="sendEmailToGroupSubjectCataloguers"/>
+   <exit-transition transition_id="sendEmailToGroupSubjectCataloguingReviewers"/>
    <exit-transition transition_id="recreateCollections"/>
    <exit-transition transition_id="sendEmailWithOriginalFilesWaitingForAleph"/>
    <exit-transition transition_id="loadSysNumbersFromAleph"/>
@@ -94,7 +101,14 @@
 
    <exit-transition transition_id="sendEmailToISBNAgency"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
-   <exit-transition transition_id="sendEmailToCataloguing"/>
+   <exit-transition transition_id="sendEmailToDescriptiveCataloguingPreparing"/>
+   <exit-transition transition_id="sendEmailToDescriptiveCataloguingReviewPreparing"/>
+   <exit-transition transition_id="sendEmailToSubjectCataloguingPreparing"/>
+   <exit-transition transition_id="sendEmailToSubjectCataloguingReviewPreparing"/>
+   <exit-transition transition_id="sendEmailToGroupDescriptiveCataloguers"/>
+   <exit-transition transition_id="sendEmailToGroupDescriptiveCataloguingReviewers"/>
+   <exit-transition transition_id="sendEmailToGroupSubjectCataloguers"/>
+   <exit-transition transition_id="sendEmailToGroupSubjectCataloguingReviewers"/>
    <exit-transition transition_id="recreateCollections"/>
    <exit-transition transition_id="publish"/>
 
@@ -302,28 +316,182 @@
          module="edeposit.policy.producentfolder_wf_scripts"
          function="sendEmailToISBNAgency"/> 
  
- <transition transition_id="sendEmailToCataloguing"
-             title="Send email to Cataloguing"
+ <transition transition_id="sendEmailToDescriptiveCataloguingPreparing"
+             title="Send email to Descriptive Cataloguing Preparing"
              new_state=""
              trigger="USER"
              before_script=""
-             after_script="sendEmailToCataloguing"
+             after_script="sendEmailToDescriptiveCataloguingPreparing"
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToCataloguing"
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToDescriptiveCataloguingPreparing"
            category="workflow"
            icon="" 
-           i18n:translate="">Send Email to Cataloguing</action>
+           i18n:translate="">Send Email to Descriptive Cataloguing Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="sendEmailToDescriptiveCataloguingReviewPreparing"
+             title="Send email to Descriptive Cataloguing Review Preparing"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToDescriptiveCataloguingReviewPreparing"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToDescriptiveCataloguingReviewPreparing"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Descriptive Cataloguing Review Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="sendEmailToSubjectCataloguingPreparing"
+             title="Send email to Subject Cataloguing Preparing"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToSubjectCataloguingPreparing"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToSubjectCataloguingPreparing"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Subject Cataloguing Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="sendEmailToSubjectCataloguingReviewPreparing"
+             title="Send email to Subject Cataloguing Review Preparing"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToSubjectCataloguingReviewPreparing"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToSubjectCataloguingReviewPreparing"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Subject Cataloguing Review Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="sendEmailToGroupDescriptiveCataloguers"
+             title="Send email to Description Cataloguers"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToGroupDescriptiveCataloguers"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToGroupDescriptiveCataloguers"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Descriptive Cataloguers</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="sendEmailToGroupDescriptiveCataloguingReviewers"
+             title="Send email to Description Cataloguing Reviewers"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToGroupDescriptiveCataloguingReviewers"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToGroupDescriptiveCataloguingReviewers"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Descriptive Cataloguing Reviewers</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="sendEmailToGroupSubjectCataloguers"
+             title="Send email to Description Cataloguers"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToGroupSubjectCataloguers"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToGroupSubjectCataloguers"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Subject Cataloguers</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="sendEmailToGroupSubjectCataloguingReviewers"
+             title="Send email to Description Cataloguing Reviewers"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToGroupSubjectCataloguingReviewers"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToGroupSubjectCataloguingReviewers"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to Subject Cataloguing Reviewers</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
 
  
- <script script_id="sendEmailToCataloguing" 
+ <script script_id="sendEmailToDescriptiveCataloguingPreparing" 
          type="External Method"   
          filename=""
          module="edeposit.policy.producentfolder_wf_scripts"
-         function="sendEmailToCataloguing"/> 
+         function="sendEmailToDescriptiveCataloguingPreparing"/> 
+
+ <script script_id="sendEmailToDescriptiveCataloguingReviewPreparing" 
+         type="External Method"   
+         filename=""
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToDescriptiveCataloguingReviewPreparing"/> 
+
+ <script script_id="sendEmailToSubjectCataloguingPreparing" 
+         type="External Method"   
+         filename=""
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToSubjectCataloguingPreparing"/> 
+
+ <script script_id="sendEmailToSubjectCataloguingReviewPreparing" 
+         type="External Method"   
+         filename=""
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToSubjectCataloguingReviewPreparing"/> 
+
+ <script script_id="sendEmailToGroupDescriptiveCataloguers" 
+         type="External Method"   
+         filename=""
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToGroupDescriptiveCataloguers"/> 
+
+ <script script_id="sendEmailToGroupDescriptiveCataloguingReviewers" 
+         type="External Method"   
+         filename=""
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToGroupDescriptiveCataloguingReviewers"/> 
+
+ <script script_id="sendEmailToGroupSubjectCataloguers" 
+         type="External Method"   
+         filename=""
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToGroupSubjectCataloguers"/> 
+
+ <script script_id="sendEmailToGroupSubjectCataloguingReviewers" 
+         type="External Method"   
+         filename=""
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToGroupSubjectCataloguingReviewers"/> 
  
  
  <variable variable_id="action"         

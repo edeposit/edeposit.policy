@@ -37,14 +37,46 @@ sendEmailWithOriginalFilesWaitingForAleph = sendEmailFactory("worklist-waiting-f
                                                              ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
                                                              "Dokumenty cekajici na Aleph")
 
-sendEmailToAcquisition = sendEmailFactory("worklist-for-acquisition",
+sendEmailToAcquisition = sendEmailFactory("worklist-waiting-for-acquisition",
                                           ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
                                           "Dokumenty cekajici na Akvizici")
 
-sendEmailToCataloguing = sendEmailFactory("worklist-for-cataloguing",
-                                          ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
-                                          "Dokumenty cekajici na jmennou katalogizaci")
+sendEmailToDescriptiveCataloguingPreparing \
+    = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-preparing",
+                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
+                       "Dokumenty cekajici na přípravu jmenné katalogizace")
 
+sendEmailToDescriptiveCataloguingReviewPreparing \
+    = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-review-preparing",
+                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
+                       "Dokumenty cekajici na přípravu jmenné revize")
+
+sendEmailToSubjectCataloguingPreparing \
+    = sendEmailFactory("worklist-waiting-for-subject-cataloguing-preparing",
+                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
+                       "Dokumenty cekajici na přípravu věcné katalogizace")
+
+sendEmailToSubjectCataloguingReviewPreparing \
+    = sendEmailFactory("worklist-waiting-for-subject-cataloguing-review-preparing",
+                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
+                       "Dokumenty cekajici na přípravu věcné revize")
+
+def sendEmailToGroupFactory(groupname):
+    def sendEmailToGroup(wfStateInfo):
+        context = wfStateInfo.object
+        for member in api.user.get_users(groupname=groupname):
+            username = member.id
+            email = member.getProperty('email')
+            view_name = 'worklist-waiting-for-user-' + username
+            view = api.content.get_view(name=view_name, context = context, request = context.REQUEST)
+            api.portal.send_email(recipient=",".join([email,]), subject=subject, body=view())
+
+    return sendEmailToGroup
+
+sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupFactory('Descriptive Cataloguers')
+sendEmailToGroupDescriptiveCataloguingReviewers = sendEmailToGroupFactory('Descriptive Cataloguing Reviewers')
+sendEmailToGroupSubjectCataloguers = sendEmailToGroupFactory('Subject Cataloguers')
+sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupFactory('Subject Cataloguing Reviewers')
 
 def recreateCollections(wfStateInfo):
     context = wfStateInfo.object
