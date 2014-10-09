@@ -64,47 +64,37 @@ def recreateCollections(wfStateInfo):
         dict( name = "originalfiles-for-isbn-agency",
               title= u"Originály čekající na přidělení ISBN",
               query= queryForStates('ISBNGeneration'),
-              roles = ['E-Deposit: ISBN Agency Member'],
+              group = 'ISBN Agency Members'
           ),
         dict( name = "originalfiles-waiting-for-aleph",
               title= u"Originály čekající na Aleph",
               query= queryForStates('waitingForAleph'),
-              roles = ['E-Deposit: Acquisition Administrator'],
+              group = 'Acquisition Administrators',
           ),
         dict( name = "originalfiles-waiting-for-acquisition",
               title= u"Originály čekající na Akvizici",
               query= queryForStates('acquisition'),
-              roles = ['E-Deposit: Acquisitor'],
+              group = 'Acquisitors',
           ),
         dict( name = "originalfiles-waiting-for-descriptive-cataloguing-preparing",
               title= u"Originály čekající na přípravu jmenné katalogizace",
               query= queryForStates('descriptiveCataloguingPreparing'),
-              roles = ['E-Deposit: Descriptive Cataloguing Administrator'],
+              group= 'Descriptive Cataloguing Administrators',
           ),
-        dict( name = "originalfiles-waiting-for-descriptive-cataloguing",
-              title= u"Originály čekající na jmennou katalogizaci",
-              query= queryForStates('descriptiveCataloguing'),
-              roles = ['E-Deposit: Descriptive Cataloguer'],
-          ),
-        dict( name = "originalfiles-waiting-for-descriptive-cataloguing-review",
-              title= u"Originály čekající na revizi jmenné katalogizace",
-              query= queryForStates('descriptiveCataloguingReview'),
-              roles = ['E-Deposit: Descriptive Cataloguing Reviewer'],
+        dict( name = "originalfiles-waiting-for-descriptive-cataloguing-review-preparing",
+              title= u"Originály čekající na přípravu jmenné revize",
+              query= queryForStates('descriptiveCataloguingReviewPreparing'),
+              group= 'Descriptive Cataloguing Administrators',
           ),
         dict( name = "originalfiles-waiting-for-subject-cataloguing-preparing",
               title= u"Originály čekající na přípravu věcné katalogizace",
               query= queryForStates('subjectCataloguingPreparing'),
-              roles = ['E-Deposit: Subject Cataloguing Administrator'],
+              group= 'Subject Cataloguing Administrators',
           ),
-        dict( name = "originalfiles-waiting-for-subject-cataloguing",
-              title= u"Originály čekající na věcnou katalogizaci",
-              query= queryForStates('subjectCataloguing'),
-              roles = ['E-Deposit: Subject Cataloguer'],
-          ),
-        dict( name = "originalfiles-waiting-for-subject-cataloguing-review",
-              title= u"Originály čekající na revizi věcné katalogizace",
-              query= queryForStates('subjectCataloguingReview'),
-              roles = ['E-Deposit: Subject Cataloguing Reviewer'],
+        dict( name = "originalfiles-waiting-for-subject-cataloguing-review-preparing",
+              title= u"Originály čekající na přípravu věcné revize",
+              query= queryForStates('subjectCataloguingReviewPreparing'),
+              group= 'Subject Cataloguing Administrators',
           ),
     ]
 
@@ -118,10 +108,11 @@ def recreateCollections(wfStateInfo):
                 title=collection['title'],
                 query=collection['query']
             )
-            api.group.grant_roles(groupname="ISBN Agency Members",
-                                  roles=collection['roles'], obj=content)
+            api.group.grant_roles(groupname=collection['group'],
+                                  roles=['Reader',],
+                                  obj=content)
             
-    def createGroupUsersCollections(context, groupname, indexName, state):
+    def createGroupUsersCollections(context, groupname, indexName, state, readerGroup):
         members = api.user.get_users(groupname=groupname)
         for username in map(lambda member: member.id, members):
             collectionName = 'originalfiles-waiting-for-user-' + username
@@ -131,34 +122,41 @@ def recreateCollections(wfStateInfo):
                 queryForUser = [{ 'i': indexName,                     
                                   'o': 'plone.app.querystring.operation.string.is',
                                   'v': username }]
-                api.content.create( id=collectionName, 
-                                    container=context, 
-                                    type='Collection',
-                                    title=title, 
-                                    query = query + queryForUser)
-    
+                collection = api.content.create( id=collectionName, 
+                                                 container=context, 
+                                                 type='Collection',
+                                                 title=title, 
+                                                 query = query + queryForUser)
+                api.group.grant_roles(groupname="Descriptive Cataloguing Administrators",
+                                      roles=['Reader',],  obj=collection)
+                api.user.grant_roles(username=username, roles=['Reader',], obj=collection)
+                
     createGroupUsersCollections(context=context, 
                                 groupname="Descriptive Cataloguers",
                                 indexName="getAssignedDescriptiveCataloguer",
-                                state="descriptiveCataloguing"
+                                state="descriptiveCataloguing",
+                                readerGroup = "Descriptive Cataloguing Administrators",
                             )
 
     createGroupUsersCollections(context=context, 
                                 groupname="Descriptive Cataloguing Reviewers",
                                 indexName="getAssignedDescriptiveCataloguingReviewer",
-                                state="descriptiveCataloguingReview"
+                                state="descriptiveCataloguingReview",
+                                readerGroup = "Descriptive Cataloguing Administrators",
                             )
 
     createGroupUsersCollections(context=context, 
                                 groupname="Subject Cataloguers",
                                 indexName="getAssignedSubjectCataloguer",
-                                state="descriptiveCataloguing"
+                                state="subjectCataloguing",
+                                readerGroup = "Subject Cataloguing Administrators",
                             )
 
     createGroupUsersCollections(context=context, 
                                 groupname="Subject Cataloguing Reviewers",
                                 indexName="getAssignedSubjectCataloguingReviewer",
-                                state="descriptiveCataloguingReview"
+                                state="subjectCataloguingReview",
+                                readerGroup = "Subject Cataloguing Administrators",
                             )
 
 
