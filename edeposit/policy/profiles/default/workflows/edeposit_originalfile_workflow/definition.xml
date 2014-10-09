@@ -1519,7 +1519,50 @@
      <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- 
+
+ <state state_id="ISBNSubjectValidation" title="ISBN Subject Validation" i18n:attributes="title">
+  <description i18n:translate="">ISBN will be validated by ISBN Agency.</description>
+  <exit-transition transition_id="backToCorrection"/>
+  <exit-transition transition_id="submitISBNSubjectValidation"/>
+  <exit-transition transition_id="passISBNSubjectValidation"/>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="False">
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+
  <worklist worklist_id="originalfiles_waiting_for_acquisition" title="Original files waiting for acquisition" 
            i18n:attributes="title">
    <description i18n:translate="">Original files waiting for acquisition</description>
@@ -1745,12 +1788,12 @@
 
  <transition transition_id="submitAcquisition" 
              title="Approve metadata by Acquisition"
-             new_state="descriptiveCataloguingPreparing" 
+             new_state="ISBNSubjectValidation" 
              trigger="USER" 
              before_script="" 
              after_script="" 
              i18n:attributes="title">
-  <description i18n:translate="">ISBN is OK and Acquision is OK. So it can go to cataloguing.</description>
+  <description i18n:translate="">Acquision is OK. So it can go to ISBN Agency.</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=submitAcquisition"
           category="workflow" 
           icon="" 
@@ -1758,6 +1801,41 @@
   <guard>
    <guard-permission>Review portal content</guard-permission>
    <guard-expression>python: here.isbn</guard-expression>
+  </guard>
+ </transition>
+
+ <transition transition_id="submitISNBSubjectValidation" 
+             title="Approve ISBN by ISBN Agency"
+             new_state="descriptiveCataloguingPreparing" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+  <description i18n:translate="">ISBN is OK and Acquision is OK. So it can go to cataloguing.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=submitISBNSubjectValidation"
+          category="workflow" 
+          icon="" 
+          i18n:translate="">Submit ISBN Subject Validation</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+
+ <transition transition_id="passISNBSubjectValidation" 
+             title="Approve ISBN by ISBN Agency"
+             new_state="descriptiveCataloguingPreparing" 
+             trigger="AUTOMATIC" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+  <description i18n:translate="">ISBN was generated. It can go to catalogiing directly.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=passISBNSubjectValidation"
+          category="workflow" 
+          icon="" 
+          i18n:translate="">Pass ISBN Subject Validation</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+   <guard-expression>python: here.generated_isbn and here.isbn</guard-expression>
   </guard>
  </transition>
 

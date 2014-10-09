@@ -17,7 +17,7 @@
 
  <state state_id="published" title="Published" i18n:attributes="title">
 
-   <exit-transition transition_id="sendEmailToISBNAgency"/>
+   <exit-transition transition_id="sendEmailToISBNSubjectValidation"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingPreparing"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingReviewPreparing"/>
@@ -99,7 +99,7 @@
 
  <state state_id="private" title="Private" i18n:attributes="title">
 
-   <exit-transition transition_id="sendEmailToISBNAgency"/>
+   <exit-transition transition_id="sendEmailToISBNSubjectValidation"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingPreparing"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingReviewPreparing"/>
@@ -227,14 +227,14 @@
 
  
  
- <transition transition_id="sendEmailToISBNAgency"
+ <transition transition_id="sendEmailToISBNSubjectValidation"
              title="Send email to ISBN Agency"
              new_state=""
              trigger="USER"
              before_script=""
-             after_script="sendEmailToISBNAgency"
+             after_script="sendEmailToISBNSubjectValidation"
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToISBNAgency"
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToISBNSubjectValidation"
            category="workflow"
            icon="" 
            i18n:translate="">Send Email to ISBN Agency</action>
@@ -243,11 +243,11 @@
    </guard>
  </transition>
 
- <script script_id="sendEmailToISBNAgency" 
+ <script script_id="sendEmailToISBNSubjectValidation" 
          type="External Method"
          filename="" 
          module="edeposit.policy.producentfolder_wf_scripts"
-         function="sendEmailToISBNAgency"/> 
+         function="sendEmailToISBNSubjectValidation"/> 
 
  <transition transition_id="sendEmailWithOriginalFilesWaitingForAleph"
              title="Send email to acquisitors with original files waiting for Aleph"
@@ -314,7 +314,7 @@
          type="External Method"
          filename="" 
          module="edeposit.policy.producentfolder_wf_scripts"
-         function="sendEmailToISBNAgency"/> 
+         function="sendEmailToAcquisition"/> 
  
  <transition transition_id="sendEmailToDescriptiveCataloguingPreparing"
              title="Send email to Descriptive Cataloguing Preparing"

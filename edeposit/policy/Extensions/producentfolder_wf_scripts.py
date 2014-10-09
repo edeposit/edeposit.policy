@@ -4,7 +4,6 @@ from plone.dexterity.utils import createContentInContainer, addContentToContaine
 import uuid
 from logging import getLogger
 import itertools
-from functools import reduce
 from zope.app.intid.interfaces import IIntIds
 from z3c.relationfield import RelationValue
 from Acquisition import aq_inner, aq_parent
@@ -29,7 +28,7 @@ def sendEmailFactory(view_name, recipients, subject):
         api.portal.send_email(recipient=",".join(recipients), subject=subject, body=view())
     return handler
 
-sendEmailToISBNAgency = sendEmailFactory("worklist-for-isbn-agency",
+sendEmailToISBNSubjectValidation = sendEmailFactory("worklist-waiting-for-isbn-generation",
                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
                                          "Dokumenty cekajici na prideleni ISBN")
 
@@ -93,7 +92,7 @@ def recreateCollections(wfStateInfo):
                  ]
 
     collections = [ 
-        dict( name = "originalfiles-for-isbn-agency",
+        dict( name = "originalfiles-waiting-for-isbn-generation",
               title= u"Originály čekající na přidělení ISBN",
               query= queryForStates('ISBNGeneration'),
               group = 'ISBN Agency Members'
@@ -107,6 +106,11 @@ def recreateCollections(wfStateInfo):
               title= u"Originály čekající na Akvizici",
               query= queryForStates('acquisition'),
               group = 'Acquisitors',
+          ),
+        dict( name = "originalfiles-waiting-for-isbn-subject-validation",
+              title= u"Originály čekající na věcnou kontrolu ISBN",
+              query= queryForStates('ISBNSubjectValidation'),
+              group= 'ISBN Agency Members',
           ),
         dict( name = "originalfiles-waiting-for-descriptive-cataloguing-preparing",
               title= u"Originály čekající na přípravu jmenné katalogizace",
