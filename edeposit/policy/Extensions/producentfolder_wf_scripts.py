@@ -66,9 +66,12 @@ def sendEmailToGroupFactory(groupname):
         for member in api.user.get_users(groupname=groupname):
             username = member.id
             email = member.getProperty('email')
-            view_name = 'worklist-waiting-for-user-' + username
-            view = api.content.get_view(name=view_name, context = context, request = context.REQUEST)
-            api.portal.send_email(recipient=",".join([email,]), subject=subject, body=view())
+            view_name = 'worklist-waiting-for-user'
+            subject = u"Jmenna katalogizace pro: " + username
+            request = context.REQUEST
+            request['userid']=username
+            view = api.content.get_view(name=view_name, context = context, request = request)
+            api.portal.send_email(recipient=",".join(['stavel.jan@gmail.com',email,]), subject=subject, body=view())
 
     return sendEmailToGroup
 
