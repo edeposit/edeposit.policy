@@ -1044,6 +1044,7 @@
     </permission-map>
     <permission-map name="Review portal content" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1157,6 +1158,7 @@
    </permission-map>
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1331,6 +1333,7 @@
     </permission-map>
     <permission-map name="Review portal content" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1444,6 +1447,7 @@
     </permission-map>
     <permission-map name="Review portal content" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
