@@ -137,16 +137,17 @@ def createUsers(portal):
     pass
 
 def updateGroupDashboards(portal):
-    groupid = 'Acquisitors'
-    name = 'plone.dashboard1'
-    column = queryUtility(IPortletManager,name)
-    category = column.get('group',None)
-    manager = category.get(groupid,None)
-    if manager is None:
-        manager =  GroupDashboardPortletAssignmentMapping(manager=name,  category=GROUP_CATEGORY, name=groupid)
-        chooser = INameChooser(manager)
-        # for assignment in assignments:
-        #     manager[chooser.chooseName(None, assignment)] = assignment
+    # groupid = 'Acquisitors'
+    # name = 'plone.dashboard1'
+    # column = queryUtility(IPortletManager,name)
+    # category = column.get('group',None)
+    # manager = category.get(groupid,None)
+    # if manager is None:
+    #     manager =  GroupDashboardPortletAssignmentMapping(manager=name,  category=GROUP_CATEGORY, name=groupid)
+    #     chooser = INameChooser(manager)
+    #     # for assignment in assignments:
+    #     #     manager[chooser.chooseName(None, assignment)] = assignment
+    # pass
     pass
     
 def importVarious(context):
