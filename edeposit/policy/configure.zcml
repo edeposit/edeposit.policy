@@ -3,6 +3,7 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:grok="http://namespaces.zope.org/grok"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
     i18n:domain="edeposit.policy"
     i18n_domain="edeposit.policy"
     >
@@ -29,5 +30,12 @@
   </genericsetup:importStep>
 
   <grok:grok package="." />
+
+  <browser:page
+      name="download"
+      for="*"
+      class="plone.namedfile.browser.Download"
+      permission="cmf.ManagePortal"
+      />
 
 </configure>

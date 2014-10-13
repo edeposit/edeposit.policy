@@ -1,5 +1,16 @@
 <object name="portal_properties" meta_type="Plone Properties Tool">
-   <object name="site_properties" meta_type="Plone Property Sheet">
-      <property name="default_language" type="string">cs</property>
+  <object name="site_properties" meta_type="Plone Property Sheet">
+     <property name="default_language" type="string">cs</property>
+   </object>
+   <object name="oaiintercom_properties"
+	   meta_type="Plone Property Sheet">
+     <property name="title">OAI Intercom Settings</property>
+     <property name="provideMetadataFor" type="lines">
+       <element value="edeposit.user.producentfolder"/>
+       <element value="edeposit.user.producent"/>
+       <element value="edeposit.content.originalfile"/>
+       <element value="edeposit.content.epublication"/>
+       <element value="edeposit.content.epublicationfolder"/>
+     </property>	
    </object>
 </object>

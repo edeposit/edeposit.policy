@@ -6,5 +6,6 @@
     <dependency>profile-edeposit.content:default</dependency>
     <dependency>profile-edeposit.user:default</dependency>
     <dependency>profile-plone.app.relationfield:default</dependency>
+    <dependency>profile-collective.oaiintercom:default</dependency>
   </dependencies>
 </metadata>
