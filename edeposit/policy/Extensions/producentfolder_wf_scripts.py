@@ -28,9 +28,13 @@ def sendEmailFactory(view_name, recipients, subject):
         api.portal.send_email(recipient=",".join(recipients), subject=subject, body=view())
     return handler
 
-sendEmailToISBNSubjectValidation = sendEmailFactory("worklist-waiting-for-isbn-generation",
-                                         ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
-                                         "Dokumenty cekajici na prideleni ISBN")
+sendEmailToISBNGeneration = sendEmailFactory("worklist-waiting-for-isbn-generation",
+                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                             "Dokumenty cekajici na prideleni ISBN")
+
+sendEmailToISBNSubjectValidation = sendEmailFactory("worklist-waiting-for-isbn-subject-validation",
+                                                    ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                                    "Dokumenty cekajici na vecnou kontrolu ISBN")
 
 sendEmailWithOriginalFilesWaitingForAleph = sendEmailFactory("worklist-waiting-for-aleph",
                                                              ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],

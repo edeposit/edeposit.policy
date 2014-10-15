@@ -236,7 +236,7 @@
  
  
  <transition transition_id="sendEmailToISBNSubjectValidation"
-             title="Send email to ISBN Agency"
+             title="Send email to ISBN Agency to validate ISBN"
              new_state=""
              trigger="USER"
              before_script=""
@@ -245,7 +245,7 @@
    <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToISBNSubjectValidation"
            category="workflow"
            icon="" 
-           i18n:translate="">Send Email to ISBN Agency</action>
+           i18n:translate="">Send Email to ISBN Agency to validate ISBN</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
@@ -256,6 +256,28 @@
          filename="" 
          module="edeposit.policy.producentfolder_wf_scripts"
          function="sendEmailToISBNSubjectValidation"/> 
+
+ <transition transition_id="sendEmailToISBNGeneration"
+             title="Send email to ISBN Agency to generate ISBN"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="sendEmailToISBNGeneration"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=sendEmailToISBNGeneration"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Send Email to ISBN Agency to generate ISBN</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="sendEmailToISBNGeneration" 
+         type="External Method"
+         filename="" 
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="sendEmailToISBNGeneration"/> 
 
  <transition transition_id="sendEmailWithOriginalFilesWaitingForAleph"
              title="Send email to acquisitors with original files waiting for Aleph"
