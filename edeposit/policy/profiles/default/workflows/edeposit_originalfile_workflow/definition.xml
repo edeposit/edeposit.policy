@@ -754,7 +754,7 @@
              before_script=""
              after_script=""
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=alephRecordsLoaded"
+   <action url="%(content_url)s/content_status_modify?workflow_action=noAlephRecordLoaded"
            category="workflow" 
            icon="" i18n:translate="">No record was loaded from Aleph</action>
    <guard>

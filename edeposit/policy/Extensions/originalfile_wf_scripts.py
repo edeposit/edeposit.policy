@@ -24,10 +24,10 @@ logger = getLogger('edeposit.originalfile.wf_scripts')
 
 def submitDocumentViewer(wfStateInfo):
     originalfile = wfStateInfo.object
-    # if originalfile.getLayout() != 'documentviewer':
-    #     originalfile.setLayout('documentviewer')
-    #     queueJob(originalfile)
-    # pass
+    if originalfile.getLayout() != 'documentviewer':
+        originalfile.setLayout('documentviewer')
+
+    queueJob(originalfile)
 
 def submitAntivirusCheck(wfStateInfo):
     logger.info("submitAntivirusChecks")
