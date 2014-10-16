@@ -597,7 +597,7 @@
              title="Thumbnail Generating Passed" 
              new_state="exportToAleph"
              trigger="USER" 
-             before_script="" 
+             before_script="submitDocumentViewer" 
              after_script="submitExportToAleph"  
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" 
@@ -628,6 +628,7 @@
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="exportToAlephError"/>
    <exit-transition transition_id="exportToAlephOK"/>
+   <exit-transition transition_id="submitAntivirusCheck"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -719,6 +720,7 @@
    <exit-transition transition_id="alephRecordsLoaded"/>
    <exit-transition transition_id="searchSysNumber"/>
    <exit-transition transition_id="noAlephRecordLoaded"/>
+   <exit-transition transition_id="submitAntivirusCheck"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
