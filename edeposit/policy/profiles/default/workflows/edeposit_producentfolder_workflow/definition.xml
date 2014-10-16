@@ -18,6 +18,7 @@
  <state state_id="published" title="Published" i18n:attributes="title">
 
    <exit-transition transition_id="sendEmailToISBNSubjectValidation"/>
+   <exit-transition transition_id="sendEmailToISBNGeneration"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingPreparing"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingReviewPreparing"/>
@@ -106,7 +107,7 @@
  </state>
 
  <state state_id="private" title="Private" i18n:attributes="title">
-
+   <exit-transition transition_id="sendEmailToISBNGeneration"/>
    <exit-transition transition_id="sendEmailToISBNSubjectValidation"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingPreparing"/>
