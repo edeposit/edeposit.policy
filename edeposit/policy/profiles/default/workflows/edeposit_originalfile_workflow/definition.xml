@@ -10,6 +10,7 @@
     manager_bypass="False"
     >
  <permission>Access contents information</permission>
+ <permission>List folder contents</permission>
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
@@ -67,6 +68,14 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
  </state>
  
  <!-- declaration with error -->
@@ -109,6 +118,13 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -177,6 +193,15 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -417,6 +442,15 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
  </state>
 
  <!-- ISBN Duplicity Check -->
@@ -452,6 +486,15 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -524,6 +567,16 @@
     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
     <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
 
  <!-- thumbnail generating -->
@@ -568,6 +621,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
@@ -672,6 +735,16 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
  </state>
  
  <transition transition_id="exportToAlephSubmitted"
@@ -756,6 +829,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
@@ -918,6 +1001,15 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
  </state>
 
  <!-- acquisition preparing -->
@@ -962,6 +1054,15 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
+   <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents" acquired="False">
    <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1023,6 +1124,16 @@
     <permission-role>Site Administrator</permission-role>
     <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
 
  <state state_id="descriptiveCataloguing" 
@@ -1070,6 +1181,17 @@
       <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1137,6 +1259,18 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
  </state>
 
  <state state_id="descriptiveCataloguingReview" 
@@ -1184,6 +1318,18 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1314,6 +1460,16 @@
     <permission-role>Site Administrator</permission-role>
     <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
 
  <state state_id="subjectCataloguing" 
@@ -1359,6 +1515,17 @@
       <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1415,6 +1582,18 @@
       <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1484,6 +1663,18 @@
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
     </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
  </state>
 
  <!-- Acquisition  -->
@@ -1542,51 +1733,71 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
 
  <state state_id="ISBNSubjectValidation" title="ISBN Subject Validation" i18n:attributes="title">
-  <description i18n:translate="">ISBN will be validated by ISBN Agency.</description>
-  <exit-transition transition_id="backToCorrection"/>
-  <exit-transition transition_id="submitISBNSubjectValidation"/>
-  <exit-transition transition_id="passISBNSubjectValidation"/>
-  <permission-map name="Access contents information" acquired="False">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="False">
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-    <permission-role>E-Deposit: System</permission-role>
-    <permission-role>Site Administrator</permission-role>
-    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-    <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
-    <permission-role>E-Deposit: Acquisitor</permission-role>
-    <permission-role>E-Deposit: System</permission-role>
-    <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <permission-role>E-Deposit: Producent Editor</permission-role>
-    <permission-role>Owner</permission-role>
-    <permission-role>Site Administrator</permission-role>
-    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-    <permission-role>Manager</permission-role>
-  </permission-map>
+   <description i18n:translate="">ISBN will be validated by ISBN Agency.</description>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="submitISBNSubjectValidation"/>
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
  </state>
-
+ 
  <worklist worklist_id="originalfiles_waiting_for_acquisition" title="Original files waiting for acquisition" 
            i18n:attributes="title">
    <description i18n:translate="">Original files waiting for acquisition</description>
@@ -1649,6 +1860,14 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -1730,6 +1949,13 @@
    <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: Producent</permission-role>
+   <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="withdrawn" title="Withdrawn" i18n:attributes="title">
    <permission-map name="Access contents information" acquired="True">
@@ -1756,6 +1982,13 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent</permission-role>
@@ -1795,6 +2028,13 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
  </state>
 
  <transition transition_id="toWithdraw" 
@@ -1828,7 +2068,7 @@
   </guard>
  </transition>
 
- <transition transition_id="submitISNBSubjectValidation" 
+ <transition transition_id="submitISBNSubjectValidation" 
              title="Approve ISBN by ISBN Agency"
              new_state="descriptiveCataloguingPreparing" 
              trigger="USER" 
@@ -1842,24 +2082,6 @@
           i18n:translate="">Submit ISBN Subject Validation</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
-  </guard>
- </transition>
-
- <transition transition_id="passISNBSubjectValidation" 
-             title="Approve ISBN by ISBN Agency"
-             new_state="descriptiveCataloguingPreparing" 
-             trigger="AUTOMATIC" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-  <description i18n:translate="">ISBN was generated. It can go to catalogiing directly.</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=passISBNSubjectValidation"
-          category="workflow" 
-          icon="" 
-          i18n:translate="">Pass ISBN Subject Validation</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-   <guard-expression>python: here.generated_isbn and here.isbn</guard-expression>
   </guard>
  </transition>
 
