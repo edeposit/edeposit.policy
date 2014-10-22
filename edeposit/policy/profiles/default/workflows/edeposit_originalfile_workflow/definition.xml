@@ -16,6 +16,8 @@
  <permission>Add portal content</permission>
  <permission>Review portal content</permission>
  <permission>View</permission>
+ <permission>Copy or Move</permission>
+ <permission>Delete objects</permission>
 
  <!-- declaration -->
 
@@ -44,6 +46,22 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -104,6 +122,20 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -183,6 +215,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -428,6 +470,16 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -476,6 +528,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -551,6 +613,18 @@
     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
     <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Copy or Move" acquired="False">
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects" acquired="False">
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
@@ -611,6 +685,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -720,6 +804,16 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -818,6 +912,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -986,6 +1090,16 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
@@ -1047,6 +1161,16 @@
    <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Copy or Move" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Acquisition Administrator</permission-role>
@@ -1104,6 +1228,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+   <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1169,6 +1303,16 @@
       <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1241,6 +1385,16 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
@@ -1306,6 +1460,16 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1444,6 +1608,16 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
@@ -1503,6 +1677,16 @@
       <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1571,6 +1755,16 @@
       <permission-role>Manager</permission-role>
     </permission-map>
     <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
