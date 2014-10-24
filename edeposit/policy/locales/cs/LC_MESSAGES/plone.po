@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-24 13:02+0000\n"
+"POT-Creation-Date: 2014-10-24 13:54+0000\n"
 "PO-Revision-Date: 2014-10-09 07:09+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -503,6 +503,7 @@ msgid "Rejected"
 msgstr "Odmítnuto"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Renew Aleph Records"
 msgstr ""
 
