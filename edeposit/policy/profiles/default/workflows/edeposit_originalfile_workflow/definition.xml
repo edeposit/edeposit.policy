@@ -2324,7 +2324,7 @@
    <action url="%(content_url)s/content_status_modify?workflow_action=submitDescriptiveCataloguingReviewPreparing"
            category="workflow" 
            icon="" 
-           i18n:translate="">Submit Descriptive Cataloguing</action>
+           i18n:translate="">Submit Descriptive Cataloguing Review Preparing</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
