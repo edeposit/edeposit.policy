@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-09 05:19+0000\n"
+"POT-Creation-Date: 2014-10-24 13:02+0000\n"
 "PO-Revision-Date: 2014-10-09 07:09+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,6 +64,10 @@ msgid "A workflow for original file"
 msgstr "Pracovní proces pro dokumenty"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Acquision is OK. So it can go to ISBN Agency."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Acquisition"
 msgstr "Akvizice"
 
@@ -115,6 +119,10 @@ msgstr "Antivirová kontrola"
 msgid "Antivirus OK"
 msgstr "Antivirus prošel v pořádku"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Approve ISBN by ISBN Agency"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Approve Metadata"
 msgstr ""
@@ -139,10 +147,6 @@ msgstr "Dočasně zablokovat"
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Blocked"
 msgstr "Blokováno"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Choose Proper Aleph Record Choosing"
-msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Choose a proper Aleph Record"
@@ -317,6 +321,10 @@ msgid "ISBN Generation"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "ISBN Subject Validation"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Validation"
 msgstr "Kontrola správnosti ISBN"
 
@@ -354,6 +362,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN will be assigned by ISBN Agency."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "ISBN will be validated by ISBN Agency."
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
@@ -531,8 +543,12 @@ msgid "Send Email to Descriptive Cataloguing Reviewers"
 msgstr "Rozeslat emaily všem revizorům jmenného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
-msgid "Send Email to ISBN Agency"
-msgstr "Poslat email ISBN agentuře"
+msgid "Send Email to ISBN Agency to generate ISBN"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Send Email to ISBN Agency to validate ISBN"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguers"
@@ -571,7 +587,11 @@ msgid "Send email to Descriptive Cataloguing Review Preparing"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
-msgid "Send email to ISBN Agency"
+msgid "Send email to ISBN Agency to generate ISBN"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Send email to ISBN Agency to validate ISBN"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
@@ -610,6 +630,10 @@ msgstr ""
 msgid "Submit Acquisition Preparing"
 msgstr "Dokončit přípravu akvizice"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Antivirus Check"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit Declaration"
 msgstr ""
@@ -620,6 +644,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Descriptive Cataloguing Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit ISBN Subject Validation"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
