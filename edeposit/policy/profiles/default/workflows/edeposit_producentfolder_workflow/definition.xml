@@ -16,7 +16,6 @@
  <permission>View</permission>
 
  <state state_id="published" title="Published" i18n:attributes="title">
-
    <exit-transition transition_id="sendEmailToISBNSubjectValidation"/>
    <exit-transition transition_id="sendEmailToISBNGeneration"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
@@ -31,6 +30,7 @@
    <exit-transition transition_id="recreateCollections"/>
    <exit-transition transition_id="sendEmailWithOriginalFilesWaitingForAleph"/>
    <exit-transition transition_id="loadSysNumbersFromAleph"/>
+   <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="toPrivate"/>
 
    <description i18n:translate="Title">
@@ -107,8 +107,8 @@
  </state>
 
  <state state_id="private" title="Private" i18n:attributes="title">
-   <exit-transition transition_id="sendEmailToISBNGeneration"/>
    <exit-transition transition_id="sendEmailToISBNSubjectValidation"/>
+   <exit-transition transition_id="sendEmailToISBNGeneration"/>
    <exit-transition transition_id="sendEmailToAcquisition"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingPreparing"/>
    <exit-transition transition_id="sendEmailToDescriptiveCataloguingReviewPreparing"/>
@@ -119,6 +119,9 @@
    <exit-transition transition_id="sendEmailToGroupSubjectCataloguers"/>
    <exit-transition transition_id="sendEmailToGroupSubjectCataloguingReviewers"/>
    <exit-transition transition_id="recreateCollections"/>
+   <exit-transition transition_id="sendEmailWithOriginalFilesWaitingForAleph"/>
+   <exit-transition transition_id="loadSysNumbersFromAleph"/>
+   <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="publish"/>
 
    <description i18n:translate="Title">
@@ -324,6 +327,28 @@
          filename="" 
          module="edeposit.policy.producentfolder_wf_scripts"
          function="loadSysNumbersFromAleph"/> 
+
+ <transition transition_id="renewAlephRecords"
+             title="Renew Aleph Records"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="renewAlephRecords"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=renewAlephRecords"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Renew Aleph Records</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="renewAlephRecords" 
+         type="External Method"
+         filename="" 
+         module="edeposit.policy.producentfolder_wf_scripts"
+         function="renewAlephRecords"/> 
 
 
  <transition transition_id="sendEmailToAcquisition"

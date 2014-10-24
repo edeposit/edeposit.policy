@@ -139,6 +139,18 @@ def recreateCollections(wfStateInfo):
               query= queryForStates('subjectCataloguingReviewPreparing'),
               group= 'Subject Cataloguing Administrators',
           ),
+        dict( name = "originalfiles-waiting-for-renew-aleph-records",
+              title= u"Originály čekající na akci v Alephu",
+              query= queryForStates(
+                'acquisition',
+                'ISBNSubjectValidation',
+                'subjectCataloguing',
+                'subjectCataloguingReview',
+                'descriptiveCataloguing',
+                'descriptiveCataloguingReview',
+                ),
+              group= 'Subject Cataloguing Administrators',
+          ),
     ]
 
     for collection in collections:
@@ -210,4 +222,13 @@ def loadSysNumbersFromAleph(wfStateInfo):
     wft = api.portal.get_tool('portal_workflow')
     for of in originalFiles:
         wft.doActionFor(of,'searchSysNumber')
+    pass
+
+def renewAlephRecords(wfStateInfo):
+    producentsFolder = wfStateInfo.object
+    collection = producentsFolder['originalfiles-waiting-for-renew-aleph-records']
+    originalFiles = map(lambda item: item.getObject(), collection.results(batch=False))
+    wft = api.portal.get_tool('portal_workflow')
+    for of in originalFiles:
+        wft.doActionFor(of,'renewAlephRecords')
     pass
