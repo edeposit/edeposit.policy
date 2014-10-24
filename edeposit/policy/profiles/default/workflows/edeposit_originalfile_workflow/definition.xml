@@ -1012,7 +1012,7 @@
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=chooseProperAlephRecord"
            category="workflow" 
-           icon="" i18n:translate="">Choose Proper Aleph Record Choosing</action>
+           icon="" i18n:translate="">Proper Aleph Record Choosen</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <guard-expression>here/related_aleph_record</guard-expression>
