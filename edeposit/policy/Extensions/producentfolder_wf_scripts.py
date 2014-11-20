@@ -25,6 +25,7 @@ def sendEmailFactory(view_name, recipients, subject):
     def handler(wfStateInfo):
         context = wfStateInfo.object
         view = api.content.get_view(name=view_name, context = context, request = context.REQUEST)
+        print "poslal jsem email: ", subject
         api.portal.send_email(recipient=",".join(recipients), subject=subject, body=view())
     return handler
 
@@ -46,43 +47,48 @@ sendEmailToAcquisition = sendEmailFactory("worklist-waiting-for-acquisition",
 
 sendEmailToDescriptiveCataloguingPreparing \
     = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-preparing",
-                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
-                       "Dokumenty cekajici na přípravu jmenné katalogizace")
+                       #['stavel.jan@gmail.com',],
+                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz'],
+                       "Dokumenty cekajici na přípravu jmenného popisu")
 
 sendEmailToDescriptiveCataloguingReviewPreparing \
     = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-review-preparing",
-                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
+                       #['stavel.jan@gmail.com',],
+                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz'],
                        "Dokumenty cekajici na přípravu jmenné revize")
 
 sendEmailToSubjectCataloguingPreparing \
     = sendEmailFactory("worklist-waiting-for-subject-cataloguing-preparing",
-                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
-                       "Dokumenty cekajici na přípravu věcné katalogizace")
+                       #['stavel.jan@gmail.com',],
+                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz'],
+                       "Dokumenty cekajici na přípravu věcného popisu")
 
 sendEmailToSubjectCataloguingReviewPreparing \
     = sendEmailFactory("worklist-waiting-for-subject-cataloguing-review-preparing",
-                       ['stavel.jan@gmail.com','jaroslava.svobodova@nkp.cz'],
+                       #['stavel.jan@gmail.com',],
+                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz'],
                        "Dokumenty cekajici na přípravu věcné revize")
 
-def sendEmailToGroupFactory(groupname):
+def sendEmailToGroupFactory(groupname,title):
     def sendEmailToGroup(wfStateInfo):
         context = wfStateInfo.object
         for member in api.user.get_users(groupname=groupname):
             username = member.id
+            print u"odesilam email pro: " + username
             email = member.getProperty('email')
             view_name = 'worklist-waiting-for-user'
-            subject = u"Jmenna katalogizace pro: " + username
+            subject = title + " pro: " + username
             request = context.REQUEST
             request['userid']=username
             view = api.content.get_view(name=view_name, context = context, request = request)
-            api.portal.send_email(recipient=",".join(['stavel.jan@gmail.com',email,]), subject=subject, body=view())
+            api.portal.send_email(recipient=",".join(['stavel.jan@gmail.com',email]), subject=subject, body=view())
 
     return sendEmailToGroup
 
-sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupFactory('Descriptive Cataloguers')
-sendEmailToGroupDescriptiveCataloguingReviewers = sendEmailToGroupFactory('Descriptive Cataloguing Reviewers')
-sendEmailToGroupSubjectCataloguers = sendEmailToGroupFactory('Subject Cataloguers')
-sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupFactory('Subject Cataloguing Reviewers')
+sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupFactory('Descriptive Cataloguers',u"Jmenný popis")
+sendEmailToGroupDescriptiveCataloguingReviewers = sendEmailToGroupFactory('Descriptive Cataloguing Reviewers',u"Revize JP")
+sendEmailToGroupSubjectCataloguers = sendEmailToGroupFactory('Subject Cataloguers', u"Věcný popis")
+sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupFactory('Subject Cataloguing Reviewers', u"Revize VP")
 
 def recreateCollections(wfStateInfo):
     context = wfStateInfo.object
