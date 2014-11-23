@@ -229,7 +229,21 @@ def recreateCollections(wfStateInfo):
                                 indexName="getAssignedSubjectCataloguingReviewer",
                                 state="subjectCataloguingReview",
                                 readerGroup = "Subject Cataloguing Administrators",
-                            )
+                                )
+    
+    if not context.has_key('my-epublications'):
+        context.invokeFactory('Collection','my-epublications', 
+                              title=u"Moje ohlášené ePublikace",
+                              query=[{'i': 'portal_type', 
+                                      'o': 'plone.app.querystring.operation.selection.is', 
+                                      'v': ['edeposit.content.originalfile',]
+                                      },
+                                     {'i': 'getAssignedProducentEditors',
+                                      'o': 'plone.app.querystring.operation.string.currentUser', 
+                                      'v': []},
+                                     ],
+                              )
+    pass
 
 
 def loadSysNumbersFromAleph(wfStateInfo):
