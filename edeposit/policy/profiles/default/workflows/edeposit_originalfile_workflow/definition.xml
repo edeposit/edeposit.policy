@@ -1652,6 +1652,7 @@
    <description i18n:translate="">A Subject Cataloguer is processing an ePublication for subject cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
     <exit-transition transition_id="submitSubjectCataloguing"/>
+    <exit-transition transition_id="submitSubjectCataloguingPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
@@ -1807,6 +1808,7 @@
    <description i18n:translate="">A Subject Cataloguing Reviews controls an ePublication for subject cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
     <exit-transition transition_id="submitSubjectCataloguingReview"/>
+    <exit-transition transition_id="submitSubjectCataloguingReviewPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
