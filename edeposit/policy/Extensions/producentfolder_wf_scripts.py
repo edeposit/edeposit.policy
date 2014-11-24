@@ -30,43 +30,43 @@ def sendEmailFactory(view_name, recipients, subject):
     return handler
 
 sendEmailToISBNGeneration = sendEmailFactory("worklist-waiting-for-isbn-generation",
-                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
                                              "Dokumenty cekajici na prideleni ISBN")
 
 sendEmailToISBNSubjectValidation = sendEmailFactory("worklist-waiting-for-isbn-subject-validation",
-                                                    ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                                    ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
                                                     "Dokumenty cekajici na vecnou kontrolu ISBN")
 
 sendEmailWithOriginalFilesWaitingForAleph = sendEmailFactory("worklist-waiting-for-aleph",
-                                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
                                                              "Dokumenty cekajici na Aleph")
 
 sendEmailToAcquisition = sendEmailFactory("worklist-waiting-for-acquisition",
-                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz'],
+                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
                                           "Dokumenty cekajici na Akvizici")
 
 sendEmailToDescriptiveCataloguingPreparing \
     = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-preparing",
                        #['stavel.jan@gmail.com',],
-                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz'],
+                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz','alena.zalejska@pragodata.cz'],
                        "Dokumenty cekajici na přípravu jmenného popisu")
 
 sendEmailToDescriptiveCataloguingReviewPreparing \
     = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-review-preparing",
                        #['stavel.jan@gmail.com',],
-                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz'],
+                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz','alena.zalejska@pragodata.cz'],
                        "Dokumenty cekajici na přípravu jmenné revize")
 
 sendEmailToSubjectCataloguingPreparing \
     = sendEmailFactory("worklist-waiting-for-subject-cataloguing-preparing",
                        #['stavel.jan@gmail.com',],
-                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz'],
+                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz','alena.zalejska@pragodata.cz'],
                        "Dokumenty cekajici na přípravu věcného popisu")
 
 sendEmailToSubjectCataloguingReviewPreparing \
     = sendEmailFactory("worklist-waiting-for-subject-cataloguing-review-preparing",
                        #['stavel.jan@gmail.com',],
-                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz'],
+                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz','alena.zalejska@pragodata.cz'],
                        "Dokumenty cekajici na přípravu věcné revize")
 
 def sendEmailToGroupFactory(groupname,title):
@@ -81,7 +81,7 @@ def sendEmailToGroupFactory(groupname,title):
             request = context.REQUEST
             request['userid']=username
             view = api.content.get_view(name=view_name, context = context, request = request)
-            api.portal.send_email(recipient=",".join(['stavel.jan@gmail.com',email]), subject=subject, body=view())
+            api.portal.send_email(recipient=",".join(['stavel.jan@gmail.com',email,'alena.zalejska@pragodata.cz']), subject=subject, body=view())
 
     return sendEmailToGroup
 
