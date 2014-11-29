@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-29 19:30+0000\n"
-"PO-Revision-Date: 2014-11-29 20:29+0100\n"
+"POT-Creation-Date: 2014-11-29 19:35+0000\n"
+"PO-Revision-Date: 2014-11-29 20:35+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -294,7 +294,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Passed"
-msgstr ""
+msgstr "Antivirus nic nenašel"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Go to Private"
@@ -739,11 +739,11 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating with success"
-msgstr ""
+msgstr "Náhled vygenerován"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail generating with error"
-msgstr ""
+msgstr "Chyba při generování náhledu"
 
 #. Default: "Visible to everyone, editable by the owner."
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
