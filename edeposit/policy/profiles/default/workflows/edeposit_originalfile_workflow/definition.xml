@@ -256,7 +256,7 @@
  
  <transition transition_id="antivirusError" 
              title="File Antivirus Has not Passed" 
-             new_state=""
+             new_state="declarationWithError"
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -429,7 +429,7 @@
 
  <transition transition_id="amqpError"
              title="Error from external service" 
-             new_state="" 
+             new_state="declarationWithError" 
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -728,7 +728,7 @@
  
  <transition transition_id="thumbnailError" 
              title="Thumbnail Generating finished with Error" 
-             new_state="" 
+             new_state="declarationWithError" 
              trigger="USER" 
              before_script="" 
              after_script="" 
