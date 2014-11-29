@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-29 12:22+0000\n"
-"PO-Revision-Date: 2014-10-09 07:09+0200\n"
+"POT-Creation-Date: 2014-11-29 19:30+0000\n"
+"PO-Revision-Date: 2014-11-29 20:29+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -314,15 +314,15 @@ msgstr "Kontrola ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Duplicity Check"
-msgstr ""
+msgstr "Kontrola duplicity ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Generation"
-msgstr ""
+msgstr "Přidělování ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Subject Validation"
-msgstr ""
+msgstr "Věcná kontrola ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Validation"
@@ -334,7 +334,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Duplicit"
-msgstr ""
+msgstr "ISBN už bylo použito"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is OK and Acquision is OK. So it can go to cataloguing."
@@ -342,11 +342,11 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Unique"
-msgstr ""
+msgstr "ISBN je unikátní"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Valid"
-msgstr ""
+msgstr "ISBN má správný formát"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is generated"
