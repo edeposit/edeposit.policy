@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-10-24 13:54+0000\n"
-"PO-Revision-Date: 2014-10-09 07:09+0200\n"
+"POT-Creation-Date: 2014-11-29 20:00+0000\n"
+"PO-Revision-Date: 2014-11-29 21:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -286,15 +286,15 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "External service sent some error"
-msgstr ""
+msgstr "Externí služba poslala chybu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Has not Passed"
-msgstr ""
+msgstr "Antivirová kontrola odhalila virus"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Passed"
-msgstr ""
+msgstr "Antivirová kontrola nenašla žádný virus"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Go to Private"
@@ -314,15 +314,15 @@ msgstr "Kontrola ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Duplicity Check"
-msgstr ""
+msgstr "Kontrola duplicity ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Generation"
-msgstr ""
+msgstr "Přidělování ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Subject Validation"
-msgstr ""
+msgstr "Věcná kontrola ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Validation"
@@ -334,7 +334,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Duplicit"
-msgstr ""
+msgstr "ISBN už bylo použito"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is OK and Acquision is OK. So it can go to cataloguing."
@@ -342,19 +342,19 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Unique"
-msgstr ""
+msgstr "ISBN je unikátní"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Valid"
-msgstr ""
+msgstr "ISBN má správný formát"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is generated"
-msgstr ""
+msgstr "ISBN bylo přiděleno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is not Valid"
-msgstr ""
+msgstr "ISBN není správně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is valid. A system performs it."
@@ -366,7 +366,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN will be validated by ISBN Agency."
-msgstr ""
+msgstr "ISBN bude přiděleno ISBN agenturou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "K akvizici"
@@ -386,7 +386,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Notify System Action"
-msgstr "Systémové oznámení"
+msgstr "Oznámit systémovou akci"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Notify a system action"
@@ -418,7 +418,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for subject Cataloguing"
-msgstr ""
+msgstr "Příprava na věcný popis"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
@@ -436,7 +436,7 @@ msgstr "Zpracováno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Processing"
-msgstr ""
+msgstr "Ve zpracování"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Producent fills informations about itself."
@@ -456,7 +456,7 @@ msgstr "Producent je odmítkut. A to natrvalo."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Proper Aleph Record Choosen"
-msgstr ""
+msgstr "Vybrán správný záznam z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
@@ -484,7 +484,7 @@ msgstr "Fronta položek k opravě."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Records were loaded from Aleph"
-msgstr ""
+msgstr "Záznamy byly načteny z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Recreate All important Collections"
@@ -505,7 +505,7 @@ msgstr "Odmítnuto"
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Renew Aleph Records"
-msgstr ""
+msgstr "Obnovit záznamy z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Reviewer tasks"
@@ -613,19 +613,19 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Subject Cataloguing"
-msgstr ""
+msgstr "Věcný popis"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Subject Cataloguing Review"
-msgstr ""
+msgstr "Revize věcného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Subject Cataloguing Review Preparing"
-msgstr ""
+msgstr "Příprava revize věcného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Acquisition"
-msgstr ""
+msgstr "Potvrdit akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Acquisition Preparing"
@@ -633,39 +633,43 @@ msgstr "Dokončit přípravu akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Antivirus Check"
-msgstr ""
+msgstr "Potvrdit antivirovou kontrolu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit Declaration"
-msgstr ""
+msgstr "Potvrdit zadání"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Descriptive Cataloguing"
-msgstr ""
+msgstr "Potvrdit jmenný popis"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Descriptive Cataloguing Preparing"
-msgstr ""
+msgstr "Potvrdit přípravu jmenného popisu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Descriptive Cataloguing Review Preparing"
+msgstr "Potvrdit přípravu revize jmenného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit ISBN Subject Validation"
-msgstr ""
+msgstr "Potvrdit věcnou kontrolu ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing"
-msgstr ""
+msgstr "Potvrdit věcný popis"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing Preparing"
-msgstr ""
+msgstr "Potvrdit přípravu věcného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing Review"
-msgstr ""
+msgstr "Potvrdit revizi věcného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing Review Preparing"
-msgstr ""
+msgstr "Potvrdit přípravu revize věcného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit acquisition preparing"
@@ -673,19 +677,19 @@ msgstr "Poslat k akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit declaration"
-msgstr ""
+msgstr "Potvrdit zadání"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit descriptive cataloguing"
-msgstr ""
+msgstr "Potvrdit jmenný popis"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit descriptive cataloguing Review"
-msgstr ""
+msgstr "Potvrdit revizi jmenného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit descriptive cataloguing review preparing"
-msgstr ""
+msgstr "Potvrdit přípravu revize jmenného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Submit for approving"
@@ -693,7 +697,7 @@ msgstr "Odeslat ke schválení"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Submit load Aleph Records from Aleph"
-msgstr ""
+msgstr "Potvrdit načtení záznamů z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Submit load aleph records from Aleph to get SysNumbers"
@@ -701,15 +705,15 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit preparing of descriptive cataloguing"
-msgstr ""
+msgstr "Potvrdit přípravu jmenného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit review of subject cataloguing"
-msgstr ""
+msgstr "Potvrdit revizi věcného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit subject cataloguing"
-msgstr ""
+msgstr "Potvrdit věcný popis"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit subject cataloguing Preparing"
@@ -727,19 +731,19 @@ msgstr "Generování náhledů"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating Passed"
-msgstr ""
+msgstr "Náhled vygenerován"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating finished with Error"
-msgstr ""
+msgstr "Generování náhledu skončilo s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating with success"
-msgstr ""
+msgstr "Náhled vygenerován"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail generating with error"
-msgstr ""
+msgstr "Chyba při generování náhledu"
 
 #. Default: "Visible to everyone, editable by the owner."
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
@@ -752,7 +756,7 @@ msgstr "K akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "To Acquisition Preparing"
-msgstr ""
+msgstr "K přípravě akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
@@ -781,7 +785,7 @@ msgstr "Čeká na opravu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Waiting for ISBN Generation"
-msgstr ""
+msgstr "Čeká na přidělení ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Waiting for acquisition"
@@ -876,7 +880,7 @@ msgstr "načíst záznamy z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "waiting for Aleph"
-msgstr ""
+msgstr "Čeká na Aleph"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
 msgid "waiting for Aleph response"
