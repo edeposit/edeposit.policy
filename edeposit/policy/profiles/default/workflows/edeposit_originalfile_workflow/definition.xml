@@ -16,6 +16,7 @@
  <permission>Add portal content</permission>
  <permission>Review portal content</permission>
  <permission>View</permission>
+ <permission>View History</permission>
  <permission>Copy or Move</permission>
  <permission>Delete objects</permission>
 
@@ -34,6 +35,14 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -108,6 +117,13 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -198,6 +214,15 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -461,6 +486,16 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Change portal events" acquired="False">
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -520,6 +555,16 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -603,6 +648,16 @@
    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="View History" acquired="False">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: Librarian</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
+   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Change portal events" acquired="False">
    <permission-role>Site Administrator</permission-role>
    <permission-role>Manager</permission-role>
@@ -669,6 +724,16 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -804,6 +869,15 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="plone.app.collection: Add Collection" acquired="False">
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -913,6 +987,15 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -1090,6 +1173,15 @@
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="plone.app.collection: Add Collection" acquired="False">
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1157,6 +1249,15 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1232,6 +1333,15 @@
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="plone.app.collection: Add Collection" acquired="False">
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1303,6 +1413,16 @@
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>E-Deposit: Acquisition Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1385,6 +1505,17 @@
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="plone.app.collection: Add Collection" acquired="False">
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1460,6 +1591,17 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1608,6 +1750,14 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="plone.app.collection: Add Collection" acquired="False">
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1679,6 +1829,15 @@
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
     </permission-map>
@@ -1760,6 +1919,17 @@
       <permission-role>E-Deposit: Acquisition Administrator</permission-role>
       <permission-role>Manager</permission-role>
     </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
     <permission-map name="plone.app.collection: Add Collection" acquired="False">
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1790,7 +1960,7 @@
     </permission-map>
     <permission-map name="Review portal content" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
-      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
     </permission-map>
@@ -1840,6 +2010,17 @@
       <permission-role>E-Deposit: Acquisition Administrator</permission-role>
       <permission-role>Manager</permission-role>
     </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
     <permission-map name="plone.app.collection: Add Collection" acquired="False">
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1861,7 +2042,7 @@
     <permission-map name="Review portal content" acquired="False">
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
-      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
     </permission-map>
@@ -1901,8 +2082,16 @@
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="toWithdraw"/>
 
-   <permission-map name="Access contents information"
-                   acquired="False">
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
@@ -1970,6 +2159,16 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: Librarian</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Manager</permission-role>
@@ -2047,6 +2246,13 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -2141,6 +2347,14 @@
    <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="View History" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>E-Deposit: Producent</permission-role>
+   <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -2180,6 +2394,14 @@
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Change portal events" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -2213,6 +2435,14 @@
 
  <state state_id="processed" title="Processed" i18n:attributes="title">
    <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
