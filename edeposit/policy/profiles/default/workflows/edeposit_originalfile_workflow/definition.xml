@@ -33,7 +33,7 @@
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -41,7 +41,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -49,7 +49,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -57,7 +57,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -65,7 +65,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -73,7 +73,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -82,7 +82,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -90,7 +90,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -107,7 +107,7 @@
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -117,49 +117,49 @@
    <permission-map name="Change portal events" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Copy or Move" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Delete objects" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="Review portal content" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="List folder contents" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -197,7 +197,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -238,7 +238,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -247,7 +247,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -457,7 +457,7 @@
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -489,7 +489,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -498,7 +498,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -519,7 +519,7 @@
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -551,7 +551,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -560,7 +560,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -598,7 +598,7 @@
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
    <permission-role>Site Administrator</permission-role>
    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
    <permission-role>Manager</permission-role>
@@ -635,7 +635,7 @@
     <permission-role>E-Deposit: Acquisitor</permission-role>
     <permission-role>E-Deposit: System</permission-role>
     <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
     <permission-role>Owner</permission-role>
     <permission-role>Site Administrator</permission-role>
     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
@@ -645,7 +645,7 @@
     <permission-role>E-Deposit: Acquisitor</permission-role>
     <permission-role>E-Deposit: System</permission-role>
     <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
     <permission-role>Owner</permission-role>
     <permission-role>Site Administrator</permission-role>
     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
@@ -660,14 +660,15 @@
         i18n:attributes="title">
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="thumbnailError"/>
-   <exit-transition transition_id="thumbnailOK"/>
+   <exit-transition transition_id="thumbnailOKAleph"/>
+   <exit-transition transition_id="thumbnailOKISBNGeneration"/>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -709,7 +710,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -719,7 +720,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -740,19 +741,36 @@
    </guard>
  </transition>
  
- <transition transition_id="thumbnailOK" 
+ <transition transition_id="thumbnailOKAleph" 
              title="Thumbnail Generating Passed" 
              new_state="exportToAleph"
              trigger="USER" 
              before_script="submitDocumentViewer" 
              after_script="submitExportToAleph"  
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" 
+   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOKAleph" 
            category="workflow" 
            icon=""
            i18n:translate="">Thumbnail Generating with success</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.isbn</guard-expression>
+   </guard>
+ </transition>
+ <transition transition_id="thumbnailOKISBNGeneration" 
+             title="Thumbnail Generating Passed" 
+             new_state="ISBNGeneration"
+             trigger="USER" 
+             before_script="submitDocumentViewer" 
+             after_script=""  
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOKISBNGeneration" 
+           category="workflow" 
+           icon=""
+           i18n:translate="">Thumbnail Generating with success</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: not here.isbn</guard-expression>
    </guard>
  </transition>
 
@@ -782,7 +800,7 @@
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -824,7 +842,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -834,7 +852,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -894,7 +912,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -937,7 +955,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -947,7 +965,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1067,7 +1085,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1110,7 +1128,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1119,7 +1137,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1138,7 +1156,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1181,7 +1199,7 @@
    <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
    <permission-role>Manager</permission-role>
@@ -1190,7 +1208,7 @@
    <permission-role>E-Deposit: Acquisition Administrator</permission-role>
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
+   <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
    <permission-role>Manager</permission-role>
@@ -1209,7 +1227,7 @@
      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1252,7 +1270,7 @@
     <permission-role>E-Deposit: Acquisitor</permission-role>
     <permission-role>E-Deposit: System</permission-role>
     <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
     <permission-role>Owner</permission-role>
     <permission-role>Site Administrator</permission-role>
@@ -1262,7 +1280,7 @@
     <permission-role>E-Deposit: Acquisitor</permission-role>
     <permission-role>E-Deposit: System</permission-role>
     <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
     <permission-role>Owner</permission-role>
     <permission-role>Site Administrator</permission-role>
@@ -1284,7 +1302,7 @@
       <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>Site Administrator</permission-role>
       <permission-role>E-Deposit: Acquisition Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1328,7 +1346,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
       <permission-role>Owner</permission-role>
@@ -1339,7 +1357,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
       <permission-role>Owner</permission-role>
@@ -1362,7 +1380,7 @@
      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1405,7 +1423,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
@@ -1417,7 +1435,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
@@ -1441,7 +1459,7 @@
      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1485,7 +1503,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
@@ -1497,7 +1515,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
@@ -1586,7 +1604,7 @@
      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -1628,7 +1646,7 @@
     <permission-role>E-Deposit: Acquisitor</permission-role>
     <permission-role>E-Deposit: System</permission-role>
     <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
     <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
     <permission-role>Owner</permission-role>
     <permission-role>Site Administrator</permission-role>
@@ -1638,7 +1656,7 @@
     <permission-role>E-Deposit: Acquisitor</permission-role>
     <permission-role>E-Deposit: System</permission-role>
     <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <permission-role>E-Deposit: Producent Editor</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
     <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
     <permission-role>Owner</permission-role>
     <permission-role>Site Administrator</permission-role>
@@ -1660,7 +1678,7 @@
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
     </permission-map>
@@ -1703,7 +1721,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
       <permission-role>Owner</permission-role>
@@ -1714,7 +1732,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
       <permission-role>Owner</permission-role>
@@ -1737,7 +1755,7 @@
       <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>Site Administrator</permission-role>
       <permission-role>E-Deposit: Acquisition Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1780,7 +1798,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
@@ -1792,7 +1810,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
@@ -1817,7 +1835,7 @@
       <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>Site Administrator</permission-role>
       <permission-role>E-Deposit: Acquisition Administrator</permission-role>
       <permission-role>Manager</permission-role>
@@ -1851,7 +1869,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
@@ -1863,7 +1881,7 @@
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: System</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
-      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
@@ -1889,7 +1907,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -1924,7 +1942,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1934,7 +1952,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -1951,7 +1969,7 @@
      <permission-role>E-Deposit: Librarian</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Manager</permission-role>
@@ -1976,7 +1994,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
@@ -1986,7 +2004,7 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
@@ -2028,7 +2046,7 @@
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -2058,7 +2076,7 @@
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -2066,7 +2084,7 @@
    <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
@@ -2119,7 +2137,7 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>E-Deposit: Producent</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
@@ -2141,14 +2159,14 @@
   <permission-map name="View" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="List folder contents" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent</permission-role>
+   <permission-role>E-Deposit: Producent Administrator</permission-role>
    <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
@@ -2158,7 +2176,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>
@@ -2180,7 +2198,7 @@
    <permission-map name="View" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
    </permission-map>

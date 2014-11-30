@@ -83,7 +83,6 @@
      <permission-role>Manager</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Editor</permission-role>
-     <permission-role>Anonymous</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
