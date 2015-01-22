@@ -13,6 +13,7 @@
   <permission>Access contents information</permission>
   <permission>Change portal events</permission>
   <permission>Add portal content</permission>
+  <permission>List folder contents</permission>
   <permission>Modify portal content</permission>
   <permission>Review portal content</permission>
   <permission>View</permission>
@@ -21,14 +22,35 @@
   <permission>E-Deposit: Add ePeriodical</permission>
   <permission>E-Deposit: Add Book</permission>
   <permission>Copy or Move</permission>
+  <permission>CMFEditions: Access previous versions</permission>
+  <permission>View History</permission>
 
   <state state_id="waitingForApproving" title="Waiting for Approving" i18n:attributes="title">
     <description i18n:translate="">Waiting till Acquisitor approves producent's informations.</description>
     <exit-transition transition_id="approve"/>
+    <exit-transition transition_id="amqpError"/>
+    <exit-transition transition_id="pdfGenerated"/>
+    <exit-transition transition_id="generateAgreement"/>
     <exit-transition transition_id="back"/>
     <exit-transition transition_id="block"/>
     <exit-transition transition_id="reject"/>
     <permission-map name="Access contents information" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Access previous versions" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>E-Deposit: ISBN Agency Member</permission-role>
       <permission-role>Owner</permission-role>
@@ -89,7 +111,10 @@
 
   <state state_id="approved" title="Approved" i18n:attributes="title">
     <description i18n:translate="">Producent is approved. He can register new ePublications</description>
+    <exit-transition transition_id="amqpError"/>
+    <exit-transition transition_id="pdfGenerated"/>
     <exit-transition transition_id="block"/>
+    <exit-transition transition_id="generateAgreement"/>
     <exit-transition transition_id="reject"/>
     <permission-map name="Copy or Move" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -102,6 +127,22 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>Reader</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="CMFEditions: Access previous versions" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map name="Access contents information" acquired="False">
@@ -167,11 +208,19 @@
 
   <state state_id="blocked" title="Blocked" i18n:attributes="title">
     <description i18n:translate="">Producent is blocked. He cannot register new ePublications temporally.</description>
+    <exit-transition transition_id="amqpError"/>
+    <exit-transition transition_id="pdfGenerated"/>
     <exit-transition transition_id="approve"/>
     <exit-transition transition_id="back"/>
     <exit-transition transition_id="reject"/>
     <permission-map name="Copy or Move" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map name="Access contents information" acquired="True">
@@ -202,7 +251,10 @@
 
   <state state_id="registration" title="Registration" i18n:attributes="title">
     <description i18n:translate="">Producent fills informations about itself.</description>
+    <exit-transition transition_id="amqpError"/>
+    <exit-transition transition_id="pdfGenerated"/>
     <exit-transition transition_id="submit"/>
+    <exit-transition transition_id="generateAgreement"/>
     <permission-map name="Copy or Move" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Site Administrator</permission-role>
@@ -226,6 +278,13 @@
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map name="Access contents information" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -279,6 +338,8 @@
 
   <state state_id="rejected" title="Rejected" i18n:attributes="title">
     <description i18n:translate="">Producent is rejected. It is permanent state.</description>
+    <exit-transition transition_id="amqpError"/>
+    <exit-transition transition_id="pdfGenerated"/>
     <permission-map name="Copy or Move" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Site Administrator</permission-role>
@@ -311,7 +372,10 @@
 
   <state state_id="waitingForCorrection" title="Waiting for Correction" i18n:attributes="title">
     <description i18n:translate="">Waiting till Producent corrects informations about itself.</description>
+    <exit-transition transition_id="amqpError"/>
+    <exit-transition transition_id="pdfGenerated"/>
     <exit-transition transition_id="submit"/>
+    <exit-transition transition_id="generateAgreement"/>
     <permission-map name="Copy or Move" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Site Administrator</permission-role>
@@ -334,6 +398,12 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
+    <permission-map name="List folder contents" acquired="True">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
     <permission-map name="Request Review" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
       <permission-role>Owner</permission-role>
@@ -347,6 +417,38 @@
       <permission-role>Site Administrator</permission-role>
     </permission-map>
   </state>
+ <transition transition_id="amqpError"
+             title="Error from external service" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description>External service sent some error</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=amqpError" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">External service sent some error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="pdfGenerated"
+             title="PDF generated" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description>External service sent some error</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=pdfGenerated" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">PDF generated</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
   <transition transition_id="approve"
               title="Acquisitor approves a producent content" 
               new_state="approved" 
@@ -379,13 +481,42 @@
       <guard-permission>Review portal content</guard-permission>
     </guard>
   </transition>
-  <transition transition_id="submit" title="A producent submits content for approving" new_state="waitingForApproving" trigger="USER" before_script="" after_script="" i18n:attributes="title">
+  <transition transition_id="submit" 
+              title="A producent submits content for approving" 
+              new_state="waitingForApproving" 
+              trigger="USER" 
+              before_script="" 
+              after_script="" 
+              i18n:attributes="title">
     <description i18n:translate="">Puts your item in a review queue, so it can be approved by Acquitor.</description>
     <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="" i18n:translate="">Submit for approving</action>
     <guard>
       <guard-permission>Review portal content</guard-permission>
     </guard>
   </transition>
+
+  <transition transition_id="generateAgreement" 
+              title="Generate Agreement" 
+              new_state="" 
+              trigger="USER" 
+              before_script="generateAgreement" 
+              after_script="" 
+              i18n:attributes="title">
+    <description i18n:translate="">Generate agreement with values a user submitted.</description>
+    <action
+        url="%(content_url)s/content_status_modify?workflow_action=generateAgreement" 
+        category="workflow" icon="" i18n:translate="">Submit Agreement Generation</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+ <script script_id="generateAgreement" 
+         type="External Method"
+         filename="" 
+         module="edeposit.policy.producent_wf_scripts"
+         function="submitAgreementGeneration"/> 
+
   <worklist worklist_id="correction_queue" title="Queue waiting for correction" i18n:attributes="title">
     <description i18n:translate="">Waiting for correction</description>
     <action url="%(portal_url)s/search?review_state=waitingForCorrection" category="global" icon="" i18n:translate="">Waiting for correction</action>
