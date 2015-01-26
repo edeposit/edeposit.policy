@@ -25,8 +25,13 @@ def sendEmailFactory(view_name, recipients, subject):
     def handler(wfStateInfo):
         context = wfStateInfo.object
         view = api.content.get_view(name=view_name, context = context, request = context.REQUEST)
-        print "poslal jsem email: ", subject
-        api.portal.send_email(recipient=",".join(recipients), subject=subject, body=view())
+        body = view()
+        if view.numOfRows:
+            print "poslal jsem email: ", subject
+            api.portal.send_email(recipient=",".join(recipients), subject=subject, body=body)
+        else:
+            print "zadny email jsem neposlal. prazdno. ", subject
+            
     return handler
 
 sendEmailToISBNGeneration = sendEmailFactory("worklist-waiting-for-isbn-generation",
@@ -74,14 +79,19 @@ def sendEmailToGroupFactory(groupname,title):
         context = wfStateInfo.object
         for member in api.user.get_users(groupname=groupname):
             username = member.id
-            print u"odesilam email pro: " + username
+
             email = member.getProperty('email')
             view_name = 'worklist-waiting-for-user'
             subject = title + " pro: " + username
             request = context.REQUEST
             request['userid']=username
             view = api.content.get_view(name=view_name, context = context, request = request)
-            api.portal.send_email(recipient=",".join(['stavel.jan@gmail.com',email,'alena.zalejska@pragodata.cz']), subject=subject, body=view())
+            body = view()
+            if view.numOfRows:
+                print u"odesilam email pro: " + username
+                api.portal.send_email(recipient=",".join(['stavel.jan@gmail.com',email,'alena.zalejska@pragodata.cz']), subject=subject, body=body)
+            else:
+                print u"nic odesilame pro: " + username
 
     return sendEmailToGroup
 
