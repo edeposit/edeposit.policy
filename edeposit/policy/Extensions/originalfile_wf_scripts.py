@@ -104,6 +104,10 @@ def submitThumbnailGenerating(wfStateInfo):
         comment=u"Generovat náhled pro soubor:%s" % (originalfile.file.filename, )
         wft = api.portal.get_tool('portal_workflow')
         wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+
+def submitVoucherGeneration(wfStateInfo):
+    originalfile = wfStateInfo.object
+    getAdapter(originalfile,IAMQPSender,name="voucher-generate").send()
     
 def updateRelatedItems(wfStateInfo):
     logger.info("updateRelatedItems")
