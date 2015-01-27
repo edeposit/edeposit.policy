@@ -20,6 +20,9 @@
  <permission>Copy or Move</permission>
  <permission>Delete objects</permission>
 
+ <!-- (occur-1 "<state " nil (list (current-buffer)) "*definition.xml: states*") -->
+ <!-- (occur-1 "<transition " nil (list (current-buffer)) "*definition.xml: transition*") -->
+
  <!-- declaration -->
 
  <state state_id="declaration" 
@@ -27,11 +30,11 @@
         i18n:attributes="title">
  
    <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="pdfGenerated"/>  
    <exit-transition transition_id="submitDeclarationToISBNValidation"/>
    <exit-transition transition_id="submitDeclarationToAntivirus"/>
-   <exit-transition transition_id="submitDeclarationToISBNGenerating"/>
-
+ 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -116,7 +119,6 @@
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="submitDeclarationToAntivirus"/>
-   <exit-transition transition_id="submitDeclarationToISBNGenerating"/>
    <exit-transition transition_id="toWithdraw"/>
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -1737,7 +1739,7 @@
        i18n:translate="">K akvizici</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn</guard-expression>
+     <guard-expression>python: here.isbn and here.file</guard-expression>
    </guard>
  </transition>
 
@@ -1759,24 +1761,6 @@
    </guard>
  </transition>
 
- <transition transition_id="submitDeclarationToISBNGenerating" 
-             title="Declaration is finished"
-             new_state="ISBNGeneration" 
-             trigger="USER" 
-             before_script="" 
-             after_script=""  
-             i18n:attributes="title">
-   <action
-       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToISBNGenerating" 
-       category="workflow" 
-       icon=""
-       i18n:translate="">K akvizici</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: (not here.isbn) and (not here.file)</guard-expression>
-   </guard>
- </transition>
- 
  <transition transition_id="submitAcquisitionPreparing" 
              title="Submit acquisition preparing" 
              new_state="acquisition" 
