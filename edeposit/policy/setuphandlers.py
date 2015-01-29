@@ -33,6 +33,13 @@ groups = (
       'description': '',
       'roles': ['E-Deposit: Descriptive Cataloguing Administrator',]
   },
+    # from this group administrator chooses members to be reviewer,
+    # cataloguer, ...
+    { 'group_id': 'Descriptive Cataloguing Members',
+      'title': 'E-Deposit: Descriptive Cataloguing Members',
+      'description': '',
+      'roles': []
+  },
     { 'group_id': 'Descriptive Cataloguing Reviewers',
       'title': 'E-Deposit: Descriptive Cataloguing Reviewers',
       'description': '',
@@ -40,6 +47,11 @@ groups = (
   },
     { 'group_id': 'Descriptive Cataloguers',
       'title': 'E-Deposit: Descriptive Cataloguers',
+      'description': '',
+      'roles': []
+  },
+    { 'group_id': 'Subject Cataloguing Members',
+      'title': 'E-Deposit: Subject Cataloguing Members',
       'description': '',
       'roles': []
   },
