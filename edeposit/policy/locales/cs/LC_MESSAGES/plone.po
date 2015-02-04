@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-04 12:42+0000\n"
-"PO-Revision-Date: 2014-11-29 21:00+0100\n"
+"POT-Creation-Date: 2015-02-04 12:54+0000\n"
+"PO-Revision-Date: 2015-02-04 13:54+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -300,15 +300,15 @@ msgstr "Antivirová kontrola nenašla žádný virus"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Generate Agreement"
-msgstr ""
+msgstr "Vygenerovat smlouvu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Generate Voucher"
-msgstr ""
+msgstr "Vygenerovat ohlašovací lístek"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Generate agreement with values a user submitted."
-msgstr ""
+msgstr "Vygenerovat ohlašovací lístek s údaji které vložil uživatel"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Go to Private"
@@ -421,7 +421,7 @@ msgstr "Dokumenty čekající na akvizici"
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "PDF generated"
-msgstr ""
+msgstr "PDF vygenerováno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Pending (%(count)d)"
@@ -433,7 +433,7 @@ msgstr "Příprava akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for Descriptive Cataloguing"
-msgstr ""
+msgstr "Příprava na jmennou katalogizaci"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for subject Cataloguing"
@@ -656,7 +656,7 @@ msgstr "Dokončit přípravu akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Submit Agreement Generation"
-msgstr ""
+msgstr "Požádat o generování smlouvy"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Antivirus Check"
