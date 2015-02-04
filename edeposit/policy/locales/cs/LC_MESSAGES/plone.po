@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-11-29 20:00+0000\n"
+"POT-Creation-Date: 2015-02-04 12:42+0000\n"
 "PO-Revision-Date: 2014-11-29 21:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,6 +213,7 @@ msgid "E-Deposit producent workflow - acquisitor can reject/confirm producents."
 msgstr "E-Deposit - Pracovní postup pro producenta. Akvizitor schvaluje producenta. Může ho i odmítnout, pozastavit, nebo zablokovat."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Error from external service"
 msgstr ""
 
@@ -285,6 +286,7 @@ msgid "Export to LTP Passed with OK"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "External service sent some error"
 msgstr "Externí služba poslala chybu"
 
@@ -295,6 +297,18 @@ msgstr "Antivirová kontrola odhalila virus"
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Passed"
 msgstr "Antivirová kontrola nenašla žádný virus"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Generate Agreement"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Generate Voucher"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Generate agreement with values a user submitted."
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Go to Private"
@@ -404,6 +418,11 @@ msgstr ""
 msgid "Original files waiting for acquisition"
 msgstr "Dokumenty čekající na akvizici"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "PDF generated"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Pending (%(count)d)"
 msgstr "Čeká (%(count)d)"
@@ -506,6 +525,10 @@ msgstr "Odmítnuto"
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Renew Aleph Records"
 msgstr "Obnovit záznamy z Alephu"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Request to generate voucher"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Reviewer tasks"
@@ -630,6 +653,10 @@ msgstr "Potvrdit akvizici"
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Acquisition Preparing"
 msgstr "Dokončit přípravu akvizice"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Submit Agreement Generation"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Antivirus Check"
