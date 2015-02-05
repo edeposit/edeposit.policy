@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-04 12:54+0000\n"
-"PO-Revision-Date: 2015-02-04 13:54+0100\n"
+"POT-Creation-Date: 2015-02-05 09:02+0000\n"
+"PO-Revision-Date: 2015-02-05 10:02+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -231,11 +231,11 @@ msgstr "Export do Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Aleph finished with error"
-msgstr ""
+msgstr "Export do Alephu proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Aleph finished with success"
-msgstr ""
+msgstr "Export do Alephu skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius"
@@ -243,23 +243,23 @@ msgstr "Export do Krameria"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Passed with Error"
-msgstr ""
+msgstr "Export do Krameria skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Passed with OK"
-msgstr ""
+msgstr "Export do Krameria proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Sent"
-msgstr ""
+msgstr "Poslal jsem export do Krameria"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius finished with error"
-msgstr ""
+msgstr "Export do Krameria skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius finished with success"
-msgstr ""
+msgstr "Export do Krameria proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius sent"
@@ -267,23 +267,23 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LPT Passed with Error"
-msgstr ""
+msgstr "Export do LTP skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LPT Passed with OK"
-msgstr ""
+msgstr "Export do LTP proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP"
-msgstr ""
+msgstr "Export do LTP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP Passed with Error"
-msgstr ""
+msgstr "Export do LTP skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP Passed with OK"
-msgstr ""
+msgstr "Export do LTP proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
