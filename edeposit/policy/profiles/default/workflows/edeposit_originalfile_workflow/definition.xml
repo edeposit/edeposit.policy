@@ -1035,6 +1035,9 @@
  <state state_id="waitingForAleph" title="Waiting for Aleph" i18n:attributes="title">
    <description i18n:translate="">Waiting till Aleph gets back SysNumber of an exported record</description>
    <exit-transition transition_id="alephRecordsLoaded"/>
+   <exit-transition transition_id="exportToAlephOK"/>
+   <exit-transition transition_id="exportToAlephError"/>
+   <exit-transition transition_id="exportToAlephSubmitted"/>
    <exit-transition transition_id="searchSysNumber"/>
    <exit-transition transition_id="noAlephRecordLoaded"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
