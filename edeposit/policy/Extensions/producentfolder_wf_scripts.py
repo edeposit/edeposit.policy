@@ -37,55 +37,95 @@ def sendEmailFactory(view_name, recipients, groupname, subject):
     return handler
 
 sendEmailToISBNGeneration = sendEmailFactory("worklist-waiting-for-isbn-generation",
-                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
+                                             ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                                              'ISBN Agency Members',
                                              "Dokumenty cekajici na prideleni ISBN")
 
 sendEmailToISBNSubjectValidation = sendEmailFactory("worklist-waiting-for-isbn-subject-validation",
-                                                    ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
+                                                    ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                                                     'ISBN Agency Members',
                                                     "Dokumenty cekajici na vecnou kontrolu ISBN")
 
 sendEmailWithOriginalFilesWaitingForAleph = sendEmailFactory("worklist-waiting-for-aleph",
-                                                             ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
+                                                             ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                                                              'Acquisitors',
                                                              "Dokumenty cekajici na Aleph")
 
 sendEmailToAcquisition = sendEmailFactory("worklist-waiting-for-acquisition",
-                                          ['stavel.jan@gmail.com','martin.zizala@nkp.cz','alena.zalejska@pragodata.cz'],
+                                          ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                                           'Acquisitors',
                                           "Dokumenty cekajici na Akvizici")
 
 sendEmailToDescriptiveCataloguingPreparing \
     = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-preparing",
-                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz','alena.zalejska@pragodata.cz'],
+                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                        'Descriptive Cataloguing Administrators',
                        "Dokumenty cekajici na přípravu jmenného popisu")
 
 sendEmailToDescriptiveCataloguingReviewPreparing \
     = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-review-preparing",
-                       ['stavel.jan@gmail.com','jarmila.pribylova@nkp.cz','alena.zalejska@pragodata.cz'],
+                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                        'Descriptive Cataloguing Administrators',
                        "Dokumenty cekajici na přípravu jmenné revize")
 
 sendEmailToSubjectCataloguingPreparing \
     = sendEmailFactory("worklist-waiting-for-subject-cataloguing-preparing",
-                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz','alena.zalejska@pragodata.cz'],
+                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                        'Subject Cataloguing Administrators',
                        "Dokumenty cekajici na přípravu věcného popisu")
 
 sendEmailToSubjectCataloguingReviewPreparing \
     = sendEmailFactory("worklist-waiting-for-subject-cataloguing-review-preparing",
-                       ['stavel.jan@gmail.com','marie.balikova@nkp.cz','alena.zalejska@pragodata.cz'],
+                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
                        'Subject Cataloguing Administrators',
                        "Dokumenty cekajici na přípravu věcné revize")
 
-def sendEmailToGroupFactory(groupname,title):
+def queryForStates(*args):
+    return [ {'i': 'portal_type',
+              'o': 'plone.app.querystring.operation.selection.is',
+              'v': ['edeposit.content.originalfile']},
+             {'i': 'review_state',
+              'o': 'plone.app.querystring.operation.selection.is',
+              'v': args},
+             {'i': 'path', 
+              'o': 'plone.app.querystring.operation.string.relativePath', 
+              'v': '../'}
+             ]
+
+def createUserCollection(context, username, indexName, state, readerGroup):
+    """ context - producents folder """
+
+    collectionName = 'originalfiles-waiting-for-user-' + username
+
+    if collectionName not in context.keys():
+        title = u"Originály čekající na: " + username
+        print "create ", title
+        query = queryForStates(state)
+        queryForUser = [{ 'i': indexName,                     
+                          'o': 'plone.app.querystring.operation.string.is',
+                          'v': username }]
+        collection = api.content.create( id=collectionName, 
+                                         container=context, 
+                                         type='Collection',
+                                         title=title, 
+                                         query = query + queryForUser)
+        api.user.grant_roles(username=username, roles=['Reader',], obj=collection)
+        api.group.grant_roles(groupname=readerGroup, roles=['Reader',],  obj=collection)
+        return collection
+
+    return None
+    
+def createGroupUsersCollections(context, groupname, indexName, state, readerGroup):
+    members = api.user.get_users(groupname=groupname)
+    for username in map(lambda member: member.id, members):
+        coll = createUserCollection(context, username, indexName, state, readerGroup)
+
+def sendEmailToGroupFactory(groupname, title, indexName, state, readerGroup):
     def sendEmailToGroup(wfStateInfo):
         context = wfStateInfo.object
         for member in api.user.get_users(groupname=groupname):
             username = member.id
-
+            createUserCollection(context,username,indexName, state, readerGroup)
             email = member.getProperty('email')
             view_name = 'worklist-waiting-for-user'
             subject = title + " pro: " + username
@@ -94,7 +134,6 @@ def sendEmailToGroupFactory(groupname,title):
             view = api.content.get_view(name=view_name, context = context, request = request)
             body = view()
             if view.numOfRows:
-                print u"odesilam email pro: " + username
                 recipients = ['stavel.jan@gmail.com',email,'alena.zalejska@pragodata.cz']
                 for recipient in recipients:
                     print u"odesilam email pro: " + recipient
@@ -104,25 +143,33 @@ def sendEmailToGroupFactory(groupname,title):
 
     return sendEmailToGroup
 
-sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupFactory('Descriptive Cataloguers',u"Jmenný popis")
-sendEmailToGroupDescriptiveCataloguingReviewers = sendEmailToGroupFactory('Descriptive Cataloguing Reviewers',u"Revize JP")
-sendEmailToGroupSubjectCataloguers = sendEmailToGroupFactory('Subject Cataloguers', u"Věcný popis")
-sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupFactory('Subject Cataloguing Reviewers', u"Revize VP")
+
+sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupFactory(groupname="Descriptive Cataloguers",
+                                                                 title = u"Jmenný popis",
+                                                                 indexName="getAssignedDescriptiveCataloguer",
+                                                                 state="descriptiveCataloguing",
+                                                                 readerGroup = "Descriptive Cataloguing Administrators")
+
+sendEmailToGroupDescriptiveCataloguingReviewers = sendEmailToGroupFactory(groupname='Descriptive Cataloguing Reviewers',
+                                                                          title = u"Revize JP",
+                                                                          indexName="getAssignedDescriptiveCataloguingReviewer",
+                                                                          state="descriptiveCataloguingReview",
+                                                                          readerGroup = "Descriptive Cataloguing Administrators")
+
+sendEmailToGroupSubjectCataloguers = sendEmailToGroupFactory(groupname='Subject Cataloguers', 
+                                                             title=u"Věcný popis",
+                                                             indexName="getAssignedSubjectCataloguer",
+                                                             state="subjectCataloguing",
+                                                             readerGroup = "Subject Cataloguing Administrators")
+
+sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupFactory(groupname='Subject Cataloguing Reviewers', 
+                                                                      title=u"Revize VP",
+                                                                      indexName="getAssignedSubjectCataloguingReviewer",
+                                                                      state="subjectCataloguingReview",
+                                                                      readerGroup = "Subject Cataloguing Administrators")
 
 def recreateCollections(wfStateInfo):
     context = wfStateInfo.object
-    def queryForStates(*args):
-        return [ {'i': 'portal_type',
-                  'o': 'plone.app.querystring.operation.selection.is',
-                  'v': ['edeposit.content.originalfile']},
-                 {'i': 'review_state',
-                  'o': 'plone.app.querystring.operation.selection.is',
-                  'v': args},
-                 {'i': 'path', 
-                  'o': 'plone.app.querystring.operation.string.relativePath', 
-                  'v': '../'}
-                 ]
-
     collections = [ 
         dict( name = "originalfiles-waiting-for-isbn-generation",
               title= u"Originály čekající na přidělení ISBN",
@@ -203,25 +250,6 @@ def recreateCollections(wfStateInfo):
                                   roles=['Reader',],
                                   obj=content)
             
-    def createGroupUsersCollections(context, groupname, indexName, state, readerGroup):
-        members = api.user.get_users(groupname=groupname)
-        for username in map(lambda member: member.id, members):
-            collectionName = 'originalfiles-waiting-for-user-' + username
-            if collectionName not in context.keys():
-                title = u"Originály čekající na: " + username
-                query = queryForStates(state)
-                queryForUser = [{ 'i': indexName,                     
-                                  'o': 'plone.app.querystring.operation.string.is',
-                                  'v': username }]
-                collection = api.content.create( id=collectionName, 
-                                                 container=context, 
-                                                 type='Collection',
-                                                 title=title, 
-                                                 query = query + queryForUser)
-                api.group.grant_roles(groupname="Descriptive Cataloguing Administrators",
-                                      roles=['Reader',],  obj=collection)
-                api.user.grant_roles(username=username, roles=['Reader',], obj=collection)
-                
     createGroupUsersCollections(context=context, 
                                 groupname="Descriptive Cataloguers",
                                 indexName="getAssignedDescriptiveCataloguer",
