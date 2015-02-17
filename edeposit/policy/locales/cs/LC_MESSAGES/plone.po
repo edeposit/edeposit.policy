@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-05 09:13+0000\n"
-"PO-Revision-Date: 2015-02-05 10:12+0100\n"
+"POT-Creation-Date: 2015-02-17 10:06+0000\n"
+"PO-Revision-Date: 2015-02-17 11:06+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -178,15 +178,15 @@ msgstr "Chyby v zadávání"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing"
-msgstr ""
+msgstr "Jmenný popis"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing Review"
-msgstr ""
+msgstr "Revize jmenného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing Review Preparing"
-msgstr ""
+msgstr "Příprava revize jmenného popisu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
 msgid "E-Deposit - OriginalFile Contribugint Request Workflow"
