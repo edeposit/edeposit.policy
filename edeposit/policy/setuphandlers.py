@@ -75,6 +75,11 @@ groups = (
       'description': '',
       'roles': ['E-Deposit: ISBN Agency Member',]
   },
+    { 'group_id': 'ISBN Agency Administrators',
+      'title': 'E-Deposit: ISBN Agency Administrators',
+      'description': '',
+      'roles': ['E-Deposit: ISBN Agency Administrator',]
+  },
     { 'group_id': 'Producent Administrators',
       'title': 'E-Deposit: Producent Administrators',
       'description': 'Producent administrators can assign new administrators and editors for given producent',
@@ -162,6 +167,13 @@ def updateGroupDashboards(portal):
     # pass
     pass
     
+def createAMQPFolder(portal):
+    linkName = 'amqp'
+    if linkName not in portal.objectIds():
+        portal.invokeFactory('edeposit.content.amqpfolder',linkName,title=u"AMQP služby")
+        api.user.grant_roles(username='system', obj=portal[linkName],
+                             roles = ('E-Deposit: System', 'Editor', 'Reader'))
+
 def importVarious(context):
     """Miscellanous steps import handle
     """
@@ -173,3 +185,4 @@ def importVarious(context):
     createUsers(portal)
     #updateGroupDashboards(portal)
     #createAgreementFile(portal)
+    createAMQPFolder(portal)
