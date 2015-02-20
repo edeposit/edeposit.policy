@@ -298,7 +298,7 @@
    </guard>
  </transition>
 
- <script script_id="sendEmailWaitingForAleph" 
+ <script script_id="sendEmailWithOriginalFilesWaitingForAleph" 
          type="External Method"
          filename="" 
          module="edeposit.policy.producentfolder_wf_scripts"
