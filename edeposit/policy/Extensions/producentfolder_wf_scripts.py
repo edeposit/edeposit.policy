@@ -11,7 +11,20 @@ from zope.component import queryUtility, getUtility, getAdapter
 import base64
 from edeposit.policy import MessageFactory as _
 
+from edeposit.content.tasks import (
+    IJSONEncoder,
+    IPloneTaskSender,
+    SendEmailWithWorklistToGroup,
+    LoadSysNumbersFromAleph,
+    RenewAlephRecords,
+)
+
 from edeposit.content.amqp import IAMQPSender, IAMQPHandler
+
+from collective.zamqp.interfaces import (
+    IProducer, 
+    IConsumer
+)
 
 import json
 from five import grok
@@ -21,64 +34,76 @@ logger = getLogger('edeposit.producentfolder_wf_scripts')
 # (occur-1 "def " nil (list (current-buffer)) "*Occur: originalfile_wf_scripts.py/def*")
 # (occur-1 "class " nil (list (current-buffer)) "*Occur: originalfile_wf_scripts.py/class*")
 
-def sendEmailFactory(view_name, recipients, groupname, subject):
+def sendEmailToGroupAMQPFactory(view_name, recipients, groupname, subject):
     def handler(wfStateInfo):
-        context = wfStateInfo.object
-        view = api.content.get_view(name=view_name, context = context, request = context.REQUEST)
-        body = view()
-        if view.numOfRows:
-            emailsFromGroup = [aa.getProperty('email') for aa in api.user.get_users(groupname=groupname)]
-            for recipient in frozenset(emailsFromGroup + recipients):
-                print "poslal jsem email: ", subject, recipient
-                api.portal.send_email(recipient=recipient, subject=subject, body=body)
-        else:
-            print "zadny email jsem neposlal. prazdno. ", subject
-            
+        task = SendEmailWithWorklistToGroup (
+            worklist = view_name,
+            recipientsGroup = groupname,
+            additionalEmails = recipients,
+            subject = subject
+        )
+        IPloneTaskSender(task).send()
+        
     return handler
 
-sendEmailToISBNGeneration = sendEmailFactory("worklist-waiting-for-isbn-generation",
-                                             ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                                             'ISBN Agency Members',
-                                             "Dokumenty cekajici na prideleni ISBN")
+# def sendEmailFactory(view_name, recipients, groupname, subject):
+#     def handler(wfStateInfo):
+#         context = wfStateInfo.object
+#         view = api.content.get_view(name=view_name, context = context, request = context.REQUEST)
+#         body = view()
+#         if view.numOfRows:
+#             emailsFromGroup = [aa.getProperty('email') for aa in api.user.get_users(groupname=groupname)]
+#             for recipient in frozenset(emailsFromGroup + recipients):
+#                 print "poslal jsem email: ", subject, recipient
+#                 api.portal.send_email(recipient=recipient, subject=subject, body=body)
+#         else:
+#             print "zadny email jsem neposlal. prazdno. ", subject
+            
+#     return handler
 
-sendEmailToISBNSubjectValidation = sendEmailFactory("worklist-waiting-for-isbn-subject-validation",
-                                                    ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                                                    'ISBN Agency Members',
-                                                    "Dokumenty cekajici na vecnou kontrolu ISBN")
+sendEmailToISBNGeneration = sendEmailToGroupAMQPFactory("worklist-waiting-for-isbn-generation",
+                                                        ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                                        'ISBN Agency Members',
+                                                        "Dokumenty cekajici na prideleni ISBN")
 
-sendEmailWithOriginalFilesWaitingForAleph = sendEmailFactory("worklist-waiting-for-aleph",
-                                                             ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                                                             'Acquisitors',
-                                                             "Dokumenty cekajici na Aleph")
+sendEmailToISBNSubjectValidation = sendEmailToGroupAMQPFactory("worklist-waiting-for-isbn-subject-validation",
+                                                               ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                                               'ISBN Agency Members',
+                                                               "Dokumenty cekajici na vecnou kontrolu ISBN")
 
-sendEmailToAcquisition = sendEmailFactory("worklist-waiting-for-acquisition",
-                                          ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                                          'Acquisitors',
-                                          "Dokumenty cekajici na Akvizici")
+sendEmailWithOriginalFilesWaitingForAleph = sendEmailToGroupAMQPFactory("worklist-waiting-for-aleph",
+                                                                        ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                                                        'Acquisitors',
+                                                                        "Dokumenty cekajici na Aleph")
+
+sendEmailToAcquisition = sendEmailToGroupAMQPFactory("worklist-waiting-for-acquisition",
+                                                     ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                                     'Acquisitors',
+                                                     "Dokumenty cekajici na Akvizici")
 
 sendEmailToDescriptiveCataloguingPreparing \
-    = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-preparing",
-                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                       'Descriptive Cataloguing Administrators',
-                       "Dokumenty cekajici na přípravu jmenného popisu")
+    = sendEmailToGroupAMQPFactory("worklist-waiting-for-descriptive-cataloguing-preparing",
+                                  ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                  'Descriptive Cataloguing Administrators',
+                                  "Dokumenty cekajici na přípravu jmenného popisu")
 
 sendEmailToDescriptiveCataloguingReviewPreparing \
-    = sendEmailFactory("worklist-waiting-for-descriptive-cataloguing-review-preparing",
-                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                       'Descriptive Cataloguing Administrators',
-                       "Dokumenty cekajici na přípravu jmenné revize")
+    = sendEmailToGroupAMQPFactory("worklist-waiting-for-descriptive-cataloguing-review-preparing",
+                                  ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                  'Descriptive Cataloguing Administrators',
+                                  "Dokumenty cekajici na přípravu jmenné revize")
 
 sendEmailToSubjectCataloguingPreparing \
-    = sendEmailFactory("worklist-waiting-for-subject-cataloguing-preparing",
-                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                       'Subject Cataloguing Administrators',
-                       "Dokumenty cekajici na přípravu věcného popisu")
+    = sendEmailToGroupAMQPFactory("worklist-waiting-for-subject-cataloguing-preparing",
+                                  ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                  'Subject Cataloguing Administrators',
+                                  "Dokumenty cekajici na přípravu věcného popisu")
 
 sendEmailToSubjectCataloguingReviewPreparing \
-    = sendEmailFactory("worklist-waiting-for-subject-cataloguing-review-preparing",
-                       ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                       'Subject Cataloguing Administrators',
-                       "Dokumenty cekajici na přípravu věcné revize")
+    = sendEmailToGroupAMQPFactory("worklist-waiting-for-subject-cataloguing-review-preparing",
+                                  ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                  'Subject Cataloguing Administrators',
+                                  "Dokumenty cekajici na přípravu věcné revize")
 
 def queryForStates(*args):
     return [ {'i': 'portal_type',
@@ -92,81 +117,46 @@ def queryForStates(*args):
               'v': '../'}
              ]
 
-def createUserCollection(context, username, indexName, state, readerGroup):
-    """ context - producents folder """
-
-    collectionName = 'originalfiles-waiting-for-user-' + username
-
-    if collectionName not in context.keys():
-        title = u"Originály čekající na: " + username
-        print "create ", title
-        query = queryForStates(state)
-        queryForUser = [{ 'i': indexName,                     
-                          'o': 'plone.app.querystring.operation.string.is',
-                          'v': username }]
-        collection = api.content.create( id=collectionName, 
-                                         container=context, 
-                                         type='Collection',
-                                         title=title, 
-                                         query = query + queryForUser)
-        api.user.grant_roles(username=username, roles=['Reader',], obj=collection)
-        api.group.grant_roles(groupname=readerGroup, roles=['Reader',],  obj=collection)
-        return collection
-
-    return None
     
 def createGroupUsersCollections(context, groupname, indexName, state, readerGroup):
     members = api.user.get_users(groupname=groupname)
     for username in map(lambda member: member.id, members):
         coll = createUserCollection(context, username, indexName, state, readerGroup)
 
-def sendEmailToGroupFactory(groupname, title, indexName, state, readerGroup):
+def sendEmailToGroupPersonsAMQPFactory(groupname, title, additionalEmails):
     def sendEmailToGroup(wfStateInfo):
-        context = wfStateInfo.object
-        for member in api.user.get_users(groupname=groupname):
-            username = member.id
-            createUserCollection(context,username,indexName, state, readerGroup)
-            email = member.getProperty('email')
-            view_name = 'worklist-waiting-for-user'
-            subject = title + " pro: " + username
-            request = context.REQUEST
-            request['userid']=username
-            view = api.content.get_view(name=view_name, context = context, request = request)
-            body = view()
-            if view.numOfRows:
-                recipients = ['stavel.jan@gmail.com',email,'alena.zalejska@pragodata.cz']
-                for recipient in recipients:
-                    print u"odesilam email pro: " + recipient
-                    api.portal.send_email(recipient=recipient, subject=subject, body=body)
-            else:
-                print u"nic odesilame pro: " + username
-
+        task = SendEmailWithUserWorklist (
+            groupname = groupname,
+            additionalEmails = additionalEmails,
+            title = title
+        )
+        IPloneTaskSender(task).send()
     return sendEmailToGroup
 
 
-sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupFactory(groupname="Descriptive Cataloguers",
-                                                                 title = u"Jmenný popis",
-                                                                 indexName="getAssignedDescriptiveCataloguer",
-                                                                 state="descriptiveCataloguing",
-                                                                 readerGroup = "Descriptive Cataloguing Administrators")
+sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupPersonsAMQPFactory(
+    groupname="Descriptive Cataloguers",
+    title = u"Jmenný popis",
+    additionalEmails = ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+)
 
-sendEmailToGroupDescriptiveCataloguingReviewers = sendEmailToGroupFactory(groupname='Descriptive Cataloguing Reviewers',
-                                                                          title = u"Revize JP",
-                                                                          indexName="getAssignedDescriptiveCataloguingReviewer",
-                                                                          state="descriptiveCataloguingReview",
-                                                                          readerGroup = "Descriptive Cataloguing Administrators")
+sendEmailToGroupDescriptiveCataloguingReviewers = sendEmailToGroupPersonsAMQPFactory(
+    groupname='Descriptive Cataloguing Reviewers',
+    title = u"Revize JP",
+    additionalEmails = ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+)
 
-sendEmailToGroupSubjectCataloguers = sendEmailToGroupFactory(groupname='Subject Cataloguers', 
-                                                             title=u"Věcný popis",
-                                                             indexName="getAssignedSubjectCataloguer",
-                                                             state="subjectCataloguing",
-                                                             readerGroup = "Subject Cataloguing Administrators")
+sendEmailToGroupSubjectCataloguers = sendEmailToGroupPersonsAMQPFactory(
+    groupname='Subject Cataloguers', 
+    title=u"Věcný popis",
+    additionalEmails = ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+)
 
-sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupFactory(groupname='Subject Cataloguing Reviewers', 
-                                                                      title=u"Revize VP",
-                                                                      indexName="getAssignedSubjectCataloguingReviewer",
-                                                                      state="subjectCataloguingReview",
-                                                                      readerGroup = "Subject Cataloguing Administrators")
+sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupPersonsAMQPFactory(
+    groupname='Subject Cataloguing Reviewers', 
+    title=u"Revize VP",
+    additionalEmails = ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+)
 
 def recreateCollections(wfStateInfo):
     context = wfStateInfo.object
@@ -292,21 +282,8 @@ def recreateCollections(wfStateInfo):
                               )
     pass
 
-
 def loadSysNumbersFromAleph(wfStateInfo):
-    producentsFolder = wfStateInfo.object
-    collection = producentsFolder['originalfiles-waiting-for-aleph']
-    originalFiles = map(lambda item: item.getObject(), collection.results(batch=False))
-    wft = api.portal.get_tool('portal_workflow')
-    for of in originalFiles:
-        wft.doActionFor(of,'searchSysNumber')
-    pass
+    IPloneTaskSender(LoadSysNumbersFromAleph()).send()
 
 def renewAlephRecords(wfStateInfo):
-    producentsFolder = wfStateInfo.object
-    collection = producentsFolder['originalfiles-waiting-for-renew-aleph-records']
-    originalFiles = map(lambda item: item.getObject(), collection.results(batch=False))
-    wft = api.portal.get_tool('portal_workflow')
-    for of in originalFiles:
-        wft.doActionFor(of,'renewAlephRecords')
-    pass
+    IPloneTaskSender(RenewAlephRecords()).send()
