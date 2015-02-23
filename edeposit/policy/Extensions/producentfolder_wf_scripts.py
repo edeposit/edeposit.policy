@@ -17,6 +17,7 @@ from edeposit.content.tasks import (
     SendEmailWithWorklistToGroup,
     LoadSysNumbersFromAleph,
     RenewAlephRecords,
+    SendEmailWithUserWorklist
 )
 
 from edeposit.content.amqp import IAMQPSender, IAMQPHandler
@@ -124,14 +125,15 @@ def createGroupUsersCollections(context, groupname, indexName, state, readerGrou
         coll = createUserCollection(context, username, indexName, state, readerGroup)
 
 def sendEmailToGroupPersonsAMQPFactory(groupname, title, additionalEmails):
-    def sendEmailToGroup(wfStateInfo):
+    def sendEmailToGroupPersons(wfStateInfo):
         task = SendEmailWithUserWorklist (
             groupname = groupname,
             additionalEmails = additionalEmails,
             title = title
         )
         IPloneTaskSender(task).send()
-    return sendEmailToGroup
+
+    return sendEmailToGroupPersons
 
 
 sendEmailToGroupDescriptiveCataloguers = sendEmailToGroupPersonsAMQPFactory(
