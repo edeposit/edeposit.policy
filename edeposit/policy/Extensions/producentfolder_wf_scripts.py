@@ -64,12 +64,12 @@ def sendEmailToGroupAMQPFactory(view_name, recipients, groupname, subject):
 
 sendEmailToISBNGeneration = sendEmailToGroupAMQPFactory("worklist-waiting-for-isbn-generation",
                                                         ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                                                        'ISBN Agency Members',
+                                                        'ISBN Agency Administrators',
                                                         "Dokumenty cekajici na prideleni ISBN")
 
 sendEmailToISBNSubjectValidation = sendEmailToGroupAMQPFactory("worklist-waiting-for-isbn-subject-validation",
                                                                ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
-                                                               'ISBN Agency Members',
+                                                               'ISBN Agency Administrators',
                                                                "Dokumenty cekajici na vecnou kontrolu ISBN")
 
 sendEmailWithOriginalFilesWaitingForAleph = sendEmailToGroupAMQPFactory("worklist-waiting-for-aleph",
