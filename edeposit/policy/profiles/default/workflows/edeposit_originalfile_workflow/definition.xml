@@ -1042,6 +1042,7 @@
    <exit-transition transition_id="exportToAlephError"/>
    <exit-transition transition_id="exportToAlephSubmitted"/>
    <exit-transition transition_id="searchSysNumber"/>
+   <exit-transition transition_id="loadSummaryAlephRecord"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="noAlephRecordLoaded"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
@@ -1271,6 +1272,24 @@
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
          function="renewAlephRecordsBySysNumber"/> 
+
+ <transition transition_id="loadSummaryAlephRecord"
+             title="Load Summary Aleph Record by SysNumber" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="loadSummaryAlephRecord"  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=loadSummaryAlephRecord" 
+           category="workflow" icon="" i18n:translate="">Load Summmary Aleph Record</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <script script_id="loadSummaryAlephRecord" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="loadSummaryAlephRecord"/> 
 
  <state state_id="chooseProperAlephRecord" 
         title="Choose a proper Aleph Record" 
