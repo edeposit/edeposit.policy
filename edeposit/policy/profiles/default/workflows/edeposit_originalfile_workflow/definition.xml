@@ -1042,6 +1042,7 @@
    <exit-transition transition_id="exportToAlephError"/>
    <exit-transition transition_id="exportToAlephSubmitted"/>
    <exit-transition transition_id="searchSysNumber"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="noAlephRecordLoaded"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
 
@@ -1118,6 +1119,40 @@
      <permission-role>Manager</permission-role>
    </permission-map>
  </state>
+
+ <transition transition_id="recordHasBeenChanged"
+             title="Record has been changed" 
+             new_state="" 
+             trigger="USER"
+             before_script=""
+             after_script="recordHasBeenChanged"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=recordHasBeenChanged"
+           category="workflow" 
+           icon="" i18n:translate="">Some changes appeared at the record.</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+   
+ </transition>
+
+ <script script_id="recordHasBeenChanged" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="recordHasBeenChanged"/> 
+ 
+ <transition transition_id="renewAlephRecords"
+             title="Renew Aleph Records" 
+             new_state="waitingForAleph" 
+             trigger="USER" 
+             before_script="" 
+             after_script="renewAlephRecords"  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=renewAlephRecords" 
+           category="workflow" icon="" i18n:translate="">Renew Aleph Records</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
 
  <transition transition_id="noAlephRecordLoaded"
              title="No record was loaded from Aleph" 
@@ -1218,6 +1253,24 @@
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
          function="renewAlephRecords"/> 
+
+ <transition transition_id="renewAlephRecordsBySysNumber"
+             title="Renew Aleph Records by SysNumber" 
+             new_state="waitingForAleph" 
+             trigger="USER" 
+             before_script="" 
+             after_script="renewAlephRecordsBySysNumber"  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=renewAlephRecordsBySysNumber" 
+           category="workflow" icon="" i18n:translate="">Renew Aleph Records by SysNumber</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <script script_id="renewAlephRecordsBySysNumber" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="renewAlephRecordsBySysNumber"/> 
 
  <state state_id="chooseProperAlephRecord" 
         title="Choose a proper Aleph Record" 
@@ -1385,6 +1438,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Descriptive Cataloguing administrator is preparing an ePublication for descriptive cataloguing.</description>
    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitDescriptiveCataloguingPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
    
@@ -1467,6 +1521,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Descriptive Cataloguer is processing an ePublication for descriptive cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitDescriptiveCataloguing"/>
     <exit-transition transition_id="submitDescriptiveCataloguingPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
@@ -1555,6 +1610,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Descriptive Cataloguing Administrator prepares work for reviewers.</description>
    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitDescriptiveCataloguingReviewPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
    
@@ -1645,6 +1701,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Descriptive Cataloguing Reviews controls an ePublication for descriptive cataloguing.</description>
    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitDescriptiveCataloguingReview"/>
    <exit-transition transition_id="toWithdraw"/>
    
@@ -1785,6 +1842,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguing administrator is preparing an ePublication for subject cataloguing.</description>
    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitSubjectCataloguingPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
    
@@ -1865,6 +1923,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguer is processing an ePublication for subject cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitSubjectCataloguing"/>
     <exit-transition transition_id="submitSubjectCataloguingPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
@@ -1951,6 +2010,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguing Administrator prepares work for reviewers.</description>
     <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitSubjectCataloguingReviewPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
    
@@ -2041,6 +2101,7 @@
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguing Reviews controls an ePublication for subject cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitSubjectCataloguingReview"/>
     <exit-transition transition_id="submitSubjectCataloguingReviewPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
@@ -2124,6 +2185,7 @@
    <description i18n:translate="">An ePublication is reviewed by Acquisitor.</description>
 
    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitAcquisition"/>
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="toWithdraw"/>
@@ -2198,6 +2260,7 @@
    <description i18n:translate="">ISBN will be validated by ISBN Agency.</description>
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitISBNSubjectValidation"/>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>

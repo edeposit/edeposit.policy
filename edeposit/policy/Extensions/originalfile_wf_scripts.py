@@ -82,6 +82,17 @@ def submitSysNumbersSearch(wfStateInfo):
         wft = api.portal.get_tool('portal_workflow')
         wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
+def recordHasBeenChanged(wfStateInfo):
+    logger.info("record has been changed")
+    print "record has been changed"
+    originalfile = wfStateInfo.object
+    epublication = aq_parent(aq_inner(originalfile))
+    with api.env.adopt_user(username="system"):
+        # Load Changes From aleph record
+        # ...
+        originalfile.updateFromAlephRecord()
+        getAdapter(originalfile, IEmailSender, name="originalfile-has-been-changed").send()
+        
 def renewAlephRecords(wfStateInfo):
     logger.info("renewAlephRecords")
     print "renew Aleph Records"
@@ -93,6 +104,11 @@ def renewAlephRecords(wfStateInfo):
         wft = api.portal.get_tool('portal_workflow')
         wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
+def renewAlephRecordsBySysNumber(wfStateInfo):
+    logger.info("renewAlephRecords by SysNumber")
+    print "renew Aleph Records by SysNumber"
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
 
 def submitThumbnailGenerating(wfStateInfo):
     logger.info("submitThumbnailGenerating")
