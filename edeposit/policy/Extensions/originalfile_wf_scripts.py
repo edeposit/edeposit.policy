@@ -106,9 +106,13 @@ def renewAlephRecords(wfStateInfo):
 
 def renewAlephRecordsBySysNumber(wfStateInfo):
     logger.info("renewAlephRecords by SysNumber")
-    print "renew Aleph Records by SysNumber"
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
+
+def loadSummaryAlephRecord(wfStateInfo):
+    logger.info("load summary aleph record")
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="load-summary-aleph-record").send()
 
 def submitThumbnailGenerating(wfStateInfo):
     logger.info("submitThumbnailGenerating")
