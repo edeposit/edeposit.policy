@@ -1199,7 +1199,7 @@
            icon="" i18n:translate="">We got records from Aleph</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.related_aleph_record</guard-expression>
+     <guard-expression>here/properAlephRecordsChoosen</guard-expression>
    </guard>
    
  </transition>
@@ -1211,12 +1211,12 @@
              before_script=""
              after_script=""
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=chooseProperAlephRecord"
+   <action url="%(content_url)s/content_status_modify?workflow_action=properAlephRecordChoosen"
            category="workflow" 
            icon="" i18n:translate="">Proper Aleph Record Choosen</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <guard-expression>here/related_aleph_record</guard-expression>
+     <guard-expression>here/properAlephRecordsChoosen</guard-expression>
    </guard>
  </transition>
 
