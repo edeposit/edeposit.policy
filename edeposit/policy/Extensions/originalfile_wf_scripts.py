@@ -78,9 +78,6 @@ def submitSysNumbersSearch(wfStateInfo):
     epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="sysnumber-aleph-search").send()
-        comment=u"Dohledat sysNumber v Alephu ISBN:%s" % (originalfile.isbn, )
-        wft = api.portal.get_tool('portal_workflow')
-        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def recordHasBeenChanged(wfStateInfo):
     logger.info("record has been changed")
@@ -100,13 +97,11 @@ def renewAlephRecords(wfStateInfo):
     epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records").send()
-        comment=u"Synchronizace s Alephem, isbn:%s" % (originalfile.isbn, )
-        wft = api.portal.get_tool('portal_workflow')
-        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+        getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
 
 def renewAlephRecordsBySysNumber(wfStateInfo):
     logger.info("renewAlephRecords by SysNumber")
-    with api.env.adopt_user(username="system"):
+    with api.env.adopt_user(username="system")
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
 
 def loadSummaryAlephRecord(wfStateInfo):
@@ -121,9 +116,6 @@ def submitThumbnailGenerating(wfStateInfo):
     epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="generate-thumbnail").send()
-        comment=u"Generovat náhled pro soubor:%s" % (originalfile.file.filename, )
-        wft = api.portal.get_tool('portal_workflow')
-        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def submitVoucherGeneration(wfStateInfo):
     originalfile = wfStateInfo.object
