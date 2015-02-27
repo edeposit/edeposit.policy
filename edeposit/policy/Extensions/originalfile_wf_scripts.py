@@ -101,7 +101,7 @@ def renewAlephRecords(wfStateInfo):
 
 def renewAlephRecordsBySysNumber(wfStateInfo):
     logger.info("renewAlephRecords by SysNumber")
-    with api.env.adopt_user(username="system")
+    with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
 
 def loadSummaryAlephRecord(wfStateInfo):
