@@ -122,7 +122,7 @@ def queryForStates(*args):
 def createGroupUsersCollections(context, groupname, indexName, state, readerGroup):
     members = api.user.get_users(groupname=groupname)
     for username in map(lambda member: member.id, members):
-        coll = createUserCollection(context, username, indexName, state, readerGroup)
+        coll = context.createUserCollection(username, indexName, state, readerGroup)
 
 def sendEmailToGroupPersonsAMQPFactory(groupname, title, additionalEmails):
     def sendEmailToGroupPersons(wfStateInfo):
