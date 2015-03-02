@@ -33,6 +33,7 @@
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
+     <permission-role>Reader</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -82,6 +83,7 @@
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
+     <permission-role>Reader</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -106,6 +108,7 @@
      <permission-role>E-Deposit: Librarian</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
+     <permission-role>Reader</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -154,6 +157,7 @@
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Owner</permission-role>
+     <permission-role>Reader</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
   </permission-map>
@@ -171,6 +175,7 @@
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
    <permission-role>Manager</permission-role>
@@ -203,6 +208,7 @@
   <permission-map name="View" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
    <permission-role>E-Deposit: Producent Editor</permission-role>
    <permission-role>Site Administrator</permission-role>
    <permission-role>Manager</permission-role>
