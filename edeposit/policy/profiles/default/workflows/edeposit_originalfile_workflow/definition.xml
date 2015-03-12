@@ -1717,6 +1717,97 @@
    </permission-map>
  </state>
 
+ <state state_id="closedDescriptiveCataloguingReviewPreparing" 
+        title="Closed - Descriptive Cataloguing Review Preparing" 
+        i18n:attributes="title">
+   <description i18n:translate="">Closed - A Descriptive Cataloguing Administrator prepares work for reviewers.</description>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+   <exit-transition transition_id="submitClosedDescriptiveCataloguingReviewPreparing"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
  <state state_id="descriptiveCataloguingReview" 
         title="Descriptive Cataloguing Review" 
         i18n:attributes="title">
@@ -1724,6 +1815,98 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitDescriptiveCataloguingReview"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <state state_id="closedDescriptiveCataloguingReview" 
+        title="Closed - Descriptive Cataloguing Review" 
+        i18n:attributes="title">
+   <description i18n:translate="">Closed - A Descriptive Cataloguing Reviews controls an ePublication for descriptive cataloguing.</description>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+   <exit-transition transition_id="submitClosedDescriptiveCataloguingReview"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -1939,14 +2122,181 @@
   </permission-map>
  </state>
 
+ <state state_id="closedSubjectCataloguingPreparing" 
+        title="Closed - Prepare for subject Cataloguing" 
+        i18n:attributes="title">
+   <description i18n:translate="">Closed - A Subject Cataloguing administrator is preparing an ePublication for subject cataloguing.</description>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+   <exit-transition transition_id="submitClosedSubjectCataloguingPreparing"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+    <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+    <permission-role>E-Deposit: Acquisitor</permission-role>
+    <permission-role>E-Deposit: System</permission-role>
+    <permission-role>E-Deposit: Producent Administrator</permission-role>
+    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+    <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+    <permission-role>Owner</permission-role>
+    <permission-role>Site Administrator</permission-role>
+    <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+
+
  <state state_id="subjectCataloguing" 
         title="Subject Cataloguing" 
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguer is processing an ePublication for subject cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
-   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitSubjectCataloguing"/>
-    <exit-transition transition_id="submitSubjectCataloguingPreparing"/>
+    <exit-transition transition_id="toWithdraw"/>
+   
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="plone.app.collection: Add Collection" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+ </state>
+
+ <state state_id="closedSubjectCataloguing" 
+        title="Closed - Subject Cataloguing" 
+        i18n:attributes="title">
+   <description i18n:translate="">Closed - A Subject Cataloguer is processing an ePublication for subject cataloguing.</description>
+    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+    <exit-transition transition_id="submitClosedSubjectCataloguing"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
@@ -2117,6 +2467,97 @@
     </permission-map>
  </state>
 
+ <state state_id="closedSubjectCataloguingReviewPreparing" 
+        title="Closed - Subject Cataloguing Review Preparing" 
+        i18n:attributes="title">
+   <description i18n:translate="">Closed - A Subject Cataloguing Administrator prepares work for reviewers.</description>
+    <exit-transition transition_id="renewAlephRecords"/>
+    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+    <exit-transition transition_id="submitClosedSubjectCataloguingReviewPreparing"/>
+    <exit-transition transition_id="toWithdraw"/>
+   
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="plone.app.collection: Add Collection" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Copy or Move" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+ </state>
+
  <state state_id="subjectCataloguingReview" 
         title="Subject Cataloguing Review" 
         i18n:attributes="title">
@@ -2199,6 +2640,89 @@
       <permission-role>Manager</permission-role>
     </permission-map>
  </state>
+
+ <state state_id="closedSubjectCataloguingReview" 
+        title="Closed - Subject Cataloguing Review" 
+        i18n:attributes="title">
+   <description i18n:translate="">Closed - A Subject Cataloguing Reviews controls an ePublication for subject cataloguing.</description>
+    <exit-transition transition_id="renewAlephRecords"/>
+    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+    <exit-transition transition_id="submitClosedSubjectCataloguingReview"/>
+    <exit-transition transition_id="toWithdraw"/>
+   
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View History" acquired="False">
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <permission-role>E-Deposit: Producent Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="plone.app.collection: Add Collection" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Review portal content" acquired="False">
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="List folder contents" acquired="False">
+      <permission-role>E-Deposit: Acquisitor</permission-role>
+      <permission-role>E-Deposit: System</permission-role>
+      <permission-role>E-Deposit: Producent Administrator</permission-role>
+      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+      <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
+      <permission-role>E-Deposit: Subject Cataloguer</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+ </state>
+
 
  <!-- Acquisition  -->
 
@@ -2721,7 +3245,7 @@
    <action url="%(content_url)s/content_status_modify?workflow_action=submitDescriptiveCataloguingReview"
            category="workflow" 
            icon="" 
-           i18n:translate="">Submit Descriptive Cataloguing</action>
+           i18n:translate="">Submit Descriptive Cataloguing Review</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
@@ -2790,6 +3314,107 @@
            category="workflow"
            icon=""
            i18n:translate="">Submit Subject Cataloguing Review</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitClosedDescriptiveCataloguingReviewPreparing" 
+             title="Submit Closed descriptive cataloguing review preparing"
+             new_state="closedDescriptiveCataloguingReview"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing review of descriptive cataloguing.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitClosedDescriptiveCataloguingReviewPreparing"
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit Closed - Descriptive Cataloguing Review Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitClosedDescriptiveCataloguingReview" 
+             title="Submit closed descriptive cataloguing Review"
+             new_state="closedSubjectCataloguingPreparing"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are preparing subject cataloguing.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitClosedDescriptiveCataloguingReview"
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit Closed - Descriptive Cataloguing Review</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitClosedSubjectCataloguingPreparing" 
+             title="Submit closed - subject cataloguing Preparing"
+             new_state="closedSubjectCataloguing" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing subject cataloguing.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitClosedSubjectCataloguingPreparing"
+           category="workflow"
+           icon=""
+           i18n:translate="">Submit Closed - Subject Cataloguing Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ <transition transition_id="submitClosedSubjectCataloguing" 
+             title="Submit closed subject cataloguing"
+             new_state="subjectClosedCataloguingReviewPreparing" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing review of subject cataloguing.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitClosedSubjectCataloguing"
+           category="workflow"
+           icon=""
+           i18n:translate="">Submit Closed - Subject Cataloguing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitClosedSubjectCataloguingReviewPreparing"
+             title="Submit closed - review of subject cataloguing"
+             new_state="subjectClosedCataloguingReview" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing export to Kramerius.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitClosedSubjectCataloguingReviewPreparing"
+           category="workflow"
+           icon=""
+           i18n:translate="">Submit Closed - Subject Cataloguing Review Preparing</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitClosedSubjectCataloguingReview"
+             title="Submit closed - review of subject cataloguing"
+             new_state="exportToKramerius" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing export to Kramerius.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitClosedSubjectCataloguingReview"
+           category="workflow"
+           icon=""
+           i18n:translate="">Submit Closed - Subject Cataloguing Review</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
