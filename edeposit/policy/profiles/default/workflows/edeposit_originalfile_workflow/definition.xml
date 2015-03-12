@@ -1542,8 +1542,9 @@
         i18n:attributes="title">
    <description i18n:translate="">A Descriptive Cataloguer is processing an ePublication for descriptive cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
-   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitDescriptiveCataloguing"/>
+    <exit-transition transition_id="submitClosedDescriptiveCataloguing"/>
     <exit-transition transition_id="submitDescriptiveCataloguingPreparing"/>
     <exit-transition transition_id="toWithdraw"/>
    
@@ -3314,6 +3315,23 @@
            category="workflow"
            icon=""
            i18n:translate="">Submit Subject Cataloguing Review</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitClosedDescriptiveCataloguing" 
+             title="Submit closed descriptive cataloguing"
+             new_state="closedDescriptiveCataloguingReviewPreparing"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description i18n:translate="">We are doing review of descriptive cataloguing.</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitClosedDescriptiveCataloguing"
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit Closed - Descriptive Cataloguing</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
