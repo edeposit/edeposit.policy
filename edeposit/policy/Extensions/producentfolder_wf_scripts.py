@@ -82,6 +82,11 @@ sendEmailToAcquisition = sendEmailToGroupAMQPFactory("worklist-waiting-for-acqui
                                                      'Acquisitors',
                                                      "Dokumenty cekajici na Akvizici")
 
+sendEmailWithOriginalFilesWaitingForProperAlephRecordChoosing = sendEmailToGroupAMQPFactory("worklist-waiting-for-proper-aleph-record-choosing",
+                                                                                            ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
+                                                                                            'Acquisitors',
+                                                                                            "Dokumenty cekajici na vyber spravneho aleph zaznamu")
+
 sendEmailToDescriptiveCataloguingPreparing \
     = sendEmailToGroupAMQPFactory("worklist-waiting-for-descriptive-cataloguing-preparing",
                                   ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
@@ -202,6 +207,11 @@ def recreateCollections(wfStateInfo):
               title= u"Originály čekající na přípravu věcné revize",
               query= queryForStates('subjectCataloguingReviewPreparing'),
               group= 'Subject Cataloguing Administrators',
+          ),
+        dict( name = "originalfiles-waiting-for-proper-aleph-record-choosing",
+              title= u"Originály čekající na výběr správného aleph záznamu",
+              query= queryForStates('chooseProperAlephRecord'),
+              group= 'Acquisitors',
           ),
         dict( name = "my-producents",
               title= u"Moji producenti",

@@ -83,11 +83,7 @@ def recordHasBeenChanged(wfStateInfo):
     logger.info("record has been changed")
     print "record has been changed"
     originalfile = wfStateInfo.object
-    epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
-        # Load Changes From aleph record
-        # ...
-        originalfile.updateFromAlephRecord()
         getAdapter(originalfile, IEmailSender, name="originalfile-has-been-changed").send()
         
 def renewAlephRecords(wfStateInfo):

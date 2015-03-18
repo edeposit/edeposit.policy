@@ -1546,6 +1546,7 @@
     <exit-transition transition_id="submitDescriptiveCataloguing"/>
     <exit-transition transition_id="submitClosedDescriptiveCataloguing"/>
     <exit-transition transition_id="submitDescriptiveCataloguingPreparing"/>
+    <exit-transition transition_id="recordHasBeenChanged"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
@@ -1634,6 +1635,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitDescriptiveCataloguingReviewPreparing"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -1726,7 +1728,8 @@
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitClosedDescriptiveCataloguingReviewPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
-   
+   <exit-transition transition_id="recordHasBeenChanged"/>
+  
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
      <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
@@ -1816,6 +1819,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitDescriptiveCataloguingReview"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -1908,6 +1912,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitClosedDescriptiveCataloguingReview"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -2049,6 +2054,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitSubjectCataloguingPreparing"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -2130,6 +2136,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitClosedSubjectCataloguingPreparing"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="False">
@@ -2209,10 +2216,11 @@
         title="Subject Cataloguing" 
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguer is processing an ePublication for subject cataloguing.</description>
-    <exit-transition transition_id="renewAlephRecords"/>
-    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
-    <exit-transition transition_id="submitSubjectCataloguing"/>
-    <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+   <exit-transition transition_id="submitSubjectCataloguing"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
+   <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
@@ -2295,11 +2303,12 @@
         title="Closed - Subject Cataloguing" 
         i18n:attributes="title">
    <description i18n:translate="">Closed - A Subject Cataloguer is processing an ePublication for subject cataloguing.</description>
-    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
-    <exit-transition transition_id="submitClosedSubjectCataloguing"/>
-    <exit-transition transition_id="toWithdraw"/>
-   
+   <exit-transition transition_id="submitClosedSubjectCataloguing"/>
+   <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
+
     <permission-map name="Access contents information" acquired="False">
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
       <permission-role>E-Deposit: Subject Cataloguer</permission-role>
@@ -2381,10 +2390,11 @@
         title="Subject Cataloguing Review Preparing" 
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguing Administrator prepares work for reviewers.</description>
-    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
-    <exit-transition transition_id="submitSubjectCataloguingReviewPreparing"/>
-    <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="submitSubjectCataloguingReviewPreparing"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
+   <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
@@ -2475,6 +2485,7 @@
     <exit-transition transition_id="renewAlephRecords"/>
     <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitClosedSubjectCataloguingReviewPreparing"/>
+    <exit-transition transition_id="recordHasBeenChanged"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
@@ -2564,9 +2575,10 @@
         i18n:attributes="title">
    <description i18n:translate="">A Subject Cataloguing Reviews controls an ePublication for subject cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
-   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitSubjectCataloguingReview"/>
     <exit-transition transition_id="submitSubjectCataloguingReviewPreparing"/>
+    <exit-transition transition_id="recordHasBeenChanged"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
@@ -2649,6 +2661,7 @@
     <exit-transition transition_id="renewAlephRecords"/>
     <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
     <exit-transition transition_id="submitClosedSubjectCataloguingReview"/>
+    <exit-transition transition_id="recordHasBeenChanged"/>
     <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
@@ -2734,6 +2747,7 @@
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitAcquisition"/>
    <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
 
    <permission-map name="Access contents information" acquired="False">
