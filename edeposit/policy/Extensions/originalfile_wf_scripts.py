@@ -90,7 +90,6 @@ def renewAlephRecords(wfStateInfo):
     logger.info("renewAlephRecords")
     print "renew Aleph Records"
     originalfile = wfStateInfo.object
-    epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records").send()
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
@@ -98,6 +97,7 @@ def renewAlephRecords(wfStateInfo):
 
 def renewAlephRecordsBySysNumber(wfStateInfo):
     logger.info("renewAlephRecords by SysNumber")
+    originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
 

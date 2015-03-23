@@ -117,6 +117,7 @@
    <exit-transition transition_id="submitDeclarationToISBNValidation"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
+   <!-- <exit-transition transition_id="forceRenewAlephRecords"/> -->
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="submitDeclarationToAntivirus"/>
    <exit-transition transition_id="toWithdraw"/>
@@ -1279,6 +1280,20 @@
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitSysNumbersSearch"/> 
  
+ <transition transition_id="forceRenewAlephRecords"
+             title="Forde Renew Aleph Records" 
+             new_state="waitingForAleph" 
+             trigger="USER" 
+             before_script="" 
+             after_script="renewAlephRecords"  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=forceRenewAlephRecords" 
+           category="workflow" icon="" i18n:translate="">Force Renew Aleph Records</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>Site Administrator</guard-role> -->
+   </guard>
+ </transition>
+
  <transition transition_id="renewAlephRecords"
              title="Renew Aleph Records" 
              new_state="waitingForAleph" 
@@ -1340,6 +1355,7 @@
    
    <exit-transition transition_id="properAlephRecordChoosen"/>
    <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="toAcquisitionPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
