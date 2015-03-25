@@ -1102,6 +1102,8 @@
    <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="noAlephRecordLoaded"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
