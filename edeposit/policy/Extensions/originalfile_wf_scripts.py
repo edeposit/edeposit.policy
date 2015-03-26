@@ -10,7 +10,7 @@ from z3c.relationfield import RelationValue
 from Acquisition import aq_inner, aq_parent
 from zope.component import queryUtility, getUtility, getAdapter
 import base64
-
+import isbn_validator
 from edeposit.content.amqp import IAMQPSender, IAMQPHandler
 from collective.documentviewer.async import queueJob
 
@@ -33,49 +33,50 @@ def submitAntivirusCheck(wfStateInfo):
     logger.info("submitAntivirusChecks")
     with api.env.adopt_user(username="system"):
         originalfile = wfStateInfo.object
-        epublication = aq_parent(aq_inner(originalfile))
         getAdapter(originalfile,IAMQPSender,name="antivirus-check").send()
-        wft = api.portal.get_tool('portal_workflow')
-        wft.doActionFor(epublication, 
-                        'notifySystemAction', 
-                        comment=u"Antivirová kontrola pro: " + originalfile.file.filename)
+
+        # epublication = aq_parent(aq_inner(originalfile))
+        # wft = api.portal.get_tool('portal_workflow')
+        # wft.doActionFor(epublication, 
+        #                 'notifySystemAction', 
+        #                 comment=u"Antivirová kontrola pro: " + originalfile.file.filename)
         pass
 
 def submitISBNValidation(wfStateInfo):
     print "submitISBNValidation"
     originalfile = wfStateInfo.object
-    epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile,IAMQPSender,name="isbn-validate").send()
-        comment=u"Automatická kontrola ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
-        wft = api.portal.get_tool('portal_workflow')
-        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+        # comment=u"Automatická kontrola ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
+        # epublication = aq_parent(aq_inner(originalfile))
+        # wft = api.portal.get_tool('portal_workflow')
+        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def submitISBNDuplicityCheck(wfStateInfo):
     print "submitISBN Duplicity Check"
     originalfile = wfStateInfo.object
-    epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="isbn-duplicity-check").send()
-        comment=u"Automatická kontrola duplicity ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
-        wft = api.portal.get_tool('portal_workflow')
-        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+        # epublication = aq_parent(aq_inner(originalfile))
+        # comment=u"Automatická kontrola duplicity ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
+        # wft = api.portal.get_tool('portal_workflow')
+        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def submitExportToAleph(wfStateInfo):
     print "submit export to Aleph"
     originalfile = wfStateInfo.object
-    epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="export-to-aleph").send()
-        comment=u"Export do Alephu ISBN:%s" % (originalfile.isbn, )
-        wft = api.portal.get_tool('portal_workflow')
-        wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+        # epublication = aq_parent(aq_inner(originalfile))
+        # comment=u"Export do Alephu ISBN:%s" % (originalfile.isbn, )
+        # wft = api.portal.get_tool('portal_workflow')
+        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def submitSysNumbersSearch(wfStateInfo):
     logger.info("submitSysNumberSearch")
     print "submit sysnumber search"
     originalfile = wfStateInfo.object
-    epublication = aq_parent(aq_inner(originalfile))
+    # epublication = aq_parent(aq_inner(originalfile))
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="sysnumber-aleph-search").send()
 
@@ -91,7 +92,9 @@ def renewAlephRecords(wfStateInfo):
     print "renew Aleph Records"
     originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
-        getAdapter(originalfile, IAMQPSender, name="renew-aleph-records").send()
+        if isbn_validator.is_valid_isbn(originalfile.isbn):
+            getAdapter(originalfile, IAMQPSender, name="renew-aleph-records").send()
+
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
         getAdapter(originalfile, IAMQPSender, name="renew-aleph-records-by-icz-sysnumber").send()
 
