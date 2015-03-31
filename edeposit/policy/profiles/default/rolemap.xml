@@ -3,6 +3,7 @@
   <roles>
     <role name="E-Deposit: ISBN Agency Member"/>
     <role name="E-Deposit: ISBN Agency Administrator"/>
+    <role name="E-Deposit: Producent Member"/>
     <role name="E-Deposit: Producent Administrator"/>
     <role name="E-Deposit: Producent Editor"/>
     <role name="E-Deposit: Acquisition Administrator"/>
@@ -37,6 +38,10 @@
       <role name="E-Deposit: System"/>
     </permission>
     <permission name="Change local roles" acquire="True">
+      <role name="E-Deposit: Producent Administrator"/>
+      <role name="E-Deposit: System"/>
+    </permission>
+    <permission name="Manage users" acquire="True">
       <role name="E-Deposit: Producent Administrator"/>
       <role name="E-Deposit: System"/>
     </permission>
