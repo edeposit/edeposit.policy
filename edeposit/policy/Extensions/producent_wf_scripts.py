@@ -23,3 +23,8 @@ def submitAgreementGeneration(wfStateInfo):
     producent = wfStateInfo.object
     getAdapter(producent,IAMQPSender,name="agreement-generate").send()
     pass
+
+def ensureRolesConsistency(wfStateInfo):
+    producent = wfStateInfo.object
+    producent.ensureRolesConsistency()
+    pass
