@@ -14,6 +14,7 @@
  <permission>Add portal content</permission>
  <permission>Review portal content</permission>
  <permission>View</permission>
+ <permission>Copy or Move</permission>
 
  <state state_id="published" title="Published" i18n:attributes="title">
    <exit-transition transition_id="sendEmailToISBNSubjectValidation"/>
@@ -37,6 +38,11 @@
    <description i18n:translate="Title">
      Visible to everyone, editable by the owner.
    </description>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Manager</permission-role>
      <permission-role>Owner</permission-role>
@@ -128,6 +134,11 @@
    <description i18n:translate="Title">
      Visible to everyone, editable by the owner.
    </description>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Manager</permission-role>
      <permission-role>Owner</permission-role>
