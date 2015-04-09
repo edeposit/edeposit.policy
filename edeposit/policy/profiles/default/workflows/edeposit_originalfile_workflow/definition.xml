@@ -115,6 +115,7 @@
  <state state_id="declarationWithError" title="Declaration with Error" 
         i18n:attributes="title">
    <exit-transition transition_id="submitDeclarationToISBNValidation"/>
+   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <!-- <exit-transition transition_id="forceRenewAlephRecords"/> -->
@@ -2073,6 +2074,24 @@
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <guard-expression>python: here.isbn and here.file</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitDeclarationSkipISBNValidation" 
+             title="Declaration is finished" 
+             new_state="antivirus" 
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAntivirusCheck"  
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationSkipISBNValidation" 
+       category="workflow" 
+       icon="" 
+       i18n:translate="">K akvizici - bez kontroly ISBN</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.isbn and here.isbnAppearsAtRelatedAlephRecord and here.file</guard-expression>
    </guard>
  </transition>
 
