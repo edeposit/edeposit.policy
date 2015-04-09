@@ -905,17 +905,17 @@
    </guard>
  </transition>
  
- <transition transition_id="thumbnailOKAleph" 
+ <transition transition_id="thumbnailOKSkipExportToAleph" 
              title="Thumbnail Generating Passed" 
              new_state="waitingForAleph"
              trigger="USER" 
-             before_script="submitDocumentViewer" 
+             before_script="submitDocumentViewer"
              after_script="renewAlephRecords"  
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOKSkipExportToAleph" 
            category="workflow" 
            icon=""
-           i18n:translate="">Thumbnail Generating with success</action>
+           i18n:translate="">Thumbnail Generating with success - skip export to Aleph</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <guard-expression>python: here.isbn</guard-expression>
