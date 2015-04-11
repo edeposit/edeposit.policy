@@ -34,12 +34,20 @@ def submitAntivirusCheck(wfStateInfo):
     with api.env.adopt_user(username="system"):
         originalfile = wfStateInfo.object
         getAdapter(originalfile,IAMQPSender,name="antivirus-check").send()
+        pass
 
-        # epublication = aq_parent(aq_inner(originalfile))
-        # wft = api.portal.get_tool('portal_workflow')
-        # wft.doActionFor(epublication, 
-        #                 'notifySystemAction', 
-        #                 comment=u"Antivirová kontrola pro: " + originalfile.file.filename)
+def submitPDFBoxValidation(wfStateInfo):
+    logger.info("submitPDFBoxValidation")
+    with api.env.adopt_user(username="system"):
+        originalfile = wfStateInfo.object
+        getAdapter(originalfile,IAMQPSender,name="pdfbox-validation").send()
+        pass
+
+def submitEPubCheck(wfStateInfo):
+    logger.info("submitEPubChecks")
+    with api.env.adopt_user(username="system"):
+        originalfile = wfStateInfo.object
+        getAdapter(originalfile,IAMQPSender,name="epubcheck-validation").send()
         pass
 
 def submitISBNValidation(wfStateInfo):
