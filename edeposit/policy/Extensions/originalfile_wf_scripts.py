@@ -43,7 +43,7 @@ def submitPDFBoxValidation(wfStateInfo):
         getAdapter(originalfile,IAMQPSender,name="pdfbox-validation").send()
         pass
 
-def submitEPubCheck(wfStateInfo):
+def submitEPubCheckValidation(wfStateInfo):
     logger.info("submitEPubChecks")
     with api.env.adopt_user(username="system"):
         originalfile = wfStateInfo.object

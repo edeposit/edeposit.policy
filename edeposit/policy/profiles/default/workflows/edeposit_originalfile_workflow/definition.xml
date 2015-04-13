@@ -571,15 +571,15 @@
    </guard>
  </transition>
 
- <transition transition_id="submitEPubCheck" 
+ <transition transition_id="submitEPubCheckValidation" 
              title="Submit EPub/2 Validation"
              new_state=""
              trigger="USER" 
              before_script="" 
-             after_script="submitEPubCheck" 
+             after_script="submitEPubCheckValidation" 
              i18n:attributes="title">
    <description>Submit EPub/2 Validation</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=submitEPubCheck" 
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitEPubCheckValidation" 
            category="workflow" 
            icon="" 
            i18n:translate="">Submit EPub/2 Validation</action>
@@ -794,10 +794,10 @@
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitPDFBoxValidation"/> 
 
- <script script_id="submitEPubCheck" type="External Method"
+ <script script_id="submitEPubCheckValidation" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
-         function="submitEPubCheck"/> 
+         function="submitEPubCheckValidation"/> 
 
  <script script_id="submitDocumentViewer" type="External Method"
          filename="" 
