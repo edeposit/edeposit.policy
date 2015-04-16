@@ -233,6 +233,7 @@ def recreateCollections(wfStateInfo):
                 'subjectCataloguingReview',
                 'descriptiveCataloguing',
                 'descriptiveCataloguingReview',
+                'chooseProperAlephRecord',
                 ),
               group= 'Subject Cataloguing Administrators',
           ),

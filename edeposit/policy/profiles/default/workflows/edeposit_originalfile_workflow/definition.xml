@@ -2828,6 +2828,8 @@
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="generateVoucher"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
