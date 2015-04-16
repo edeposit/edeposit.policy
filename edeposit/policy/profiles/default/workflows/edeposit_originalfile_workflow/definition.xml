@@ -540,14 +540,14 @@
  <transition transition_id="submitAntivirusCheck" 
              title="Submit Antivirus Check"
              new_state="antivirus"
-             trigger="USER" 
-             before_script="" 
-             after_script="submitAntivirusCheck" 
+             trigger="USER"
+             before_script=""
+             after_script="submitAntivirusCheck"
              i18n:attributes="title">
    <description>Submit Antivirus Check</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=submitAntivirusCheck" 
-           category="workflow" 
-           icon="" 
+           category="workflow"
+           icon=""
            i18n:translate="">Submit Antivirus Check</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
