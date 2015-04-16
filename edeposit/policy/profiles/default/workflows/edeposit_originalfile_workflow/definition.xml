@@ -2974,6 +2974,8 @@
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
