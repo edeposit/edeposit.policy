@@ -1167,7 +1167,7 @@
 
  <transition transition_id="exportToAlephError" 
              title="Export to Aleph finished with error" 
-             new_state="" 
+             new_state="declarationWithError" 
              trigger="USER" 
              before_script="" 
              after_script="" 
