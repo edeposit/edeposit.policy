@@ -3404,7 +3404,8 @@
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="" i18n:translate="">To Withdraw</action>
    <guard>
-     <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
    </guard>
  </transition>
 
