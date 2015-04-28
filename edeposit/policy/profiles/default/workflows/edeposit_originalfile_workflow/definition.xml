@@ -1076,6 +1076,7 @@
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="epubcheckResponse"/>
 
    <permission-map name="Access contents information" acquired="False">
