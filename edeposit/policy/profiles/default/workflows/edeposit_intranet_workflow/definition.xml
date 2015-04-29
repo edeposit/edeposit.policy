@@ -23,6 +23,7 @@
    <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="False">
    <permission-role>Site Administrator</permission-role>
@@ -47,6 +48,7 @@
    <permission-role>E-Deposit: Subject Cataloguing Reviewer</permission-role>
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
  </state>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
