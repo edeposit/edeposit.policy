@@ -7,6 +7,7 @@
   <object name="edeposit_originalfile_workflow" meta_type="Workflow"/>
   <object name="edeposit_originalfile_contributing_request_workflow" meta_type="Workflow"/>
   <object name="edeposit_epublicationfolder_workflow" meta_type="Workflow"/>
+  <object name="edeposit_intranet_workflow" meta_type="Workflow"/>
   <object name="edeposit_producent_workflow" meta_type="Workflow"/>
   <object name="edeposit_producentfolder_workflow" meta_type="Workflow"/>
   <object name="edeposit_eperiodical_workflow" meta_type="Workflow"/>
@@ -62,6 +63,9 @@
     <type type_id="FormThanksPage"/>
     <type type_id="Image"/>
     <type type_id="Plone Site"/>
+    <type type_id="edeposit.content.alephrecord">
+      <bound-workflow workflow_id="edeposit_intranet_workflow"/>
+    </type>
     <type type_id="edeposit.user.producent">
       <bound-workflow workflow_id="edeposit_producent_workflow"/>
     </type>
