@@ -607,7 +607,7 @@
 
  <transition transition_id="amqpError"
              title="Error from external service" 
-             new_state="" 
+             new_state="declarationWithError" 
              trigger="USER" 
              before_script="" 
              after_script="" 
