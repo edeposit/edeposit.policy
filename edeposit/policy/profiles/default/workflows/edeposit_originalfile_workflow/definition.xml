@@ -31,6 +31,7 @@
  
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="pdfGenerated"/>  
    <exit-transition transition_id="submitDeclarationToISBNValidation"/>
    <exit-transition transition_id="submitDeclarationToAntivirus"/>
@@ -119,7 +120,10 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <!-- <exit-transition transition_id="forceRenewAlephRecords"/> -->
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="submitDeclarationToAntivirus"/>
    <exit-transition transition_id="toWithdraw"/>
    <permission-map name="Access contents information" acquired="True">
@@ -214,6 +218,7 @@
 
  <state state_id="antivirus" title="Antivirus Checking" i18n:attributes="title">
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
@@ -607,7 +612,7 @@
 
  <transition transition_id="amqpError"
              title="Error from external service" 
-             new_state="" 
+             new_state="declarationWithError" 
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -622,6 +627,23 @@
    </guard>
  </transition>
 
+ <transition transition_id="amqpWarning"
+             title="Warning from external service" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description>External service sent some warning</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=amqpWarning" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">External service sent some warning</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
 
  <state state_id="ISBNValidation" title="ISBN Validation" i18n:attributes="title">
    <description i18n:translate="">ISBN is valid. A system performs it.</description>
@@ -629,6 +651,7 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="ISBNIsValid"/>
    <exit-transition transition_id="ISBNIsNotValid"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
@@ -708,6 +731,7 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="ISBNIsUnique"/>
    <exit-transition transition_id="ISBNIsDuplicit"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
@@ -904,6 +928,7 @@
         title="Thumbnail Generating"
         i18n:attributes="title">
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="thumbnailError"/>
@@ -1070,6 +1095,7 @@
  <state state_id="exportToAleph" title="Export to Aleph" i18n:attributes="title">
    <exit-transition transition_id="exportToAlephSubmitted"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="exportToAlephError"/>
    <exit-transition transition_id="exportToAlephOK"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
@@ -1197,6 +1223,7 @@
    <description i18n:translate="">Waiting till Aleph gets back SysNumber of an exported record</description>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="pdfGenerated"/>  
    <exit-transition transition_id="alephRecordsLoaded"/>
    <exit-transition transition_id="exportToAlephOK"/>
@@ -1468,6 +1495,7 @@
    <exit-transition transition_id="properAlephRecordChoosen"/>
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="toAcquisitionPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
@@ -2888,11 +2916,12 @@
         title="Closed - Subject Cataloguing Review" 
         i18n:attributes="title">
    <description i18n:translate="">Closed - A Subject Cataloguing Reviews controls an ePublication for subject cataloguing.</description>
-    <exit-transition transition_id="renewAlephRecords"/>
-    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
-    <exit-transition transition_id="submitClosedSubjectCataloguingReview"/>
-    <exit-transition transition_id="recordHasBeenChanged"/>
-    <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+   <exit-transition transition_id="submitClosedSubjectCataloguingReview"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
+   <exit-transition transition_id="toWithdraw"/>
    
     <permission-map name="Access contents information" acquired="False">
       <permission-role>E-Deposit: Subject Cataloguing Administrator</permission-role>
@@ -2973,6 +3002,8 @@
  <state state_id="acquisition" title="Acquisition" i18n:attributes="title">
    <description i18n:translate="">An ePublication is reviewed by Acquisitor.</description>
 
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitAcquisition"/>
@@ -3149,6 +3180,7 @@
  <state state_id="exportToKramerius" title="Export to Kramerius" i18n:attributes="title">
    <exit-transition transition_id="exportToKrameriusSubmitted"/>
    <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="exportToKrameriusError"/>
    <exit-transition transition_id="exportToKrameriusOK"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
