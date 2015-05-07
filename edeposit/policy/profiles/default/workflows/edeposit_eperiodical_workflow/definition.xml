@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="edeposit_eperiodical_workflow" title="E-Deposit ePeriodical Workflow" description="A workflow for ePeriodical" state_variable="review_state" initial_state="declaration" manager_bypass="False">
+<dc-workflow workflow_id="edeposit_eperiodical_workflow" 
+             title="E-Deposit ePeriodical Workflow" 
+             description="A workflow for ePeriodical" 
+             state_variable="review_state" 
+             initial_state="declaration" manager_bypass="False">
  <permission>Access contents information</permission>
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
@@ -9,6 +13,98 @@
  <permission>E-Deposit: Add ePublication</permission>
  <permission>E-Deposit: Add ePeriodical</permission>
  <permission>E-Deposit: Add Book</permission>
+
+ <!-- (occur-1 "<state " nil (list (current-buffer)) "*definition.xml: states*") -->
+ <!-- (occur-1 "<transition " nil (list (current-buffer)) "*definition.xml: transition*") -->
+
+ <state state_id="declaration" title="Declaration">
+  <exit-transition transition_id="toAcquisition"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="declarationWithError" title="Declaration with Error">
+   <exit-transition transition_id="toAcquisition"/>
+   <exit-transition transition_id="toWithdraw"/>
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+ </state>
+ 
+ <state state_id="acquisition" title="Acquisition">
+  <exit-transition transition_id="submitAcquisition"/>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Change portal events" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
  <state state_id="catalogization" title="Catalogization">
   <exit-transition transition_id="backToCorrection"/>
   <exit-transition transition_id="catalogizationPassed"/>
@@ -16,7 +112,6 @@
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
@@ -36,73 +131,6 @@
   <permission-map name="View" acquired="True">
    <permission-role>E-Deposit: Assigned Librarian</permission-role>
    <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
- </state>
- <state state_id="declaration" title="Declaration">
-  <exit-transition transition_id="toAcquisition"/>
-  <permission-map name="Access contents information" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
- </state>
- <state state_id="declarationWithError" title="Declaration with Error">
-  <exit-transition transition_id="toAcquisition"/>
-  <exit-transition transition_id="toWithdraw"/>
-  <permission-map name="Access contents information" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -213,12 +241,18 @@
    <guard-role>E-Deposit: Assigned Acquisitor</guard-role>
   </guard>
  </transition>
- <transition transition_id="toAcquisition" title="To Acquisition" new_state="antivirus" trigger="USER" before_script="" after_script="">
+ <transition transition_id="toAcquisition" 
+             title="To Acquisition" 
+             new_state="acquisition" 
+             trigger="USER" 
+             before_script="" 
+             after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=toAcquisition" category="workflow" icon="">To Acquisition</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
+
  <transition transition_id="toWithdraw" title="To Withdraw" new_state="withdrawn" trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="">To Withdraw</action>
   <guard>
@@ -273,9 +307,3 @@
   </guard>
  </variable>
 </dc-workflow>
-<!--
-        Local Variables:
-        nxml-section-element-name-regexp:"state*"
-        nxml-heading-element-name-regexp:"exit-transition*"
-        End:
--->
