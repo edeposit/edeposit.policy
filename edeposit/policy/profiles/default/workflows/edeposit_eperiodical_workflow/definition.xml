@@ -13,6 +13,7 @@
  <permission>E-Deposit: Add ePublication</permission>
  <permission>E-Deposit: Add ePeriodical</permission>
  <permission>E-Deposit: Add Book</permission>
+ <permission>Copy or Move</permission>
 
  <!-- (occur-1 "<state " nil (list (current-buffer)) "*definition.xml: states*") -->
  <!-- (occur-1 "<transition " nil (list (current-buffer)) "*definition.xml: transition*") -->
@@ -31,6 +32,11 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Copy or Move" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -60,6 +66,11 @@
      <permission-role>Site Administrator</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -94,6 +105,11 @@
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
+  <permission-map name="Copy or Move" acquired="True">
+   <permission-role>E-Deposit: Acquisitor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
   <permission-map name="Review portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
@@ -119,6 +135,10 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: Assigned Librarian</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Copy or Move" acquired="True">
    <permission-role>E-Deposit: Assigned Librarian</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -153,6 +173,10 @@
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
+  <permission-map name="Copy or Move" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
   <permission-map name="Review portal content" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -180,6 +204,10 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
+   <permission-role>E-Deposit: System</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Copy or Move" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
