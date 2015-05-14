@@ -1389,7 +1389,7 @@
  <transition transition_id="properAlephRecordChoosen"
              title="Proper Aleph Record Choosen"
              new_state="acquisitionPreparing"
-             trigger="AUTOMATIC"
+             trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
