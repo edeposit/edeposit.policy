@@ -3681,7 +3681,7 @@
  </transition>
  <transition transition_id="submitClosedSubjectCataloguing" 
              title="Submit closed subject cataloguing"
-             new_state="subjectClosedCataloguingReviewPreparing" 
+             new_state="closedSubjectCataloguingReviewPreparing" 
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -3698,7 +3698,7 @@
 
  <transition transition_id="submitClosedSubjectCataloguingReviewPreparing"
              title="Submit closed - review of subject cataloguing"
-             new_state="subjectClosedCataloguingReview" 
+             new_state="closedSubjectCataloguingReview" 
              trigger="USER" 
              before_script="" 
              after_script="" 
