@@ -2254,7 +2254,7 @@
        i18n:translate="">K akvizici - bez kontroly ISBN</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn and here.isbnAppearsAtRelatedAlephRecord and here.file</guard-expression>
+     <guard-expression>python: here.isbn and here.file</guard-expression>
    </guard>
  </transition>
 
