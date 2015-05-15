@@ -1078,6 +1078,22 @@
    </guard>
  </transition>
 
+ <transition transition_id="submitExportToAleph"
+             title="Submit Export to Aleph"
+             new_state="exportToAleph"
+             trigger="USER"
+             before_script="submitExportToAleph"
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitExportToAleph"
+           category="workflow"
+           icon=""
+           i18n:translate="">Submit Export to Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
  <script script_id="submitExportToAleph"
          type="External Method"
          filename=""
@@ -1224,8 +1240,9 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="pdfGenerated"/>  
+   <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="alephRecordsLoaded"/>
+   <exit-transition transition_id="submitExportToAleph"/>
    <exit-transition transition_id="exportToAlephOK"/>
    <exit-transition transition_id="exportToAlephError"/>
    <exit-transition transition_id="exportToAlephSubmitted"/>
