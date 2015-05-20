@@ -198,6 +198,23 @@ def recreateCollections(wfStateInfo):
               query= queryForStates('descriptiveCataloguingReviewPreparing'),
               group= 'Descriptive Cataloguing Administrators',
           ),
+
+        # -- closed originalfiles that should be fully catalogized --
+        dict( name = "originalfiles-waiting-for-closed-descriptive-cataloguing-preparing",
+              title= u"Zamčené originály čekající na přípravu jmenné katalogizace",
+              query= queryForStates('closedDescriptiveCataloguingPreparing') + \
+              [{'i': 'shouldBeFullyCatalogized',
+                'o': 'plone.app.querystring.operation.boolean.isTrue'}],
+              group= 'Descriptive Cataloguing Administrators',
+          ),
+        dict( name = "originalfiles-waiting-for-closed-descriptive-cataloguing-review-preparing",
+              title= u"Zamčené originály čekající na přípravu jmenné revize",
+              query= queryForStates('closedDescriptiveCataloguingReviewPreparing') +\
+              [{'i': 'shouldBeFullyCatalogized',
+                'o': 'plone.app.querystring.operation.boolean.isTrue'}],
+              group= 'Descriptive Cataloguing Administrators',
+          ),
+        # ----------------------------------------------------------------
         dict( name = "originalfiles-waiting-for-subject-cataloguing-preparing",
               title= u"Originály čekající na přípravu věcné katalogizace",
               query= queryForStates('subjectCataloguingPreparing'),
@@ -208,6 +225,22 @@ def recreateCollections(wfStateInfo):
               query= queryForStates('subjectCataloguingReviewPreparing'),
               group= 'Subject Cataloguing Administrators',
           ),
+        # -- closed originalfiles that should be fully catalogized --
+        dict( name = "originalfiles-waiting-for-closed-subject-cataloguing-preparing",
+              title= u"Zamčené originály čekající na přípravu věcné katalogizace",
+              query= queryForStates('closedSubjectCataloguingPreparing') +\
+              [{'i': 'shouldBeFullyCatalogized',
+                'o': 'plone.app.querystring.operation.boolean.isTrue'}],
+              group= 'Subject Cataloguing Administrators',
+          ),
+        dict( name = "originalfiles-waiting-for-closed-subject-cataloguing-review-preparing",
+              title= u"Zamčené originály čekající na přípravu věcné revize",
+              query= queryForStates('closedSubjectCataloguingReviewPreparing') +\
+              [{'i': 'shouldBeFullyCatalogized',
+                'o': 'plone.app.querystring.operation.boolean.isTrue'}],
+              group= 'Subject Cataloguing Administrators',
+          ),
+        # ----------------------------------------------------------------
         dict( name = "originalfiles-waiting-for-proper-aleph-record-choosing",
               title= u"Originály čekající na výběr správného aleph záznamu",
               query= queryForStates('chooseProperAlephRecord'),
