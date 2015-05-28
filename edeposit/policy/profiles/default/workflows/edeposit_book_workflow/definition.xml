@@ -630,9 +630,7 @@
    <exit-transition transition_id="ISBNIsValid"/>
    <exit-transition transition_id="ISBNIsNotValid"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
-   <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="epubcheckResponse"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
