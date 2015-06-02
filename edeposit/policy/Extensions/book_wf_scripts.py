@@ -46,19 +46,15 @@ def submitPDFBoxValidation(wfStateInfo):
 def submitEPubCheckValidation(wfStateInfo):
     logger.info("submitEPubChecks")
     with api.env.adopt_user(username="system"):
-        originalfile = wfStateInfo.object
-        getAdapter(originalfile,IAMQPSender,name="epubcheck-validation").send()
+        obj = wfStateInfo.object
+        getAdapter(obj,IAMQPSender,name="epubcheck-validation").send()
         pass
 
 def submitISBNValidation(wfStateInfo):
     print "submitISBNValidation"
-    originalfile = wfStateInfo.object
+    obj = wfStateInfo.object
     with api.env.adopt_user(username="system"):
-        getAdapter(originalfile,IAMQPSender,name="isbn-validate").send()
-        # comment=u"Automatická kontrola ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
-        # epublication = aq_parent(aq_inner(originalfile))
-        # wft = api.portal.get_tool('portal_workflow')
-        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+        getAdapter(obj,IAMQPSender,name="isbn-validate").send()
 
 def submitISBNDuplicityCheck(wfStateInfo):
     print "submitISBN Duplicity Check"
