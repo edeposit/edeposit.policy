@@ -2482,6 +2482,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitSubjectCataloguing"/>
+   <exit-transition transition_id="submitSubjectCataloguingPreparing"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
@@ -2573,6 +2574,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitClosedSubjectCataloguing"/>
+   <exit-transition transition_id="submitClosedSubjectCataloguingPreparing"/>
    <exit-transition transition_id="toWithdraw"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
 
@@ -2937,6 +2939,7 @@
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitClosedSubjectCataloguingReview"/>
+   <exit-transition transition_id="submitClosedSubjectCataloguingReviewPreparing"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="toWithdraw"/>
    
