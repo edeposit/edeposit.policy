@@ -468,15 +468,15 @@
  
  <transition transition_id="ISBNIsValid" 
              title="ISBN is Valid" 
-             new_state="ISBNDuplicityCheck" 
+             new_state="antivirus"
              trigger="USER" 
              before_script="" 
-             after_script="submitISBNDuplicityCheck" 
+             after_script="submitAntivirusCheck"
              i18n:attributes="title">
    <description>ISBN is Valid</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=ISBNIsValid" 
-           category="workflow" 
-           icon="" 
+           category="workflow"
+           icon=""
            i18n:translate="">ISBN is Valid</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
@@ -570,10 +570,10 @@
 
  <transition transition_id="ISBNIsDuplicit" 
              title="ISBN is Duplicit" 
-             new_state="declarationWithError" 
+             new_state="antivirus" 
              trigger="USER" 
              before_script="" 
-             after_script="" 
+             after_script="submitAntivirusCheck" 
              i18n:attributes="title">
    <description>ISBN is Duplicit</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=ISBNIsDuplicit" 
@@ -623,6 +623,7 @@
  <state state_id="ISBNValidation" title="ISBN Validation" i18n:attributes="title">
    <description i18n:translate="">ISBN is valid. A system performs it.</description>
    <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="repeatISBNValidation"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="amqpError"/>
@@ -2263,6 +2264,24 @@
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <guard-expression>python: (not here.isbn) and here.file</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="repeatISBNValidation" 
+             title="Repeat ISBN Validation" 
+             new_state="ISBNValidation" 
+             trigger="USER" 
+             before_script="" 
+             after_script="submitISBNValidation"  
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=repeatISBNValidation" 
+       category="workflow" 
+       icon="" 
+       i18n:translate="">Zopakovat validaci ISBN</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.isbn</guard-expression>
    </guard>
  </transition>
 
