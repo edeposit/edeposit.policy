@@ -7,8 +7,7 @@
     description="A workflow for book and printing file"
     state_variable="review_state"
     initial_state="declaration" 
-    manager_bypass="False"
-    >
+    manager_bypass="False">
  <permission>Access contents information</permission>
  <permission>List folder contents</permission>
  <permission>Change portal events</permission>
@@ -1080,6 +1079,94 @@
          module="edeposit.policy.book_wf_scripts"
          function="submitThumbnailGenerating"/>
 
+ <!--  First attempt to find at Aleph -->
+
+ <state state_id="tryToFindAtAleph" title="Try to find at Aleph" i18n:attributes="title">
+   <exit-transition transition_id="tryToFindAtAlephSubmitted"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="noRecordFoundAtAleph"/>
+   <exit-transition transition_id="someRecordsFoundAtAleph"/>
+   <exit-transition transition_id="submitAntivirusCheck"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
  <!--  Export to Aleph -->
 
  <state state_id="exportToAleph" title="Export to Aleph" i18n:attributes="title">
@@ -1167,6 +1254,46 @@
      <permission-role>Manager</permission-role>
    </permission-map>
  </state>
+
+ <transition transition_id="tryToFindAtAlephSubmitted"
+             title="Try to find a record at Aleph submitted" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=tryToFindAtAlephSubmitted"
+           category="workflow" icon="" i18n:translate="">Try find a record at Aleph submitted</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="noRecordFoundAtAleph"
+             title="No record found at Aleph" 
+             new_state="exportToAleph" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=noRecordFoundAtAleph" category="workflow" icon="" i18n:translate="">No record found at Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="someRecordsFoundAtAleph" 
+             title="We have got some records from Aleph" 
+             new_state="chooseProperAlephRecord"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=someRecordsFoundAtAleph" category="workflow" icon="" i18n:translate="">Some records found at Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
  
  <transition transition_id="exportToAlephSubmitted"
              title="Export of one record to Aleph submitted" 
