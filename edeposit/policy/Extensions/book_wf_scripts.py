@@ -76,6 +76,12 @@ def submitExportToAleph(wfStateInfo):
         # wft = api.portal.get_tool('portal_workflow')
         # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
+def submitTryToFindAtAleph(wfStateInfo):
+    print "try to find at Aleph"
+    obj = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        getAdapter(obj, IAMQPSender, name="renew-aleph-records").send()
+
 def submitSysNumbersSearch(wfStateInfo):
     logger.info("submitSysNumberSearch")
     print "submit sysnumber search"

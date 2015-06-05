@@ -217,7 +217,7 @@
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="antivirusOKThumbnail"/>
-   <exit-transition transition_id="antivirusOKAleph"/>
+   <exit-transition transition_id="antivirusOKTryToFindAtAleph"/>
    <exit-transition transition_id="antivirusOKSkipExportToAleph"/>
    <exit-transition transition_id="antivirusOKISBNGeneration"/>
    <exit-transition transition_id="antivirusError"/>
@@ -411,15 +411,15 @@
    </guard>
  </transition>
 
- <transition transition_id="antivirusOKAleph" 
+ <transition transition_id="antivirusOKTryToFindAtAleph"
              title="Antivirus OK"
-             new_state="exportToAleph" 
-             trigger="USER" 
-             before_script="submitDocumentViewer" 
-             after_script="submitExportToAleph"
+             new_state="tryToFindAtAleph"
+             trigger="USER"
+             before_script="submitDocumentViewer"
+             after_script="submitTryToFindAtAleph"
              i18n:attributes="title">
    <description>File Antivirus Passed</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKAleph" 
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKTryToFindAtAleph"
            category="workflow" 
            icon="" 
            i18n:translate="">File Antivirus Passed</action>
@@ -1051,6 +1051,12 @@
    </guard>
  </transition>
 
+ <script script_id="submitTryToFindAtAleph"
+         type="External Method"
+         filename=""
+         module="edeposit.policy.book_wf_scripts"
+         function="submitTryToFindAtAleph"/>
+
  <transition transition_id="submitExportToAleph"
              title="Submit Export to Aleph"
              new_state="exportToAleph"
@@ -1072,13 +1078,13 @@
          filename=""
          module="edeposit.policy.book_wf_scripts"
          function="submitExportToAleph"/>
-
-<script script_id="submitThumbnailGenerating"
+ 
+ <script script_id="submitThumbnailGenerating"
          type="External Method"
          filename=""
          module="edeposit.policy.book_wf_scripts"
          function="submitThumbnailGenerating"/>
-
+ 
  <!--  First attempt to find at Aleph -->
 
  <state state_id="tryToFindAtAleph" title="Try to find at Aleph" i18n:attributes="title">
