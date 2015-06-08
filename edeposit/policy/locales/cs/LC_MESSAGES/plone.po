@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-08 16:54+0000\n"
-"PO-Revision-Date: 2015-06-08 18:53+0200\n"
+"POT-Creation-Date: 2015-06-08 17:01+0000\n"
+"PO-Revision-Date: 2015-06-08 19:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -608,12 +608,12 @@ msgstr "Příprava akvizice"
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for Descriptive Cataloguing"
-msgstr "Příprava na jmennou katalogizaci"
+msgstr "Příprava na JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for subject Cataloguing"
-msgstr "Příprava na věcný popis"
+msgstr "Příprava na VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -762,19 +762,19 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Descriptive Cataloguers"
-msgstr "Poslat email všem katalogizátorům jmenného popisu"
+msgstr "Poslat email všem katalogizátorům JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Descriptive Cataloguing Preparing"
-msgstr "Poslat email s přehledem originálů čekajících na jmenný popis"
+msgstr "Poslat email s přehledem originálů čekajících na JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Descriptive Cataloguing Review Preparing"
-msgstr "Poslat email s přehledem originálů čekajících na revizi jmenného popisu"
+msgstr "Poslat email s přehledem originálů čekajících na revizi JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Descriptive Cataloguing Reviewers"
-msgstr "Rozeslat emaily všem revizorům jmenného popisu"
+msgstr "Rozeslat emaily všem revizorům JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to ISBN Agency to generate ISBN"
@@ -786,15 +786,15 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguers"
-msgstr "Rozeslat emaily všem katalogizátorům jmenného popisu"
+msgstr "Rozeslat emaily všem katalogizátorům JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguing Preparing"
-msgstr "Poslat email pro přípravu věcného popisu"
+msgstr "Poslat email pro přípravu VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguing Review Preparing"
-msgstr "Poslat email pro přípravu revize věcného popisu"
+msgstr "Poslat email pro přípravu revize VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguing Reviewers"
@@ -806,11 +806,11 @@ msgstr "Poslat email akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send email to Description Cataloguers"
-msgstr "Rozeslat emaily všem katalogizátorům jmenného popisu"
+msgstr "Rozeslat emaily všem katalogizátorům JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send email to Description Cataloguing Reviewers"
-msgstr "Rozeslat emaily všem revizorům jmenného popisu"
+msgstr "Rozeslat emaily všem revizorům JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send email to Descriptive Cataloguing Preparing"
@@ -855,7 +855,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 msgid "Some records found at Aleph"
-msgstr ""
+msgstr "Načteny záznamy z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
