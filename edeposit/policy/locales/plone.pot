@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-02-17 10:06+0000\n"
+"POT-Creation-Date: 2015-06-08 16:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,40 +22,52 @@ msgstr ""
 msgid "- Essentially a workflow with no transitions, but has a Published state, so portlets and applications that expect that state will continue to work."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Descriptive Cataloguer is processing an ePublication for descriptive cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Descriptive Cataloguing Administrator prepares work for reviewers."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Descriptive Cataloguing Reviews controls an ePublication for descriptive cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Descriptive Cataloguing administrator is preparing an ePublication for descriptive cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Subject Cataloguer is processing an ePublication for subject cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Subject Cataloguing Administrator prepares work for reviewers."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Subject Cataloguing Reviews controls an ePublication for subject cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "A Subject Cataloguing administrator is preparing an ePublication for subject cataloguing."
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "A producent submits content for approving"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "A workflow for book and printing file"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -66,10 +78,12 @@ msgstr ""
 msgid "A workflow for original file"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Acquision is OK. So it can go to ISBN Agency."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Acquisition"
 msgstr ""
@@ -90,10 +104,12 @@ msgstr ""
 msgid "Aleph service sent an error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "An Acquisition administrator is preparing an ePublication for acquisition."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "An Acquisition administrator will choose a proper aleph record."
 msgstr ""
@@ -102,6 +118,7 @@ msgstr ""
 msgid "An ePublication is reviewed by Acquisitor and other agencies"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "An ePublication is reviewed by Acquisitor."
 msgstr ""
@@ -114,14 +131,17 @@ msgstr ""
 msgid "An original file was contributed"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Antivirus Checking"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Antivirus OK"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Approve ISBN by ISBN Agency"
 msgstr ""
@@ -130,6 +150,7 @@ msgstr ""
 msgid "Approve Metadata"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Approve metadata by Acquisition"
 msgstr ""
@@ -138,6 +159,7 @@ msgstr ""
 msgid "Approved"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Back to Correction"
@@ -151,13 +173,74 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Choose a proper Aleph Record"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - A Descriptive Cataloguing Administrator prepares work for reviewers."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - A Descriptive Cataloguing Reviews controls an ePublication for descriptive cataloguing."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - A Subject Cataloguer is processing an ePublication for subject cataloguing."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - A Subject Cataloguing Administrator prepares work for reviewers."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - A Subject Cataloguing Reviews controls an ePublication for subject cataloguing."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - A Subject Cataloguing administrator is preparing an ePublication for subject cataloguing."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Descriptive Cataloguing Review"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Descriptive Cataloguing Review Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Prepare for subject Cataloguing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Subject Cataloguing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Subject Cataloguing Review"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Subject Cataloguing Review Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Comment about the last transition"
 msgstr ""
 
@@ -165,28 +248,34 @@ msgstr ""
 msgid "Contribute an original file"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Declaration"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Declaration is finished"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Declaration with Error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing Review"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing Review Preparing"
 msgstr ""
@@ -197,6 +286,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "E-Deposit - Single State Workflow for Producent Folder"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "E-Deposit Book Workflow"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
@@ -215,6 +308,15 @@ msgstr ""
 msgid "E-Deposit producent workflow - acquisitor can reject/confirm producents."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Ensure Roles Consistency"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Ensure local roles consistency"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Error from external service"
@@ -224,87 +326,122 @@ msgstr ""
 msgid "Export of one record to Aleph finished with error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export of one record to Aleph submitted"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Aleph"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Aleph finished with error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Aleph finished with success"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Passed with Error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Passed with OK"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Sent"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius finished with error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius finished with success"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius sent"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LPT Passed with Error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LPT Passed with OK"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP Passed with Error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP Passed with OK"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "External service sent some error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "External service sent some warning"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Has not Passed"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Passed"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Force Renew Aleph Records"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Forde Renew Aleph Records"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Generate Agreement"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Generate Voucher"
 msgstr ""
@@ -329,64 +466,94 @@ msgstr ""
 msgid "ISBN Checking"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Duplicity Check"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Generation"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Subject Validation"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Validation"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN does not appear at Aleph. A system performs it."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Duplicit"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is OK and Acquision is OK. So it can go to cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Unique"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is Valid"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is generated"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is not Valid"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN is valid. A system performs it."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN will be assigned by ISBN Agency."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN will be validated by ISBN Agency."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "K akvizici"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "K akvizici - bez kontroly ISBN"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Load Summary Aleph Record by SysNumber"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Load Summmary Aleph Record"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
@@ -397,6 +564,11 @@ msgstr ""
 msgid "Metadata are valid.  So it can go futher to processing.."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "No record found at Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "No record was loaded from Aleph"
 msgstr ""
@@ -421,6 +593,7 @@ msgstr ""
 msgid "Original files waiting for acquisition"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "PDF generated"
@@ -430,21 +603,24 @@ msgstr ""
 msgid "Pending (%(count)d)"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for Acquisition"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for Descriptive Cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Prepare for subject Cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Previous transition"
 msgstr ""
 
@@ -452,6 +628,7 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Processed"
 msgstr ""
@@ -476,13 +653,14 @@ msgstr ""
 msgid "Producent is rejected. It is permanent state."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Proper Aleph Record Choosen"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Provides access to workflow history"
 msgstr ""
 
@@ -504,6 +682,12 @@ msgstr ""
 msgid "Queue waiting for correction"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Record has been changed"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Records were loaded from Aleph"
 msgstr ""
@@ -524,23 +708,45 @@ msgstr ""
 msgid "Rejected"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Renew Aleph Records"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Renew Aleph Records by SysNumber"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "Repeat ISBN Validation"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Request to generate voucher"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Response from EPubCheck"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Response from PDFBox"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Reviewer tasks"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Search SysNumber in Aleph"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Search a sysNumber in Aleph"
 msgstr ""
@@ -551,6 +757,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Acquisition with original files waiting for Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Send Email to Acquisition with original files waiting for proper Aleph record choosing"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
@@ -633,26 +843,44 @@ msgstr ""
 msgid "Send email to acquisitors with original files waiting for Aleph"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
+msgid "Send email to acquisitors with original files waiting for proper Aleph record choosing"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 msgid "Single state workflow for ePublication Folder"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Some changes appeared at the record."
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "Some records found at Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Subject Cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Subject Cataloguing Review"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Subject Cataloguing Review Preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Acquisition"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Acquisition Preparing"
 msgstr ""
@@ -661,62 +889,160 @@ msgstr ""
 msgid "Submit Agreement Generation"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Antivirus Check"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Descriptive Cataloguing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Descriptive Cataloguing Review"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Descriptive Cataloguing Review Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Subject Cataloguing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Subject Cataloguing Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Subject Cataloguing Review"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Subject Cataloguing Review Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed descriptive cataloguing review preparing"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit Declaration"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Descriptive Cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Descriptive Cataloguing Preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Descriptive Cataloguing Review"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Descriptive Cataloguing Review Preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit EPub/2 Validation"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Export to Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit ISBN Subject Validation"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit PDF/A Validation"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing Preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing Review"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Subject Cataloguing Review Preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit acquisition preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit closed - review of subject cataloguing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit closed - subject cataloguing Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit closed descriptive cataloguing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit closed descriptive cataloguing Review"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit closed subject cataloguing"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit declaration"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit descriptive cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit descriptive cataloguing Review"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit descriptive cataloguing review preparing"
 msgstr ""
@@ -733,44 +1059,58 @@ msgstr ""
 msgid "Submit load aleph records from Aleph to get SysNumbers"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit preparing of descriptive cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit review of subject cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit subject cataloguing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit subject cataloguing Preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "The ID of the user who performed the previous transition"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating Passed"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating finished with Error"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating with success"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Thumbnail Generating with success - skip export to Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail generating with error"
 msgstr ""
@@ -780,19 +1120,35 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "To Acquisition"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "To Acquisition Preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "To Withdraw"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "Try find a record at Aleph submitted"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "Try to find a record at Aleph submitted"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "Try to find at Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Validation for LTP Passed with OK"
 msgstr ""
@@ -801,6 +1157,7 @@ msgstr ""
 msgid "Visible to administrator, editor, editable by the administrator"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Waiting for Aleph"
 msgstr ""
@@ -829,6 +1186,7 @@ msgstr ""
 msgid "Waiting till Acquisitor approves producent's informations."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Waiting till Aleph gets back SysNumber of an exported record"
 msgstr ""
@@ -837,43 +1195,64 @@ msgstr ""
 msgid "Waiting till Producent corrects informations about itself."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Warning from external service"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We are doing descriptive cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We are doing export to Kramerius."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We are doing review of descriptive cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We are doing review of subject cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We are doing subject cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We are preparing subject cataloguing."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We got records from Aleph"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "We have got some records from Aleph"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "When the previous transition was performed"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Withdrawn"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+msgid "Zopakovat validaci ISBN"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
