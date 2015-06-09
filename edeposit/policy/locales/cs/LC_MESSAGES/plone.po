@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-08 17:01+0000\n"
-"PO-Revision-Date: 2015-06-08 19:00+0200\n"
+"POT-Creation-Date: 2015-06-09 08:41+0000\n"
+"PO-Revision-Date: 2015-06-09 10:07+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -207,33 +207,34 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#, fuzzy
 msgid "Closed - Descriptive Cataloguing Review"
-msgstr "Zamčeno - Revize VP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Closed - Descriptive Cataloguing Review Preparing"
-msgstr "Zamčeno - Příprava revize VP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Closed - Prepare for subject Cataloguing"
-msgstr "Zamčeno - Příprava JP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Closed - Subject Cataloguing"
-msgstr "Zamčeno - JP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Closed - Subject Cataloguing Review"
 msgstr "Zamčeno - Revize JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Closed - Subject Cataloguing Review Preparing"
+msgid "Closed - Descriptive Cataloguing Review Preparing"
 msgstr "Zamčeno - Příprava revize JP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Prepare for subject Cataloguing"
+msgstr "Zamčeno - Příprava VP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Subject Cataloguing"
+msgstr "Zamčeno - VP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Subject Cataloguing Review"
+msgstr "Zamčeno - Revize VP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Closed - Subject Cataloguing Review Preparing"
+msgstr "Zamčeno - Příprava revize VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
@@ -786,7 +787,7 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguers"
-msgstr "Rozeslat emaily všem katalogizátorům JP"
+msgstr "Rozeslat emaily všem katalogizátorům VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguing Preparing"
@@ -798,7 +799,7 @@ msgstr "Poslat email pro přípravu revize VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send Email to Subject Cataloguing Reviewers"
-msgstr "Rozeslat emaily všem revizorům věcného popisu"
+msgstr "Rozeslat emaily všem revizorům VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send email to Acquisition"
@@ -894,42 +895,42 @@ msgstr "Potvrdit antivirovou kontrolu"
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Closed - Descriptive Cataloguing"
-msgstr "Potvrdit Zamčeno - VP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Submit Closed - Descriptive Cataloguing Review"
-msgstr "Potvrdit Zamčeno - Revize VP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Submit Closed - Descriptive Cataloguing Review Preparing"
-msgstr "Potvrdit Zamčeno - Příprava revize VP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Submit Closed - Subject Cataloguing"
 msgstr "Potvrdit Zamčeno - JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Submit Closed - Subject Cataloguing Preparing"
-msgstr "Potvrdit Zamčeno - Příprava JP"
-
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Submit Closed - Subject Cataloguing Review"
+msgid "Submit Closed - Descriptive Cataloguing Review"
 msgstr "Potvrdit Zamčeno - Revize JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Submit Closed - Subject Cataloguing Review Preparing"
+msgid "Submit Closed - Descriptive Cataloguing Review Preparing"
 msgstr "Potvrdit Zamčeno - Příprava revize JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-msgid "Submit Closed descriptive cataloguing review preparing"
+msgid "Submit Closed - Subject Cataloguing"
+msgstr "Potvrdit Zamčeno - VP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Subject Cataloguing Preparing"
+msgstr "Potvrdit Zamčeno - Příprava VP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Subject Cataloguing Review"
+msgstr "Potvrdit Zamčeno - Revize VP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed - Subject Cataloguing Review Preparing"
 msgstr "Potvrdit Zamčeno - Příprava revize VP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Closed descriptive cataloguing review preparing"
+msgstr "Potvrdit Zamčeno - Příprava revize JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Submit Declaration"
@@ -982,6 +983,7 @@ msgstr "Potvrdit VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#, fuzzy
 msgid "Submit Subject Cataloguing Preparing"
 msgstr "Potvrdit přípravu VP"
 
@@ -1003,7 +1005,7 @@ msgstr "Poslat k akvizici"
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit closed - review of subject cataloguing"
-msgstr ""
+msgstr "Potvrdit Zamčeno - revize VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
@@ -1074,7 +1076,7 @@ msgstr "Potvrdit VP"
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit subject cataloguing Preparing"
-msgstr ""
+msgstr "Potvrdit přípravu VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml

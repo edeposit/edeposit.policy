@@ -1873,8 +1873,8 @@
   </permission-map>
  </state>
 
- <state state_id="descriptiveCataloguing" 
-        title="Descriptive Cataloguing" 
+ <state state_id="descriptiveCataloguing"
+        title="Descriptive Cataloguing"
         i18n:attributes="title">
    <description i18n:translate="">A Descriptive Cataloguer is processing an ePublication for descriptive cataloguing.</description>
     <exit-transition transition_id="renewAlephRecords"/>
