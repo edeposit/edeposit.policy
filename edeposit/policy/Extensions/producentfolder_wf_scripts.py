@@ -111,18 +111,17 @@ sendEmailToSubjectCataloguingReviewPreparing \
                                   'Subject Cataloguing Administrators',
                                   "Dokumenty cekajici na přípravu věcné revize")
 
-def queryForStates(*args):
+def queryForStates(portal_type='edeposit.content.originalfile', *args):
     return [ {'i': 'portal_type',
               'o': 'plone.app.querystring.operation.selection.is',
-              'v': ['edeposit.content.originalfile']},
+              'v': [portal_type]},
              {'i': 'review_state',
               'o': 'plone.app.querystring.operation.selection.is',
               'v': args},
-             {'i': 'path', 
-              'o': 'plone.app.querystring.operation.string.relativePath', 
-              'v': '../'}
+             # {'i': 'path',
+             #  'o': 'plone.app.querystring.operation.string.relativePath',
+             #  'v': '../'}
              ]
-
     
 def createGroupUsersCollections(context, groupname, indexName, state, readerGroup):
     members = api.user.get_users(groupname=groupname)
@@ -165,119 +164,114 @@ sendEmailToGroupSubjectCataloguingReviewers = sendEmailToGroupPersonsAMQPFactory
     additionalEmails = ['stavel.jan@gmail.com','alena.zalejska@pragodata.cz'],
 )
 
-def recreateCollections(wfStateInfo):
-    context = wfStateInfo.object
-    collections = [ 
-        dict( name = "originalfiles-waiting-for-isbn-generation",
-              title= u"Originály čekající na přidělení ISBN",
-              query= queryForStates('ISBNGeneration'),
-              group = 'ISBN Agency Members'
-          ),
-        dict( name = "originalfiles-waiting-for-aleph",
-              title= u"Originály čekající na Aleph",
-              query= queryForStates('waitingForAleph'),
-              group = 'Acquisition Administrators',
-          ),
-        dict( name = "originalfiles-waiting-for-acquisition",
-              title= u"Originály čekající na Akvizici",
-              query= queryForStates('acquisition'),
-              group = 'Acquisitors',
-          ),
-        dict( name = "originalfiles-waiting-for-isbn-subject-validation",
-              title= u"Originály čekající na věcnou kontrolu ISBN",
-              query= queryForStates('ISBNSubjectValidation'),
-              group= 'ISBN Agency Members',
-          ),
-        dict( name = "originalfiles-waiting-for-descriptive-cataloguing-preparing",
-              title= u"Originály čekající na přípravu jmenné katalogizace",
-              query= queryForStates('descriptiveCataloguingPreparing'),
-              group= 'Descriptive Cataloguing Administrators',
-          ),
-        dict( name = "originalfiles-waiting-for-descriptive-cataloguing-review-preparing",
-              title= u"Originály čekající na přípravu jmenné revize",
-              query= queryForStates('descriptiveCataloguingReviewPreparing'),
-              group= 'Descriptive Cataloguing Administrators',
-          ),
-
-        # -- closed originalfiles that should be fully catalogized --
-        dict( name = "originalfiles-waiting-for-closed-descriptive-cataloguing-preparing",
-              title= u"Zamčené originály čekající na přípravu jmenné katalogizace",
-              query= queryForStates('closedDescriptiveCataloguingPreparing') + \
+collections = [
+    dict( name = "originalfiles-waiting-for-isbn-generation",
+          title= u"Originály čekající na přidělení ISBN",
+          query= queryForStates('ISBNGeneration'),
+          group = 'ISBN Agency Members'),
+    dict( name = "originalfiles-waiting-for-aleph",
+          title= u"Originály čekající na Aleph",
+          query= queryForStates('waitingForAleph'),
+          group = 'Acquisition Administrators'),
+    dict( name = "originalfiles-waiting-for-acquisition",
+          title= u"Originály čekající na Akvizici",
+          query= queryForStates('acquisition'),
+          group = 'Acquisitors'),
+    dict( name = "originalfiles-waiting-for-isbn-subject-validation",
+          title= u"Originály čekající na věcnou kontrolu ISBN",
+          query= queryForStates('ISBNSubjectValidation'),
+          group= 'ISBN Agency Members'),
+    dict( name = "originalfiles-waiting-for-descriptive-cataloguing-preparing",
+          title= u"Originály čekající na přípravu jmenné katalogizace",
+          query= queryForStates('descriptiveCataloguingPreparing'),
+          group= 'Descriptive Cataloguing Administrators'),
+    dict( name = "originalfiles-waiting-for-descriptive-cataloguing-review-preparing",
+          title= u"Originály čekající na přípravu jmenné revize",
+          query= queryForStates('descriptiveCataloguingReviewPreparing'),
+          group= 'Descriptive Cataloguing Administrators'),
+    
+    # -- closed originalfiles that should be fully catalogized --
+    dict( name = "originalfiles-waiting-for-closed-descriptive-cataloguing-preparing",
+          title= u"Zamčené originály čekající na přípravu jmenné katalogizace",
+          query= queryForStates('closedDescriptiveCataloguingPreparing') + \
               [{'i': 'shouldBeFullyCatalogized',
                 'o': 'plone.app.querystring.operation.boolean.isTrue'}],
-              group= 'Descriptive Cataloguing Administrators',
+          group= 'Descriptive Cataloguing Administrators',
           ),
-        dict( name = "originalfiles-waiting-for-closed-descriptive-cataloguing-review-preparing",
-              title= u"Zamčené originály čekající na přípravu jmenné revize",
-              query= queryForStates('closedDescriptiveCataloguingReviewPreparing') +\
+    dict( name = "originalfiles-waiting-for-closed-descriptive-cataloguing-review-preparing",
+          title= u"Zamčené originály čekající na přípravu jmenné revize",
+          query= queryForStates('closedDescriptiveCataloguingReviewPreparing') +\
               [{'i': 'shouldBeFullyCatalogized',
                 'o': 'plone.app.querystring.operation.boolean.isTrue'}],
-              group= 'Descriptive Cataloguing Administrators',
+          group= 'Descriptive Cataloguing Administrators',
           ),
-        # ----------------------------------------------------------------
-        dict( name = "originalfiles-waiting-for-subject-cataloguing-preparing",
-              title= u"Originály čekající na přípravu věcné katalogizace",
-              query= queryForStates('subjectCataloguingPreparing'),
-              group= 'Subject Cataloguing Administrators',
+    # ----------------------------------------------------------------
+    dict( name = "originalfiles-waiting-for-subject-cataloguing-preparing",
+          title= u"Originály čekající na přípravu věcné katalogizace",
+          query= queryForStates('subjectCataloguingPreparing'),
+          group= 'Subject Cataloguing Administrators',
           ),
-        dict( name = "originalfiles-waiting-for-subject-cataloguing-review-preparing",
-              title= u"Originály čekající na přípravu věcné revize",
-              query= queryForStates('subjectCataloguingReviewPreparing'),
-              group= 'Subject Cataloguing Administrators',
+    dict( name = "originalfiles-waiting-for-subject-cataloguing-review-preparing",
+          title= u"Originály čekající na přípravu věcné revize",
+          query= queryForStates('subjectCataloguingReviewPreparing'),
+          group= 'Subject Cataloguing Administrators',
           ),
-        # -- closed originalfiles that should be fully catalogized --
-        dict( name = "originalfiles-waiting-for-closed-subject-cataloguing-preparing",
-              title= u"Zamčené originály čekající na přípravu věcné katalogizace",
-              query= queryForStates('closedSubjectCataloguingPreparing') +\
+    # -- closed originalfiles that should be fully catalogized --
+    dict( name = "originalfiles-waiting-for-closed-subject-cataloguing-preparing",
+          title= u"Zamčené originály čekající na přípravu věcné katalogizace",
+          query= queryForStates('closedSubjectCataloguingPreparing') +\
               [{'i': 'shouldBeFullyCatalogized',
                 'o': 'plone.app.querystring.operation.boolean.isTrue'}],
-              group= 'Subject Cataloguing Administrators',
+          group= 'Subject Cataloguing Administrators',
           ),
-        dict( name = "originalfiles-waiting-for-closed-subject-cataloguing-review-preparing",
-              title= u"Zamčené originály čekající na přípravu věcné revize",
-              query= queryForStates('closedSubjectCataloguingReviewPreparing') +\
+    dict( name = "originalfiles-waiting-for-closed-subject-cataloguing-review-preparing",
+          title= u"Zamčené originály čekající na přípravu věcné revize",
+          query= queryForStates('closedSubjectCataloguingReviewPreparing') +\
               [{'i': 'shouldBeFullyCatalogized',
                 'o': 'plone.app.querystring.operation.boolean.isTrue'}],
-              group= 'Subject Cataloguing Administrators',
+          group= 'Subject Cataloguing Administrators',
           ),
-        # ----------------------------------------------------------------
-        dict( name = "originalfiles-waiting-for-proper-aleph-record-choosing",
-              title= u"Originály čekající na výběr správného aleph záznamu",
-              query= queryForStates('chooseProperAlephRecord'),
-              group= 'Acquisitors',
+    # ----------------------------------------------------------------
+    dict( name = "originalfiles-waiting-for-proper-aleph-record-choosing",
+          title= u"Originály čekající na výběr správného aleph záznamu",
+          query= queryForStates('chooseProperAlephRecord'),
+          group= 'Acquisitors',
           ),
-        dict( name = "my-producents",
-              title= u"Moji producenti",
-              query= [ {'i': 'portal_type',
-                        'o': 'plone.app.querystring.operation.selection.is',
-                        'v': ['edeposit.user.producent']},
-                       {'i': 'getAssignedProducentEditors',
-                        'o': 'plone.app.querystring.operation.string.currentUser',
-                        'v': []},
+    dict( name = "my-producents",
+          title= u"Moji producenti",
+          query= [ {'i': 'portal_type',
+                    'o': 'plone.app.querystring.operation.selection.is',
+                    'v': ['edeposit.user.producent']},
+                   {'i': 'getAssignedProducentEditors',
+                    'o': 'plone.app.querystring.operation.string.currentUser',
+                    'v': []},
                    ],
-              group= 'Producent Editors',
+          group= 'Producent Editors',
           ),
-        dict( name = "originalfiles-waiting-for-renew-aleph-records",
-              title= u"Originály čekající na akci v Alephu",
-              query= queryForStates(
-                'acquisition',
-                'ISBNSubjectValidation',
-                'subjectCataloguing',
-                'subjectCataloguingReview',
-                'descriptiveCataloguing',
-                'descriptiveCataloguingReview',
-                'chooseProperAlephRecord',
-                'closedDescriptiveCataloguingReviewPreparing',
-                "closedDescriptiveCataloguingReview",
-                "closedSubjectCataloguingPreparing",
-                "closedSubjectCataloguing",
-                "closedSubjectCataloguingReviewPreparing",
-                "closedSubjectCataloguingReview",
-                ),
-              group= 'Subject Cataloguing Administrators',
+    dict( name = "originalfiles-waiting-for-renew-aleph-records",
+          title= u"Originály čekající na akci v Alephu",
+          query= queryForStates(
+            'acquisition',
+            'ISBNSubjectValidation',
+            'subjectCataloguing',
+            'subjectCataloguingReview',
+            'descriptiveCataloguing',
+            'descriptiveCataloguingReview',
+            'chooseProperAlephRecord',
+            'closedDescriptiveCataloguingReviewPreparing',
+            "closedDescriptiveCataloguingReview",
+            "closedSubjectCataloguingPreparing",
+            "closedSubjectCataloguing",
+            "closedSubjectCataloguingReviewPreparing",
+            "closedSubjectCataloguingReview",
+            ),
+          group= 'Subject Cataloguing Administrators',
           ),
     ]
 
+
+def recreateCollections(wfStateInfo):
+    context = wfStateInfo.object
     for collection in collections:
         name = collection['name']
         if name not in context.keys():
