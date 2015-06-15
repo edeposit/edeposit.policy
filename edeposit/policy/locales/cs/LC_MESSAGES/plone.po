@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-09 08:41+0000\n"
-"PO-Revision-Date: 2015-06-09 10:07+0200\n"
+"POT-Creation-Date: 2015-06-15 11:12+0000\n"
+"PO-Revision-Date: 2015-06-15 13:12+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -207,7 +207,6 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#, fuzzy
 msgid "Closed - Descriptive Cataloguing Review"
 msgstr "Zamčeno - Revize JP"
 
@@ -983,7 +982,6 @@ msgstr "Potvrdit VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#, fuzzy
 msgid "Submit Subject Cataloguing Preparing"
 msgstr "Potvrdit přípravu VP"
 
