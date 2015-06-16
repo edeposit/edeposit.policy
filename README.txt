@@ -1,10 +1,5 @@
-E-Deposit Policy
-================
+* E-Deposit Plone Policy Package
 
+This package implements workflow of ePublication, ePeriodical, Book and Preprint.
 
-Policy package for a project **E-Deposit** for Plone 4.2
-
-links:
-
-- E-Deposit:: 
-  http://www.nkp.cz/o-knihovne/projekty-a-programy/vyzkum-a-vyvoj-naki/e-deposit/uvod
+The package defines roles and permissions for all users of the application.
