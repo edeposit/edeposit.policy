@@ -32,7 +32,7 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="pdfGenerated"/>  
+   <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="submitDeclarationToISBNValidation"/>
    <exit-transition transition_id="submitDeclarationToAntivirus"/>
  
@@ -3206,6 +3206,8 @@
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="epubcheckResponse"/>
 
    <permission-map name="Access contents information" acquired="False">
