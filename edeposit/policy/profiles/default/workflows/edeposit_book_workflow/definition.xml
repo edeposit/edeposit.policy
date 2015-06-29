@@ -1280,7 +1280,7 @@
              new_state="exportToAleph" 
              trigger="USER" 
              before_script="" 
-             after_script="" 
+             after_script="submitExportToAleph" 
              i18n:attributes="title">
    <action url="%(content_url)s/content_status_modify?workflow_action=noRecordFoundAtAleph" category="workflow" icon="" i18n:translate="">No record found at Aleph</action>
    <guard>
