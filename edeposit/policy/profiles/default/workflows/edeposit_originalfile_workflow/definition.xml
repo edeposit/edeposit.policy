@@ -838,6 +838,11 @@
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitISBNDuplicityCheck"/>
 
+ <script script_id="submitExportToStorage" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitExportToStorage"/> 
+
  <!-- ISBN Generation -->
 
  <state state_id="ISBNGeneration" title="ISBN Generation" i18n:attributes="title">
@@ -3196,9 +3201,116 @@
    <match name="review_state" values="ISBNGeneration"/>
  </worklist>
 
+ <!-- Storage -->
+
+ <state state_id="exportToStorage" title="Export to Storage" i18n:attributes="title">
+   <exit-transition transition_id="submitExportToStorage"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="exportToStorageError"/>
+   <exit-transition transition_id="exportToStorageOK"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <transition transition_id="submitExportToStorage"
+             title="Send export to Storage"
+             new_state="exportToStorage"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitExportToStorage"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitExportToStorage" category="workflow" icon="" i18n:translate="">Submit export to Storage</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="exportToStorageError" 
+             title="Export to Storage finished with error" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageError" category="workflow" icon="" i18n:translate="">Export to Storage finished with error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToStorageOK"
+             title="Export to Storage finished with success" 
+             new_state="exportToKramerius"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOK" category="workflow" icon="" i18n:translate="">Export to Storage finished with success</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
  <!--  Export to Kramerius -->
 
  <state state_id="exportToKramerius" title="Export to Kramerius" i18n:attributes="title">
+   <exit-transition transition_id="submitExportToStorage"/>
    <exit-transition transition_id="exportToKrameriusSubmitted"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
@@ -3620,12 +3732,12 @@
 
  <transition transition_id="submitSubjectCataloguingReview"
              title="Submit review of subject cataloguing"
-             new_state="exportToKramerius" 
+             new_state="exportToStorage" 
              trigger="USER" 
              before_script="" 
-             after_script="" 
+             after_script="submitAMQPTaskSubmitExportToStorage"
              i18n:attributes="title">
-   <description i18n:translate="">We are doing export to Kramerius.</description>
+   <description i18n:translate="">We are doing export to Storage.</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=submitSubjectCataloguingReview"
            category="workflow"
            icon=""
@@ -3738,7 +3850,7 @@
 
  <transition transition_id="submitClosedSubjectCataloguingReview"
              title="Submit closed - review of subject cataloguing"
-             new_state="exportToKramerius" 
+             new_state="exportToStorage" 
              trigger="USER" 
              before_script="" 
              after_script="" 

@@ -16,6 +16,7 @@ from collective.documentviewer.async import queueJob
 
 import json
 from five import grok
+from edeposit.content.tasks import IPloneTaskSender, DoActionFor
 
 logger = getLogger('edeposit.originalfile.wf_scripts')
 
@@ -55,30 +56,30 @@ def submitISBNValidation(wfStateInfo):
     originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile,IAMQPSender,name="isbn-validate").send()
-        # comment=u"Automatická kontrola ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
-        # epublication = aq_parent(aq_inner(originalfile))
-        # wft = api.portal.get_tool('portal_workflow')
-        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def submitISBNDuplicityCheck(wfStateInfo):
     print "submitISBN Duplicity Check"
     originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="isbn-duplicity-check").send()
-        # epublication = aq_parent(aq_inner(originalfile))
-        # comment=u"Automatická kontrola duplicity ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
-        # wft = api.portal.get_tool('portal_workflow')
-        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def submitExportToAleph(wfStateInfo):
     print "submit export to Aleph"
     originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="export-to-aleph").send()
-        # epublication = aq_parent(aq_inner(originalfile))
-        # comment=u"Export do Alephu ISBN:%s" % (originalfile.isbn, )
-        # wft = api.portal.get_tool('portal_workflow')
-        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
+
+def submitAMQPTaskExportToStorage(wfStateInfo):
+    print "submit amqp task export to Storage"
+    context = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        IPloneTaskSender(DoActionFor(transition='submitExportToStorage', uid=context.UID())).send()
+
+def submitExportToStorage(wfStateInfo):
+    print "submit export to Storage"
+    originalfile = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="export-to-storage").send()
 
 def submitSysNumbersSearch(wfStateInfo):
     logger.info("submitSysNumberSearch")
