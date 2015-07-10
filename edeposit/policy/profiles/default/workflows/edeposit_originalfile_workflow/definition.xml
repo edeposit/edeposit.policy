@@ -612,10 +612,10 @@
 
  <transition transition_id="amqpError"
              title="Error from external service" 
-             new_state="declarationWithError" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
+             new_state="errorClassification" 
+             trigger="USER"
+             before_script=""
+             after_script="submitAMQPTaskClassificateError"
              i18n:attributes="title">
    <description>External service sent some error</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=amqpError" 
@@ -803,6 +803,11 @@
    </permission-map>
  </state>
  
+ <script script_id="classificateError" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="classificateError"/> 
+
  <script script_id="generateVoucher" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
@@ -4297,9 +4302,11 @@
 
  <state state_id="errorClassification" title="Classification of an error" i18n:attributes="title">
    <description i18n:translate="">An error is classified now.</description>
+
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="classificateError"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="alephRecordsLoaded"/>
    <exit-transition transition_id="submitExportToAleph"/>
@@ -4318,7 +4325,7 @@
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="backToCorrection"/>
-   
+
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -4390,7 +4397,21 @@
    </permission-map>
  </state>
 
-
+ <transition transition_id="classificateError" 
+             title="Classificate Error" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="submitClassificateError" 
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=classificateError"
+       category="workflow" icon="" i18n:translate="">Classificate Error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
 
  <transition transition_id="toWithdraw" 
              title="To Withdraw" 

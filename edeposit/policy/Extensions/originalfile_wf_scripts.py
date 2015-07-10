@@ -227,4 +227,13 @@ def checkExportStatuses(wfStateInfo):
         pass
     pass
 
+def submitAMQPTaskClassificateError(wfStateInfo):
+    print "submit amqp task to classificate amqp error"
+    context = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        IPloneTaskSender(DoActionFor(transition='classificateError', uid=context.UID())).send()
 
+
+def classificateError(wfStateInfo):
+    import pdb; pdb.set_trace()
+    pass
