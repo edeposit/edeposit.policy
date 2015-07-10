@@ -235,5 +235,9 @@ def submitAMQPTaskClassificateError(wfStateInfo):
 
 
 def classificateError(wfStateInfo):
-    import pdb; pdb.set_trace()
+    context = wfStateInfo.object
+    classifiers = context.portal_catalog(portal_type="edeposit.amqp_errors.amqperrorclassificationfolder")
+    classificatorFolder = classifiers and classifiers[0].getObject()
+    (status, prob) = classificatorFolder.classifyError('only Czech ISBN is required')
+    #import pdb; pdb.set_trace()
     pass

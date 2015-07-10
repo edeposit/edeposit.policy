@@ -803,6 +803,11 @@
    </permission-map>
  </state>
  
+ <script script_id="submitAMQPTaskClassificateError" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitAMQPTaskClassificateError"/> 
+
  <script script_id="classificateError" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
@@ -4402,7 +4407,7 @@
              new_state="" 
              trigger="USER" 
              before_script="" 
-             after_script="submitClassificateError" 
+             after_script="classificateError" 
              i18n:attributes="title">
    <action
        url="%(content_url)s/content_status_modify?workflow_action=classificateError"
