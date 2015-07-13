@@ -22,6 +22,7 @@
 
  <!-- (occur-1 "<state " nil (list (current-buffer)) "*definition.xml: states*") -->
  <!-- (occur-1 "<transition " nil (list (current-buffer)) "*definition.xml: transition*") -->
+ <!-- (occur-1 "<script " nil (list (current-buffer)) "*definition.xml: scripts*") -->
 
  <!-- declaration -->
 
