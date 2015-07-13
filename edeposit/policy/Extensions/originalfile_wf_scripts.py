@@ -227,4 +227,17 @@ def checkExportStatuses(wfStateInfo):
         pass
     pass
 
+def submitAMQPTaskClassificateError(wfStateInfo):
+    print "submit amqp task to classificate amqp error"
+    context = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        IPloneTaskSender(DoActionFor(transition='classificateError', uid=context.UID())).send()
 
+
+def classificateError(wfStateInfo):
+    context = wfStateInfo.object
+    classifiers = context.portal_catalog(portal_type="edeposit.amqp_errors.amqperrorclassificationfolder")
+    classificatorFolder = classifiers and classifiers[0].getObject()
+    (status, prob) = classificatorFolder.classifyError('only Czech ISBN is required')
+    #import pdb; pdb.set_trace()
+    pass
