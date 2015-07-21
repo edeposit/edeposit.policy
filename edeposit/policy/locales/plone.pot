@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-06-15 11:12+0000\n"
+"POT-Creation-Date: 2015-07-21 11:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -127,6 +127,10 @@ msgstr ""
 msgid "An ePublication was loaded from Aleph"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "An error is classified now."
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
 msgid "An original file was contributed"
 msgstr ""
@@ -176,6 +180,14 @@ msgstr ""
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Choose a proper Aleph Record"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Classificate Error"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Classification of an error"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
@@ -248,6 +260,14 @@ msgstr ""
 msgid "Contribute an original file"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Datum Vydani Is Required"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Datum vydani is required"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
@@ -278,6 +298,10 @@ msgstr ""
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing Review Preparing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Document Was Deleted"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
@@ -406,6 +430,18 @@ msgstr ""
 msgid "Export to LTP Passed with OK"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Export to Storage"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Export to Storage finished with error"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Export to Storage finished with success"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
@@ -425,6 +461,10 @@ msgstr ""
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Passed"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "File Problem"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
@@ -462,6 +502,10 @@ msgstr ""
 msgid "Got an Aleph records"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "ISBN Already Exists"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "ISBN Checking"
 msgstr ""
@@ -484,6 +528,10 @@ msgstr ""
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "ISBN Validation"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "ISBN already exists"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
@@ -564,6 +612,14 @@ msgstr ""
 msgid "Metadata are valid.  So it can go futher to processing.."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Middleware Problem"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Middleware problem"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 msgid "No record found at Aleph"
 msgstr ""
@@ -579,6 +635,14 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Notify a system action"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Only Czech ISBN Accepted"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Only czech ISBN accepted"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
@@ -626,6 +690,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Private"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Problem with attached file"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
@@ -680,6 +748,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Queue waiting for correction"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Record at Aleph was deleted"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
@@ -845,6 +917,10 @@ msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Send email to acquisitors with original files waiting for proper Aleph record choosing"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Send export to Storage"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
@@ -1047,6 +1123,10 @@ msgstr ""
 msgid "Submit descriptive cataloguing review preparing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit export to Storage"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Submit for approving"
 msgstr ""
@@ -1148,6 +1228,14 @@ msgstr ""
 msgid "Try to find at Aleph"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Unknown Error"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Unknown error"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Validation for LTP Passed with OK"
@@ -1210,6 +1298,10 @@ msgstr ""
 msgid "We are doing export to Kramerius."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "We are doing export to Storage."
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "We are doing review of descriptive cataloguing."
@@ -1251,8 +1343,20 @@ msgstr ""
 msgid "Withdrawn"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Wrong ISBN"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 msgid "Zopakovat validaci ISBN"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Zpracovatel Is Required"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Zpracovatel is required"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
