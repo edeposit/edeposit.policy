@@ -4203,6 +4203,14 @@
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="middlewareProblem"/>
+   <exit-transition transition_id="fileProblem"/>
+   <exit-transition transition_id="onlyCzechISBNAcceptedError"/>
+   <exit-transition transition_id="zpracovatelIsRequiredError"/>
+   <exit-transition transition_id="DatumVydaniIsRequiredError"/>
+   <exit-transition transition_id="isbnAlreadyExistsError"/>
+   <exit-transition transition_id="wrongISBNError"/>
+   <exit-transition transition_id="documentWasDeleted"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
@@ -4505,6 +4513,132 @@
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="middlewareProblem" 
+             title="Middleware Problem" 
+             new_state="middlewareProblem" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=middlewareProblem"
+       category="workflow" icon="" i18n:translate="">Middleware Problem</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="fileProblem" 
+             title="File Problem" 
+             new_state="fileProblem" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=fileProblem"
+       category="workflow" icon="" i18n:translate="">File Problem</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="onlyCzechISBNAcceptedError" 
+             title="Only Czech ISBN Accepted" 
+             new_state="onlyCzechISBNAcceptedError" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=onlyCzechISBNAcceptedError"
+       category="workflow" icon="" i18n:translate="">Only Czech ISBN Accepted</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="zpracovatelIsRequiredError" 
+             title="Zpracovatel Is Required" 
+             new_state="zpracovatelIsRequiredError" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=zpracovatelIsRequiredError"
+       category="workflow" icon="" i18n:translate="">Zpracovatel Is Required</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="DatumVydaniIsRequiredError" 
+             title="Datum Vydani Is Required" 
+             new_state="DatumVydaniIsRequiredError" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=DatumVydaniIsRequiredError"
+       category="workflow" icon="" i18n:translate="">Datum Vydani Is Required</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="isbnAlreadyExistsError" 
+             title="ISBN Already Exists" 
+             new_state="isbnAlreadyExistsError" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=isbnAlreadyExistsError"
+       category="workflow" icon="" i18n:translate="">ISBN Already Exists</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="wrongISBNError" 
+             title="Wrong ISBN" 
+             new_state="wrongISBNError" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=wrongISBNError"
+       category="workflow" icon="" i18n:translate="">Wrong ISBN</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="documentWasDeleted" 
+             title="Document Was Deleted" 
+             new_state="chooseProperAlephRecord" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=documentWasDeleted"
+       category="workflow" icon="" i18n:translate="">Document Was Deleted</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
 
