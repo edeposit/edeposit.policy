@@ -81,6 +81,30 @@ def submitExportToStorage(wfStateInfo):
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="export-to-storage").send()
 
+def submitAMQPTaskExportToLTP(wfStateInfo):
+    print "submit amqp task export to LTP"
+    context = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        IPloneTaskSender(DoActionFor(transition='submitExportToLTP', uid=context.UID())).send()
+
+def submitExportToLTP(wfStateInfo):
+    print "submit export to LTP"
+    originalfile = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="export-to-ltp").send()
+
+def submitAMQPTaskExportToKramerius(wfStateInfo):
+    print "submit amqp task export to Kramerius"
+    context = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        IPloneTaskSender(DoActionFor(transition='submitExportToKramerius', uid=context.UID())).send()
+
+def submitExportToKramerius(wfStateInfo):
+    print "submit export to Kramerius"
+    originalfile = wfStateInfo.object
+    with api.env.adopt_user(username="system"):
+        getAdapter(originalfile, IAMQPSender, name="export-to-kramerius").send()
+
 def submitSysNumbersSearch(wfStateInfo):
     logger.info("submitSysNumberSearch")
     print "submit sysnumber search"
@@ -238,6 +262,5 @@ def classificateError(wfStateInfo):
     context = wfStateInfo.object
     classifiers = context.portal_catalog(portal_type="edeposit.amqp_errors.amqperrorclassificationfolder")
     classificatorFolder = classifiers and classifiers[0].getObject()
-    (status, prob) = classificatorFolder.classifyError('only Czech ISBN is required')
-    #import pdb; pdb.set_trace()
+    #(status, prob) = classificatorFolder.classifyError('only Czech ISBN is required')
     pass
