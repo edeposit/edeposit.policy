@@ -5088,6 +5088,51 @@
     <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
+ <transition transition_id="deleteFile"
+             title="Delete Attached File"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="deleteFile"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=deleteFile"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Delete Attached File</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+            
+         
+   </guard>
+ </transition>
+
+ <script script_id="deleteFile" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="deleteFile"/> 
+ <transition transition_id="submitLoadFileFromStorage"
+             title="Load File From Storage"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="loadFileFromStorage"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitLoadFileFromStorage"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Load File From Storage</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+            
+         
+   </guard>
+ </transition>
+
+ <script script_id="submitLoadFileFromStorage" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitLoadFileFromStorage"/> 
+
 
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
    <description i18n:translate="">Previous transition</description>

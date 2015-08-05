@@ -153,6 +153,13 @@ def submitThumbnailGenerating(wfStateInfo):
 def submitVoucherGeneration(wfStateInfo):
     originalfile = wfStateInfo.object
     getAdapter(originalfile,IAMQPSender,name="voucher-generate").send()
+
+def deleteFile(wfStateInfo):
+    wfStateInfo.object.file = None
+
+def submitLoadFileFromStorage(wfStateInfo):
+    originalfile = wfStateInfo.object
+    getAdapter(originalfile,IAMQPSender,name="load-file-from-storage").send()
     
 def updateRelatedItems(wfStateInfo):
     logger.info("updateRelatedItems")
