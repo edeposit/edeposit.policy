@@ -12,6 +12,11 @@
   <includeDependencies package="." />
   <i18n:registerTranslations directory="locales" />
 
+  <browser:resourceDirectory
+      name="edeposit.content"
+      directory="static"
+      />
+
   <!-- Register installation profile -->
   <genericsetup:registerProfile
       name="default"
