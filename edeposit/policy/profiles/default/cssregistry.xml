@@ -32,7 +32,7 @@
         expression=""
         media=""
         rel="stylesheet"
-        rendering="import"
-        insert-after="ploneKss.css" />
+        rendering="link"
+        insert-after="forms.css" />
 
 </object>

@@ -13,7 +13,7 @@
   <i18n:registerTranslations directory="locales" />
 
   <browser:resourceDirectory
-      name="edeposit.content"
+      name="edeposit.policy"
       directory="static"
       />
 
@@ -25,6 +25,7 @@
       description="Installs the edeposit.policy package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
   <!-- -*- extra stuff goes here -*- -->
   <genericsetup:importStep
       name="edeposit-various"
