@@ -37,7 +37,7 @@ body.template-documentviewer.portaltype-edeposit-content-originalfile fieldset#f
 /* ================================================================================================== END OF TEMPORARY STUFF ============= */
 /* ================================================================================================================================= */
 
-body {background: white url("/bg.png") 0 0;color: #454545;font: 105% Verdana,FreeSans,sans-serif;}
+body {background: white url("++resource++edeposit.policy/img/bg.png") 0 0;color: #454545;font: 105% Verdana,FreeSans,sans-serif;}
 #portal-columns {padding-top: 1em;}
 #visual-portal-wrapper { max-width: 1200px; margin: 15px auto;box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.31);background: white;-webkit-border-radius: 7px;-moz-border-radius: 7px;border-radius: 7px;padding-bottom: 0.4em;position: relative;overflow: hidden;min-width: 945px;}
 #content {position: relative;margin: 0 0.25em 2em;clear: both;}
@@ -61,7 +61,7 @@ div#portal-footer a,div#portal-footer p {color: #006773;}
 h1, h2, h3, h4, h5, h6 {color: Black;font-family: verdana,arial;font-weight: normal;line-height: 2.5em;letter-spacing: normal;}
 
 
-dl.portletregisteringOfEContent h4.ohl {background: url("http://edeposit.webrevol.cz/ohlaseni.png") no-repeat scroll 100% 50% transparent !important;
+dl.portletregisteringOfEContent h4.ohl {background: url("++resource++edeposit.policy/img/ohlaseni.png") no-repeat scroll 100% 50% transparent !important;
 border-bottom: 1px solid #ccc;
 font-weight: bold;
 line-height: 3em;
@@ -70,7 +70,7 @@ color: black;
 margin: 0;
 padding: 0;}
 dl.portletregisteringOfEContent h4.prehl {
-background: url("http://edeposit.webrevol.cz/prehled.png") no-repeat scroll 97% 50% transparent !important;
+background: url("++resource++edeposit.policy/img/prehled.png") no-repeat scroll 97% 50% transparent !important;
 border-bottom: 1px solid #ccc;
 font-weight: bold;
 line-height: 3em;
@@ -79,7 +79,7 @@ color: black;
 margin: 0;
 padding: 0;	
 }
-a.editprod {background: url("http://edeposit.webrevol.cz/edit.png") no-repeat scroll 97% 50% transparent !important;
+a.editprod {background: url("++resource++edeposit.policy/img/edit.png") no-repeat scroll 97% 50% transparent !important;
 border-top: 1px solid #ccc  !important;
 margin-top: 1em;
 line-height: 3em;
@@ -153,7 +153,7 @@ border: 0 none;margin: 0;padding: 0;width: 100%;min-height: 1.5em;
 display: block;line-height: 1.5em;
 }
 
-#content div.originalfile_folder_full_view_item h2 a:hover {color: black !important;background: transparent url(http://edeposit.webrevol.cz/oko.png) 100% 50% no-repeat;}
+#content div.originalfile_folder_full_view_item h2 a:hover {color: black !important;background: transparent url("++resource++edeposit.policy/img/oko.png") 100% 50% no-repeat;}
 
 
 
@@ -171,7 +171,7 @@ float: left;
 
 /*
 
-.originalfile_folder_full_view_item span.state-isbngeneration {background: #FFFDDB url(http://edeposit.webrevol.cz/inproccess.png) 7px 7px no-repeat !important; padding-left: 20px; }
+.originalfile_folder_full_view_item span.state-isbngeneration {background: #FFFDDB url("++resource++edeposit.policy/img/inproccess.png") 7px 7px no-repeat !important; padding-left: 20px; }
 
 */
 
@@ -705,7 +705,7 @@ body.template-sitemap div#content ul#portal-sitemap a {border: 0px none !importa
 /* =================== OBRAZKY ========================== */
 
 
-body.template-login_form div#content {background: transparent url(http://edeposit.webrevol.cz/zamek.png) 793px 35px no-repeat;}
+body.template-login_form div#content {background: transparent url("++resource++edeposit.policy/img/zamek.png") 793px 35px no-repeat;}
 
 /* =================== EDIT BAR ========================== */
 
@@ -1224,13 +1224,13 @@ div#content-core div dl dt span.summary img  {display: none;}
 
 
 fieldset#folder-listing  a.contenttype-edeposit-content-epublication
-{background: url("http://edeposit.webrevol.cz/contenttype-edeposit-content-epublication.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+{background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-epublication.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
 fieldset#folder-listing  a.contenttype-collection
-{background: url("http://edeposit.webrevol.cz/contenttype-collection.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+{background: url("++resource++edeposit.policy/img/contenttype-collection.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
 fieldset#folder-listing  a.contenttype-edeposit-content-author
-{background: url("http://edeposit.webrevol.cz/contenttype-edeposit-content-author.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+{background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-author.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
 fieldset#folder-listing  a.contenttype-edeposit-content-originalfile
-{background: url("http://edeposit.webrevol.cz/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+{background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
 
 
 
@@ -1289,20 +1289,20 @@ div.historyComment {border: 1px solid #ddd;font-size: 12px;padding: 0.3em 3em;}
 
 div#search-results dl.searchResults dt img {display: none;}
 div#search-results dl dt {padding: 1px 0 0 27px;}
-div#search-results dl dt.contenttype-edeposit-content-originalfile {background: url("http://edeposit.webrevol.cz/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent;}
-div#search-results dl dt.contenttype-edeposit-content-epublication {background: url("http://edeposit.webrevol.cz/contenttype-edeposit-content-epublication.png") no-repeat scroll 0 50% transparent;}
+div#search-results dl dt.contenttype-edeposit-content-originalfile {background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent;}
+div#search-results dl dt.contenttype-edeposit-content-epublication {background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-epublication.png") no-repeat scroll 0 50% transparent;}
 div#search-results dl dd {margin-bottom: 1em;}
 
 
 
 /* original file in portlet */
 
-dl.portletOriginalFilesLinks a.contenttype-edeposit-content-originalfile {background: url("http://edeposit.webrevol.cz/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent;
+dl.portletOriginalFilesLinks a.contenttype-edeposit-content-originalfile {background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent;
 font-size: .8em;
 padding: 3px 0 0 21px;
 text-decoration: none;
 border: none;}
-dl.portletOriginalFileExternalLinks a.external-link {background: url("http://edeposit.webrevol.cz/external-link2.png") no-repeat scroll 0 50% transparent;
+dl.portletOriginalFileExternalLinks a.external-link {background: url("++resource++edeposit.policy/img/external-link2.png") no-repeat scroll 0 50% transparent;
 font-size: .8em;
 padding: 3px 0 0 26px;
 text-decoration: none;
@@ -1310,7 +1310,7 @@ border: none;}
 
 
 /* 
-div#search-results a.state-ISBNGeneration {padding-left: 20px;background: url("http://edeposit.webrevol.cz/ohlaseni.png") no-repeat scroll 0% 50% transparent }
+div#search-results a.state-ISBNGeneration {padding-left: 20px;background: url("++resource++edeposit.policy/img/ohlaseni.png") no-repeat scroll 0% 50% transparent }
 div#search-results a.ISBNDuplicityCheck
 div#search-results a.ISBNGeneration
 div#search-results a.ISBNSubjectValidation
