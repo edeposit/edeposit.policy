@@ -5038,13 +5038,13 @@
  </transition>
  
  <transition transition_id="backToCorrection" 
-             title="Back to Correction" 
+             title="Back to Producent" 
              new_state="declarationWithError" 
              trigger="USER"
              before_script="" 
              after_script="" 
              i18n:attributes="title">
-  <action url="%(content_url)s/content_status_modify?workflow_action=backToCorrection" category="workflow" icon="" i18n:translate="">Back to Correction</action>
+  <action url="%(content_url)s/content_status_modify?workflow_action=backToCorrection" category="workflow" icon="" i18n:translate="">Back to Producent</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-07-21 11:01+0000\n"
-"PO-Revision-Date: 2015-07-21 13:01+0200\n"
+"POT-Creation-Date: 2015-08-19 11:47+0000\n"
+"PO-Revision-Date: 2015-08-19 13:47+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -72,6 +72,7 @@ msgid "A workflow for ePublication"
 msgstr "Pracovní proces ePublikace"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/make-definition/resources/definition.xml
 msgid "A workflow for original file"
 msgstr "Pracovní proces pro dokumenty"
 
@@ -162,9 +163,12 @@ msgstr "Schváleno"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Back to Correction"
 msgstr "Zpátky k opravě"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Back to Producent"
+msgstr "Zpátky producentovi"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Block temporarily"
@@ -282,6 +286,10 @@ msgstr "Zadávání skončilo"
 msgid "Declaration with Error"
 msgstr "Chyby v zadávání"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Delete Attached File"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Descriptive Cataloguing"
@@ -314,6 +322,7 @@ msgid "E-Deposit Book Workflow"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/make-definition/resources/definition.xml
 msgid "E-Deposit Original File Workflow"
 msgstr ""
 
@@ -403,12 +412,10 @@ msgid "Export to Kramerius sent"
 msgstr "Poslán export do Krameria"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LPT Passed with Error"
 msgstr "Export do LTP skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LPT Passed with OK"
 msgstr "Export do LTP proběhl úspěšně"
 
@@ -418,14 +425,20 @@ msgid "Export to LTP"
 msgstr "Export do LTP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP Passed with Error"
 msgstr "Export do LTP skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP Passed with OK"
 msgstr "Export do LTP proběhl úspěšně"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Export to LTP finished with error"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Export to LTP finished with success"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Storage"
@@ -589,6 +602,10 @@ msgstr ""
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "K akvizici - bez kontroly ISBN"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Load File From Storage"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
@@ -917,6 +934,14 @@ msgid "Send email to acquisitors with original files waiting for proper Aleph re
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Send export to Kramerius"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Send export to LTP"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Send export to Storage"
 msgstr "Poslat export do úložiště"
 
@@ -1119,6 +1144,14 @@ msgstr "Potvrdit revizi JP"
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit descriptive cataloguing review preparing"
 msgstr "Potvrdit přípravu revize JP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit export to Kramerius"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit export to LTP"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit export to Storage"
