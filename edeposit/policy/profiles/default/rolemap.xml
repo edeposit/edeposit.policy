@@ -3,6 +3,8 @@
   <roles>
     <role name="E-Deposit: ISBN Agency Member"/>
     <role name="E-Deposit: ISBN Agency Administrator"/>
+    <role name="E-Deposit: Periodical Department Member"/>
+    <role name="E-Deposit: Periodical Department Administrator"/>
     <role name="E-Deposit: Producent Member"/>
     <role name="E-Deposit: Producent Administrator"/>
     <role name="E-Deposit: Producent Editor"/>
