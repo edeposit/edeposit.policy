@@ -3577,6 +3577,8 @@
    <exit-transition transition_id="submitExportToLTP"/>
    <exit-transition transition_id="exportToLTPError"/>
    <exit-transition transition_id="exportToLTPOK"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
