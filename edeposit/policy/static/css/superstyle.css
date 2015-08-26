@@ -167,6 +167,12 @@ float: left;
 
 #content div.originalfile_folder_full_view_item div#plone-document-byline span.ObjectStatus span.state-declarationwitherror {border: 2px solid red;}
 
+/* state viewlet */
+.document-state-viewlet  span {font-size: 1em; color: #000000;}
+.document-state-viewlet  span.ObjectStatus a {background: #FFFDDB !important;}
+
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.ObjectStatus span.state-declarationwitherror {border: 2px solid red;}
+
 
 
 /*
