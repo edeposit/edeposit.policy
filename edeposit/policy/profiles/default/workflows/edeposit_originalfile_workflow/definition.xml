@@ -1315,6 +1315,7 @@
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="toWithdraw"/>
    <exit-transition transition_id="backToCorrection"/>
 
    <permission-map name="Access contents information" acquired="False">
@@ -1365,6 +1366,7 @@
    </permission-map>
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>E-Deposit: Acquisition Administrator</permission-role>
      <permission-role>Manager</permission-role>
