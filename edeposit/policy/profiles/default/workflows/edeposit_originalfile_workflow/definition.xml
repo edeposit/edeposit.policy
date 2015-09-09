@@ -2036,6 +2036,10 @@
         title="Closed - Descriptive Cataloguing Review Preparing" 
         i18n:attributes="title">
    <description i18n:translate="">Closed - A Descriptive Cataloguing Administrator prepares work for reviewers.</description>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitClosedDescriptiveCataloguingReviewPreparing"/>
