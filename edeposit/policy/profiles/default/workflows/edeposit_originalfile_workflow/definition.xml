@@ -3402,16 +3402,31 @@
    </guard>
  </transition>
 
- <transition transition_id="exportToStorageOK"
+ <transition transition_id="exportToStorageOKToLTP"
              title="Export to Storage finished with success" 
              new_state="exportToLTP"
              trigger="USER" 
              before_script="" 
              after_script="submitAMQPTaskExportToLTP" 
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOK" category="workflow" icon="" i18n:translate="">Export to Storage finished with success</action>
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOKToLTP" category="workflow" icon="" i18n:translate="">Export to Storage finished with success</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.isWellFormedForLTP</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToStorageOKSkipLTP"
+             title="Export to Storage finished with success, skip LTP" 
+             new_state="exportToKramerius"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAMQPTaskExportToKramerius" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOKSkipLTP" category="workflow" icon="" i18n:translate="">Export to Storage finished with success, skip LTP</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: not here.isWellFormedForLTP</guard-expression>
    </guard>
  </transition>
 
