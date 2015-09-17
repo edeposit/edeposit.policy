@@ -3333,7 +3333,8 @@
  <state state_id="exportToStorage" title="Export to Storage" i18n:attributes="title">
    <exit-transition transition_id="submitExportToStorage"/>
    <exit-transition transition_id="exportToStorageError"/>
-   <exit-transition transition_id="exportToStorageOK"/>
+   <exit-transition transition_id="exportToStorageOKToLTP"/>
+   <exit-transition transition_id="exportToStorageOKSkipLTP"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
