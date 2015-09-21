@@ -893,6 +893,16 @@
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitExportToStorage"/> 
 
+ <script script_id="submitAMQPTaskUpdateLinksAtStorage" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitAMQPTaskUpdateLinksAtStorage"/> 
+
+ <script script_id="submitUpdateLinksAtAleph" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitUpdateLinksAtAleph"/> 
+
  <script script_id="submitAMQPTaskExportToLTP" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
@@ -3244,6 +3254,9 @@
    <exit-transition transition_id="submitISBNSubjectValidation"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
  
@@ -3447,6 +3460,19 @@
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <guard-expression>python: not here.isWellFormedForLTP</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitUpdateLinksAtAleph"
+             title="Update links at Aleph"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="submitUpdateLinksAtAleph"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitUpdateLinksAtAleph" category="workflow" icon="" i18n:translate="">Submit update links at Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
 
