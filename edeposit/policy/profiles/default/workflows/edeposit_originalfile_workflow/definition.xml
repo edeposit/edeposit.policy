@@ -3167,6 +3167,7 @@
    <exit-transition transition_id="toWithdraw"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
@@ -3344,6 +3345,7 @@
  <!-- Storage -->
 
  <state state_id="exportToStorage" title="Export to Storage" i18n:attributes="title">
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitExportToStorage"/>
    <exit-transition transition_id="exportToStorageError"/>
    <exit-transition transition_id="exportToStorageOKToLTP"/>
@@ -3519,6 +3521,7 @@
  <!--  Export to Kramerius -->
 
  <state state_id="exportToKramerius" title="Export to Kramerius" i18n:attributes="title">
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitExportToStorage"/>
    <exit-transition transition_id="submitExportToKramerius"/>
    <exit-transition transition_id="exportToKrameriusSubmitted"/>
@@ -3641,6 +3644,7 @@
  </transition>
 
  <state state_id="exportToLTP" title="Export to LTP" i18n:attributes="title">
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitExportToLTP"/>
    <exit-transition transition_id="exportToLTPError"/>
    <exit-transition transition_id="exportToLTPOK"/>
