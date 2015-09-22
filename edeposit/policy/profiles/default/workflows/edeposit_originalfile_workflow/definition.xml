@@ -893,15 +893,15 @@
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitExportToStorage"/> 
 
- <script script_id="submitAMQPTaskUpdateLinksAtStorage" type="External Method"
-         filename="" 
+ <script script_id="submitAMQPTaskUpdateLinksAtAleph" type="External Method"
+         filename=""
          module="edeposit.policy.originalfile_wf_scripts"
-         function="submitAMQPTaskUpdateLinksAtStorage"/> 
+         function="submitAMQPTaskUpdateLinksAtAleph"/>
 
  <script script_id="submitUpdateLinksAtAleph" type="External Method"
-         filename="" 
+         filename=""
          module="edeposit.policy.originalfile_wf_scripts"
-         function="submitUpdateLinksAtAleph"/> 
+         function="submitUpdateLinksAtAleph"/>
 
  <script script_id="submitAMQPTaskExportToLTP" type="External Method"
          filename="" 
