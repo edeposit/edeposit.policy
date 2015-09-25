@@ -411,6 +411,24 @@
    </guard>
  </transition>
 
+ <transition transition_id="submitThumbnailGenerating" 
+             title="Submit thumbnail generating" 
+             new_state="thumbnailGenerating" 
+             trigger="USER"
+             before_script="" 
+             after_script="submitThumbnailGenerating"
+             i18n:attributes="title">
+   <description>File Antivirus Passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitThumbnailGenerating" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit Thumbnail Generating</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-expression>python: here.needsThumbnailGeneration()</guard-expression> -->
+   </guard>
+ </transition>
+
  <transition transition_id="submitISBNGeneration" 
              title="ISBN is generated"
              new_state="exportToAleph" 
@@ -875,6 +893,16 @@
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitExportToStorage"/> 
 
+ <script script_id="submitAMQPTaskUpdateLinksAtAleph" type="External Method"
+         filename=""
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitAMQPTaskUpdateLinksAtAleph"/>
+
+ <script script_id="submitUpdateLinksAtAleph" type="External Method"
+         filename=""
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="submitUpdateLinksAtAleph"/>
+
  <script script_id="submitAMQPTaskExportToLTP" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
@@ -993,6 +1021,7 @@
    <exit-transition transition_id="thumbnailOKAleph"/>
    <exit-transition transition_id="thumbnailOKSkipExportToAleph"/>
    <exit-transition transition_id="thumbnailOKISBNGeneration"/>
+   <exit-transition transition_id="submitThumbnailGenerating"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
@@ -2036,6 +2065,10 @@
         title="Closed - Descriptive Cataloguing Review Preparing" 
         i18n:attributes="title">
    <description i18n:translate="">Closed - A Descriptive Cataloguing Administrator prepares work for reviewers.</description>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitClosedDescriptiveCataloguingReviewPreparing"/>
@@ -3134,6 +3167,7 @@
    <exit-transition transition_id="toWithdraw"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
@@ -3221,6 +3255,9 @@
    <exit-transition transition_id="submitISBNSubjectValidation"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
  
@@ -3308,9 +3345,11 @@
  <!-- Storage -->
 
  <state state_id="exportToStorage" title="Export to Storage" i18n:attributes="title">
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitExportToStorage"/>
    <exit-transition transition_id="exportToStorageError"/>
-   <exit-transition transition_id="exportToStorageOK"/>
+   <exit-transition transition_id="exportToStorageOKToLTP"/>
+   <exit-transition transition_id="exportToStorageOKSkipLTP"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
@@ -3398,14 +3437,42 @@
    </guard>
  </transition>
 
- <transition transition_id="exportToStorageOK"
+ <transition transition_id="exportToStorageOKToLTP"
              title="Export to Storage finished with success" 
              new_state="exportToLTP"
              trigger="USER" 
              before_script="" 
              after_script="submitAMQPTaskExportToLTP" 
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOK" category="workflow" icon="" i18n:translate="">Export to Storage finished with success</action>
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOKToLTP" category="workflow" icon="" i18n:translate="">Export to Storage finished with success</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.isWellFormedForLTP</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToStorageOKSkipLTP"
+             title="Export to Storage finished with success, skip LTP" 
+             new_state="exportToKramerius"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAMQPTaskExportToKramerius" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOKSkipLTP" category="workflow" icon="" i18n:translate="">Export to Storage finished with success, skip LTP</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: not here.isWellFormedForLTP</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitUpdateLinksAtAleph"
+             title="Update links at Aleph"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="submitUpdateLinksAtAleph"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitUpdateLinksAtAleph" category="workflow" icon="" i18n:translate="">Submit update links at Aleph</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
    </guard>
@@ -3454,6 +3521,7 @@
  <!--  Export to Kramerius -->
 
  <state state_id="exportToKramerius" title="Export to Kramerius" i18n:attributes="title">
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitExportToStorage"/>
    <exit-transition transition_id="submitExportToKramerius"/>
    <exit-transition transition_id="exportToKrameriusSubmitted"/>
@@ -3576,6 +3644,7 @@
  </transition>
 
  <state state_id="exportToLTP" title="Export to LTP" i18n:attributes="title">
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
    <exit-transition transition_id="submitExportToLTP"/>
    <exit-transition transition_id="exportToLTPError"/>
    <exit-transition transition_id="exportToLTPOK"/>
@@ -4508,6 +4577,7 @@
    <exit-transition transition_id="isbnAlreadyExistsError"/>
    <exit-transition transition_id="wrongISBNError"/>
    <exit-transition transition_id="documentWasDeleted"/>
+   <exit-transition transition_id="submitExportToStorage"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: ISBN Agency Member</permission-role>
