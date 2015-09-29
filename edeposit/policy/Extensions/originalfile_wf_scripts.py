@@ -283,3 +283,9 @@ def classificateError(wfStateInfo):
     classificatorFolder = classifiers and classifiers[0].getObject()
     #(status, prob) = classificatorFolder.classifyError('only Czech ISBN is required')
     pass
+
+def alephLinkUpdateResponseOK(wfStateInfo):
+    pass
+
+def alephLinkUpdateResponseError(wfStateInfo):
+    pass

@@ -646,10 +646,10 @@
 
  <transition transition_id="amqpError"
              title="Error from external service" 
-             new_state="errorClassification" 
+             new_state="" 
              trigger="USER"
              before_script=""
-             after_script="submitAMQPTaskClassificateError"
+             after_script=""
              i18n:attributes="title">
    <description>External service sent some error</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=amqpError" 
@@ -3358,6 +3358,8 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="alephLinkUpdateResponseOK"/>
+   <exit-transition transition_id="alephLinkUpdateResponseError"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Owner</permission-role>
@@ -3535,6 +3537,8 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="alephLinkUpdateResponseOK"/>
+   <exit-transition transition_id="alephLinkUpdateResponseError"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Owner</permission-role>
@@ -3650,6 +3654,9 @@
    <exit-transition transition_id="exportToLTPOK"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="alephLinkUpdateResponseOK"/>
+   <exit-transition transition_id="alephLinkUpdateResponseError"/>
+
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
@@ -3746,6 +3753,9 @@
  </state>
 
  <state state_id="processed" title="Processed" i18n:attributes="title">
+   <exit-transition transition_id="alephLinkUpdateResponseOK"/>
+   <exit-transition transition_id="alephLinkUpdateResponseError"/>
+
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Owner</permission-role>
@@ -5202,10 +5212,52 @@
    </guard>
  </transition>
 
+ <transition transition_id="alephLinkUpdateResponseOK"
+             title="Link at Aleph has been accepted"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=alephLinkUpdateResponseOK"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Link at Aleph has been accepted</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="alephLinkUpdateResponseError"
+             title="Link at Aleph has been rejected"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=alephLinkUpdateResponseError"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Link at Aleph has been rejected</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
  <script script_id="submitLoadFileFromStorage" type="External Method"
          filename="" 
          module="edeposit.policy.originalfile_wf_scripts"
          function="submitLoadFileFromStorage"/> 
+
+ <script script_id="alephLinkUpdateResponseOK" type="External Method"
+         filename=""
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="alephLinkUpdateResponseOK"/> 
+
+ <script script_id="alephLinkUpdateResponseError" type="External Method"
+         filename="" 
+         module="edeposit.policy.originalfile_wf_scripts"
+         function="alephLinkUpdateResponseError"/> 
 
 
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
