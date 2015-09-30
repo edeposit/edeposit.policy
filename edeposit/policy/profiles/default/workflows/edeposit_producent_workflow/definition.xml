@@ -43,6 +43,8 @@
       <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="CMFEditions: Access previous versions" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -60,7 +62,9 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>Site Administrator</permission-role>
-      <permission-role>Manager</permission-role>
+      <permission-role>Manager</permission-role>      
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Copy or Move" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -91,6 +95,8 @@
       <permission-role>Reader</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Add portal content" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -145,6 +151,8 @@
       <permission-role>Reader</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="CMFEditions: Access previous versions" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -163,6 +171,8 @@
       <permission-role>E-Deposit: Producent Editor</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Access contents information" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -173,6 +183,8 @@
       <permission-role>Reader</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Change portal events" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -249,6 +261,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Access contents information" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -256,6 +270,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Change portal events" acquired="False">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -278,6 +294,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
   </state>
 
@@ -330,6 +348,8 @@
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
       <permission-role>Anonymous</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Change portal events" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -379,6 +399,8 @@
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
       <permission-role>Anonymous</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
   </state>
 
@@ -397,6 +419,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Change portal events" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -419,6 +443,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
   </state>
 
@@ -440,6 +466,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Change portal events" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -461,6 +489,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
     <permission-map name="Request Review" acquired="True">
       <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -475,6 +505,8 @@
       <permission-role>E-Deposit: Producent Administrator</permission-role>
       <permission-role>Site Administrator</permission-role>
       <permission-role>Manager</permission-role>
+      <permission-role>E-Deposit: Periodical Department Member</permission-role>
+      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
     </permission-map>
   </state>
  <transition transition_id="amqpError"
