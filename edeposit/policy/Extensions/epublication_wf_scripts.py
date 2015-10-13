@@ -216,7 +216,7 @@ def submitAlephRecordsLoad(wfStateInfo):
     producer = getUtility(IProducer, name="amqp.isbn-search-request")
     with api.env.adopt_user(username="system"):
         for isbn in isbns:
-            isbnq = ISBNQuery(isbn,'cze-dep')
+            isbnq = ISBNQuery(isbn)
             request = SearchRequest(isbnq)
             producer.publish(serialize(request),
                              content_type = 'application/json',
