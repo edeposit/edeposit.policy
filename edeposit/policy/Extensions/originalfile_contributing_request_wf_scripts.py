@@ -64,7 +64,7 @@ logger = getLogger('edeposit.originalfile_contributing_request.wf_scripts')
 def submitSearchRequest(wfStateInfo):
     logger.info("submitSearchRequest")
     context = wfStateInfo.object
-    isbnq = ISBNQuery(context.isbn,'cze-dep')
+    isbnq = ISBNQuery(context.isbn)
     request = SearchRequest(isbnq)
     producer = getUtility(IProducer, name="amqp.isbn-search-request")
     producer.publish(serialize(request),

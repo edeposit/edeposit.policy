@@ -25,31 +25,43 @@
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Copy or Move" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="declarationWithError" title="Declaration with Error">
@@ -59,31 +71,43 @@
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
    </permission-map>
    <permission-map name="Change portal events" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
    </permission-map>
    <permission-map name="Copy or Move" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
    </permission-map>
    <permission-map name="Review portal content" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
    </permission-map>
    <permission-map name="View" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
    </permission-map>
  </state>
  
@@ -94,31 +118,43 @@
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Copy or Move" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="True">
    <permission-role>E-Deposit: Acquisitor</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="catalogization" title="Catalogization">
@@ -129,24 +165,34 @@
    <permission-role>E-Deposit: Librarian</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>E-Deposit: Assigned Librarian</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="True">
    <permission-role>E-Deposit: Assigned Librarian</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Copy or Move" acquired="True">
    <permission-role>E-Deposit: Assigned Librarian</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="True">
    <permission-role>E-Deposit: Assigned Librarian</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="True">
    <permission-role>E-Deposit: Assigned Librarian</permission-role>
@@ -154,6 +200,8 @@
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="exportToAleph" title="Export to Aleph">
@@ -164,6 +212,8 @@
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
@@ -187,6 +237,8 @@
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="exportToKramerius" title="Export to Kramerius">
@@ -198,6 +250,8 @@
    <permission-role>Owner</permission-role>
    <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
@@ -221,48 +275,103 @@
    <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
    <permission-role>E-Deposit: Assigned Producent</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>E-Deposit: Periodical Department Member</permission-role>
+   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="withdrawn" title="Withdrawn">
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Assigned Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Assigned Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
  </state>
- <transition transition_id="approveAndToCatalogization" title="Approve and to Catalogization" new_state="catalogization" trigger="USER" before_script="" after_script="">
+ <transition transition_id="approveAndToCatalogization" 
+             title="Approve and to Catalogization" 
+             new_state="catalogization" 
+             trigger="USER" before_script="" after_script="">
   <description>ISSN is OK and Acquision is OK. So it can go to catalogization.</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=approveToCatalogization" category="workflow" icon="">Approve</action>
   <guard>
    <guard-role>E-Deposit: Assigned Acquisitor, E-Deposit: ISBN Agency Administrator</guard-role>
   </guard>
  </transition>
- <transition transition_id="backToCorrection" title="Back to Correction" new_state="declarationWithError" trigger="USER" before_script="" after_script="">
+ <transition transition_id="backToCorrection" 
+             title="Back to Correction" 
+             new_state="declarationWithError" 
+             trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=backToCorrection" category="workflow" icon="">Back to Correction</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="catalogizationPassed" title="Catalogization Passed" new_state="exportToKramerius" trigger="USER" before_script="" after_script="">
+ <transition transition_id="catalogizationPassed" 
+             title="Catalogization Passed" 
+             new_state="exportToKramerius" 
+             trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=catalogizationPassed" category="workflow" icon="">Catalogization Passed</action>
   <guard>
    <guard-role>E-Deposit: Assigned Librarian, E-Deposit: System</guard-role>
   </guard>
  </transition>
- <transition transition_id="exportToAlephError" title="Export to Aleph Passed with Error" new_state="declarationWithError" trigger="USER" before_script="" after_script="">
+ <transition transition_id="exportToAlephError" 
+             title="Export to Aleph Passed with Error" 
+             new_state="declarationWithError" 
+             trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephError" category="workflow" icon="">Export to Aleph Passed with Error</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="exportToAlephOK" title="Export to Aleph Passed with OK" new_state="acquisition" trigger="USER" before_script="" after_script="">
+ <transition transition_id="exportToAlephOK" 
+             title="Export to Aleph Passed with OK" 
+             new_state="acquisition" trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephOK" category="workflow" icon="">Export to Aleph Passed with OK</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="issnIsValid" title="ISSN is Valid" new_state="" trigger="USER" before_script="" after_script="">
+ <transition transition_id="issnIsValid" 
+             title="ISSN is Valid" 
+             new_state="" 
+             trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=issnIsValid" category="workflow" icon="">ISSN is Valid</action>
   <guard>
    <guard-role>E-Deposit: ISBN Agency Administrator</guard-role>
   </guard>
  </transition>
- <transition transition_id="metadataIsValid" title="Metada is Valid" new_state="" trigger="USER" before_script="" after_script="">
+ <transition transition_id="metadataIsValid" 
+             title="Metada is Valid" 
+             new_state="" 
+             trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=metadataIsValid" category="workflow" icon="">Metadata is Valid</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
@@ -281,7 +390,10 @@
   </guard>
  </transition>
 
- <transition transition_id="toWithdraw" title="To Withdraw" new_state="withdrawn" trigger="USER" before_script="" after_script="">
+ <transition transition_id="toWithdraw" 
+             title="To Withdraw" 
+             new_state="withdrawn" 
+             trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="">To Withdraw</action>
   <guard>
    <guard-role>E-Deposit: Assigned Acquisitor, E-Deposit: ISBN Agency Administrator, E-Deposit: Assigned Librarian, Site administrator</guard-role>
@@ -297,41 +409,37 @@
   </guard>
  </variable>
  <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
-  <description>The ID of the user who performed the previous transition</description>
-  <default>
-   
-   <expression>user/getId</expression>
-  </default>
-  <guard>
-  </guard>
+   <description>The ID of the user who performed the previous transition</description>
+   <default>
+     <expression>user/getId</expression>
+   </default>
+   <guard>
+   </guard>
  </variable>
  <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
-  <description>Comment about the last transition</description>
-  <default>
-   
-   <expression>python:state_change.kwargs.get('comment', '')</expression>
-  </default>
-  <guard>
-  </guard>
+   <description>Comment about the last transition</description>
+   <default>
+     <expression>python:state_change.kwargs.get('comment', '')</expression>
+   </default>
+   <guard>
+   </guard>
  </variable>
  <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
-  <description>Provides access to workflow history</description>
-  <default>
-   
-   <expression>state_change/getHistory</expression>
-  </default>
-  <guard>
-   <guard-permission>Request review</guard-permission>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
+   <description>Provides access to workflow history</description>
+   <default>
+     <expression>state_change/getHistory</expression>
+   </default>
+   <guard>
+     <guard-permission>Request review</guard-permission>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
  </variable>
  <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
-  <description>When the previous transition was performed</description>
-  <default>
-   
-   <expression>state_change/getDateTime</expression>
-  </default>
-  <guard>
-  </guard>
+   <description>When the previous transition was performed</description>
+   <default>
+     <expression>state_change/getDateTime</expression>
+   </default>
+   <guard>
+   </guard>
  </variable>
 </dc-workflow>

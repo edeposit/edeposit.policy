@@ -1,0 +1,1383 @@
+/* ==================================================================================================  TEMPORARY STUFF & HIDING etc.. ============= */
+div#visual-portal-wrapper div#portal-top.row div.cell.width-full.position-0 div#portal-header div#portal-personaltools-wrapper ul#portal-personaltools.actionMenu.deactivated li#anon-personalbar a#personaltools-join,
+div#formfield-form-widgets-libraries_that_can_access,
+#portal-header a#personaltools-search,
+body.template-register-with-producent form.kssattr-formname-register-with-producent div#formfield-form-widgets-IBasic-description,
+form#mail_password fieldset legend,
+form#pwreset_action.enableAutoFocus fieldset legend, /* reset hesla nadpis formulare */
+form#pwreset_action.enableAutoFocus fieldset div.field div.formHelp,
+div#portal-header div#portal-searchbox 
+ {display: none;}
+
+form#feedback_form div.formHelp, /* zbytečné nápovědy u kontaktního formuláře */ 
+form#feedback_form span.fieldRequired, /* zbytečná tečka a text u povinných polí v kontaktnim formuláři */
+body.template-contact-info div#content div.documentDescription, /* zbytečné: Vítejte na edepositu... */
+body.section-jak-postupovat #content h2.headline, /* dvojitý nadpis */
+body.userrole-member div#content div#viewlet-below-content-title div#plone-document-byline, /* linka na historii a autor pod nadpisem pro všechny kromě membera */
+body.portaltype-edeposit-content-originalfile li#contentview-documentviewer_settings.plain
+ {display: none !important}
+
+#content div#plone-document-byline * {color: #ccc; text-decoration: none !important; font-variant: small-caps !important;}
+#content div#plone-document-byline span a {border-bottom: 1px dotted #aaa !important;text-decoration: none !important; }
+#portal-breadcrumbs {font-size: 70%; color: #aaa !important;display: none !important}
+body div#content div#viewlet-below-content-title{min-height: 2em;}
+body.userrole-e-deposit:.producent div#edit-bar {background: red;}
+form#mail_password.enableAutoFocus fieldset,
+form#pwreset_action.enableAutoFocus fieldset {border: 0 none;}
+
+div#pb_1.overlay-contact div.pb-ajax div div.documentDescription {display: none !important}
+
+
+div#content-core fieldset#folder-listing dl dt span.summary a.contenttype-collection.state-private.url {color: #006773 !important;}
+
+div.pb-ajax div div.documentDescription {display: none}
+
+body.template-documentviewer.portaltype-edeposit-content-originalfile fieldset#form-groups-categorization {display: none}
+
+/* ================================================================================================== END OF TEMPORARY STUFF ============= */
+/* ================================================================================================================================= */
+
+body {background: white url("++resource++edeposit.policy/img/bg.png") 0 0;color: #454545;font: 105% Verdana,FreeSans,sans-serif;}
+#portal-columns {padding-top: 1em;}
+#visual-portal-wrapper { max-width: 1200px; margin: 15px auto;box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.31);background: white;-webkit-border-radius: 7px;-moz-border-radius: 7px;border-radius: 7px;padding-bottom: 0.4em;position: relative;overflow: hidden;min-width: 945px;}
+#content {position: relative;margin: 0 0.25em 2em;clear: both;}
+div#portal-column-content {min-height: 20em}
+
+div.psh {color: #999;font-size: 0.8em;line-height: 1.3em;}
+div#portal-footer {-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;background: none repeat scroll 0 0 #dddddd;border-radius: 4px;font-size: 75%;line-height: 1.5em;margin: 0.5em 0;padding: 0.5em 0.8em;text-align: center;}
+div#portal-footer a,div#portal-footer p {color: #006773;}
+#content a:link,#content a:visited, dl.portlet a:link,dl.portlet a:visited {border-bottom: 0.1em solid #006773;color: #006773;}
+#content a:hover, dl.portlet a:hover {
+  color: #000000 !important;
+}
+
+
+#content ul {
+  
+  list-style: disc inside !important;
+  margin-left: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {color: Black;font-family: verdana,arial;font-weight: normal;line-height: 2.5em;letter-spacing: normal;}
+
+
+dl.portletregisteringOfEContent h4.ohl {background: url("++resource++edeposit.policy/img/ohlaseni.png") no-repeat scroll 100% 50% transparent !important;
+border-bottom: 1px solid #ccc;
+font-weight: bold;
+line-height: 3em;
+font-size: 1em;
+color: black;
+margin: 0;
+padding: 0;}
+dl.portletregisteringOfEContent h4.prehl {
+background: url("++resource++edeposit.policy/img/prehled.png") no-repeat scroll 97% 50% transparent !important;
+border-bottom: 1px solid #ccc;
+font-weight: bold;
+line-height: 3em;
+font-size: 1em;
+color: black;
+margin: 0;
+padding: 0;	
+}
+a.editprod {background: url("++resource++edeposit.policy/img/edit.png") no-repeat scroll 97% 50% transparent !important;
+border-top: 1px solid #ccc  !important;
+margin-top: 1em;
+line-height: 3em;
+display: block;
+height: 3em;
+}
+
+
+div#DV-container div.DV-docViewer {-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;}
+
+dd.portletItem h4 {border-bottom: 1px solid #007783;
+color: #006773;
+font-size: 1em;
+line-height: 1em;
+margin: 0.5em 0;
+padding: 0 0 0.5em;}
+
+
+
+
+h1 {font-size: 2em;}
+h2 {border-bottom: 2px solid #007783;color: #007783;font-size: 1.5em;line-height: 1.5em;margin: 2em 0 0.8em;padding: 0 0 0.2em;}
+h2.headline {margin-top: 0 !important;}
+h3 {color: #007783;font-size: 1.5em;line-height: 3em;margin: 0;padding: 0;}
+#content h1.documentFirstHeading {border-bottom: 1px solid #434343;color: #434343;font-size: 2.2em;line-height: 1em;margin: 0;padding-bottom: 0.2em;text-shadow: 3px 3px 3px rgba(150, 150, 150, 1);}
+div.edeposit-user-registration h1 {margin-bottom: 0.5em;}
+div.portletStaticText ul {list-style-type: disc}
+#portal-globalnav {background: #ccc;} 
+#portal-globalnav li a {border-right: 0.1em solid white;display: inline-block;min-width: 9em;padding: 0.3em 1em;text-align: center;white-space: normal;background: none repeat scroll 0 0 #cccccc;color: #006773;}
+#portal-globalnav .selected a, #portal-globalnav a:hover {background: none repeat scroll 0 0 #007783;color: White;}
+#portal-globalnav .selected a:hover {background: none repeat scroll 0 0 #108793;color: #fff;}
+form.kssattr-formname-add-at-once {margin-top: 1.5em; min-width: 695px !important;}
+form.kssattr-formname-@@register-with-producent {border: 3px solid red !important}
+
+#content-core div.item .documentByLine span.documentAuthor {}
+#content-core div.item .documentByLine span.documentModified {color: green;}
+#content-core div.item .documentByLine span.ObjectStatus {color: red;text-transform: uppercase;}
+
+
+
+strong#search-term {padding-left: 0.4em;}
+
+
+
+
+
+span#form-widgets-domicile,
+span#form-widgets-ico,
+span#form-widgets-dic,
+span#formfield-form-widgets-zastoupen
+{line-height: 2em;}
+
+
+
+/* ====================== prehled epublikaci ================ */
+
+#content div.originalfile_folder_full_view_item {
+clear: both;
+float: left;
+width: 100%;
+border-bottom: 1px solid #aaa;
+margin-bottom: 15px;
+padding-bottom: 19px;
+}
+#content div.originalfile_folder_full_view_item h2 {
+border: 0 none;margin: 0;padding: 0;width: 100%;min-height: 1.5em;
+}
+#content div.originalfile_folder_full_view_item h2 a {
+display: block;line-height: 1.5em;
+}
+
+#content div.originalfile_folder_full_view_item h2 a:hover {color: black !important;background: transparent url("++resource++edeposit.policy/img/oko.png") 100% 50% no-repeat;}
+
+
+
+#content div.originalfile_folder_full_view_item div#plone-document-byline {
+width: 100%;
+float: left;	
+}
+#content div.originalfile_folder_full_view_item div#plone-document-byline span {font-size: 1em;color: #000000;height: 3em;line-height: 3em;}
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.ObjectStatus {display: block;width: 34em;float: left;}
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.ObjectStatus span {background: #FFFDDB !important;}
+
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.ObjectStatus span.state-declarationwitherror {border: 2px solid red;}
+
+/* state viewlet */
+.document-state-viewlet  span {font-size: 1em; color: #000000;}
+.document-state-viewlet  span.ObjectStatus a {background: #FFFDDB !important;}
+
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.ObjectStatus span.state-declarationwitherror {border: 2px solid red;}
+
+
+
+/*
+
+.originalfile_folder_full_view_item span.state-isbngeneration {background: #FFFDDB url("++resource++edeposit.policy/img/inproccess.png") 7px 7px no-repeat !important; padding-left: 20px; }
+
+*/
+
+
+/*
+
+ISBNDuplicityCheck
+ISBNGeneration
+ISBNSubjectValidation
+ISBNValidation
+acquisition
+acquisitionPreparing
+antivirus
+chooseProperAlephRecord
+declaration
+declarationWithError
+descriptiveCataloguing
+descriptiveCataloguingPreparing
+descriptiveCataloguingReview
+descriptiveCataloguingReviewPreparing
+exportToAleph
+exportToKramerius
+exportToLTP
+processed
+subjectCataloguing
+subjectCataloguingPreparing
+subjectCataloguingReview
+subjectCataloguingReviewPreparing
+thumbnailGenerating
+waitingForAleph
+withdrawn
+
+*/
+
+
+
+
+
+
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.ObjectStatus span {
+background: gray;
+
+-webkit-border-radius: 0.3em;
+-moz-border-radius: 0.3em;
+border-radius: 0.3em;
+
+
+
+
+background: none repeat scroll 0 0 #eee;
+
+
+padding: 5px 19px;
+
+}
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.documentModified {display: block;width: 23em;float: left;text-align: center}
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.documentAuthor {display: block;width: 16em;float: right;text-align: right}
+#content div.originalfile_folder_full_view_item div#plone-document-byline span.documentAuthor a {font-size: 1em;color: #000000;}
+
+
+
+
+
+
+
+
+
+/* portlet pridavani dalsiho originalu */ 
+
+dl.portlet div#formfield-form-widgets-isbn,
+dl.portlet div#formfield-form-widgets-file,
+dl.portlet div#formfield-form-widgets-generated_isbn,
+dl.portlet div#formfield-form-widgets-url
+{border: 0 none;margin: 0 0 20px 0; padding: 0;}
+
+
+
+
+
+
+
+
+dl.portlet div#formfield-form-widgets-isbn label,
+dl.portlet div#formfield-form-widgets-file label
+{
+color: #006773;
+display: inline-block;
+float: none;
+font-weight: normal;
+width: auto;
+margin-bottom: 5px;	
+}
+dl.portlet div#formfield-form-widgets-isbn input,
+dl.portlet div#formfield-form-widgets-url input 
+{
+border-radius: 4px;
+box-shadow: 0 1px 4px #ddd inset;
+box-sizing: border-box;
+display: inline-block;
+font-size: 1em;
+line-height: 1.4em;
+padding: 0.2em 0.6em;
+width: 100%;
+font: inherit;
+color: black;
+}
+
+dl.portlet div#formfield-form-widgets-generated_isbn span.option {
+clear: both !important;
+display: block !important;
+float: none !important;
+width: auto !important;	
+	
+}
+
+
+
+
+
+/* ================================================================================================== FORMULARE LABELS ============= */
+/* ================================================================================================================================= */
+
+
+
+
+
+
+
+form#form.kssattr-formname-register-with-producent input#form-widgets-IBasic-title {width: 25em !important; font: inherit;}
+
+form#form.kssattr-formname-add-at-once label.horizontal, 				/* ohlaseni */
+form#login_form div#login-form div.field label,   						/* login form */
+form[name=mail_password] fieldset div.field label, 						/* ztracene heslo */
+form#feedback_form label, 												/* kontaktní formulář */
+form#pwreset_action.enableAutoFocus fieldset div.field label, 			/* obnova hesla */
+body.section-ohlaseni-publikace .formid-ohlaseni-publikace label.formQuestion,
+
+
+
+
+
+div#formfield-form-widgets-producent_name label.horizontal,
+div#formfield-form-widgets-administrator_fullname label.horizontal,
+div#formfield-form-widgets-administrator_email label.horizontal,
+div#formfield-form-widgets-administrator_phone label.horizontal,
+div#formfield-form-widgets-administrator_username label.horizontal,
+div#formfield-form-widgets-administrator_password label.horizontal,
+div#formfield-form-widgets-administrator_password_ctl label.horizontal,
+div#formfield-form-widgets-domicile label.horizontal,
+div#formfield-form-widgets-ico label.horizontal,
+div#formfield-form-widgets-dic label.horizontal,
+div#formfield-form-widgets-zastoupen label.horizontal,
+div#formfield-form-widgets-editor_fullname label.horizontal,
+div#formfield-form-widgets-editor_email label.horizontal,
+div#formfield-form-widgets-editor_phone label.horizontal,
+div#formfield-form-widgets-editor_username label.horizontal,
+div#formfield-form-widgets-editor_password label.horizontal,
+div#formfield-form-widgets-editor_password_ctl label.horizontal
+
+
+
+
+{display: inline-block;float: left;margin: 0 1em 0 0;text-align: right;vertical-align: middle;width: 20em;font-weight: normal;font-size: 1em;line-height: 2em;padding: 0;color: #000000;}
+
+/* form labels vyjimky a specialitky */
+
+form.rowlike span.label {font-weight: normal;}
+form.kssattr-formname-register-with-producent  label.horizontal {width: 15em;}
+form#form.kssattr-formname-add-at-once label.horizontal  {width: 25em;}
+
+
+
+/* ================================================================================================== FORMULARE INPUTS ============= */
+/* ================================================================================================================================= */
+
+
+
+textarea 
+{
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+box-shadow: 0 1px 4px #ddd inset;
+box-sizing: border-box;
+display: inline-block;
+font-size: 1em;
+line-height: 1.4em;
+padding: 0.2em 0.6em;
+width: 25em;
+font: inherit;
+color: black;
+}
+
+
+
+
+
+
+form#form_ohlaseni.rowlike div.field input.text-widget,    /* ohlaska */
+form#login_form div#login-form div.field input,  
+form[name=mail_password] fieldset div.field input,
+form#form.kssattr-formname-add-at-once input,
+#content form#form.kssattr-formname-add-at-once .field input[type="text"][name$=".title"], /* ohlaska - nazev */
+/* body.template-contact-info div#content div div#content-core form#feedback_form.enableAutoFocus div.field label kontaktní formular */
+form.kssattr-formname-register-with-producent input,  /*  registrace producenta */
+form#feedback_form input, /* kontaktní formulář */
+form#pwreset_action.enableAutoFocus fieldset div.field input, /* obnova hesla */
+form.searchPage input.searchPage[type$="text"],/* search page */
+body.site-edeposit.section-ohlaseni-publikace .formid-ohlaseni-publikace input[type$="text"],
+body.section-registrace-producenta .formid-registrace-producenta input[type$="text"],
+#registrace input,
+div#formfield-form-widgets-producent_name input,
+div#formfield-form-widgets-administrator_fullname input,
+div#formfield-form-widgets-administrator_email input,
+div#formfield-form-widgets-administrator_phone input,
+div#formfield-form-widgets-administrator_username input,
+div#formfield-form-widgets-administrator_password input,
+div#formfield-form-widgets-administrator_password_ctl input,
+div#formfield-form-widgets-domicile input,
+div#formfield-form-widgets-ico input,
+div#formfield-form-widgets-dic input,
+div#formfield-form-widgets-zastoupen input,
+div#formfield-form-widgets-editor_fullname input,
+div#formfield-form-widgets-editor_email input,
+div#formfield-form-widgets-editor_phone input,
+div#formfield-form-widgets-editor_username input,
+div#formfield-form-widgets-editor_password input,
+div#formfield-form-widgets-editor_password_ctl input,
+.field input[type="text"][size],
+.field input[type="text"],
+.field input[type="text"][name$=".title"],
+input#title
+{
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+box-shadow: 0 1px 4px #ddd inset;
+box-sizing: border-box;
+display: inline-block;
+font-size: 1em;
+line-height: 1.4em;
+padding: 0.2em 0.6em;
+width: 25em;
+font: inherit;
+color: black;
+}
+
+form.searchPage input.searchPage {font-size: inherit !important;width: 30em;}
+
+/* form labels vyjimky a specialitky */
+
+form#login_form div#login-form div.field input {width: 20em;}
+
+
+
+
+form#form.rowlike  div#formfield-form-widgets-libraries_accessing label.horizontal,
+form#form.rowlike  div#formfield-form-widgets-libraries_that_can_access  label.horizontal
+
+ {font-weight: bold;text-align: left;width: 100%;margin: 1em 0;}
+
+/*  labels u forms */
+
+body.section-registrace-producenta div.formQuestion.label
+
+{border-bottom: 2px solid #007783;color: #007783;font-size: 1.5em;line-height: 1.5em;margin: 1em 0;padding: 0 0 0.2em;font-weight: normal;display: block;}
+
+
+/* ===================================   ohlasovaci formular knuhovny  ========================================================================================================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+div#archetypes-fieldname-prideleni-opravneni-knihovnam *,
+div#archetypes-fieldname-vyberte-knihovny-kterym-pridelujete-pristup-k-publikaci * {font-weight: normal}
+
+div#archetypes-fieldname-prideleni-opravneni-knihovnam,
+div#archetypes-fieldname-vyberte-knihovny-kterym-pridelujete-pristup-k-publikaci {float: left; width: 100%;}
+
+span#prideleni-opravneni-knihovnam,
+span#nakladatel,
+div#vyberte-knihovny-kterym-pridelujete-pristup-k-publikaci {width: 517px; float: right;display: block;}
+
+span#prideleni-opravneni-knihovnam div.formQuestion.label,
+div#vyberte-knihovny-kterym-pridelujete-pristup-k-publikaci  div.formQuestion.label q{font-weight: bold;
+color: #007783;
+display: block;
+line-height: 3em;}
+
+
+
+
+
+
+
+
+/* ===================================   RADIO  ========================================================================================================================================= */
+
+
+
+
+body.site-edeposit.section-ohlaseni-publikace .formid-ohlaseni-publikace input[type="radio"]
+
+
+
+
+{
+  -moz-binding: none;
+  background-color: -moz-field !important;
+  border: 2px inset threedface !important;
+  box-sizing: border-box;
+  color: -moz-fieldtext !important;
+  cursor: default;
+  height: 15px;
+  padding: 0 !important;
+  width: 13px;
+}
+
+
+
+
+
+
+
+
+/* ===================================   odsazení čudlíků ========================================================================================================================================= */
+
+
+form#feedback_form div.formControls {margin-left: 21em;}
+
+
+
+
+
+/* ===================================   ERRORY ========================================================================================================================================= */
+
+dl.error {
+  border-color: #ff1100;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+div.field.error {
+background-color: #fbfbfb;
+border-top: 1px solid #FF1100 !important;
+border-left: 1px solid #FF1100 !important;
+border-right: 1px solid #FF1100 !important;
+border-bottom: 1px solid #FF1100 !important;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+margin: 1em 0;
+padding: 1em 0;
+font-size: inherit;
+color: red;
+}
+
+
+
+
+
+
+
+div.field.error div.error
+{
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+border: medium none !important;
+color: red;
+display: inline;
+font-size: 100% !important;
+line-height: 1em;
+margin: 0;
+padding: 0 0 0 1em;
+}
+
+
+
+
+div#content div#content-core dl.portalMessage.error {margin: 1em 0 !important;}
+.error > dd, .error > .last {
+  background-color: #fff;
+}
+div#content div div#content-core div.field.error div.error {background: inherit;
+font: inherit;
+}
+form#form.kssattr-formname-register-with-producent fieldset#fieldset-default div#formfield-form-widgets-IAdministrator-administrator  {border: 0px none !important; background: white !important;} /* rusim dva eror box\ v sobe, staci jen jedno cervene pole...  */
+
+
+
+
+
+/* ==================================================== ============= =================fieldsety u formularu =================================== */
+
+form#form.kssattr-formname-register-with-producent fieldset {border: 0 none !important;
+margin: 0;
+padding: 0;}
+
+
+
+
+/* ==================================================== ============= =================LEGENDY (podnadpisy) u formulářů =================================== */
+
+
+
+
+form#form.kssattr-formname-register-with-producent legend,
+
+
+form#form.kssattr-formname-register-with-producent label[for$="form-widgets-IAdministrator-administrator"] 
+
+
+
+{border-bottom: 2px solid #007783;
+color: #007783;
+font-size: 1.5em;
+line-height: 1.5em;
+margin: 2em 0 0.8em;
+padding: 0 0 0.2em;
+font-family: verdana, arial;
+width: 100%;
+
+
+text-align: left
+}
+form#form.kssattr-formname-register-with-producent label[for$="form-widgets-IAdministrator-administrator"] span.required {display: none !important;} /* likvidace cervene tecky u nadpisu */
+
+
+
+
+
+div.displaynone {display: none !important; position: absolute; left: -10000;}
+
+
+#help001 {font-size: 80%;
+left: 928px;
+line-height: 1.5em;
+position: absolute;
+top: 167px;
+width: 240px;}
+
+#help001 h2 {
+  color: black;
+  display: inline;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#portal-personaltools {
+  background: none repeat scroll 0 0 #dddddd;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  float: right;
+  font-size: 80%;
+  padding: 0.25em 0.5em;
+  position: relative;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+a:link, a:visited {
+  color: #006773;
+}
+/* .documentEditable {border: 1px solid #eee} */
+
+
+/* LOGINY */
+
+
+body.template-logged_out #content, body.template-login_form #content, .pb-ajax #login-form {text-align: left; }
+
+
+
+
+#content .discreet, #sidebar .discreet {
+  color: inherit;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+
+
+/* BUTONY =============================   */
+
+
+
+
+
+form#login_form div#login-form div.formControls input:hover
+{
+  background-image: linear-gradient(transparent, rgba(0, 119, 131, 0.05) 40%, rgba(0, 119, 131, 0.1));
+}
+
+div#login-form {margin: 30px 0}
+
+#content .documentDescription, #content #description {
+  color: inherit;
+  font: inherit;
+  margin: 1em 0;
+}
+
+/* info boxíky */
+
+dl.portalMessage, div.attention, div.caution, div.danger, div.hint, div.important, div.note, div.tip, div.warning {
+  background-color: #ffffff;
+  border: 1px solid #007783;
+  font-size: 80%;
+  margin: 1em;
+}
+
+dl.portalMessage dt, div > .admonition-title {
+  background-color: #007783;
+  color: White;
+  float: left;
+  font-weight: bold;
+  line-height: 1.25em;
+  margin: 0 0.5em 0 0;
+  padding: 0.5em 0.75em;
+}
+
+body.template-sitemap div#content ul#portal-sitemap a {border: 0px none !important;}
+
+/* =================== OBRAZKY ========================== */
+
+
+body.template-login_form div#content {background: transparent url("++resource++edeposit.policy/img/zamek.png") 793px 35px no-repeat;}
+
+/* =================== EDIT BAR ========================== */
+
+#edit-bar, #content ul.formTabs, #content-core ul.formTabs {
+  border: 0 none;
+  display: block;
+  margin-left: 0;
+}
+
+#edit-bar {
+  background-color: transparent;
+  border: 0 none;
+  font-size: 80%;
+  margin-bottom: 1em;
+  min-height: 0; /*   min-height: 2em; */
+  padding-top: 0.05em;
+}
+
+#content-views li.selected a, #content-views li a:hover, #content li.formTab a.selected, #content li.formTab a:hover, #content-core li.formTab a.selected, #content-core li.formTab a:hover {
+  background: none repeat scroll 0 0 #007783;
+-webkit-border-radius: 0.3em;
+-moz-border-radius: 0.3em;
+border-radius: 0.3em;
+  color: white;
+}
+
+#content-views a {
+  color: #007783;
+}
+#content-views a, #content li.formTab a, #content-core li.formTab a {
+  border: medium none;
+  line-height: 26px;
+  margin: 0;
+  padding: 0 0.75em;
+  text-decoration: none;
+}
+
+div#edit-bar ul#content-views.contentViews li#contentview-folderContents.plain {height: 29px;}
+
+#content-views {
+  background-color: transparent;
+  float: left;
+  min-height: 35px;
+}
+
+#content-views li.selected a, #content li.formTab a.selected, #content-core li.formTab a.selected {
+  font-weight: normal;
+}
+
+#contentActionMenus {
+  background: none repeat scroll 0 0 #cccccc;
+-webkit-border-radius: 0.3em;
+-moz-border-radius: 0.3em;
+border-radius: 0.3em;
+  float: right;
+  margin: 0;
+  padding: 0.1em 0.24em 0 0;
+  position: relative;
+  right: -0.24em;
+  top: -0.23em;
+}
+#contentActionMenus dl.actionMenu a, #contentActionMenus dl.actionMenu.activated dd {
+  background-color: #cccccc;
+  color: black;
+  z-index: 5;
+}
+#contentActionMenus dl.actionMenu.activated dd {
+  border-bottom: 0.5em solid #cccccc;
+  right: -3px;
+}
+
+
+body.template-documentviewer.portaltype-edeposit-content-originalfile div#edit-bar div.contentActions ul#contentActionMenus {margin: 1em 0;background: none repeat scroll 0 0 #fffddb !important;}
+
+
+
+/* ============================= detail publikace ============================ */
+
+/* nadpis portletu */
+
+div.portletWrapper {padding-top: 0.3em;}
+
+
+
+dl.portlet dt.portletHeader {
+background: none repeat scroll 0 0 #ddd;
+border-bottom: 1px solid #fff;
+color: #007783;
+font-size: 1.2em;
+font-weight: normal;
+line-height: 2em;
+margin: 0;
+padding: 0;
+text-align: center;
+-webkit-border-top-left-radius: 4px;
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topleft: 4px;
+-moz-border-radius-topright: 4px;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+}
+
+dl.portlet dd.portletItem {
+background: none repeat scroll 0 0 #ddd;
+
+}
+
+#content dt {
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-right: 0;
+
+}
+
+
+#content-core dd {
+  margin: 0 0 1px 0;
+}
+dl.portlet.portletregisteringOfEContent dd.portletItem.odd ul li {list-style-type: none;}
+#content dl.portlet.portletregisteringOfEContent dd.portletItem.odd ul {margin: 0;}
+
+dl.portlet dd.portletFooter {
+background: none repeat scroll 0 0 #ddd;
+-webkit-border-bottom-right-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 4px;
+}
+
+
+
+
+
+
+
+
+#content dl.portlet dt.portletHeader span {font-weight: normal;}
+
+
+
+dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
+  padding: 1em;
+}
+
+/* div.portletWrapper dl.portlet.portletePublicationMetadataPortlet dd.portletItem.odd ul li label*/
+dl.portlet.portletePublicationMetadataPortlet dd.portletItem.odd ul li {margin-bottom: 0.5em;
+border-bottom: 1px solid #ddd;
+padding-bottom: 0.5em;}
+dl.portlet.portletePublicationMetadataPortlet dd.portletItem.odd ul li label {color: #007783;
+display: block;
+font-weight: normal;
+line-height: 1em;
+width: 100%;}
+
+
+
+dl.portlet.portletWaitingForWorkAssignment dd.portletItem.odd div.portlet-form form  {
+
+margin: 0;
+}
+
+
+
+
+
+
+dl.portlet.portletWaitingForWorkAssignment dd.portletItem.odd div.portlet-form form label.horizontal {color: #007783;
+font-size: 1.3em;
+font-weight: normal;
+padding: 0;}
+dl.portlet.portletWaitingForWorkAssignment dd.portletItem.odd div.portlet-form form select
+
+
+
+{
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+box-shadow: 0 1px 4px #ddd inset;
+box-sizing: border-box;
+color: black !important;
+display: inline-block !important;
+font: inherit !important;
+margin: 0.5em 0;
+padding: 0.2em 0.6em !important;
+width: 100%;
+
+}
+
+#plone-contentmenu-workflow .state-published {
+  background-color: inherit;
+  border: 0px none;
+
+  color: black !important;
+  padding: 0 0.5em;
+}
+
+/* =========================================== OBECNE SEDIVE SUBMIT BUTTONY ============================ */
+/* ===================================================================================================== */
+
+input.button-field,
+input[type$="submit"],
+input[type$="reset"],
+div.managePortletsLink,
+a.managePortletsFallback
+ {
+-webkit-border-radius: 4px !important;
+-moz-border-radius: 4px !important;
+border-radius: 4px !important;
+box-shadow: 0 1px 4px #ddd inset !important;
+box-sizing: border-box !important;
+color: black !important;
+display: inline-block !important;
+
+
+font:  inherit !important;
+
+
+padding: 0.2em 1em !important;
+color:#007783 !important;
+width: auto !important;
+margin: 0;
+text-align: center !important;
+text-decoration: none !important;	
+border: 2px outset buttonface;
+}
+input.button-field:hover,
+input[type$="submit"]:hover,
+div.managePortletsLink:hover,
+a.managePortletsFallback:hover
+ {color:#000000 !important;}
+form#login_form div#login-form div.formControls input.context,
+form#mail_password.enableAutoFocus fieldset div.field input.context
+{margin-left: 21em;}
+form.kssattr-formname-register-with-producent input#form-buttons-register {margin-left: 16em;}
+
+div.managePortletsLink,
+a.managePortletsFallback
+ {font: 13.4333px verdana,FreeSans,sans-serif  !important;}
+
+
+dl.portlet.portletWaitingForWorkAssignment dd.portletItem.odd div.portlet-form form div.field {margin: 0 0 0.2em;}
+
+
+
+
+
+ul.uzmen li a {padding-left: 1em;text-decoration: none !important; border: 0px none !important; display: block;}
+/* viewer */
+
+
+#content div#DV-container {margin: 0 0 2em 0}
+
+a#manage-annotations,
+a#manage-annotations:hover,
+a#manage-sections,
+a#manage-sections:hover
+
+
+
+ {  -moz-user-select: none;
+  background-color: rgb(0, 119, 131);
+  border: 0 none;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+  color: rgb(255, 255, 255) !important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: normal;
+  padding: 0.3em 1.2em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin: 1em 0;
+  }
+  
+
+  
+div#content div#content-core div div#annotation-management.open, #section-management {
+  border: 2px solid #ddd;
+  display: none;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  width: 98%;
+  background: #fff !important;
+}  
+/* VYHLEDAVANI ============================================================================= */
+#content fieldset#search-field {
+  border: medium none !important; text-align: left !important;
+  background: none !important;
+}
+#content form#searchform h1 {border-bottom: 2px solid #007783 !important;
+color: #007783 !important;
+font-size: 1.5em !important;
+line-height: 1.5em !important;
+margin: 2em 0 0.8em !important;
+padding: 0 0 0.2em !important;}
+form#searchform span.highlightedSearchTerm {padding-left: .5em;}
+
+
+body.section-ohlaseni-publikace #content dl dt {
+background: none repeat scroll 0 0 #eee;
+display: inline-block;
+float: left;
+height: 2em;
+min-width: 44%;
+margin-bottom: 3px;line-height: 2em;
+padding-left: 0.6em;
+}
+body.section-ohlaseni-publikace #content dl dd {
+display: inline-block;
+float: right;
+height: 2em;
+width: 54%;
+margin-bottom: 3px;
+line-height: 2em;
+background: none repeat scroll 0 0 #eee;
+}
+
+
+
+/* NOVÝ OHLAŠOVACÍ FORMULÁŘ */
+
+
+
+#content #oppre {margin: 2em 0;}
+body.site-edeposit.section-ohlaseni-publikace .formid-ohlaseni-publikace label.formQuestion {width: 25em}
+
+
+
+form.kssattr-formname-add-at-once div#archetypes-fieldname-autor,
+form.kssattr-formname-add-at-once div#archetypes-fieldname-poradi-vydani,
+form.kssattr-formname-add-at-once div#archetypes-fieldname-isbn-pokud-je,
+form.kssattr-formname-add-at-once div#archetypes-fieldname-zpristupnit-pro-riv,
+form.kssattr-formname-add-at-once div#archetypes-fieldname-publikace-je-verejna,
+form.kssattr-formname-add-at-once div#archetypes-fieldname-prideleni-opravneni-knihovnam,
+form.kssattr-formname-add-at-once div#archetypes-fieldname-url-pokud-je-publikace-ke-stazeni-z-internetu,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-isbn,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-author1,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-poradi_vydani,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-offer_to_riv,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-is_public,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-libraries_accessing,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-libraries_that_can_access,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-url,
+form.kssattr-formname-add-at-once div#formfield-form-widgets-poznamka
+
+{border-top: 1px solid #434343; padding-top: 0.7em; margin-top: 0.7em;}
+
+div#formfield-form-widgets-zpracovatel_zaznamu {display: none;}
+
+
+
+
+input#form-widgets-generated_isbn-0,
+input#form-widgets-offer_to_riv-0,
+input#form-widgets-is_public-0,
+input#form-widgets-libraries_accessing-0,
+input#form-widgets-libraries_accessing-1,
+input#form-widgets-libraries_accessing-2
+ {width: 30px !important;}
+
+
+
+div#formfield-form-widgets-generated_isbn span.option,
+div#formfield-form-widgets-offer_to_riv span.option,
+div#formfield-form-widgets-is_public span.option,
+div#formfield-form-widgets-libraries_accessing span.option,
+div#formfield-form-widgets-libraries_accessing span.option,
+div#formfield-form-widgets-libraries_accessing span.option
+{clear: both !important;
+display: block !important;
+float: right !important;
+width: 525px !important;}
+
+div#formfield-form-widgets-libraries_that_can_access label.horizontal,
+div#formfield-form-widgets-libraries_accessing label.horizontal
+{clear: both !important;
+display: block !important;
+float: right !important;
+width: 525px !important;
+color: #006773 !important}
+
+select#form-widgets-libraries_that_can_access {
+
+
+clear: right;
+display: block;
+float: right;
+margin: 0 310px 11px 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+border-radius: 4px;
+box-shadow: 0 1px 4px #ddd inset;
+box-sizing: border-box;
+
+font-size: 1em;
+line-height: 1.4em;
+padding: 0.2em 0.6em;
+
+font: inherit;
+color: black;
+}
+
+
+input#form-widgets-file-input {box-shadow: none !important;}
+
+select#form-widgets-format,
+select#form-widgets-category_for_riv
+
+ {
+font-size: 1em;
+padding: 1px;
+	
+}
+
+
+
+
+
+/* NOVÁ REGISTRACE */
+
+
+
+
+
+
+.smlouva {width: 100%;}
+.smlouva td {/*border: 1px solid gray;*/ text-align: left;vertical-align: middle;padding: 0.5em;line-height: 1.2em;}   
+.smlouva td.p1 {vertical-align: top}   
+.smlouva td.td20 {width: 13em;}
+.smlouva td.td50 {width: 50%;}
+.smlouva td.th1 {font-size: 2em; text-align: center;border-top: 1px solid #434343;padding-top: 1em;}
+.smlouva td.tc {text-align: center;padding: 1.5em 0.5em;}
+.smlouva td.th2 {font-size: 1.5em;}
+.smlouva td.th3 {font-size: 1.5em;padding: 1em 0.5em;}
+.smlouva td.tb {font-weight: bold;}
+.smlouva td.p10 {padding: 3em 0.5em !important;}
+#smlouva02 {margin-bottom: 1em;}  
+#registrace input#misto_podpisu,
+#registrace input#dne {width: 15em;}
+#registrace input {background: #fefefe;}
+
+body.template-document_view.portaltype-document.site-edeposit.section-registrace div#viewlet-below-content-title {display: none !important;}
+
+
+div#formfield-form-widgets-libraries_accessing {min-height: 9em;}
+
+
+
+
+
+#content legend {
+  background: none repeat scroll 0 0 #eee;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+  color: #000;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 0.1em 1.5em;
+  border: 1px solid white;
+}
+
+
+
+#content fieldset {
+margin: 1em 0;
+padding: 1em 1.2em;
+border: 0px none;
+
+
+
+background: none repeat scroll 0 0 #dddddd;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+/* width: 100%; */
+clear: both
+
+
+
+}
+
+
+
+/* =================================================================== 	IKONY ===================================== */
+
+
+fieldset#folder-listing img {display: none;}
+div#content-core div dl dt span.summary img  {display: none;}
+
+
+
+
+
+fieldset#folder-listing  a.contenttype-edeposit-content-epublication
+{background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-epublication.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+fieldset#folder-listing  a.contenttype-collection
+{background: url("++resource++edeposit.policy/img/contenttype-collection.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+fieldset#folder-listing  a.contenttype-edeposit-content-author
+{background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-author.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+fieldset#folder-listing  a.contenttype-edeposit-content-originalfile
+{background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent !important;padding: 1px 0 5px 30px !important;line-height: 1.5em !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.field label.horizontal {display: inline-block; width: 30em; float: left; color: #006773; font-weight: normal;}
+
+div#formfield-form-widgets-administrators label.horizontal, /* nastaveni opravneni v editaci profilu */
+div#formfield-form-widgets-editors label.horizontal
+{color: #006773;
+display: inline-block;
+float: none;
+font-size: 1.2em;
+font-weight: normal;
+margin: 1em 0;
+width: 100%;}
+
+
+
+
+
+
+
+div.field {border-bottom: 1px solid #eee;margin: 0 0 0.39em;min-height: 2em;}
+form div.field {border-bottom: 0px none;}
+
+
+
+form div.field.empty {display: block;}
+
+div#formfield-form-widgets-isbn_souboru_publikaci label.horizontal span.formHelp,
+div#formfield-form-widgets-category_for_riv label.horizontal span.formHelp,
+
+div#formfield-form-widgets-offer_to_riv span.selected-option  {display: none}
+
+/* tabulka v portletu */
+dl.portlet table tbody tr th {font-weight: normal; text-align: left;color: #006773;}
+dl.portlet table tbody tr td {font-weight: normal; text-align: left;padding-left: 5px}
+/* historie */
+div.historyRecord {margin-bottom: 0.3em;}
+.historyByLine {  background: none repeat scroll 0 0 #eee;    border-radius: 0;  -webkit-border-radius: 0;-moz-border-radius: 0;padding: 0.2em 1em;}
+.historyByLine, .historyByLine span, .historyByLine a {font-size: 12px;} 
+div.historyComment {border: 1px solid #ddd;font-size: 12px;padding: 0.3em 3em;}
+
+/* vyhledavani */
+
+
+div#search-results dl.searchResults dt img {display: none;}
+div#search-results dl dt {padding: 1px 0 0 27px;}
+div#search-results dl dt.contenttype-edeposit-content-originalfile {background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent;}
+div#search-results dl dt.contenttype-edeposit-content-epublication {background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-epublication.png") no-repeat scroll 0 50% transparent;}
+div#search-results dl dd {margin-bottom: 1em;}
+
+
+
+/* original file in portlet */
+
+dl.portletOriginalFilesLinks a.contenttype-edeposit-content-originalfile {background: url("++resource++edeposit.policy/img/contenttype-edeposit-content-originalfile.png") no-repeat scroll 0 50% transparent;
+font-size: .8em;
+padding: 3px 0 0 21px;
+text-decoration: none;
+border: none;}
+dl.portletOriginalFileExternalLinks a.external-link {background: url("++resource++edeposit.policy/img/external-link2.png") no-repeat scroll 0 50% transparent;
+font-size: .8em;
+padding: 3px 0 0 26px;
+text-decoration: none;
+border: none;}
+
+
+/* 
+div#search-results a.state-ISBNGeneration {padding-left: 20px;background: url("++resource++edeposit.policy/img/ohlaseni.png") no-repeat scroll 0% 50% transparent }
+div#search-results a.ISBNDuplicityCheck
+div#search-results a.ISBNGeneration
+div#search-results a.ISBNSubjectValidation
+div#search-results a.ISBNValidation
+div#search-results a.acquisition
+div#search-results a.acquisitionPreparing
+div#search-results a.antivirus
+div#search-results a.chooseProperAlephRecord
+div#search-results a.declaration
+div#search-results a.declarationWithError
+div#search-results a.descriptiveCataloguing
+div#search-results a.descriptiveCataloguingPreparing
+div#search-results a.descriptiveCataloguingReview
+div#search-results a.descriptiveCataloguingReviewPreparing
+div#search-results a.exportToAleph
+div#search-results a.exportToKramerius
+div#search-results a.exportToLTP
+div#search-results a.processed
+div#search-results a.subjectCataloguing
+div#search-results a.subjectCataloguingPreparing
+div#search-results a.subjectCataloguingReview
+div#search-results a.subjectCataloguingReviewPreparing
+div#search-results a.thumbnailGenerating
+div#search-results a.waitingForAleph
+div#search-results a.withdrawn
+*/
+
+
+
+form.kssattr-formname-add-at-once textarea#form-widgets-poznamka {width: 25em;}
+.discussion, #commenting {
+	display: none
+}
+
+.discussion div.field, #commenting div.field {min-height: 0 !important}
+
+div#ebook-metadata {margin-bottom: 1em;}
+h2.h2_contact {font-size: 2em}
+
+
+form div#formfield-form-widgets-administrator_password label:after,
+form div#formfield-form-widgets-editor_password  label:after
+ {content: "(min.pět znaků)";}
+ 
+ #content li, dl.portlet li, div.portletStaticText li {
+  display: list-item;
+  line-height: 1.5em;
+  margin-bottom: 0.25em;
+  overflow: hidden;
+}
+
+
+ 
+dd.portletItem input#form-widgets-file-input  {
+overflow: hidden;
+width: 200px;}
+
+
+
+
+a.leftnavitem {display: block;
+font-size: 0.8em;
+line-height: 1.7em;}
+a.leftnavitem:hover {color: black;}

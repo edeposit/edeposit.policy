@@ -16,7 +16,6 @@ from collective.documentviewer.async import queueJob
 
 import json
 from five import grok
-from edeposit.content.tasks import IPloneTaskSender, DoActionFor
 
 logger = getLogger('edeposit.originalfile.wf_scripts')
 
@@ -47,75 +46,41 @@ def submitPDFBoxValidation(wfStateInfo):
 def submitEPubCheckValidation(wfStateInfo):
     logger.info("submitEPubChecks")
     with api.env.adopt_user(username="system"):
-        originalfile = wfStateInfo.object
-        getAdapter(originalfile,IAMQPSender,name="epubcheck-validation").send()
+        obj = wfStateInfo.object
+        getAdapter(obj,IAMQPSender,name="epubcheck-validation").send()
         pass
 
 def submitISBNValidation(wfStateInfo):
     print "submitISBNValidation"
-    originalfile = wfStateInfo.object
+    obj = wfStateInfo.object
     with api.env.adopt_user(username="system"):
-        getAdapter(originalfile,IAMQPSender,name="isbn-validate").send()
+        getAdapter(obj,IAMQPSender,name="isbn-validate").send()
 
 def submitISBNDuplicityCheck(wfStateInfo):
     print "submitISBN Duplicity Check"
     originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="isbn-duplicity-check").send()
+        # epublication = aq_parent(aq_inner(originalfile))
+        # comment=u"Automatická kontrola duplicity ISBN:%s, %s " % (originalfile.isbn, originalfile.file.filename)
+        # wft = api.portal.get_tool('portal_workflow')
+        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
 def submitExportToAleph(wfStateInfo):
     print "submit export to Aleph"
     originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
         getAdapter(originalfile, IAMQPSender, name="export-to-aleph").send()
+        # epublication = aq_parent(aq_inner(originalfile))
+        # comment=u"Export do Alephu ISBN:%s" % (originalfile.isbn, )
+        # wft = api.portal.get_tool('portal_workflow')
+        # wft.doActionFor(epublication, 'notifySystemAction', comment=comment)
 
-def submitAMQPTaskExportToStorage(wfStateInfo):
-    print "submit amqp task export to Storage"
-    context = wfStateInfo.object
+def submitTryToFindAtAleph(wfStateInfo):
+    print "try to find at Aleph"
+    obj = wfStateInfo.object
     with api.env.adopt_user(username="system"):
-        IPloneTaskSender(DoActionFor(transition='submitExportToStorage', uid=context.UID())).send()
-
-def submitExportToStorage(wfStateInfo):
-    print "submit export to Storage"
-    originalfile = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        getAdapter(originalfile, IAMQPSender, name="export-to-storage").send()
-
-def submitAMQPTaskUpdateLinksAtAleph(wfStateInfo):
-    print "submit amqp task update links at Aleph"
-    context = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        IPloneTaskSender(DoActionFor(transition='submitUpdateLinksAtAleph', uid=context.UID())).send()
-
-def submitUpdateLinksAtAleph(wfStateInfo):
-    print "submit update links at Aleph"
-    originalfile = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        getAdapter(originalfile, IAMQPSender, name="update-links-at-aleph").send()
-
-def submitAMQPTaskExportToLTP(wfStateInfo):
-    print "submit amqp task export to LTP"
-    context = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        IPloneTaskSender(DoActionFor(transition='submitExportToLTP', uid=context.UID())).send()
-
-def submitExportToLTP(wfStateInfo):
-    print "submit export to LTP"
-    originalfile = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        getAdapter(originalfile, IAMQPSender, name="export-to-ltp").send()
-
-def submitAMQPTaskExportToKramerius(wfStateInfo):
-    print "submit amqp task export to Kramerius"
-    context = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        IPloneTaskSender(DoActionFor(transition='submitExportToKramerius', uid=context.UID())).send()
-
-def submitExportToKramerius(wfStateInfo):
-    print "submit export to Kramerius"
-    originalfile = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        getAdapter(originalfile, IAMQPSender, name="export-to-kramerius").send()
+        getAdapter(obj, IAMQPSender, name="renew-aleph-records").send()
 
 def submitSysNumbersSearch(wfStateInfo):
     logger.info("submitSysNumberSearch")
@@ -165,13 +130,6 @@ def submitThumbnailGenerating(wfStateInfo):
 def submitVoucherGeneration(wfStateInfo):
     originalfile = wfStateInfo.object
     getAdapter(originalfile,IAMQPSender,name="voucher-generate").send()
-
-def deleteFile(wfStateInfo):
-    wfStateInfo.object.file = None
-
-def submitLoadFileFromStorage(wfStateInfo):
-    originalfile = wfStateInfo.object
-    getAdapter(originalfile,IAMQPSender,name="load-file-from-storage").send()
     
 def updateRelatedItems(wfStateInfo):
     logger.info("updateRelatedItems")
@@ -270,22 +228,4 @@ def checkExportStatuses(wfStateInfo):
         pass
     pass
 
-def submitAMQPTaskClassificateError(wfStateInfo):
-    print "submit amqp task to classificate amqp error"
-    context = wfStateInfo.object
-    with api.env.adopt_user(username="system"):
-        IPloneTaskSender(DoActionFor(transition='classificateError', uid=context.UID())).send()
 
-
-def classificateError(wfStateInfo):
-    context = wfStateInfo.object
-    classifiers = context.portal_catalog(portal_type="edeposit.amqp_errors.amqperrorclassificationfolder")
-    classificatorFolder = classifiers and classifiers[0].getObject()
-    #(status, prob) = classificatorFolder.classifyError('only Czech ISBN is required')
-    pass
-
-def alephLinkUpdateResponseOK(wfStateInfo):
-    pass
-
-def alephLinkUpdateResponseError(wfStateInfo):
-    pass

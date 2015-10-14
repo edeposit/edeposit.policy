@@ -80,6 +80,16 @@ groups = (
       'description': '',
       'roles': ['E-Deposit: ISBN Agency Administrator',]
   },
+    { 'group_id': 'Periodical Department Members',
+      'title': 'E-Deposit: Periodical Department Members',
+      'description': '',
+      'roles': ['E-Deposit: Periodical Department Member',]
+  },
+    { 'group_id': 'Periodical Department Administrators',
+      'title': 'E-Deposit: Periodical Department Administrators',
+      'description': '',
+      'roles': ['E-Deposit: Periodical Department Administrator',]
+  },
     { 'group_id': 'Producent Administrators',
       'title': 'E-Deposit: Producent Administrators',
       'description': 'Producent administrators can assign new administrators and editors for given producent',

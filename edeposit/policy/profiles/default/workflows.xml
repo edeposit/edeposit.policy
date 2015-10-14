@@ -5,6 +5,7 @@
   <object name="comment_review_workflow" meta_type="Workflow"/>
   <object name="edeposit_epublication_workflow" meta_type="Workflow"/>
   <object name="edeposit_originalfile_workflow" meta_type="Workflow"/>
+  <object name="edeposit_book_workflow" meta_type="Workflow"/>
   <object name="edeposit_originalfile_contributing_request_workflow" meta_type="Workflow"/>
   <object name="edeposit_epublicationfolder_workflow" meta_type="Workflow"/>
   <object name="edeposit_intranet_workflow" meta_type="Workflow"/>
@@ -90,6 +91,9 @@
     <type type_id="edeposit.content.previewfile"/>
     <type type_id="edeposit.content.originalfile">
       <bound-workflow workflow_id="edeposit_originalfile_workflow"/>
+    </type>
+    <type type_id="edeposit.content.book">
+      <bound-workflow workflow_id="edeposit_book_workflow"/>
     </type>
     <type type_id="edeposit.content.originalfilecontributingrequest">
       <bound-workflow workflow_id="edeposit_originalfile_contributing_request_workflow"/>

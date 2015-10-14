@@ -12,6 +12,11 @@
   <includeDependencies package="." />
   <i18n:registerTranslations directory="locales" />
 
+  <browser:resourceDirectory
+      name="edeposit.policy"
+      directory="static"
+      />
+
   <!-- Register installation profile -->
   <genericsetup:registerProfile
       name="default"
@@ -20,6 +25,7 @@
       description="Installs the edeposit.policy package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
   <!-- -*- extra stuff goes here -*- -->
   <genericsetup:importStep
       name="edeposit-various"
