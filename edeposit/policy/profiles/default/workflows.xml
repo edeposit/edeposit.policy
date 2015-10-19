@@ -12,6 +12,7 @@
   <object name="edeposit_producent_workflow" meta_type="Workflow"/>
   <object name="edeposit_producentfolder_workflow" meta_type="Workflow"/>
   <object name="edeposit_eperiodical_workflow" meta_type="Workflow"/>
+  <object name="edeposit_eperiodicalfolder_workflow" meta_type="Workflow"/>
   <object name="folder_workflow" meta_type="Workflow"/>
   <object name="intranet_folder_workflow" meta_type="Workflow"/>
   <object name="intranet_workflow" meta_type="Workflow"/>
@@ -83,7 +84,9 @@
     <type type_id="edeposit.content.epublicationfolder">
       <bound-workflow workflow_id="edeposit_epublicationfolder_workflow"/>
     </type>
-    <type type_id="edeposit.content.eperiodicalfolder"/>
+    <type type_id="edeposit.content.eperiodicalfolder">
+      <bound-workflow workflow_id="edeposit_eperiodicalfolder_workflow"/>
+    </type>
     <type type_id="edeposit.content.bookfolder"/>
     <type type_id="edeposit.content.isbn"/>
     <type type_id="edeposit.content.issn"/>
