@@ -326,6 +326,31 @@ def recreateCollections(wfStateInfo):
                                       'v': []},
                                      ],
                               )
+    if not context.has_key('my-eperiodicals'):
+        context.invokeFactory('Collection','my-eperiodicals', 
+                              title=u"Moje ohlášené ePeriodika",
+                              query=[{'i': 'portal_type', 
+                                      'o': 'plone.app.querystring.operation.selection.is', 
+                                      'v': ['edeposit.content.eperiodical',]
+                                      },
+                                     {'i': 'getAssignedProducentEditors',
+                                      'o': 'plone.app.querystring.operation.string.currentUser', 
+                                      'v': []},
+                                     ],
+                              )
+
+    if not context.has_key('my-books'):
+        context.invokeFactory('Collection','my-books', 
+                              title=u"Moje ohlášené knihy/preprinty",
+                              query=[{'i': 'portal_type', 
+                                      'o': 'plone.app.querystring.operation.selection.is', 
+                                      'v': ['edeposit.content.book',]
+                                      },
+                                     {'i': 'getAssignedProducentEditors',
+                                      'o': 'plone.app.querystring.operation.string.currentUser', 
+                                      'v': []},
+                                     ],
+                              )
     pass
 
 def loadSysNumbersFromAleph(wfStateInfo):
