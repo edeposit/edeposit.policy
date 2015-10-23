@@ -1207,6 +1207,7 @@
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="submitExportToAleph"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
