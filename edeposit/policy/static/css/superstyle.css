@@ -1381,3 +1381,5 @@ a.leftnavitem {display: block;
 font-size: 0.8em;
 line-height: 1.7em;}
 a.leftnavitem:hover {color: black;}
+
+#edeposit-breadcrumbs {font-size: 75%; color: #aaa !important;}

@@ -1207,6 +1207,7 @@
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="submitExportToAleph"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -2391,7 +2392,7 @@
        i18n:translate="">K akvizici - bez kontroly ISBN</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn and here.isbnAppearsAtRelatedAlephRecord and here.file</guard-expression>
+     <guard-expression>python: here.isbn and here.file</guard-expression>
    </guard>
  </transition>
 
