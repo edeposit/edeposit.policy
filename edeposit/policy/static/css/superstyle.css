@@ -1383,3 +1383,53 @@ line-height: 1.7em;}
 a.leftnavitem:hover {color: black;}
 
 #edeposit-breadcrumbs {font-size: 75%; color: #aaa !important;}
+
+/* eperiodical */
+a.add-next-part { margin-left: 2em }
+
+/* menu */
+
+.menu {
+    clear: both;
+    font-size: 80%;
+    background: #ddd;
+    margin: 0 0 1.5em 0;
+}
+.menu ul {
+    list-style: outside none none !important;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    display: inline-block;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    background: #ddd;
+    min-width: 6em;
+    white-space: normal;
+    border: 0.1em solid white;
+}
+
+.menu .selected a,
+.menu a:hover {
+    background: #205c90;
+    color: White;
+}
+.menu .selected a:hover {
+    background: #ddd;
+    color: #205c90;
+}
+
+.add-next-part {
+    font-size: 82%;
+}
+.add-next-part:hover {
+    background: #205c90;
+    color: White;
+}
+
+#folder-listing .summary .contenttype-edeposit-content-eperiodicalpartsfolder {
+    font-size: 111%;
+}
