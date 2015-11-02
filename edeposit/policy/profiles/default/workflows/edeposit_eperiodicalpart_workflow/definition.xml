@@ -3,8 +3,8 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="plone"
     i18n:attributes="title; description"
-    workflow_id="edeposit_originalfile_workflow" title="E-Deposit Original File Workflow" 
-    description="A workflow for original file"
+    workflow_id="edeposit_eperiodicalpart_workflow" title="E-Deposit ePeriodical Part Workflow" 
+    description="A workflow for part of ePeriodical"
     state_variable="review_state"
     initial_state="declaration" 
     manager_bypass="False"
@@ -840,87 +840,87 @@
 
  <script script_id="submitAMQPTaskClassificateError" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitAMQPTaskClassificateError"/> 
 
  <script script_id="classificateError" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="classificateError"/> 
 
  <script script_id="generateVoucher" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitVoucherGeneration"/> 
 
  <script script_id="submitAntivirusCheck" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitAntivirusCheck"/> 
 
  <script script_id="submitPDFBoxValidation" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitPDFBoxValidation"/> 
 
  <script script_id="submitEPubCheckValidation" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitEPubCheckValidation"/> 
 
  <script script_id="submitDocumentViewer" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitDocumentViewer"/> 
 
  <script script_id="submitISBNValidation" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitISBNValidation"/>
 
  <script script_id="submitISBNDuplicityCheck" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitISBNDuplicityCheck"/>
 
  <script script_id="submitAMQPTaskExportToStorage" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitAMQPTaskExportToStorage"/> 
 
  <script script_id="submitExportToStorage" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitExportToStorage"/> 
 
  <script script_id="submitAMQPTaskUpdateLinksAtAleph" type="External Method"
          filename=""
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitAMQPTaskUpdateLinksAtAleph"/>
 
  <script script_id="submitUpdateLinksAtAleph" type="External Method"
          filename=""
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitUpdateLinksAtAleph"/>
 
  <script script_id="submitAMQPTaskExportToLTP" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitAMQPTaskExportToLTP"/> 
 
  <script script_id="submitExportToLTP" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitExportToLTP"/> 
 
  <script script_id="submitAMQPTaskExportToKramerius" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitAMQPTaskExportToKramerius"/> 
 
  <script script_id="submitExportToKramerius" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitExportToKramerius"/> 
 
  <!-- ISBN Generation -->
@@ -1184,13 +1184,13 @@
  <script script_id="submitExportToAleph"
          type="External Method"
          filename=""
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitExportToAleph"/>
 
  <script script_id="submitThumbnailGenerating"
          type="External Method"
          filename=""
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitThumbnailGenerating"/>
 
  <!--  Export to Aleph -->
@@ -1244,8 +1244,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-    </permission-map>
+   </permission-map>
    <permission-map name="Copy or Move" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -1260,7 +1259,6 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -1446,7 +1444,7 @@
 
  <script script_id="recordHasBeenChanged" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="recordHasBeenChanged"/> 
  
  <transition transition_id="noAlephRecordLoaded"
@@ -1528,7 +1526,7 @@
 
  <script script_id="submitSysNumbersSearch" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitSysNumbersSearch"/> 
  
  <transition transition_id="forceRenewAlephRecords"
@@ -1560,7 +1558,7 @@
  
  <script script_id="renewAlephRecords" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="renewAlephRecords"/> 
 
  <transition transition_id="renewAlephRecordsBySysNumber"
@@ -1581,7 +1579,7 @@
  
  <script script_id="renewAlephRecordsBySysNumber" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="renewAlephRecordsBySysNumber"/> 
 
  <transition transition_id="loadSummaryAlephRecord"
@@ -1599,7 +1597,7 @@
  
  <script script_id="loadSummaryAlephRecord" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="loadSummaryAlephRecord"/> 
 
  <state state_id="chooseProperAlephRecord" 
@@ -3325,30 +3323,7 @@
    </permission-map>
  </state>
  
- <worklist worklist_id="originalfiles_waiting_for_acquisition" title="Original files waiting for acquisition" 
-           i18n:attributes="title">
-   <description i18n:translate="">Original files waiting for acquisition</description>
-   <action url="%(portal_url)s/search?review_state=acquisition" 
-           category="global" icon="" i18n:translate="">Waiting for acquisition</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
-   <match name="review_state" values="acquisition"/>
- </worklist>
-
- <worklist worklist_id="originalfiles_waiting_for_isbn_generation" 
-           title="Original files waiting for ISBN Generation" 
-           i18n:attributes="title">
-   <description i18n:translate="">Original files waiting for ISBN generation</description>
-   <action url="%(portal_url)s/search?review_state=ISBNGeneration" 
-           category="global" icon="" i18n:translate="">Waiting for ISBN Generation</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
-   <match name="review_state" values="ISBNGeneration"/>
- </worklist>
-
- <!-- Storage -->
+<!-- Storage -->
 
  <state state_id="exportToStorage" title="Export to Storage" i18n:attributes="title">
    <exit-transition transition_id="submitUpdateLinksAtAleph"/>
@@ -5199,7 +5174,7 @@
 
  <script script_id="deleteFile" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="deleteFile"/> 
  <transition transition_id="submitLoadFileFromStorage"
              title="Load File From Storage"
@@ -5253,17 +5228,17 @@
 
  <script script_id="submitLoadFileFromStorage" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitLoadFileFromStorage"/> 
 
  <script script_id="alephLinkUpdateResponseOK" type="External Method"
          filename=""
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="alephLinkUpdateResponseOK"/> 
 
  <script script_id="alephLinkUpdateResponseError" type="External Method"
          filename="" 
-         module="edeposit.policy.originalfile_wf_scripts"
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="alephLinkUpdateResponseError"/> 
 
 
