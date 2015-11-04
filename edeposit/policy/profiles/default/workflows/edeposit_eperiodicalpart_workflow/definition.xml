@@ -34,8 +34,7 @@
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="pdfGenerated"/>
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
+    <exit-transition transition_id="submitDeclaration"/>
  
    <permission-map name="Access contents information" acquired="False">
      <permission-role>Owner</permission-role>
@@ -116,8 +115,6 @@
  
  <state state_id="declarationWithError" title="Declaration with Error" 
         i18n:attributes="title">
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <!-- <exit-transition transition_id="forceRenewAlephRecords"/> -->
@@ -125,7 +122,7 @@
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
+   <exit-transition transition_id="submitDeclaration"/>
    <exit-transition transition_id="toWithdraw"/>
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
@@ -223,14 +220,13 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
+   <exit-transition transition_id="submitDocumentViewer"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="antivirusOKThumbnail"/>
-   <exit-transition transition_id="antivirusOKAleph"/>
-   <exit-transition transition_id="antivirusOKSkipExportToAleph"/>
-   <exit-transition transition_id="antivirusOKISBNGeneration"/>
+   <exit-transition transition_id="antivirusOKNoThumbnail"/>
    <exit-transition transition_id="antivirusError"/>
 
    <permission-map name="Access contents information" acquired="False">
@@ -398,7 +394,7 @@
              new_state="thumbnailGenerating" 
              trigger="USER"
              before_script="" 
-             after_script="submitThumbnailGenerating"
+             after_script=""
              i18n:attributes="title">
    <description>File Antivirus Passed</description>
    <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKThumbnail" 
@@ -408,6 +404,24 @@
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <guard-expression>python: here.needsThumbnailGeneration()</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="antivirusOKNoThumbnail" 
+             title="Antivirus OK" 
+             new_state="waitingForAleph" 
+             trigger="USER"
+             before_script="" 
+             after_script=""
+             i18n:attributes="title">
+   <description>File Antivirus Passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKNoThumbnail" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">File Antivirus Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: not here.needsThumbnailGeneration()</guard-expression>
    </guard>
  </transition>
 
@@ -426,147 +440,6 @@
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <!-- <guard-expression>python: here.needsThumbnailGeneration()</guard-expression> -->
-   </guard>
- </transition>
-
- <transition transition_id="submitISBNGeneration" 
-             title="ISBN is generated"
-             new_state="exportToAleph" 
-             trigger="USER" 
-             before_script="" 
-             after_script="submitExportToAleph"
-             i18n:attributes="title">
-   <description>ISBN is generated</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=submitISBNGeneration" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">ISBN is generated</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn</guard-expression>
-   </guard>
- </transition>
-
- <transition transition_id="submitISBNGenerationSkipExportToAleph" 
-             title="ISBN is generated"
-             new_state="waitingForAleph" 
-             trigger="USER" 
-             before_script="" 
-             after_script="renewAlephRecords"
-             i18n:attributes="title">
-   <description>ISBN is generated</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=submitISBNGenerationSkipExportToAleph" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">ISBN is generated</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn</guard-expression>
-   </guard>
- </transition>
-
- <transition transition_id="antivirusOKAleph" 
-             title="Antivirus OK"
-             new_state="exportToAleph" 
-             trigger="USER" 
-             before_script="submitDocumentViewer" 
-             after_script="submitExportToAleph"
-             i18n:attributes="title">
-   <description>File Antivirus Passed</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKAleph" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">File Antivirus Passed</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: not here.needsThumbnailGeneration() and here.isbn</guard-expression>
-   </guard>
- </transition>
-
- <transition transition_id="antivirusOKSkipExportToAleph" 
-             title="Antivirus OK"
-             new_state="waitingForAleph"
-             trigger="USER" 
-             before_script="submitDocumentViewer"
-             after_script="renewAlephRecords"
-             i18n:attributes="title">
-   <description>File Antivirus Passed</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKSkipExportToAleph" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">File Antivirus Passed</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: not here.needsThumbnailGeneration() and here.isbn</guard-expression>
-   </guard>
- </transition>
-
- <transition transition_id="antivirusOKISBNGeneration" 
-             title="Antivirus OK"
-             new_state="ISBNGeneration" 
-             trigger="USER" 
-             before_script="submitDocumentViewer" 
-             after_script=""
-             i18n:attributes="title">
-   <description>File Antivirus Passed</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKISBNGeneration" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">File Antivirus Passed</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: not here.isbn and not here.needsThumbnailGeneration()</guard-expression>
-   </guard>
- </transition>
- 
- <transition transition_id="ISBNIsValid" 
-             title="ISBN is Valid" 
-             new_state="ISBNDuplicityCheck" 
-             trigger="USER" 
-             before_script="" 
-             after_script="submitISBNDuplicityCheck" 
-             i18n:attributes="title">
-   <description>ISBN is Valid</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=ISBNIsValid" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">ISBN is Valid</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
-
- <transition transition_id="ISBNIsNotValid" 
-             title="ISBN is not Valid" 
-             new_state="declarationWithError" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <description>ISBN is not Valid</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=ISBNIsNotValid" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">ISBN is not Valid</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
-
- <transition transition_id="ISBNIsUnique" 
-             title="ISBN is Unique"
-             new_state="antivirus"
-             trigger="USER" 
-             before_script="" 
-             after_script="submitAntivirusCheck" 
-             i18n:attributes="title">
-   <description>ISBN is Valid</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=ISBNIsUnique" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">ISBN is Unique</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
 
@@ -627,23 +500,6 @@
    </guard>
  </transition>
 
- <transition transition_id="ISBNIsDuplicit" 
-             title="ISBN is Duplicit" 
-             new_state="declarationWithError" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <description>ISBN is Duplicit</description>
-   <action url="%(content_url)s/content_status_modify?workflow_action=ISBNIsDuplicit" 
-           category="workflow" 
-           icon="" 
-           i18n:translate="">ISBN is Duplicit</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
-
  <transition transition_id="amqpError"
              title="Error from external service" 
              new_state="" 
@@ -679,165 +535,6 @@
  </transition>
 
 
- <state state_id="ISBNValidation" title="ISBN Validation" i18n:attributes="title">
-   <description i18n:translate="">ISBN is valid. A system performs it.</description>
-   <exit-transition transition_id="backToCorrection"/>
-   <exit-transition transition_id="generateVoucher"/>
-   <exit-transition transition_id="pdfGenerated"/>
-   <exit-transition transition_id="amqpError"/>
-   <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="ISBNIsValid"/>
-   <exit-transition transition_id="ISBNIsNotValid"/>
-   <exit-transition transition_id="submitPDFBoxValidation"/>
-   <exit-transition transition_id="submitEPubCheckValidation"/>
-   <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="epubcheckResponse"/>
-
-   <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View History" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Change portal events" acquired="False">
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Modify portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Copy or Move" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Delete objects" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Review portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="List folder contents" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
- </state>
-
- <!-- ISBN Duplicity Check -->
-
- <state state_id="ISBNDuplicityCheck" title="ISBN Duplicity Check" i18n:attributes="title">
-   <description i18n:translate="">ISBN does not appear at Aleph. A system performs it.</description>
-   <exit-transition transition_id="backToCorrection"/>
-   <exit-transition transition_id="generateVoucher"/>
-   <exit-transition transition_id="pdfGenerated"/>
-   <exit-transition transition_id="amqpError"/>
-   <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="ISBNIsUnique"/>
-   <exit-transition transition_id="ISBNIsDuplicit"/>
-   <exit-transition transition_id="submitPDFBoxValidation"/>
-   <exit-transition transition_id="submitEPubCheckValidation"/>
-   <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="epubcheckResponse"/>
-
-   <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View History" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Change portal events" acquired="False">
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Modify portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Copy or Move" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Delete objects" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Review portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="List folder contents" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
- </state>
- 
-
  <script script_id="submitAMQPTaskClassificateError" type="External Method"
          filename="" 
          module="edeposit.policy.eperiodicalpart_wf_scripts"
@@ -872,16 +569,6 @@
          filename="" 
          module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitDocumentViewer"/> 
-
- <script script_id="submitISBNValidation" type="External Method"
-         filename="" 
-         module="edeposit.policy.eperiodicalpart_wf_scripts"
-         function="submitISBNValidation"/>
-
- <script script_id="submitISBNDuplicityCheck" type="External Method"
-         filename="" 
-         module="edeposit.policy.eperiodicalpart_wf_scripts"
-         function="submitISBNDuplicityCheck"/>
 
  <script script_id="submitAMQPTaskExportToStorage" type="External Method"
          filename="" 
@@ -923,91 +610,6 @@
          module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitExportToKramerius"/> 
 
- <!-- ISBN Generation -->
-
- <state state_id="ISBNGeneration" title="ISBN Generation" i18n:attributes="title">
-  <description i18n:translate="">ISBN will be assigned by ISBN Agency.</description>
-  <exit-transition transition_id="backToCorrection"/>
-  <exit-transition transition_id="submitISBNGeneration"/>
-  <exit-transition transition_id="submitISBNGenerationSkipExportToAleph"/>
-  <exit-transition transition_id="generateVoucher"/>
-  <exit-transition transition_id="pdfGenerated"/>
-  <exit-transition transition_id="submitPDFBoxValidation"/>
-  <exit-transition transition_id="submitEPubCheckValidation"/>
-  <exit-transition transition_id="pdfboxResponse"/>
-  <exit-transition transition_id="epubcheckResponse"/>
-  <exit-transition transition_id="amqpError"/>
-
-  <permission-map name="Access contents information" acquired="False">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View History" acquired="False">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Producent Administrator</permission-role>
-   <permission-role>E-Deposit: Producent Editor</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="False">
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-    <permission-role>E-Deposit: System</permission-role>
-    <permission-role>Site Administrator</permission-role>
-    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-    <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Copy or Move" acquired="False">
-    <permission-role>E-Deposit: System</permission-role>
-    <permission-role>Site Administrator</permission-role>
-    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-    <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects" acquired="False">
-    <permission-role>E-Deposit: System</permission-role>
-    <permission-role>Site Administrator</permission-role>
-    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-    <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="False">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
-    <permission-role>E-Deposit: Acquisitor</permission-role>
-    <permission-role>E-Deposit: System</permission-role>
-    <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-    <permission-role>Owner</permission-role>
-    <permission-role>Site Administrator</permission-role>
-    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-    <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="List folder contents" acquired="False">
-    <permission-role>E-Deposit: Acquisitor</permission-role>
-    <permission-role>E-Deposit: System</permission-role>
-    <permission-role>E-Deposit: Producent Administrator</permission-role>
-    <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-    <permission-role>Owner</permission-role>
-    <permission-role>Site Administrator</permission-role>
-    <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-    <permission-role>Manager</permission-role>
-  </permission-map>
- </state>
-
  <!-- thumbnail generating -->
 
  <state state_id="thumbnailGenerating" 
@@ -1018,9 +620,8 @@
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="thumbnailError"/>
-   <exit-transition transition_id="thumbnailOKAleph"/>
-   <exit-transition transition_id="thumbnailOKSkipExportToAleph"/>
-   <exit-transition transition_id="thumbnailOKISBNGeneration"/>
+   <exit-transition transition_id="submitDocumentViewer"/>
+   <exit-transition transition_id="thumbnailOK"/>
    <exit-transition transition_id="submitThumbnailGenerating"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
@@ -1030,7 +631,6 @@
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
@@ -1040,7 +640,6 @@
    <permission-map name="View History" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>E-Deposit: Producent Editor</permission-role>
@@ -1083,7 +682,6 @@
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
@@ -1093,7 +691,6 @@
    <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
@@ -1116,76 +713,21 @@
    </guard>
  </transition>
  
- <transition transition_id="thumbnailOKSkipExportToAleph" 
+ <transition transition_id="thumbnailOK" 
              title="Thumbnail Generating Passed" 
              new_state="waitingForAleph"
              trigger="USER" 
-             before_script="submitDocumentViewer"
-             after_script="renewAlephRecords"  
-             i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOKSkipExportToAleph" 
-           category="workflow" 
-           icon=""
-           i18n:translate="">Thumbnail Generating with success - skip export to Aleph</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn</guard-expression>
-   </guard>
- </transition>
- <transition transition_id="thumbnailOKAleph" 
-             title="Thumbnail Generating Passed" 
-             new_state="exportToAleph"
-             trigger="USER" 
-             before_script="submitDocumentViewer" 
-             after_script="submitExportToAleph"  
-             i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOKAleph" 
-           category="workflow" 
-           icon=""
-           i18n:translate="">Thumbnail Generating with success</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn</guard-expression>
-   </guard>
- </transition>
- <transition transition_id="thumbnailOKISBNGeneration" 
-             title="Thumbnail Generating Passed" 
-             new_state="ISBNGeneration"
-             trigger="USER" 
-             before_script="submitDocumentViewer" 
+             before_script="" 
              after_script=""  
              i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOKISBNGeneration" 
+   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" 
            category="workflow" 
            icon=""
            i18n:translate="">Thumbnail Generating with success</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: not here.isbn</guard-expression>
    </guard>
  </transition>
-
- <transition transition_id="submitExportToAleph"
-             title="Submit Export to Aleph"
-             new_state="exportToAleph"
-             trigger="USER"
-             before_script="submitExportToAleph"
-             after_script=""
-             i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=submitExportToAleph"
-           category="workflow"
-           icon=""
-           i18n:translate="">Submit Export to Aleph</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
-
- <script script_id="submitExportToAleph"
-         type="External Method"
-         filename=""
-         module="edeposit.policy.eperiodicalpart_wf_scripts"
-         function="submitExportToAleph"/>
 
  <script script_id="submitThumbnailGenerating"
          type="External Method"
@@ -1193,147 +735,16 @@
          module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitThumbnailGenerating"/>
 
- <!--  Export to Aleph -->
-
- <state state_id="exportToAleph" title="Export to Aleph" i18n:attributes="title">
-   <exit-transition transition_id="exportToAlephSubmitted"/>
-   <exit-transition transition_id="amqpError"/>
-   <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="exportToAlephError"/>
-   <exit-transition transition_id="exportToAlephOK"/>
-   <exit-transition transition_id="submitAntivirusCheck"/>
-   <exit-transition transition_id="submitPDFBoxValidation"/>
-   <exit-transition transition_id="submitEPubCheckValidation"/>
-   <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="backToCorrection"/>
-   <exit-transition transition_id="epubcheckResponse"/>
-   <exit-transition transition_id="submitExportToAleph"/>
-
-   <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View History" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="plone.app.collection: Add Collection" acquired="False">
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Change portal events" acquired="False">
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Add portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Modify portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Copy or Move" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Delete objects" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Review portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="List folder contents" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
- </state>
- 
- <transition transition_id="exportToAlephSubmitted"
-             title="Export of one record to Aleph submitted" 
-             new_state="" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephSubmitted" category="workflow" icon="" i18n:translate="">Export of one record to Aleph submitted</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
-
- <transition transition_id="exportToAlephError" 
-             title="Export to Aleph finished with error" 
-             new_state="declarationWithError" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephError" category="workflow" icon="" i18n:translate="">Export to Aleph finished with error</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
-
- <transition transition_id="exportToAlephOK" 
-             title="Export to Aleph finished with success" 
-             new_state="waitingForAleph" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-   <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephOK" category="workflow" icon="" i18n:translate="">Export to Aleph finished with success</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-   </guard>
- </transition>
 
  <!-- waiting for aleph  -->
- 
  <state state_id="waitingForAleph" title="Waiting for Aleph" i18n:attributes="title">
    <description i18n:translate="">Waiting till Aleph gets back SysNumber of an exported record</description>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="submitDocumentViewer"/>
    <exit-transition transition_id="alephRecordsLoaded"/>
-   <exit-transition transition_id="submitExportToAleph"/>
-   <exit-transition transition_id="exportToAlephOK"/>
-   <exit-transition transition_id="exportToAlephError"/>
-   <exit-transition transition_id="exportToAlephSubmitted"/>
    <exit-transition transition_id="searchSysNumber"/>
    <exit-transition transition_id="loadSummaryAlephRecord"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
@@ -1349,7 +760,6 @@
    <exit-transition transition_id="backToCorrection"/>
 
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1358,7 +768,6 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View History" acquired="False">
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -1404,7 +813,6 @@
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
@@ -1414,7 +822,6 @@
    <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
@@ -2360,43 +1767,7 @@
    </permission-map>
  </state>
 
- <transition transition_id="submitDeclarationToISBNValidation" 
-             title="Declaration is finished" 
-             new_state="ISBNValidation" 
-             trigger="USER" 
-             before_script="" 
-             after_script="submitISBNValidation"  
-             i18n:attributes="title">
-   <action
-       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToISBNValidation" 
-       category="workflow" 
-       icon="" 
-       i18n:translate="">K akvizici</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn and here.file</guard-expression>
-   </guard>
- </transition>
-
- <transition transition_id="submitDeclarationSkipISBNValidation" 
-             title="Declaration is finished" 
-             new_state="antivirus" 
-             trigger="USER" 
-             before_script="" 
-             after_script="submitAntivirusCheck"  
-             i18n:attributes="title">
-   <action
-       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationSkipISBNValidation" 
-       category="workflow" 
-       icon="" 
-       i18n:translate="">K akvizici - bez kontroly ISBN</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: here.isbn and here.file</guard-expression>
-   </guard>
- </transition>
-
- <transition transition_id="submitDeclarationToAntivirus" 
+ <transition transition_id="submitDeclaration" 
              title="Declaration is finished"
              new_state="antivirus" 
              trigger="USER" 
@@ -2404,13 +1775,13 @@
              after_script="submitAntivirusCheck"  
              i18n:attributes="title">
    <action
-       url="%(content_url)s/content_status_modify?workflow_action=submitDeclarationToAntivirus" 
+       url="%(content_url)s/content_status_modify?workflow_action=submitDeclaration" 
        category="workflow" 
        icon=""
        i18n:translate="">K akvizici</action>
    <guard>
      <guard-permission>Review portal content</guard-permission>
-     <guard-expression>python: (not here.isbn) and here.file</guard-expression>
+     <guard-expression>python: here.file</guard-expression>
    </guard>
  </transition>
 
@@ -3178,11 +2549,8 @@
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="middlewareProblem"/>
    <exit-transition transition_id="fileProblem"/>
-   <exit-transition transition_id="onlyCzechISBNAcceptedError"/>
    <exit-transition transition_id="zpracovatelIsRequiredError"/>
    <exit-transition transition_id="DatumVydaniIsRequiredError"/>
-   <exit-transition transition_id="isbnAlreadyExistsError"/>
-   <exit-transition transition_id="wrongISBNError"/>
    <exit-transition transition_id="documentWasDeleted"/>
 
    <permission-map name="Access contents information" acquired="False">
@@ -3251,78 +2619,6 @@
   </permission-map>
  </state>
 
- <state state_id="ISBNSubjectValidation" title="ISBN Subject Validation" i18n:attributes="title">
-   <description i18n:translate="">ISBN will be validated by ISBN Agency.</description>
-   <exit-transition transition_id="backToCorrection"/>
-   <exit-transition transition_id="renewAlephRecords"/>
-   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
-   <exit-transition transition_id="submitISBNSubjectValidation"/>
-   <exit-transition transition_id="submitPDFBoxValidation"/>
-   <exit-transition transition_id="submitEPubCheckValidation"/>
-   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
-   <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="amqpError"/>
-   <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="epubcheckResponse"/>
- 
-   <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: Librarian</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View History" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: Librarian</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Change portal events" acquired="False">
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Modify portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Review portal content" acquired="False">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="List folder contents" acquired="False">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Producent Administrator</permission-role>
-     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
- </state>
- 
 <!-- Storage -->
 
  <state state_id="exportToStorage" title="Export to Storage" i18n:attributes="title">
@@ -3393,6 +2689,19 @@
      <permission-role>Manager</permission-role>
    </permission-map>
  </state>
+
+ <transition transition_id="submitDocumentViewer"
+             title="Create document view"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="submitDocumentViewer"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitDocumentViewer" category="workflow" icon="" i18n:translate="">Submit document viewer</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
 
  <transition transition_id="submitExportToStorage"
              title="Send export to Storage"
@@ -3874,15 +3183,13 @@
 
  <state state_id="fileProblem" title="Problem with attached file"
         i18n:attributes="title">
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
+   <exit-transition transition_id="submitDeclaration"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="True">
@@ -3949,94 +3256,16 @@
    </permission-map>
  </state>
 
- <state state_id="onlyCzechISBNAcceptedError" title="Only czech ISBN accepted"
-        i18n:attributes="title">
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
-   <exit-transition transition_id="generateVoucher"/>
-   <exit-transition transition_id="pdfGenerated"/>
-   <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="epubcheckResponse"/>
-   <exit-transition transition_id="amqpError"/>
-   <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
-   <exit-transition transition_id="toWithdraw"/>
-   
-   <permission-map name="Access contents information" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View History" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="plone.app.collection: Add Collection" acquired="True">
-     <permission-role>Site Administrator</permission-role>
-   </permission-map>
-   <permission-map name="Change portal events" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Modify portal content" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Copy or Move" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Delete objects" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Review portal content" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="List folder contents" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
- </state>
 
  <state state_id="zpracovatelIsRequiredError" title="Zpracovatel is required"
         i18n:attributes="title">
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
+   <exit-transition transition_id="submitDeclaration"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="True">
@@ -4105,169 +3334,13 @@
 
  <state state_id="DatumVydaniIsRequiredError" title="Datum vydani is required"
         i18n:attributes="title">
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
-   <exit-transition transition_id="toWithdraw"/>
-   
-   <permission-map name="Access contents information" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View History" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="plone.app.collection: Add Collection" acquired="True">
-     <permission-role>Site Administrator</permission-role>
-   </permission-map>
-   <permission-map name="Change portal events" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Modify portal content" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Copy or Move" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Delete objects" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Review portal content" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="List folder contents" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
- </state>
-
- <state state_id="isbnAlreadyExistsError" title="ISBN already exists"
-        i18n:attributes="title">
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
-   <exit-transition transition_id="generateVoucher"/>
-   <exit-transition transition_id="pdfGenerated"/>
-   <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="epubcheckResponse"/>
-   <exit-transition transition_id="amqpError"/>
-   <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
-   <exit-transition transition_id="toWithdraw"/>
-   
-   <permission-map name="Access contents information" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View History" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>E-Deposit: Producent Editor</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="plone.app.collection: Add Collection" acquired="True">
-     <permission-role>Site Administrator</permission-role>
-   </permission-map>
-   <permission-map name="Change portal events" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Modify portal content" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Copy or Move" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Delete objects" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="Review portal content" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="View" acquired="True">
-     <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
-   <permission-map name="List folder contents" acquired="True">
-     <permission-role>E-Deposit: Acquisitor</permission-role>
-     <permission-role>Owner</permission-role>
-     <permission-role>Site Administrator</permission-role>
-     <permission-role>Manager</permission-role>
-   </permission-map>
- </state>
-
- <state state_id="wrongISBNError" title="Wrong ISBN"
-        i18n:attributes="title">
-   <exit-transition transition_id="submitDeclarationToISBNValidation"/>
-   <exit-transition transition_id="submitDeclarationSkipISBNValidation"/>
-   <exit-transition transition_id="generateVoucher"/>
-   <exit-transition transition_id="pdfGenerated"/>
-   <exit-transition transition_id="pdfboxResponse"/>
-   <exit-transition transition_id="epubcheckResponse"/>
-   <exit-transition transition_id="amqpError"/>
-   <exit-transition transition_id="amqpWarning"/>
-   <exit-transition transition_id="submitDeclarationToAntivirus"/>
+   <exit-transition transition_id="submitDeclaration"/>
    <exit-transition transition_id="toWithdraw"/>
    
    <permission-map name="Access contents information" acquired="True">
@@ -4353,11 +3426,8 @@
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="middlewareProblem"/>
    <exit-transition transition_id="fileProblem"/>
-   <exit-transition transition_id="onlyCzechISBNAcceptedError"/>
    <exit-transition transition_id="zpracovatelIsRequiredError"/>
    <exit-transition transition_id="DatumVydaniIsRequiredError"/>
-   <exit-transition transition_id="isbnAlreadyExistsError"/>
-   <exit-transition transition_id="wrongISBNError"/>
    <exit-transition transition_id="documentWasDeleted"/>
 
    <permission-map name="Access contents information" acquired="False">
@@ -4463,7 +3533,6 @@
    <exit-transition transition_id="backToCorrection"/>
 
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -4472,7 +3541,6 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View History" acquired="False">
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -4517,7 +3585,6 @@
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
@@ -4527,7 +3594,6 @@
    <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Owner</permission-role>
@@ -4563,16 +3629,12 @@
    <exit-transition transition_id="backToCorrection"/>
    <exit-transition transition_id="middlewareProblem"/>
    <exit-transition transition_id="fileProblem"/>
-   <exit-transition transition_id="onlyCzechISBNAcceptedError"/>
    <exit-transition transition_id="zpracovatelIsRequiredError"/>
    <exit-transition transition_id="DatumVydaniIsRequiredError"/>
-   <exit-transition transition_id="isbnAlreadyExistsError"/>
-   <exit-transition transition_id="wrongISBNError"/>
    <exit-transition transition_id="documentWasDeleted"/>
    <exit-transition transition_id="submitExportToStorage"/>
 
    <permission-map name="Access contents information" acquired="False">
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -4580,7 +3642,6 @@
      <permission-role>Manager</permission-role>
    </permission-map>
    <permission-map name="View History" acquired="False">
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
@@ -4625,7 +3686,6 @@
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -4634,7 +3694,6 @@
    <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>E-Deposit: System</permission-role>
-     <permission-role>E-Deposit: ISBN Agency Member</permission-role>
      <permission-role>E-Deposit: Producent Administrator</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -4706,22 +3765,6 @@
    </guard>
  </transition>
 
- <transition transition_id="onlyCzechISBNAcceptedError" 
-             title="Only Czech ISBN Accepted" 
-             new_state="onlyCzechISBNAcceptedError" 
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-   <action
-       url="%(content_url)s/content_status_modify?workflow_action=onlyCzechISBNAcceptedError"
-       category="workflow" icon="" i18n:translate="">Only Czech ISBN Accepted</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
-   </guard>
- </transition>
-
  <transition transition_id="zpracovatelIsRequiredError" 
              title="Zpracovatel Is Required" 
              new_state="zpracovatelIsRequiredError" 
@@ -4751,37 +3794,6 @@
    <guard>
      <guard-permission>Review portal content</guard-permission>
      <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
-   </guard>
- </transition>
-
- <transition transition_id="isbnAlreadyExistsError" 
-             title="ISBN Already Exists" 
-             new_state="isbnAlreadyExistsError" 
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-   <action
-       url="%(content_url)s/content_status_modify?workflow_action=isbnAlreadyExistsError"
-       category="workflow" icon="" i18n:translate="">ISBN Already Exists</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
-     <!-- <guard-role>E-Deposit: Acquisitor, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
-   </guard>
- </transition>
-
- <transition transition_id="wrongISBNError" 
-             title="Wrong ISBN" 
-             new_state="wrongISBNError" 
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-   <action
-       url="%(content_url)s/content_status_modify?workflow_action=wrongISBNError"
-       category="workflow" icon="" i18n:translate="">Wrong ISBN</action>
-   <guard>
-     <guard-permission>Review portal content</guard-permission>
    </guard>
  </transition>
 
@@ -4816,34 +3828,16 @@
 
  <transition transition_id="submitAcquisition" 
              title="Approve metadata by Acquisition"
-             new_state="ISBNSubjectValidation" 
+             new_state="" 
              trigger="USER" 
              before_script="" 
              after_script="" 
              i18n:attributes="title">
-  <description i18n:translate="">Acquision is OK. So it can go to ISBN Agency.</description>
+  <description i18n:translate="">Acquision is OK.</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=submitAcquisition"
           category="workflow" 
           icon="" 
           i18n:translate="">Submit Acquisition</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-   <guard-expression>python: here.isbn</guard-expression>
-  </guard>
- </transition>
-
- <transition transition_id="submitISBNSubjectValidation" 
-             title="Approve ISBN by ISBN Agency"
-             new_state="descriptiveCataloguingPreparing" 
-             trigger="USER" 
-             before_script="" 
-             after_script="" 
-             i18n:attributes="title">
-  <description i18n:translate="">ISBN is OK and Acquision is OK. So it can go to cataloguing.</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=submitISBNSubjectValidation"
-          category="workflow" 
-          icon="" 
-          i18n:translate="">Submit ISBN Subject Validation</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>
