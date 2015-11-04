@@ -1433,3 +1433,7 @@ a.add-next-part { margin-left: 2em }
 #folder-listing .summary .contenttype-edeposit-content-eperiodicalpartsfolder {
     font-size: 111%;
 }
+
+a.edit-icon {
+    float: right;
+}
