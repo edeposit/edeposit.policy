@@ -1407,7 +1407,8 @@ a.add-next-part { margin-left: 2em }
     display: inline-block;
     padding: 0.2em 0.2em 0.2em 0.2em;
     background: #ddd;
-    min-width: 6em;
+    min-width: 5em;
+    text-align: center;
     white-space: normal;
     border: 0.1em solid white;
 }
