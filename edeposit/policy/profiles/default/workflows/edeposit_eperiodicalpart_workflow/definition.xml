@@ -1,0 +1,2026 @@
+<?xml version="1.0"?>
+<dc-workflow 
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone"
+    i18n:attributes="title; description"
+    workflow_id="edeposit_eperiodicalpart_workflow" title="E-Deposit ePeriodical Part Workflow" 
+    description="A workflow for part of ePeriodical"
+    state_variable="review_state"
+    initial_state="declaration" 
+    manager_bypass="False"
+    >
+ <permission>Access contents information</permission>
+ <permission>List folder contents</permission>
+ <permission>Change portal events</permission>
+ <permission>Modify portal content</permission>
+ <permission>Add portal content</permission>
+ <permission>Review portal content</permission>
+ <permission>View</permission>
+ <permission>View History</permission>
+ <permission>Copy or Move</permission>
+ <permission>Delete objects</permission>
+
+ <!-- (occur-1 "<state " nil (list (current-buffer)) "*definition.xml: states*") -->
+ <!-- (occur-1 "<transition " nil (list (current-buffer)) "*definition.xml: transition*") -->
+ <!-- (occur-1 "<script " nil (list (current-buffer)) "*definition.xml: scripts*") -->
+
+ <!-- declaration -->
+
+ <state state_id="declaration" 
+        title="Declaration"
+        i18n:attributes="title">
+ 
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="submitDeclaration"/>
+ 
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+ 
+ <!-- declaration with error -->
+ 
+ <state state_id="declarationWithError" title="Declaration with Error" 
+        i18n:attributes="title">
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="submitDeclaration"/>
+   <exit-transition transition_id="toWithdraw"/>
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="True">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <transition transition_id="toAcquisition"
+             title="To Acquisition"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=toAcquisition"
+           category="workflow"
+           icon="" 
+           i18n:translate="">To Acquisition</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <!-- anvivirus -->
+
+ <state state_id="antivirus" title="Antivirus Checking" i18n:attributes="title">
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="submitAntivirusCheck"/>
+   <exit-transition transition_id="submitDocumentViewer"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="antivirusOKThumbnail"/>
+   <exit-transition transition_id="antivirusOKNoThumbnail"/>
+   <exit-transition transition_id="antivirusError"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+ 
+ <transition transition_id="generateVoucher" 
+             title="Request to generate voucher" 
+             new_state=""
+             trigger="USER" 
+             before_script="generateVoucher" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=generateVoucher" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Generate Voucher</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="pdfGenerated" 
+             title="PDF generated" 
+             new_state=""
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=pdfGenerated" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">PDF generated</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>Manager</guard-role>
+     <guard-role>Site administrator</guard-role>
+     <guard-role>E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+
+ <transition transition_id="pdfboxResponse" 
+             title="Response from PDFBox" 
+             new_state=""
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=pdfboxResponse" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Response from PDFBox</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>Manager</guard-role>
+     <guard-role>Site administrator</guard-role>
+     <guard-role>E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+
+ <transition transition_id="epubcheckResponse" 
+             title="Response from EPubCheck" 
+             new_state=""
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=epubcheckResponse" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Response from EPubCheck</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>Manager</guard-role>
+     <guard-role>Site administrator</guard-role>
+     <guard-role>E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+
+ <transition transition_id="antivirusError" 
+             title="File Antivirus Has not Passed" 
+             new_state="declarationWithError"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusError" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">File Antivirus Has not Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="antivirusOKThumbnail" 
+             title="Antivirus OK" 
+             new_state="thumbnailGenerating" 
+             trigger="USER"
+             before_script="" 
+             after_script=""
+             i18n:attributes="title">
+   <description>File Antivirus Passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKThumbnail" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">File Antivirus Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.needsThumbnailGeneration()</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="antivirusOKNoThumbnail" 
+             title="Antivirus OK" 
+             new_state="acquisition" 
+             trigger="USER"
+             before_script="" 
+             after_script=""
+             i18n:attributes="title">
+   <description>File Antivirus Passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=antivirusOKNoThumbnail" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">File Antivirus Passed</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: not here.needsThumbnailGeneration()</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitThumbnailGenerating" 
+             title="Submit thumbnail generating" 
+             new_state="thumbnailGenerating" 
+             trigger="USER"
+             before_script="" 
+             after_script="submitThumbnailGenerating"
+             i18n:attributes="title">
+   <description>File Antivirus Passed</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitThumbnailGenerating" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit Thumbnail Generating</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-expression>python: here.needsThumbnailGeneration()</guard-expression> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="submitAntivirusCheck" 
+             title="Submit Antivirus Check"
+             new_state="antivirus"
+             trigger="USER"
+             before_script=""
+             after_script="submitAntivirusCheck"
+             i18n:attributes="title">
+   <description>Submit Antivirus Check</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitAntivirusCheck" 
+           category="workflow"
+           icon=""
+           i18n:translate="">Submit Antivirus Check</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitPDFBoxValidation" 
+             title="Submit PDF/A Validation"
+             new_state=""
+             trigger="USER" 
+             before_script="" 
+             after_script="submitPDFBoxValidation" 
+             i18n:attributes="title">
+   <description>Submit Antivirus Check</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitPDFBoxValidation" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit PDF/A Validation</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>Manager</guard-role>
+     <guard-role>Site administrator</guard-role>
+     <guard-role>E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitEPubCheckValidation" 
+             title="Submit EPub/2 Validation"
+             new_state=""
+             trigger="USER" 
+             before_script="" 
+             after_script="submitEPubCheckValidation" 
+             i18n:attributes="title">
+   <description>Submit EPub/2 Validation</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitEPubCheckValidation" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">Submit EPub/2 Validation</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-role>Manager</guard-role>
+     <guard-role>Site administrator</guard-role>
+     <guard-role>E-Deposit: System</guard-role>
+   </guard>
+ </transition>
+
+ <transition transition_id="amqpError"
+             title="Error from external service" 
+             new_state="" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <description>External service sent some error</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=amqpError" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">External service sent some error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="amqpWarning"
+             title="Warning from external service" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description>External service sent some warning</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=amqpWarning" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">External service sent some warning</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+
+ <script script_id="submitAMQPTaskClassificateError" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitAMQPTaskClassificateError"/> 
+
+ <script script_id="classificateError" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="classificateError"/> 
+
+ <script script_id="generateVoucher" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitVoucherGeneration"/> 
+
+ <script script_id="submitAntivirusCheck" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitAntivirusCheck"/> 
+
+ <script script_id="submitPDFBoxValidation" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitPDFBoxValidation"/> 
+
+ <script script_id="submitEPubCheckValidation" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitEPubCheckValidation"/> 
+
+ <script script_id="submitDocumentViewer" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitDocumentViewer"/> 
+
+ <script script_id="submitAMQPTaskExportToStorage" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitAMQPTaskExportToStorage"/> 
+
+ <script script_id="submitExportToStorage" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitExportToStorage"/> 
+
+ <script script_id="submitAMQPTaskExportToLTP" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitAMQPTaskExportToLTP"/> 
+
+ <script script_id="submitExportToLTP" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitExportToLTP"/> 
+
+ <script script_id="submitAMQPTaskExportToKramerius" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitAMQPTaskExportToKramerius"/> 
+
+ <script script_id="submitExportToKramerius" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitExportToKramerius"/> 
+
+ <!-- thumbnail generating -->
+
+ <state state_id="thumbnailGenerating" 
+        title="Thumbnail Generating"
+        i18n:attributes="title">
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="thumbnailError"/>
+   <exit-transition transition_id="submitDocumentViewer"/>
+   <exit-transition transition_id="thumbnailOK"/>
+   <exit-transition transition_id="submitThumbnailGenerating"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+ 
+ <transition transition_id="thumbnailError" 
+             title="Thumbnail Generating finished with Error" 
+             new_state="declarationWithError" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailError" 
+           category="workflow" icon="" i18n:translate="">Thumbnail generating with error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="thumbnailOK" 
+             title="Thumbnail Generating Passed" 
+             new_state="acquisition"
+             trigger="USER"
+             before_script=""
+             after_script=""  
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=thumbnailOK" 
+           category="workflow" 
+           icon=""
+           i18n:translate="">Thumbnail Generating with success</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="submitThumbnailGenerating"
+         type="External Method"
+         filename=""
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitThumbnailGenerating"/>
+
+
+ <transition transition_id="submitDeclaration" 
+             title="Declaration is finished"
+             new_state="antivirus"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAntivirusCheck"  
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=submitDeclaration" 
+       category="workflow" 
+       icon=""
+       i18n:translate="">K akvizici</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.file</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitAcquisitionPreparing" 
+             title="Submit acquisition preparing" 
+             new_state="acquisition" 
+             trigger="AUTOMATIC" 
+             before_script="" 
+             after_script=""  i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitAcquisitionPreparing" category="workflow" icon="" i18n:translate="">Submit Acquisition Preparing</action>
+
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <!-- Acquisition  -->
+
+ <state state_id="acquisition" title="Acquisition" i18n:attributes="title">
+   <description i18n:translate="">An ePublication is reviewed by Periodical Department Member.</description>
+
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="submitAcquisition"/>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="middlewareProblem"/>
+   <exit-transition transition_id="fileProblem"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+
+<!-- Storage -->
+
+ <state state_id="exportToStorage" title="Export to Storage" i18n:attributes="title">
+   <exit-transition transition_id="submitExportToStorage"/>
+   <exit-transition transition_id="exportToStorageError"/>
+   <exit-transition transition_id="exportToStorageOKToLTP"/>
+   <exit-transition transition_id="exportToStorageOKSkipLTP"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <transition transition_id="submitDocumentViewer"
+             title="Create document view"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="submitDocumentViewer"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitDocumentViewer" category="workflow" icon="" i18n:translate="">Submit document viewer</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitExportToStorage"
+             title="Send export to Storage"
+             new_state="exportToStorage"
+             trigger="USER"
+             before_script=""
+             after_script="submitExportToStorage"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitExportToStorage" category="workflow" icon="" i18n:translate="">Submit export to Storage</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="exportToStorageError" 
+             title="Export to Storage finished with error" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageError" category="workflow" icon="" i18n:translate="">Export to Storage finished with error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToStorageOKToLTP"
+             title="Export to Storage finished with success" 
+             new_state="exportToLTP"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAMQPTaskExportToLTP" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOKToLTP" category="workflow" icon="" i18n:translate="">Export to Storage finished with success</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: here.isWellFormedForLTP</guard-expression>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToStorageOKSkipLTP"
+             title="Export to Storage finished with success, skip LTP" 
+             new_state="exportToKramerius"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAMQPTaskExportToKramerius" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToStorageOKSkipLTP" category="workflow" icon="" i18n:translate="">Export to Storage finished with success, skip LTP</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <guard-expression>python: not here.isWellFormedForLTP</guard-expression>
+   </guard>
+ </transition>
+
+ <!-- export to LTP -->
+ <transition transition_id="submitExportToLTP"
+             title="Send export to LTP"
+             new_state="exportToLTP"
+             trigger="USER"
+             before_script=""
+             after_script="submitExportToLTP"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitExportToLTP" category="workflow" icon="" i18n:translate="">Submit export to LTP</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="exportToLTPError" 
+             title="Export to LTP finished with error" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToLTPError" category="workflow" icon="" i18n:translate="">Export to LTP finished with error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToLTPOK"
+             title="Export to LTP finished with success" 
+             new_state="exportToKramerius"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAMQPTaskExportToKramerius" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToLTPOK" category="workflow" icon="" i18n:translate="">Export to LTP finished with success</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <!--  Export to Kramerius -->
+
+ <state state_id="exportToKramerius" title="Export to Kramerius" i18n:attributes="title">
+   <exit-transition transition_id="submitExportToStorage"/>
+   <exit-transition transition_id="submitExportToKramerius"/>
+   <exit-transition transition_id="exportToKrameriusSubmitted"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="exportToKrameriusError"/>
+   <exit-transition transition_id="exportToKrameriusOK"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+ 
+ <transition transition_id="submitExportToKramerius"
+             title="Send export to Kramerius"
+             new_state="exportToKramerius"
+             trigger="USER"
+             before_script=""
+             after_script="submitExportToKramerius"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitExportToKramerius" category="workflow" icon="" i18n:translate="">Submit export to Kramerius</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+ 
+ <transition transition_id="exportToKrameriusSent"
+             title="Export to Kramerius sent"
+             new_state=""
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToKrameriusSent" category="workflow" icon="" i18n:translate="">Export to Kramerius Sent</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToKrameriusError" 
+             title="Export to Kramerius finished with error" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToKrameriusError" category="workflow" icon="" i18n:translate="">Export to Kramerius finished with error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="exportToKrameriusOK"
+             title="Export to Kramerius finished with success" 
+             new_state="exportToLTP"
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToKrameriusOK" category="workflow" icon="" i18n:translate="">Export to Kramerius finished with success</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <state state_id="exportToLTP" title="Export to LTP" i18n:attributes="title">
+   <exit-transition transition_id="submitExportToLTP"/>
+   <exit-transition transition_id="exportToLTPError"/>
+   <exit-transition transition_id="exportToLTPOK"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <state state_id="withdrawn" title="Withdrawn" i18n:attributes="title">
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <state state_id="processed" title="Processed" i18n:attributes="title">
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <state state_id="middlewareProblem" title="Middleware problem"
+        i18n:attributes="title">
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="searchSysNumber"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
+   <exit-transition transition_id="submitAntivirusCheck"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="backToCorrection"/>
+   
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="True">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <state state_id="fileProblem" title="Problem with attached file"
+        i18n:attributes="title">
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="submitDeclaration"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="True">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+
+ <state state_id="zpracovatelIsRequiredError" title="Zpracovatel is required"
+        i18n:attributes="title">
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="submitDeclaration"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="True">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <state state_id="DatumVydaniIsRequiredError" title="Datum vydani is required"
+        i18n:attributes="title">
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="submitDeclaration"/>
+   <exit-transition transition_id="toWithdraw"/>
+   
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="True">
+     <permission-role>Site Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="True">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <state state_id="unknownError" title="Unknown error" i18n:attributes="title">
+   <description i18n:translate="">An ePublication is reviewed by Periodical Department Member.</description>
+
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="submitAcquisition"/>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="recordHasBeenChanged"/>
+   <exit-transition transition_id="toWithdraw"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="middlewareProblem"/>
+   <exit-transition transition_id="fileProblem"/>
+   <exit-transition transition_id="zpracovatelIsRequiredError"/>
+   <exit-transition transition_id="DatumVydaniIsRequiredError"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+    </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Administrator</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguer</permission-role>
+     <permission-role>E-Deposit: Descriptive Cataloguing Reviewer</permission-role>
+  </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+
+ <state state_id="errorClassification" title="Classification of an error" i18n:attributes="title">
+   <description i18n:translate="">An error is classified now.</description>
+
+   <exit-transition transition_id="generateVoucher"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="classificateError"/>
+   <exit-transition transition_id="pdfGenerated"/>
+   <exit-transition transition_id="submitAntivirusCheck"/>
+   <exit-transition transition_id="submitPDFBoxValidation"/>
+   <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="pdfboxResponse"/>
+   <exit-transition transition_id="epubcheckResponse"/>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="middlewareProblem"/>
+   <exit-transition transition_id="fileProblem"/>
+   <exit-transition transition_id="zpracovatelIsRequiredError"/>
+   <exit-transition transition_id="DatumVydaniIsRequiredError"/>
+   <exit-transition transition_id="submitExportToStorage"/>
+
+   <permission-map name="Access contents information" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View History" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>E-Deposit: Producent Editor</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="plone.app.collection: Add Collection" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="False">
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Add portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Delete objects" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="False">
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+   <permission-map name="List folder contents" acquired="False">
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
+     <permission-role>E-Deposit: Producent Administrator</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+   </permission-map>
+ </state>
+
+ <transition transition_id="classificateError" 
+             title="Classificate Error" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="classificateError" 
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=classificateError"
+       category="workflow" icon="" i18n:translate="">Classificate Error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Periodical Department Member, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="unknownError" 
+             title="Unknown Error" 
+             new_state="unknownError" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=unkwnownError"
+       category="workflow" icon="" i18n:translate="">Unknown Error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Periodical Department Member, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="middlewareProblem" 
+             title="Middleware Problem" 
+             new_state="middlewareProblem" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=middlewareProblem"
+       category="workflow" icon="" i18n:translate="">Middleware Problem</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Periodical Department Member, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="fileProblem" 
+             title="File Problem" 
+             new_state="fileProblem" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=fileProblem"
+       category="workflow" icon="" i18n:translate="">File Problem</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Periodical Department Member, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="zpracovatelIsRequiredError" 
+             title="Zpracovatel Is Required" 
+             new_state="zpracovatelIsRequiredError" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=zpracovatelIsRequiredError"
+       category="workflow" icon="" i18n:translate="">Zpracovatel Is Required</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+     <!-- <guard-role>E-Deposit: Periodical Department Member, E-Deposit: Librarian, Site administrator, E-Deposit: System</guard-role> -->
+   </guard>
+ </transition>
+
+ <transition transition_id="DatumVydaniIsRequiredError" 
+             title="Datum Vydani Is Required" 
+             new_state="DatumVydaniIsRequiredError" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <action
+       url="%(content_url)s/content_status_modify?workflow_action=DatumVydaniIsRequiredError"
+       category="workflow" icon="" i18n:translate="">Datum Vydani Is Required</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="toWithdraw" 
+             title="To Withdraw" 
+             new_state="withdrawn" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=toWithdraw" category="workflow" icon="" i18n:translate="">To Withdraw</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="submitAcquisition" 
+             title="Approve metadata by Acquisition"
+             new_state="exportToStorage"
+             trigger="USER" 
+             before_script="" 
+             after_script="submitAMQPTaskExportToStorage"
+             i18n:attributes="title">
+  <description i18n:translate="">Acquision is OK.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=submitAcquisition"
+          category="workflow" 
+          icon="" 
+          i18n:translate="">Submit Acquisition</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ 
+ <transition transition_id="backToCorrection" 
+             title="Back to Producent" 
+             new_state="declarationWithError" 
+             trigger="USER"
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+  <action url="%(content_url)s/content_status_modify?workflow_action=backToCorrection" category="workflow" icon="" i18n:translate="">Back to Producent</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+
+ <transition transition_id="exportToKrameriusError"
+             title="Export to Kramerius Passed with Error" 
+             new_state="" 
+             trigger="USER" 
+             before_script=""
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=exportToKrameriusError" category="workflow" icon="" i18n:translate="">Export to Kramerius Passed with Error</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+
+ <transition transition_id="exportToKrameriusOK" 
+             title="Export to Kramerius Passed with OK" 
+             new_state="validationForLTP" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+  <action url="%(content_url)s/content_status_modify?workflow_action=exportToKrameriusOK" category="workflow" icon="" i18n:translate="">Export to Kramerius Passed with OK</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+
+ <transition transition_id="validationForLTPOK" 
+             title="Validation for LTP Passed with OK" 
+             new_state="exportToLTP" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=validationForLTPOK" category="workflow" icon="" i18n:translate="">Validation for LTP Passed with OK</action>
+  <guard>
+    <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="deleteFile"
+             title="Delete Attached File"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="deleteFile"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=deleteFile"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Delete Attached File</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+            
+         
+   </guard>
+ </transition>
+
+ <script script_id="deleteFile" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="deleteFile"/> 
+ <transition transition_id="submitLoadFileFromStorage"
+             title="Load File From Storage"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="loadFileFromStorage"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitLoadFileFromStorage"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Load File From Storage</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+            
+         
+   </guard>
+ </transition>
+
+ <script script_id="submitLoadFileFromStorage" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitLoadFileFromStorage"/> 
+
+
+ <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">Previous transition</description>
+  <default>
+    <expression>transition/getId|nothing</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">The ID of the user who performed the previous transition</description>
+  <default>
+    <expression>user/getId</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="comments" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">Comment about the last transition</description>
+  <default>
+    <expression>python:state_change.kwargs.get('comment', '')</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+   <description i18n:translate="">Provides access to workflow history</description>
+  <default>
+    <expression>state_change/getHistory</expression>
+  </default>
+  <guard>
+    <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </variable>
+ <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
+   <description i18n:translate="">When the previous transition was performed</description>
+  <default>
+    <expression>state_change/getDateTime</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+</dc-workflow>

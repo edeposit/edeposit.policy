@@ -1244,7 +1244,8 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
-   </permission-map>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+    </permission-map>
    <permission-map name="Copy or Move" acquired="False">
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
@@ -1259,6 +1260,7 @@
      <permission-role>E-Deposit: System</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: Acquisitor</permission-role>
    </permission-map>
    <permission-map name="View" acquired="False">
      <permission-role>E-Deposit: Acquisitor</permission-role>
