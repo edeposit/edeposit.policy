@@ -79,9 +79,6 @@
     <type type_id="edeposit.content.epublication">
       <bound-workflow workflow_id="edeposit_epublication_workflow"/>
     </type>
-    <type type_id="edeposit.content.eperiodical">
-      <bound-workflow workflow_id="edeposit_eperiodical_workflow"/>
-    </type>
     <type type_id="edeposit.content.eperiodicalpart">
       <bound-workflow workflow_id="edeposit_eperiodicalpart_workflow"/>
     </type>
@@ -98,7 +95,6 @@
     <type type_id="edeposit.content.bookfolder"/>
     <type type_id="edeposit.content.isbn"/>
     <type type_id="edeposit.content.issn"/>
-    <type type_id="edeposit.content.printingfile"/>
     <type type_id="edeposit.content.previewfile"/>
     <type type_id="edeposit.content.originalfile">
       <bound-workflow workflow_id="edeposit_originalfile_workflow"/>

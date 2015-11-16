@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="edeposit_eperiodical_workflow" 
-             title="E-Deposit ePeriodical Workflow" 
-             description="A workflow for ePeriodical" 
-             state_variable="review_state" 
-             initial_state="declaration" manager_bypass="False">
+<dc-workflow 
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone"
+    i18n:attributes="title; description"
+    workflow_id="edeposit_eperiodical_workflow" 
+    title="E-Deposit ePeriodical Workflow" 
+    description="A workflow for ePeriodical" 
+    state_variable="review_state" 
+    initial_state="declaration" manager_bypass="True">
  <permission>Access contents information</permission>
  <permission>List folder contents</permission>
  <permission>Change portal events</permission>
@@ -68,7 +72,8 @@
    <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
  </state>
- <state state_id="declarationWithError" title="Declaration with Error">
+ 
+<state state_id="declarationWithError" title="Declaration with Error">
    <exit-transition transition_id="toAcquisition"/>
    <exit-transition transition_id="toWithdraw"/>
    <permission-map name="Access contents information" acquired="True">
@@ -116,51 +121,119 @@
  </state>
  
  <state state_id="acquisition" title="Acquisition">
-  <exit-transition transition_id="submitAcquisition"/>
-  <permission-map name="Access contents information" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Copy or Move" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>E-Deposit: Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
+   <exit-transition transition_id="submitAcquisition"/>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+   <exit-transition transition_id="loadAlephRecordsByTitle"/>
+   <permission-map name="Access contents information" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Change portal events" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Modify portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Copy or Move" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
+   <permission-map name="Review portal content" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
+   <permission-map name="View" acquired="True">
+     <permission-role>E-Deposit: Acquisitor</permission-role>
+     <permission-role>Owner</permission-role>
+     <permission-role>Site Administrator</permission-role>
+     <permission-role>E-Deposit: Periodical Department Member</permission-role>
+     <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
+   </permission-map>
  </state>
+ 
+ <transition transition_id="renewAlephRecords"
+             title="Renew Aleph Records"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="renewAlephRecords"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=renewAlephRecords"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Renew Aleph Records</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="renewAlephRecords" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodical_wf_scripts"
+         function="renewAlephRecords"/> 
+ 
+ <transition transition_id="renewAlephRecordsBySysNumber"
+             title="Renew Aleph Records by SysNumber"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="renewAlephRecordsBySysNumber"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=renewAlephRecordsBySysNumber"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Renew Aleph Records by SysNumber</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="renewAlephRecordsBySysNumber" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodical_wf_scripts"
+         function="renewAlephRecordsBySysNumber"/> 
+
+ <transition transition_id="loadAlephRecordsTyTitle"
+             title="Load Aleph Records by Title"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="loadAlephRecordsByTitle"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=loadAlephRecordsByTitle"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Load Aleph Records by Title</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="loadAlephRecordsByTitle" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodical_wf_scripts"
+         function="loadAlephRecordsByTitle"/> 
+
+
  <state state_id="catalogization" title="Catalogization">
   <exit-transition transition_id="backToCorrection"/>
   <exit-transition transition_id="catalogizationPassed"/>
@@ -208,43 +281,7 @@
    <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
   </permission-map>
  </state>
- <state state_id="exportToAleph" title="Export to Aleph">
-  <exit-transition transition_id="exportToAlephError"/>
-  <exit-transition transition_id="exportToAlephOK"/>
-  <permission-map name="Access contents information" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Copy or Move" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>E-Deposit: System</permission-role>
-   <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
- </state>
+
  <state state_id="exportToKramerius" title="Export to Kramerius">
   <exit-transition transition_id="exportToKrameriusError"/>
   <exit-transition transition_id="exportToKrameriusOK"/>
