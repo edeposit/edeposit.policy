@@ -121,10 +121,12 @@
  </state>
  
  <state state_id="acquisition" title="Acquisition">
-   <exit-transition transition_id="submitAcquisition"/>
+   <exit-transition transition_id="acquisitionOK"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="loadAlephRecordsByTitle"/>
    <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
-   <exit-transition transition_id="loadAlephRecordsByTitle"/>
    <permission-map name="Access contents information" acquired="True">
      <permission-role>E-Deposit: Acquisitor</permission-role>
      <permission-role>Owner</permission-role>
@@ -212,7 +214,7 @@
          module="edeposit.policy.eperiodical_wf_scripts"
          function="renewAlephRecordsBySysNumber"/> 
 
- <transition transition_id="loadAlephRecordsTyTitle"
+ <transition transition_id="loadAlephRecordsByTitle"
              title="Load Aleph Records by Title"
              new_state=""
              trigger="USER"
@@ -233,58 +235,63 @@
          module="edeposit.policy.eperiodical_wf_scripts"
          function="loadAlephRecordsByTitle"/> 
 
+ <transition transition_id="acquisitionOK"
+             title="Acquisition is OK"
+             new_state="approved"
+             trigger="USER"
+             before_script=""
+             after_script="acquisitionOK"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=acquisitionOK"
+           category="workflow"
+           icon="" 
+           i18n:translate="">Acquisition is OK</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
 
- <state state_id="catalogization" title="Catalogization">
-  <exit-transition transition_id="backToCorrection"/>
-  <exit-transition transition_id="catalogizationPassed"/>
-  <exit-transition transition_id="toWithdraw"/>
-  <permission-map name="Access contents information" acquired="True">
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Change portal events" acquired="True">
-   <permission-role>E-Deposit: Assigned Librarian</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="True">
-   <permission-role>E-Deposit: Assigned Librarian</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Copy or Move" acquired="True">
-   <permission-role>E-Deposit: Assigned Librarian</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="Review portal content" acquired="True">
-   <permission-role>E-Deposit: Assigned Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="True">
-   <permission-role>E-Deposit: Assigned Librarian</permission-role>
-   <permission-role>E-Deposit: Librarian</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>E-Deposit: Assigned Producent</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>E-Deposit: Periodical Department Member</permission-role>
-   <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
-  </permission-map>
- </state>
+ <script script_id="acquisitionOK" type="External Method"
+         filename="" 
+         module="edeposit.policy.eperiodical_wf_scripts"
+         function="acquisitionOK"/> 
 
- <state state_id="exportToKramerius" title="Export to Kramerius">
-  <exit-transition transition_id="exportToKrameriusError"/>
-  <exit-transition transition_id="exportToKrameriusOK"/>
+ <transition transition_id="amqpError"
+             title="Error from external service" 
+             new_state="" 
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+   <description>External service sent some error</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=amqpError" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">External service sent some error</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <transition transition_id="amqpWarning"
+             title="Warning from external service" 
+             new_state="" 
+             trigger="USER" 
+             before_script="" 
+             after_script="" 
+             i18n:attributes="title">
+   <description>External service sent some warning</description>
+   <action url="%(content_url)s/content_status_modify?workflow_action=amqpWarning" 
+           category="workflow" 
+           icon="" 
+           i18n:translate="">External service sent some warning</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+
+ <state state_id="approved" title="Approved by Acquisition">
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Assigned Acquisitor</permission-role>
@@ -355,47 +362,11 @@
      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
    </permission-map>
  </state>
- <transition transition_id="approveAndToCatalogization" 
-             title="Approve and to Catalogization" 
-             new_state="catalogization" 
-             trigger="USER" before_script="" after_script="">
-  <description>ISSN is OK and Acquision is OK. So it can go to catalogization.</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=approveToCatalogization" category="workflow" icon="">Approve</action>
-  <guard>
-   <guard-role>E-Deposit: Assigned Acquisitor, E-Deposit: ISBN Agency Administrator</guard-role>
-  </guard>
- </transition>
  <transition transition_id="backToCorrection" 
              title="Back to Correction" 
              new_state="declarationWithError" 
              trigger="USER" before_script="" after_script="">
   <action url="%(content_url)s/content_status_modify?workflow_action=backToCorrection" category="workflow" icon="">Back to Correction</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="catalogizationPassed" 
-             title="Catalogization Passed" 
-             new_state="exportToKramerius" 
-             trigger="USER" before_script="" after_script="">
-  <action url="%(content_url)s/content_status_modify?workflow_action=catalogizationPassed" category="workflow" icon="">Catalogization Passed</action>
-  <guard>
-   <guard-role>E-Deposit: Assigned Librarian, E-Deposit: System</guard-role>
-  </guard>
- </transition>
- <transition transition_id="exportToAlephError" 
-             title="Export to Aleph Passed with Error" 
-             new_state="declarationWithError" 
-             trigger="USER" before_script="" after_script="">
-  <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephError" category="workflow" icon="">Export to Aleph Passed with Error</action>
-  <guard>
-   <guard-permission>Review portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="exportToAlephOK" 
-             title="Export to Aleph Passed with OK" 
-             new_state="acquisition" trigger="USER" before_script="" after_script="">
-  <action url="%(content_url)s/content_status_modify?workflow_action=exportToAlephOK" category="workflow" icon="">Export to Aleph Passed with OK</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
   </guard>

@@ -54,7 +54,7 @@ def renewAlephRecords(wfStateInfo):
     print "renew Aleph Records"
     context = wfStateInfo.object
     with api.env.adopt_user(username="system"):
-        getAdapter(context, IAMQPSender, name="renew-aleph-records").send()
+        getAdapter(context, IAMQPSender, name="load-aleph-records-by-title").send()
         getAdapter(context, IAMQPSender, name="renew-aleph-records-by-icz-sysnumber").send()
 
 def loadAlephRecordsByTitle(wfStateInfo):
@@ -66,6 +66,9 @@ def renewAlephRecordsBySysNumber(wfStateInfo):
     logger.info("renewAlephRecords by SysNumber")
     with api.env.adopt_user(username="system"):
         getAdapter(wfStateInfo.object, IAMQPSender, name="renew-aleph-records-by-sysnumber").send()
+
+def acquisitionOK(wfStateInfo):
+    logger.info("acquisition passed OK")
 
 def submitVoucherGeneration(wfStateInfo):
     originalfile = wfStateInfo.object
