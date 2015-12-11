@@ -16,6 +16,8 @@ edeposit/policy/setuphandlers.py
 edeposit/policy/testing.py
 edeposit/policy/Extensions/__init__.py
 edeposit/policy/Extensions/book_wf_scripts.py
+edeposit/policy/Extensions/eperiodical_wf_scripts.py
+edeposit/policy/Extensions/eperiodicalpart_wf_scripts.py
 edeposit/policy/Extensions/epublication_wf_scripts.py
 edeposit/policy/Extensions/originalfile_contributing_request_wf_scripts.py
 edeposit/policy/Extensions/originalfile_wf_scripts.py

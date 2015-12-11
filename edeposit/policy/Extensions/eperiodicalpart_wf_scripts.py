@@ -75,11 +75,13 @@ def submitAMQPTaskExportToStorage(wfStateInfo):
     with api.env.adopt_user(username="system"):
         IPloneTaskSender(DoActionFor(transition='submitExportToStorage', uid=context.UID())).send()
 
+def checkUpdates(wfStateInfo):
+    wfStateInfo.object.checkUpdates()
+
 def submitExportToStorage(wfStateInfo):
     print "submit export to Storage"
-    originalfile = wfStateInfo.object
     with api.env.adopt_user(username="system"):
-        getAdapter(originalfile, IAMQPSender, name="export-to-storage").send()
+        getAdapter(wfStateInfo.object, IAMQPSender, name="export-to-storage").send()
 
 def submitAMQPTaskUpdateLinksAtAleph(wfStateInfo):
     print "submit amqp task update links at Aleph"

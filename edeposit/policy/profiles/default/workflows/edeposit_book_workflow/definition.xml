@@ -586,7 +586,7 @@
 
  <transition transition_id="amqpError"
              title="Error from external service" 
-             new_state="declarationWithError" 
+             new_state="" 
              trigger="USER" 
              before_script="" 
              after_script="" 
@@ -1354,11 +1354,11 @@
    <exit-transition transition_id="exportToAlephError"/>
    <exit-transition transition_id="exportToAlephSubmitted"/>
    <exit-transition transition_id="searchSysNumber"/>
+   <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="loadSummaryAlephRecord"/>
    <exit-transition transition_id="recordHasBeenChanged"/>
    <exit-transition transition_id="noAlephRecordLoaded"/>
    <exit-transition transition_id="submitAntivirusCheck"/>
-   <exit-transition transition_id="renewAlephRecords"/>
    <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>

@@ -122,6 +122,8 @@
  
  <state state_id="acquisition" title="Acquisition">
    <exit-transition transition_id="acquisitionOK"/>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="withdrawn"/>
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="loadAlephRecordsByTitle"/>
@@ -292,6 +294,15 @@
 
 
  <state state_id="approved" title="Approved by Acquisition">
+   <exit-transition transition_id="acquisitionOK"/>
+   <exit-transition transition_id="backToCorrection"/>
+   <exit-transition transition_id="withdrawn"/>
+   <exit-transition transition_id="amqpError"/>
+   <exit-transition transition_id="amqpWarning"/>
+   <exit-transition transition_id="loadAlephRecordsByTitle"/>
+   <exit-transition transition_id="renewAlephRecords"/>
+   <exit-transition transition_id="renewAlephRecordsBySysNumber"/>
+   
   <permission-map name="Access contents information" acquired="True">
    <permission-role>E-Deposit: System</permission-role>
    <permission-role>E-Deposit: Assigned Acquisitor</permission-role>

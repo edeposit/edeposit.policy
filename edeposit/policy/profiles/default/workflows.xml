@@ -70,6 +70,12 @@
     <type type_id="edeposit.content.alephrecord">
       <bound-workflow workflow_id="edeposit_intranet_workflow"/>
     </type>
+    <type type_id="edeposit.content.alephrecordforepublication">
+      <bound-workflow workflow_id="edeposit_intranet_workflow"/>
+    </type>
+    <type type_id="edeposit.content.alephrecordforeperiodical">
+      <bound-workflow workflow_id="edeposit_intranet_workflow"/>
+    </type>
     <type type_id="edeposit.user.producent">
       <bound-workflow workflow_id="edeposit_producent_workflow"/>
     </type>

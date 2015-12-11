@@ -43,6 +43,7 @@
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="View History" acquired="False">
      <permission-role>Owner</permission-role>
@@ -51,6 +52,7 @@
      <permission-role>E-Deposit: Producent Editor</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Change portal events" acquired="False">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
@@ -59,6 +61,7 @@
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="False">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
@@ -67,6 +70,7 @@
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Copy or Move" acquired="False">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
@@ -75,6 +79,7 @@
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Delete objects" acquired="False">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
@@ -83,6 +88,7 @@
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Review portal content" acquired="False">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
@@ -100,6 +106,7 @@
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="List folder contents" acquired="False">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
@@ -108,6 +115,7 @@
      <!-- <permission-role>E-Deposit: Producent Editor</permission-role> -->
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
  </state>
  
@@ -128,6 +136,7 @@
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="View History" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
@@ -145,6 +154,7 @@
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Modify portal content" acquired="True">
      <permission-role>E-Deposit: System</permission-role>
@@ -158,12 +168,14 @@
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Delete objects" acquired="True">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
    <permission-map name="Review portal content" acquired="True">
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
@@ -184,6 +196,7 @@
      <permission-role>Owner</permission-role>
      <permission-role>Site Administrator</permission-role>
      <permission-role>Manager</permission-role>
+     <permission-role>E-Deposit: System</permission-role>
    </permission-map>
  </state>
 
@@ -713,6 +726,27 @@
          module="edeposit.policy.eperiodicalpart_wf_scripts"
          function="submitThumbnailGenerating"/>
 
+ <transition transition_id="checkUpdates" 
+             title="Check Updates" 
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="checkUpdates"  
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=checkUpdates" 
+           category="workflow" 
+           icon=""
+           i18n:translate="">Check updates from Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="checkUpdates"
+         type="External Method"
+         filename=""
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="checkUpdates"/>
 
  <transition transition_id="submitDeclaration" 
              title="Declaration is finished"
@@ -749,7 +783,6 @@
 
  <state state_id="acquisition" title="Acquisition" i18n:attributes="title">
    <description i18n:translate="">An ePublication is reviewed by Periodical Department Member.</description>
-
    <exit-transition transition_id="amqpError"/>
    <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="submitAcquisition"/>
@@ -763,6 +796,7 @@
    <exit-transition transition_id="epubcheckResponse"/>
    <exit-transition transition_id="middlewareProblem"/>
    <exit-transition transition_id="fileProblem"/>
+   <exit-transition transition_id="checkUpdates"/>
 
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
@@ -838,6 +872,9 @@
    <exit-transition transition_id="amqpWarning"/>
    <exit-transition transition_id="submitPDFBoxValidation"/>
    <exit-transition transition_id="submitEPubCheckValidation"/>
+   <exit-transition transition_id="submitUpdateLinksAtAleph"/>
+   <exit-transition transition_id="alephLinkUpdateResponseOK"/>
+   <exit-transition transition_id="alephLinkUpdateResponseError"/>
    <exit-transition transition_id="pdfboxResponse"/>
    <exit-transition transition_id="generateVoucher"/>
    <exit-transition transition_id="pdfGenerated"/>
@@ -1881,6 +1918,7 @@
           i18n:translate="">Submit Acquisition</action>
   <guard>
    <guard-permission>Review portal content</guard-permission>
+   <guard-expression>here/isApprovedByAcquisition</guard-expression>
   </guard>
  </transition>
  
@@ -1896,6 +1934,24 @@
    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
+
+ <transition transition_id="submitUpdateLinksAtAleph"
+             title="Update links at Aleph"
+             new_state=""
+             trigger="USER"
+             before_script=""
+             after_script="submitUpdateLinksAtAleph"
+             i18n:attributes="title">
+   <action url="%(content_url)s/content_status_modify?workflow_action=submitUpdateLinksAtAleph" category="workflow" icon="" i18n:translate="">Submit update links at Aleph</action>
+   <guard>
+     <guard-permission>Review portal content</guard-permission>
+   </guard>
+ </transition>
+
+ <script script_id="submitUpdateLinksAtAleph" type="External Method"
+         filename=""
+         module="edeposit.policy.eperiodicalpart_wf_scripts"
+         function="submitUpdateLinksAtAleph"/>
 
  <transition transition_id="exportToKrameriusError"
              title="Export to Kramerius Passed with Error" 
@@ -2012,7 +2068,7 @@
   </default>
   <guard>
     <guard-permission>Request review</guard-permission>
-   <guard-permission>Review portal content</guard-permission>
+    <guard-permission>Review portal content</guard-permission>
   </guard>
  </variable>
  <variable variable_id="time" for_catalog="False" for_status="True" update_always="True">
