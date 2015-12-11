@@ -1386,6 +1386,9 @@ a.leftnavitem:hover {color: black;}
 
 /* eperiodical */
 a.add-next-part { margin-left: 2em }
+a.contenttype-edeposit-content-eperiodicalpart { min-width: 10em; }
+span.eperiodicalpart-state { font-size: 82%; margin-left: 2em; }
+table.eperiodical-listing thead tr td { padding-right: 2em; }
 
 /* menu */
 
