@@ -797,7 +797,11 @@
    <exit-transition transition_id="middlewareProblem"/>
    <exit-transition transition_id="fileProblem"/>
    <exit-transition transition_id="checkUpdates"/>
-
+   <exit-transition transition_id="thumbnailError"/>
+   <exit-transition transition_id="submitDocumentViewer"/>
+   <exit-transition transition_id="thumbnailOK"/>
+   <exit-transition transition_id="submitThumbnailGenerating"/>
+   
    <permission-map name="Access contents information" acquired="False">
      <permission-role>E-Deposit: Periodical Department Administrator</permission-role>
      <permission-role>E-Deposit: Periodical Department Member</permission-role>
