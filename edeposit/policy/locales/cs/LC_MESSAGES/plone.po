@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-19 11:47+0000\n"
-"PO-Revision-Date: 2015-08-19 13:47+0200\n"
+"POT-Creation-Date: 2015-12-22 10:46+0000\n"
+"PO-Revision-Date: 2015-12-22 11:46+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "- Essentially a workflow with no transitions, but has a Published state, so portlets and applications that expect that state will continue to work."
@@ -67,14 +68,25 @@ msgstr "Producent potvrzuje, že skončil se zadáváním."
 msgid "A workflow for book and printing file"
 msgstr "Pracovní postup pro knihu a preprinty"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "A workflow for ePeriodical"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "A workflow for ePublication"
 msgstr "Pracovní proces ePublikace"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/make-definition/resources/definition.xml
 msgid "A workflow for original file"
 msgstr "Pracovní proces pro dokumenty"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "A workflow for part of ePeriodical"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "Acquision is OK."
+msgstr "Potvrzení akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
@@ -82,9 +94,14 @@ msgid "Acquision is OK. So it can go to ISBN Agency."
 msgstr "Akvizice proběhla v pořádku, jdeme do ISBN agentury"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Acquisition"
 msgstr "Akvizice"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "Acquisition is OK"
+msgstr "Potvrzení akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "Acquisitor approves a producent content"
@@ -121,10 +138,15 @@ msgstr ""
 msgid "An ePublication is reviewed by Acquisitor."
 msgstr "Akvizitor zkontroluje ePublikaci."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "An ePublication is reviewed by Periodical Department Member."
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
 msgid "An ePublication was loaded from Aleph"
 msgstr "Načetl jsem ePublikaci z Alephu"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "An error is classified now."
 msgstr "Proběhne upřesnění chyby"
@@ -134,11 +156,13 @@ msgid "An original file was contributed"
 msgstr "Odevzdali jsme dokument"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Antivirus Checking"
 msgstr "Antivirová kontrola"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Antivirus OK"
 msgstr "Antivirus prošel v pořádku"
@@ -153,6 +177,7 @@ msgid "Approve Metadata"
 msgstr "Schválit metadata"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Approve metadata by Acquisition"
 msgstr "Schválit metadata akvizicí"
@@ -161,11 +186,16 @@ msgstr "Schválit metadata akvizicí"
 msgid "Approved"
 msgstr "Schváleno"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "Approved by Acquisition"
+msgstr "Schváleno akvizicí"
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "Back to Correction"
 msgstr "Zpátky k opravě"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Back to Producent"
 msgstr "Zpátky producentovi"
@@ -178,15 +208,25 @@ msgstr "Dočasně zablokovat"
 msgid "Blocked"
 msgstr "Blokováno"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "Check Updates"
+msgstr "Kontrola změn"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "Check updates from Aleph"
+msgstr "Načtení změn z Alephu"
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Choose a proper Aleph Record"
 msgstr "Vybrat správný záznam z Alephu"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Classificate Error"
 msgstr "Upřesnění chyby"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Classification of an error"
 msgstr "Upřesnění chyby"
@@ -252,8 +292,8 @@ msgid "Closed - Subject Cataloguing Review Preparing"
 msgstr "Zamčeno - Příprava revize VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Comment about the last transition"
 msgstr "Komentář k poslední akci"
 
@@ -261,31 +301,39 @@ msgstr "Komentář k poslední akci"
 msgid "Contribute an original file"
 msgstr "Odevzdat dokument"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "Create document view"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Datum Vydani Is Required"
 msgstr "Datum vydání je povinné"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Datum vydani is required"
 msgstr "Datum vydání je povinné"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Declaration"
 msgstr "Zadávání"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Declaration is finished"
 msgstr "Zadávání skončilo"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Declaration with Error"
 msgstr "Chyby v zadávání"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Delete Attached File"
 msgstr ""
@@ -322,13 +370,20 @@ msgid "E-Deposit Book Workflow"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/make-definition/resources/definition.xml
 msgid "E-Deposit Original File Workflow"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "E-Deposit Producent Workflow"
 msgstr "E-Deposit - Pracovní postup pro producenta"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "E-Deposit ePeriodical Part Workflow"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "E-Deposit ePeriodical Workflow"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
 msgid "E-Deposit ePublication Workflow"
@@ -347,8 +402,8 @@ msgid "Ensure local roles consistency"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Error from external service"
 msgstr "Chyba z externí služby"
 
@@ -377,36 +432,43 @@ msgid "Export to Aleph finished with success"
 msgstr "Export do Alephu proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius"
 msgstr "Export do Krameria"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Passed with Error"
 msgstr "Export do Krameria skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Passed with OK"
 msgstr "Export do Krameria proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius Sent"
 msgstr "Poslal jsem export do Krameria"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius finished with error"
 msgstr "Export do Krameria skončil s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius finished with success"
 msgstr "Export do Krameria proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Kramerius sent"
 msgstr "Poslán export do Krameria"
@@ -420,6 +482,7 @@ msgid "Export to LPT Passed with OK"
 msgstr "Export do LTP proběhl úspěšně"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP"
 msgstr "Export do LTP"
@@ -432,47 +495,61 @@ msgstr "Export do LTP skončil s chybou"
 msgid "Export to LTP Passed with OK"
 msgstr "Export do LTP proběhl úspěšně"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP finished with error"
-msgstr ""
+msgstr "Export do LTP skončil s chybou"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to LTP finished with success"
-msgstr ""
+msgstr "Export do LTP skončil úspěšně"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Storage"
 msgstr "Export do úložiště"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Storage finished with error"
 msgstr "Export do úložiště skončil s chybou"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Export to Storage finished with success"
 msgstr "Export do úložiště skončil úspěšně"
 
-#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
+msgid "Export to Storage finished with success, skip LTP"
+msgstr "Export do úložiště skončil úspěšně, přeskakuji LTP"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "External service sent some error"
 msgstr "Externí služba poslala chybu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "External service sent some warning"
 msgstr "Objevilo se varování od externí služby"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Has not Passed"
 msgstr "Antivirová kontrola odhalila virus"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Antivirus Passed"
 msgstr "Antivirová kontrola nenašla žádný virus"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "File Problem"
 msgstr "Problém se souborem"
@@ -492,6 +569,7 @@ msgid "Generate Agreement"
 msgstr "Vygenerovat smlouvu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Generate Voucher"
 msgstr "Vygenerovat ohlašovací lístek"
@@ -595,6 +673,7 @@ msgid "ISBN will be validated by ISBN Agency."
 msgstr "ISBN bude přiděleno ISBN agenturou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "K akvizici"
 msgstr ""
@@ -604,6 +683,19 @@ msgstr ""
 msgid "K akvizici - bez kontroly ISBN"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Link at Aleph has been accepted"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Link at Aleph has been rejected"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+msgid "Load Aleph Records by Title"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Load File From Storage"
 msgstr ""
@@ -626,10 +718,12 @@ msgstr "Opět načíst ePublikaci z Alephu"
 msgid "Metadata are valid.  So it can go futher to processing.."
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Middleware Problem"
 msgstr "Problém v systému"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Middleware problem"
 msgstr "Problém v systému"
@@ -672,8 +766,8 @@ msgid "Original files waiting for acquisition"
 msgstr "Dokumenty čekající na akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producent_workflow/definition.xml
 msgid "PDF generated"
 msgstr "PDF vygenerováno"
 
@@ -697,8 +791,8 @@ msgid "Prepare for subject Cataloguing"
 msgstr "Příprava na VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Previous transition"
 msgstr "Předešlá akce"
 
@@ -706,11 +800,13 @@ msgstr "Předešlá akce"
 msgid "Private"
 msgstr "Privátní"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Problem with attached file"
 msgstr "Problém s přiloženým souborem"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Processed"
 msgstr "Zpracováno"
@@ -741,14 +837,14 @@ msgid "Proper Aleph Record Choosen"
 msgstr "Vybrán správný záznam z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Provides access to workflow history"
 msgstr "Poskytuje přístup k historii akcí"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_contributing_request_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Published"
 msgstr "Zveřejněno"
 
@@ -795,12 +891,13 @@ msgid "Rejected"
 msgstr "Odmítnuto"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_producentfolder_workflow/definition.xml
 msgid "Renew Aleph Records"
 msgstr "Obnovit záznamy z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Renew Aleph Records by SysNumber"
 msgstr "Obnovit záznamy z Alephu podle systémového čísla"
@@ -810,15 +907,18 @@ msgid "Repeat ISBN Validation"
 msgstr "Zopakovat kontrolu ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Request to generate voucher"
 msgstr "Žádost na vygenerování smlouvy"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Response from EPubCheck"
 msgstr "Odpověď od EPubCheck"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Response from PDFBox"
 msgstr "Odpověď od PDFBox"
@@ -933,17 +1033,24 @@ msgstr ""
 msgid "Send email to acquisitors with original files waiting for proper Aleph record choosing"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Send export to Kramerius"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Send export to LTP"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Send export to Storage"
 msgstr "Poslat export do úložiště"
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
+msgid "Single state workflow for ePeriodical Folder"
+msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 msgid "Single state workflow for ePublication Folder"
@@ -974,11 +1081,13 @@ msgid "Subject Cataloguing Review Preparing"
 msgstr "Příprava revize VP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Acquisition"
 msgstr "Potvrdit akvizici"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Acquisition Preparing"
 msgstr "Dokončit přípravu akvizice"
@@ -988,6 +1097,7 @@ msgid "Submit Agreement Generation"
 msgstr "Požádat o generování smlouvy"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit Antivirus Check"
 msgstr "Potvrdit antivirovou kontrolu"
@@ -1057,6 +1167,7 @@ msgid "Submit Descriptive Cataloguing Review Preparing"
 msgstr "Potvrdit přípravu revize JP"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit EPub/2 Validation"
 msgstr "Provést validaci EPub/2"
@@ -1072,6 +1183,7 @@ msgid "Submit ISBN Subject Validation"
 msgstr "Potvrdit věcnou kontrolu ISBN"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit PDF/A Validation"
 msgstr "Provést validaci PDF/A"
@@ -1096,7 +1208,13 @@ msgstr "Potvrdit revizi VP"
 msgid "Submit Subject Cataloguing Review Preparing"
 msgstr "Potvrdit přípravu revize VP"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit Thumbnail Generating"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit acquisition preparing"
 msgstr "Poslat k akvizici"
@@ -1145,14 +1263,21 @@ msgstr "Potvrdit revizi JP"
 msgid "Submit descriptive cataloguing review preparing"
 msgstr "Potvrdit přípravu revize JP"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+msgid "Submit document viewer"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit export to Kramerius"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit export to LTP"
 msgstr ""
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Submit export to Storage"
 msgstr "Provést export do úložiště"
@@ -1189,28 +1314,42 @@ msgstr "Potvrdit VP"
 msgid "Submit subject cataloguing Preparing"
 msgstr "Potvrdit přípravu VP"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit thumbnail generating"
+msgstr ""
+
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Submit update links at Aleph"
+msgstr ""
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "The ID of the user who performed the previous transition"
 msgstr "ID uživatel, kdo provedl předešlou akci"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating"
 msgstr "Generování náhledů"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating Passed"
 msgstr "Náhled vygenerován"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating finished with Error"
 msgstr "Generování náhledu skončilo s chybou"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail Generating with success"
 msgstr "Náhled vygenerován"
@@ -1221,6 +1360,7 @@ msgid "Thumbnail Generating with success - skip export to Aleph"
 msgstr ""
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Thumbnail generating with error"
 msgstr "Chyba při generování náhledu"
@@ -1231,6 +1371,7 @@ msgid "Title"
 msgstr "Titul"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "To Acquisition"
 msgstr "K akvizici"
@@ -1241,8 +1382,8 @@ msgid "To Acquisition Preparing"
 msgstr "K přípravě akvizice"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "To Withdraw"
 msgstr "Zamítnout"
 
@@ -1258,19 +1399,28 @@ msgstr ""
 msgid "Try to find at Aleph"
 msgstr "Vyzkoušet nalézt v Alephu"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Unknown Error"
 msgstr "Neznámá chyba"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Unknown error"
 msgstr "Neznámá chyba"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+msgid "Update links at Aleph"
+msgstr "Upravit prokliky v Alephu"
+
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Validation for LTP Passed with OK"
 msgstr "Kontrola pro LTP proběhla úspěšně."
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
 msgid "Visible to administrator, editor, editable by the administrator"
 msgstr "Vidí správce, editor. Editovat může spráce."
@@ -1314,7 +1464,8 @@ msgid "Waiting till Producent corrects informations about itself."
 msgstr "Čeká dokud producent neopraví svoje údaje."
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Warning from external service"
 msgstr "Varování od externí služby"
 
@@ -1362,14 +1513,14 @@ msgid "We have got some records from Aleph"
 msgstr "Dostali jsme záznamy z Alephu"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublicationfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalfolder_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "When the previous transition was performed"
 msgstr "Kdy proběhla předešlá akce"
 
 #: edeposit/policy/profiles/default/workflows/edeposit_book_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_epublication_workflow/definition.xml
-#: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodical_workflow/definition.xml
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 msgid "Withdrawn"
 msgstr "Zamítnuto"
 
@@ -1381,10 +1532,12 @@ msgstr "Chyba v ISBN"
 msgid "Zopakovat validaci ISBN"
 msgstr "Zopakovat validaci ISBN"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Zpracovatel Is Required"
 msgstr "Zpracovatel je povinný"
 
+#: edeposit/policy/profiles/default/workflows/edeposit_eperiodicalpart_workflow/definition.xml
 #: edeposit/policy/profiles/default/workflows/edeposit_originalfile_workflow/definition.xml
 msgid "Zpracovatel is required"
 msgstr "Zpracovatel je povinný"
